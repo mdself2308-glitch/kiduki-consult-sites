@@ -1,0 +1,2564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京KIDUKIコンサルティング産業医事務所 | 迷い時間と調整時間をゼロに</title>
+  <meta name="description" content="産業衛生・保健業務の迷い時間と調整時間をゼロに。標準ルート＋予約システム＋証跡管理で、担当者の工数を削減します。">
+  
+  <meta property="og:title" content="産業医事務所 | 迷い時間と調整時間をゼロに">
+  <meta property="og:description" content="産業衛生・保健業務の迷い時間と調整時間をゼロに。標準ルート＋予約システム＋証跡管理で、担当者の工数を削減します。">
+  <meta property="og:type" content="website">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #0f2d3d;
+      --color-primary-light: #1a4a5e;
+      --color-accent: #00d4aa;
+      --color-accent-soft: #7fffd4;
+      --color-accent-glow: rgba(0, 212, 170, 0.3);
+      --color-secondary: #6366f1;
+      --color-bg: #fafbfc;
+      --color-bg-dark: #0a1628;
+      --color-text: #1a1a2e;
+      --color-text-light: #64748b;
+      --color-text-inverse: #f1f5f9;
+      --color-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-danger: #ef4444;
+      --color-warning: #f59e0b;
+      --font-display: 'Inter', 'Noto Sans JP', sans-serif;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+      --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+      --shadow-glow: 0 0 60px rgba(0, 212, 170, 0.15);
+      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+      --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius: 16px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.8;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      color: var(--color-text-light);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .gradient-blur {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-cta {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 12px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .header-cta:hover {
+      background: var(--color-white);
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a4a 50%, #0f2d3d 100%);
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero .gradient-blur.blur-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+      top: -200px;
+      right: -100px;
+    }
+
+    .hero .gradient-blur.blur-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+    }
+
+    .hero .grid-pattern {
+      opacity: 0.4;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 212, 170, 0.1);
+      border: 1px solid rgba(0, 212, 170, 0.3);
+      color: var(--color-accent);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .hero h1 {
+      color: var(--color-white);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-soft) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--color-text-inverse);
+      opacity: 0.9;
+      max-width: 620px;
+      margin-bottom: 48px;
+      line-height: 2;
+    }
+
+    .hero-points {
+      list-style: none;
+      margin-bottom: 48px;
+    }
+
+    .hero-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--color-text-inverse);
+      opacity: 0.85;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-points li::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .cta-button.primary {
+      background: linear-gradient(135deg, var(--color-accent) 0%, #00b894 100%);
+      color: var(--color-primary);
+      box-shadow: 0 8px 32px rgba(0, 212, 170, 0.3);
+    }
+
+    .cta-button.primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0, 212, 170, 0.4);
+    }
+
+    .cta-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Motivation Section */
+    .motivation-section {
+      background: var(--color-white);
+      position: relative;
+    }
+
+    .motivation-content {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .motivation-section h2 {
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--color-primary);
+    }
+
+    .motivation-text {
+      font-size: 1.1rem;
+      line-height: 2.2;
+      color: var(--color-text);
+      margin-bottom: 40px;
+    }
+
+    .motivation-text .highlight {
+      background: linear-gradient(transparent 60%, rgba(239, 68, 68, 0.2) 60%);
+      font-weight: 600;
+    }
+
+    .motivation-text .em {
+      background: linear-gradient(transparent 60%, rgba(0, 212, 170, 0.3) 60%);
+      font-weight: 600;
+    }
+
+    .demerits-list {
+      background: linear-gradient(135deg, #fef2f2 0%, #fff5f5 100%);
+      border-radius: var(--radius);
+      padding: 32px;
+      border-left: 4px solid var(--color-danger);
+      margin-bottom: 40px;
+    }
+
+    .demerits-list h3 {
+      color: var(--color-danger);
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .demerits-list ul {
+      list-style: none;
+    }
+
+    .demerits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--color-text);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .demerits-list li::before {
+      content: '×';
+      color: var(--color-danger);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .motivation-conclusion {
+      background: linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 100%);
+      border-radius: var(--radius);
+      padding: 32px;
+      border: 2px solid var(--color-accent);
+      text-align: center;
+    }
+
+    .motivation-conclusion p {
+      font-size: 1.1rem;
+      color: var(--color-text);
+      line-height: 1.9;
+    }
+
+    .motivation-conclusion strong {
+      color: var(--color-primary);
+    }
+
+    /* Promise Section */
+    .promise-section {
+      background: linear-gradient(180deg, var(--color-bg) 0%, #f1f5f9 100%);
+      position: relative;
+    }
+
+    .promise-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .promise-lead {
+      text-align: center;
+      margin-bottom: 56px;
+      font-size: 1.1rem;
+      color: var(--color-text-light);
+    }
+
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .promise-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      text-align: center;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .promise-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .promise-card.request {
+      border-top: 4px solid var(--color-warning);
+    }
+
+    .promise-card.relief {
+      border-top: 4px solid var(--color-accent);
+    }
+
+    .promise-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .promise-card.request .promise-icon {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    }
+
+    .promise-card.relief .promise-icon {
+      background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    }
+
+    .promise-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.5;
+    }
+
+    .promise-card.request .promise-icon svg {
+      stroke: var(--color-warning);
+    }
+
+    .promise-card.relief .promise-icon svg {
+      stroke: var(--color-accent);
+    }
+
+    .promise-card h3 {
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+
+    .promise-list {
+      list-style: none;
+      text-align: left;
+    }
+
+    .promise-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.95rem;
+      color: var(--color-text);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .promise-list li:last-child {
+      border-bottom: none;
+    }
+
+    .promise-list li span {
+      color: var(--color-text-light);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* Bottleneck Section */
+    .bottleneck-section {
+      background: var(--color-white);
+      position: relative;
+    }
+
+    .bottleneck-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .bottleneck-lead {
+      text-align: center;
+      margin-bottom: 56px;
+      font-size: 1.1rem;
+    }
+
+    .bottleneck-visual {
+      background: linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      margin-bottom: 32px;
+      border: 1px solid var(--color-border);
+    }
+
+    .bottleneck-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .bottleneck-step {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 2px solid var(--color-border);
+      transition: var(--transition);
+      min-width: 180px;
+    }
+
+    .bottleneck-step:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .bottleneck-step.danger {
+      border-color: rgba(239, 68, 68, 0.4);
+      background: linear-gradient(135deg, #fff 0%, #fef2f2 100%);
+    }
+
+    .bottleneck-step.danger:hover {
+      border-color: var(--color-danger);
+      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15);
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+
+    .bottleneck-step.danger .step-number {
+      background: linear-gradient(135deg, var(--color-danger) 0%, #f97316 100%);
+    }
+
+    .step-content h4 {
+      font-size: 0.95rem;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .step-time {
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      background: var(--color-bg);
+      padding: 2px 10px;
+      border-radius: 100px;
+    }
+
+    .bottleneck-step.danger .step-time {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--color-danger);
+    }
+
+    .bottleneck-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-light);
+    }
+
+    .bottleneck-arrow svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-primary-light);
+      opacity: 0.5;
+    }
+
+    .bottleneck-result {
+      text-align: center;
+      padding: 20px 24px;
+      background: rgba(239, 68, 68, 0.08);
+      border-radius: 12px;
+      border: 1px dashed rgba(239, 68, 68, 0.3);
+    }
+
+    .bottleneck-result p {
+      font-size: 1rem;
+      color: var(--color-text);
+      margin: 0;
+    }
+
+    .bottleneck-result strong {
+      color: var(--color-danger);
+    }
+
+    .bottleneck-solution {
+      background: linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 100%);
+      border-radius: var(--radius);
+      padding: 40px;
+      border: 2px solid var(--color-accent);
+      text-align: center;
+    }
+
+    .bottleneck-solution p {
+      font-size: 1.15rem;
+      color: var(--color-text);
+    }
+
+    .bottleneck-solution strong {
+      color: var(--color-primary);
+    }
+
+    /* Booking Preview Section */
+    .booking-preview-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #e8f4f8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-preview-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4aa' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .booking-preview-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .booking-preview-lead {
+      text-align: center;
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .booking-preview-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .booking-preview-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(0, 212, 170, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+      border: 1px solid rgba(0, 212, 170, 0.3);
+      color: var(--color-primary);
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .booking-preview-label svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--color-accent);
+    }
+
+    .booking-preview-frame {
+      position: relative;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+      background: var(--color-white);
+    }
+
+    .booking-preview-frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+      z-index: 1;
+    }
+
+    .booking-preview-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .booking-preview-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .booking-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: var(--color-white);
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .booking-feature-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(0, 212, 170, 0.3);
+    }
+
+    .booking-feature-item svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .booking-feature-item span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    /* Pain Section */
+    .pain-section {
+      background: linear-gradient(180deg, var(--color-bg) 0%, #f1f5f9 100%);
+      position: relative;
+    }
+
+    .pain-section h2 {
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--color-primary);
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .pain-card {
+      background: var(--color-white);
+      padding: 0;
+      border-radius: var(--radius);
+      border: 1px solid rgba(239, 68, 68, 0.1);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-danger) 0%, #f97316 50%, #fbbf24 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .pain-card:hover {
+      box-shadow: 0 20px 40px rgba(239, 68, 68, 0.1);
+      transform: translateY(-8px);
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+
+    .pain-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .pain-card-inner {
+      padding: 28px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .pain-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border-radius: 12px;
+    }
+
+    .pain-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--color-danger);
+      stroke-width: 1.5;
+    }
+
+    .pain-card p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    /* Solution Section */
+    .solution-section {
+      background: var(--color-white);
+      position: relative;
+    }
+
+    .solution-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .solution-lead {
+      text-align: center;
+      margin-bottom: 56px;
+      font-size: 1.1rem;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .solution-card {
+      background: var(--color-bg);
+      border-radius: var(--radius);
+      padding: 32px;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    }
+
+    .solution-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .solution-card h3 {
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .solution-card h3 svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-accent);
+      stroke-width: 2;
+    }
+
+    .solution-card p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
+    /* Entry Exit Section */
+    .entry-exit-section {
+      background: linear-gradient(180deg, var(--color-bg) 0%, #f1f5f9 100%);
+      position: relative;
+    }
+
+    .entry-exit-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .entry-exit-lead {
+      text-align: center;
+      margin-bottom: 56px;
+      font-size: 1.1rem;
+    }
+
+    .entry-exit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+    }
+
+    .entry-exit-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .entry-exit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .entry-exit-header {
+      padding: 24px 28px;
+      position: relative;
+    }
+
+    .entry-exit-header.entry {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    }
+
+    .entry-exit-header.exit {
+      background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    }
+
+    .entry-exit-label {
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .entry-exit-header.entry .entry-exit-label {
+      color: #3b82f6;
+    }
+
+    .entry-exit-header.exit .entry-exit-label {
+      color: var(--color-accent);
+    }
+
+    .entry-exit-header h3 {
+      color: var(--color-primary);
+      font-size: 1.2rem;
+    }
+
+    .entry-exit-body {
+      padding: 32px 28px;
+    }
+
+    .entry-exit-list {
+      list-style: none;
+    }
+
+    .entry-exit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.95rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .entry-exit-list li:last-child {
+      border-bottom: none;
+    }
+
+    .entry-exit-list li::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Case Management Section */
+    .case-section {
+      background: var(--color-white);
+      position: relative;
+    }
+
+    .case-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .case-lead {
+      text-align: center;
+      margin-bottom: 56px;
+      font-size: 1.1rem;
+    }
+
+    .case-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .case-feature {
+      background: var(--color-bg);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--color-border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: var(--transition);
+    }
+
+    .case-feature:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: var(--color-accent);
+    }
+
+    .case-feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .case-feature-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-accent);
+      stroke-width: 2;
+    }
+
+    .case-feature-content h4 {
+      color: var(--color-primary);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .case-feature-content p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--color-text-light);
+    }
+
+    /* Doctor Section */
+    .doctor-section {
+      background: linear-gradient(180deg, #f8fafc 0%, var(--color-white) 100%);
+      position: relative;
+    }
+
+    .doctor-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .doctor-lead {
+      text-align: center;
+      margin-bottom: 56px;
+      font-size: 1.1rem;
+    }
+
+    .doctor-emphasis {
+      background: linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 100%);
+      border-radius: var(--radius);
+      padding: 40px;
+      border: 2px solid var(--color-accent);
+      margin-bottom: 48px;
+    }
+
+    .doctor-emphasis h3 {
+      color: var(--color-primary);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .doctor-feedback-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .doctor-feedback-list li {
+      background: var(--color-white);
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+    }
+
+    .doctor-warning {
+      text-align: center;
+      padding: 24px;
+      background: rgba(239, 68, 68, 0.05);
+      border-radius: var(--radius);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .doctor-warning p {
+      color: var(--color-text);
+      font-size: 0.95rem;
+    }
+
+    .doctor-warning strong {
+      color: var(--color-danger);
+    }
+
+    /* Scope Section */
+    .scope-section {
+      background: linear-gradient(180deg, var(--color-bg) 0%, #f1f5f9 100%);
+      position: relative;
+    }
+
+    .scope-section h2 {
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--color-primary);
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .scope-item {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .scope-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: var(--color-accent);
+    }
+
+    .scope-item-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .scope-item-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-secondary);
+      stroke-width: 2;
+    }
+
+    .scope-item p {
+      font-size: 0.9rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    /* Fit Section */
+    .fit-section {
+      background: var(--color-white);
+      position: relative;
+    }
+
+    .fit-section h2 {
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--color-primary);
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .fit-card {
+      background: linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 100%);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      border: 1px solid rgba(0, 212, 170, 0.2);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .fit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 212, 170, 0.15);
+      border-color: var(--color-accent);
+    }
+
+    .fit-number {
+      position: absolute;
+      top: -16px;
+      left: 28px;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #00b894 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    .fit-card h3 {
+      color: var(--color-primary);
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .fit-card h3 small {
+      font-weight: 500;
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+    }
+
+    .fit-list {
+      list-style: none;
+    }
+
+    .fit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0, 212, 170, 0.15);
+      font-size: 0.92rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .fit-list li:last-child {
+      border-bottom: none;
+    }
+
+    .fit-list li::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .fit-list li strong {
+      color: var(--color-primary);
+    }
+
+    /* Not Fit Section */
+    .not-fit-section {
+      background: linear-gradient(180deg, var(--color-bg) 0%, #f1f5f9 100%);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .not-fit-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--color-primary);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+    }
+
+    .not-fit-list {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .not-fit-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--color-white);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .not-fit-item:hover {
+      border-color: rgba(239, 68, 68, 0.3);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .not-fit-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .not-fit-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--color-danger);
+      stroke-width: 2.5;
+    }
+
+    .not-fit-item p {
+      font-size: 0.95rem;
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      background: var(--color-white);
+      position: relative;
+    }
+
+    .pricing-section h2 {
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--color-primary);
+    }
+
+    .pricing-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      border-radius: var(--radius);
+      padding: 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(0, 212, 170, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 170, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .pricing-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-label {
+      color: var(--color-accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .pricing-amount {
+      color: var(--color-white);
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      margin-bottom: 8px;
+    }
+
+    .pricing-amount span {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .pricing-range {
+      color: var(--color-text-inverse);
+      opacity: 0.8;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .pricing-note {
+      color: var(--color-text-inverse);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* Flow Section */
+    .flow-section {
+      background: linear-gradient(180deg, var(--color-bg) 0%, #f1f5f9 100%);
+      position: relative;
+    }
+
+    .flow-section h2 {
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--color-primary);
+    }
+
+    .flow-steps {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 64px;
+      bottom: -32px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--color-accent) 0%, transparent 100%);
+    }
+
+    .flow-number {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #00b894 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+
+    .flow-content {
+      flex: 1;
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--color-border);
+    }
+
+    .flow-content h3 {
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+
+    .flow-content p {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    /* Security Section */
+    .security-section {
+      background: var(--color-white);
+      position: relative;
+    }
+
+    .security-section h2 {
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--color-primary);
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .security-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .security-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .security-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-secondary);
+      stroke-width: 2;
+    }
+
+    .security-content p {
+      font-size: 0.95rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      background: linear-gradient(180deg, var(--color-bg) 0%, #f1f5f9 100%);
+      position: relative;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--color-primary);
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-soft);
+      border-color: var(--color-accent);
+    }
+
+    .faq-q {
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .faq-q::before {
+      content: 'Q.';
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .faq-a {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      line-height: 1.8;
+      padding-left: 32px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a4a 50%, #0f2d3d 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0;
+    }
+
+    .final-cta .gradient-blur {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+      top: -150px;
+      right: -150px;
+    }
+
+    .final-cta .grid-pattern {
+      opacity: 0.3;
+    }
+
+    .final-cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      color: var(--color-white);
+      margin-bottom: 24px;
+    }
+
+    .final-cta-lead {
+      color: var(--color-text-inverse);
+      opacity: 0.85;
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+
+    .cta-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .cta-benefit-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--color-text-inverse);
+      font-size: 0.95rem;
+    }
+
+    .cta-benefit-item svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--color-accent);
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    footer .logo {
+      color: var(--color-white);
+      font-size: 1.1rem;
+    }
+
+    footer p {
+      color: var(--color-text-inverse);
+      opacity: 0.6;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--color-text-inverse);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    footer a:hover {
+      opacity: 1;
+      color: var(--color-accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 120px 0 80px;
+      }
+
+      .promise-grid,
+      .entry-exit-grid,
+      .pain-grid,
+      .solution-grid,
+      .scope-grid,
+      .fit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .flow-step::after {
+        display: none;
+      }
+
+      .bottleneck-visual {
+        padding: 32px 20px;
+      }
+
+      .bottleneck-flow {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .bottleneck-step {
+        min-width: 100%;
+      }
+
+      .bottleneck-arrow {
+        transform: rotate(90deg);
+      }
+
+      .pricing-card {
+        padding: 32px 24px;
+      }
+
+      .pricing-amount {
+        font-size: 2.2rem;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="https://kdkconslt-sngyouijm.com/" class="logo">東京KIDUKIコンサルティング<span>産業医事務所</span></a>
+      <a href="https://reserve.kdkconslt-sngyouijm.com/" class="header-cta">15分無料相談</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="gradient-blur blur-1"></div>
+    <div class="gradient-blur blur-2"></div>
+    <div class="grid-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-label">東京KIDUKIコンサルティング産業医事務所</div>
+        <h1>産業衛生・保健業務の<br><span class="accent">"迷い時間"と"調整時間"</span>をゼロに。</h1>
+        <p class="hero-lead">標準ルート＋予約システム＋証跡管理で、担当者の工数を削減します。</p>
+        <ul class="hero-points">
+          <li>「何を・いつ・誰が」を標準化し、毎月迷わず回る状態を作る</li>
+          <li>日程調整メールの往復をなくす（業務別予約）</li>
+          <li>証跡探しをなくす（Boxで提出できる形に整理）</li>
+          <li>産業医事務所が、判断と運用をまとめて支援します</li>
+        </ul>
+        <div class="cta-group">
+          <a href="https://reserve.kdkconslt-sngyouijm.com/" class="cta-button primary">
+            15分無料相談を予約する
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motivation Section -->
+  <section class="motivation-section">
+    <div class="container">
+      <div class="motivation-content">
+        <h2>当事務所のモチベーション</h2>
+        <p class="motivation-text">
+          産業衛生・保健は「正解が分かりにくい」領域です。結果、担当者は <span class="highlight">調べる → 社内調整する → 先送りする → また調べる</span> のループに入ります。<br><br>
+          さらに致命的なのが、<span class="highlight">産業医が意見を出しても——その後、現場がどう動いたか（フィードバック）が戻らない</span>ことです。
+        </p>
+        <div class="demerits-list">
+          <h3>これが起きると、次のデメリットが発生します</h3>
+          <ul>
+            <li>同じ課題が再発する（是正が閉じない）</li>
+            <li>兆候の見落としが増える（悪化・休職が前倒しになる）</li>
+            <li>「誰が何を根拠に決めたか」が残らず、説明コストが爆増する</li>
+            <li>結局、担当者が"追いかけ役"になって疲弊する</li>
+          </ul>
+        </div>
+        <div class="motivation-conclusion">
+          <p>当事務所は産業医事務所として、<br><strong>医療者の判断が現場運用に落ちる標準ルートを作り、<br>担当者の迷い時間と調整時間を削減する</strong>ために、この支援を提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promise Section -->
+  <section class="promise-section">
+    <div class="container">
+      <h2>まず約束すること：担当者の仕事を増やしません</h2>
+      <p class="promise-lead">「効率化」と言いながら入力が増える、承認が増える、通知が増える——そういう仕組みは入れません。</p>
+      <div class="promise-grid">
+        <div class="promise-card request">
+          <div class="promise-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+            </svg>
+          </div>
+          <h3>企業側にお願いする作業</h3>
+          <ul class="promise-list">
+            <li><span>1.</span> 窓口を1名決める</li>
+            <li><span>2.</span> 月1回の短い確認（30分程度）</li>
+            <li><span>3.</span> 既にある資料を置く</li>
+          </ul>
+        </div>
+        <div class="promise-card relief">
+          <div class="promise-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3>企業側から軽減される作業</h3>
+          <ul class="promise-list">
+            <li><span>✓</span> 日程調整メールの往復</li>
+            <li><span>✓</span> 証跡の所在探し</li>
+            <li><span>✓</span> 経営・監督・トラブル時の「説明の取りまとめ」の時間</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottleneck Section -->
+  <section class="bottleneck-section">
+    <div class="container">
+      <h2>現場のボトルネック：予約調整が時間を溶かす</h2>
+      <p class="bottleneck-lead">産業医業務が回らない原因は、医学判断以前に「日程調整」で止まることです。</p>
+      
+      <div class="bottleneck-visual">
+        <div class="bottleneck-flow">
+          <div class="bottleneck-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>候補日の収集</h4>
+              <span class="step-time">30分〜</span>
+            </div>
+          </div>
+          
+          <div class="bottleneck-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+          
+          <div class="bottleneck-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>メールの往復</h4>
+              <span class="step-time">3〜5往復</span>
+            </div>
+          </div>
+          
+          <div class="bottleneck-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+          
+          <div class="bottleneck-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>リマインド</h4>
+              <span class="step-time">都度対応</span>
+            </div>
+          </div>
+          
+          <div class="bottleneck-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+          
+          <div class="bottleneck-step danger">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>欠席の再調整</h4>
+              <span class="step-time">最初に戻る</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bottleneck-result">
+          <p>この工程が担当者の時間を溶かし、<strong>対応の遅れ</strong>と<strong>放置</strong>を生みます。</p>
+        </div>
+      </div>
+      
+      <div class="bottleneck-solution">
+        <p>当事務所は、<strong>業務別に予約できる仕組み</strong>と<strong>承認・記録が残る運用</strong>で、<br>このボトルネックを潰します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Preview Section -->
+  <section class="booking-preview-section">
+    <div class="container">
+      <h2>業務別予約システムで調整工数を削減</h2>
+      <p class="booking-preview-lead">従業員・人事・管理職、それぞれの立場に合わせた予約フローで、日程調整の手間を最小化します。</p>
+      
+      <div class="booking-preview-container">
+        <div class="booking-preview-label">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+          </svg>
+          予約画面イメージ
+        </div>
+        
+        <div class="booking-preview-frame">
+          <img src="予約用.gif" alt="総合予約受付 - 立場・役割に応じた予約フロー">
+        </div>
+        
+        <div class="booking-preview-features">
+          <div class="booking-feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+            <span>従業員が自分で予約可能</span>
+          </div>
+          <div class="booking-feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+            <span>人事・管理職向けルートあり</span>
+          </div>
+          <div class="booking-feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>事前入力で当日スムーズ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Section -->
+  <section class="pain-section">
+    <div class="container">
+      <h2>よくある悩み</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-card-inner">
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <p>健診後の対応、誰に何を頼むか分からない</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-inner">
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+              </svg>
+            </div>
+            <p>長時間・メンタル・復職、優先順位が付けられない</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-inner">
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+              </svg>
+            </div>
+            <p>産業医から意見が出たが、「で、どうしたらいいの？」で止まる</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-inner">
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+              </svg>
+            </div>
+            <p>トラブル時に、何を出せばよいか分からない</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-inner">
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+              </svg>
+            </div>
+            <p>経営に「今どうなってる？」と聞かれて答えられない</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="solution-section">
+    <div class="container">
+      <h2>産業保健オペレーションの標準化（＝マニュアル化）を実装する</h2>
+      <p class="solution-lead">当事務所が提供するのは「産業保健を回すための標準ルート」です。</p>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            標準フロー（ルート）
+          </h3>
+          <p>対象抽出 〜クローズまでの一連の流れを定義。誰が見ても同じ手順で進められる状態を作ります。</p>
+        </div>
+        <div class="solution-card">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            チェックリスト
+          </h3>
+          <p>何が揃えば次へ進めるか明確化。迷いを潰し、判断の属人化を防ぎます。</p>
+        </div>
+        <div class="solution-card">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+            </svg>
+            役割分担表
+          </h3>
+          <p>誰が決めるか／誰が動くか明文化。責任の曖昧さを潰します。</p>
+        </div>
+        <div class="solution-card">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            </svg>
+            月次運用
+          </h3>
+          <p>ルート通りに回っているかを点検し、詰まりを解消。継続的に改善します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entry Exit Section -->
+  <section class="entry-exit-section">
+    <div class="container">
+      <h2>標準ルートを回すための"入口"と"出口"</h2>
+      <p class="entry-exit-lead">標準ルート（マニュアル）を作っても、入口がメール調整のままだと運用は崩れます。<br>当事務所では、標準ルートを回すために次の2つを最初から組み込みます。</p>
+      <div class="entry-exit-grid">
+        <div class="entry-exit-card">
+          <div class="entry-exit-header entry">
+            <div class="entry-exit-label">入口</div>
+            <h3>業務別予約システム（調整工数を削る）</h3>
+          </div>
+          <div class="entry-exit-body">
+            <ul class="entry-exit-list">
+              <li>面談予約を業務別に分解（健診事後措置／復職／高ストレス／長時間など）</li>
+              <li>従業員が自分で予約することも可能（会社は把握・必要なら承認）</li>
+              <li>事前入力で必要情報が揃い、当日のムダ質問と差戻しを減らす</li>
+              <li>リマインド・再予約を仕組み化し、担当者の往復メールを減らす</li>
+            </ul>
+          </div>
+        </div>
+        <div class="entry-exit-card">
+          <div class="entry-exit-header exit">
+            <div class="entry-exit-label">出口</div>
+            <h3>（Boxによる）証跡管理（探す時間を削る）</h3>
+          </div>
+          <div class="entry-exit-body">
+            <ul class="entry-exit-list">
+              <li>フォルダ規格・命名規則・テンプレで保存を標準化</li>
+              <li>必要時に「提出できる形」で取り出せる状態にする</li>
+              <li>記録が散在しないので、監督・トラブル時の探索工数が減る</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Management Section -->
+  <section class="case-section">
+    <div class="container">
+      <h2>標準ルートを"迷わず回すため"にCase管理する</h2>
+      <p class="case-lead">担当者に入力作業を増やすためではなく、迷いと放置を消すために案件（Case）単位で管理します。</p>
+      <div class="case-features">
+        <div class="case-feature">
+          <div class="case-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+            </svg>
+          </div>
+          <div class="case-feature-content">
+            <h4>最小項目で揃える</h4>
+            <p>期限／責任者／状態／理由を最小項目で管理。余計な入力負荷をかけません。</p>
+          </div>
+        </div>
+        <div class="case-feature">
+          <div class="case-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div class="case-feature-content">
+            <h4>放置を防ぐ運用</h4>
+            <p>未完了が"ブラックボックス化（放置）"しないよう運用で回します。</p>
+          </div>
+        </div>
+        <div class="case-feature">
+          <div class="case-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          <div class="case-feature-content">
+            <h4>出せる形に整理</h4>
+            <p>必要時に、監督・紛争で出せる形に整理されています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Section -->
+  <section class="doctor-section">
+    <div class="container">
+      <h2>当事務所はもちろん産業医業務をやります</h2>
+      <p class="doctor-lead">ただし "面談して終わり"にはしません。主役は「運用が回り続けること」です。</p>
+      <div class="doctor-emphasis">
+        <h3>産業医としての意見がフィードバックされる運用を前提にします</h3>
+        <ul class="doctor-feedback-list">
+          <li>現場で実行されたか</li>
+          <li>効果があったか</li>
+          <li>悪化していないか</li>
+        </ul>
+      </div>
+      <div class="doctor-warning">
+        <p>この「フィードバックが返る」設計がない産業医対応は、<br>結局<strong>"言いっぱなし"</strong>になり、再発します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope Section -->
+  <section class="scope-section">
+    <div class="container">
+      <h2>対応範囲</h2>
+      <div class="scope-grid">
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+          </div>
+          <p>衛生委員会<br><small>同席／議題レビュー／議事録コメント</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+            </svg>
+          </div>
+          <p>巡視<br><small>指摘→是正→クローズ・追跡</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+            </svg>
+          </div>
+          <p>健診事後措置<br><small>医師意見／就業配慮</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p>長時間労働<br><small>面談（必要時）</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <p>高ストレス者<br><small>面談（必要時）</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+          </div>
+          <p>復職支援<br><small>面談・フォロー</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          <p>標準化<br><small>マニュアル／運用レポート</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            </svg>
+          </div>
+          <p>予約システム運用<br><small>設定・管理</small></p>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+            </svg>
+          </div>
+          <p>Box証跡運用<br><small>フォルダ設計・管理</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fit Section -->
+  <section class="fit-section">
+    <div class="container">
+      <h2>こういう企業に向いています</h2>
+      <div class="fit-grid">
+        <div class="fit-card">
+          <div class="fit-number">1</div>
+          <h3>これから産業衛生体制を整える<br><small>（最短で迷わず作りたい）</small></h3>
+          <ul class="fit-list">
+            <li>50名到達／拠点増／衛生委員会の立ち上げなどで、何から着手すべきか分からない</li>
+            <li>"とりあえず面談"ではなく、<strong>標準ルート（手順書・役割分担・チェックリスト）</strong>から作りたい</li>
+            <li>予約調整と記録管理を最初から仕組み化して、担当者の立ち上げ負担を減らしたい</li>
+          </ul>
+        </div>
+        <div class="fit-card">
+          <div class="fit-number">2</div>
+          <h3>いまの運用が煩雑で、<br>担当者の工数が溶けている</h3>
+          <ul class="fit-list">
+            <li>日程調整メールの往復、再調整、リマインドで時間が消える</li>
+            <li>健診後・復職・長時間などが「誰待ち」で止まり、追いかけが常態化している</li>
+            <li>記録が散在し、探す・まとめる・説明するのコストが高い</li>
+          </ul>
+        </div>
+        <div class="fit-card">
+          <div class="fit-number">3</div>
+          <h3>健康経営・リスク管理のため、<br>経営が"状態を即答"できるようにしたい</h3>
+          <ul class="fit-list">
+            <li>経営層から「今どうなってる？」と聞かれたときに、事実ベースで即答したい</li>
+            <li>監督・トラブル時に「出せる証跡」が必要（所在が分かる／時系列が崩れない）</li>
+            <li>属人化を外し、担当者が異動しても回る体制にしたい（運用の標準化）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Not Fit Section -->
+  <section class="not-fit-section">
+    <div class="container">
+      <h2>一方でこういう場合は合わない可能性があります</h2>
+      <div class="not-fit-list">
+        <div class="not-fit-item">
+          <div class="not-fit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <p>面談だけ欲しい／記録や運用整備は不要（単発ニーズ）</p>
+        </div>
+        <div class="not-fit-item">
+          <div class="not-fit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <p>最安が最優先（運用標準化や予約・証跡の設計に価値を感じない）</p>
+        </div>
+        <div class="not-fit-item">
+          <div class="not-fit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <p>予約・記録の運用を社内で完全にやり切れる（外部に任せたくない）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section">
+    <div class="container">
+      <h2>料金</h2>
+      <div class="pricing-card">
+        <div class="pricing-content">
+          <div class="pricing-label">月額料金の目安</div>
+          <div class="pricing-amount">5<span>万円台〜</span></div>
+          <div class="pricing-range">選任の有無・訪問・委員会頻度で変動</div>
+          <p class="pricing-note">※案件数・訪問頻度で変動。<br>無料相談で"今の運用コスト"と比較して概算提示します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow Section -->
+  <section class="flow-section">
+    <div class="container">
+      <h2>導入の流れ</h2>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <span class="flow-number">1</span>
+          <div class="flow-content">
+            <h3>15分無料相談</h3>
+            <p>現状の詰まり（迷い・調整地獄・放置ポイント）を特定します。オンラインで気軽にご相談ください。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-number">2</span>
+          <div class="flow-content">
+            <h3>提案・概算</h3>
+            <p>規模・案件量・運用課題から標準ルートを設計し、最適なプランをご提案します。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-number">3</span>
+          <div class="flow-content">
+            <h3>導入</h3>
+            <p>運用設計＋初期セットアップ（予約メニュー／Boxフォルダ規格／テンプレ）を実施します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Section -->
+  <section class="security-section">
+    <div class="container">
+      <h2>個人情報・セキュリティ</h2>
+      <div class="security-grid">
+        <div class="security-item">
+          <div class="security-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+          </div>
+          <div class="security-content">
+            <p>役割ベースのアクセス制御（必要な人に必要な範囲だけ）</p>
+          </div>
+        </div>
+        <div class="security-item">
+          <div class="security-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+            </svg>
+          </div>
+          <div class="security-content">
+            <p>証跡は所在と更新状況が追える形で整理</p>
+          </div>
+        </div>
+        <div class="security-item">
+          <div class="security-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+            </svg>
+          </div>
+          <div class="security-content">
+            <p>外部共有は原則しない（必要時は期限付き等で統制）</p>
+          </div>
+        </div>
+        <div class="security-item">
+          <div class="security-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+          </div>
+          <div class="security-content">
+            <p>機微な医療情報は、同意と役割に基づき最小限で取り扱い</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>よくあるご質問</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">結局、会社の仕事が増えませんか？</div>
+          <p class="faq-a">増やしません。企業側の作業は「窓口1名＋月次確認＋既存資料共有」が基本です。日程調整、追いかけ、証跡探し、説明の取りまとめを減らします。</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">産業保健の知識がなくても回せますか？</div>
+          <p class="faq-a">標準ルート（手順書）とチェックリスト、役割分担表を作り、迷いを減らします。</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">予約システムで従業員が勝手に予約して混乱しませんか？</div>
+          <p class="faq-a">メニュー設計（業務別）、事前入力、必要なら会社承認など、運用ルールを最初に固定します。「自由予約で崩壊」する形にはしません。</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">ドタキャンや再調整が増えませんか？</div>
+          <p class="faq-a">再予約ルール・締切・リマインドを設計し、担当者の往復メールが増えない形にします。</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Boxを使っていません。必須ですか？</div>
+          <p class="faq-a">原則はBoxを推奨しますが、既存の保管先がある場合もご相談可能です。</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">急ぎの対応は？</div>
+          <p class="faq-a">枠が空いていれば48時間以内の予約が可能です。</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">経営には何が見えるようになりますか？</div>
+          <p class="faq-a">"今の未完了""次アクション""意思決定ポイント"が整理され、経営における産業衛生関連のリスクについて即答できる状態に近づけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="contact">
+    <div class="gradient-blur"></div>
+    <div class="grid-pattern"></div>
+    <div class="container">
+      <div class="final-cta-content">
+        <h2>「産業保健の迷い時間」と「調整時間」を削り、<br>経営がリスクを即答できる状態を作ります</h2>
+        <p class="final-cta-lead">15分無料相談で、現状の課題を特定し、最適なプランをご提案します。</p>
+        <div class="cta-benefits">
+          <div class="cta-benefit-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>いま時間が溶けている工程（調整・迷い・探し）を特定</span>
+          </div>
+          <div class="cta-benefit-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>いま放置が起きる箇所（責任・期限・次アクションの断絶）を確認</span>
+          </div>
+          <div class="cta-benefit-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>標準ルート化の最短手順を提示</span>
+          </div>
+        </div>
+        <a href="#" class="cta-button primary">
+          15分無料相談を予約する
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <a href="https://kdkconslt-sngyouijm.com/" class="logo">東京KIDUKIコンサルティング<span>産業医事務所</span></a>
+      <p>© 2026 東京KIDUKIコンサルティング産業医事務所. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
