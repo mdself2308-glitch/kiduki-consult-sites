@@ -143,21 +143,32 @@
       font-family: var(--font-display);
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--color-primary);
+      color: var(--color-white);
       text-decoration: none;
       letter-spacing: -0.02em;
     }
 
     .logo span {
-      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+      background: linear-gradient(135deg, #A8E6E5 0%, #D4F5F5 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
+    header.scrolled .logo {
+      color: var(--color-primary);
+    }
+
+    header.scrolled .logo span {
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: var(--color-primary);
+      background-clip: unset;
+    }
+
     .header-cta {
-      background: var(--color-primary);
-      color: var(--color-white);
+      background: #A8E6E5;
+      color: var(--color-primary);
       padding: 12px 28px;
       border-radius: 100px;
       text-decoration: none;
@@ -174,6 +185,17 @@
       transform: translateY(-2px);
     }
 
+    header.scrolled .header-cta {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    header.scrolled .header-cta:hover {
+      background: var(--color-white);
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
     .header-nav {
       display: flex;
       align-items: center;
@@ -181,7 +203,7 @@
     }
 
     .header-blog {
-      color: var(--color-primary);
+      color: var(--color-white);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
@@ -189,6 +211,14 @@
     }
 
     .header-blog:hover {
+      color: #A8E6E5;
+    }
+
+    header.scrolled .header-blog {
+      color: var(--color-primary);
+    }
+
+    header.scrolled .header-blog:hover {
       color: var(--color-accent);
     }
 
