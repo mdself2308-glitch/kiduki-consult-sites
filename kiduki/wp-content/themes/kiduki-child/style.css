@@ -4,9 +4,149 @@ Theme URI: https://kdkconslt-sngyouijm.com/
 Description: Phase 1 customizations for Tokyo KIDUKI Consulting.
 Author: Tokyo KIDUKI Consulting
 Template: emanon-premium
-Version: 1.1.0
+Version: 1.2.0
 Text Domain: kiduki-child
 */
+
+/* =========================================================================
+   KIDUKI デザイントークン v1.0
+   静的トップ（consult/index.html）と配色・書体を統一する。
+   変更時は静的トップの :root と必ず対で更新すること。
+   ========================================================================= */
+
+:root {
+	/* 基調 */
+	--kdk-deep: #1d3a30;        /* 濃緑：ヒーロー・見出し・フッター */
+	--kdk-deep-light: #2c5546;
+	--kdk-accent: #3f7a5e;      /* 差し色：リンク・ボタン・マーク */
+	--kdk-accent-soft: #b6d6c6;
+	--kdk-ink: #1c2320;         /* 本文 */
+	--kdk-ink-soft: #566159;    /* 補助文 */
+	--kdk-bg: #f7f8f6;          /* 面 */
+	--kdk-border: #dee3df;
+	--kdk-danger: #c81e1e;
+	--kdk-font: "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+		"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+
+	/* 親テーマ（Emanon Premium）の変数を上書き */
+	--ep-primary-color: #1d3a30;
+	--ep-primary-light-color: #7fa08f;
+	--ep-primary-link-color: #3f7a5e;
+	--ep-primary-link-hover-color: #2c5546;
+	--ep-primary-secondary-color: #dee3df;
+}
+
+/* ---- 書体 ---- */
+body,
+input,
+select,
+textarea,
+button {
+	font-family: var(--kdk-font);
+	color: var(--kdk-ink);
+}
+
+body {
+	line-height: 1.9;
+}
+
+h1, h2, h3, h4, h5, h6,
+.entry-title,
+.archive-title,
+.widget-title {
+	font-family: var(--kdk-font);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	line-height: 1.45;
+	color: var(--kdk-deep);
+}
+
+.entry-content p,
+.entry-content li {
+	color: var(--kdk-ink);
+}
+
+/* ---- リンク ---- */
+a {
+	color: var(--kdk-accent);
+}
+
+a:hover,
+a:focus {
+	color: var(--kdk-deep-light);
+}
+
+a:focus-visible {
+	outline: 2px solid var(--kdk-accent);
+	outline-offset: 2px;
+}
+
+/* ---- 見出しの装飾（親テーマの色指定を打ち消す） ---- */
+.entry-content h2 {
+	border-left: 4px solid var(--kdk-accent);
+	padding-left: 0.8em;
+	background: none;
+}
+
+.entry-content h3 {
+	border-bottom: 1px solid var(--kdk-border);
+	padding-bottom: 0.4em;
+}
+
+/* ---- ボタン ---- */
+.btn,
+.button,
+.wp-block-button__link,
+input[type="submit"] {
+	background-color: var(--kdk-accent);
+	border-color: var(--kdk-accent);
+	color: #ffffff;
+	border-radius: 6px;
+	box-shadow: none;
+	background-image: none;
+}
+
+.btn:hover,
+.button:hover,
+.wp-block-button__link:hover,
+input[type="submit"]:hover {
+	background-color: var(--kdk-deep-light);
+	border-color: var(--kdk-deep-light);
+	color: #ffffff;
+}
+
+/* ---- 記事本文に貼り込まれた旧パレットの打ち消し ----
+   固定ページ・投稿の本文に、ページごとに異なる配色の <style> が
+   埋め込まれている（緑・青・オレンジ等）。段階的に本文側を是正するまでの
+   暫定措置として、代表的な変数名をここで上書きする。 */
+.entry-content,
+.page-content {
+	--primary-color: var(--kdk-deep);
+	--secondary-color: var(--kdk-accent);
+	--accent-color: var(--kdk-accent);
+	--secondary-accent: var(--kdk-deep-light);
+	--tertiary-accent: var(--kdk-accent);
+	--primary: var(--kdk-deep);
+	--secondary: var(--kdk-deep-light);
+	--accent: var(--kdk-accent);
+	--text: var(--kdk-ink);
+	--text-color: var(--kdk-ink);
+	--light: var(--kdk-bg);
+	--light-gray: var(--kdk-bg);
+	--background-color: #ffffff;
+	--success: var(--kdk-accent);
+	--card-shadow: 0 3px 14px rgba(20, 35, 28, 0.07);
+	--shadow: 0 3px 14px rgba(20, 35, 28, 0.07);
+	--gradient: none;
+}
+
+/* 本文内のグラデーション見出し・発光を平坦化 */
+.entry-content [style*="linear-gradient"],
+.page-content [style*="linear-gradient"] {
+	background-image: none !important;
+}
+
+
 
 .kiduki-contact {
 	max-width: 760px;
@@ -121,4 +261,73 @@ Text Domain: kiduki-child
 	.kiduki-contact input[type="submit"] {
 		width: 100%;
 	}
+}
+
+/* ---- 親テーマが生成する配色の上書き（暫定） ----
+   Emanon Premium は配色をCSS変数ではなくリテラル値で出力するため、
+   変数の上書きだけでは効かない。本筋の是正はカスタマイザーの
+   メインカラー設定の変更（承認ゲート）で、ここはそれまでの暫定措置。
+   対象は利用者の目に触れる頻度が高い要素に絞っている。 */
+
+/* 面（塗り） */
+.cat-name,
+.post-list-meta__cat,
+.c-btn__main,
+.widget_popular_post .popular-post-rank,
+.page-numbers.current,
+.search-submit,
+.sns-follow__button:not(.sns-brand-color) .btn-main {
+	background-color: var(--kdk-deep);
+	border-color: var(--kdk-deep);
+	color: #ffffff;
+}
+
+.c-btn__main:hover,
+.search-submit:hover,
+.sns-follow__button:not(.sns-brand-color) .btn-main:hover {
+	background-color: var(--kdk-accent);
+	border-color: var(--kdk-accent);
+	color: #ffffff;
+}
+
+/* 線・文字 */
+.c-btn__outline {
+	border-color: var(--kdk-deep);
+	color: var(--kdk-deep);
+}
+
+.c-btn__outline:hover {
+	background-color: var(--kdk-deep);
+	color: #ffffff;
+}
+
+.breadcrumb__item a,
+.comment-reply-link,
+.c-link,
+.c-link__underline,
+.article-body .contents-outline__item .toc-box_link {
+	color: var(--kdk-accent);
+}
+
+.article-body .contents-outline__item {
+	border-color: var(--kdk-border);
+}
+
+/* 目次ボックス */
+.contents-outline,
+.ez-toc-container {
+	border-color: var(--kdk-border);
+	background-color: var(--kdk-bg);
+}
+
+/* ドロワー・ハンバーガー */
+.drawer-menu .hamburger-close-line span,
+.hamburger-menu-trigger span {
+	background-color: var(--kdk-deep);
+}
+
+/* 読み込み表示 */
+.loading-icon,
+.loading-text {
+	color: var(--kdk-deep);
 }

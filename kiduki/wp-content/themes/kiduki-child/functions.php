@@ -21,10 +21,18 @@ function kiduki_child_enqueue_styles() {
 		$parent_theme->get( 'Version' )
 	);
 
+	// Noto Sans JP: 静的トップと書体を統一する。
+	wp_enqueue_style(
+		'kiduki-noto-sans-jp',
+		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
+		array(),
+		null
+	);
+
 	wp_enqueue_style(
 		'kiduki-child',
 		get_stylesheet_uri(),
-		array( 'emanon-premium-parent' ),
+		array( 'emanon-premium-parent', 'kiduki-noto-sans-jp' ),
 		$child_theme->get( 'Version' )
 	);
 
@@ -49,6 +57,22 @@ function kiduki_child_enqueue_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'kiduki_child_enqueue_styles' );
+
+/**
+ * Preconnect to the font CDN so the webfont does not delay first paint.
+ */
+function kiduki_child_resource_hints( $urls, $relation_type ) {
+	if ( 'preconnect' === $relation_type ) {
+		$urls[] = array( 'href' => 'https://fonts.googleapis.com' );
+		$urls[] = array(
+			'href'        => 'https://fonts.gstatic.com',
+			'crossorigin' => 'anonymous',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'kiduki_child_resource_hints', 10, 2 );
 
 /**
  * Whether the current page is the contact thank-you page.
