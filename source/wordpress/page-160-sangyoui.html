@@ -1,0 +1,457 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>産業医委任</title>
+    <style>
+        :root { --primary: #1d3a30; --secondary: #2c5546; --accent: #3f7a5e; --text: #1c2320; --light: #f7f8f6; --dark: #1d3a30; --success: #3f7a5e; }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .futuristic-dots {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-image: 
+                radial-gradient(var(--accent) 1px, transparent 1px),
+                radial-gradient(var(--accent) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.2;
+            animation: flow 10s linear infinite;
+        }
+        
+        @keyframes flow {
+            0% { background-position: 0 0, 10px 10px; }
+            100% { background-position: 100px 0, 110px 10px; }
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f7f8f6 100%);
+            color: var(--text);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23${encodeURIComponent('#1d3a30').substring(1)}' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .title-section {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            color: white;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: floating 6s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .title-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 15s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(-15deg);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), transparent);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 1.5rem 0;
+        }
+        
+        .service-item {
+            padding: 0.8rem 0 0.8rem 2.2rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            transition: transform 0.2s ease;
+            list-style-type: none;
+        }
+        
+        .service-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .service-item::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 1.2rem;
+            width: 10px;
+            height: 10px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            transition: transform 0.2s ease;
+        }
+        
+        .service-item:hover::before {
+            transform: scale(1.3);
+        }
+        
+        .highlight {
+            background: linear-gradient(90deg, rgba(79, 209, 197, 0.1) 0%, rgba(79, 209, 197, 0) 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            box-shadow: 0 5px 15px rgba(26, 94, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 94, 60, 0.4);
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 2.2rem;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(26, 94, 60, 0.2);
+            z-index: 1;
+        }
+        
+        .icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .icon::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-card:hover .icon::before {
+            opacity: 1;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            color: var(--text);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Animation elements */
+        .title-float {
+            animation: floating 4s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Geometric decorations */
+        .decoration {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, transparent 70%);
+            top: -50px;
+            right: -50px;
+        }
+        
+        .dots {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-section">
+            <h1>産業医委任</h1>
+            <p>より健康で生産的な職場環境の実現をサポートします</p>
+            <div class="futuristic-dots"></div>
+        </div>
+        
+        <div class="card">
+            <h2>産業医委任概要</h2>
+            <p>標準契約では、月1回1-2時間で担当産業医の事業場訪問をして、安全衛生委員会の参加、職場巡視、今後にむけての打ち合わせや適宜面談実施するという流れが基本となります（詳細は下記業務内容ご参照ください）。</p>
+            <p>企業内で抱える様々な労働衛生に関するアドバイスや労働者のフィジカル・メンタル面のサポートを行います。</p>
+            <p>一般的・表面的なアドバイスにとどめず、契約企業様と一緒になってより良い職場環境作りに関わらせていただきます。また契約企業様の良好事例については許可をとった上で、横展開していき、契約企業様全体で最適で具体的な解決策を提示します。</p>
+        </div>
+        
+        <div class="card">
+            <h2>対象</h2>
+            <p>専属産業医を必要としない労働者数1000人未満の各事業場</p>
+            <p>（法人全体では1000人以上でも１事業場あたり1000人未満の場合も対象）</p>
+        </div>
+        
+        <div class="card">
+            <h2>業務内容</h2>
+            <ul>
+                <li class="service-item">産業医の選任（労働基準監督署へ届出）</li>
+                <li class="service-item">担当産業医の事業場訪問　月1回2時間（臨時訪問、延長はその都度状況に応じて対応可）</li>
+                <li class="service-item">弊所への随時相談（電話、メール等で産業医へ相談可。担当産業医の他、弊所代表や他の医師など事務所全体でご相談にお答えします。）</li>
+                <li class="service-item">各種面談（長時間労働、健康診断事後措置、メンタル関連、ストレスチェック事後措置、休職復職判定、復職支援、上司相談など）</li>
+                <li class="service-item">健康診断結果チェック、受診勧奨、保健指導</li>
+                <li class="service-item">産業医チーム制によるサポート</li>
+                <li class="service-item">労働衛生管理体制の構築支援</li>
+                <li class="service-item">衛生委員会への出席、講話</li>
+                <li class="service-item">労働衛生に関する情報提供</li>
+            </ul>
+        </div>
+        
+        <div class="grid">
+            <div class="feature-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </div>
+                <h3>事業場訪問</h3>
+                <p>月1回の定期訪問で職場環境を確認し、健康管理をサポートします</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h3>個別面談</h3>
+                <p>労働者のメンタル・フィジカル面をケアする個別面談を実施します</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <path d="M12 7v5"></path>
+                        <path d="M9.5 9.5h5"></path>
+                    </svg>
+                </div>
+                <h3>健康診断</h3>
+                <p>健康診断結果の確認と適切な事後措置の提案を行います</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>料金について</h2>
+            <p>事業場あたりの対象労働者数に応じて変動。</p>
+            <p>（対象事業場以外の小規模事業場の労働者数はカウントしません。50人未満の小規模事業場の健康管理や相談も対象とする場合にはご相談ください。）</p>
+            <p>ご質問やお見積りのご依頼は、下記フォームよりお気軽にお問い合わせください。</p>
+            <a href="https://kdkconslt-sngyouijm.com/contact/" class="btn">お問い合わせ</a>
+        </div>
+        
+        <div class="card" id="contact">
+            <h2>その他のサポートについて</h2>
+            <p>その他のサポートについては、下記よりご確認ください。</p>
+            <a href="https://kdkconslt-sngyouijm.com/service/" class="btn">サポート一覧へ</a>
+        </div>
+        
+
+    </div>
+</body>
+</html>
+<!-- /wp:html -->

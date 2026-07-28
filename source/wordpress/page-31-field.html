@@ -1,0 +1,389 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>産業医専門事務所の特色</title>
+    <style>
+        :root { --primary-color: #1d3a30; --secondary-color: #2c5546; --accent-color: #dbeae2; --text-color: #1c2320; --light-text: #f7f8f6; --background-color: #f7f8f6; --card-bg: #ffffff; --shadow: 0 3px 14px rgba(20, 35, 28, 0.07); --gradient: none; }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .main-content {
+            padding-top: 40px;
+        }
+        
+        .icon-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 25px;
+            object-fit: cover;
+            vertical-align: middle;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+        }
+        
+        .philosophy {
+            background: var(--gradient);
+            color: var(--light-text);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .philosophy::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .philosophy h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .philosophy p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-header::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-header::after {
+            opacity: 1;
+        }
+        
+        .feature-header h3 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-body {
+            padding: 1.8rem;
+        }
+        
+        .feature-body p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .guidelines {
+            padding: 4rem 0;
+            background-color: var(--background-color);
+            position: relative;
+        }
+        
+        .guidelines::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to top, rgba(10, 95, 68, 0.05), transparent);
+        }
+        
+        .guideline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .guideline-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .guideline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .guideline-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .guideline-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        /* Animation effects */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .feature-grid, .guideline-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .philosophy h2 {
+                font-size: 1.5rem;
+            }
+            
+            .philosophy p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .icon-image {
+                width: 60px;
+                height: 60px;
+                margin-right: 15px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content" style="padding-top: 20px;">
+        <div class="container">
+            <div class="philosophy float-animation">
+                <h2>
+                    <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-e1742272466192.png" alt="電球アイコン" class="icon-image">
+                    『気づき』を理念・テーマに
+                </h2>
+                <p>企業の人材リスク、損失を最小化し、組織の生産性を向上させます</p>
+            </div>
+            
+            <section class="features">
+                <div class="section-title">
+                    <h2>当事務所の特色</h2>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>
+                                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-2-e1742273082360.png" alt="コミュニケーションアイコン" class="icon-image">
+                                コミュニケーションを重視した対応
+                            </h3>
+                        </div>
+                        <div class="feature-body">
+                            <p>当事務所は産業医紹介派遣会社のようなアルバイト産業医ではなく、プロの産業医として責任をもち御社を強力にサポートいたします。</p>
+                            <p>特にコミュニケーションを重視し、企業にとって本当に役立つ、頼れる産業衛生活動を展開していきます。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>
+                                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-3-e1742273108393.png" alt="医療アイコン" class="icon-image">
+                                内科専門医・心療内科専門医による総合的対応
+                            </h3>
+                        </div>
+                        <div class="feature-body">
+                            <p>当事務所代表は内科専門医および心療内科専門医資格を有し、両立支援外来など勤労者のメンタルヘルスに特化した臨床経験もございます。</p>
+                            <p>メンタル不調者への対応だけではなく、復職支援プログラムの策定支援や健診チェック、生活習慣病指導など、従業員の健康問題について適切なサポートを提供します。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>
+                                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-4-e1742273116761.png" alt="経験アイコン" class="icon-image">
+                                豊富な産業医経験
+                            </h3>
+                        </div>
+                        <div class="feature-body">
+                            <p>当事務所代表は労働衛生コンサルタントを取得しており、海運会社、製造業、情報通信業、銀行・証券会社、建材・住宅会社、システム開発会社など多くの企業での産業医経験、安全衛生管理体制立ち上げ経験を有します。</p>
+                            <p>他社での経験を生かして、各企業のニーズに合わせたサービスを提供します。</p>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>
+                                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-6-e1742273135540.png" alt="様々なニーズアイコン" class="icon-image">
+                                様々なニーズに対応
+                            </h3>
+                        </div>
+                        <div class="feature-body">
+                            <p>当事務所ではオンラインを用いた遠隔での対応や産業医選任の努力義務規定の50人未満の事業所様へのサービス提供しています。</p>
+                            <p>遠隔地の従業員に対しての面談のニーズは多く、休復職者面接などのサポートが可能です。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>
+                                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-7-e1742273146912.png" alt="連携アイコン" class="icon-image">
+                                連携
+                            </h3>
+                        </div>
+                        <div class="feature-body">
+                            <p>様々な病院・クリニックで勤務をしてきた産業医が在籍し、信頼できる外部医療機関とのネットワークのみならず産業衛生に関する情報のアップデートで情報提供や企業のニーズに合わせた仕組みづくりに必要なサービスの検討など連携しながらチャレンジしていきます。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="container">
+            <section class="guidelines">
+                <div class="section-title">
+                    <h2>行動指針</h2>
+                </div>
+                
+                <div class="guideline-container">
+                    <div class="guideline-card">
+                        <h3>
+                            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-9-e1742273165203.png" alt="社会アイコン" class="icon-image">
+                            社会に向けて
+                        </h3>
+                        <p>私達は従業員の健康を守る産業医活動を通じて社会が抱える健康に関する課題の解決に貢献し、社会全体を健康につなげるその一端を担えると信じています。</p>
+                    </div>
+                    
+                    <div class="guideline-card">
+                        <h3>
+                            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-10-e1742273174717.png" alt="企業アイコン" class="icon-image">
+                            顧問企業に向けて
+                        </h3>
+                        <p>公平な立場から適切な判断および助言を行うことで産業衛生の向上につなげ健康な労働力を守り生産性を高め企業の更なる発展をサポートします。</p>
+                    </div>
+                    
+                    <div class="guideline-card">
+                        <h3>
+                            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/アイコン-11-e1742273183564.png" alt="従業員アイコン" class="icon-image">
+                            顧問企業の従業員の方に向けて
+                        </h3>
+                        <p>コミュニケーションを通じ、人生における「健康」、「仕事」を共に考えることで「人生の満足度」という難しいテーマに少しでもつながるよう支援していきます。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+<!-- /wp:html -->
