@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.env.local
+*.log
+backups/
+reports/runtime/
+node_modules/
+tmp/
