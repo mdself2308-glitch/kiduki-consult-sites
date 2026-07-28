@@ -82,3 +82,14 @@ function kiduki_contact_thanks_robots( $robots ) {
 	return $robots;
 }
 add_filter( 'wp_robots', 'kiduki_contact_thanks_robots' );
+
+/**
+ * Permanently redirect the retired inquiry page to the unified contact form.
+ */
+function kiduki_redirect_legacy_question() {
+	if ( is_page( 'question' ) ) {
+		wp_safe_redirect( home_url( '/contact/' ), 301, 'KIDUKI' );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'kiduki_redirect_legacy_question', 0 );

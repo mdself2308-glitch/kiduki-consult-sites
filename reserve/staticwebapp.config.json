@@ -1,0 +1,10 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/*",
+      "redirect": "https://kdkconslt-sngyouijm.com/contact/",
+      "statusCode": 301
+    }
+  ]
+}

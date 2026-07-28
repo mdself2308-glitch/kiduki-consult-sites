@@ -62,7 +62,11 @@ const plannedConfiguration = {
   encryption: 'ssl',
   authentication: true,
   smtpUser: 'info@kdkconslt-sngyouijm.com',
-  w3TotalCacheRejectUris: ['^/contact/?$', '^/contact/thanks/?$'],
+  w3TotalCacheRejectUris: [
+    '^/contact/?$',
+    '^/contact/thanks/?$',
+    '^/question/?$',
+  ],
 };
 
 if (!apply && !cleanupTemporary) {
@@ -177,13 +181,16 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\tif ( class_exists( '\\\\W3TC\\\\Dispatcher' ) ) {
 \t\t\t\t\t\t$config = \\W3TC\\Dispatcher::config();
 \t\t\t\t\t\t$reject_uris = $config->get_array( 'pgcache.reject.uri' );
-\t\t\t\t\t\tforeach ( array( '^/contact/?$', '^/contact/thanks/?$' ) as $pattern ) {
+\t\t\t\t\t\tforeach ( array( '^/contact/?$', '^/contact/thanks/?$', '^/question/?$' ) as $pattern ) {
 \t\t\t\t\t\t\tif ( ! in_array( $pattern, $reject_uris, true ) ) {
 \t\t\t\t\t\t\t\t$reject_uris[] = $pattern;
 \t\t\t\t\t\t\t}
 \t\t\t\t\t\t}
 \t\t\t\t\t\t$config->set( 'pgcache.reject.uri', array_values( $reject_uris ) );
 \t\t\t\t\t\t$config->save();
+\t\t\t\t\t\tif ( function_exists( 'w3tc_flush_url' ) ) {
+\t\t\t\t\t\t\tw3tc_flush_url( home_url( '/question/' ) );
+\t\t\t\t\t\t}
 \t\t\t\t\t\tif ( function_exists( 'w3tc_flush_all' ) ) {
 \t\t\t\t\t\t\tw3tc_flush_all();
 \t\t\t\t\t\t}
