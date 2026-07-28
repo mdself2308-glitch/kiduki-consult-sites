@@ -4,6 +4,121 @@ Theme URI: https://kdkconslt-sngyouijm.com/
 Description: Phase 1 customizations for Tokyo KIDUKI Consulting.
 Author: Tokyo KIDUKI Consulting
 Template: emanon-premium
-Version: 1.0.0
+Version: 1.1.0
 Text Domain: kiduki-child
 */
+
+.kiduki-contact {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+.kiduki-contact .wpcf7-form > p {
+	margin-bottom: 1.5rem;
+}
+
+.kiduki-contact .wpcf7-form label {
+	display: block;
+	color: #24323d;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.kiduki-contact .wpcf7-form-control-wrap {
+	display: block;
+	margin-top: 0.5rem;
+}
+
+.kiduki-contact input[type="text"],
+.kiduki-contact input[type="email"],
+.kiduki-contact input[type="tel"],
+.kiduki-contact select,
+.kiduki-contact textarea {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	padding: 0.8rem 0.9rem;
+	border: 1px solid #b8c3ca;
+	border-radius: 4px;
+	background: #fff;
+	color: #202a31;
+	font: inherit;
+}
+
+.kiduki-contact textarea {
+	min-height: 12rem;
+	resize: vertical;
+}
+
+.kiduki-contact input:focus,
+.kiduki-contact select:focus,
+.kiduki-contact textarea:focus {
+	border-color: #176f73;
+	outline: 3px solid rgba(23, 111, 115, 0.18);
+	outline-offset: 1px;
+}
+
+.kiduki-contact .wpcf7-acceptance label {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.55rem;
+	font-weight: 400;
+}
+
+.kiduki-contact .wpcf7-acceptance input {
+	flex: 0 0 auto;
+	margin-top: 0.4rem;
+}
+
+.kiduki-contact input[type="submit"] {
+	min-width: min(100%, 22rem);
+	padding: 0.95rem 1.5rem;
+	border: 0;
+	border-radius: 4px;
+	background: #176f73;
+	color: #fff;
+	font: inherit;
+	font-weight: 700;
+	line-height: 1.5;
+	cursor: pointer;
+}
+
+.kiduki-contact input[type="submit"]:hover,
+.kiduki-contact input[type="submit"]:focus-visible {
+	background: #0e5558;
+}
+
+.kiduki-contact .wpcf7-not-valid-tip {
+	margin-top: 0.4rem;
+	color: #b42318;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.kiduki-contact .wpcf7-response-output {
+	margin: 1.5rem 0 0;
+	padding: 0.9rem 1rem;
+	border-radius: 4px;
+}
+
+.kiduki-contact__fallback {
+	margin-top: 2.25rem;
+	padding: 1rem 1.1rem;
+	border-left: 4px solid #176f73;
+	background: #f2f7f7;
+	overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+	.kiduki-contact input[type="text"],
+	.kiduki-contact input[type="email"],
+	.kiduki-contact input[type="tel"],
+	.kiduki-contact select,
+	.kiduki-contact textarea {
+		font-size: 16px;
+	}
+
+	.kiduki-contact input[type="submit"] {
+		width: 100%;
+	}
+}
