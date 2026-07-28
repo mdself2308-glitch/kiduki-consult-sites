@@ -1,0 +1,439 @@
+<title>睡眠研修パッケージ 設計書 v1.0</title>
+
+<style>
+  :root{
+    --paper:#f6f7f4; --surface:#fffffe; --surface-2:#f0f2ed; --fill:#eaeee6;
+    --ink:#131a24; --ink-soft:#4a5560; --ink-faint:#7c8791;
+    --rule:#dbdfd8; --rule-strong:#c3c9bf;
+    --accent:#2b4d7e; --accent-soft:#e7ecf4;
+    --ok:#2f6b4f; --ok-bg:#e8f0ea;
+    --warn:#8a6416; --warn-bg:#f6efdf;
+    --crit:#9c3128; --crit-bg:#f7e8e6;
+    --font-display:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP","Times New Roman",serif;
+    --font-body:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif;
+    --font-data:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0e1319;--surface:#151c24;--surface-2:#1a222b;--fill:#1f2831;
+      --ink:#e3e8ec;--ink-soft:#a3aeb8;--ink-faint:#78848e;--rule:#26303a;--rule-strong:#36434f;
+      --accent:#86aede;--accent-soft:#1c2a3a;--ok:#6cc296;--ok-bg:#16281f;
+      --warn:#d6ab5c;--warn-bg:#2a2213;--crit:#e08a80;--crit-bg:#2b1917;}
+  }
+  :root[data-theme="dark"]{--paper:#0e1319;--surface:#151c24;--surface-2:#1a222b;--fill:#1f2831;
+    --ink:#e3e8ec;--ink-soft:#a3aeb8;--ink-faint:#78848e;--rule:#26303a;--rule-strong:#36434f;
+    --accent:#86aede;--accent-soft:#1c2a3a;--ok:#6cc296;--ok-bg:#16281f;
+    --warn:#d6ab5c;--warn-bg:#2a2213;--crit:#e08a80;--crit-bg:#2b1917;}
+  :root[data-theme="light"]{--paper:#f6f7f4;--surface:#fffffe;--surface-2:#f0f2ed;--fill:#eaeee6;
+    --ink:#131a24;--ink-soft:#4a5560;--ink-faint:#7c8791;--rule:#dbdfd8;--rule-strong:#c3c9bf;
+    --accent:#2b4d7e;--accent-soft:#e7ecf4;--ok:#2f6b4f;--ok-bg:#e8f0ea;
+    --warn:#8a6416;--warn-bg:#f6efdf;--crit:#9c3128;--crit-bg:#f7e8e6;}
+
+  body{background:var(--paper); color:var(--ink); font-family:var(--font-body);
+       font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 24px 96px;}
+  h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; text-wrap:balance; line-height:1.42;}
+  a{color:var(--accent);} p{margin-bottom:15px;}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+  .mast{padding:64px 0 28px; border-bottom:2px solid var(--ink);}
+  .eyebrow{font-family:var(--font-data); font-size:11px; letter-spacing:.18em;
+           text-transform:uppercase; color:var(--accent); margin-bottom:18px;}
+  .mast h1{font-size:clamp(26px,4vw,40px); margin-bottom:16px;}
+  .standfirst{font-size:16.5px; color:var(--ink-soft); max-width:64ch;}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:28px;
+        font-family:var(--font-data); font-size:12px; color:var(--ink-faint);}
+  .meta b{color:var(--ink-soft); font-weight:500;}
+
+  section{padding-top:52px;}
+  h2{font-size:22px; margin-bottom:6px;}
+  .h2sub{color:var(--ink-faint); font-size:13.5px; margin-bottom:24px;}
+  h3{font-size:17px; margin:28px 0 12px;}
+
+  /* thesis band */
+  .thesis{background:var(--accent-soft); border-left:3px solid var(--accent);
+          padding:22px 26px; margin-top:26px; font-size:15px; line-height:1.85;}
+  .thesis b{color:var(--ink);}
+  .thesis p{margin-bottom:11px;} .thesis p:last-child{margin-bottom:0;}
+
+  /* timeline */
+  .tl{border:1px solid var(--rule); background:var(--surface); margin-top:20px;}
+  .blk{display:grid; grid-template-columns:1fr; border-bottom:1px solid var(--rule);}
+  @media(min-width:780px){.blk{grid-template-columns:96px 1fr;}}
+  .blk:last-child{border-bottom:none;}
+  .clock{background:var(--surface-2); padding:16px 14px; border-bottom:1px solid var(--rule);
+         font-family:var(--font-data); font-size:13px; font-weight:700; color:var(--accent);
+         display:flex; align-items:flex-start; gap:8px;}
+  @media(min-width:780px){.clock{border-bottom:none; border-right:1px solid var(--rule); flex-direction:column; gap:3px;}}
+  .clock .dur{font-size:11px; font-weight:400; color:var(--ink-faint);}
+  .blkbody{padding:18px 22px 22px;}
+  .blkbody h4{font-size:16px; margin-bottom:10px;}
+  .blkbody p{font-size:14.3px; color:var(--ink-soft); line-height:1.8; margin-bottom:10px;}
+  .blkbody p:last-child{margin-bottom:0;}
+  .say{border-left:2px solid var(--rule-strong); padding-left:14px; margin:12px 0;
+       font-size:14px; color:var(--ink); line-height:1.8;}
+  .say::before{content:"話す内容"; display:block; font-family:var(--font-data); font-size:10px;
+       letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:6px;}
+
+  /* tables */
+  .tw{overflow-x:auto; border:1px solid var(--rule); margin:18px 0; background:var(--surface);}
+  table{border-collapse:collapse; width:100%; min-width:600px; font-size:13.8px;}
+  th,td{padding:11px 14px; text-align:left; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.7;}
+  th{font-family:var(--font-data); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+     color:var(--ink-faint); font-weight:600; background:var(--surface-2); white-space:nowrap;}
+  tr:last-child td{border-bottom:none;}
+  td code{font-family:var(--font-data); font-size:12px; color:var(--accent); font-weight:700;}
+  .num{font-variant-numeric:tabular-nums;}
+
+  .note{border-left:3px solid var(--warn); background:var(--warn-bg);
+        padding:16px 20px; margin-top:20px; font-size:14.2px; line-height:1.8;}
+  .note b{color:var(--ink);}
+  .note p{margin-bottom:9px;} .note p:last-child{margin-bottom:0;}
+  .stop{border-left-color:var(--crit); background:var(--crit-bg);}
+  .good{border-left-color:var(--ok); background:var(--ok-bg);}
+
+  ul.clean{list-style:none; margin:0 0 14px; padding:0;}
+  ul.clean li{padding-left:21px; position:relative; margin-bottom:10px;
+              font-size:14.4px; color:var(--ink-soft); line-height:1.78;}
+  ul.clean li::before{content:""; position:absolute; left:3px; top:11px; width:6px; height:1px; background:var(--accent);}
+  ul.clean li b{color:var(--ink); font-weight:600;}
+
+  .q{background:var(--surface); border:1px solid var(--rule); padding:18px 22px; margin-top:14px;}
+  .q .qn{font-family:var(--font-data); font-size:11px; font-weight:700; color:var(--accent); letter-spacing:.08em;}
+  .q .qt{font-size:15px; color:var(--ink); margin:6px 0 10px; font-weight:600;}
+  .q .qo{font-size:13.5px; color:var(--ink-soft); line-height:1.85;}
+  .q .why{font-size:12.5px; color:var(--ink-faint); margin-top:10px; padding-top:10px;
+          border-top:1px dotted var(--rule-strong); line-height:1.7;}
+
+  footer{margin-top:72px; padding-top:22px; border-top:1px solid var(--rule);
+         font-size:12.5px; color:var(--ink-faint);}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">商品設計書 v1.0 ／ 内部資料</div>
+    <h1>睡眠研修パッケージ<br>設計書</h1>
+    <p class="standfirst">
+      90分の研修本体、前後のアンケート、実施報告書までを一体で設計する。
+      設計の出発点は研修内容ではなく、<b>健康経営度調査で企業が何を書く必要があるか</b>から逆算している。
+    </p>
+    <div class="meta">
+      <span><b>本体</b> 90分（対面／オンライン）</span>
+      <span><b>測定</b> 事前・事後・3か月後</span>
+      <span><b>納品</b> 実施報告書</span>
+      <span><b>作成</b> 2026-07-28</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>設計の起点</h2>
+    <p class="h2sub">なぜ「アンケートつき」なのか。ここが商品の値段を決めている。</p>
+
+    <div class="thesis">
+      <p><b>研修そのものは差別化にならない。</b>睡眠の話ができる人は他にもいる。差がつくのは、<b>企業が申請書に書ける状態で終わるかどうか</b>。</p>
+      <p>健康経営度調査（大規模法人部門）の教育に関する設問には、こう書かれている — <b>「参加者比率を把握していない場合、不適合となります」</b>。つまり研修を実施しても、<b>参加率を把握していなければ、その企業は評価されない</b>。</p>
+      <p>さらに調査票は、健康課題について<b>現状値と目標値の記入</b>を求める。経産省の記入例そのものが「睡眠不足・不眠症に悩む従業員の割合 30% → 15%」である。<b>つまり企業は、研修の前後で数字を持っていなければ書けない。</b></p>
+      <p>したがってこのパッケージは、研修の前に測り、後に測り、3か月後にもう一度測る。<b>研修を売っているのではなく、申請書に書ける数字と証憑を売っている。</b></p>
+    </div>
+
+    <h3>調査票のどこに効くか</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>調査票が求めるもの</th><th>本パッケージの対応物</th></tr></thead>
+        <tbody>
+          <tr><td>「睡眠に関するセミナーを実施している」<br><span style="color:var(--ink-faint)">中小規模 Q42-a 選択肢3</span></td><td>研修本体</td></tr>
+          <tr><td>「産業医等による睡眠関連指導を実施している」<br><span style="color:var(--ink-faint)">Q42-a 選択肢6</span></td><td>研修本体（実施者が産業医であること）</td></tr>
+          <tr><td>教育の<b>対象者比率・参加者比率</b><br><span style="color:var(--ink-faint)">未把握なら不適合</span></td><td>実施報告書に実人数で記載</td></tr>
+          <tr><td>健康課題の<b>現状値と目標値</b></td><td>事前アンケートが現状値、3か月後が実績値</td></tr>
+          <tr><td>施策の<b>効果検証</b><br><span style="color:var(--ink-faint)">未実施なら不認定</span></td><td>事前／3か月後の比較</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note good">
+      <p><b>効果検証は認定の必須要件。</b>調査票では、施策の取り組み結果に加えて<b>生活習慣や意識（睡眠時間等）の改善状況を検証していない企業は不認定</b>とされている。3か月後アンケートは「あると良いもの」ではなく、<b>企業にとって必須要件を満たす部品</b>である。ここまで含めて売る。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>90分の構成</h2>
+    <p class="h2sub">交代勤務のある職場を標準とし、日勤中心の職場では第4部を差し替える。</p>
+
+    <div class="tl">
+
+      <div class="blk">
+        <div class="clock"><span>0–10分</span><span class="dur">10分</span></div>
+        <div class="blkbody">
+          <h4>第1部　なぜ会社が睡眠を扱うのか</h4>
+          <p>個人の生活習慣の話として始めない。<b>会社の課題として始める</b>。ここを外すと「余計なお世話」と受け取られ、以降が入らない。</p>
+          <div class="say">
+            眠りは個人の問題に見えますが、職場では安全と生産性の問題として現れます。
+            居眠りやヒヤリハット、朝の集中力、判断の遅れ。
+            今日は、眠りを健康の話ではなく、仕事の話としてお伝えします。
+          </div>
+          <p><b>置かないもの</b>：経済損失額などの大きな数字。一次資料を確認していない数字は使わない。会社側から提供された自社のヒヤリハット件数等があれば、そちらを使う。</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="clock"><span>10–30分</span><span class="dur">20分</span></div>
+        <div class="blkbody">
+          <h4>第2部　自分の眠りを知る</h4>
+          <p>厚労省ガイドの中心概念である<b>睡眠休養感</b>をここで導入する。「何時間寝たか」ではなく「休めた感じがあるか」に軸を移すのが、この部の役割。</p>
+          <ul class="clean">
+            <li><b>成人は6時間以上を目安に必要な睡眠時間を確保する</b>（厚労省ガイドの定量的推奨）</li>
+            <li>ただし必要量には個人差があり、時間だけでは判断できない</li>
+            <li><b>睡眠休養感</b>＝睡眠で休養がとれている感覚。ここが低い状態が続いていないか</li>
+            <li>その場で事前アンケートの自分の回答を振り返る（配布済みの場合）</li>
+          </ul>
+          <div class="note stop" style="margin-top:14px;">
+            <p><b>ここで診断しない。</b>「あなたは不眠症の可能性があります」と個人に言わない。
+            「こういう状態が続く場合は相談先があります」に留める。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="clock"><span>30–50分</span><span class="dur">20分</span></div>
+        <div class="blkbody">
+          <h4>第3部　眠れないとき、何が起きているのか</h4>
+          <p>3つに分けて説明する。<b>「気づきの入口」を渡すのがこの部の目的</b>で、鑑別を教えるのではない。</p>
+          <div class="tw">
+            <table>
+              <thead><tr><th>類型</th><th>気づきの手がかり</th></tr></thead>
+              <tbody>
+                <tr><td>眠れない<br>（不眠）</td><td>寝つけない、途中で目が覚める、早く目が覚める。日中の不調を伴うか</td></tr>
+                <tr><td>眠っているのに休めない<br>（睡眠時無呼吸など）</td><td>いびき、呼吸が止まると言われた、朝の頭重感。<b>本人の自覚は乏しいことが多い</b></td></tr>
+                <tr><td>眠る時間帯がずれる<br>（交代勤務によるもの）</td><td>夜勤明けに眠れない、勤務が変わると体調を崩す</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>睡眠時無呼吸については、<b>自覚症状と重症度が一致しないことがある</b>点を必ず伝える。国交省マニュアルも、眠気の自覚がなくても客観的な検査が重要と明記している。</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="clock"><span>50–70分</span><span class="dur">20分</span></div>
+        <div class="blkbody">
+          <h4>第4部　交代勤務者のための実践</h4>
+          <p><b>この部が本パッケージの中核。</b>一般的な睡眠衛生の話は他所でも聞ける。交代勤務に特化した内容がここに入ることで、研修全体の価値が決まる。</p>
+          <ul class="clean">
+            <li><b>仮眠は「長く」ではなく「短く、時間帯を選んで」</b> — 0〜4時に開始する20〜50分。60分では逆に効率が落ちる（睡眠慣性）</li>
+            <li><b>カフェインは仮眠の前に</b> — 効き始めるまでに時間がかかるため、仮眠前に摂ると起きやすくなり、ぼんやり感も出にくい</li>
+            <li><b>体内時計は夜型に「慣れる」ものではない</b> — 1日に動かせるのは数分から数時間程度。完全に適応させようとすると、かえって翌日以降に影響が出ることがある</li>
+            <li><b>夜勤が週1〜2回なら、日勤のリズムを保つ選択もある</b> — 夜勤明けにすぐ寝ず、夕方以降にやや長めに眠り、翌朝は日勤日と同じ時刻に起きる</li>
+            <li><b>夜勤中は強い照明を避ける</b>（可能であれば）</li>
+            <li><b>夜勤明けの運転が最も危ない</b> — 夜勤後の帰宅時は、事故のリスクが上がることが報告されている。仮眠してから帰る、公共交通機関を使う等の選択肢を持つ</li>
+          </ul>
+          <div class="note" style="margin-top:14px;">
+            <p><b>日勤中心の職場ではこの部を差し替える。</b>差替案：光の使い方（朝の光と夜の光）、寝床は眠るためだけに使う、就床前1時間の過ごし方、交替勤務がない職場での長時間労働と睡眠時間の関係。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="clock"><span>70–85分</span><span class="dur">15分</span></div>
+        <div class="blkbody">
+          <h4>第5部　職場としてできること（管理職が同席する場合）</h4>
+          <p>個人の努力だけに帰結させないための部。<b>ここがあると人事の満足度が上がる</b>。勤務設計レビューへの自然な入口にもなる。</p>
+          <ul class="clean">
+            <li>勤務間インターバル、連続夜勤、夜勤明けの翌日勤務 — 勤務表側で決まってしまう部分がある</li>
+            <li>仮眠できる場所と時間があるか</li>
+            <li>「眠れていますか」と聞ける関係があるか。申告しにくい空気だと対策が届かない</li>
+            <li>健康情報の扱い方を決めておく。扱いが曖昧だと従業員は言わなくなる</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="clock"><span>85–90分</span><span class="dur">5分</span></div>
+        <div class="blkbody">
+          <h4>第6部　相談先の案内</h4>
+          <div class="note stop">
+            <p><b>この5分の設計を誤ると、事務所全体の中立性が壊れる。</b></p>
+            <p>言うこと：「気になる症状が続く場合は、かかりつけ医や専門の医療機関にご相談ください」「産業医面談でも睡眠のご相談を受けられます」</p>
+            <p>言わないこと：<b>自院の名称・場所・受診方法を案内しない。</b>「うちで検査できます」と言わない。配布資料に自院の連絡先を載せない。</p>
+            <p>理由：顧問先の従業員に対する受診誘引にあたり、産業医としての中立性が疑われる。<b>研修1回の売上より、事務所の立場のほうが高価である。</b></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>アンケート設計</h2>
+    <p class="h2sub">設問は少なく、しかし調査票に書ける数字が必ず出るように。</p>
+
+    <h3>事前アンケート（研修の1〜2週間前・匿名）</h3>
+    <p style="font-size:14.4px; color:var(--ink-soft);">6問。<b>Q1が調査票の「現状値」になる主指標</b>。ここだけは表現を変えずに毎回同じにする（比較可能性が失われるため）。</p>
+
+    <div class="q">
+      <div class="qn">Q1 ── 主指標</div>
+      <div class="qt">この1か月、睡眠で十分な休養がとれていますか。</div>
+      <div class="qo">1 十分とれている　2 まあまあとれている　3 あまりとれていない　4 まったくとれていない</div>
+      <div class="why">「3＋4」の比率が、調査票に記入する現状値になる。厚労省ガイドが重視する睡眠休養感の考え方に沿った設問で、国民健康・栄養調査と同種の聞き方のため、社外比較の説明もしやすい。</div>
+    </div>
+
+    <div class="q">
+      <div class="qn">Q2</div>
+      <div class="qt">平日（勤務日）の平均的な睡眠時間はどのくらいですか。</div>
+      <div class="qo">1 5時間未満　2 5〜6時間未満　3 6〜7時間未満　4 7〜8時間未満　5 8時間以上</div>
+      <div class="why">「6時間未満」（1＋2）の比率を副指標にする。厚労省ガイドの「6時間以上を目安」に直接対応するため、目標設定の説明が容易。</div>
+    </div>
+
+    <div class="q">
+      <div class="qn">Q3</div>
+      <div class="qt">この1か月、仕事中に強い眠気を感じることがありましたか。</div>
+      <div class="qo">1 ほとんどない　2 月に数回　3 週に数回　4 ほぼ毎日</div>
+      <div class="why">安全に直結する指標。交代勤務や運輸業では、この設問の結果が経営に最も響く。</div>
+    </div>
+
+    <div class="q">
+      <div class="qn">Q4</div>
+      <div class="qt">いびきや、睡眠中に呼吸が止まっていることを、周囲から指摘されたことがありますか。</div>
+      <div class="qo">1 ない　2 ある　3 わからない（ひとり暮らし等）</div>
+      <div class="why">睡眠時無呼吸の拾い上げの入口。<b>ただしこれは診断でもスクリーニングでもない。</b>報告書には必ず「本設問は診断を目的としたものではありません」と付記する。</div>
+    </div>
+
+    <div class="q">
+      <div class="qn">Q5</div>
+      <div class="qt">睡眠について、職場に相談できると思いますか。</div>
+      <div class="qo">1 相談できる　2 どちらともいえない　3 相談しにくい</div>
+      <div class="why">対策が機能する土壌があるかを測る。ここが悪い職場では、他の施策を入れても届かない。第5部と勤務設計レビューへの導入根拠になる。</div>
+    </div>
+
+    <div class="q">
+      <div class="qn">Q6（交代勤務者のみ）</div>
+      <div class="qt">夜勤明けの帰宅手段を教えてください。</div>
+      <div class="qo">1 自分で運転（自動車・二輪）　2 公共交通機関　3 徒歩・自転車　4 送迎　5 夜勤なし</div>
+      <div class="why">ルーブリック <code>E2</code> の判定材料に直結する。「1」の比率が高い職場は、それだけで改善提案が1本立つ。</div>
+    </div>
+
+    <h3>事後アンケート（研修直後・匿名・3問）</h3>
+    <ul class="clean">
+      <li><b>理解度</b>：今日の内容は理解できましたか（4件法）</li>
+      <li><b>行動意図</b>：明日から試してみようと思うことがありましたか（自由記述1行）— <b>実施報告書に匿名で数件引用すると、報告書の説得力が大きく上がる</b></li>
+      <li><b>要望</b>：さらに知りたいことがあれば（自由記述・任意）— 次の商談の種になる</li>
+    </ul>
+
+    <h3>3か月後アンケート（効果検証・匿名）</h3>
+    <p style="font-size:14.4px; color:var(--ink-soft);">
+      <b>事前アンケートのQ1〜Q3をそのまま再掲する。</b>設問を変えると比較できなくなる。加えて行動変容を1問：
+      「研修後、睡眠のために何か変えたことがありますか（変えた／変えていない／自由記述）」。
+    </p>
+
+    <div class="note">
+      <p><b>既存の尺度を安易に使わない。</b>日中の眠気を測る既存の質問票には、商用利用時に使用許諾や利用料が必要なものがある。
+      本パッケージでは意図的に独自の平易な設問を用いている。<b>既存尺度を採用する場合は、事前に権利関係を確認すること。</b>
+      国交省マニュアルはESSに言及しているが、企業研修で反復使用する場合の条件は別途確認が必要。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>実施報告書の様式</h2>
+    <p class="h2sub">これが納品物。申請担当者がそのまま転記できる粒度で作る。</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>項目</th><th>記載内容</th><th>調査票での用途</th></tr></thead>
+        <tbody>
+          <tr><td>実施日時・形式</td><td>YYYY年M月D日／対面・オンラインの別／会場</td><td>実施の証憑</td></tr>
+          <tr><td>実施者</td><td>氏名／内科専門医・心療内科専門医・労働衛生コンサルタント</td><td><b>「産業医等による睡眠関連指導」の裏づけ</b></td></tr>
+          <tr><td><b>対象者数</b></td><td>全従業員数 n 名／うち対象者 n 名／<b>対象者比率 n.n%</b></td><td><b>必須。未把握なら不適合</b></td></tr>
+          <tr><td><b>参加者数</b></td><td>参加者 n 名（<b>実人数</b>）／<b>参加者比率 n.n%</b></td><td><b>必須。未把握なら不適合</b></td></tr>
+          <tr><td>実施内容</td><td>6部構成の各項目と所要時間</td><td>取組内容欄（100字以内）の下書き</td></tr>
+          <tr><td>事前アンケート結果</td><td>Q1〜Q6の集計。<b>主指標の比率を明示</b></td><td><b>健康課題の現状値</b></td></tr>
+          <tr><td>事後アンケート結果</td><td>理解度の集計、行動意図の代表的な記述</td><td>実施結果欄</td></tr>
+          <tr><td>所見</td><td>集計から読み取れる当該職場の特徴と、次に取るべき手</td><td>課題の内容と根拠（200字以内）の下書き</td></tr>
+          <tr><td>推奨する目標値</td><td>主指標の目標値と達成時期の案</td><td><b>数値目標欄</b></td></tr>
+          <tr><td>次回予定</td><td>3か月後の効果検証アンケートの実施時期</td><td>効果検証の予定</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note good">
+      <p><b>「下書き」と書いてある欄が、この商品の正体。</b>報告書に、企業が申請書へそのまま貼れる文章を字数制限に合わせて入れておく。
+      調査票の該当欄は200字以内・100字以内と決まっているので、<b>その字数で書いて納品する</b>。
+      申請担当者の手間がゼロになる。ここまでやる事務所は多くない。</p>
+    </div>
+
+    <h3>報告書に必ず入れる注記</h3>
+    <ul class="clean">
+      <li>本報告書のアンケートは<b>無記名</b>であり、個人を特定できる情報は含みません</li>
+      <li>アンケートの設問は<b>診断を目的としたものではありません</b></li>
+      <li>集計は回答者全体の傾向を示すもので、個々の従業員の健康状態を評価するものではありません</li>
+      <li>回答者数が少数となる部門については、個人が推定されうるため<b>部門別の集計を行っていません</b></li>
+    </ul>
+    <div class="note stop">
+      <p><b>最後の1行を軽視しない。</b>10名以下の部門で「いびきを指摘されたことがある人が1名」と書けば、誰のことか職場では分かってしまう。
+      <b>少人数部門は必ず合算する。</b>ここが漏れると、次から誰も正直に回答しなくなり、商品そのものが機能しなくなる。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>価格と提供形態</h2>
+    <p class="h2sub">金額は先生の判断。ここでは構成と根拠だけを置く。</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>構成</th><th>含まれるもの</th><th>価格</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>標準</b></td>
+            <td>事前アンケート設計・集計／90分研修1回／事後アンケート／実施報告書（申請用の下書き文つき）</td>
+            <td><span style="color:var(--warn); font-family:var(--font-data);">【要設定】</span></td>
+          </tr>
+          <tr>
+            <td><b>効果検証つき</b></td>
+            <td>標準＋3か月後アンケートと比較報告書</td>
+            <td><span style="color:var(--warn); font-family:var(--font-data);">【要設定】</span></td>
+          </tr>
+          <tr>
+            <td>追加開催</td>
+            <td>同一年度内の2回目以降（交代勤務のため複数回開催が必要な職場向け）</td>
+            <td><span style="color:var(--warn); font-family:var(--font-data);">【要設定】</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <p><b>価格設定の考え方。</b>「90分いくら」ではなく「報告書と数値目標つきでいくら」で提示する。
+      前者は他の講師と比較されるが、後者は比較対象がない。<b>交代勤務の職場では、全員に届けるために複数回開催が必要になる</b>ため、
+      追加開催の単価を用意しておくと、1社あたりの金額が自然に積み上がる。</p>
+      <p><b>先に決めるべきは1つだけ</b> — 標準構成の価格。他は後から足せる。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>やってはいけないこと</h2>
+    <div class="note stop">
+      <ul class="clean">
+        <li><b>自院への受診誘導。</b>研修中も配布資料も、自院の名称・連絡先を出さない</li>
+        <li><b>個人への診断的発言。</b>「あなたは無呼吸かもしれません」と個別に言わない</li>
+        <li><b>「睡眠専門医」を名乗る／示唆する。</b>肩書きは統一表記のみ</li>
+        <li><b>効果の保証。</b>「事故が減ります」「生産性が上がります」と断定しない</li>
+        <li><b>未確認の数字の引用。</b>経済損失額や事故リスク倍率は、一次資料を確認し「〜との試算」「〜と報告されている」の形にする</li>
+        <li><b>少人数部門の個別集計。</b>個人が推定できる粒度で出さない</li>
+        <li><b>設問の毎回変更。</b>主指標Q1〜Q3を変えると効果検証が成立しなくなる</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>次の一手</h2>
+    <ul class="clean">
+      <li><b>スライドを作る。</b>本設計書の6部構成に沿って。1部あたり3〜5枚が目安</li>
+      <li><b>アンケートの配布方法を決める。</b>紙かフォームか。フォームなら匿名性の担保方法もあわせて</li>
+      <li><b>実施報告書の実物を1件作る。</b>架空データで構わない。営業時のサンプルとして機能する</li>
+      <li><b>標準構成の価格を決める</b></li>
+      <li><b>令和8年度の確定調査票で設問番号を再確認する</b>（8月頃公表見込み）</li>
+    </ul>
+  </section>
+
+  <footer>
+    睡眠研修パッケージ 設計書 v1.0 ／ 東京KIDUKIコンサルティング産業医事務所 内部資料 ／ ルーブリック v0.2・報告書テンプレート v1.0 と対応
+  </footer>
+
+</div>
