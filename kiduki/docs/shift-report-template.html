@@ -1,0 +1,552 @@
+<title>交代勤務 勤務設計レビュー 報告書テンプレート v1.0</title>
+
+<style>
+  :root{
+    --paper:#f6f7f4; --surface:#fffffe; --surface-2:#f0f2ed; --fill:#eaeee6;
+    --ink:#131a24; --ink-soft:#4a5560; --ink-faint:#7c8791;
+    --rule:#dbdfd8; --rule-strong:#c3c9bf;
+    --accent:#2b4d7e; --accent-soft:#e7ecf4;
+    --ok:#2f6b4f; --ok-bg:#e8f0ea;
+    --warn:#8a6416; --warn-bg:#f6efdf;
+    --crit:#9c3128; --crit-bg:#f7e8e6;
+    --slot:#8a6416; --slot-bg:#fbf4e4;
+    --font-display:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP","Times New Roman",serif;
+    --font-body:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif;
+    --font-data:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0e1319; --surface:#151c24; --surface-2:#1a222b; --fill:#1f2831;
+      --ink:#e3e8ec; --ink-soft:#a3aeb8; --ink-faint:#78848e;
+      --rule:#26303a; --rule-strong:#36434f;
+      --accent:#86aede; --accent-soft:#1c2a3a;
+      --ok:#6cc296; --ok-bg:#16281f;
+      --warn:#d6ab5c; --warn-bg:#2a2213;
+      --crit:#e08a80; --crit-bg:#2b1917;
+      --slot:#d6ab5c; --slot-bg:#26200f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0e1319; --surface:#151c24; --surface-2:#1a222b; --fill:#1f2831;
+    --ink:#e3e8ec; --ink-soft:#a3aeb8; --ink-faint:#78848e;
+    --rule:#26303a; --rule-strong:#36434f;
+    --accent:#86aede; --accent-soft:#1c2a3a;
+    --ok:#6cc296; --ok-bg:#16281f;
+    --warn:#d6ab5c; --warn-bg:#2a2213;
+    --crit:#e08a80; --crit-bg:#2b1917;
+    --slot:#d6ab5c; --slot-bg:#26200f;
+  }
+  :root[data-theme="light"]{
+    --paper:#f6f7f4; --surface:#fffffe; --surface-2:#f0f2ed; --fill:#eaeee6;
+    --ink:#131a24; --ink-soft:#4a5560; --ink-faint:#7c8791;
+    --rule:#dbdfd8; --rule-strong:#c3c9bf;
+    --accent:#2b4d7e; --accent-soft:#e7ecf4;
+    --ok:#2f6b4f; --ok-bg:#e8f0ea;
+    --warn:#8a6416; --warn-bg:#f6efdf;
+    --crit:#9c3128; --crit-bg:#f7e8e6;
+    --slot:#8a6416; --slot-bg:#fbf4e4;
+  }
+
+  body{background:var(--paper); color:var(--ink); font-family:var(--font-body);
+       font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 24px 96px;}
+  h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; text-wrap:balance; line-height:1.42;}
+  a{color:var(--accent);} p{margin-bottom:15px;}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+  .mast{padding:64px 0 28px; border-bottom:2px solid var(--ink);}
+  .eyebrow{font-family:var(--font-data); font-size:11px; letter-spacing:.18em;
+           text-transform:uppercase; color:var(--accent); margin-bottom:18px;}
+  .mast h1{font-size:clamp(26px,4vw,40px); margin-bottom:16px;}
+  .standfirst{font-size:16.5px; color:var(--ink-soft); max-width:64ch;}
+
+  /* how-to-use band */
+  .howto{background:var(--fill); border:1px solid var(--rule); padding:22px 26px; margin-top:32px;}
+  .howto h3{font-size:15px; margin-bottom:12px;}
+  .howto ul{list-style:none; margin:0; padding:0;}
+  .howto li{font-size:14px; color:var(--ink-soft); padding-left:20px; position:relative; margin-bottom:9px; line-height:1.75;}
+  .howto li:last-child{margin-bottom:0;}
+  .howto li::before{content:""; position:absolute; left:2px; top:11px; width:7px; height:1px; background:var(--accent);}
+  .howto b{color:var(--ink);}
+
+  section{padding-top:52px;}
+  h2{font-size:22px; margin-bottom:6px;}
+  .h2sub{color:var(--ink-faint); font-size:13.5px; margin-bottom:24px;}
+
+  /* chapter marker */
+  .chap{display:flex; align-items:baseline; gap:14px; margin-bottom:8px;}
+  .chap .no{font-family:var(--font-data); font-size:12px; letter-spacing:.14em; color:var(--accent); white-space:nowrap;}
+
+  /* the document page */
+  .doc{background:var(--surface); border:1px solid var(--rule); padding:32px 34px; margin-top:18px;}
+  .doc h3{font-size:17px; margin:26px 0 12px;}
+  .doc h3:first-child{margin-top:0;}
+  .doc p{font-size:14.8px; line-height:1.85; color:var(--ink-soft);}
+  .doc p.lead{color:var(--ink);}
+
+  /* fill-in slot */
+  .slot{background:var(--slot-bg); color:var(--slot); border:1px dashed var(--slot);
+        font-family:var(--font-data); font-size:12.5px; padding:1px 7px; border-radius:2px; white-space:nowrap;}
+  .slotblock{background:var(--slot-bg); border:1px dashed var(--slot); padding:14px 18px;
+             font-size:14px; color:var(--slot); margin:12px 0; line-height:1.8;}
+  .slotblock b{color:var(--slot);}
+
+  /* fixed boilerplate */
+  .fixed{border-left:3px solid var(--accent); background:var(--accent-soft);
+         padding:16px 20px; margin:14px 0; font-size:14.5px; line-height:1.85; color:var(--ink);}
+  .fixed .tag{font-family:var(--font-data); font-size:10.5px; letter-spacing:.12em;
+              text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;}
+
+  /* tables */
+  .tw{overflow-x:auto; border:1px solid var(--rule); margin:16px 0; background:var(--surface);}
+  table{border-collapse:collapse; width:100%; min-width:640px; font-size:13.8px;}
+  th,td{padding:11px 14px; text-align:left; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.7;}
+  th{font-family:var(--font-data); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+     color:var(--ink-faint); font-weight:600; background:var(--surface-2); white-space:nowrap;}
+  tr:last-child td{border-bottom:none;}
+  td code,th code{font-family:var(--font-data); font-size:12px; color:var(--accent); font-weight:700;}
+  .num{font-variant-numeric:tabular-nums; font-family:var(--font-data);}
+
+  /* verdict pills */
+  .p{font-family:var(--font-data); font-size:11px; font-weight:700; padding:3px 9px;
+     border-radius:2px; white-space:nowrap; display:inline-block;}
+  .p-ok{color:var(--ok); background:var(--ok-bg); border:1px solid var(--ok);}
+  .p-wa{color:var(--warn); background:var(--warn-bg); border:1px solid var(--warn);}
+  .p-cr{color:var(--crit); background:var(--crit-bg); border:1px solid var(--crit);}
+  .p-na{color:var(--ink-faint); background:var(--surface-2); border:1px solid var(--rule-strong);}
+
+  .note{border-left:3px solid var(--warn); background:var(--warn-bg);
+        padding:16px 20px; margin-top:20px; font-size:14.2px; line-height:1.8;}
+  .note b{color:var(--ink);}
+  .note p{margin-bottom:9px;} .note p:last-child{margin-bottom:0;}
+  .stop{border-left-color:var(--crit); background:var(--crit-bg);}
+
+  ul.clean{list-style:none; margin:0 0 14px; padding:0;}
+  ul.clean li{padding-left:21px; position:relative; margin-bottom:10px;
+              font-size:14.4px; color:var(--ink-soft); line-height:1.78;}
+  ul.clean li::before{content:""; position:absolute; left:3px; top:11px; width:6px; height:1px; background:var(--accent);}
+  ul.clean li b{color:var(--ink); font-weight:600;}
+
+  ol.steps{counter-reset:s; list-style:none; margin:16px 0; padding:0;}
+  ol.steps li{counter-increment:s; position:relative; padding-left:38px; margin-bottom:14px;
+              font-size:14.4px; color:var(--ink-soft); line-height:1.78;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:1px;
+    font-family:var(--font-data); font-size:11px; font-weight:700; color:var(--accent);
+    border:1px solid var(--accent); width:22px; height:22px; display:flex;
+    align-items:center; justify-content:center; border-radius:50%;}
+  ol.steps li b{color:var(--ink);}
+
+  footer{margin-top:72px; padding-top:22px; border-top:1px solid var(--rule);
+         font-size:12.5px; color:var(--ink-faint);}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">納品物テンプレート v1.0 ／ 内部資料</div>
+    <h1>交代勤務 勤務設計レビュー<br>報告書テンプレート</h1>
+    <p class="standfirst">
+      ルーブリック v0.1 に基づく評価結果を、企業に提出する形にまとめるための雛形。
+      青枠は<b>毎回そのまま使う固定文</b>、点線枠は<b>案件ごとに書き換える箇所</b>。
+      固定文は法的・倫理的な安全弁を兼ねているため、削らない。
+    </p>
+
+    <div class="howto">
+      <h3>この雛形の使い方</h3>
+      <ul>
+        <li><b>固定文（青枠）は編集しない。</b>役割の範囲・限界の明示・受診先を指定しない旨など、事務所を守る記述が入っている</li>
+        <li><b>点線枠は必ず埋める。</b>空欄のまま提出しない。該当なしの場合は「該当なし」と明記する</li>
+        <li><b>第2章の判定一覧は1ページに収める。</b>担当者はここだけを経営層に見せることが多い</li>
+        <li><b>第4章は費用ゼロで直せる項目を先頭に置く。</b>初回の納得感がここで決まる</li>
+        <li><b>第6章は申請担当者がそのまま転記できる粒度で書く。</b>ここが他社との差になる</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===================== 表紙 ===================== -->
+  <section>
+    <div class="chap"><span class="no">表紙</span><h2>表紙・書誌事項</h2></div>
+    <p class="h2sub">後から参照されるため、対象範囲と基準日を必ず特定できるようにする。</p>
+    <div class="doc">
+      <p class="lead" style="font-family:var(--font-display); font-size:20px; margin-bottom:6px;">交代勤務 勤務設計レビュー報告書</p>
+      <p style="margin-bottom:22px;"><span class="slot">対象部門名</span> における睡眠・眠気に関する勤務設計の点検結果</p>
+
+      <div class="tw">
+        <table>
+          <tbody>
+            <tr><th>提出先</th><td><span class="slot">会社名</span> <span class="slot">部署名</span> ご担当者様</td></tr>
+            <tr><th>対象事業場</th><td><span class="slot">事業場名・所在地</span></td></tr>
+            <tr><th>対象部門</th><td><span class="slot">部門名</span>（対象人数 <span class="slot">n</span> 名／交代勤務従事者 <span class="slot">n</span> 名）</td></tr>
+            <tr><th>評価対象期間</th><td><span class="slot">YYYY年M月〜YYYY年M月</span>（勤務表 <span class="slot">n</span> か月分）</td></tr>
+            <tr><th>実施日</th><td>書面確認 <span class="slot">日付</span>／現地確認 <span class="slot">日付</span>／聞き取り <span class="slot">日付</span></td></tr>
+            <tr><th>使用した評価基準</th><td>交代勤務 睡眠・眠気リスク 勤務設計レビュー ルーブリック <span class="slot">版数</span></td></tr>
+            <tr><th>作成者</th><td><span class="slot">氏名</span>　内科専門医・心療内科専門医・労働衛生コンサルタント</td></tr>
+            <tr><th>作成事務所</th><td>東京KIDUKIコンサルティング産業医事務所</td></tr>
+            <tr><th>報告書番号</th><td><span class="slot">SR-YYYY-NNN</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="fixed">
+        <span class="tag">固定文・取扱い表示</span>
+        本報告書には貴社の勤務体制に関する情報が含まれます。取扱いには十分ご注意ください。
+        本報告書に個人を特定できる健康情報は記載していません。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 第1章 ===================== -->
+  <section>
+    <div class="chap"><span class="no">第 1 章</span><h2>前提と役割の範囲</h2></div>
+    <p class="h2sub">最初に線を引く。ここを冒頭に置くことで、以降の指摘が受け入れられやすくなる。</p>
+    <div class="doc">
+      <h3>1-1. 本レビューの目的</h3>
+      <div class="fixed">
+        <span class="tag">固定文</span>
+        本レビューは、交代勤務に従事する従業員の睡眠および業務中の眠気に関連するリスクについて、
+        勤務設計と職場運用の観点から点検し、改善の優先順位をお示しすることを目的とします。
+        評価は、国内の公的指針および国際的な専門家合意として公表されている基準に照らして行いました。
+      </div>
+
+      <h3>1-2. 評価するもの／評価しないもの</h3>
+      <div class="fixed">
+        <span class="tag">固定文</span>
+        本レビューが評価するのは<b>勤務設計と職場運用</b>です。個々の従業員の健康状態は評価対象ではありません。
+        <br><br>
+        本レビューでは、次のことは行いません。<br>
+        ・従業員個人の診断（不眠症、睡眠時無呼吸等の診断は医療機関が行います）<br>
+        ・従業員個人の検査データの取得および貴社への提供<br>
+        ・個々の従業員の就業可否の判定<br>
+        ・特定の医療機関の指定（受診先は常に選択肢の一つとしてご案内します）
+      </div>
+
+      <h3>1-3. 本報告書の限界</h3>
+      <div class="fixed">
+        <span class="tag">固定文</span>
+        本報告書の判定は、提出された資料と実施日時点の確認内容に基づくものです。
+        また、本報告書は妥当性が検証された測定指標によるスコアリングではなく、
+        公表基準に照らした専門家の書面評価です。したがって、
+        判定結果は事故や疾病の発生確率を予測するものではありません。
+        改善の実施により特定の結果が得られることを保証するものでもありません。
+      </div>
+
+      <h3>1-4. 確認した資料</h3>
+      <div class="slotblock">
+        <b>案件ごとに記入。</b>例：勤務表（対象期間分）／就業規則の該当条項／衛生委員会議事録（直近◯回）／仮眠室の現地確認／
+        交代勤務従事者◯名への聞き取り／既存のSAS検査実施記録 など。<b>提出を受けられなかった資料があれば、それも明記する。</b>
+      </div>
+
+      <h3>1-5. 判定の区分</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>区分</th><th>意味</th></tr></thead>
+          <tbody>
+            <tr><td><span class="p p-ok">適合</span></td><td>参照基準を満たしている</td></tr>
+            <tr><td><span class="p p-wa">要改善</span></td><td>基準を下回る事象が発生しているが、常態ではない</td></tr>
+            <tr><td><span class="p p-cr">要是正</span></td><td>基準を下回る状態が常態化している、または対応が存在しない</td></tr>
+            <tr><td><span class="p p-na">対象外</span></td><td>当該部門の業務形態では該当しない</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fixed">
+        <span class="tag">固定文</span>
+        判定は項目ごとに独立しています。合計点や総合評価は算出していません。
+        項目ごとの重みづけは業種・業務形態によって異なるため、単一の点数で表すことが適切でないと考えるためです。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 第2章 ===================== -->
+  <section>
+    <div class="chap"><span class="no">第 2 章</span><h2>判定一覧</h2></div>
+    <p class="h2sub">1ページに収める。担当者はこの表だけを経営層に転送することが多い。</p>
+    <div class="doc">
+      <p class="lead">対象部門：<span class="slot">部門名</span>　／　評価対象期間：<span class="slot">期間</span></p>
+
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>評価項目</th><th>判定</th><th>根拠</th><th>優先度</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>S1</code></td><td>勤務間インターバル</td><td><span class="p p-cr">要是正</span></td><td>A・B</td><td>高</td></tr>
+            <tr><td><code>S2</code></td><td>連続夜勤回数</td><td><span class="p p-wa">要改善</span></td><td>B</td><td>中</td></tr>
+            <tr><td><code>S3</code></td><td>一勤務の長さ</td><td><span class="p p-ok">適合</span></td><td>A・B</td><td>—</td></tr>
+            <tr><td><code>S4</code></td><td>交代の方向と夜勤後の回復</td><td><span class="p p-cr">要是正</span></td><td>C</td><td>高</td></tr>
+            <tr><td><code>E1</code></td><td>夜勤中の仮眠制度</td><td><span class="p p-wa">要改善</span></td><td>A</td><td>高</td></tr>
+            <tr><td><code>E2</code></td><td>夜勤明けの帰宅リスク</td><td><span class="p p-cr">要是正</span></td><td>C</td><td>高</td></tr>
+            <tr><td><code>E3</code></td><td>光環境とカフェインの運用</td><td><span class="p p-wa">要改善</span></td><td>A</td><td>低</td></tr>
+            <tr><td><code>R1</code></td><td>睡眠障害の拾い上げ</td><td><span class="p p-cr">要是正</span></td><td>A</td><td>高</td></tr>
+            <tr><td><code>R2</code></td><td>健康情報の取扱規程と同意</td><td><span class="p p-wa">要改善</span></td><td>A</td><td>中</td></tr>
+            <tr><td><code>R3</code></td><td>睡眠教育の実施</td><td><span class="p p-cr">要是正</span></td><td>A</td><td>中</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="slotblock">
+        <b>上表の判定は記入例。</b>案件ごとに置き換える。優先度は「リスクの大きさ × 是正の容易さ」で決め、
+        第4章の並び順と一致させること。<b>一致していないと報告書の信頼性が落ちる。</b>
+      </div>
+
+      <h3>総括</h3>
+      <div class="slotblock">
+        <b>3〜5行で記入。</b>最も優先度の高い所見と、費用をかけずに解決できる所見を必ず含める。<br>
+        記入例：「勤務表上、夜勤明けの翌日に日勤が入る運用が対象期間中◯回確認され、この時の休息時間は◯時間でした（S1・S4）。
+        これは勤務表の組み替えで解消が可能です。あわせて、夜勤中の仮眠が制度として位置づけられておらず（E1）、
+        夜勤明けの帰宅手段についての対策も確認できませんでした（E2）。」
+      </div>
+
+      <div class="fixed">
+        <span class="tag">固定文</span>
+        「要是正」は法令違反を意味するものではありません。参照基準を下回る状態が常態化していることを示します。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 第3章 ===================== -->
+  <section>
+    <div class="chap"><span class="no">第 3 章</span><h2>項目別の所見</h2></div>
+    <p class="h2sub">10項目すべてを同じ型で書く。以下は S1 の記入例。残り9項目も同型で複製する。</p>
+    <div class="doc">
+      <h3>S1　勤務間インターバル　<span class="p p-cr">要是正</span></h3>
+
+      <div class="tw">
+        <table>
+          <tbody>
+            <tr><th style="width:150px;">確認した事実</th><td><span class="slot">対象期間中、11時間未満の勤務間インターバルが n 回発生。うち9時間未満が n 回。最短は n 時間（M月D日 夜勤明け→翌日日勤）</span></td></tr>
+            <tr><th>参照した基準</th><td>勤務間インターバル11時間以上〔B〕／12時間未満で睡眠休養感の欠如・疲労感の増加が報告〔A〕</td></tr>
+            <tr><th>根拠の等級</th><td><b>A・B</b></td></tr>
+            <tr><th>判定</th><td><span class="p p-cr">要是正</span>　11時間未満が常態化しているため</td></tr>
+            <tr><th>該当箇所</th><td><span class="slot">勤務表上の具体的な日付・シフト記号を列挙</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="font-size:14px; margin:18px 0 8px; font-family:var(--font-body);">所見</h4>
+      <div class="slotblock">
+        <b>3〜4行。</b>事実 → それが何を意味するか → 参照基準との差、の順で書く。
+        評価的な形容（「危険な」「ずさんな」等）は使わない。事実と基準の差だけを書く。
+      </div>
+
+      <div class="fixed">
+        <span class="tag">固定文・根拠の限界</span>
+        11時間という数値は、国際的な専門家合意として示されたものです。
+        当該合意文書は、根拠となる研究が限られている旨をあわせて記載しています。
+      </div>
+
+      <div class="note">
+        <p><b>テンプレート運用上の注意。</b>「根拠の限界」欄は、<b>根拠等級が B または C の項目では必ず記載する</b>。
+        特に E2（夜勤明けの帰宅リスク）は数値のインパクトが大きいため、対象16名・クローズドコースでの試験である旨を必ず併記すること。
+        限界を自ら明示することが、助言者としての信頼を担保する。</p>
+      </div>
+
+      <h3 style="margin-top:32px;">R1 に限り追加する固定文</h3>
+      <div class="fixed">
+        <span class="tag">固定文・R1専用</span>
+        睡眠時無呼吸のスクリーニング検査は、その段階で就労能力や運転業務の可否を判断できるものではありません。
+        確定診断および治療は医療機関が行います。本レビューでお示しするのは、
+        検査の結果を受けて受診と就業上の措置が滞りなく進むための体制です。
+        受診先について、当事務所が特定の医療機関を指定することはありません。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 第4章 ===================== -->
+  <section>
+    <div class="chap"><span class="no">第 4 章</span><h2>改善提案</h2></div>
+    <p class="h2sub">費用をかけずに直せるものを先頭に。ここで初回の納得感が決まる。</p>
+    <div class="doc">
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>順位</th><th>対象</th><th>提案内容</th><th>想定コスト</th><th>目安時期</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">1</td><td><code>S1</code> <code>S4</code></td>
+              <td>夜勤明けの翌日に日勤を配置しないよう勤務表作成ルールを変更し、休息11時間以上を確保する</td>
+              <td><b>費用なし</b><br>勤務表の組み替えのみ</td><td><span class="slot">翌月シフトから</span></td>
+            </tr>
+            <tr>
+              <td class="num">2</td><td><code>E1</code></td>
+              <td>夜勤中の仮眠を制度として位置づける。0〜4時に開始する20〜50分を目安とし、休憩室に遮光と静穏の確保を行う</td>
+              <td><span class="slot">小（備品）</span></td><td><span class="slot">◯か月以内</span></td>
+            </tr>
+            <tr>
+              <td class="num">3</td><td><code>E2</code></td>
+              <td>夜勤明けの帰宅手段を把握し、仮眠後の帰宅または公共交通機関の利用を選択できるようにする</td>
+              <td><span class="slot">小〜中</span></td><td><span class="slot">◯か月以内</span></td>
+            </tr>
+            <tr>
+              <td class="num">4</td><td><code>R2</code></td>
+              <td>睡眠に関する健康情報の取扱規程を整備し、本人同意の手続きを定める</td>
+              <td><b>費用なし</b><br>規程の整備</td><td><span class="slot">◯か月以内</span></td>
+            </tr>
+            <tr>
+              <td class="num">5</td><td><code>R1</code></td>
+              <td>スクリーニングの実施規程を定め、検査後の受診勧奨と就業上の措置の流れを明文化する</td>
+              <td><span class="slot">中</span></td><td><span class="slot">今年度内</span></td>
+            </tr>
+            <tr>
+              <td class="num">6</td><td><code>R3</code></td>
+              <td>従業員向け・管理者向けの睡眠教育を実施し、実施記録を残す</td>
+              <td><span class="slot">中</span></td><td><span class="slot">今年度内</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="fixed">
+        <span class="tag">固定文</span>
+        本章の提案は、貴社の業務上の制約をすべて把握したうえでのものではありません。
+        実施の可否および方法については、業務への影響を踏まえてご検討ください。
+        検討にあたって必要であれば、衛生委員会等の場で追加のご説明を行います。
+      </div>
+
+      <h3>次回確認の予定</h3>
+      <div class="slotblock">
+        <b>必ず入れる。</b>「◯か月後に、順位1〜3の実施状況を確認します」。<br>
+        言いっぱなしにしないことがこの商品の設計思想であり、<b>次回訪問＝次の受注機会</b>にもなる。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 第5章 ===================== -->
+  <section>
+    <div class="chap"><span class="no">第 5 章</span><h2>参照した基準と出典</h2></div>
+    <p class="h2sub">全案件で共通。企業側が自分で検証できる状態にすることが信頼の担保になる。</p>
+    <div class="doc">
+      <div class="fixed">
+        <span class="tag">固定文・出典一覧</span>
+        <b>［A］国内公的指針</b><br>
+        ・厚生労働省「健康づくりのための睡眠ガイド2023」<br>
+        ・国土交通省物流・自動車局「自動車運送事業者における睡眠時無呼吸症候群対策マニュアル」令和7年7月<br><br>
+        <b>［B］国際的な専門家合意</b><br>
+        ・Garde AH, et al. How to schedule night shift work in order to reduce health and safety risks.
+        Scand J Work Environ Health. 2020;46(6):557–569.<br><br>
+        <b>［C］個別研究</b><br>
+        ・Lee ML, et al. High risk of near-crash driving events following night-shift work. PNAS. 2016.<br>
+        ・Vedaa Ø, et al. Systematic review of the relationship between quick returns in rotating shift work
+        and health-related outcomes.
+      </div>
+      <div class="fixed">
+        <span class="tag">固定文・等級の説明</span>
+        ［A］は国内の公的機関が公表した指針に数値または手順が明記されているもの、
+        ［B］は査読誌に掲載された研究者間の合意、［C］は個別の研究に基づくものです。
+        ［C］に分類した項目については、当該研究の対象や条件による限界を本文中に併記しています。
+      </div>
+      <div class="note">
+        <p><b>公開前の必須確認。</b>厚労省ガイドの引用は、必ず<b>2024年2月公表の最終版</b>で文言を照合してから提出すること。検討会資料（案）と最終版で表現が異なる可能性がある。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 第6章 ===================== -->
+  <section>
+    <div class="chap"><span class="no">第 6 章</span><h2>健康経営度調査への対応（付録）</h2></div>
+    <p class="h2sub">ここが他社との差になる。申請担当者がそのまま転記できる粒度で書く。</p>
+    <div class="doc">
+      <div class="fixed">
+        <span class="tag">固定文</span>
+        本レビューおよび改善提案の実施は、健康経営度調査における以下の設問への回答材料としてご活用いただけます。
+        回答の可否および内容の最終判断は、貴社にてご確認ください。
+      </div>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>調査票の設問</th><th>関連する実施事項</th><th>本報告書の該当箇所</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>従業員の生産性低下防止のための取組<br>＜睡眠障害や、業務中の眠気による生産性の低下予防＞<br><span style="color:var(--ink-faint)">中小規模 Q42-a／大規模 Q56-a</span></td>
+              <td>「リフレッシュルームや仮眠室を設置している」<br>「パワーナップ等仮眠制度を導入している」</td>
+              <td>第4章 順位2（<code>E1</code>）</td>
+            </tr>
+            <tr>
+              <td>同上</td>
+              <td>「睡眠に関するセミナーを実施している」<br><span style="color:var(--ink-faint)">※中小規模法人部門の選択肢</span></td>
+              <td>第4章 順位6（<code>R3</code>）</td>
+            </tr>
+            <tr>
+              <td>同上</td>
+              <td>「SAS検査を実施している（費用補助を含む）」</td>
+              <td>第4章 順位5（<code>R1</code>）</td>
+            </tr>
+            <tr>
+              <td>同上</td>
+              <td><b>「産業医等による睡眠関連指導を実施している」</b></td>
+              <td>本レビューの実施そのもの</td>
+            </tr>
+            <tr>
+              <td>健康課題の把握と目標設定</td>
+              <td>睡眠関連の課題設定と数値目標</td>
+              <td>第2章 総括</td>
+            </tr>
+            <tr>
+              <td>適切な働き方実現に向けた取組<br><span style="color:var(--ink-faint)">認定要件</span></td>
+              <td>勤務間インターバルおよび勤務表作成ルールの見直し</td>
+              <td>第4章 順位1（<code>S1</code> <code>S4</code>）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <p><b>営業上の要点。</b>調査票の選択肢に<b>「産業医等による睡眠関連指導を実施している」</b>が明記されている。
+        つまり<b>睡眠に強い産業医と契約すること自体が、企業にとって回答できる取り組みになる</b>。
+        この一行は提案時に必ず示すこと。</p>
+        <p>加えて、2026年7月14日の第6回健康経営推進検討会で、<b>令和8年度の調査票（大規模法人部門）に「睡眠の質向上に向けた取組」を独立設問として新設する方針</b>が示された。
+        <b>ただし現時点では「案」の段階のため、「新設されます」ではなく「新設される方針が示されています」と表現すること。</b></p>
+      </div>
+
+      <div class="slotblock">
+        <b>設問番号は年度ごとに変わる。</b>提出前に必ず当年度の調査票で番号と文言を確認し、この表を更新すること。
+        <b>古い設問番号のまま提出すると、この付録の価値がそのまま信頼の毀損になる。</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 運用 ===================== -->
+  <section>
+    <div class="chap"><span class="no">運用</span><h2>作成手順と品質チェック</h2></div>
+    <p class="h2sub">2件目以降は、この手順に沿えば同じ品質で書ける。</p>
+    <div class="doc">
+      <h3>作成手順</h3>
+      <ol class="steps">
+        <li><b>勤務表を受領し、S1〜S4を判定する。</b>訪問前に完了する。ここまでで所見の半分が書ける</li>
+        <li><b>不足資料を1通のメールでまとめて依頼する。</b>就業規則の該当条項、仮眠室の有無、SAS検査の実施記録、健康情報の取扱規程</li>
+        <li><b>現地確認と聞き取りでE1〜E3、R1〜R3を判定する。</b>仮眠室は実際に見る。写真は撮らず、確認事実のみ記録する</li>
+        <li><b>第3章を10項目分書く。</b>事実 → 意味 → 基準との差、の順を崩さない</li>
+        <li><b>第4章を並べ替える。</b>費用ゼロの項目を先頭へ。第2章の優先度と一致させる</li>
+        <li><b>第6章の設問番号を当年度の調査票で確認する。</b>ここを怠ると信頼を失う</li>
+        <li><b>下のチェックリストを通してから提出する</b></li>
+      </ol>
+
+      <h3>提出前チェックリスト</h3>
+      <ul class="clean">
+        <li>点線枠の未記入がゼロ（「該当なし」も明記した）</li>
+        <li>固定文（青枠）を削除・改変していない</li>
+        <li>第2章の優先度と第4章の並び順が一致している</li>
+        <li>根拠等級 B・C の項目すべてに限界の記載がある</li>
+        <li>E2 に「対象16名・クローズドコース」の限界を明記した</li>
+        <li>R1 に「スクリーニングでは就業可否を判断できない」旨を明記した</li>
+        <li>個人が特定できる記述がない（氏名・社員番号・少人数部門での属性の組み合わせを含む）</li>
+        <li>特定の医療機関名を推奨として記載していない</li>
+        <li>「必ず」「確実に」「防止できます」等の断定・保証表現がない</li>
+        <li>「睡眠専門医」の語を使っていない</li>
+        <li>合計点・総合スコアを記載していない</li>
+        <li>第6章の設問番号を当年度の調査票で確認した</li>
+        <li>厚労省ガイドの引用を最終版で照合した</li>
+        <li>次回確認の時期を記載した</li>
+      </ul>
+
+      <div class="note stop">
+        <p><b>提出してはならない状態。</b>上のうち「個人が特定できる記述がない」「断定・保証表現がない」「スクリーニングでは就業可否を判断できない旨の明記」の3つは、
+        1つでも欠けたら提出しない。<b>他は書き直せば済むが、この3つは出した後では取り返せない。</b></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    交代勤務 勤務設計レビュー 報告書テンプレート v1.0 ／ 東京KIDUKIコンサルティング産業医事務所 内部資料 ／ ルーブリック v0.1 に対応
+  </footer>
+
+</div>

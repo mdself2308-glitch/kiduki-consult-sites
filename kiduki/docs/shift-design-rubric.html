@@ -1,0 +1,634 @@
+<title>交代勤務 睡眠・眠気リスク 勤務設計レビュー ルーブリック v0.1</title>
+
+<style>
+  :root {
+    --paper:#f6f7f4; --surface:#fffffe; --surface-2:#f0f2ed;
+    --ink:#131a24; --ink-soft:#4a5560; --ink-faint:#7c8791;
+    --rule:#dbdfd8; --rule-strong:#c3c9bf;
+    --accent:#2b4d7e; --accent-soft:#e7ecf4;
+    --ok:#2f6b4f; --ok-bg:#e8f0ea;
+    --warn:#8a6416; --warn-bg:#f6efdf;
+    --crit:#9c3128; --crit-bg:#f7e8e6;
+    --font-display:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP","Times New Roman",serif;
+    --font-body:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif;
+    --font-data:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0e1319; --surface:#151c24; --surface-2:#1a222b;
+      --ink:#e3e8ec; --ink-soft:#a3aeb8; --ink-faint:#78848e;
+      --rule:#26303a; --rule-strong:#36434f;
+      --accent:#86aede; --accent-soft:#1c2a3a;
+      --ok:#6cc296; --ok-bg:#16281f;
+      --warn:#d6ab5c; --warn-bg:#2a2213;
+      --crit:#e08a80; --crit-bg:#2b1917;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0e1319; --surface:#151c24; --surface-2:#1a222b;
+    --ink:#e3e8ec; --ink-soft:#a3aeb8; --ink-faint:#78848e;
+    --rule:#26303a; --rule-strong:#36434f;
+    --accent:#86aede; --accent-soft:#1c2a3a;
+    --ok:#6cc296; --ok-bg:#16281f;
+    --warn:#d6ab5c; --warn-bg:#2a2213;
+    --crit:#e08a80; --crit-bg:#2b1917;
+  }
+  :root[data-theme="light"]{
+    --paper:#f6f7f4; --surface:#fffffe; --surface-2:#f0f2ed;
+    --ink:#131a24; --ink-soft:#4a5560; --ink-faint:#7c8791;
+    --rule:#dbdfd8; --rule-strong:#c3c9bf;
+    --accent:#2b4d7e; --accent-soft:#e7ecf4;
+    --ok:#2f6b4f; --ok-bg:#e8f0ea;
+    --warn:#8a6416; --warn-bg:#f6efdf;
+    --crit:#9c3128; --crit-bg:#f7e8e6;
+  }
+
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--font-body); font-size:16px; line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1020px; margin:0 auto; padding:0 24px 96px;}
+  .col{max-width:70ch;}
+
+  h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; text-wrap:balance; line-height:1.4;}
+  a{color:var(--accent);}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px;}
+
+  /* ---- masthead ---- */
+  .mast{padding:72px 0 32px; border-bottom:2px solid var(--ink);}
+  .eyebrow{
+    font-family:var(--font-data); font-size:11px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--accent); margin-bottom:20px;
+  }
+  .mast h1{font-size:clamp(28px,4.4vw,44px); letter-spacing:.01em; margin-bottom:18px;}
+  .standfirst{font-size:17px; color:var(--ink-soft); max-width:64ch;}
+  .meta{
+    display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:32px;
+    font-family:var(--font-data); font-size:12px; color:var(--ink-faint);
+  }
+  .meta b{color:var(--ink-soft); font-weight:500;}
+
+  section{padding-top:56px;}
+  h2{font-size:24px; margin-bottom:8px;}
+  .h2sub{color:var(--ink-faint); font-size:14px; margin-bottom:28px;}
+  h3{font-size:18px;}
+  p{margin-bottom:16px;}
+
+  /* ---- principles ---- */
+  .principles{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin-top:24px;}
+  @media(min-width:760px){.principles{grid-template-columns:repeat(3,1fr);}}
+  .principle{background:var(--surface); padding:24px;}
+  .principle h3{font-size:16px; margin-bottom:10px;}
+  .principle p{font-size:14px; color:var(--ink-soft); margin:0; line-height:1.75;}
+
+  /* ---- evidence legend ---- */
+  .legend{display:grid; gap:12px; margin-top:20px;}
+  @media(min-width:700px){.legend{grid-template-columns:repeat(3,1fr);}}
+  .lg{border-left:3px solid var(--accent); padding:12px 16px; background:var(--surface); font-size:14px;}
+  .lg .code{font-family:var(--font-data); font-weight:700; color:var(--accent); font-size:13px;}
+  .lg p{margin:4px 0 0; color:var(--ink-soft); font-size:13px; line-height:1.7;}
+
+  /* ---- layer heading ---- */
+  .layer{
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    margin:48px 0 4px; padding-bottom:10px; border-bottom:1px solid var(--rule-strong);
+  }
+  .layer .num{font-family:var(--font-data); font-size:12px; letter-spacing:.14em; color:var(--accent);}
+  .layer h3{font-size:20px;}
+  .layer .how{font-size:13px; color:var(--ink-faint); margin-left:auto;}
+
+  /* ---- item card ---- */
+  .item{
+    background:var(--surface); border:1px solid var(--rule);
+    margin-top:20px; display:grid; grid-template-columns:1fr;
+  }
+  @media(min-width:800px){.item{grid-template-columns:78px 1fr;}}
+  .rail{
+    background:var(--surface-2); border-bottom:1px solid var(--rule);
+    padding:16px; display:flex; align-items:center; gap:10px;
+  }
+  @media(min-width:800px){
+    .rail{border-bottom:none; border-right:1px solid var(--rule); flex-direction:column; align-items:flex-start; padding:20px 0 20px 18px;}
+  }
+  .rail .id{font-family:var(--font-data); font-size:19px; font-weight:700; color:var(--accent); letter-spacing:.02em;}
+  .ev{
+    font-family:var(--font-data); font-size:11px; font-weight:700;
+    border:1px solid var(--accent); color:var(--accent);
+    padding:1px 6px; border-radius:2px; letter-spacing:.06em;
+  }
+  .body{padding:20px 24px 24px;}
+  .body h4{font-size:17px; margin-bottom:14px;}
+
+  .crit{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin-bottom:18px;}
+  .row{display:grid; grid-template-columns:1fr; background:var(--surface); }
+  @media(min-width:620px){.row{grid-template-columns:104px 1fr;}}
+  .verdict{
+    font-family:var(--font-data); font-size:12px; font-weight:700; letter-spacing:.04em;
+    padding:12px 14px; display:flex; align-items:center; gap:7px;
+  }
+  .verdict::before{content:""; width:8px; height:8px; border-radius:50%; background:currentColor; flex:none;}
+  .v-ok{color:var(--ok); background:var(--ok-bg);}
+  .v-wa{color:var(--warn); background:var(--warn-bg);}
+  .v-cr{color:var(--crit); background:var(--crit-bg);}
+  .rule-txt{padding:12px 16px; font-size:14.5px; line-height:1.7;}
+
+  .basis{border-top:1px dotted var(--rule-strong); padding-top:14px; margin-top:4px;}
+  .basis dt{
+    font-family:var(--font-data); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:5px;
+  }
+  .basis dd{margin:0 0 14px; font-size:14px; color:var(--ink-soft); line-height:1.78;}
+  .basis dd:last-child{margin-bottom:0;}
+  .basis q{font-style:normal; color:var(--ink); border-bottom:1px solid var(--rule-strong);}
+
+  /* ---- tables ---- */
+  .tw{overflow-x:auto; border:1px solid var(--rule); margin-top:20px; background:var(--surface);}
+  table{border-collapse:collapse; width:100%; min-width:620px; font-size:14px;}
+  th,td{padding:12px 16px; text-align:left; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.7;}
+  th{
+    font-family:var(--font-data); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); font-weight:600; background:var(--surface-2); white-space:nowrap;
+  }
+  tr:last-child td{border-bottom:none;}
+  td code{font-family:var(--font-data); font-size:12.5px; color:var(--accent); font-weight:700;}
+
+  /* ---- callout ---- */
+  .note{
+    border-left:3px solid var(--warn); background:var(--warn-bg);
+    padding:18px 22px; margin-top:24px; font-size:14.5px; line-height:1.8;
+  }
+  .note b{color:var(--ink);}
+  .note p{margin-bottom:10px;} .note p:last-child{margin-bottom:0;}
+
+  .stop{border-left:3px solid var(--crit); background:var(--crit-bg);}
+
+  ul.clean{list-style:none; margin:0 0 16px; padding:0;}
+  ul.clean li{
+    padding-left:22px; position:relative; margin-bottom:11px;
+    font-size:14.5px; color:var(--ink-soft); line-height:1.78;
+  }
+  ul.clean li::before{
+    content:""; position:absolute; left:4px; top:11px;
+    width:6px; height:1px; background:var(--accent);
+  }
+  ul.clean li b{color:var(--ink); font-weight:600;}
+
+  /* ---- sources ---- */
+  .src{font-size:13.5px; color:var(--ink-soft); line-height:1.8;}
+  .src li{margin-bottom:14px; padding-left:26px; position:relative; list-style:none;}
+  .src li .n{
+    position:absolute; left:0; top:0; font-family:var(--font-data);
+    font-size:11px; font-weight:700; color:var(--accent);
+  }
+  .src a{word-break:break-all;}
+  .src ol{padding:0; margin:0;}
+
+  footer{margin-top:72px; padding-top:24px; border-top:1px solid var(--rule); font-size:13px; color:var(--ink-faint);}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">作業用ドラフト v0.1 ／ 未公開</div>
+    <h1>交代勤務 睡眠・眠気リスク<br>勤務設計レビュー ルーブリック</h1>
+    <p class="standfirst">
+      勤務表と職場運用を、公開されている国内公的指針と国際的な専門家合意に照らして点検し、
+      是正の優先順位を書面で示すための評価票。労働衛生コンサルタント業務として提供することを想定する。
+    </p>
+    <div class="meta">
+      <span><b>作成</b> 2026-07-28</span>
+      <span><b>評価項目</b> 10（3層）</span>
+      <span><b>判定</b> 3段階・非スコア</span>
+      <span><b>想定業種</b> 医療・製造・警備・運輸・IT運用</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>設計方針</h2>
+    <p class="h2sub">この3つが、商品として売れるかどうかと、名乗って安全かどうかを同時に決める。</p>
+    <div class="principles">
+      <div class="principle">
+        <h3>判定基準を発明しない</h3>
+        <p>全項目の閾値を、厚労省・国交省の指針か国際的な専門家合意から引く。独自基準はゼロ。「その数字の根拠は」に一次資料で答えられる状態を保つ。</p>
+      </div>
+      <div class="principle">
+        <h3>合計点を作らない</h3>
+        <p>項目ごとの3段階判定に留め、総合スコアは出さない。合計点は妥当性検証を経ていない限り精度を偽装する。項目別の判定と優先順位の方が実務では使いやすい。</p>
+      </div>
+      <div class="principle">
+        <h3>事務所の役割から出ない</h3>
+        <p>診断しない。個人の検査値を企業に渡さない。就業可否を単独で決めない。評価するのは<b>勤務設計と運用</b>であって、個人の健康状態ではない。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>根拠の強さの表示</h2>
+    <p class="h2sub">全項目に等級を付し、報告書にもそのまま印字する。弱い根拠を強く見せない。</p>
+    <div class="legend">
+      <div class="lg">
+        <span class="code">A — 国内公的指針</span>
+        <p>厚生労働省・国土交通省が公表した指針・マニュアルに数値または手順が明記されているもの。日本の企業に対して最も説明力が強い。</p>
+      </div>
+      <div class="lg">
+        <span class="code">B — 国際的な専門家合意</span>
+        <p>査読誌に掲載された研究者合意。数値推奨は明確だが、合意文書自身が「証拠は限定的」と認めている点も併記する。</p>
+      </div>
+      <div class="lg">
+        <span class="code">C — 個別研究</span>
+        <p>単独研究に依拠するもの。方向性の根拠としては使うが、閾値の断定には使わない。研究の限界（対象人数・条件）も報告書に書く。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>ルーブリック本体</h2>
+    <p class="h2sub">S＝勤務表だけで判定できる／E＝現場確認と規程で判定する／R＝体制と個別リスク。この順で見る。</p>
+
+    <!-- ============ 層1 ============ -->
+    <div class="layer">
+      <span class="num">層 1</span>
+      <h3>スケジュール構造</h3>
+      <span class="how">勤務表の提出のみで判定可能</span>
+    </div>
+
+    <article class="item">
+      <div class="rail"><span class="id">S1</span><span class="ev">A・B</span></div>
+      <div class="body">
+        <h4>勤務間インターバル（終業から次の始業までの休息）</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">全勤務で11時間以上が確保されている</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">11時間未満が月に数回発生する</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">11時間未満が常態、または9時間未満が発生している</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>
+            国際的な専門家合意は<q>shift intervals of ≥11 hours</q>を推奨〔B・出典1〕。
+            厚労省の睡眠ガイドは、日本の労働者調査として<q>インターバル時間が12時間未満の者は、睡眠休養感の欠如、疲労感の増加、ストレスをより感じている</q>と記載〔A・出典2〕。
+            勤務間インターバル制度は労働時間等設定改善法により事業主の努力義務。
+          </dd>
+          <dt>企業にとっての意味</dt>
+          <dd>努力義務であり、義務化に向けた議論が進行している領域。先行対応は健康経営の「適切な働き方実現に向けた取り組み」の裏づけになる。日本人データがあるため、海外の数字より説得しやすい。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rail"><span class="id">S2</span><span class="ev">B</span></div>
+      <div class="body">
+        <h4>連続夜勤回数</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">連続3回以下に制限されている</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">連続4〜5回が発生する</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">連続6回以上、または上限の定めがない</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>専門家合意は傷害リスク低減の観点から<q>≤3 consecutive night shifts</q>を推奨〔B・出典1〕。同文書は根拠となる文献が限られている旨を明記しており、報告書でもその限界を併記する。</dd>
+          <dt>企業にとっての意味</dt>
+          <dd>連続が伸びるほど睡眠負債が累積し、後半の夜勤ほどリスクが高まる。「何連続までなら許容か」は現場が最も判断に迷う点で、根拠つきの線を引けること自体に価値がある。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rail"><span class="id">S3</span><span class="ev">A・B</span></div>
+      <div class="body">
+        <h4>一勤務の長さ</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">9時間以下</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">9時間超〜12時間</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">12時間超が常態化している</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>
+            専門家合意は<q>≤9 hours shift duration</q>を推奨〔B・出典1〕。
+            厚労省ガイドは日本の調査として、1日の労働時間7〜9時間を基準にした場合、睡眠6時間未満になるリスクが
+            <b>男性で9時間以上 2.76倍・11時間以上 8.62倍</b>、<b>女性で 2.71倍・5.59倍</b>と報告〔A・出典2〕。
+          </dd>
+          <dt>企業にとっての意味</dt>
+          <dd>労働時間と睡眠時間の関係が日本人データで定量化されている数少ない項目。長時間労働対策と睡眠対策を同じ根拠で語れるので、既存の労務管理と接続しやすい。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rail"><span class="id">S4</span><span class="ev">C</span></div>
+      <div class="body">
+        <h4>交代の方向と、夜勤後の回復日数</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">正循環（日勤→準夜→深夜）を基本とし、夜勤明けの後に十分な休息日が置かれている</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">逆循環が混在する、または夜勤明け後の休息が1日のみ</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">夜勤明けの翌日に日勤が入る運用がある</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>交代方向と回復日数は、S1〜S3と比べて推奨の一致度が低く、確立した閾値がない〔C〕。したがって<b>本項目は「日数の断定」ではなく、勤務表上の不整合の指摘として扱う</b>。特に夜勤明け直後の日勤は、S1（インターバル）違反として同時に判定されることが多い。</dd>
+          <dt>企業にとっての意味</dt>
+          <dd>実務上、最も高い頻度で発見される是正点。かつ勤務表の組み替えだけで解消できる場合が多く、費用をかけずに改善を示せるため、初回レビューの成果として提示しやすい。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <!-- ============ 層2 ============ -->
+    <div class="layer">
+      <span class="num">層 2</span>
+      <h3>職場環境と運用</h3>
+      <span class="how">現場確認・規程・聞き取りで判定</span>
+    </div>
+
+    <article class="item">
+      <div class="rail"><span class="id">E1</span><span class="ev">A</span></div>
+      <div class="body">
+        <h4>夜勤中の仮眠制度</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">0〜4時に開始する20〜50分の仮眠を取れる時間が制度化され、静かに休める場所がある</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">仮眠は可能だが、時間帯・長さの指定がない、または場所が不十分</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">仮眠の制度も場所もない</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>
+            厚労省ガイド〔A・出典2〕が時間帯と長さまで明記している数少ない項目。
+            <q>０～４時に開始する20～50分間の仮眠は、眠気や仕事効率、疲労を改善させることが報告されています</q>、
+            一方で<q>仮眠時間を60分間と長めに設定した研究では、仮眠をとるとかえって仕事の効率が低下した</q>（睡眠慣性のため）。
+            さらに<q>夜勤中に適切に仮眠がとれるよう、休養時間の確保や静かで快適に休養できる場所の整備についても、検討することが望まれます</q>。
+          </dd>
+          <dt>企業にとっての意味</dt>
+          <dd><b>本ルーブリックで最も費用対効果が高い項目。</b>「長く寝かせればよい」という直感が公的指針で明確に否定されており、20〜50分という具体的な設計に落とせる。設備投資も小さく、初回の改善提案として最も通しやすい。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rail"><span class="id">E2</span><span class="ev">C</span></div>
+      <div class="body">
+        <h4>夜勤明けの帰宅リスク</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">帰宅手段を把握し、仮眠後帰宅や交通機関利用などの選択肢と教育がある</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">注意喚起はあるが、選択肢が用意されていない</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">マイカー通勤者が夜勤明け直後に運転する前提のまま、対策がない</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>
+            夜勤後の日中運転を検証した交差試験では、<b>夜勤後の走行16回中6回（37.5%）にニアクラッシュが発生し、43.8%が安全上の理由で早期中止</b>された。
+            通常睡眠後の走行16回では、いずれもゼロだった〔C・出典3〕。
+            <b>ただし対象16名・クローズドコースでの試験であり、この数値をそのまま自社の事故確率として扱うことはできない</b>旨を報告書に明記する。
+          </dd>
+          <dt>企業にとっての意味</dt>
+          <dd>通勤中の事故は通勤災害であり、安全配慮義務の観点で経営に最も説明しやすい項目。数値のインパクトが大きいぶん、限界の明示をセットにすることで、かえって助言者としての信頼が上がる。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rail"><span class="id">E3</span><span class="ev">A</span></div>
+      <div class="body">
+        <h4>光環境とカフェインの運用</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">夜勤中の過度な照明を避ける配慮があり、仮眠前カフェインなどの運用が教育されている</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">個人の工夫任せになっている</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">対策がない、または「体内時計を完全に夜型化させる」等の誤った指導がある</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>
+            厚労省ガイド〔A・出典2〕は、<q>１日当たりに修正（前進・後退）できる体内時計の時間は数分から数時間程度</q>であり、
+            交代勤務に体内時計を適応させることは困難で<q>時に翌日以降の生活に悪い影響を及ぼす可能性がある</q>と記載。
+            週1〜2回の夜勤であれば日勤のリズムを維持する方法を示し、<q>可能であれば、夜勤中に職場で強い照明を避けるようにしましょう</q>とする。
+            仮眠については<q>カフェインを摂取してから仮眠を開始すると、カフェインの覚醒効果により仮眠後の覚醒が容易になるとともに、睡眠慣性も生じにくくなる</q>。
+          </dd>
+          <dt>企業にとっての意味</dt>
+          <dd>「夜型に慣れさせればよい」という現場の一般的な誤解を、公的指針を根拠に正面から否定できる。夜勤頻度によって推奨が変わるため、画一的な助言では対応できず、専門家が入る必然性を説明しやすい。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <!-- ============ 層3 ============ -->
+    <div class="layer">
+      <span class="num">層 3</span>
+      <h3>個別リスクと体制</h3>
+      <span class="how">規程・記録・実施状況で判定</span>
+    </div>
+
+    <article class="item">
+      <div class="rail"><span class="id">R1</span><span class="ev">A</span></div>
+      <div class="body">
+        <h4>睡眠障害の拾い上げ（特に睡眠時無呼吸）</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">スクリーニングの規程があり、2〜3年に1回を目安に実施し、結果に応じた受診勧奨と就業配慮のフローがある</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">検査は実施しているが、その後のフォローや就業判断のルールがない</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">未実施、または事故後に初めて把握する運用になっている</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>
+            国交省マニュアル〔A・出典4〕は、SASスクリーニング検査を「事業用自動車の運転者の健康管理マニュアル」における<b>「推奨検査」</b>と位置づけ（義務ではない）、
+            <q>検査の頻度は２～３年に１回が目安です。また、職種変更や体重が急増したような場合にも検査を勧めます</q>とする。
+            自覚症状との乖離についても<q>眠気がなくてもスクリーニング検査機器による客観的な検査を受けることが重要</q>と明記。
+            重症度分類は軽症 5≦AHI&lt;15／中等症 15≦AHI&lt;30／重症 30≦AHI。
+          </dd>
+          <dt>役割の境界（重要）</dt>
+          <dd>同マニュアルは<q>スクリーニング検査の段階で就労能力や運転業務の可否判断はできません</q>と明記している。<b>事務所が設計するのは検査そのものではなく、検査後に判断と措置が滞りなく回る導線</b>である。この線引きを報告書の冒頭に置く。</dd>
+          <dt>企業にとっての意味</dt>
+          <dd>運輸業では国が手順を示しているため、未整備であること自体が説明困難になる。医療機関ではなく事務所が担うのは体制設計であり、受診先を指定しないことを併記する。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rail"><span class="id">R2</span><span class="ev">A</span></div>
+      <div class="body">
+        <h4>健康情報の取扱規程と同意</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">睡眠関連の健康情報について社内規程があり、本人同意を事前に得ている。就業判定の役割分担が明文化されている</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">運用はあるが文書化されていない</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">規程も同意手続きもないまま健康情報を扱っている</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>国交省マニュアル〔A・出典4〕は<q>個人情報であるため、社内規程等のルールを作成し、予め本人の同意を得ておくことが重要</q>とし、あわせて<q>普段から定期的にコミュニケーションをとるなど、信頼関係を築き、話しやすい雰囲気をつくることも重要</q>と記載する。</dd>
+          <dt>企業にとっての意味</dt>
+          <dd>情報の扱いを誤ると、本人が症状を申告しなくなり、対策全体が機能しなくなる。ここが崩れると他の9項目の投資が回収できないため、優先度を高く扱う。</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="rail"><span class="id">R3</span><span class="ev">A</span></div>
+      <div class="body">
+        <h4>睡眠教育の実施</h4>
+        <div class="crit">
+          <div class="row"><div class="verdict v-ok">適合</div><div class="rule-txt">従業員向けと管理者向けの睡眠教育を定期的に実施し、実施記録が残っている</div></div>
+          <div class="row"><div class="verdict v-wa">要改善</div><div class="rule-txt">単発・任意参加にとどまり、記録が残っていない</div></div>
+          <div class="row"><div class="verdict v-cr">要是正</div><div class="rule-txt">未実施</div></div>
+        </div>
+        <dl class="basis">
+          <dt>根拠</dt>
+          <dd>国交省マニュアル〔A・出典4〕は独立した項目として「睡眠教育の重要性」を挙げる。教育内容の基礎は厚労省の睡眠ガイド〔A・出典2〕に依拠できる。</dd>
+          <dt>企業にとっての意味</dt>
+          <dd><b>健康経営優良法人の評価項目「管理職または従業員に対する教育機会の設定」の実施証憑にそのままなる。</b>実施報告書を認定申請で使える形式で納品することが、そのまま商品価値になる。</dd>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>健康経営とのマッピング</h2>
+    <p class="h2sub">ここが商品の営業上の背骨になる。調査票の実物で確認した。</p>
+
+    <div class="note" style="border-left-color:var(--accent); background:var(--accent-soft);">
+      <p><b>結論から。睡眠は、いま健康経営制度の中で格上げされている最中にある。</b></p>
+      <p>認定要件（①〜⑰の一覧）には睡眠という名前の項目はない。しかし企業が実際に記入する<b>健康経営度調査票には、睡眠の設問が明確に存在する</b>。そして令和8年度から<b>独立した設問に格上げされる</b>。認定要件だけを見ると見落とすため、営業では調査票を根拠にする。</p>
+    </div>
+
+    <h3 style="margin-top:36px;">① 令和7年度の調査票に、すでに睡眠設問がある</h3>
+    <p style="font-size:14.5px; color:var(--ink-soft); margin-top:10px;">
+      中小規模法人部門 <b>Q42</b>（大規模法人部門は <b>Q56</b>）「従業員の生産性低下防止のために、どのような取り組みを行っていますか」の
+      <b>＜a．睡眠障害や、業務中の眠気による生産性の低下予防＞</b>。選択肢は次のとおりで、本ルーブリックの項目と直接対応する。
+    </p>
+
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Q42-a の選択肢（中小規模法人部門）</th><th>対応するルーブリック項目</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 リフレッシュルームや仮眠室を設置している</td><td><code>E1</code> 仮眠制度</td></tr>
+          <tr><td>2 パワーナップ等仮眠制度を導入している</td><td><code>E1</code> 仮眠制度</td></tr>
+          <tr><td><b>3 睡眠に関するセミナーを実施している</b></td><td><code>R3</code> 睡眠教育 ＝ 睡眠研修パッケージそのもの</td></tr>
+          <tr><td>4 SAS検査を実施している（費用補助を含む）</td><td><code>R1</code> 睡眠障害の拾い上げ</td></tr>
+          <tr><td>5 睡眠改善に関連するアプリ等を利用できるようにしている</td><td>（該当なし）</td></tr>
+          <tr><td><b>6 産業医等による睡眠関連指導を実施している</b></td><td><code>R1</code> <code>R3</code> ＝ 事務所の中核業務そのもの</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <p><b>選択肢6が決定的。</b>調査票が「<b>産業医等による睡眠関連指導</b>」を評価対象として名指ししている。つまり<b>睡眠に強い産業医と契約すること自体が、企業にとって加点行為になる</b>。これは事務所の存在理由を国の制度が直接裏書きしている状態で、営業上これ以上強い材料はない。</p>
+      <p>なお中小規模版には「睡眠に関するセミナーを実施している」が<b>独立選択肢として存在する</b>（大規模版にはない）。事務所の主要ターゲットである50〜300名規模は中小規模法人部門にあたるため、<b>睡眠研修は申請書の1行に直結する</b>。</p>
+    </div>
+
+    <h3 style="margin-top:36px;">② 経産省の公式記入例が、そもそも睡眠セミナーである</h3>
+    <p style="font-size:14.5px; color:var(--ink-soft); margin-top:10px;">
+      中小規模法人部門の申請内容記載表には記入例が2つ載っており、<b>その片方が睡眠</b>。以下は調査票に印刷されている文面。
+    </p>
+    <div class="note" style="border-left-color:var(--rule-strong); background:var(--surface-2);">
+      <p style="font-size:13.5px;"><b>課題の内容</b>：<q>昨年度従業員に対する健康についてのアンケートにより、睡眠不足・不眠症のために日中の眠気を訴え仕事に集中できない社員が3割程度存在していることが判明した。</q></p>
+      <p style="font-size:13.5px;"><b>数値目標</b>：睡眠不足・不眠症に悩む従業員の割合　30% → <b>15%</b></p>
+      <p style="font-size:13.5px;"><b>推進計画</b>：<q>本年度は、睡眠に関するリテラシーを高めることを目的に以下を実施する。①全従業員を対象に睡眠セミナーを開催。（5月開催、次回11月開催予定）②…睡眠の質を下げる行動のチェックリストや自身の睡眠を計測できるアプリの紹介等を実施。</q></p>
+    </div>
+    <p style="font-size:14.5px; color:var(--ink-soft);">
+      営業で使える言い方はこうなる。<b>「経済産業省が申請書の書き方の見本として挙げているのが、まさに睡眠セミナーです」</b>。誇張ではなく、調査票の実物にそう書いてある。
+    </p>
+
+    <h3 style="margin-top:36px;">③ 令和8年度から、睡眠は独立設問に格上げされる</h3>
+    <p style="font-size:14.5px; color:var(--ink-soft); margin-top:10px;">
+      2026年7月14日の第6回健康経営推進検討会・事務局資料（経産省ヘルスケア産業課）に、設問構造の変更案が示された。
+    </p>
+
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>令和7年度（現行）</th><th>令和8年度（案）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q 食生活の改善に向けた取組<br>Q 運動機会の増進に向けた取組<br>Q 従業員の生産性低下防止への施策<br><span style="color:var(--ink-faint)">（<b>睡眠</b>、肩こり・腰痛、飲酒、花粉症、眼精疲労などを含む）</span><br>Q 長時間労働者への対応に関する取組<br>Q 心の健康保持・増進に関する取組</td>
+            <td>Q 食生活の改善に向けた取組<br>Q 運動機会の増進に向けた取組<br><b style="color:var(--accent)">Q 睡眠の質向上に向けた取組</b> ← 新設<br>Q 従業員の生産性低下防止への施策<br><span style="color:var(--ink-faint)">（肩こり・腰痛、飲酒、花粉症、眼精疲労などを含む）← 睡眠が抜ける</span><br>Q 長時間労働の予防と事後対応<br>Q 心の健康保持・増進に関する取組</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:14.5px; color:var(--ink-soft); margin-top:18px;">同資料が新設の背景として挙げているのは次の3点。いずれも事務所にとって追い風になる。</p>
+    <ul class="clean">
+      <li><b>骨太の方針に睡眠が明記された。</b>経済財政運営と改革の基本方針2026（原案）に<q>睡眠対策を含む健康経営の推進</q>と記載</li>
+      <li><b>2026年3月</b>、睡眠関連の2業界団体が連名で業界自主ガイドラインを公表</li>
+      <li><b>2026年6月より、医療機関が「睡眠障害」を診療科名に使えるようになった。</b>資料は<q>診療科として認識されることで受診のハードルが下がり、早期に適切な治療を受けられることが期待される</q>とする</li>
+    </ul>
+
+    <div class="note" style="border-left-color:var(--accent); background:var(--accent-soft);">
+      <p><b>3点目は、先生の事業構造そのものへの追い風。</b>「睡眠障害内科」を診療科として掲げられるようになったのは2026年6月。クリニックと産業医事務所を睡眠で束ねる構えは、制度がその方向に動いた直後の位置取りになる。</p>
+    </div>
+
+    <h3 style="margin-top:36px;">④ 経産省が公表するベストプラクティスの5テーマに睡眠が入っている</h3>
+    <p style="font-size:14.5px; color:var(--ink-soft); margin-top:10px;">
+      同資料の「テーマ別ベストプラクティス」では、政策的に取組を促したい5テーマを挙げ、その<b>③に「睡眠の質向上に向けた取組」</b>が入る。
+      大企業10社・中小企業40社を選定し、<b>取り組み概要と審査員コメントを資料化して公表</b>する予定で、厚労省の普及啓発事業との連携も検討中とされる。
+      選定基準は先進性・横展開の可能性・実効性の3つ。
+    </p>
+    <p style="font-size:14.5px; color:var(--ink-soft);">
+      支援先が選ばれれば、<b>国が公表する事例に事務所の仕事が載る</b>。実績ゼロから始める事務所にとって、これは最短の信用構築経路になりうる。
+    </p>
+
+    <div class="note">
+      <p><b>時期について。</b>同資料によれば<b>令和8年度健康経営度調査の実施は令和8年8月〜10月</b>。つまり企業が申請準備に入るのは<b>今から数週間後</b>。睡眠の取り組みを今年度分として記載したい企業にとって、いま動く必然性がある。<b>商品を出すタイミングとしては、これ以上ない。</b></p>
+      <p><b>ただし令和8年度の設問は「案」の段階。</b>確定した調査票が公表されるまで、「新設されます」ではなく<b>「新設される方針が示されています」</b>と表現すること。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>納品物の構成</h2>
+    <p class="h2sub">評価票は内部の道具。企業に渡すのはこの形。</p>
+    <ul class="clean">
+      <li><b>第1章 前提と役割の範囲</b> — 何を評価し、何を評価しないか。就業可否の最終判断は誰が行うか。ここを最初に置くことで、以降の指摘が受け入れられやすくなる</li>
+      <li><b>第2章 判定一覧</b> — 10項目の3段階判定を1枚に。適合／要改善／要是正の色分けのみで、合計点は出さない</li>
+      <li><b>第3章 項目別の所見</b> — 判定の理由、該当する勤務表上の箇所、根拠とその等級（A/B/C）</li>
+      <li><b>第4章 改善提案</b> — 優先順位つき。<b>費用をかけずに勤務表の組み替えで解ける項目を先頭に置く</b>（初回の納得感を作る）</li>
+      <li><b>第5章 根拠資料の一覧</b> — 出典をURLつきで列挙。企業側が自分で検証できる状態にする</li>
+      <li><b>付録</b> — 健康経営の該当評価項目との対応表（申請担当者がそのまま使える形式）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>名乗ってはいけないこと</h2>
+    <p class="h2sub">この線を越えなければ、この商品は安全に売れる。</p>
+    <div class="note stop">
+      <ul class="clean">
+        <li><b>「リスクスコア」「リスク評価」と称して数値化しない。</b>妥当性が検証された指標ではない。名称は「勤務設計レビュー」に留める</li>
+        <li><b>診断しない。</b>不眠症・SAS等の診断は医療機関の行為。レビューで扱うのは勤務設計と運用体制</li>
+        <li><b>個人の検査データを企業に渡さない。</b>企業に渡すのは部門単位の所見と改善提案のみ</li>
+        <li><b>スクリーニング段階で就業可否を判定しない。</b>国交省マニュアルが明確に否定している</li>
+        <li><b>効果を保証しない。</b>「事故が減る」「休職が減る」と断定しない。「リスク要因を減らす」に留める</li>
+        <li><b>顧問先の勤務表を他社の事例として使わない。</b>雇用先で得たデータも同様に扱わない</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>次にやること</h2>
+    <ul class="clean">
+      <li><b>厚労省ガイドの最終版で全引用を照合する。</b>本書は検討会資料（令和5年12月21日・案）から引用しており、2024年2月公表の最終版と文言が異なる可能性がある。公開前に必ず突合する</li>
+      <li><s style="color:var(--ink-faint)">健康経営度調査票を確認する</s> — <b>完了。</b>令和7年度の調査票に睡眠設問が実在し、令和8年度に独立設問化される方針も一次資料で確認した</li>
+      <li><b>令和8年度の確定版調査票を待って再確認する。</b>公表は令和8年8月頃の見込み。設問文言が確定したら、営業資料の表現を「方針が示されています」から更新する</li>
+      <li><b>1社で試す。</b>所要時間を実測して価格を決める。初回は範囲を絞って低めに設定する</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>出典</h2>
+    <div class="src">
+      <ol>
+        <li><span class="n">1</span>Garde AH, et al. How to schedule night shift work in order to reduce health and safety risks. <i>Scand J Work Environ Health</i>. 2020;46(6):557–569.（研究者15名による専門家合意ワークショップ。文書自身が根拠文献の限界を明記）<br><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7737811/">https://pmc.ncbi.nlm.nih.gov/articles/PMC7737811/</a></li>
+        <li><span class="n">2</span>厚生労働省「健康づくりのための睡眠ガイド2023」（健康づくりのための睡眠指針の改訂に関する検討会 資料1・令和5年12月21日／案）<br><a href="https://www.mhlw.go.jp/content/10904750/001181265.pdf">https://www.mhlw.go.jp/content/10904750/001181265.pdf</a></li>
+        <li><span class="n">3</span>Lee ML, Howard ME, Horrey WJ, et al. High risk of near-crash driving events following night-shift work. <i>PNAS</i>. 2016.（対象16名、クローズドコースでの交差試験）<br><a href="https://www.pnas.org/doi/10.1073/pnas.1510383112">https://www.pnas.org/doi/10.1073/pnas.1510383112</a></li>
+        <li><span class="n">4</span>国土交通省物流・自動車局「自動車運送事業者における睡眠時無呼吸症候群対策マニュアル ～ＳＡＳ対策の必要性と活用～」令和7年7月<br><a href="https://www.mlit.go.jp/jidosha/anzen/03manual/data/sas_manual.pdf">https://www.mlit.go.jp/jidosha/anzen/03manual/data/sas_manual.pdf</a></li>
+        <li><span class="n">5</span>健康経営優良法人2026 認定要件（<a href="https://kenko-keiei.jp/wp-content/themes/kenko_keiei_cms/files/r7chu_ninteiyoken.pdf">中小規模法人部門</a> ／ <a href="https://kenko-keiei.jp/wp-content/themes/kenko_keiei_cms/files/250818_dai_ninteiyoken.pdf">大規模法人部門</a>）※①〜⑰の評価項目一覧。睡眠という名称の項目はここには無い</li>
+        <li><span class="n">6</span><b>健康経営度調査 サンプル調査票</b>（Q42-a／Q56-a の睡眠設問、および睡眠セミナーの記入例の出典）<br><a href="https://kenko-keiei.jp/wp-content/themes/kenko_keiei_cms/files/kk2025sample_chu.pdf">中小規模法人部門サンプル</a> ／ <a href="https://kenko-keiei.jp/wp-content/themes/kenko_keiei_cms/files/kk2026sample_dai.pdf">大規模法人部門サンプル</a></li>
+        <li><span class="n">7</span><b>第6回 健康経営推進検討会 事務局資料（資料2）</b>「今年度施策及び調査等の方向性について」2026年7月14日・経済産業省商務・サービスグループヘルスケア産業課。<b>「（１）睡眠の質向上に向けた取組促進」および「テーマ別ベストプラクティス」の出典</b><br><a href="https://www.meti.go.jp/shingikai/mono_info_service/health_management/pdf/006_02_00.pdf">https://www.meti.go.jp/shingikai/mono_info_service/health_management/pdf/006_02_00.pdf</a></li>
+        <li><span class="n">8</span>Vedaa Ø, et al. Systematic review of the relationship between quick returns in rotating shift work and health-related outcomes.（11時間以下の勤務間インターバルと睡眠・眠気・疲労の関連）<br><a href="https://pubmed.ncbi.nlm.nih.gov/26072668/">https://pubmed.ncbi.nlm.nih.gov/26072668/</a></li>
+        <li><span class="n">9</span>IARC Monographs Volume 124（2019）夜勤は Group 2A（ヒトに対しておそらく発がん性がある）に分類。※本ルーブリックの判定項目には用いず、背景説明としてのみ扱う<br><a href="https://www.iarc.who.int/news-events/iarc-monographs-evaluation-of-the-carcinogenicity-of-night-shift-work">https://www.iarc.who.int/news-events/iarc-monographs-evaluation-of-the-carcinogenicity-of-night-shift-work</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    作業用ドラフト v0.1 ／ 東京KIDUKIコンサルティング産業医事務所 内部資料 ／ 未公開・要検証
+  </footer>
+
+</div>
