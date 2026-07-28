@@ -10,6 +10,21 @@
   <meta property="og:description" content="居眠り事故・夜勤者の不調・健康経営の睡眠施策に、内科×心療内科×労働衛生の三資格を持つ医師が対応。睡眠研修・SAS対策・交代勤務のご相談・嘱託産業医。睡眠医療の診療で得た知見を、就業上の配慮の判断と職場づくりに活かします。">
   <meta property="og:type" content="website">
   
+  <!-- Google Analytics 4 (WordPress 側と同一プロパティ・クロスドメイン計測) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQFWB6XG2E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JQFWB6XG2E', {
+      // 静的トップ(consult.)とフォーム(kdkconslt-)は別ドメインのため、
+      // linker を明示してセッションを跨がせる。
+      linker: {
+        domains: ['consult.kdkconslt-sngyouijm.com', 'kdkconslt-sngyouijm.com'],
+        accept_incoming: true
+      }
+    });
+  </script>
   <link rel="canonical" href="https://consult.kdkconslt-sngyouijm.com/">
   <meta property="og:url" content="https://consult.kdkconslt-sngyouijm.com/">
   <meta property="og:site_name" content="東京KIDUKIコンサルティング産業医事務所">
@@ -1375,7 +1390,7 @@
       <a href="https://kdkconslt-sngyouijm.com/" class="logo">東京KIDUKIコンサルティング<span>産業医事務所</span></a>
       <div class="header-nav">
         <a href="https://kdkconslt-sngyouijm.com/special/" class="header-blog">コラム</a>
-        <a href="https://kdkconslt-sngyouijm.com/contact/" class="header-cta">初回のご相談</a>
+        <a href="https://kdkconslt-sngyouijm.com/contact/" class="header-cta" data-cta="header">初回のご相談</a>
       </div>
     </div>
   </header>
@@ -1394,7 +1409,7 @@
           <li>衛生委員会・職場巡視・面接指導・復職判定まで、嘱託産業医の法定業務に対応します</li>
         </ul>
         <div class="cta-group">
-          <a href="https://kdkconslt-sngyouijm.com/contact/" class="cta-button primary">
+          <a href="https://kdkconslt-sngyouijm.com/contact/" class="cta-button primary" data-cta="hero">
             初回のご相談（15分）
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -1571,7 +1586,10 @@
 
       <div class="ops-preview">
         <div class="booking-badge">予約画面イメージ</div>
-        <img src="予約用.gif" alt="総合予約受付 - 立場・役割に応じた予約フロー">
+        <picture>
+          <source srcset="booking-preview.webp" type="image/webp">
+          <img src="booking-preview.jpg" width="1200" height="812" loading="lazy" decoding="async" alt="業務別に予約できる画面の例。立場や役割を選ぶと、該当する予約メニューに進む。">
+        </picture>
       </div>
 
       <h3 class="ops-promise-title">まず約束すること：担当者の仕事を増やしません</h3>
@@ -2020,7 +2038,7 @@
             <span>いまの産業保健の進め方で、滞っている部分を確認します</span>
           </div>
         </div>
-        <a href="https://kdkconslt-sngyouijm.com/contact/" class="cta-button primary">
+        <a href="https://kdkconslt-sngyouijm.com/contact/" class="cta-button primary" data-cta="final">
           初回のご相談（15分）
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -2062,6 +2080,19 @@
         header.classList.remove('scrolled');
       }
     });
+
+    // CTAクリックを設置場所つきで記録する
+    document.querySelectorAll('[data-cta]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'cta_click', {
+            cta_location: el.getAttribute('data-cta'),
+            link_url: el.getAttribute('href')
+          });
+        }
+      });
+    });
+
   </script>
 </body>
 </html>

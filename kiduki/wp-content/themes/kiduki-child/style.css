@@ -4,7 +4,7 @@ Theme URI: https://kdkconslt-sngyouijm.com/
 Description: Phase 1 customizations for Tokyo KIDUKI Consulting.
 Author: Tokyo KIDUKI Consulting
 Template: emanon-premium
-Version: 1.2.0
+Version: 1.5.0
 Text Domain: kiduki-child
 */
 
@@ -58,7 +58,24 @@ h1, h2, h3, h4, h5, h6,
 	font-weight: 700;
 	letter-spacing: 0.02em;
 	line-height: 1.45;
+}
+
+/* 濃色の地の上にある見出しは対象外にする（フッター等） */
+:where(body) h1,
+:where(body) h2,
+:where(body) h3,
+:where(body) h4,
+:where(body) h5,
+:where(body) h6,
+.entry-title,
+.archive-title {
 	color: var(--kdk-deep);
+}
+
+.l-footer :where(h1, h2, h3, h4, h5, h6),
+.l-footer .widget-title,
+.l-footer .wp-block-heading {
+	color: #ffffff;
 }
 
 .entry-content p,
@@ -329,5 +346,124 @@ input[type="submit"]:hover {
 /* 読み込み表示 */
 .loading-icon,
 .loading-text {
+	color: var(--kdk-deep);
+}
+
+/* ---- フッター ----
+   親テーマ既定は背景 #484848（黒〜グレー）、見出しの差し色 #4f85ab（青）。
+   静的トップのフッター（濃緑 #1d3a30）と揃える。 */
+
+.l-footer {
+	background-color: var(--kdk-deep);
+}
+
+.l-footer .footer-widget__title,
+.footer-bg-color .footer-widget__title,
+.footer-bg-color-radius .footer-widget__title,
+.footer-speech-bubble .footer-widget__title,
+.l-footer .footer-border .footer-widget__title,
+.l-footer .footer-border-radius .footer-widget__title {
+	background-color: var(--kdk-accent);
+	border-color: var(--kdk-accent);
+	color: #ffffff;
+}
+
+.footer-border-bottom .footer-widget__title,
+.footer-border-left .footer-widget__title,
+.footer-shortborder-bottom .footer-widget__title::after,
+.footer-lines-on-sides .footer-widget__title::before,
+.footer-lines-on-sides .footer-widget__title::after {
+	border-color: var(--kdk-accent-soft);
+	background: var(--kdk-accent-soft);
+}
+
+/* フッター内リンクは暗い地の上なので明るく */
+.l-footer a,
+.l-footer .widget a,
+.footer-menu li a {
+	color: var(--kdk-accent-soft);
+}
+
+.l-footer a:hover,
+.l-footer .widget a:hover,
+.footer-menu li a:hover {
+	color: #ffffff;
+}
+
+.footer-menu li a::before {
+	background-color: var(--kdk-accent-soft);
+}
+
+/* スマホの固定フッターメニュー */
+.fixed-footer-menu::before {
+	background-color: var(--kdk-deep);
+}
+
+/* ---- フッター内の文字色を明色で確定 ----
+   濃緑の地の上に濃色の文字が乗らないよう、フッター配下は明示的に指定する。
+   （住所が h5 で出力されており、見出し色と背景が同化する不具合の修正） */
+
+.l-footer,
+.l-footer p,
+.l-footer li,
+.l-footer span,
+.l-footer strong,
+.l-footer .widget,
+.l-footer .wp-block-paragraph,
+.l-footer .textwidget {
+	color: #ffffff;
+}
+
+.l-footer .copyright,
+.l-footer small {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---- 生成CSSに勝つための詳細度調整 ----
+   親テーマは配色をインライン <style> で出力し、これは enqueue された
+   子テーマCSSより後に読まれる。同じ詳細度では負けるため、body を
+   前置して1段階上げる（!important は使わない）。
+   対象は旧リンク色 #004e8e が残っていた箇所。 */
+
+body a,
+body .c-link,
+body .c-link__underline,
+body .breadcrumb__item a,
+body .comment-reply-link {
+	color: var(--kdk-accent);
+}
+
+body a:hover,
+body .c-link:hover,
+body .breadcrumb__item a:hover {
+	color: var(--kdk-deep-light);
+}
+
+/* 濃色の地の上のリンクは明色を維持する */
+body .l-footer a,
+body .l-footer .widget a,
+body .footer-menu li a {
+	color: var(--kdk-accent-soft);
+}
+
+body .l-footer a:hover,
+body .l-footer .widget a:hover,
+body .footer-menu li a:hover {
+	color: #ffffff;
+}
+
+/* 塗り・枠線 */
+body .page-numbers.current,
+body .slick-dots button,
+body .sns-follow__button:not(.sns-brand-color) .btn-main,
+body .comment-reply-link {
+	background-color: var(--kdk-deep);
+	color: #ffffff;
+}
+
+body .slick-prev,
+body .slick-next,
+body .article-header-full-width__inner .slider-favorite-btn.remove-favorite {
+	border-color: var(--kdk-deep);
 	color: var(--kdk-deep);
 }
