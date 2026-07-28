@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://reserve.kdkconslt-sngyouijm.com/">
-  <title>無料相談 事前ヒアリング | 東京KIDUKIコンサルティング産業医事務所</title>
-  <meta name="description" content="東京KIDUKIコンサルティング産業医事務所の無料相談事前ヒアリング。約2〜3分で完了します。">
+  <title>お問い合わせ | 東京KIDUKIコンサルティング産業医事務所</title>
+  <meta name="description" content="東京KIDUKIコンサルティング産業医事務所のお問い合わせ窓口をご案内します。">
   <!-- Google Analytics 4 with Cross-Domain Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LWPS8MNZ"></script>
   <script>
@@ -52,6 +52,15 @@
     .progress-fill{height:100%;background:linear-gradient(90deg,var(--color-accent),var(--color-secondary));border-radius:100px;transition:width 0.5s cubic-bezier(0.4,0,0.2,1)}
     .time-estimate{background:rgba(168,230,229,0.15);border:1px solid rgba(168,230,229,0.3);border-radius:var(--radius-sm);padding:12px 16px;display:inline-flex;align-items:center;gap:8px;color:#A8E6E5;font-size:0.875rem;font-weight:500;margin-bottom:32px;animation:fadeInUp 0.8s ease-out 0.2s both}
     .time-estimate svg{width:18px;height:18px}
+    .migration-notice{background:var(--color-white);border-radius:var(--radius-lg);box-shadow:var(--shadow-elevated);padding:48px 40px;text-align:center;animation:fadeInUp 0.8s ease-out 0.2s both}
+    .migration-notice:focus{outline:3px solid var(--color-accent);outline-offset:4px}
+    .migration-notice-icon{width:64px;height:64px;margin:0 auto 24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(0,212,170,0.14) 0%,rgba(99,102,241,0.12) 100%);color:var(--color-primary)}
+    .migration-notice-icon svg{width:30px;height:30px}
+    .migration-notice p{color:var(--color-text);font-size:1rem;line-height:1.9}
+    .migration-notice p+p{margin-top:4px}
+    .migration-notice-email{display:inline-flex;align-items:center;justify-content:center;max-width:100%;margin-top:28px;padding:16px 24px;border-radius:100px;background:linear-gradient(135deg,var(--color-accent) 0%,#00b894 100%);box-shadow:0 4px 16px rgba(0,212,170,0.3);color:var(--color-white);font-family:var(--font-display);font-size:clamp(0.9rem,3.5vw,1.05rem);font-weight:600;text-decoration:none;overflow-wrap:anywhere;transition:var(--transition)}
+    .migration-notice-email:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,170,0.4)}
+    .migration-notice-email:focus-visible{outline:3px solid var(--color-secondary);outline-offset:4px}
     .form-card{background:var(--color-white);border-radius:var(--radius-lg);box-shadow:var(--shadow-elevated);overflow:hidden;animation:fadeInUp 0.8s ease-out 0.3s both}
     .step{display:none;padding:40px}
     .step.active{display:block;animation:slideIn 0.4s ease-out}
@@ -162,7 +171,7 @@
     .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--color-primary);color:var(--color-white);padding:16px 24px;border-radius:var(--radius);box-shadow:var(--shadow-elevated);display:flex;align-items:center;gap:12px;z-index:1000;opacity:0;transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
     .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
     .toast svg{width:20px;height:20px;color:var(--color-accent)}
-    @media(max-width:640px){.container{padding:24px 16px 60px}.step{padding:28px 20px}.question-title{font-size:1.2rem}.option-label{padding:14px 16px}.multi-select .options{flex-direction:column}.nav-buttons{flex-direction:column-reverse}.btn{width:100%}.complete-content{padding:40px 24px}.summary-item{flex-direction:column;gap:4px}.summary-value{text-align:left;max-width:100%}}
+    @media(max-width:640px){.container{padding:24px 16px 60px}.migration-notice{padding:36px 20px}.migration-notice-email{width:100%;padding:15px 12px}.step{padding:28px 20px}.question-title{font-size:1.2rem}.option-label{padding:14px 16px}.multi-select .options{flex-direction:column}.nav-buttons{flex-direction:column-reverse}.btn{width:100%}.complete-content{padding:40px 24px}.summary-item{flex-direction:column;gap:4px}.summary-value{text-align:left;max-width:100%}}
   </style>
 </head>
 <body>
@@ -170,21 +179,31 @@
   <div class="container">
     <div class="page-header">
       <a href="https://kdkconslt-sngyouijm.com/" class="logo"><span>東京KIDUKIコンサルティング産業医事務所</span></a>
-      <h1 class="page-title">無料相談 事前ヒアリング</h1>
-      <p class="page-subtitle">最適なプランをご提案するための簡単な質問です</p>
+      <h1 class="page-title">お問い合わせ</h1>
+      <p class="page-subtitle">お問い合わせ窓口をご案内しています</p>
     </div>
-    <div class="progress-container">
+    <section class="migration-notice" id="migrationNotice" tabindex="-1" aria-label="お問い合わせ窓口の移行案内">
+      <div class="migration-notice-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-16 11h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+      </div>
+      <p>現在、お問い合わせ窓口を移行しています。</p>
+      <p>恐れ入りますが、下記メールアドレスまで直接ご連絡ください。</p>
+      <a class="migration-notice-email" href="mailto:info@kdkconslt-sngyouijm.com">info@kdkconslt-sngyouijm.com</a>
+    </section>
+    <div class="progress-container hidden" aria-hidden="true">
       <div class="progress-info">
         <span class="progress-label"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>進捗</span>
         <span class="progress-count"><span id="currentStep">1</span> / <span id="totalSteps">14</span></span>
       </div>
       <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:7%"></div></div>
     </div>
-    <div class="time-estimate">
+    <div class="time-estimate hidden" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       所要時間：約2〜3分
     </div>
-    <div class="form-card">
+    <div class="form-card hidden" aria-hidden="true">
       <form id="questionnaireForm">
         <div class="step active" data-step="0">
           <div class="error-message" id="error-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><span>両方のチェックボックスにチェックを入れてください</span></div>
@@ -218,9 +237,9 @@
   <div class="toast" id="toast"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span id="toastMessage">回答を送信しました</span></div>
   <script>
     const CONFIG={
-      API_ENDPOINT:'https://func-oh-medself-b9c0fxe5e6g0evdy.japanwest-01.azurewebsites.net/api/leads',
+      API_ENDPOINT:null,
       CAL_URL:'https://cal.com/team/kiduki/intro-15-online?overlayCalendar=true',
-      ENABLE_API:true,
+      ENABLE_API:false,
       CONSENT_VERSION:'1.0',
       PRIVACY_URL:'https://kdkconslt-sngyouijm.com/privacy',
       TERMS_URL:'https://kdkconslt-sngyouijm.com/terms'
@@ -244,7 +263,7 @@
     function showOptionalQuestions(){showOptional=true;document.querySelectorAll('.step[data-optional="true"]').forEach(s=>s.classList.remove('hidden'));totalStepsEl.textContent=totalRequiredSteps+totalOptionalSteps;document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');currentStep=14;document.querySelector('.step[data-step="14"]').classList.add('active');updateProgress();scrollToTop();}
     function updateProgress(){const total=showOptional?totalRequiredSteps+totalOptionalSteps:totalRequiredSteps;const current=typeof currentStep==='number'?currentStep+1:total;progressFill.style.width=`${(current/total)*100}%`;currentStepEl.textContent=current;totalStepsEl.textContent=total;}
     function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
-    async function submitForm(){if(!validateStep(currentStep))return;const submitBtn=document.getElementById('submitBtn');submitBtn.classList.add('loading');submitBtn.disabled=true;leadId=generateUUID();const formData=collectFormData();formData.lead_id=leadId;formData.submitted_at=new Date().toISOString();formData.consent={final_consent:true,consent_checked_at:consentCheckedAt||new Date().toISOString(),consent_version:CONFIG.CONSENT_VERSION,privacy_url:CONFIG.PRIVACY_URL,terms_url:CONFIG.TERMS_URL};formData.tracking=trackingParams;let apiSuccess=false;try{if(CONFIG.ENABLE_API){const response=await fetch(CONFIG.API_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(formData)});if(response.ok){const result=await response.json();leadId=result.lead_id||leadId;companyId=result.company_id||null;apiSuccess=true;}}}catch(error){console.log('API not available, using localStorage');}localStorage.setItem(`casetra_lead_${leadId}`,JSON.stringify({...formData,company_id:companyId}));showComplete(formData);if(apiSuccess){showToast('回答を送信しました');}else if(CONFIG.ENABLE_API){showToast('端末に保存しました（予約は可能です）');}else{showToast('回答を保存しました');}submitBtn.classList.remove('loading');submitBtn.disabled=false;}
+    function submitForm(){const notice=document.getElementById('migrationNotice');if(notice){notice.focus();notice.scrollIntoView({behavior:'smooth',block:'center'});}}
     function showComplete(formData){document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');document.querySelector('.step[data-step="complete"]').classList.add('active');currentStep='complete';
       // GA4: Track form completion event
       trackEvent('consult_form_complete', {
