@@ -64,7 +64,9 @@ function kiduki_is_contact_thanks_page() {
 
 	return $page instanceof WP_Post
 		&& 'page' === $page->post_type
-		&& 'contact/thanks' === get_page_uri( $page );
+		&& 1743 === (int) $page->ID
+		&& 1741 === (int) $page->post_parent
+		&& 'thanks' === $page->post_name;
 }
 
 /**

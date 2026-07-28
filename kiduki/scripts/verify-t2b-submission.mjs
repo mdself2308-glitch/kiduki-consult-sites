@@ -35,7 +35,8 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t)
 \t\t\t\t);
 
-\t\t\t\t$match = null;
+\t\t\t\t$t2b_match = null;
+\t\t\t\t$t6_match  = null;
 \t\t\t\tforeach ( $posts as $post ) {
 \t\t\t\t\t$meta = get_post_meta( $post->ID );
 \t\t\t\t\t$haystack = wp_json_encode(
@@ -47,10 +48,11 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t\tJSON_UNESCAPED_UNICODE
 \t\t\t\t\t);
 \t\t\t\t\tif (
-\t\t\t\t\t\tfalse !== strpos( $haystack, 'KIDUKIフォーム動作確認' )
+\t\t\t\t\t\tnull === $t2b_match
+\t\t\t\t\t\t&& false !== strpos( $haystack, 'KIDUKIフォーム動作確認' )
 \t\t\t\t\t\t&& false !== strpos( $haystack, 'Phase 1問い合わせフォームの送受信・DB保存確認です。' )
 \t\t\t\t\t) {
-\t\t\t\t\t\t$match = array(
+\t\t\t\t\t\t$t2b_match = array(
 \t\t\t\t\t\t\t'id'                 => (int) $post->ID,
 \t\t\t\t\t\t\t'date_gmt'           => get_post_time( DATE_ATOM, true, $post ),
 \t\t\t\t\t\t\t'status'             => $post->post_status,
@@ -66,6 +68,30 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t\t\t\t)
 \t\t\t\t\t\t\t),
 \t\t\t\t\t\t);
+\t\t\t\t\t}
+\t\t\t\t\tif (
+\t\t\t\t\t\tnull === $t6_match
+\t\t\t\t\t\t&& false !== strpos( $haystack, 'KIDUKI T6最終確認' )
+\t\t\t\t\t\t&& false !== strpos( $haystack, 'Phase 1 T6最終検証です。' )
+\t\t\t\t\t) {
+\t\t\t\t\t\t$t6_match = array(
+\t\t\t\t\t\t\t'id'                  => (int) $post->ID,
+\t\t\t\t\t\t\t'date_gmt'            => get_post_time( DATE_ATOM, true, $post ),
+\t\t\t\t\t\t\t'status'              => $post->post_status,
+\t\t\t\t\t\t\t'company_marker'      => true,
+\t\t\t\t\t\t\t'message_marker'      => true,
+\t\t\t\t\t\t\t'email_field_present' => false !== strpos( $haystack, 'your-email' ),
+\t\t\t\t\t\t\t'field_keys'          => array_values(
+\t\t\t\t\t\t\t\tarray_filter(
+\t\t\t\t\t\t\t\t\tarray_keys( $meta ),
+\t\t\t\t\t\t\t\t\tfunction ( $key ) {
+\t\t\t\t\t\t\t\t\t\treturn 0 === strpos( $key, '_field_' );
+\t\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t\t)
+\t\t\t\t\t\t\t),
+\t\t\t\t\t\t);
+\t\t\t\t\t}
+\t\t\t\t\tif ( null !== $t2b_match && null !== $t6_match ) {
 \t\t\t\t\t\tbreak;
 \t\t\t\t\t}
 \t\t\t\t}
@@ -74,7 +100,8 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t'flamingo_available' => class_exists( 'Flamingo_Inbound_Message' ),
 \t\t\t\t\t'published_count'    => isset( $counts->publish ) ? (int) $counts->publish : 0,
 \t\t\t\t\t'searched_count'     => count( $posts ),
-\t\t\t\t\t'test_submission'    => $match,
+\t\t\t\t\t'test_submission'    => $t2b_match,
+\t\t\t\t\t't6_submission'      => $t6_match,
 \t\t\t\t);
 \t\t\t},
 \t\t)
@@ -151,8 +178,8 @@ try {
   if (!purged) {
     throw new Error('Temporary T2B verification bridge did not purge itself.');
   }
-  if (!state.data.test_submission) {
-    throw new Error('The T2B test submission was not found in Flamingo.');
+  if (!state.data.test_submission || !state.data.t6_submission) {
+    throw new Error('The T2B/T6 test submissions were not found in Flamingo.');
   }
 
   console.log(
