@@ -17,10 +17,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JQFWB6XG2E', {
-      // 静的トップ(consult.)とフォーム(kdkconslt-)は別ドメインのため、
-      // linker を明示してセッションを跨がせる。
+      // consult. と kdkconslt- は同一登録ドメインなので _ga は自動で共有されるが、
+      // casetra.jp は別ドメインで共有されない。事務所→Casetra の遷移を1セッション
+      // として繋ぐため、3ホストを linker に明示する。
       linker: {
-        domains: ['consult.kdkconslt-sngyouijm.com', 'kdkconslt-sngyouijm.com'],
+        domains: [
+          'consult.kdkconslt-sngyouijm.com',
+          'kdkconslt-sngyouijm.com',
+          'casetra.jp'
+        ],
         accept_incoming: true
       }
     });
