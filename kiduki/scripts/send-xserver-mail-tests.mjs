@@ -157,7 +157,7 @@ function base64Lines(text) {
 
 function buildMessage({ recipient, subject, messageId, sentAt }) {
   const body = [
-    '東京KIDUKIコンサルティング産業医事務所のメール基盤テストです。',
+    'KIDUKIコンサルティング産業医事務所のメール基盤テストです。',
     'このメールへの返信は不要です。',
     `送信日時: ${sentAt.toISOString()}`,
   ].join('\n');

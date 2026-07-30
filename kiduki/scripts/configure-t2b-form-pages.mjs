@@ -13,7 +13,7 @@ const backup = process.argv.includes('--backup');
 const backupConfirmed = process.argv.includes('--backup-confirmed');
 const mainRecipient = 'answr202308@kdkconslt-sngyouijm.com';
 const senderAddress = 'info@kdkconslt-sngyouijm.com';
-const senderName = '東京KIDUKIコンサルティング産業医事務所';
+const senderName = 'KIDUKIコンサルティング産業医事務所';
 const recipientsPath = path.resolve('backups/t2a-test-recipients.env');
 const contactSourcePath = path.resolve(
   'source/wordpress/page-contact.html',
@@ -113,7 +113,7 @@ const autoReplyBody = `[your-name] 様
 ■氏名: [your-name]([your-title])
 ■メール: [your-email]/電話: [your-tel]
 
-東京KIDUKIコンサルティング産業医事務所
+KIDUKIコンサルティング産業医事務所
 【住所・URL】`;
 
 const formMessages = {
@@ -306,7 +306,7 @@ const formUpdated = await wpRequest(
     mail_2: {
       active: true,
       subject:
-        '【自動返信】お問い合わせありがとうございます|東京KIDUKIコンサルティング産業医事務所',
+        '【自動返信】お問い合わせありがとうございます|KIDUKIコンサルティング産業医事務所',
       sender: `${senderName} <${senderAddress}>`,
       recipient: '[your-email]',
       body: autoReplyBody,

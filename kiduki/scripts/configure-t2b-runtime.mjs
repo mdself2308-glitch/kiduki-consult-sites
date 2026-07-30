@@ -53,7 +53,7 @@ if (!mailPassword) {
 const plannedConfiguration = {
   mailer: 'smtp',
   fromEmail: 'info@kdkconslt-sngyouijm.com',
-  fromName: '東京KIDUKIコンサルティング産業医事務所',
+  fromName: 'KIDUKIコンサルティング産業医事務所',
   forceFromEmail: true,
   forceFromName: true,
   returnPath: true,
@@ -160,7 +160,7 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t$options = array(
 \t\t\t\t\t\t'mail' => array(
 \t\t\t\t\t\t\t'from_email'       => 'info@kdkconslt-sngyouijm.com',
-\t\t\t\t\t\t\t'from_name'        => '東京KIDUKIコンサルティング産業医事務所',
+\t\t\t\t\t\t\t'from_name'        => 'KIDUKIコンサルティング産業医事務所',
 \t\t\t\t\t\t\t'mailer'           => 'smtp',
 \t\t\t\t\t\t\t'return_path'      => true,
 \t\t\t\t\t\t\t'from_email_force' => true,
