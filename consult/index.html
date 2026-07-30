@@ -238,7 +238,10 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: #1d3a30;
+      background:
+        radial-gradient(1200px 600px at 78% 18%, rgba(63,122,94,.28) 0%, rgba(63,122,94,0) 62%),
+        radial-gradient(900px 700px at 8% 88%, rgba(11,26,21,.55) 0%, rgba(11,26,21,0) 60%),
+        #1d3a30;
       position: relative;
       overflow: hidden;
       padding-top: 80px;
@@ -1093,7 +1096,9 @@
 
     /* Final CTA */
     .final-cta {
-      background: #1d3a30;
+      background:
+        radial-gradient(1000px 500px at 70% 20%, rgba(63,122,94,.24) 0%, rgba(63,122,94,0) 60%),
+        #1d3a30;
       position: relative;
       overflow: hidden;
       padding: 120px 0;
@@ -1300,6 +1305,67 @@
     .demerits-list h3 { color: #c81e1e; }
     .bottleneck-badge, .demerits-list li { color: inherit; }
 
+
+    /* ===== 質感の回復 =====
+       ネオンの発光やSaaS的なグラデーションではなく、
+       紙の重なりとしての奥行きを与える。 */
+
+    .problem-card,
+    .model-step,
+    .service-card,
+    .ops-card,
+    .trust-system-card,
+    .pain-card,
+    .scope-item {
+      box-shadow: 0 1px 2px rgba(20, 35, 28, .05), 0 8px 24px -12px rgba(20, 35, 28, .16);
+      transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s cubic-bezier(.4,0,.2,1);
+    }
+
+    .problem-card:hover,
+    .model-step:hover,
+    .service-card:hover,
+    .ops-card:hover,
+    .trust-system-card:hover,
+    .pain-card:hover,
+    .scope-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 2px 4px rgba(20, 35, 28, .06), 0 16px 36px -14px rgba(20, 35, 28, .22);
+    }
+
+    /* 統合モデルの4ステップに進行感を与える */
+    .model-step { position: relative; }
+    .model-step::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -14px;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid var(--color-accent);
+      border-right: 2px solid var(--color-accent);
+      transform: translateY(-50%) rotate(45deg);
+      opacity: .55;
+    }
+    .model-grid > .model-step:last-child::after { display: none; }
+
+    /* CTAに触れる手応えを戻す */
+    .cta-button.primary {
+      box-shadow: 0 1px 2px rgba(20,35,28,.14), 0 10px 24px -12px rgba(29,58,48,.5);
+    }
+    .cta-button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(20,35,28,.16), 0 16px 32px -14px rgba(29,58,48,.55);
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+      .problem-card, .model-step, .service-card, .ops-card,
+      .trust-system-card, .pain-card, .scope-item, .cta-button.primary { transition: none; }
+      .problem-card:hover, .model-step:hover, .service-card:hover, .ops-card:hover,
+      .trust-system-card:hover, .pain-card:hover, .scope-item:hover,
+      .cta-button.primary:hover { transform: none; }
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       section {
@@ -1369,6 +1435,7 @@
       .hero { padding: 96px 0 72px; }
 
       .problem-grid, .model-grid, .service-grid, .ops-grid { grid-template-columns: 1fr; }
+      .model-step::after { display: none; }
       .scope-grid { grid-template-columns: repeat(2, 1fr); }
       .security-grid { grid-template-columns: 1fr; }
       .trust-cols { grid-template-columns: 1fr; gap: 32px; }
@@ -1389,7 +1456,7 @@
     <div class="header-inner">
       <a href="https://kdkconslt-sngyouijm.com/" class="logo">東京KIDUKIコンサルティング<span>産業医事務所</span></a>
       <div class="header-nav">
-        <a href="https://kdkconslt-sngyouijm.com/special/" class="header-blog">コラム</a>
+        <a href="https://kdkconslt-sngyouijm.com/?main" class="header-blog">事務所サイト</a>
         <a href="https://kdkconslt-sngyouijm.com/contact/" class="header-cta" data-cta="header">初回のご相談</a>
       </div>
     </div>
@@ -1587,8 +1654,8 @@
       <div class="ops-preview">
         <div class="booking-badge">予約画面イメージ</div>
         <picture>
-          <source srcset="booking-preview.webp" type="image/webp">
-          <img src="booking-preview.jpg" width="1200" height="812" loading="lazy" decoding="async" alt="業務別に予約できる画面の例。立場や役割を選ぶと、該当する予約メニューに進む。">
+          <source srcset="booking-flow.webp" type="image/webp">
+          <img src="booking-preview.jpg" width="600" height="406" loading="lazy" decoding="async" alt="業務別に予約できる画面の動き。立場や役割を選ぶと、該当する面談の種類と予約方法へ順に進む。">
         </picture>
       </div>
 
@@ -2058,6 +2125,7 @@
           <p class="footer-rep">代表　宮部 大輔<br><span>内科専門医・心療内科専門医・労働衛生コンサルタント</span></p>
         </div>
         <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="https://kdkconslt-sngyouijm.com/?main">事務所サイト トップ</a>
           <a href="https://kdkconslt-sngyouijm.com/special/">コラム／Column記事</a>
           <a href="https://kdkconslt-sngyouijm.com/office-info/">事務所概要</a>
           <a href="https://kdkconslt-sngyouijm.com/greeting/">ご挨拶</a>
@@ -2082,6 +2150,8 @@
     });
 
     // CTAクリックを設置場所つきで記録する
+
+
     document.querySelectorAll('[data-cta]').forEach(function (el) {
       el.addEventListener('click', function () {
         if (typeof gtag === 'function') {
