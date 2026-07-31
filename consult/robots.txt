@@ -1,0 +1,8 @@
+# 事務所トップページ（consult.kdkconslt-sngyouijm.com）
+# コラム・事務所概要・問い合わせは kdkconslt-sngyouijm.com 側にあり、
+# そちらは別の robots.txt と sitemap を持つ。
+
+User-agent: *
+Allow: /
+
+Sitemap: https://consult.kdkconslt-sngyouijm.com/sitemap.xml

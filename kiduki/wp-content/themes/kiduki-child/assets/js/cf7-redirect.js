@@ -1,5 +1,31 @@
-document.addEventListener('wpcf7mailsent', function () {
-  location.href = '/contact/thanks/';
+// 問い合わせの送信完了。wpcf7mailsent はメールが実際に送られたときだけ
+// 発火するので、ここが事務所サイトの唯一のコンバージョン地点になる。
+//
+// GA4 の推奨イベント名 generate_lead を使う。独自名にすると GA4 側の
+// 既定のレポートに乗らず、キーイベント指定も後追いになる。
+//
+// 送信直後に画面遷移するため、計測が飛ぶ前にページが消えないよう
+// event_callback で遷移を待たせる。コールバックが返らない場合に備えて
+// 1秒でタイムアウトさせ、遷移が止まることはないようにしてある。
+document.addEventListener('wpcf7mailsent', function (event) {
+  var moved = false;
+  var go = function () {
+    if (moved) { return; }
+    moved = true;
+    location.href = '/contact/thanks/';
+  };
+
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'generate_lead', {
+      form_id: event && event.detail ? event.detail.contactFormId : undefined,
+      form_name: 'kdk_contact',
+      site: 'office',
+      event_callback: go
+    });
+    setTimeout(go, 1000);
+  } else {
+    go();
+  }
 }, false);
 
 // 同意欄のプライバシーポリシーリンクは <label> の内側にある。クリックが
