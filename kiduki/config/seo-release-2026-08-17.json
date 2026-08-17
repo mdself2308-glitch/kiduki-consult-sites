@@ -52,14 +52,14 @@
     {
       "type": "page",
       "id": 164,
-      "expectedModified": "2026-07-28T23:44:34",
+      "expectedModified": "2026-08-17T20:31:10",
       "allowedCurrentSlugs": ["spot", "return-to-work-support"],
       "slug": "return-to-work-support",
-      "title": "休職・復職判定支援｜復職支援Pack",
+      "title": "東京のスポット産業医｜休職・復職判定を1案件で支援",
       "status": "publish",
       "source": "source/wordpress/page-164-spot.html",
-      "excerpt": "主治医の診断書を受け取った後の情報整理、復職前面談、産業医意見、会社の決定、復職後の再評価までを1案件として支援します。",
-      "metaDescription": "主治医の診断書を受け取った後の情報整理、復職前面談、産業医意見、会社の決定、復職後の再評価までを1案件として支援します。"
+      "excerpt": "東京を中心に、月額契約のない企業へ、スポット産業医が復職前の情報整理、面談、医師意見、会社の決定、復職後の再評価までを1案件単位で支援します。",
+      "metaDescription": "東京を中心に、月額契約のない企業へ、スポット産業医が復職前の情報整理、面談、医師意見、会社の決定、復職後の再評価までを1案件単位で支援します。"
     },
     {
       "type": "page",
