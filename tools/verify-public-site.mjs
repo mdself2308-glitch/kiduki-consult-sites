@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+
 import { siteConfig } from './kdk-site-config.mjs';
 
 function assert(condition, message) {
@@ -20,6 +22,7 @@ assert(
 
 const checks = [];
 const expectSeoRelease = process.argv.includes('--expect-seo-release');
+const seoExpectations = new Map();
 const routes = [
   ['static-home', siteConfig.staticHomeUrl],
   ['reserve', siteConfig.reserveUrl],
@@ -33,19 +36,23 @@ const routes = [
 ];
 
 if (expectSeoRelease) {
-  routes.push(
-    ['seo-service-retain', `${siteConfig.wordpressUrl}/service/sangyoui/`],
-    ['seo-service-basic', `${siteConfig.wordpressUrl}/service/komon/`],
-    [
-      'seo-service-return-to-work',
-      `${siteConfig.wordpressUrl}/service/return-to-work-support/`,
-    ],
-    ['seo-pillar-selection', `${siteConfig.wordpressUrl}/jimushochoice/`],
-    [
-      'seo-pillar-long-hours',
-      `${siteConfig.wordpressUrl}/long-hours-occupational-physician-interview/`,
-    ],
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      new URL('../kiduki/config/seo-release-2026-08-17.json', import.meta.url),
+      'utf8',
+    ),
   );
+  for (const item of manifest.items) {
+    const path =
+      item.type === 'post' || ['service', 'field'].includes(item.slug)
+        ? `/${item.slug}/`
+        : `/service/${item.slug}/`;
+    const url = `${siteConfig.wordpressUrl}${path}`;
+    seoExpectations.set(url, item);
+    if (!routes.some(([, routeUrl]) => routeUrl === url)) {
+      routes.push([`seo-${item.type}-${item.id}`, url]);
+    }
+  }
 }
 
 for (const route of routes) {
@@ -59,6 +66,27 @@ for (const route of routes) {
     assert(
       !/name=["']robots["'][^>]*noindex/i.test(text),
       `${name} contains noindex.`,
+    );
+  }
+  const seoExpectation = seoExpectations.get(url);
+  if (seoExpectation) {
+    assert(
+      text.includes(`<title>${seoExpectation.title}`),
+      `${name} title does not match the SEO manifest.`,
+    );
+    assert(
+      text.includes(
+        `<meta name="description" content="${seoExpectation.metaDescription}"`,
+      ),
+      `${name} meta description does not match the SEO manifest.`,
+    );
+    assert(
+      text.includes(`<link rel="canonical" href="${url}"`),
+      `${name} canonical does not match its public URL.`,
+    );
+    assert(
+      (text.match(/<h1\b/gi) || []).length === 1,
+      `${name} must contain exactly one H1.`,
     );
   }
   if (name === 'static-home') {
@@ -106,6 +134,43 @@ for (const route of routes) {
   checks.push({ name, url: response.url, status: response.status });
 }
 
+let legacyRedirect = null;
+let sitemapChecks = null;
+if (expectSeoRelease) {
+  const oldSpotUrl = `${siteConfig.wordpressUrl}/service/spot/`;
+  const expectedSpotTarget = `${siteConfig.wordpressUrl}/service/return-to-work-support/`;
+  const oldSpot = await fetchManual(oldSpotUrl);
+  assert(oldSpot.status === 301, `Retired spot URL returned ${oldSpot.status}.`);
+  assert(
+    oldSpot.headers.get('location') === expectedSpotTarget,
+    `Retired spot URL redirects to ${oldSpot.headers.get('location') || '(empty)'}.`,
+  );
+  legacyRedirect = {
+    from: oldSpotUrl,
+    to: expectedSpotTarget,
+    status: oldSpot.status,
+  };
+
+  const sitemapResponse = await fetch(`${siteConfig.wordpressUrl}/sitemap.xml`);
+  const sitemapIndex = await sitemapResponse.text();
+  const childSitemaps = [...sitemapIndex.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+    (match) => match[1].replace(/&amp;/g, '&'),
+  );
+  let sitemapCorpus = sitemapIndex;
+  for (const childUrl of childSitemaps) {
+    if (childUrl.startsWith(`${siteConfig.wordpressUrl}/`)) {
+      sitemapCorpus += `\n${await (await fetch(childUrl)).text()}`;
+    }
+  }
+  sitemapChecks = Object.fromEntries(
+    [...seoExpectations.keys()].map((url) => {
+      const included = sitemapCorpus.includes(`<loc>${url}</loc>`);
+      assert(included, `Sitemap does not contain ${url}.`);
+      return [url, included];
+    }),
+  );
+}
+
 console.log(
   JSON.stringify(
     {
@@ -115,6 +180,8 @@ console.log(
         to: siteConfig.staticHomeUrl,
         status: entry.status,
       },
+      legacyRedirect,
+      sitemapChecks,
       checks,
     },
     null,
