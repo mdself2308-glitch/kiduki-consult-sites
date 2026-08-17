@@ -4,7 +4,7 @@ Theme URI: https://kdkconslt-sngyouijm.com/
 Description: Site customizations for KIDUKI Consulting.
 Author: KIDUKI Consulting
 Template: emanon-premium
-Version: 1.11.0
+Version: 1.11.1
 Text Domain: kiduki-child
 */
 
@@ -871,7 +871,8 @@ body .kiduki-contact textarea:focus {
 	body.postid-1597,
 	body.postid-1598
 ) .article-header-full-width__thumbnail {
-	height: 380px;
+	/* 親テーマJSがコンテナへインラインheightを付けるため、この限定範囲だけ強制する。 */
+	height: 380px !important;
 }
 
 @media (max-width: 599px) {
@@ -895,6 +896,6 @@ body .kiduki-contact textarea:focus {
 		body.postid-1597,
 		body.postid-1598
 	) .article-header-full-width__thumbnail {
-		height: 320px;
+		height: 320px !important;
 	}
 }
