@@ -119,3 +119,24 @@ function kiduki_redirect_legacy_question() {
 	}
 }
 add_action( 'template_redirect', 'kiduki_redirect_legacy_question', 0 );
+
+/**
+ * Permanently redirect the retired spot-service slug to its replacement.
+ */
+function kiduki_redirect_legacy_service_spot() {
+	$request_uri = isset( $_SERVER['REQUEST_URI'] )
+		? wp_unslash( $_SERVER['REQUEST_URI'] )
+		: '';
+	$path        = wp_parse_url( $request_uri, PHP_URL_PATH );
+	$path        = '/' . ltrim( (string) $path, '/' );
+
+	if ( '/service/spot/' === trailingslashit( $path ) ) {
+		wp_safe_redirect(
+			home_url( '/service/return-to-work-support/' ),
+			301,
+			'KIDUKI'
+		);
+		exit;
+	}
+}
+add_action( 'template_redirect', 'kiduki_redirect_legacy_service_spot', 0 );
