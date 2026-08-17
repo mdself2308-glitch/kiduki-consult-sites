@@ -141,7 +141,11 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t\t\tarray( 'status' => 409 )
 \t\t\t\t\t\t);
 \t\t\t\t\t}
-\t\t\t\t\tif ( ! $state['w3tc_flush_all'] || ! $state['w3tc_flush_url'] ) {
+\t\t\t\t\tif (
+\t\t\t\t\t\t! $state['w3tc_flush_all'] ||
+\t\t\t\t\t\t! $state['w3tc_flush_url'] ||
+\t\t\t\t\t\t! $state['wp_cache_flush']
+\t\t\t\t\t) {
 \t\t\t\t\t\treturn new WP_Error(
 \t\t\t\t\t\t\t'kiduki_t5_cache_api_missing',
 \t\t\t\t\t\t\t'W3 Total Cache purge functions are unavailable.',
@@ -154,10 +158,49 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t\tw3tc_flush_url( $url, $extras );
 \t\t\t\t\t}
 \t\t\t\t\twp_cache_flush();
+
+\t\t\t\t\t$after_flush = $read_state();
+\t\t\t\t\t$deleted     = 0;
+\t\t\t\t\t$failures    = array();
+\t\t\t\t\tforeach ( $after_flush['cache']['files'] as $file ) {
+\t\t\t\t\t\t$relative_path = (string) $file['path'];
+\t\t\t\t\t\tif (
+\t\t\t\t\t\t\t'' === $relative_path ||
+\t\t\t\t\t\t\t'/' === $relative_path[0] ||
+\t\t\t\t\t\t\tfalse !== strpos( $relative_path, '..' )
+\t\t\t\t\t\t) {
+\t\t\t\t\t\t\t$failures[] = $relative_path;
+\t\t\t\t\t\t\tcontinue;
+\t\t\t\t\t\t}
+\t\t\t\t\t\t$absolute_path = trailingslashit( $after_flush['cache']['host_dir'] ) . $relative_path;
+\t\t\t\t\t\tif (
+\t\t\t\t\t\t\t( is_file( $absolute_path ) || is_link( $absolute_path ) ) &&
+\t\t\t\t\t\t\t! unlink( $absolute_path )
+\t\t\t\t\t\t) {
+\t\t\t\t\t\t\t$failures[] = $relative_path;
+\t\t\t\t\t\t\tcontinue;
+\t\t\t\t\t\t}
+\t\t\t\t\t\t$deleted++;
+\t\t\t\t\t}
+
+\t\t\t\t\t$after_delete = $read_state();
+\t\t\t\t\tif ( ! empty( $failures ) || 0 !== $after_delete['cache']['file_count'] ) {
+\t\t\t\t\t\treturn new WP_Error(
+\t\t\t\t\t\t\t'kiduki_t5_cache_files_remain',
+\t\t\t\t\t\t\t'T5 enhanced page cache files remain after purge.',
+\t\t\t\t\t\t\tarray(
+\t\t\t\t\t\t\t\t'status'               => 500,
+\t\t\t\t\t\t\t\t'failures'             => $failures,
+\t\t\t\t\t\t\t\t'remaining_file_count' => $after_delete['cache']['file_count'],
+\t\t\t\t\t\t\t)
+\t\t\t\t\t\t);
+\t\t\t\t\t}
 \t\t\t\t\treturn array(
 \t\t\t\t\t\t'w3tc_flush_all_invoked' => true,
 \t\t\t\t\t\t'url_count'              => count( $state['urls'] ),
 \t\t\t\t\t\t'object_cache_invoked'   => true,
+\t\t\t\t\t\t'deleted_file_count'     => $deleted,
+\t\t\t\t\t\t'remaining_file_count'   => 0,
 \t\t\t\t\t);
 \t\t\t\t},
 \t\t\t),
@@ -319,7 +362,8 @@ try {
   if (
     result.data.w3tc_flush_all_invoked !== true ||
     result.data.object_cache_invoked !== true ||
-    result.data.url_count !== before.data.url_count
+    result.data.url_count !== before.data.url_count ||
+    result.data.remaining_file_count !== 0
   ) {
     throw new Error('T5 cache purge invocation verification failed.');
   }
