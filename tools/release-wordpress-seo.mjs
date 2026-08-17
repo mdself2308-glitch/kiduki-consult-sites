@@ -37,6 +37,14 @@ function sha256(value) {
   return crypto.createHash('sha256').update(value).digest('hex');
 }
 
+function normalizeContentForComparison(value) {
+  return String(value || '').replace(/\\u002d/gi, '-');
+}
+
+function contentSha256(value) {
+  return sha256(normalizeContentForComparison(value));
+}
+
 function cleanRendered(value) {
   return String(value || '')
     .replace(/<[^>]+>/g, '')
@@ -74,11 +82,6 @@ for (const item of items) {
       `${item.type}:${item.id} has no expectedModified lock. Run the dry-run, review current.modified, then pin it in the manifest before apply.`,
     );
   }
-  if (apply && item.expectedModified !== current.modified) {
-    throw new Error(
-      `${item.type}:${item.id} changed after review: expected ${item.expectedModified}, found ${current.modified}. Pull and review again.`,
-    );
-  }
 
   const slugMatches = await wpRequest(
     env,
@@ -105,6 +108,21 @@ for (const item of items) {
   };
   const currentContent = current.content?.raw || '';
   const currentTitle = current.title?.raw || cleanRendered(current.title?.rendered);
+  const alreadyApplied =
+    current.slug === payload.slug &&
+    current.status === payload.status &&
+    currentTitle === payload.title &&
+    (current.excerpt?.raw || '') === payload.excerpt &&
+    contentSha256(currentContent) === contentSha256(source);
+  if (
+    apply &&
+    item.expectedModified !== current.modified &&
+    !alreadyApplied
+  ) {
+    throw new Error(
+      `${item.type}:${item.id} changed after review: expected ${item.expectedModified}, found ${current.modified}. Pull and review again.`,
+    );
+  }
 
   prepared.push({
     item,
@@ -113,6 +131,7 @@ for (const item of items) {
     source,
     current,
     payload,
+    alreadyApplied,
     comparison: {
       type: item.type,
       id: item.id,
@@ -122,21 +141,21 @@ for (const item of items) {
         status: current.status,
         title: currentTitle,
         contentBytes: Buffer.byteLength(currentContent),
-        contentSha256: sha256(currentContent),
+        contentSha256: contentSha256(currentContent),
       },
       next: {
         slug: payload.slug,
         status: payload.status,
         title: payload.title,
         contentBytes: Buffer.byteLength(source),
-        contentSha256: sha256(source),
+        contentSha256: contentSha256(source),
       },
       changed: {
         slug: current.slug !== payload.slug,
         status: current.status !== payload.status,
         title: currentTitle !== payload.title,
         excerpt: (current.excerpt?.raw || '') !== payload.excerpt,
-        content: sha256(currentContent) !== sha256(source),
+        content: contentSha256(currentContent) !== contentSha256(source),
       },
     },
   });
@@ -180,7 +199,21 @@ for (const { item, current } of prepared) {
 
 const updatedItems = [];
 for (const preparedItem of prepared) {
-  const { item, restBase, payload, source } = preparedItem;
+  const { item, restBase, payload, source, current, alreadyApplied } =
+    preparedItem;
+  if (alreadyApplied) {
+    updatedItems.push({
+      type: item.type,
+      id: item.id,
+      slug: current.slug,
+      status: current.status,
+      modified: current.modified,
+      link: current.link,
+      contentSha256: contentSha256(current.content?.raw || ''),
+      writeSkipped: true,
+    });
+    continue;
+  }
   const response = await wpRequest(
     env,
     'POST',
@@ -194,7 +227,7 @@ for (const preparedItem of prepared) {
     updated.slug === payload.slug &&
     updated.status === payload.status &&
     updatedTitle === payload.title &&
-    sha256(updatedContent) === sha256(source);
+    contentSha256(updatedContent) === contentSha256(source);
   if (!verified) {
     throw new Error(
       `Verification failed after updating ${item.type}:${item.id}. Backups: ${backupDirectory}`,
@@ -207,7 +240,8 @@ for (const preparedItem of prepared) {
     status: updated.status,
     modified: updated.modified,
     link: updated.link,
-    contentSha256: sha256(updatedContent),
+    contentSha256: contentSha256(updatedContent),
+    writeSkipped: false,
   });
 }
 
