@@ -848,3 +848,53 @@ body .kiduki-contact textarea:focus {
 		padding: 11px 12px;
 	}
 }
+
+/* 検索流入向けページは、テーマ既定の500pxヒーローを短縮して
+   サービス説明と比較情報をファーストビューへ近づける。 */
+:is(
+	body.page-id-29,
+	body.page-id-31,
+	body.page-id-160,
+	body.page-id-162,
+	body.page-id-164,
+	body.page-id-166,
+	body.postid-1597,
+	body.postid-1598
+) .article-header-full-width,
+:is(
+	body.page-id-29,
+	body.page-id-31,
+	body.page-id-160,
+	body.page-id-162,
+	body.page-id-164,
+	body.page-id-166,
+	body.postid-1597,
+	body.postid-1598
+) .article-header-full-width__thumbnail {
+	height: 380px;
+}
+
+@media (max-width: 599px) {
+	:is(
+		body.page-id-29,
+		body.page-id-31,
+		body.page-id-160,
+		body.page-id-162,
+		body.page-id-164,
+		body.page-id-166,
+		body.postid-1597,
+		body.postid-1598
+	) .article-header-full-width,
+	:is(
+		body.page-id-29,
+		body.page-id-31,
+		body.page-id-160,
+		body.page-id-162,
+		body.page-id-164,
+		body.page-id-166,
+		body.postid-1597,
+		body.postid-1598
+	) .article-header-full-width__thumbnail {
+		height: 320px;
+	}
+}
