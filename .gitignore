@@ -4,5 +4,6 @@
 *.log
 backups/
 reports/runtime/
+archive/2026-07-site-work/runtime-reports/
 node_modules/
 tmp/

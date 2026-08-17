@@ -5,6 +5,7 @@
   "scripts": {
     "verify": "node tools/verify-public-site.mjs",
     "verify:seo-live": "node tools/verify-public-site.mjs --expect-seo-release",
+    "verify:seo-review": "node tools/verify-seo-content-review.mjs",
     "verify:static": "node tools/verify-static-home.mjs",
     "verify:live-match": "node tools/verify-static-home.mjs --expect-live-match",
     "audit:seo-source": "node tools/audit-seo-source.mjs",

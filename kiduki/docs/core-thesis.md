@@ -55,4 +55,4 @@
 | 高ストレス放置 | SCフォロープログラム→SomnoPrime→医療（3層） | 2027開発・2028施行 |
 | 長時間・健診事後措置ほか | 丸ごとBPO | ロースターエンジン後 |
 
-関連文書: bpo-pricing-draft.md（価格と商品仕様）／checklists/open-items.md（未処理項目）
+関連文書: pricing-growth-canonical.md（料金・契約・段階展開の正本）／integrated-story.md（獲得から拡張まで）／archive/bpo-pricing-draft.md（旧価格案・検討履歴）／checklists/open-items.md（未処理項目）

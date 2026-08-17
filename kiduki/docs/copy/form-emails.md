@@ -1,6 +1,6 @@
 # 問い合わせフォーム関連 文言確定稿(マスター)
 
-> 送信の仕組み(SMTP・DB保存・スパム対策)は `docs/phase1-instructions.md` の T2A・T2B に従う。本書は文言のマスター。
+> 送信の仕組み(SMTP・DB保存・スパム対策)は `docs/archive/phase1-instructions.md` の T2A・T2B に従う（実装済み・履歴参照）。本書は文言のマスター。
 
 ## 通知メール(メール1)
 

@@ -13,6 +13,12 @@
 
 トップページだけはWordPressではありません。入口URLからAzure Static Web Appsの静的トップへ転送されています。投稿と下層固定ページはWordPressが管理します。
 
+## 文書の場所
+
+- 事業・商品・営業の文書: `kiduki/docs/`（索引は `kiduki/docs/README.md`。現行文書のみを置き、過去分は `kiduki/docs/archive/` へ）
+- リポジトリ運用の文書: `docs/`（サイト構成・Codex手順・XServerランブック）
+- 2026-07 サイト改修時の実行時生成物（バックアップ・ログ・スクリーンショット）: `archive/2026-07-site-work/`
+
 ## 最初に実行する確認
 
 ```sh

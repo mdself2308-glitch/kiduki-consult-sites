@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KIDUKI SEO必須コンテンツ 承認用プレビュー</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d3a30;
+      --muted: #60716a;
+      --accent: #3f7a5e;
+      --accent-soft: #e8f1ec;
+      --line: #d8e1dc;
+      --paper: #ffffff;
+      --bg: #f5f7f6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif; line-height: 1.7; }
+    a { color: inherit; }
+    .hero { padding: 56px 24px; background: var(--ink); color: #fff; }
+    .hero__inner, .layout { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .hero__eyebrow { margin: 0 0 10px; color: #b9d4c5; font-size: .78rem; font-weight: 700; letter-spacing: .14em; }
+    h1 { margin: 0; max-width: 840px; font-size: clamp(1.9rem, 1.3rem + 2vw, 3.1rem); line-height: 1.3; }
+    .hero p:last-child { max-width: 780px; margin: 20px 0 0; color: #e3eee8; }
+    .layout { padding: 40px 0 80px; }
+    .notice { margin-bottom: 28px; padding: 18px 22px; border-left: 4px solid var(--accent); border-radius: 8px; background: var(--paper); }
+    .notice strong { color: var(--accent); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: 0 16px 38px -34px rgba(29, 58, 48, .45); }
+    .card__type { margin: 0 0 8px; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
+    .card h2 { margin: 0; font-size: 1.16rem; line-height: 1.5; }
+    .card dl { display: grid; grid-template-columns: 7em 1fr; gap: 7px 12px; margin: 18px 0; font-size: .9rem; }
+    .card dt { color: var(--muted); font-weight: 700; }
+    .card dd { margin: 0; overflow-wrap: anywhere; }
+    .card button { margin-top: auto; padding: 11px 16px; border: 0; border-radius: 999px; background: var(--accent); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+    .viewer { margin-top: 32px; padding: 22px; border-radius: 14px; background: var(--paper); }
+    .viewer__header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .viewer h2 { margin: 0; font-size: 1.2rem; }
+    .sizes { display: flex; gap: 8px; }
+    .sizes button { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); cursor: pointer; }
+    .frame-shell { overflow: auto; padding: 18px; border: 1px solid var(--line); border-radius: 10px; background: #dde4e0; text-align: center; }
+    iframe { display: block; width: 100%; min-height: 820px; margin: 0 auto; border: 0; background: #fff; box-shadow: 0 12px 32px rgba(29, 58, 48, .16); transition: width .2s ease; }
+    .error { padding: 24px; border: 1px solid #b42318; color: #b42318; background: #fff; }
+    @media (max-width: 760px) {
+      .hero { padding: 38px 8px; }
+      .grid { grid-template-columns: 1fr; }
+      .viewer__header { align-items: flex-start; flex-direction: column; }
+      .frame-shell { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="hero__eyebrow">LOCAL REVIEW · NOT PUBLISHED</p>
+      <h1>KIDUKI SEO必須コンテンツ<br>承認用プレビュー</h1>
+      <p>復職支援の検索テーマを、既存サイトと同じWordPressブロック・デザインで作成しています。カードから各原稿を開き、PC幅とスマホ幅を切り替えて確認できます。</p>
+    </div>
+  </header>
+  <main class="layout">
+    <div class="notice"><strong>商品境界：</strong>健診判定の単独受託は掲載しません。健診事後措置はKIDUKI Retainの選任産業医業務としてのみ扱います。一般SPOTではなく、非契約企業の入口は復職支援Packです。</div>
+    <section id="cards" class="grid" aria-label="承認対象"></section>
+    <section class="viewer" aria-label="本文プレビュー">
+      <div class="viewer__header">
+        <h2 id="viewer-title">原稿を選択してください</h2>
+        <div class="sizes" aria-label="表示幅">
+          <button type="button" data-width="100%">PC</button>
+          <button type="button" data-width="390px">スマホ</button>
+        </div>
+      </div>
+      <div class="frame-shell"><iframe id="preview" src="about:blank" title="選択した原稿のプレビュー"></iframe></div>
+    </section>
+  </main>
+  <script>
+    const cards = document.querySelector('#cards');
+    const frame = document.querySelector('#preview');
+    const frameTitle = document.querySelector('#viewer-title');
+
+    function renderCard(item, typeLabel) {
+      const article = document.createElement('article');
+      article.className = 'card';
+      const title = item.title || item.slug;
+      const intent = item.searchIntent || item.purpose || '既存ページの信頼性・転換改善';
+      const description = item.metaDescription || item.purpose || '';
+      article.innerHTML = `
+        <p class="card__type">${typeLabel}</p>
+        <h2>${title}</h2>
+        <dl>
+          <dt>検索・改善意図</dt><dd>${intent}</dd>
+          <dt>説明</dt><dd>${description}</dd>
+          <dt>ソース</dt><dd>${item.source}</dd>
+        </dl>
+        <button type="button">本文を表示</button>`;
+      article.querySelector('button').addEventListener('click', () => {
+        const params = new URLSearchParams({ source: item.source, title });
+        frame.src = `seo-preview.html?${params}`;
+        frameTitle.textContent = title;
+        document.querySelector('.viewer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      return article;
+    }
+
+    fetch('../kiduki/config/seo-content-review-2026-08-17.json')
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        data.revisions.forEach((item) => cards.append(renderCard(item, '既存ページ改訂案')));
+        data.newDraftPosts.forEach((item) => cards.append(renderCard(item, '新規記事案')));
+      })
+      .catch((error) => {
+        cards.innerHTML = `<p class="error">承認用設定を読み込めませんでした: ${error.message}</p>`;
+      });
+
+    document.querySelectorAll('[data-width]').forEach((button) => {
+      button.addEventListener('click', () => { frame.style.width = button.dataset.width; });
+    });
+  </script>
+</body>
+</html>

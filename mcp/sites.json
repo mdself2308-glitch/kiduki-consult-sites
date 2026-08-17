@@ -1,0 +1,16 @@
+[
+  {
+    "id": "clinic",
+    "url": "https://sleeprecovery-bancho.jp",
+    "username": "SRCB",
+    "keychainService": "codex.wordpress.sleeprecovery-bancho.jp",
+    "required": true
+  },
+  {
+    "id": "kdk",
+    "url": "https://kdkconslt-sngyouijm.com",
+    "username": "kdk-sgj",
+    "keychainService": "codex.wordpress.kdkconslt-sngyouijm.com",
+    "required": true
+  }
+]
