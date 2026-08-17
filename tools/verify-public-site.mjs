@@ -88,6 +88,12 @@ for (const route of routes) {
       (text.match(/<h1\b/gi) || []).length === 1,
       `${name} must contain exactly one H1.`,
     );
+    assert(
+      !/adsbygoogle|pagead2\.googlesyndication\.com|code-block code-block-|class=["']ad-(?:h2-above|content)/i.test(
+        text,
+      ),
+      `${name} contains a lead-generation-breaking ad placement.`,
+    );
   }
   if (name === 'static-home') {
     assert(
