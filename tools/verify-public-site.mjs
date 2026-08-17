@@ -41,6 +41,10 @@ if (expectSeoRelease) {
       `${siteConfig.wordpressUrl}/service/return-to-work-support/`,
     ],
     ['seo-pillar-selection', `${siteConfig.wordpressUrl}/jimushochoice/`],
+    [
+      'seo-pillar-long-hours',
+      `${siteConfig.wordpressUrl}/long-hours-occupational-physician-interview/`,
+    ],
   );
 }
 
