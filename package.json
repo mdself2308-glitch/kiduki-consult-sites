@@ -1,0 +1,15 @@
+{
+  "name": "kiduki-consult-sites",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node tools/verify-public-site.mjs",
+    "verify:seo-live": "node tools/verify-public-site.mjs --expect-seo-release",
+    "verify:static": "node tools/verify-static-home.mjs",
+    "verify:live-match": "node tools/verify-static-home.mjs --expect-live-match",
+    "audit:seo-source": "node tools/audit-seo-source.mjs",
+    "wp:check": "node tools/check-wordpress-connection.mjs",
+    "wp:inventory": "node tools/inventory-wordpress.mjs",
+    "mcp:check": "node mcp/run-wordpress-mcp.mjs --check"
+  }
+}

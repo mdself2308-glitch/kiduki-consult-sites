@@ -1235,6 +1235,8 @@
     .service-grid.single { grid-template-columns: 1fr; }
     .service-card { background: var(--color-bg); border: 1px solid var(--color-border);
       border-radius: var(--radius); padding: 32px 30px; }
+    a.service-card { display: block; color: inherit; text-decoration: none; }
+    a.service-card:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
     .service-card.feature { border-color: var(--color-accent); box-shadow: var(--shadow-soft); }
     .service-card h4 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
     .service-tagline { color: var(--color-primary); font-weight: 500; margin-bottom: 20px; font-size: .95rem; }
@@ -1459,9 +1461,9 @@
   <!-- Header -->
   <header id="header">
     <div class="header-inner">
-      <a href="https://kdkconslt-sngyouijm.com/" class="logo">KIDUKIコンサルティング<span>産業医事務所</span></a>
+      <a href="https://consult.kdkconslt-sngyouijm.com/" class="logo">KIDUKIコンサルティング<span>産業医事務所</span></a>
       <div class="header-nav">
-        <a href="https://kdkconslt-sngyouijm.com/?main" class="header-blog">事務所サイト</a>
+        <a href="https://kdkconslt-sngyouijm.com/office/" class="header-blog">事務所サイト</a>
         <a href="https://kdkconslt-sngyouijm.com/contact/" class="header-cta" data-cta="header">初回のご相談</a>
       </div>
     </div>
@@ -1600,7 +1602,7 @@
 
       <h3 class="service-block-title">継続してお引き受けするもの</h3>
       <div class="service-grid">
-        <div class="service-card">
+        <a class="service-card" href="https://kdkconslt-sngyouijm.com/service/sangyoui/" aria-label="嘱託産業医の詳しいサービス内容を見る">
           <h4>嘱託産業医</h4>
           <p class="service-tagline">衛生委員会から復職支援まで、産業医としての業務を継続してお引き受けします。</p>
           <dl class="service-detail">
@@ -1608,8 +1610,8 @@
             <dt>お渡しするもの</dt><dd>医師意見書、巡視記録、委員会議事録へのコメント、月次の運用レポート</dd>
           </dl>
           <p class="service-note">ストレスチェック後の高ストレス者面談では、睡眠の評価もあわせて行います。面談の後、就業上の配慮が実施されたか、その後の経過はどうかまで確認します。</p>
-        </div>
-        <div class="service-card">
+        </a>
+        <a class="service-card" href="https://kdkconslt-sngyouijm.com/service/komon/" aria-label="睡眠・メンタル面談サポートの詳しいサービス内容を見る">
           <h4>睡眠×メンタル面談サポート</h4>
           <p class="service-tagline">すでに産業医がいらっしゃる事業場で、睡眠とメンタルの面談を担当します。</p>
           <dl class="service-detail">
@@ -1618,7 +1620,7 @@
             <dt>お渡しするもの</dt><dd>面談記録、就業配慮に関する意見、復職支援プランの設計</dd>
           </dl>
           <p class="service-note">休職・復職の判断は、機微な情報の扱いと法的な側面の理解が欠かせません。労働法を専門とする顧問弁護士と連携して対応します。</p>
-        </div>
+        </a>
       </div>
 
       <div class="casetra-block">
@@ -1627,7 +1629,7 @@
         <a href="https://casetra.jp/?utm_source=kdk-consult&amp;utm_medium=referral&amp;utm_campaign=top-service" class="casetra-link" target="_blank" rel="noopener">Casetra について詳しく見る</a>
       </div>
 
-      <p class="service-spot">単発でのご相談（健康経営に向けた体制構築、健診・ストレスチェックの統計分析）も承っています。<a href="https://kdkconslt-sngyouijm.com/spot/">スポット対応について</a></p>
+      <p class="service-spot">単発でのご相談（健康経営に向けた体制構築、健診・ストレスチェックの統計分析）も承っています。<a href="https://kdkconslt-sngyouijm.com/service/return-to-work-support/">スポット対応について</a></p>
     </div>
   </section>
 
@@ -1878,7 +1880,7 @@
           </div>
         </div>
       </div>
-      <a href="https://kdkconslt-sngyouijm.com/greeting/" class="trust-link">詳しいご挨拶を読む</a>
+      <a href="https://kdkconslt-sngyouijm.com/office/greeting/" class="trust-link">詳しいご挨拶を読む</a>
     </div>
   </section>
 
@@ -2125,15 +2127,15 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="https://kdkconslt-sngyouijm.com/" class="logo">KIDUKIコンサルティング<span>産業医事務所</span></a>
+          <a href="https://consult.kdkconslt-sngyouijm.com/" class="logo">KIDUKIコンサルティング<span>産業医事務所</span></a>
           <p class="footer-tagline">働く人の睡眠に特化した産業医事務所</p>
           <p class="footer-rep">代表　宮部 大輔<br><span>内科専門医・心療内科専門医・労働衛生コンサルタント</span></p>
         </div>
         <nav class="footer-nav" aria-label="フッターナビゲーション">
-          <a href="https://kdkconslt-sngyouijm.com/?main">事務所サイト トップ</a>
+          <a href="https://consult.kdkconslt-sngyouijm.com/">事務所サイト トップ</a>
           <a href="https://kdkconslt-sngyouijm.com/special/">コラム／Column記事</a>
-          <a href="https://kdkconslt-sngyouijm.com/office-info/">事務所概要</a>
-          <a href="https://kdkconslt-sngyouijm.com/greeting/">ご挨拶</a>
+          <a href="https://kdkconslt-sngyouijm.com/office/office-info/">事務所概要</a>
+          <a href="https://kdkconslt-sngyouijm.com/office/greeting/">ご挨拶</a>
           <a href="https://kdkconslt-sngyouijm.com/privacy-policy/">プライバシーポリシー</a>
           <a href="https://kdkconslt-sngyouijm.com/contact/">お問い合わせ</a>
         </nav>

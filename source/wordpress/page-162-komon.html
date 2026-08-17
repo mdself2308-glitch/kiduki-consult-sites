@@ -1,396 +1,104 @@
-<!-- wp:paragraph -->
-<p></p>
+<!-- wp:group {"className":"kdk-service-page","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-service-page">
+<!-- wp:paragraph {"className":"kdk-eyebrow"} -->
+<p class="kdk-eyebrow">KIDUKI Basic</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"kdk-page-lead"} -->
+<p class="kdk-page-lead">産業医の選任義務がない事業場や、すでに選任産業医がいる企業に、継続的な相談先と専門対応の枠を提供します。睡眠、メンタルヘルス、休職・復職、両立支援など、社内だけでは判断が難しい案件を補完します。</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:html -->
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>顧問医委任</title>
-    <style>
-        :root { --primary: #1d3a30; --secondary: #2c5546; --accent: #3f7a5e; --text: #1c2320; --light: #f7f8f6; --dark: #1d3a30; --success: #3f7a5e; }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f8f9fa 0%, #f7f8f6 100%);
-            color: var(--text);
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23${encodeURIComponent('#1d3a30').substring(1)}' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-            z-index: -1;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .title-section {
-            position: relative;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 2rem;
-            color: white;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: floating 6s ease-in-out infinite;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .title-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            animation: rotate 15s linear infinite;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .futuristic-dots {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background-image: 
-                radial-gradient(var(--accent) 1px, transparent 1px),
-                radial-gradient(var(--accent) 1px, transparent 1px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-            opacity: 0.2;
-            animation: flow 10s linear infinite;
-        }
-        
-        @keyframes flow {
-            0% { background-position: 0 0, 10px 10px; }
-            100% { background-position: 100px 0, 110px 10px; }
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-        }
-        
-        h2 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            position: relative;
-            display: inline-block;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, var(--primary), transparent);
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .service-item {
-            padding: 0.8rem 0 0.8rem 2.2rem;
-            position: relative;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            transition: transform 0.2s ease;
-            list-style-type: none;
-        }
-        
-        .service-item:hover {
-            transform: translateX(5px);
-        }
-        
-        .service-item::before {
-            content: '';
-            position: absolute;
-            left: 0.5rem;
-            top: 1.2rem;
-            width: 10px;
-            height: 10px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-            transition: transform 0.2s ease;
-        }
-        
-        .service-item:hover::before {
-            transform: scale(1.3);
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .feature-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .icon {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 2.2rem;
-            position: relative;
-            box-shadow: 0 8px 20px rgba(15, 76, 129, 0.2);
-            z-index: 1;
-        }
-        
-        .icon svg {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .icon::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .feature-card:hover .icon::before {
-            opacity: 1;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 1px;
-            margin-top: 1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            box-shadow: 0 5px 15px rgba(15, 76, 129, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15, 76, 129, 0.4);
-        }
-        
-        .btn:hover::before {
-            opacity: 1;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="title-section">
-            <h1>顧問医委任</h1>
-            <p>メンタルヘルスを中心とした職場環境の構築と労働者のサポート</p>
-            <div class="futuristic-dots"></div>
-        </div>
-        
-        <div class="card">
-            <h2>顧問医委任概要</h2>
-            <p>顧問医契約では、50名未満の事業場やすでに産業医がいるがメンタル専門ではなく、メンタル面でのサポートが必要な事業場を対象に対応いたします。</p>
-            <p>面談業務がメインとなりますが、組織的アプローチによる講演・研修も適宜行います。</p>
-            <p>また休職復職面談についてはセンシティブな情報・法律的な側面の理解も重要であり、弊事務所が契約している労働法を専門にした顧問弁護士と連携しながらより良い対応方法を提供いたします。</p>
-        </div>
-        
-        <div class="card">
-            <h2>対象</h2>
-            <ul>
-                <li class="service-item">従業員５０名未満の事業場</li>
-                <li class="service-item">既に内科系嘱託産業医と契約している事業場</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <h2>業務内容</h2>
-            <ul>
-                <li class="service-item">メンタルへルス面談（不調者面談、休職復職判定、休職中フォロー面談、復職支援など）</li>
-                <li class="service-item">メンタルヘルス対策の構築支援</li>
-                <li class="service-item">労働衛生に関する情報提供</li>
-            </ul>
-        </div>
-        
-        <div class="grid">
-            <div class="feature-card">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                </div>
-                <h3>メンタルヘルス面談</h3>
-                <p>従業員の心の健康をケアし、働きやすい環境づくりをサポートします</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                        <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
-                        <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
-                        <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                    </svg>
-                </div>
-                <h3>対策構築支援</h3>
-                <p>組織全体での健康施策やメンタルヘルス対策の構築を包括的にサポートします</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                        <path d="M9 14l2 2 4-4"></path>
-                    </svg>
-                </div>
-                <h3>法律連携サポート</h3>
-                <p>顧問弁護士と連携し、特に休復職に関する法的側面も考慮した総合的な産業衛生サポートを提供します</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>料金について</h2>
-            <p>事業場あたりの対象労働者数に応じて変動。</p>
-            <p>（対象事業場以外の小規模事業場の労働者数はカウントしません。50人未満の小規模事業場の健康管理や相談も対象とする場合にはご相談ください。）</p>
-            <p>ご質問やお見積りのご依頼は、下記フォームよりお気軽にお問い合わせください。</p>
-            <a href="https://kdkconslt-sngyouijm.com/contact/" class="btn">お問い合わせ</a>
-        </div>
-        
-        <div class="card" id="contact">
-            <h2>その他のサポートについて</h2>
-            <p>その他のサポートについては、下記よりご確認ください。</p>
-            <a href="https://kdkconslt-sngyouijm.com/service/" class="btn">サポート一覧へ</a>
-        </div>
-    </div>
-</body>
-</html>
-<!-- /wp:html -->
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading">この契約が向く企業</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item -->
+<li>常時50人未満で、産業医の選任義務はないが相談先を確保したい</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>既存産業医の法定業務はそのままに、睡眠・メンタル領域を補完したい</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>休職・復職や治療と仕事の両立支援を、案件発生時だけ慌てず進めたい</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>人事担当者が一人で医学的な判断材料を集める状態を解消したい</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">選任産業医との役割を混ぜません</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>すでに選任産業医がいる場合、KIDUKIがその選任関係や法定業務を代替するものではありません。依頼された専門領域と案件に範囲を限定し、必要に応じて会社を通じて役割分担を明確にします。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">主な相談・対応範囲</h2>
+<!-- /wp:heading -->
+<!-- wp:columns {"className":"kdk-card-grid"} -->
+<div class="wp-block-columns kdk-card-grid"><!-- wp:column {"className":"kdk-service-card"} -->
+<div class="wp-block-column kdk-service-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">睡眠と勤務</h3>
+<!-- /wp:heading --><!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li>交代勤務・夜勤者の睡眠課題</li><!-- /wp:list-item --><!-- wp:list-item --><li>日中の眠気、通勤・運転リスク</li><!-- /wp:list-item --><!-- wp:list-item --><li>睡眠時無呼吸が疑われる場合の就業上の考え方</li><!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"className":"kdk-service-card"} -->
+<div class="wp-block-column kdk-service-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">メンタル・復職・両立</h3>
+<!-- /wp:heading --><!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li>メンタル不調者の就業配慮</li><!-- /wp:list-item --><!-- wp:list-item --><li>休職前・復職前・復職後の面談</li><!-- /wp:list-item --><!-- wp:list-item --><li>主治医意見と実際の職務条件の整理</li><!-- /wp:list-item --><!-- wp:list-item --><li>治療を続けながら働くための配慮</li><!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">相談から実施まで</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true,"className":"kdk-numbered-list"} -->
+<ol class="wp-block-list kdk-numbered-list"><!-- wp:list-item -->
+<li><strong>人事相談：</strong>事実関係、困っている判断、期限を確認します。</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>必要情報の整理：</strong>本人同意のもとで扱う情報、職務情報、主治医情報等を整理します。</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>面談・評価：</strong>本人の状態と実際の職務の適合を評価します。</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>医師意見：</strong>措置内容、開始日、再評価日、解除条件を会社に伝えます。</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>会社の決定と経過確認：</strong>実施状況を確認し、必要な時期に再評価します。</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">単発の面談との違い</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>継続契約では、会社の制度、職務、過去の経過を把握したうえで相談を受けられます。案件のたびに背景説明を最初から繰り返すのではなく、前回の意見、会社の実施内容、再評価日をつないで扱います。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">よくあるご質問</h2>
+<!-- /wp:heading -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>従業員50人未満でも依頼できますか？</summary><!-- wp:paragraph {"placeholder":"回答を入力"} --><p>はい。選任義務の有無とは別に、健康相談、休職・復職、睡眠やメンタルの課題に対応する継続的な相談先として利用できます。</p><!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>本人を特定の医療機関へ紹介しますか？</summary><!-- wp:paragraph {"placeholder":"回答を入力"} --><p>受診が必要と考える場合は受診を勧めますが、受診先は本人が選びます。KIDUKIが特定の医療機関への受診を契約条件や復職条件にすることはありません。</p><!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>選任産業医への報告はどうしますか？</summary><!-- wp:paragraph {"placeholder":"回答を入力"} --><p>本人同意、会社の情報管理ルール、各医師の役割を確認し、必要な情報だけを適切な経路で共有できるよう整理します。</p><!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>役割の境界：</strong>KIDUKIは医学的評価と意見、案件の進行・記録を支援します。人事上の決定と実施は会社が行います。診断と治療は医療機関が行います。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://kdkconslt-sngyouijm.com/contact/">専門補完・顧問契約を相談する</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->

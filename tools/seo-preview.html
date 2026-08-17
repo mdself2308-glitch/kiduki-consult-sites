@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KIDUKI SEO content preview</title>
+  <link rel="stylesheet" href="../kiduki/wp-content/themes/kiduki-child/style.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; }
+    .preview-header { padding: 28px 24px; background: #1d3a30; color: #fff; }
+    .preview-header__inner { width: min(960px, calc(100% - 32px)); margin: 0 auto; }
+    .preview-header p { margin: 0 0 6px; color: #b6d6c6; font-size: .78rem; letter-spacing: .1em; }
+    .preview-header h1 { margin: 0; color: #fff; font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2.25rem); }
+    .entry-content { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 96px; }
+    .wp-block-columns { display: flex; }
+    .wp-block-column { flex: 1 1 0; min-width: 0; }
+    .preview-error { padding: 24px; border: 1px solid #c81e1e; color: #c81e1e; }
+    @media (max-width: 781px) {
+      .preview-header { padding: 22px 8px; }
+      .entry-content { padding-top: 36px; }
+      .wp-block-columns { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="preview-header">
+    <div class="preview-header__inner">
+      <p>LOCAL WORDPRESS CONTENT PREVIEW</p>
+      <h1 id="preview-title">KIDUKI SEO content preview</h1>
+    </div>
+  </header>
+  <main id="preview-content" class="entry-content" aria-live="polite"></main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const source = params.get('source') || '';
+    const title = params.get('title') || 'KIDUKI SEO content preview';
+    const output = document.querySelector('#preview-content');
+    document.querySelector('#preview-title').textContent = title;
+    document.title = `${title} | local preview`;
+
+    if (!/^source\/wordpress\/[a-z0-9-]+\.html$/.test(source)) {
+      output.innerHTML = '<p class="preview-error">許可されたWordPressソースを指定してください。</p>';
+    } else {
+      fetch(`../${source}`)
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.text();
+        })
+        .then((html) => { output.innerHTML = html; })
+        .catch((error) => {
+          output.innerHTML = `<p class="preview-error">プレビューを読み込めませんでした: ${error.message}</p>`;
+        });
+    }
+  </script>
+</body>
+</html>

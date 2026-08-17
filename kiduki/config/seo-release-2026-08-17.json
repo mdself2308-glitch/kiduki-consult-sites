@@ -1,0 +1,101 @@
+{
+  "release": "2026-08-17-kiduki-organic-growth",
+  "items": [
+    {
+      "type": "page",
+      "id": 29,
+      "expectedModified": "2026-07-30T18:27:29",
+      "allowedCurrentSlugs": ["service"],
+      "slug": "service",
+      "title": "産業医サービス｜選任・専門補完・復職支援",
+      "status": "publish",
+      "source": "source/wordpress/page-29-service.html",
+      "excerpt": "選任産業医、既存産業医の専門補完、休職・復職判定支援を、面談から医師意見、会社の実施、再評価まで一つの流れで支援します。",
+      "metaDescription": "選任産業医、既存産業医の専門補完、休職・復職判定支援を、面談から医師意見、会社の実施、再評価まで一つの流れで支援します。"
+    },
+    {
+      "type": "page",
+      "id": 31,
+      "expectedModified": "2026-07-28T23:44:31",
+      "allowedCurrentSlugs": ["field"],
+      "slug": "field",
+      "title": "KIDUKIの特色｜紹介で終わらない産業医業務",
+      "status": "publish",
+      "source": "source/wordpress/page-31-field.html",
+      "excerpt": "産業医の紹介だけで終わらず、情報整理、医学的評価、意見書、会社の決定、実施、再評価までを証跡とともにつなぐKIDUKIの業務設計です。",
+      "metaDescription": "産業医の紹介だけで終わらず、情報整理、医学的評価、意見書、会社の決定、実施、再評価までを証跡とともにつなぐKIDUKIの業務設計です。"
+    },
+    {
+      "type": "page",
+      "id": 160,
+      "expectedModified": "2026-07-28T23:44:32",
+      "allowedCurrentSlugs": ["sangyoui"],
+      "slug": "sangyoui",
+      "title": "東京の嘱託産業医契約｜KIDUKI Retain",
+      "status": "publish",
+      "source": "source/wordpress/page-160-sangyoui.html",
+      "excerpt": "東京を中心に、職場巡視、衛生委員会、健診事後措置、長時間・高ストレス面談、休職・復職支援を継続して担当する嘱託産業医契約です。",
+      "metaDescription": "東京を中心に、職場巡視、衛生委員会、健診事後措置、長時間・高ストレス面談、休職・復職支援を継続して担当する嘱託産業医契約です。"
+    },
+    {
+      "type": "page",
+      "id": 162,
+      "expectedModified": "2026-07-28T23:44:33",
+      "allowedCurrentSlugs": ["komon"],
+      "slug": "komon",
+      "title": "産業医の専門補完・顧問契約｜KIDUKI Basic",
+      "status": "publish",
+      "source": "source/wordpress/page-162-komon.html",
+      "excerpt": "従業員50人未満の事業場や既存産業医のいる企業に、睡眠、メンタル、休職・復職、両立支援の継続相談と専門補完を提供します。",
+      "metaDescription": "従業員50人未満の事業場や既存産業医のいる企業に、睡眠、メンタル、休職・復職、両立支援の継続相談と専門補完を提供します。"
+    },
+    {
+      "type": "page",
+      "id": 164,
+      "expectedModified": "2026-07-28T23:44:34",
+      "allowedCurrentSlugs": ["spot", "return-to-work-support"],
+      "slug": "return-to-work-support",
+      "title": "休職・復職判定支援｜復職支援Pack",
+      "status": "publish",
+      "source": "source/wordpress/page-164-spot.html",
+      "excerpt": "主治医の診断書を受け取った後の情報整理、復職前面談、産業医意見、会社の決定、復職後の再評価までを1案件として支援します。",
+      "metaDescription": "主治医の診断書を受け取った後の情報整理、復職前面談、産業医意見、会社の決定、復職後の再評価までを1案件として支援します。"
+    },
+    {
+      "type": "page",
+      "id": 166,
+      "expectedModified": "2026-07-28T16:27:20",
+      "allowedCurrentSlugs": ["cloud"],
+      "slug": "cloud",
+      "title": "産業保健の記録・進行管理｜Casetra",
+      "status": "publish",
+      "source": "source/wordpress/page-166-cloud.html",
+      "excerpt": "面談予約、必要資料、医師意見、会社の決定、再評価日を案件単位でつなぎ、KIDUKIの受託業務における進行と証跡を管理します。",
+      "metaDescription": "面談予約、必要資料、医師意見、会社の決定、再評価日を案件単位でつなぎ、KIDUKIの受託業務における進行と証跡を管理します。"
+    },
+    {
+      "type": "post",
+      "id": 1598,
+      "expectedModified": "2026-07-28T16:27:26",
+      "allowedCurrentSlugs": ["jimushochoice"],
+      "slug": "jimushochoice",
+      "title": "産業医の選び方｜紹介会社・産業医事務所を比較する7つの確認点",
+      "status": "publish",
+      "source": "source/wordpress/post-1598-jimushochoice.html",
+      "excerpt": "産業医紹介会社、産業医事務所、個人契約の違いと、担当医、契約範囲、面談後の書面、再評価、料金・解約条件まで7項目で解説します。",
+      "metaDescription": "産業医紹介会社、産業医事務所、個人契約の違いと、担当医、契約範囲、面談後の書面、再評価、料金・解約条件まで7項目で解説します。"
+    },
+    {
+      "type": "post",
+      "id": 1597,
+      "expectedModified": "2025-03-19T09:34:27",
+      "allowedCurrentSlugs": ["", "id-1597", "long-hours-occupational-physician-interview"],
+      "slug": "long-hours-occupational-physician-interview",
+      "title": "長時間労働者の産業医面談｜会社が準備する資料と面談後の措置",
+      "status": "draft",
+      "source": "source/wordpress/post-1597-id-1597.html",
+      "excerpt": "長時間労働者への産業医面談について、対象基準、会社が準備する資料、面談での確認事項、医師意見後の措置と再評価を実務順に解説します。",
+      "metaDescription": "長時間労働者への産業医面談について、対象基準、会社が準備する資料、面談での確認事項、医師意見後の措置と再評価を実務順に解説します。"
+    }
+  ]
+}
