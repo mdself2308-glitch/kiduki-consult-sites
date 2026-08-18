@@ -9,6 +9,7 @@
     "verify:static": "node tools/verify-static-home.mjs",
     "verify:live-match": "node tools/verify-static-home.mjs --expect-live-match",
     "verify:pack-source": "node tools/verify-kiduki-pack-source.mjs",
+    "verify:spot-source": "node tools/verify-kiduki-spot-source.mjs",
     "audit:seo-source": "node tools/audit-seo-source.mjs",
     "wp:check": "node tools/check-wordpress-connection.mjs",
     "wp:inventory": "node tools/inventory-wordpress.mjs",
