@@ -24,6 +24,10 @@ check('success-keeps-kiduki-service-window', form.includes('ご相談の送信�
 check('manual-names-kiduki-contract', manual.includes('企業が問い合わせ、打合せ、契約をする相手は **KIDUKI'));
 check('manual-has-ops-runbook-url', manual.includes('https://core.casetra.jp/ops/pack'));
 check('manual-requires-one-case-boundary', manual.includes('割り当てられた復職Case 1件だけ'));
+check('home-defines-three-standard-interviews', home.includes('復職時、復職後1か月、復職後3か月の面談'));
+check('form-defines-six-month-maximum', form.includes('開始から最長6か月'));
+check('home-removes-m3-m6-standard-copy', !home.includes('M3・M6等'));
+check('manual-defines-three-exit-options', manual.includes('Casetraを別途月額契約') && manual.includes('KIDUKIへ単発フォロー') && manual.includes('自社または既存産業医'));
 
 const failures = checks.filter((item) => !item.ok);
 console.log(JSON.stringify({ ok: failures.length === 0, checks, failures }, null, 2));
