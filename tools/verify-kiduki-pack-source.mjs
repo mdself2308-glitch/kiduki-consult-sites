@@ -28,6 +28,7 @@ check('home-defines-three-standard-interviews', home.includes('復職時、復�
 check('form-defines-six-month-maximum', form.includes('開始から最長6か月'));
 check('home-removes-m3-m6-standard-copy', !home.includes('M3・M6等'));
 check('manual-defines-three-exit-options', manual.includes('Casetraを別途月額契約') && manual.includes('KIDUKIへ単発フォロー') && manual.includes('自社または既存産業医'));
+check('pack-includes-three-opinion-letters', home.includes('各面談後の産業医意見書（計3通）') && form.includes('各面談後の産業医意見書3通') && manual.includes('各面談後に産業医意見書を1通ずつ発行'));
 
 const failures = checks.filter((item) => !item.ok);
 console.log(JSON.stringify({ ok: failures.length === 0, checks, failures }, null, 2));
