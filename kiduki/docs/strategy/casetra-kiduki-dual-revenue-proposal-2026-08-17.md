@@ -57,12 +57,14 @@ STARTER 40,000円は、公開されている産業医紹介・嘱託サービス
 | 項目 | 現行 | 会計・契約上の扱い |
 |---|---:|---|
 | 復職支援Pack | 150,000円／件 | KIDUKIの1件完結商品。Casetra月額・Case超過の請求なし |
-| Pack内のCasetra利用 | Packに内包 | 外部Casetra ARR・契約社数に含めない。`PACK_INCLUDED` は実装予定の管理区分 |
+| Pack内のCasetra利用 | Packに内包 | 外部Casetra ARR・契約社数に含めない。`PACK_INCLUDED` で請求・利用数から除外 |
 | Pack完了後のCasetra | STARTER 40,000円／月から | 別途SaaS契約後に `CLIENT_BILLABLE` とする |
 
 Packでは、依頼企業と担当者をCasetraへ登録し、当該社員の復職Caseを起票する。企業担当者は企業画面で、起票根拠、事前資料提出、予約確定、意見書受領確認、会社決裁、再評価を処理する。KIDUKIは、本人同意の確認、必要時の主治医照会案、日程、面談、産業医意見、期限管理、Decision Pack生成を担当する。
 
-Pack対象Caseの企業利用は固定商品の工程に含まれ、独立した月額利用権ではない。Packの請求は1行のまま、Casetra ARRには含めない。`PACK_INCLUDED` は料金・KPIを分離するための実装予定区分であり、現行コードの実装済みフラグとしては確認できていない。
+Pack対象Caseの企業利用は固定商品の工程に含まれ、独立した月額利用権ではない。Packの請求は1行のまま、Casetra ARRには含めない。`PACK_INCLUDED` は料金・KPIを分離する実装済み区分で、Case、紐づく予約、Pack内面談明細を月額請求から除外する。
+
+月額転換は新規企業を作る移行ではなく、同じ企業ID・担当者認証・KIDUKI Case・証跡を維持した限定解除とする。企業の申込依頼だけでは何も解除せず、別途締結したCasetra契約PDFのBox証跡、確定プラン、月初の課金開始日をOPSが確認した時点で `FULL` にする。Casetra月額は開始月から、新規Caseは `CLIENT_BILLABLE` とし、既存KIDUKI Caseは付け替えない。
 
 企業担当者の標準操作は次の五つに絞る。
 
@@ -177,7 +179,7 @@ Casetra月額とKIDUKI専門業務を混ぜない。一方、入口のPackまで
 3. 個人情報、医療情報、企業情報の閲覧境界を実機で確認する
 4. 1社で `受付→面談→意見書受領→会社決裁→再評価→証跡出力` の受入試験を完了する
 5. Casetra月額契約では、KIDUKI契約と別契約・別請求・別売上区分にする
-6. `PACK_INCLUDED` と `CLIENT_BILLABLE` に相当する区分を請求・KPI上で実装し、分離する
+6. `PACK_INCLUDED`、`KIDUKI_SPOT_INCLUDED`、`CLIENT_BILLABLE` を請求・KPI上で分離する
 7. 主治医照会の専用承認ToDoは現行標準フローで確認できないため、実装・受入前は「必要時にKIDUKIが照会案を作り、企業が職務情報と内容を確認する」と表現する
 8. 未検証の1 Case限定アクセスや終了後の読取専用化はホームページで断定しない
 
