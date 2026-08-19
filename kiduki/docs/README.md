@@ -1,6 +1,6 @@
 # 文書索引
 
-最終整理: 2026-08-06
+最終整理: 2026-08-18
 
 このフォルダには**現行の文書だけ**を置く。終わった作業の指示書・レポート・旧版は `archive/` へ移す。
 
@@ -15,6 +15,15 @@
 | `roster-engine-design.md` | ロースターエンジン設計原則 |
 | `rebrand-strategy.md` | リブランド戦略（睡眠特化の旗） |
 
+## 現行の戦略・運用判断
+
+| 文書 | 内容 |
+|---|---|
+| `strategy/return-to-work-pack-casetra-workflow-2026-08-17.md` | 復職支援PackのCasetra案件処理・権限・受入条件 |
+| `strategy/kiduki-rtw-spot-casetra-workflow-2026-08-18.md` | 復職・両立支援単発のCasetra案件処理仕様 |
+| `strategy/casetra-kiduki-dual-revenue-proposal-2026-08-17.md` | KIDUKIを入口、CasetraをSaaS収益にする二層戦略 |
+| `strategy/pack-midstream-casetra-conversion-policy-2026-08-18.md` | **Pack途中でCasetra月額を希望した場合の契約・開始日・請求・限定解除方針** |
+
 ## 進行中・ドラフト
 
 | 文書 | 内容 |
@@ -28,7 +37,7 @@
 |---|---|
 | `copy/` | 公開サイト・フォーム・記事の確定文言マスター |
 | `sales/` | 顧客向け営業資料（PPTX/PDF・生成スクリプト・改訂規律は sales/README.md） |
-| `strategy/` | 統合戦略書（戦略判断用PDF） |
+| `strategy/` | 統合戦略書と現行の戦略・運用判断 |
 | `templates/` | 商品の設計書・報告書テンプレート（睡眠研修・交代勤務レビュー） |
 | `archive/` | 過去の文書。旧価格案（bpo-pricing-draft.md）、Phase 1/2 作業指示書、2026-07 のT0〜T6・S1レポート類 |
 

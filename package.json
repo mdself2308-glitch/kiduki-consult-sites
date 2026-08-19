@@ -10,6 +10,7 @@
     "verify:live-match": "node tools/verify-static-home.mjs --expect-live-match",
     "verify:pack-source": "node tools/verify-kiduki-pack-source.mjs",
     "verify:spot-source": "node tools/verify-kiduki-spot-source.mjs",
+    "verify:standard-numbers": "node tools/verify-standard-numbers.mjs",
     "audit:seo-source": "node tools/audit-seo-source.mjs",
     "wp:check": "node tools/check-wordpress-connection.mjs",
     "wp:inventory": "node tools/inventory-wordpress.mjs",

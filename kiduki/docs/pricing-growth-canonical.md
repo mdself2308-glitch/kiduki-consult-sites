@@ -4,7 +4,7 @@
 
 位置づけ: **KIDUKIとCASETRAの商品・料金・段階展開に関する現行の正本**
 
-関連: `core-thesis.md`（事業原理）／`integrated-story.md`（獲得から拡張まで）／`bpo-scope-boundary.md`（業務境界）
+関連: `core-thesis.md`（事業原理）／`integrated-story.md`（獲得から拡張まで）／`bpo-scope-boundary.md`（業務境界）／`strategy/pack-midstream-casetra-conversion-policy-2026-08-18.md`（Pack途中の月額転換判断）
 
 ## 0. 経営結論
 
@@ -140,7 +140,20 @@ PackはSPOT単価の積み上げではなく、1件完結の固定商品であ�
 
 Pack中の企業画面は、起票内容、事前資料、予約、意見書受領、会社決裁、再評価を企業自身が処理するためのサービス履行インターフェースである。これだけでCASETRA月額契約、全社利用権、利用枠、CASETRA ARRが発生するものではない。Pack担当者のCaseスコープと終了後の権限処理は、`strategy/return-to-work-pack-casetra-workflow-2026-08-17.md` の受入条件を満たしてから販売する。
 
-### 4.2 月額契約企業の復職案件
+### 4.2 Pack途中でCASETRA月額を希望した場合
+
+Pack途中でもCASETRA月額契約を受け付ける。Packを解約、返金、値引き、CASETRA月額へ充当せず、対象CaseのKIDUKI支援は予定どおり完了させる。
+
+- 既存Pack Caseは月額開始後も `PACK_INCLUDED` のまま保持する
+- CASETRAは別契約とし、月額開始後の新規通常Caseだけを `CLIENT_BILLABLE` とする
+- 日割りとPack残額の相殺は行わず、月額は毎月1日から開始する
+- Pack中に別案件も管理する企業は、原則として契約締結後の翌月1日から開始する
+- 現在のPack案件だけの企業は、Pack完了予定日の翌月1日から開始できる
+- 同じ企業ID、担当者認証、Case、Todo、意見書、会社決裁、証跡を維持して限定解除する
+
+状態は `REQUESTED` → `SCHEDULED` → `ACTIVATED` とし、契約・Box証跡・プラン・開始日を確認しても、開始日前はPack限定アクセスを維持する。開始日に自動で `FULL` へ切り替え、課金開始日前の月額行と新規通常Case利用を発生させない。詳細と実装状況は `strategy/pack-midstream-casetra-conversion-policy-2026-08-18.md` を参照する。
+
+### 4.3 月額契約企業の復職案件
 
 KIDUKI月額契約企業に、Pack価格をもう一度請求しない。月額に含まれる時間を先に充当し、残りを契約者料金で請求する。
 
@@ -196,7 +209,7 @@ KIDUKI月額契約企業に、Pack価格をもう一度請求しない。月額�
 - CASETRAの月額・Case・予約超過: 請求なし
 - 必要な面談・再評価だけを依頼する場合: オンライン60,000円、訪問75,000円＋交通費
 - 緊急・複雑案件: 80,000円から個別見積
-- 単発に含むCasetra案件限定画面: 30日間。月額・Case・予約超過・面談従量の請求なし
+- 単発に含むCasetra案件専用画面: 30日間。月額・Case・予約超過・面談従量の請求なし
 
 ## 7. 段階的な成長戦略
 

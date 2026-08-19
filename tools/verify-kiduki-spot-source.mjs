@@ -13,7 +13,7 @@ check('home-publishes-onsite-fee-and-travel', home.includes('訪問75,000円＋�
 check('home-publishes-complex-from-price', home.includes('緊急・複雑案件は80,000円から'));
 check('home-defines-included-interview-and-opinion', home.includes('面談1回・意見書1通'));
 check('form-identifies-kiduki-contract-window', form.includes('契約・請求・支援の窓口はKIDUKIです'));
-check('form-defines-thirty-day-limited-access', form.includes('案件限定画面を30日間'));
+check('form-defines-thirty-day-case-workspace', form.includes('案件専用画面を30日間'));
 check('form-states-no-automatic-monthly-billing', form.includes('Casetra月額契約への自動移行や月額請求はありません'));
 check('form-posts-spot-intake-type', form.includes("intakeType:'KIDUKI_RTW_SPOT'"));
 check('form-posts-delivery-method', form.includes("deliveryMethod:String(v.deliveryMethod"));

@@ -28,6 +28,12 @@ check('home-defines-three-standard-interviews', home.includes('復職時、復�
 check('form-defines-six-month-maximum', form.includes('開始から最長6か月'));
 check('home-removes-m3-m6-standard-copy', !home.includes('M3・M6等'));
 check('manual-defines-three-exit-options', manual.includes('Casetraを別途月額契約') && manual.includes('KIDUKIへ単発フォロー') && manual.includes('自社または既存産業医'));
+// 料金セクションの3枚のカードは、いずれも次の行き先を持つこと。
+// 以前は Pack と Casetra STARTER が行き止まりで、購入意思が出た地点で導線が切れていた。
+check('pricing-card-pack-has-cta', home.includes('<a class="pricing-cta" href="/return-to-work-pack/">'));
+check('pricing-card-spot-has-cta', home.includes('<a class="pricing-cta" href="/return-to-work-spot/">'));
+check('pricing-card-casetra-has-cta', /<a class="pricing-cta" href="https:\/\/casetra\.jp\/\?utm_source=kdk-consult[^"]*utm_campaign=pricing"/.test(home));
+
 check('pack-includes-three-opinion-letters', home.includes('各面談後の産業医意見書（計3通）') && form.includes('各面談後の産業医意見書3通') && manual.includes('各面談後に産業医意見書を1通ずつ発行'));
 
 const failures = checks.filter((item) => !item.ok);
