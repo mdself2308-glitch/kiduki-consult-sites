@@ -9,6 +9,10 @@ import path from 'node:path';
 const casetraRoot = process.env.CASETRA_ROOT
   || path.join(os.homedir(), 'Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active');
 const publicLeadsPath = path.join(casetraRoot, 'kiduki-consult-api-deploy/src/functions/publicLeads.ts');
+// 無料相談の入口は2つあり、予約URLはそれぞれ別の場所に書かれている。
+// KIDUKIサイトはAPIの定数から受け取るが、Casetraの無料相談ページはHTMLに直接書いてある。
+// 片方だけ直すとズレるので、両方を突き合わせる。
+const casetraConsultPath = path.join(casetraRoot, 'casetra-consult-swa/public/index.html');
 
 const checks = [];
 const check = (name, ok, detail) => checks.push({ name, ok: Boolean(ok), ...(detail ? { detail } : {}) });
@@ -46,6 +50,19 @@ if (bookingUrl) {
   // 事務所アカウントを名指ししていることがそのまま「産業医へ回さない」担保になる。
   const office = process.env.KIDUKI_CAL_OFFICE_USERNAME ?? 'kdk-k6whio';
   check('booking-page-is-the-office-account', base.includes(`cal.com/${office}/`), base);
+}
+
+// Casetra の無料相談ページ（consult.casetra.jp）が同じ予約先を指しているか。
+if (bookingUrl && fs.existsSync(casetraConsultPath)) {
+  const consultHtml = fs.readFileSync(casetraConsultPath, 'utf8');
+  const found = consultHtml.match(/https:\/\/cal\.com\/[^"'\s]+/);
+  check('casetra-consult-page-declares-a-booking-url', Boolean(found), found ? found[0] : 'not found');
+  if (found) {
+    check('casetra-consult-page-matches-lead-api', found[0].split('?')[0] === bookingUrl.split('?')[0],
+      `consult=${found[0].split('?')[0]} / api=${bookingUrl.split('?')[0]}`);
+  }
+} else if (bookingUrl) {
+  check('casetra-consult-page-available', false, `not found: ${casetraConsultPath}`);
 }
 
 // フォーム側は、送信先とボタンの結線が残っているかだけ見る。文言はsource verifierの担当。
