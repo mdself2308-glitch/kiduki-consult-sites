@@ -11,6 +11,8 @@
     "verify:pack-source": "node tools/verify-kiduki-pack-source.mjs",
     "verify:spot-source": "node tools/verify-kiduki-spot-source.mjs",
     "verify:standard-numbers": "node tools/verify-standard-numbers.mjs",
+    "verify:booking-link": "node tools/verify-booking-link.mjs",
+    "cal:restore-intro": "node tools/restore-kiduki-intro-booking.mjs",
     "audit:seo-source": "node tools/audit-seo-source.mjs",
     "wp:check": "node tools/check-wordpress-connection.mjs",
     "wp:inventory": "node tools/inventory-wordpress.mjs",
