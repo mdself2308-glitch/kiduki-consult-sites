@@ -38,9 +38,14 @@ if (bookingUrl) {
   const code = await status(base);
   check('booking-page-is-reachable', code === 200, `${base} -> ${code}`);
 
-  // マネージドイベントはチームURLでは予約できない。初回相談は担当医未定の入口なので、
-  // チームURLのまま200であること自体が「ラウンドロビンで生きている」ことの確認になる。
-  check('booking-page-is-a-team-url', /cal\.com\/team\//.test(base), base);
+  // マネージドイベントはチームURLでは予約できない。ここがチームURLへ戻ると必ず404になるので、
+  // 到達性とは別に形そのものを止める。
+  check('booking-page-is-not-a-team-url', !/cal\.com\/team\//.test(base), base);
+
+  // 無料相談は事務所のみで受ける。イベントの割り当ては assignAllTeamMembers なので、
+  // 事務所アカウントを名指ししていることがそのまま「産業医へ回さない」担保になる。
+  const office = process.env.KIDUKI_CAL_OFFICE_USERNAME ?? 'kdk-k6whio';
+  check('booking-page-is-the-office-account', base.includes(`cal.com/${office}/`), base);
 }
 
 // フォーム側は、送信先とボタンの結線が残っているかだけ見る。文言はsource verifierの担当。
