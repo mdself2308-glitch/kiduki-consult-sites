@@ -3,19 +3,28 @@
  * 初回15分相談の予約リンクを、ラウンドロビンへ戻す（A案）。
  *
  * 背景:
- *   casetra_active/kiduki-consult-api-deploy/scripts/migrate-cal-roundrobin-to-managed.mjs が
- *   イベントを「ラウンドロビン → マネージド」へ移行した。その処理は
- *     1) 旧イベントを `<slug>-old-<id末尾>` へ改名し hidden にする
- *     2) 元の slug でマネージドイベントを新規作成する
- *   という順で動く。マネージドイベントはチームURLでは予約できず、割り当てられた
- *   各メンバーの個人ページ `cal.com/<username>/<slug>` に子イベントとして生成される。
+ *   cal.com 上の状態（2026-08-19 実測）:
+ *     id=3974730  intro-15-online-old-3974730  roundRobin  hidden
+ *     id=4747643  intro-15-online              managed     visible
  *
- *   企業向け予約画面（docs/booking/index.html）は個人ページ形式を組み立てるので移行後の形に
- *   合っているが、KIDUKIサイトのリードフォームは初回接触の予約であり担当医が未定なので、
- *   チームURL `cal.com/team/<team>/intro-15-online` を使う。ここが移行によって404になった。
+ *   退避側の `-old-3974730` はフルIDが入っており、移行スクリプト
+ *   (migrate-cal-roundrobin-to-managed.mjs) の命名規則である末尾6桁 `-old-974730` とは
+ *   一致しない。つまりこの退避は人手によるもので、スクリプトの実行結果ではない。
+ *
+ *   問題は、空いた `intro-15-online` をマネージドイベントが占めていること。
+ *   マネージドイベントはチームURLでは予約できず、割り当てられた各メンバーの個人ページ
+ *   `cal.com/<username>/<slug>` に子イベントとして生成される。よってKIDUKIサイトの
+ *   リードフォームが使う `cal.com/team/<team>/intro-15-online` は404になる。
+ *
+ *   企業向け予約画面 (docs/booking/index.html) は intro を一切使わない（全文検索で0件）。
+ *   組み立てるのは consult-* / health-consult-* / hr-consult-30 / stress-check-* / training-*
+ *   のみ。したがってこのスクリプトの変更は企業の予約画面に影響しない。
  *
  *   初回15分相談は「担当医が決まっていない状態で誰かに繋ぐ」予約なので、ラウンドロビンが
- *   本来正しいモデルである。このスクリプトは intro のみ移行前へ戻す。
+ *   本来正しいモデルである。このスクリプトは intro のみラウンドロビンへ戻す。
+ *
+ *   注意: マネージド側を退避すると `cal.com/<医師>/intro-15-online` という個人ページ側の
+ *   初回相談リンクは使えなくなる。そちらを運用に組み込んでいる場合は実行前に確認すること。
  *
  * 方針:
  *   - マネージドイベントは削除しない。`<slug>-managed-<id末尾>` へ退避するだけにする。
