@@ -13,6 +13,7 @@
     "verify:standard-numbers": "node tools/verify-standard-numbers.mjs",
     "verify:booking-link": "node tools/verify-booking-link.mjs",
     "cal:restore-intro": "node tools/restore-kiduki-intro-booking.mjs",
+    "cal:snapshot": "node tools/snapshot-calcom-event-types.mjs",
     "audit:seo-source": "node tools/audit-seo-source.mjs",
     "wp:check": "node tools/check-wordpress-connection.mjs",
     "wp:inventory": "node tools/inventory-wordpress.mjs",
