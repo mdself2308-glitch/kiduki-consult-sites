@@ -27,7 +27,9 @@ const routes = [
   ['static-home', siteConfig.staticHomeUrl],
   ['reserve', siteConfig.reserveUrl],
   ['office', `${siteConfig.wordpressUrl}/office/`],
+  ['representative', `${siteConfig.wordpressUrl}/office/greeting/`],
   ['service', `${siteConfig.wordpressUrl}/service/`],
+  ['high-intent-article', `${siteConfig.wordpressUrl}/jimushochoice/`],
   ['contact', `${siteConfig.wordpressUrl}/contact/`],
   ['privacy', `${siteConfig.wordpressUrl}/privacy-policy/`],
   ['rest-index', `${siteConfig.wordpressUrl}/wp-json/`],
@@ -110,6 +112,30 @@ for (const route of routes) {
         'static-home contains a retired internal URL.',
       );
     }
+  }
+  if (name === 'representative') {
+    assert(
+      text.includes('<title>代表者紹介｜宮部大輔'),
+      'representative title does not identify the representative.',
+    );
+    assert(
+      text.includes('代表　宮部 大輔'),
+      'representative page does not contain the confirmed representative name.',
+    );
+    assert(
+      !/2026年◯月|【名称】|◯◯保健所|院長/.test(text),
+      'representative page contains a placeholder or clinic-only title.',
+    );
+  }
+  if (name === 'high-intent-article') {
+    assert(
+      text.includes('この記事を書いた人'),
+      'high-intent article does not expose an author block.',
+    );
+    assert(
+      text.includes('宮部 大輔') && !text.includes('sin_sangyoui'),
+      'high-intent article does not expose the confirmed author name.',
+    );
   }
   if (name === 'robots') {
     assert(
