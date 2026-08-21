@@ -43,7 +43,7 @@
   <meta name="twitter:image" content="https://consult.kdkconslt-sngyouijm.com/og-image.png">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"KIDUKIコンサルティング産業医事務所","description":"復職支援を調整・復職面談・産業医意見・会社決定・再評価・証跡まで支援する東京の産業医事務所","url":"https://consult.kdkconslt-sngyouijm.com/","areaServed":"東京都","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"東京都"},"founder":{"@type":"Person","name":"宮部 大輔","jobTitle":"内科専門医・心療内科専門医・労働衛生コンサルタント"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"サービス","itemListElement":[{"@type":"Offer","price":"150000","priceCurrency":"JPY","itemOffered":{"@type":"Service","name":"復職支援Pack"}},{"@type":"Offer","price":"60000","priceCurrency":"JPY","itemOffered":{"@type":"Service","name":"復職・両立支援 単発オンライン"}},{"@type":"Offer","price":"75000","priceCurrency":"JPY","itemOffered":{"@type":"Service","name":"復職・両立支援 単発訪問"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Casetra","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"嘱託産業医"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"睡眠研修パッケージ"}}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://consult.kdkconslt-sngyouijm.com/#organization","name":"KIDUKIコンサルティング産業医事務所","description":"復職支援を調整・復職面談・産業医意見・会社決定・再評価・証跡まで支援する東京の産業医事務所","url":"https://consult.kdkconslt-sngyouijm.com/","areaServed":{"@type":"AdministrativeArea","name":"東京都"},"address":{"@type":"PostalAddress","postalCode":"105-0004","addressCountry":"JP","addressRegion":"東京都","addressLocality":"港区","streetAddress":"新橋1-18-21 第一日比谷ビル"},"founder":{"@type":"Person","name":"宮部 大輔","jobTitle":"内科専門医・心療内科専門医・労働衛生コンサルタント","url":"https://kdkconslt-sngyouijm.com/office/greeting/"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"サービス","itemListElement":[{"@type":"Offer","price":"150000","priceCurrency":"JPY","itemOffered":{"@type":"Service","name":"復職支援Pack"}},{"@type":"Offer","price":"60000","priceCurrency":"JPY","itemOffered":{"@type":"Service","name":"復職・両立支援 単発オンライン"}},{"@type":"Offer","price":"75000","priceCurrency":"JPY","itemOffered":{"@type":"Service","name":"復職・両立支援 単発訪問"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Casetra","applicationCategory":"BusinessApplication"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"嘱託産業医"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"睡眠研修パッケージ"}}]}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"復職支援Packはどのような契約ですか？","acceptedAnswer":{"@type":"Answer","text":"社員1名・1つの休職エピソードを1案件として扱う、15万円のKIDUKIサービスです。復職時・復職後1か月・3か月の面談と、各面談後の産業医意見書3通、Pack専用画面の利用を含みます。"}},{"@type":"Question","name":"結局、会社の仕事が増えませんか？","acceptedAnswer":{"@type":"Answer","text":"会社に残るのは、窓口と資料の共有、実施可能な勤務条件の確認、最終決定と職場での実施です。KIDUKIは不足情報の整理、本人・主治医との調整、復職面談、意見書、再評価、証跡整理を一つの案件として進めます。"}},{"@type":"Question","name":"Casetraだけを契約できますか？","acceptedAnswer":{"@type":"Answer","text":"できます。既存の産業医・人事で案件、期限、予約、会社決定、証跡を自社運用でき、必要な医師業務だけKIDUKIへ依頼できます。"}},{"@type":"Question","name":"復職支援Packの後はどうなりますか？","acceptedAnswer":{"@type":"Answer","text":"Casetraを月額契約して自社運用を続ける、必要時だけKIDUKI単発フォローを利用する、Decision Packを使って自社または既存産業医で管理する、の三つから選べます。"}},{"@type":"Question","name":"復職面談を1回だけ依頼できますか？","acceptedAnswer":{"@type":"Answer","text":"できます。オンライン6万円、訪問7万5千円と交通費（税別）で、事前整理、調整、産業医面談1回、意見書1通、会社決裁、証跡整理と30日間の案件専用画面を含みます。Casetra月額契約への自動移行や月額請求はありません。"}},{"@type":"Question","name":"システム運用に自信がありません","acceptedAnswer":{"@type":"Answer","text":"最初の復職支援PackはKIDUKIがCasetraを使って進行します。企業担当者は、専用画面で対象案件の確認、入力、決裁を進めるだけです。"}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -685,6 +685,73 @@
     .doctor-section {
       background: var(--color-white);
       position: relative;
+    }
+
+    /* Resource Section */
+    .resources-section {
+      background: var(--color-bg);
+      position: relative;
+    }
+
+    .resources-section h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      color: var(--color-primary);
+    }
+
+    .resources-lead {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .resource-card {
+      display: block;
+      padding: 30px 28px;
+      color: inherit;
+      text-decoration: none;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 2px rgba(20, 35, 28, .05), 0 8px 24px -12px rgba(20, 35, 28, .16);
+      transition: var(--transition);
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-card);
+    }
+
+    .resource-card:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 4px;
+    }
+
+    .resource-card span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--color-accent);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .resource-card h3 {
+      margin-bottom: 12px;
+      color: var(--color-primary);
+      font-size: 1.12rem;
+    }
+
+    .resource-card p {
+      margin: 0;
+      font-size: .9rem;
     }
 
     /* Scope Section */
@@ -1561,6 +1628,7 @@
       .hero { padding: 96px 0 72px; }
 
       .problem-grid, .model-grid, .service-grid, .ops-grid { grid-template-columns: 1fr; }
+      .resources-grid { grid-template-columns: 1fr; }
       .strategy-ladder { grid-template-columns: 1fr; }
       .ladder-arrow { transform: rotate(90deg); justify-self: center; }
       .ladder-note { margin-top: -20px; text-align: left; }
@@ -2066,6 +2134,26 @@
           <div class="scope-item-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" /></svg></div>
           <p>交代勤務<br><small>シフト・仮眠環境の評価／眠気リスクの整理</small></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources-section" aria-labelledby="resources-heading">
+    <div class="container">
+      <h2 id="resources-heading">人事・総務担当者向けの実務記事</h2>
+      <p class="resources-lead">依頼先を選ぶ段階と、面談を実施する段階で確認すべきことを、公的資料に基づいて整理しています。</p>
+      <div class="resources-grid">
+        <a class="resource-card" href="https://kdkconslt-sngyouijm.com/jimushochoice/?utm_source=kdk-consult&amp;utm_medium=internal&amp;utm_campaign=resource-hub">
+          <span>産業医の選定</span>
+          <h3>産業医の選び方｜紹介会社・産業医事務所を比較する7つの確認点</h3>
+          <p>担当医、契約範囲、面談後の書面、再評価、料金・解約条件まで比較します。</p>
+        </a>
+        <a class="resource-card" href="https://kdkconslt-sngyouijm.com/long-hours-occupational-physician-interview/?utm_source=kdk-consult&amp;utm_medium=internal&amp;utm_campaign=resource-hub">
+          <span>面談の準備</span>
+          <h3>長時間労働者の産業医面談｜会社が準備する資料と面談後の措置</h3>
+          <p>対象基準、会社が準備する資料、医師意見後の措置と再評価を実務順に整理します。</p>
+        </a>
       </div>
     </div>
   </section>

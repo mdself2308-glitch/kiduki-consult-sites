@@ -68,7 +68,7 @@ const formDefinition = `<label>会社名(必須)
 [select* company-size "〜49名" "50〜99名" "100〜299名" "300〜999名" "1,000名〜"]</label>
 
 <label>ご相談内容の種別(必須)
-[select* inquiry-type "睡眠研修を検討したい" "SAS(睡眠時無呼吸)対策を相談したい" "交代勤務・夜勤の睡眠対策を相談したい" "嘱託産業医を探している" "顧問・労働衛生コンサルティング" "講演・執筆・取材の依頼" "その他"]</label>
+[select* inquiry-type "復職支援Pack（1案件・面談3回＋再評価）を相談したい" "復職・両立支援の単発面談を相談したい" "嘱託産業医（KIDUKI Retain）を探している" "既存産業医の専門補完（KIDUKI Basic）を相談したい" "睡眠研修を相談したい" "交代勤務・夜勤の睡眠対策を相談したい" "講演・執筆・取材の依頼" "その他"]</label>
 
 <label>ご相談内容(必須)
 [textarea* your-message]</label>

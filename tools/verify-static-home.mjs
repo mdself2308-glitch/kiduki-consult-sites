@@ -22,6 +22,19 @@ const localChecks = {
   description: /<meta[^>]*name=["']description["'][^>]*content=["'][^"']+/i.test(
     localText,
   ),
+  canonical:
+    localText.includes(
+      '<link rel="canonical" href="https://consult.kdkconslt-sngyouijm.com/">',
+    ),
+  singleH1: (localText.match(/<h1\b/gi) || []).length === 1,
+  structuredAddress:
+    localText.includes('"postalCode":"105-0004"') &&
+    localText.includes('"addressLocality":"港区"'),
+  resourceHub:
+    localText.includes('https://kdkconslt-sngyouijm.com/jimushochoice/') &&
+    localText.includes(
+      'https://kdkconslt-sngyouijm.com/long-hours-occupational-physician-interview/',
+    ),
   nonTrivialSize: local.length > 10_000,
 };
 const localValid = Object.values(localChecks).every(Boolean);

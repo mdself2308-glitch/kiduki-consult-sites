@@ -1,0 +1,19 @@
+{
+  "release": "2026-08-21-kiduki-trust-conversion",
+  "items": [
+    {
+      "type": "page",
+      "id": 24,
+      "slug": "office",
+      "title": "事務所について",
+      "metaDescription": "東京・新橋を拠点に、嘱託産業医、既存産業医の専門補完、休職・復職支援を提供するKIDUKIの業務方針、代表者、所在地をご案内します。"
+    },
+    {
+      "type": "page",
+      "id": 332,
+      "slug": "office-info",
+      "title": "事務所概要",
+      "metaDescription": "KIDUKIコンサルティング産業医事務所の名称、設立、所在地、代表者、資格、事業内容、アクセスをご案内します。東京・新橋を拠点に企業の産業保健を支援します。"
+    }
+  ]
+}

@@ -16,6 +16,7 @@
     "cal:snapshot": "node tools/snapshot-calcom-event-types.mjs",
     "audit:seo-source": "node tools/audit-seo-source.mjs",
     "audit:analytics-access": "node kiduki/scripts/inspect-site-kit.mjs",
+    "wp:update-contact-types": "node kiduki/scripts/update-contact-inquiry-types.mjs",
     "wp:check": "node tools/check-wordpress-connection.mjs",
     "wp:inventory": "node tools/inventory-wordpress.mjs",
     "mcp:check": "node mcp/run-wordpress-mcp.mjs --check"

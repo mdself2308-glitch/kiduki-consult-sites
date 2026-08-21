@@ -30,6 +30,12 @@ const legacyInternalLinks = [
   ['legacy-office-info-root', /https:\/\/kdkconslt-sngyouijm\.com\/office-info\//],
 ];
 
+const approvedConversionLinks = [
+  'https://kdkconslt-sngyouijm.com/contact/',
+  'https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/',
+  'https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/',
+];
+
 const requiredFields = [
   'type',
   'id',
@@ -92,8 +98,8 @@ for (const item of manifest.items || []) {
   if (h1Count !== 0) errors.push(`content-h1-count-${h1Count}`);
   if (h2Count < 2) errors.push(`too-few-h2-${h2Count}`);
   if (plainText.length < 600) errors.push(`thin-content-${plainText.length}`);
-  if (!source.includes('https://kdkconslt-sngyouijm.com/contact/')) {
-    errors.push('contact-link-missing');
+  if (!approvedConversionLinks.some((link) => source.includes(link))) {
+    errors.push('conversion-link-missing');
   }
   if (openingBlocks !== closingBlocks) {
     errors.push(`block-comment-mismatch-${openingBlocks}-${closingBlocks}`);

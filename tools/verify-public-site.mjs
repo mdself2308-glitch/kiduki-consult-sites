@@ -27,6 +27,7 @@ const routes = [
   ['static-home', siteConfig.staticHomeUrl],
   ['reserve', siteConfig.reserveUrl],
   ['office', `${siteConfig.wordpressUrl}/office/`],
+  ['office-info', `${siteConfig.wordpressUrl}/office/office-info/`],
   ['representative', `${siteConfig.wordpressUrl}/office/greeting/`],
   ['service', `${siteConfig.wordpressUrl}/service/`],
   ['high-intent-article', `${siteConfig.wordpressUrl}/jimushochoice/`],
@@ -127,6 +128,48 @@ for (const route of routes) {
       'representative page contains a placeholder or clinic-only title.',
     );
   }
+  if (name === 'office') {
+    assert(
+      text.includes(
+        '<title>事務所について  |  KIDUKIコンサルティング産業医事務所',
+      ),
+      'office page title does not identify the office.',
+    );
+    assert(
+      text.includes('内科専門医・心療内科専門医・労働衛生コンサルタント'),
+      'office page does not contain the confirmed qualifications.',
+    );
+    assert(
+      !/href=["']https:\/\/kdkconslt-sngyouijm\.com\/(?:greeting|office-info)\//.test(
+        text,
+      ),
+      'office page contains a retired root-level office link.',
+    );
+    assert(
+      text.includes(
+        'href="https://kdkconslt-sngyouijm.com/office/greeting/"',
+      ),
+      'office page does not link to the canonical representative page.',
+    );
+  }
+  if (name === 'office-info') {
+    assert(
+      text.includes('<title>事務所概要  |  KIDUKIコンサルティング産業医事務所'),
+      'office-info title does not match the confirmed office identity.',
+    );
+    assert(
+      (text.match(/<h1\b/gi) || []).length === 1,
+      'office-info must contain exactly one H1.',
+    );
+    assert(
+      text.includes('〒105-0004') && text.includes('新橋1-18-21'),
+      'office-info does not contain the confirmed address.',
+    );
+    assert(
+      !/03-6403-0173|<th[^>]*>電話<\/th>/.test(text),
+      'office-info exposes the retired public telephone listing.',
+    );
+  }
   if (name === 'high-intent-article') {
     assert(
       text.includes('この記事を書いた人'),
@@ -135,6 +178,17 @@ for (const route of routes) {
     assert(
       text.includes('宮部 大輔') && !text.includes('sin_sangyoui'),
       'high-intent article does not expose the confirmed author name.',
+    );
+  }
+  if (name === 'contact') {
+    assert(
+      text.includes('復職支援Pack（1案件・面談3回＋再評価）を相談したい') &&
+        text.includes('復職・両立支援の単発面談を相談したい'),
+      'contact form does not expose the current entry products.',
+    );
+    assert(
+      !text.includes('SAS(睡眠時無呼吸)対策を相談したい'),
+      'contact form still exposes the unimplemented standalone SAS product.',
     );
   }
   if (name === 'robots') {
