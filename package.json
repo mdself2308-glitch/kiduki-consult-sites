@@ -12,6 +12,7 @@
     "verify:spot-source": "node tools/verify-kiduki-spot-source.mjs",
     "verify:standard-numbers": "node tools/verify-standard-numbers.mjs",
     "verify:booking-link": "node tools/verify-booking-link.mjs",
+    "verify:conversion-tracking": "node tools/verify-conversion-tracking.mjs",
     "cal:restore-intro": "node tools/restore-kiduki-intro-booking.mjs",
     "cal:snapshot": "node tools/snapshot-calcom-event-types.mjs",
     "audit:seo-source": "node tools/audit-seo-source.mjs",
