@@ -65,6 +65,12 @@ if (bookingUrl && fs.existsSync(casetraConsultPath)) {
   check('casetra-consult-page-available', false, `not found: ${casetraConsultPath}`);
 }
 
+// 旧予約ページ（/reserve）。CAL_URLは現在呼ばれないdead codeだが、チームURLが残っていると
+// コピーや復活の瞬間に404へ直行するので、到達性ではなく形そのものを止める。
+const reserveHtml = fs.readFileSync('reserve/index.html', 'utf8');
+const reserveCal = reserveHtml.match(/https:\/\/cal\.com\/[^"'\s]+/);
+check('reserve-page-has-no-team-url', !/cal\.com\/team\//.test(reserveHtml), reserveCal ? reserveCal[0] : 'no cal.com url');
+
 // フォーム側は、送信先とボタンの結線が残っているかだけ見る。文言はsource verifierの担当。
 for (const [name, file] of [['pack', 'consult/return-to-work-pack/index.html'], ['spot', 'consult/return-to-work-spot/index.html']]) {
   const html = fs.readFileSync(file, 'utf8');
