@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KIDUKI 復職支援記事6本 監修用完成稿</title>
+  <style>
+    :root { --ink:#16231f; --green:#1f4b3d; --green2:#3f7a5e; --pale:#eef5f1; --line:#d8e4dd; --gold:#b9832f; --paper:#fbfcfb; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; overflow-x:hidden; color:var(--ink); background:#e8efeb; font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif; line-height:1.8; }
+    a { color:#1c6a50; text-underline-offset:3px; }
+    .hero { background:linear-gradient(135deg,#173a30,#2f6551); color:white; padding:72px max(6vw,24px); }
+    .hero-inner { max-width:1120px; margin:auto; }
+    .eyebrow,.article-number { font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    .hero h1 { max-width:900px; margin:12px 0 20px; font-size:clamp(36px,6vw,66px); line-height:1.18; }
+    .hero p { max-width:850px; margin:0; font-size:17px; }
+    .notice { margin-top:28px; padding:16px 18px; border:1px solid rgba(255,255,255,.34); border-radius:12px; background:rgba(255,255,255,.08); }
+    .layout { display:grid; grid-template-columns:280px minmax(0,1fr); gap:28px; max-width:1280px; margin:32px auto; padding:0 24px 80px; align-items:start; }
+    nav { position:sticky; top:18px; padding:18px; border-radius:16px; background:white; box-shadow:0 8px 26px rgba(18,49,39,.08); }
+    nav h2 { margin:0 0 10px; font-size:16px; }
+    nav a { display:grid; grid-template-columns:30px minmax(0,1fr); gap:7px; padding:10px 4px; color:var(--ink); font-size:13px; line-height:1.45; text-decoration:none; overflow-wrap:anywhere; border-top:1px solid var(--line); }
+    nav a span { color:var(--green2); font-weight:800; }
+    main { min-width:0; }
+    .article-card { margin-bottom:36px; overflow:hidden; background:white; border-radius:18px; box-shadow:0 10px 34px rgba(18,49,39,.09); }
+    .article-header { padding:34px 42px 28px; color:white; background:var(--green); }
+    .article-header h2 { margin:5px 0 20px; font-size:clamp(28px,4vw,42px); line-height:1.35; overflow-wrap:anywhere; }
+    .article-number { margin:0; color:#b9d6ca; }
+    .meta-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin:0; }
+    .meta-grid div { padding-top:9px; border-top:1px solid rgba(255,255,255,.24); }
+    .meta-grid .wide { grid-column:1/-1; }
+    dt { font-size:11px; font-weight:800; letter-spacing:.08em; color:#b9d6ca; }
+    dd { margin:2px 0 0; min-width:0; font-size:13px; overflow-wrap:anywhere; }
+    .wordpress-preview { padding:42px; background:var(--paper); }
+    .wordpress-preview > .wp-block-group { max-width:800px; margin:auto; }
+    .wordpress-preview h2 { margin:2.3em 0 .55em; padding-bottom:.4em; font-size:27px; line-height:1.4; border-bottom:2px solid var(--line); }
+    .wordpress-preview h3 { font-size:20px; }
+    .wordpress-preview p { margin:1em 0; }
+    .kdk-article-lead { margin-top:0 !important; padding:20px 22px; font-size:18px; font-weight:650; background:#e7f1ec; border-left:5px solid var(--green2); }
+    .kdk-summary-box,.kdk-boundary-box { margin:26px 0; padding:18px 22px; border-radius:12px; }
+    .kdk-summary-box { background:#edf5f1; border:1px solid #c9ddd2; }
+    .kdk-boundary-box { background:#fff7e8; border:1px solid #ead3aa; }
+    .kdk-summary-box h2 { margin:0 0 .6em; padding:0; font-size:21px; border:0; }
+    ul,ol { padding-left:1.35em; }
+    li { margin:.45em 0; }
+    table { width:100%; border-collapse:collapse; font-size:14px; background:white; }
+    th,td { padding:11px 12px; text-align:left; vertical-align:top; border:1px solid #cfdcd5; }
+    th { background:#e2eee8; }
+    .wp-block-columns { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+    .kdk-service-card { padding:16px; border:1px solid var(--line); border-radius:10px; background:white; }
+    .wp-block-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:26px 0 4px; }
+    .wp-block-button__link { display:inline-block; padding:12px 18px; color:white; font-weight:800; text-decoration:none; border-radius:999px; background:var(--green2); }
+    .is-style-outline .wp-block-button__link { color:var(--green); background:white; border:2px solid var(--green2); }
+    .review-check { display:flex; flex-wrap:wrap; gap:12px 20px; padding:16px 42px; font-size:13px; color:#29463d; background:#dfeae4; }
+    @media (max-width:900px) { .layout { grid-template-columns:minmax(0,1fr); } nav { position:static; min-width:0; } }
+    @media (max-width:640px) { .hero { padding:48px 22px; } .hero h1 { font-size:38px; } .hero p,.notice { overflow-wrap:anywhere; } .layout { padding:0 12px 56px; } .article-header,.wordpress-preview { padding:26px 20px; } .meta-grid { grid-template-columns:minmax(0,1fr); } .meta-grid .wide { grid-column:auto; } table { display:block; max-width:100%; overflow-x:auto; } .review-check { padding:14px 20px; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KIDUKI / RETURN-TO-WORK SEO CLUSTER / MEDICAL REVIEW</p>
+      <h1>復職支援記事6本<br>監修用完成稿</h1>
+      <p>企業担当者の検索意図に直接答え、制度説明だけで終わらず、会社の次の行動とKIDUKIの適切な入口までつなげた原稿です。</p>
+      <div class="notice"><strong>現在の状態：</strong>ローカル原稿。WordPress未登録・未公開です。医学的表現、実務フロー、対応範囲、CTAをご確認ください。記事内にPackの価格は記載していません。</div>
+    </div>
+  </header>
+  <div class="layout">
+    <nav aria-label="記事一覧"><h2>監修対象 6本</h2><a href="#article-1"><span>01</span>復職支援をワンストップで依頼するとは｜CasetraとKIDUKIで調整・再評価・証跡まで</a><a href="#article-2"><span>02</span>復職可能の診断書が出たら会社が確認する5項目｜産業医の役割も解説</a><a href="#article-3"><span>03</span>復職面談で会社が準備する資料｜診断書だけでは足りない理由</a><a href="#article-4"><span>04</span>復職時の産業医意見書｜会社が決める勤務条件と再評価</a><a href="#article-5"><span>05</span>復職後の再評価と就業制限の解除｜決めたまま放置しない実務</a><a href="#article-6"><span>06</span>復職判断で見る睡眠・生活リズム｜勤務準備性を会社の言葉にする</a></nav>
+    <main>
+    <article id="article-1" class="article-card">
+      <header class="article-header">
+        <p class="article-number">ARTICLE 01</p>
+        <h2>復職支援をワンストップで依頼するとは｜CasetraとKIDUKIで調整・再評価・証跡まで</h2>
+        <dl class="meta-grid">
+          <div><dt>狙う検索意図</dt><dd>復職支援 ワンストップ 産業医 Casetra</dd></div>
+          <div><dt>公開予定URL</dt><dd>/return-to-work-one-stop-casetra-kiduki/</dd></div>
+          <div class="wide"><dt>meta description</dt><dd>復職支援で人事の負担になる資料整理、本人・主治医との調整、面談、意見書、会社決定、再評価、証跡をCasetraとKIDUKIで一つの案件として進める方法を解説します。</dd></div>
+        </dl>
+      </header>
+      <section class="wordpress-preview"><!-- wp:group {"className":"kdk-service-page kdk-article-page","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-service-page kdk-article-page">
+<!-- wp:paragraph {"className":"kdk-article-lead"} -->
+<p class="kdk-article-lead">復職支援の外部依頼で必要なのは、面談する医師の紹介だけではありません。実際に人事担当者の時間を奪うのは、資料不足の確認、本人・主治医・産業医との調整、社内決裁、本人・上司への伝達、再評価の追跡です。KIDUKIは「面談の実施」ではなく、会社が判断・実施でき、後から経過を説明できる状態まで1件の復職Caseを進めることを成果物とします。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:heading -->
+<h2 class="wp-block-heading">ワンストップとは「会社の判断まで奪うこと」ではありません</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>KIDUKIが引き受けるのは、判断に必要な情報と関係者を前へ運び、決定・実施・再評価の証跡を一つの案件にまとめることです。復職、配置、勤務条件等の最終決定と実施は会社が行います。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">企業担当者が行うのは、主に5つです</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true,"className":"kdk-check-list"} -->
+<ol class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>社内窓口を1名決め、Casetraで起票内容を確認する</li><!-- /wp:list-item --><!-- wp:list-item --><li>診断書、職務、休職前の経過、実施可能な勤務条件を提出する</li><!-- /wp:list-item --><!-- wp:list-item --><li>面談日と、必要時の主治医照会に使う職務情報を確認する</li><!-- /wp:list-item --><!-- wp:list-item --><li>産業医意見を受領し、復職日、措置、実施期間、見直し時期を会社決裁する</li><!-- /wp:list-item --><!-- wp:list-item --><li>措置を職場で実施し、再評価時に継続・変更・解除を決定する</li><!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+<!-- wp:paragraph -->
+<p>照会文面、面談、意見書、期限管理、再評価の設定、証跡の取りまとめはKIDUKIが進めます。企業担当者は、Casetraに表示される産業医の対応可能枠から面談日時を選び、候補日のメール往復を行わずに予約できます。Casetraは、起票根拠、事前資料、予約、意見書受領、会社決裁、再評価の順に、次に行う処理を表示します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">予約が簡単でも、案件が完了するとは限りません</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>空き枠を選んで面談を予約できることは、担当者の負担を減らします。しかし、面談前の資料、面談後の会社決定、勤務条件の実施、再評価が別々のメールや表計算に残れば、復職Case全体は閉じません。予約のしやすさと、案件を完了させる運用の両方が必要です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">KIDUKIが案件の途中をつなぎます</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>会社で負担になりやすい処理</th><th>KIDUKIが行うこと</th><th>会社へ返すもの</th></tr></thead><tbody><tr><td>何が不足しているか分からない</td><td>診断書、職務、経過、制度を確認し、不足情報と確認先を整理</td><td>必要資料・確認事項リスト</td></tr><tr><td>本人・主治医との調整が進まない</td><td>本人同意の確認、照会文面、必要な職務情報、期限を整理</td><td>同意の範囲、照会記録、回答要点</td></tr><tr><td>面談の日程が決まらない</td><td>復職希望日から逆算して資料締切と面談工程を進行管理</td><td>工程、期限、未完了事項</td></tr><tr><td>医師意見が抽象的で運用できない</td><td>就業可否だけでなく、勤務時間、業務制限、再評価日、解除条件を具体化</td><td>産業医意見書</td></tr><tr><td>社内決定が記録されない</td><td>会社が決める項目を提示し、決定内容と実施日を案件記録へ反映</td><td>会社決定、実施開始日</td></tr><tr><td>復職後の確認が抜ける</td><td>再評価時期を管理し、勤務実績と体調から措置の継続・変更・解除を再評価</td><td>更新意見、次回日、完了条件</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">納品物は、面談記録だけではなく「判断パック」</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>案件の受付日、期限、経過</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社から受領した職務情報と資料</li><!-- /wp:list-item --><!-- wp:list-item --><li>本人同意の範囲と主治医照会の記録</li><!-- /wp:list-item --><!-- wp:list-item --><li>面談記録と産業医意見</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社が決定した勤務条件と実施開始日</li><!-- /wp:list-item --><!-- wp:list-item --><li>再評価日、解除条件、未完了事項</li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+<!-- wp:paragraph -->
+<p>これにより、「誰が、いつ、何を根拠に判断し、何を実施したか」を後からたどれる状態にします。単にファイルを保管するだけでなく、次の処理と期限が分かることが証跡管理の要点です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Packの処理中に、Casetraを1案件ぶん使います</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>復職支援Packでは、KIDUKIが依頼企業と担当者をCasetraへ登録し、当該社員の復職Case 1件と操作期限を設定します。担当者にはその1件だけが表示され、「次に会社がすること」、全体進捗、完了ToDo、証跡件数、期限を同じ画面で確認できます。会社は事前資料、主治医照会の要否・目的、意見書受領、会社決裁、再評価を入力します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>主治医照会が必要な場合は、KIDUKIが職務情報と質問案を整理し、本人同意と企業確認の範囲を明確にして進めます。処理結果は、完了者、完了日時、入力差分とともに証跡として残します。操作期限後も入力済み内容と証跡は読取専用で確認できます。Pack対象Caseの利用はPackのサービス履行に含まれ、Casetra月額契約へ自動移行しません。案件終了後は、Casetraを別途契約して複数案件を自社運用する、KIDUKIの継続支援へ移る、Decision Packを受け取って自社または既存産業医で管理する、のいずれかを選べます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Pack・単発・自社運用の選び分け</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>現在の状態</th><th>合う入口</th></tr></thead><tbody><tr><td>診断書を受け取ったが、資料整理から再評価まで工程全体が決まっていない</td><td>復職支援Pack</td></tr><tr><td>社内手順と資料はあるが、既存産業医が面談・意見書・再評価に対応できない</td><td>復職・両立支援単発</td></tr><tr><td>自社の人事・産業医で判断でき、複数案件の期限と証跡を自社で運用したい</td><td>Casetra月額契約</td></tr><tr><td>選任産業医として定期対応も必要</td><td>KIDUKI Retain</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">医師紹介との違い</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-scope-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-scope-table"><table><thead><tr><th>比較する点</th><th>医師の紹介・面談手配</th><th>Casetraを使う復職支援Pack</th></tr></thead><tbody><tr><td>依頼の単位</td><td>医師または面談枠の手配</td><td>社員1名・1休職エピソードの完了</td></tr><tr><td>面談前</td><td>会社側で資料整理・調整を行う場合がある</td><td>不足情報、本人同意、主治医照会、工程を整理</td></tr><tr><td>面談後</td><td>意見書受領後の処理は会社側で行う場合がある</td><td>会社決定、実施日、再評価、解除まで進行管理</td></tr><tr><td>会社が使うもの</td><td>契約内容によって異なる</td><td>Pack対象のCasetra復職CaseとDecision Pack</td></tr><tr><td>継続方法</td><td>契約サービスの範囲で継続</td><td>Casetra月額、KIDUKI継続、自社管理から選択</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">参考となる公的情報</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html" target="_blank" rel="noopener">厚生労働省「心の健康問題により休業した労働者の職場復帰支援の手引き」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kokoro.mhlw.go.jp/return/return-employer/" target="_blank" rel="noopener">こころの耳「職場復帰支援に役立つコンテンツ」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://chiryoutoshigoto.mhlw.go.jp/formanagers/" target="_blank" rel="noopener">治療と仕事の両立支援ナビ「事業主の方へ」</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>対応範囲：</strong>KIDUKIは産業医として就業上の評価と意見を行い、案件の進行と証跡整理を支援します。診断・治療・処方は行わず、会社に代わる復職・配置・解雇等の決定は行いません。個別の対応範囲は開始前に確認します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:paragraph -->
+<p><strong>執筆・監修：</strong><a href="https://kdkconslt-sngyouijm.com/office/greeting/">宮部 大輔</a>（KIDUKIコンサルティング産業医事務所 代表／内科専門医・心療内科専門医・労働衛生コンサルタント）</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>月額契約のない企業も、復職支援Packまたは復職・両立支援単発を1案件単位でご相談いただけます。診断書、復職希望時期、想定する職務が分かる範囲から始めます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-one-stop">案件全体を相談する</a></div><!-- /wp:button --><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-one-stop">不足する1回だけ相談する</a></div><!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</section>
+      <footer class="review-check">
+        <strong>監修チェック</strong>
+        <span>□ 医学的表現</span><span>□ 実務フロー</span><span>□ 対応範囲</span><span>□ CTA</span>
+      </footer>
+    </article>
+
+    <article id="article-2" class="article-card">
+      <header class="article-header">
+        <p class="article-number">ARTICLE 02</p>
+        <h2>復職可能の診断書が出たら会社が確認する5項目｜産業医の役割も解説</h2>
+        <dl class="meta-grid">
+          <div><dt>狙う検索意図</dt><dd>復職可能 診断書 会社対応</dd></div>
+          <div><dt>公開予定URL</dt><dd>/return-to-work-diagnosis-note-company-checks/</dd></div>
+          <div class="wide"><dt>meta description</dt><dd>主治医から復職可能の診断書が提出された後、会社が確認する職務、勤務条件、回復状況、就業配慮、再評価の5項目を産業医の役割とともに解説します。</dd></div>
+        </dl>
+      </header>
+      <section class="wordpress-preview"><!-- wp:group {"className":"kdk-service-page kdk-article-page","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-service-page kdk-article-page">
+<!-- wp:paragraph {"className":"kdk-article-lead"} -->
+<p class="kdk-article-lead">主治医から「復職可能」と書かれた診断書が届くと、本人は早い復帰を望み、現場は受入日を知りたがり、人事には判断が集中します。しかし、診断書の受領日と会社が復職を決定する日は同じとは限りません。診断書は治療を担当する主治医の医学的見解です。会社は、実際の職務と職場の受入体制を確認し、必要に応じて産業医等の意見を聴いたうえで、復職日と就業上の措置を決定します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:heading -->
+<h2 class="wp-block-heading">診断書を受け取った後の5つの確認</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true,"className":"kdk-numbered-list"} -->
+<ol class="wp-block-list kdk-numbered-list"><!-- wp:list-item --><li>診断書が示している範囲</li><!-- /wp:list-item --><!-- wp:list-item --><li>復職先で実際に求められる職務</li><!-- /wp:list-item --><!-- wp:list-item --><li>安定して勤務を続ける準備性</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社が実施できる就業上の措置</li><!-- /wp:list-item --><!-- wp:list-item --><li>復職後の再評価日と解除条件</li><!-- /wp:list-item --></ol>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">診断書を受け取った日の会社対応</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true,"className":"kdk-numbered-list"} -->
+<ol class="wp-block-list kdk-numbered-list"><!-- wp:list-item --><li><strong>受領を記録する：</strong>受領日、本人が希望する復職日、休職期間の満了日、社内規程上の期限を分けて記録します。</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>決定前であると共有する：</strong>診断書を受け取った時点では復職日や勤務条件は未決定であり、必要な確認後に会社が通知することを本人と上司へ説明します。</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>判断材料を集める：</strong>診断書、復職先の職務、勤務記録、休職前の経過、会社が実施可能な配慮をそろえます。</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>判断工程を置く：</strong>産業医等の確認、必要時の主治医照会、会社決定、本人への通知、復職後の再評価を予定に入れます。</li><!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+<!-- wp:paragraph -->
+<p>先に復職日だけを約束すると、後から必要な制限が判明したときに本人・現場との調整が難しくなります。初動では結論を急ぐより、誰が、何を、いつまでに確認するかを決めることが重要です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">「復職可能」は元の仕事を制限なくできるという意味ではありません</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>主治医は、本人の症状、治療経過、日常生活の状態等から医学的見解を示します。一方で、職場の具体的な業務、勤務時間、通勤、出張、運転、夜勤、対人負荷、繁忙期の予定まで把握しているとは限りません。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>厚生労働省の職場復帰支援に関する情報でも、主治医による復職可能の判断が、職場で求められる業務遂行能力まで回復しているとの判断とは限らないため、職務情報を踏まえて産業医等が精査することの重要性が示されています。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">1. 診断書が示している範囲を読む</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>最初に、診断名だけでなく、復職可能日、通院継続の要否、勤務時間や残業への言及、避けるべき業務、再診予定などを確認します。「復職可能」「軽減勤務が望ましい」といった抽象的な表現だけでは、会社が勤務条件を決められないことがあります。</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>不足情報がある場合：</strong>本人の同意を得たうえで、主治医に職務内容や会社が検討している勤務条件を伝え、就業上必要な範囲に限って追加情報を確認します。病歴全体の提出を一律に求めるのではなく、目的と閲覧者を限定します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">2. 復職先で求められる職務を具体化する</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>確認する職務情報</th><th>具体例</th></tr></thead><tbody><tr><td>勤務時間</td><td>始業時刻、残業、深夜勤務、休日勤務、交代勤務</td></tr><tr><td>業務負荷</td><td>締切、同時並行業務、判断責任、対人対応、繁忙期</td></tr><tr><td>安全上の要件</td><td>運転、高所、機械操作、単独勤務、緊急対応</td></tr><tr><td>勤務環境</td><td>通勤、在宅勤務、出張、配置場所、休憩の取りやすさ</td></tr><tr><td>受入体制</td><td>上司、業務調整者、相談窓口、再面談の時間確保</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+<!-- wp:paragraph -->
+<p>「事務職」「営業職」のような職種名だけでは判断材料として不十分です。復職初日から何時に出勤し、どの仕事を、どの程度の量で担当するのかまで分解します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">3. 安定して勤務を続ける準備性を確認する</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>症状が軽くなったかだけでなく、決まった時刻に起床し、通勤し、日中の活動を保ち、翌日に回復できる状態かを確認します。集中力、疲労、服薬による眠気、生活リズム、通勤負荷などは、実際の職務との組合せで評価します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>睡眠と生活リズムの確認方法は、<a href="https://kdkconslt-sngyouijm.com/sleep-rhythm-return-to-work-readiness/">復職判断で見る睡眠・生活リズム</a>で詳しく整理します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">4. 会社が実施できる就業上の措置へ落とす</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>短時間勤務や段階的な勤務時間延長</li><!-- /wp:list-item --><!-- wp:list-item --><li>残業、深夜勤務、休日勤務、出張の制限</li><!-- /wp:list-item --><!-- wp:list-item --><li>高負荷業務、運転、単独勤務等の一時的な制限</li><!-- /wp:list-item --><!-- wp:list-item --><li>業務量、締切、顧客対応、役割の調整</li><!-- /wp:list-item --><!-- wp:list-item --><li>上司との定期確認と産業医等による再面談</li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+<!-- wp:paragraph -->
+<p>医学的に望ましい配慮でも、会社が実施できなければ運用は続きません。代替案を含めて検討し、最終的な勤務条件は会社が決定します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">5. 復職時に再評価日と解除条件を決める</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>残業禁止や短時間勤務を設定する場合は、開始日だけでなく、次に見直す日と、何を確認できれば変更・解除するかを決めます。期限のない制限は、本人にも職場にも負担となり、必要以上に長期化することがあります。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>再評価の実務は、<a href="https://kdkconslt-sngyouijm.com/return-to-work-follow-up-reassessment/">復職後の再評価と就業制限の解除</a>で解説します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">主治医・産業医・会社の役割</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-scope-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-scope-table"><table><thead><tr><th>主体</th><th>主な役割</th></tr></thead><tbody><tr><td>主治医</td><td>診断と治療を行い、本人の医学的状態について見解を示す</td></tr><tr><td>産業医等</td><td>医学的情報と職務情報を組み合わせ、就業上の意見を示す</td></tr><tr><td>会社</td><td>意見を踏まえて復職日と勤務条件を決定し、実施・記録する</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">次に読む実務記事</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-interview-documents/">復職面談で会社が準備する資料</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-interview-process-roles/">復職面談の進め方と関係者の役割</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-occupational-physician-opinion/">復職時の産業医意見書で確認する項目</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">参考となる公的情報</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html" target="_blank" rel="noopener">厚生労働省「心の健康問題により休業した労働者の職場復帰支援の手引き」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://anzeninfo.mhlw.go.jp/yougo/yougo84_1.html" target="_blank" rel="noopener">厚生労働省「職場復帰支援」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.ppc.go.jp/personalinfo/legal/ryuuijikou_health_condition_info/" target="_blank" rel="noopener">個人情報保護委員会「雇用管理分野における健康情報の取扱い」</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>この記事について：</strong>一般的な職場復帰支援の実務を整理したものです。個別の復職可否、診断、法的判断を示すものではありません。本人の状態、職務、就業規則、社内制度を確認して対応してください。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:paragraph -->
+<p><strong>執筆・監修：</strong><a href="https://kdkconslt-sngyouijm.com/office/greeting/">宮部 大輔</a>（KIDUKIコンサルティング産業医事務所 代表／内科専門医・心療内科専門医・労働衛生コンサルタント）</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>診断書受領後の工程全体を任せたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-diagnosis-note">復職支援Pack</a>、既存産業医が対応できない面談・意見書・再評価だけを補いたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-diagnosis-note">復職・両立支援単発</a>をご利用いただけます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-diagnosis-note">案件全体を相談する</a></div><!-- /wp:button --><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-diagnosis-note">不足する1回だけ相談する</a></div><!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</section>
+      <footer class="review-check">
+        <strong>監修チェック</strong>
+        <span>□ 医学的表現</span><span>□ 実務フロー</span><span>□ 対応範囲</span><span>□ CTA</span>
+      </footer>
+    </article>
+
+    <article id="article-3" class="article-card">
+      <header class="article-header">
+        <p class="article-number">ARTICLE 03</p>
+        <h2>復職面談で会社が準備する資料｜診断書だけでは足りない理由</h2>
+        <dl class="meta-grid">
+          <div><dt>狙う検索意図</dt><dd>復職面談 必要書類 会社</dd></div>
+          <div><dt>公開予定URL</dt><dd>/return-to-work-interview-documents/</dd></div>
+          <div class="wide"><dt>meta description</dt><dd>産業医の復職面談前に会社が準備する診断書、職務情報、勤務記録、休職前の経過、復職後の受入案を、取扱い上の注意とともに整理します。</dd></div>
+        </dl>
+      </header>
+      <section class="wordpress-preview"><!-- wp:group {"className":"kdk-service-page kdk-article-page","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-service-page kdk-article-page">
+<!-- wp:paragraph {"className":"kdk-article-lead"} -->
+<p class="kdk-article-lead">復職面談の日程だけ先に決まり、前日になって「診断書以外に何が必要ですか」と確認が始まると、面談後に追加照会や再面談が必要になります。復職面談の質と速さは、会社が事前にそろえる情報で大きく変わります。診断書だけでは分からない職務、休職前の経過、実施可能な配慮を目的別に整理し、医師が就業上の意見を示せる状態を作ります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:heading -->
+<h2 class="wp-block-heading">面談前にそろえる6種類の情報</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>主治医の診断書と、必要に応じた追加情報</li><!-- /wp:list-item --><!-- wp:list-item --><li>復職先の職務と勤務条件</li><!-- /wp:list-item --><!-- wp:list-item --><li>休職前の勤務・体調・職場対応の経過</li><!-- /wp:list-item --><!-- wp:list-item --><li>休職中の連絡と本人からの申出</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社が検討できる就業上の措置</li><!-- /wp:list-item --><!-- wp:list-item --><li>就業規則と職場復帰支援の社内手順</li><!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">会社が準備する資料一覧</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>資料・情報</th><th>確認する目的</th><th>準備上の注意</th></tr></thead><tbody><tr><td>主治医診断書</td><td>復職可能時期、治療継続、医学的な制限を確認</td><td>提出日と復職希望日に間がある場合は状態変化を確認</td></tr><tr><td>職務情報</td><td>実際に必要な能力と安全上の条件を確認</td><td>職種名だけでなく、時間、負荷、運転、出張等を具体化</td></tr><tr><td>勤務記録</td><td>休職前の負荷と変化を確認</td><td>残業、深夜、休日、欠勤、遅刻等を必要な期間に限定</td></tr><tr><td>休職前の経過</td><td>不調の契機、会社の対応、再発要因を整理</td><td>評価や推測ではなく、確認できる事実と時系列を分ける</td></tr><tr><td>本人の申出</td><td>希望する復職日、懸念、必要と考える配慮を確認</td><td>本人が会社へ共有することに同意した範囲を明確にする</td></tr><tr><td>受入案</td><td>会社が実施可能な勤務条件を検討</td><td>実施できない案を前提として医師へ提示しない</td></tr><tr><td>社内規程</td><td>休職期間、復職判定、試し出勤等の手順を確認</td><td>個別対応が規程と矛盾しないか人事労務面から確認</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">職務情報は「元の職種」ではなく復職初日の仕事を書く</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>「営業職へ復職」「従前業務に戻る」だけでは、負荷の程度が分かりません。始業時刻、1日の業務量、対人対応、締切、運転、出張、在宅勤務の可否、休憩、上司の支援などを具体的に示します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:columns {"className":"kdk-card-grid"} -->
+<div class="wp-block-columns kdk-card-grid"><!-- wp:column {"className":"kdk-service-card"} -->
+<div class="wp-block-column kdk-service-card"><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">不十分な例</h3><!-- /wp:heading --><!-- wp:paragraph --><p>事務職、残業なし、軽減勤務</p><!-- /wp:paragraph --></div>
+<!-- /wp:column --><!-- wp:column {"className":"kdk-service-card kdk-service-card--accent"} -->
+<div class="wp-block-column kdk-service-card kdk-service-card--accent"><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">判断しやすい例</h3><!-- /wp:heading --><!-- wp:paragraph --><p>9時始業、週5日出社、定型処理を中心に開始、顧客対応・出張・時間外勤務は一時的に外し、2週間後に再評価</p><!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">休職前の経過は事実と評価を分ける</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>「本人に意欲がなかった」「上司と合わなかった」といった評価だけでは、面談に必要な情報になりません。勤務時間の変化、遅刻や欠勤、業務上の出来事、本人からの申出、会社が行った調整、その後の変化を時系列で整理します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>確認できる事実</li><!-- /wp:list-item --><!-- wp:list-item --><li>本人の説明</li><!-- /wp:list-item --><!-- wp:list-item --><li>上司・人事の認識</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社がすでに実施した対応</li><!-- /wp:list-item --><!-- wp:list-item --><li>現在も残る職場側の課題</li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">主治医への追加確認が必要な場合</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>診断書だけでは勤務条件を判断できない場合、本人の同意を得て、職務情報を添えた照会を検討します。質問は「就労可能ですか」という一文だけでなく、会社が検討している勤務時間や業務制限に対する医学的な留意点を確認できる形にします。</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>個人情報の取扱い：</strong>診療情報は要配慮個人情報です。面談に必要だからといって、病歴や診療録全体を人事・上司へ広く共有することは避けます。取得目的、本人同意、閲覧者、保管場所、保存期間を確認してください。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">面談当日に会社側で決めておくこと</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true,"className":"kdk-numbered-list"} -->
+<ol class="wp-block-list kdk-numbered-list"><!-- wp:list-item --><li>誰が産業医等へ会社情報を説明するか</li><!-- /wp:list-item --><!-- wp:list-item --><li>面談結果を誰が受け取るか</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社の最終決定者は誰か</li><!-- /wp:list-item --><!-- wp:list-item --><li>本人・上司へ誰が勤務条件を伝えるか</li><!-- /wp:list-item --><!-- wp:list-item --><li>再評価の予約と記録を誰が管理するか</li><!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">面談予約の前に決める3つの締切</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li><strong>会社資料の提出期限：</strong>職務情報や受入案を医師が面談前に確認できる日</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>本人資料の提出期限：</strong>診断書、本人申出、必要時の同意を確認できる日</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>会社決定の期限：</strong>面談後に意見を受け取り、本人と現場へ勤務条件を通知する日</li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+<!-- wp:paragraph -->
+<p>空き枠を選べる予約システムがあっても、必要資料と決定期限が決まっていなければ案件は進みません。面談日時と資料締切を同じ工程で管理すると、メールで候補日と不足資料を別々に往復する作業を減らせます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">次に読む実務記事</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-interview-process-roles/">復職面談の進め方と関係者の役割</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-diagnosis-note-company-checks/">復職可能の診断書が出た後の会社対応</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-occupational-physician-opinion/">会社が使える産業医意見書の項目</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">参考となる公的情報</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html" target="_blank" rel="noopener">厚生労働省「心の健康問題により休業した労働者の職場復帰支援の手引き」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000115267.html" target="_blank" rel="noopener">厚生労働省「治療と仕事の両立について」様式例集</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.ppc.go.jp/personalinfo/legal/ryuuijikou_health_condition_info/" target="_blank" rel="noopener">個人情報保護委員会「雇用管理分野における健康情報の取扱い」</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>この記事について：</strong>一般的な実務の整理です。提出を求める資料は、個別の状態、職務、就業規則、社内の個人情報管理規程に応じて調整してください。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:paragraph -->
+<p><strong>執筆・監修：</strong><a href="https://kdkconslt-sngyouijm.com/office/greeting/">宮部 大輔</a>（KIDUKIコンサルティング産業医事務所 代表／内科専門医・心療内科専門医・労働衛生コンサルタント）</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>資料整理から会社決定・再評価まで任せたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-documents">復職支援Pack</a>、資料はそろっており面談・意見書だけ不足する場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-documents">復職・両立支援単発</a>をご利用いただけます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-documents">案件全体を相談する</a></div><!-- /wp:button --><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-documents">面談1回を相談する</a></div><!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</section>
+      <footer class="review-check">
+        <strong>監修チェック</strong>
+        <span>□ 医学的表現</span><span>□ 実務フロー</span><span>□ 対応範囲</span><span>□ CTA</span>
+      </footer>
+    </article>
+
+    <article id="article-4" class="article-card">
+      <header class="article-header">
+        <p class="article-number">ARTICLE 04</p>
+        <h2>復職時の産業医意見書｜会社が決める勤務条件と再評価</h2>
+        <dl class="meta-grid">
+          <div><dt>狙う検索意図</dt><dd>復職 産業医 意見書</dd></div>
+          <div><dt>公開予定URL</dt><dd>/return-to-work-occupational-physician-opinion/</dd></div>
+          <div class="wide"><dt>meta description</dt><dd>復職時の産業医意見書で確認したい就業可否、勤務時間、業務制限、開始日、再評価日、解除条件と、会社が記録すべき決定事項を解説します。</dd></div>
+        </dl>
+      </header>
+      <section class="wordpress-preview"><!-- wp:group {"className":"kdk-service-page kdk-article-page","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-service-page kdk-article-page">
+<!-- wp:paragraph {"className":"kdk-article-lead"} -->
+<p class="kdk-article-lead">復職時の産業医意見書を受け取っても、「残業は控える」「軽減勤務が望ましい」だけでは、人事と現場は何をいつまで実施するか決められません。意見書は単に「復職可・不可」を伝える書面ではなく、会社が勤務条件を決定するための判断材料です。就業上の措置、その開始日、再評価日、変更・解除の条件を具体化し、産業医の意見と会社の決定を分けて記録します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:heading -->
+<h2 class="wp-block-heading">意見書で確認したい7項目</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true,"className":"kdk-numbered-list"} -->
+<ol class="wp-block-list kdk-numbered-list"><!-- wp:list-item --><li>評価に用いた情報</li><!-- /wp:list-item --><!-- wp:list-item --><li>就業可否または就業区分</li><!-- /wp:list-item --><!-- wp:list-item --><li>勤務時間に関する措置</li><!-- /wp:list-item --><!-- wp:list-item --><li>業務内容・安全面の制限</li><!-- /wp:list-item --><!-- wp:list-item --><li>措置の開始日</li><!-- /wp:list-item --><!-- wp:list-item --><li>次回の再評価日</li><!-- /wp:list-item --><!-- wp:list-item --><li>変更・解除を検討する条件</li><!-- /wp:list-item --></ol>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">産業医意見と会社決定は同じものではありません</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>産業医等は、本人の医学的状態と実際の職務情報を踏まえ、就業上の措置について医学的意見を示します。配置、労働時間、担当業務などの最終決定と実施は会社が行います。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>そのため、記録上も「医師が示した意見」と「会社が採用した措置」を分けます。意見を一部変更して実施する場合は、実施可能性、本人との話合い、代替措置などの検討経過を残します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">会社が使える意見書に必要な具体性</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>項目</th><th>曖昧な表現</th><th>会社が判断しやすい表現の方向</th></tr></thead><tbody><tr><td>勤務時間</td><td>残業は控える</td><td>時間外勤務の可否、上限、対象期間を示す</td></tr><tr><td>業務負荷</td><td>軽減業務が望ましい</td><td>一時的に外す業務と、担当できる業務を職務情報に沿って示す</td></tr><tr><td>期間</td><td>当面の間</td><td>開始日と再評価予定日を示す</td></tr><tr><td>解除</td><td>体調がよければ解除</td><td>勤務状況、症状、睡眠、通院、職場情報など確認項目を示す</td></tr><tr><td>緊急時</td><td>悪化時は配慮</td><td>連絡先、受診、勤務中止を検討する状態を社内手順と合わせる</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+<!-- wp:paragraph -->
+<p>実際の意見は、個別の医学的状態と職務に応じて作成します。定型文へ本人を当てはめるのではなく、会社から正確な職務情報を産業医等へ渡すことが前提です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">意見書を受け取った会社の実務</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true,"className":"kdk-numbered-list"} -->
+<ol class="wp-block-list kdk-numbered-list"><!-- wp:list-item --><li><strong>内容を確認：</strong>実施できない条件や解釈が分かれる表現を産業医等へ確認します。</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>本人と話し合う：</strong>必要な範囲で意見を説明し、勤務条件と連絡方法を確認します。</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>会社が決定：</strong>措置、開始日、対象業務、決定者を記録します。</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>職場へ実装：</strong>勤務表、業務分担、上司への伝達へ反映します。</li><!-- /wp:list-item --><!-- wp:list-item --><li><strong>再評価を予約：</strong>復職後の確認日を予定表と案件記録へ登録します。</li><!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">意見が曖昧なとき、会社だけで解釈しない</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>意見書に「当面」「可能な範囲」「無理のない業務」など解釈が分かれる表現がある場合は、会社側だけで数値や期間を補わず、産業医等へ職務情報を返して確認します。確認した内容は、元の意見書と区別して追記日・確認者とともに残します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:paragraph -->
+<p><strong>既存産業医が対応できない場合：</strong>選任関係や通常の産業医契約を変更せず、復職面談、意見書、復職後の再評価だけを外部の産業医へ依頼する方法もあります。誰が最終意見を取りまとめるか、既存産業医へ何を共有するかを開始前に決めます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">会社へ共有する情報は必要最小限にする</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>職場が必要とするのは、診断名や治療内容の詳細ではなく、安全に働くための勤務条件や配慮です。上司へ共有する内容と、人事・産業保健職だけが取り扱う情報を分けます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>共有の原則：</strong>誰に、何の目的で、どこまで伝えるかを確認します。病名を広く知らせる代わりに、「時間外勤務を行わない」「定期通院の時間を確保する」など、職場が実施する事項を共有します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">意見書の発行で案件を終わらせない</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>意見書を保管しただけでは、措置を実施した証拠にはなりません。会社の決定、本人・上司への伝達、勤務表等への反映、復職後の状況、再評価結果までを一つの経過として残します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>復職後の進め方は、<a href="https://kdkconslt-sngyouijm.com/return-to-work-follow-up-reassessment/">復職後の再評価と就業制限の解除</a>で詳しく解説します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">次に読む実務記事</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-interview-documents/">復職面談で会社が準備する資料</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-follow-up-reassessment/">復職後の再評価と就業制限の解除</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-one-stop-casetra-kiduki/">面談から会社決定・再評価・証跡まで進める方法</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">参考となる公的情報</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html" target="_blank" rel="noopener">厚生労働省「心の健康問題により休業した労働者の職場復帰支援の手引き」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000115267.html" target="_blank" rel="noopener">厚生労働省「治療と仕事の両立について」様式例集</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.ppc.go.jp/personalinfo/legal/ryuuijikou_health_condition_info/" target="_blank" rel="noopener">個人情報保護委員会「雇用管理分野における健康情報の取扱い」</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>この記事について：</strong>一般的な実務の整理であり、個別事案の復職可否、診断、法的判断を示すものではありません。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:paragraph -->
+<p><strong>執筆・監修：</strong><a href="https://kdkconslt-sngyouijm.com/office/greeting/">宮部 大輔</a>（KIDUKIコンサルティング産業医事務所 代表／内科専門医・心療内科専門医・労働衛生コンサルタント）</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>面談・意見書・再評価だけを補いたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-opinion">復職・両立支援単発</a>、資料整理から会社決定・復職後フォローまで一つの案件として進めたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-opinion">復職支援Pack</a>をご利用いただけます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-opinion">面談・意見書を1回単位で相談</a></div><!-- /wp:button --><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-opinion">案件全体を相談する</a></div><!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</section>
+      <footer class="review-check">
+        <strong>監修チェック</strong>
+        <span>□ 医学的表現</span><span>□ 実務フロー</span><span>□ 対応範囲</span><span>□ CTA</span>
+      </footer>
+    </article>
+
+    <article id="article-5" class="article-card">
+      <header class="article-header">
+        <p class="article-number">ARTICLE 05</p>
+        <h2>復職後の再評価と就業制限の解除｜決めたまま放置しない実務</h2>
+        <dl class="meta-grid">
+          <div><dt>狙う検索意図</dt><dd>復職後 就業制限 解除 再評価</dd></div>
+          <div><dt>公開予定URL</dt><dd>/return-to-work-follow-up-reassessment/</dd></div>
+          <div class="wide"><dt>meta description</dt><dd>短時間勤務、残業制限、出張制限などの就業上の措置について、復職後の確認事項、再評価日、変更・解除条件、会社の記録方法を解説します。</dd></div>
+        </dl>
+      </header>
+      <section class="wordpress-preview"><!-- wp:group {"className":"kdk-service-page kdk-article-page","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-service-page kdk-article-page">
+<!-- wp:paragraph {"className":"kdk-article-lead"} -->
+<p class="kdk-article-lead">復職後、残業禁止や業務軽減を決めたまま、再評価日を過ぎても見直されていない——この状態は本人にも職場にも不利益を残します。復職は出勤を再開した日で完了ではありません。短時間勤務、残業禁止、出張制限、業務軽減などの実施状況を確認し、予定した日に再評価して、継続・変更・解除を判断する実務を整理します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:heading -->
+<h2 class="wp-block-heading">復職時に決めておく4点</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>実施する就業上の措置</li><!-- /wp:list-item --><!-- wp:list-item --><li>措置の開始日</li><!-- /wp:list-item --><!-- wp:list-item --><li>次に再評価する日</li><!-- /wp:list-item --><!-- wp:list-item --><li>変更・解除を検討する条件</li><!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">なぜ再評価が必要なのか</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>復職前面談では、実際に働き始めた後の疲労、集中力、睡眠、通勤負荷、職場との適合をすべて確認することはできません。復職後の情報をもとに、最初の措置が適切だったかを見直します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>一方で、状態が改善していても、再評価の予定がなければ残業禁止や業務制限が続きます。措置を安全に解除するためにも、予定された確認が必要です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">再評価で集める情報</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>情報</th><th>確認する内容</th><th>主な確認元</th></tr></thead><tbody><tr><td>勤務実績</td><td>出勤、遅刻・早退、勤務時間、休暇、業務量</td><td>勤務記録、人事</td></tr><tr><td>本人の状態</td><td>疲労、集中力、睡眠、通勤、治療継続、本人の懸念</td><td>本人面談</td></tr><tr><td>職務の実施状況</td><td>予定した業務が行えたか、負荷が過大・過小でないか</td><td>上司、人事</td></tr><tr><td>措置の実施</td><td>残業制限、業務調整等が実際に守られたか</td><td>勤務表、上司、人事</td></tr><tr><td>職場側の変化</td><td>配置、繁忙、支援者、対人関係、業務内容の変更</td><td>上司、人事</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">継続・変更・解除の3方向で判断する</h2>
+<!-- /wp:heading -->
+<!-- wp:columns {"className":"kdk-card-grid"} -->
+<div class="wp-block-columns kdk-card-grid"><!-- wp:column {"className":"kdk-service-card"} -->
+<div class="wp-block-column kdk-service-card"><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">継続</h3><!-- /wp:heading --><!-- wp:paragraph --><p>措置が機能しているが、解除を判断するだけの期間や情報がまだ不足している場合。</p><!-- /wp:paragraph --></div>
+<!-- /wp:column --><!-- wp:column {"className":"kdk-service-card kdk-service-card--accent"} -->
+<div class="wp-block-column kdk-service-card kdk-service-card--accent"><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">変更</h3><!-- /wp:heading --><!-- wp:paragraph --><p>負荷が高すぎる、回復が進んだ、職務が変わったなど、現在の措置を調整する必要がある場合。</p><!-- /wp:paragraph --></div>
+<!-- /wp:column --><!-- wp:column {"className":"kdk-service-card"} -->
+<div class="wp-block-column kdk-service-card"><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">解除</h3><!-- /wp:heading --><!-- wp:paragraph --><p>勤務が安定し、設定した確認条件を満たし、制限を外しても安全に就業できると判断できる場合。</p><!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">段階的に解除する場合の記録</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>複数の制限を同時に外すのではなく、勤務時間、残業、出張、高負荷業務などを段階的に見直すことがあります。その場合も、どの措置をいつ変更したか、残る措置は何か、次回確認日はいつかを明確にします。</p>
+<!-- /wp:paragraph -->
+<!-- wp:list {"ordered":true,"className":"kdk-numbered-list"} -->
+<ol class="wp-block-list kdk-numbered-list"><!-- wp:list-item --><li>産業医等の更新意見</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社が決定した変更内容</li><!-- /wp:list-item --><!-- wp:list-item --><li>本人・上司への伝達日</li><!-- /wp:list-item --><!-- wp:list-item --><li>勤務表・業務分担への反映</li><!-- /wp:list-item --><!-- wp:list-item --><li>次回の再評価日</li><!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">再評価を予定表だけに置かない</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>個人のカレンダーに予定を入れただけでは、担当者の異動や休職で見直しが止まります。再評価日とともに、担当者、事前に集める情報、面談予約の期限、会社決定者、未実施時の引継先を案件記録へ残します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>再評価前</th><th>担当を明確にする事項</th></tr></thead><tbody><tr><td>2〜4週間前</td><td>勤務実績、本人面談、上司情報を誰が集めるか</td></tr><tr><td>1〜2週間前</td><td>産業医等の面談を誰が予約し、資料をいつ渡すか</td></tr><tr><td>意見受領後</td><td>会社の決定者、本人・上司への伝達者、勤務表への反映者</td></tr><tr><td>未実施時</td><td>期限超過を誰に通知し、いつエスカレーションするか</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">状態が悪化した場合の戻り方も決める</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>復職後に症状や勤務状況が悪化した場合は、予定日を待たずに再評価します。本人からの申出、欠勤・遅刻の増加、安全上の懸念、強い眠気、業務遂行の変化など、連絡を開始する目安と窓口を事前に決めます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>緊急時：</strong>自傷他害の危険、意識障害、急激な心身状態の悪化などが疑われる場合は、通常の再評価手順より医療・緊急対応を優先します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">既存産業医が再評価に対応できない場合</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>復職時の意見は受け取ったものの、契約時間、専門領域、日程等の理由で再評価が行えない場合は、選任産業医との役割を確認したうえで、再評価面談と更新意見だけを外部へ依頼できます。元の意見、会社が実施した措置、勤務実績を引き継ぎ、別の案件として切り離さず経過をつなげることが重要です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">次に読む実務記事</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-occupational-physician-opinion/">復職時の産業医意見書</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/sleep-rhythm-return-to-work-readiness/">復職判断で見る睡眠・生活リズム</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-one-stop-casetra-kiduki/">復職Caseを会社決定・再評価・証跡まで進める方法</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">参考となる公的情報</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html" target="_blank" rel="noopener">厚生労働省「心の健康問題により休業した労働者の職場復帰支援の手引き」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/web/t_doc?dataId=75ac0780&amp;dataType=0&amp;pageNo=1" target="_blank" rel="noopener">厚生労働省「治療と就業の両立支援指針」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kokoro.mhlw.go.jp/return/return-employer/" target="_blank" rel="noopener">こころの耳「職場復帰支援に役立つコンテンツ」</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>この記事について：</strong>一般的な職場復帰支援の実務を整理したものです。個別の措置の継続・変更・解除は、本人の状態と職務情報を確認して判断してください。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:paragraph -->
+<p><strong>執筆・監修：</strong><a href="https://kdkconslt-sngyouijm.com/office/greeting/">宮部 大輔</a>（KIDUKIコンサルティング産業医事務所 代表／内科専門医・心療内科専門医・労働衛生コンサルタント）</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>止まっている再評価だけを補いたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-follow-up">復職・両立支援単発</a>、復職前から解除条件まで一つの案件として進めたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-follow-up">復職支援Pack</a>をご利用いただけます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-follow-up">再評価1回を相談する</a></div><!-- /wp:button --><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-follow-up">案件全体を相談する</a></div><!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</section>
+      <footer class="review-check">
+        <strong>監修チェック</strong>
+        <span>□ 医学的表現</span><span>□ 実務フロー</span><span>□ 対応範囲</span><span>□ CTA</span>
+      </footer>
+    </article>
+
+    <article id="article-6" class="article-card">
+      <header class="article-header">
+        <p class="article-number">ARTICLE 06</p>
+        <h2>復職判断で見る睡眠・生活リズム｜勤務準備性を会社の言葉にする</h2>
+        <dl class="meta-grid">
+          <div><dt>狙う検索意図</dt><dd>復職 生活リズム 睡眠</dd></div>
+          <div><dt>公開予定URL</dt><dd>/sleep-rhythm-return-to-work-readiness/</dd></div>
+          <div class="wide"><dt>meta description</dt><dd>復職判断で睡眠と生活リズムをどう確認するか。起床、日中活動、眠気、通勤、安全性を勤務準備性の材料として整理する方法と限界を解説します。</dd></div>
+        </dl>
+      </header>
+      <section class="wordpress-preview"><!-- wp:group {"className":"kdk-service-page kdk-article-page","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-service-page kdk-article-page">
+<!-- wp:paragraph {"className":"kdk-article-lead"} -->
+<p class="kdk-article-lead">「睡眠は何時間なら復職できますか」という一律の基準はありません。復職判断で睡眠を確認する目的は、睡眠時間だけで可否を決めることではなく、復職先の始業時刻に合わせて起床し、通勤し、勤務中の覚醒と集中を保ち、翌日に回復できるかを、職務との関係で評価することです。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:heading -->
+<h2 class="wp-block-heading">睡眠・生活リズムで確認する5項目</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>復職後の始業時刻に合う起床が続いているか</li><!-- /wp:list-item --><!-- wp:list-item --><li>通勤時間帯に外出・移動できるか</li><!-- /wp:list-item --><!-- wp:list-item --><li>勤務時間帯に活動と集中を保てるか</li><!-- /wp:list-item --><!-- wp:list-item --><li>強い眠気が運転や安全作業へ影響しないか</li><!-- /wp:list-item --><!-- wp:list-item --><li>勤務を想定した活動後、翌日に回復できるか</li><!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">「よく眠れたか」だけでは職場の判断になりません</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>本人が「眠れています」と答えても、就寝・起床時刻が日によって大きくずれている、昼夜が逆転している、日中の多くを横になって過ごしている、通勤時間帯に活動できていない場合があります。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>一方で、睡眠時間が短いという一つの数値だけで就業可否を判断することも適切ではありません。症状、治療、服薬、日中機能、職務、安全性、本人の経過を組み合わせて確認します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">勤務準備性へ翻訳する</h2>
+<!-- /wp:heading -->
+<!-- wp:table {"className":"is-style-stripes kdk-output-table"} -->
+<figure class="wp-block-table is-style-stripes kdk-output-table"><table><thead><tr><th>生活上の情報</th><th>勤務との関係</th><th>確認例</th></tr></thead><tbody><tr><td>起床時刻</td><td>始業・通勤に間に合うか</td><td>予定始業日に合わせた起床が一定期間続いているか</td></tr><tr><td>日中活動</td><td>勤務時間中の持続性</td><td>読書、PC作業、外出等をどの程度続けられるか</td></tr><tr><td>日中の眠気</td><td>集中、安全、運転</td><td>会議、単調作業、移動中に強い眠気がないか</td></tr><tr><td>活動後の疲労</td><td>翌日も勤務を継続できるか</td><td>活動した翌日に長時間休まないと回復しない状態でないか</td></tr><tr><td>服薬と通院</td><td>勤務時刻、安全、治療継続</td><td>眠気等の影響、服薬時刻、通院予定を主治医と確認しているか</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">先に確認するのは「その仕事で何が必要か」</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>睡眠・生活リズムの評価は、産業医の能力を誇示するための追加検査ではありません。始業時刻、通勤時間、夜勤、運転、単独勤務、危険作業、連続して集中する時間など、職務上の要件を先に具体化し、その要件と本人の状態を照合します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>たとえば、同じ日中の眠気でも、在宅の定型業務と長距離運転では安全上の意味が異なります。睡眠の情報を病名の説明で終わらせず、勤務時間、業務制限、再評価時期など会社が実施できる言葉にすることが、産業医の役割です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">睡眠日誌等を使う場合</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>必要に応じて、就床、入眠、起床、離床、昼寝、日中活動、眠気などを本人が記録し、面談時の情報として用いることがあります。記録は本人を監視するためではなく、本人の申告と勤務予定を具体的に話し合うための材料です。</p>
+<!-- /wp:paragraph -->
+<!-- wp:list {"className":"kdk-check-list"} -->
+<ul class="wp-block-list kdk-check-list"><!-- wp:list-item --><li>記録する目的を本人へ説明する</li><!-- /wp:list-item --><!-- wp:list-item --><li>必要な期間と項目だけを扱う</li><!-- /wp:list-item --><!-- wp:list-item --><li>一日の乱れではなく経過を見る</li><!-- /wp:list-item --><!-- wp:list-item --><li>記録だけで診断・復職可否を決めない</li><!-- /wp:list-item --><!-- wp:list-item --><li>会社へ返す情報は就業上必要な範囲に限定する</li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">交代勤務・夜勤・運転がある場合</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>通常の日勤へ戻れることと、夜勤・交代勤務・長時間運転へ戻れることは同じではありません。復職初期は日勤から開始するのか、夜勤を再開する条件は何か、運転や安全作業をいつ再評価するかを、職務ごとに検討します。</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>安全を優先する場面：</strong>強い日中の眠気、居眠り、意識が途切れる感覚、服薬の影響などがあり、運転や危険作業へ支障が疑われる場合は、就業制限と医療評価を優先します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">会社へ返すのは病状の詳細ではなく勤務上の意見</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>睡眠の記録や面談内容を、そのまま人事や上司へ共有するわけではありません。産業医等は、勤務時間、安全作業、夜勤、休憩、再評価時期など、会社が就業上の判断を行うために必要な事項へ整理します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">睡眠は復職判断の一部です</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>睡眠・生活リズムが整っていても、それだけで復職できるとは限りません。症状の安定、治療継続、認知・身体機能、職務遂行、安全性、職場の受入体制などと合わせて評価します。逆に、睡眠の問題だけを理由に一律の基準で復職を認めない運用も避けます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>2026年に公表された研究でも、復職支援における睡眠問題は、背景因子を調整したうえで復職成功と関連する独立した要因として検討され、不眠、睡眠相後退、過眠など問題の型に応じた支援の必要性が示されています。ただし、単一の研究結果や睡眠指標だけで個別の復職可否を決めるものではありません。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">次に読む実務記事</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-diagnosis-note-company-checks/">復職可能の診断書が出た後の会社対応</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-interview-documents/">復職面談で会社が準備する資料</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://kdkconslt-sngyouijm.com/return-to-work-follow-up-reassessment/">復職後の再評価と就業制限の解除</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">参考となる公的情報</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html" target="_blank" rel="noopener">厚生労働省「心の健康問題により休業した労働者の職場復帰支援の手引き」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.mhlw.go.jp/content/001305530.pdf" target="_blank" rel="noopener">厚生労働省「健康づくりのための睡眠ガイド2023」</a></li><!-- /wp:list-item --><!-- wp:list-item --><li><a href="https://www.jstage.jst.go.jp/article/jjomh/34/2/34_183/_article/-char/ja" target="_blank" rel="noopener">産業精神保健「職場復帰支援における睡眠問題」</a></li><!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:group {"className":"kdk-boundary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-boundary-box"><!-- wp:paragraph -->
+<p><strong>この記事について：</strong>睡眠・生活リズムを勤務準備性の一部として扱う一般的な考え方です。睡眠障害の診断や治療、個別の復職可否を示すものではありません。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kdk-summary-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group kdk-summary-box"><!-- wp:paragraph -->
+<p><strong>執筆・監修：</strong><a href="https://kdkconslt-sngyouijm.com/office/greeting/">宮部 大輔</a>（KIDUKIコンサルティング産業医事務所 代表／内科専門医・心療内科専門医・労働衛生コンサルタント）</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>睡眠・生活リズムを含めて復職前から再評価まで進めたい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-sleep">復職支援Pack</a>、既存産業医が対応できない面談・再評価だけを依頼したい場合は<a href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-sleep">復職・両立支援単発</a>をご利用いただけます。</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-sleep">案件全体を相談する</a></div><!-- /wp:button --><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/?utm_source=kdk-wordpress&amp;utm_medium=referral&amp;utm_campaign=rtw-article-sleep">面談・再評価を1回相談する</a></div><!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</section>
+      <footer class="review-check">
+        <strong>監修チェック</strong>
+        <span>□ 医学的表現</span><span>□ 実務フロー</span><span>□ 対応範囲</span><span>□ CTA</span>
+      </footer>
+    </article></main>
+  </div>
+</body>
+</html>

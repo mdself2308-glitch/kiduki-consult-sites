@@ -55,11 +55,34 @@ for (const item of items) {
 
 for (const item of config.newDraftPosts) {
   const html = await readFile(resolve(root, item.source), 'utf8');
+  const h2Count = (html.match(/<h2\b/g) || []).length;
   record(/執筆・監修：/.test(html), `${item.source}: real author credit is present`);
   record(/宮部 大輔/.test(html), `${item.source}: author is Miyabe Daisuke`);
   record(/参考となる公的情報/.test(html), `${item.source}: primary references section is present`);
-  record(/\/contact\//.test(html), `${item.source}: inquiry CTA is present`);
+  record(
+    /\/contact\/|\/return-to-work-(?:pack|spot)\//.test(html),
+    `${item.source}: inquiry CTA is present`,
+  );
+  record(h2Count >= 6, `${item.source}: at least six decision-useful sections are present`);
+  record(
+    !/睡眠専門医|院長|必ず治る|必ず復職|復職を保証/.test(html),
+    `${item.source}: prohibited or overpromising wording is absent`,
+  );
   record(!/健診判定|健康診断結果の判定/.test(html), `${item.source}: no health-check judgment acquisition topic`);
+}
+
+for (const item of config.newDraftPosts.filter(
+  ({ slug }) => slug !== 'return-to-work-interview-process-roles',
+)) {
+  const html = await readFile(resolve(root, item.source), 'utf8');
+  record(
+    /consult\.kdkconslt-sngyouijm\.com\/return-to-work-pack\//.test(html),
+    `${item.source}: full-case Pack route is present`,
+  );
+  record(
+    /consult\.kdkconslt-sngyouijm\.com\/return-to-work-spot\//.test(html),
+    `${item.source}: fixed-scope spot route is present`,
+  );
 }
 
 const spotReview = await readFile(
