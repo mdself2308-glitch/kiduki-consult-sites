@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>復職支援・復職面談の産業医｜1案件を再評価・証跡まで｜東京 KIDUKI</title>
-  <meta name="description" content="東京・新橋の産業医事務所。月額契約なしの復職支援Packで、診断書後の資料整理、本人・主治医との調整、復職面談、産業医意見、会社決定、再評価、証跡まで1案件を完了。Casetraによる自社運用にも対応します。">
+  <meta name="description" content="東京・新橋の産業医事務所。月額契約なしの復職支援Packで、復職面談3回・意見書3通・会社決定・再評価・証跡まで1案件を完了。契約後の通常面談は専用リンクから空き枠を選択。既存産業医が対応できない復職面談は1回単位でも依頼できます。">
   
   <meta property="og:title" content="休職・復職支援を、面談で終わらせない｜KIDUKI産業医事務所">
-  <meta property="og:description" content="月額契約なしの復職支援Packで、調整・復職面談・産業医意見・会社決定・再評価・証跡まで1案件を完了します。">
+  <meta property="og:description" content="復職面談3回・意見書3通・会社決定・再評価・証跡まで1案件を完了。既存産業医が対応できない面談は1回単位でも依頼できます。">
   <meta property="og:type" content="website">
   
   <!-- Google Analytics 4 (WordPress 側と同一プロパティ・クロスドメイン計測) -->
@@ -39,7 +39,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="休職・復職支援を、面談で終わらせない｜KIDUKI">
-  <meta name="twitter:description" content="月額契約なしの復職支援Packで、調整・復職面談・会社決定・再評価・証跡まで1案件を完了します。">
+  <meta name="twitter:description" content="復職面談3回・意見書3通・会社決定・再評価・証跡まで1案件を完了。既存産業医が対応できない面談は1回単位でも依頼できます。">
   <meta name="twitter:image" content="https://consult.kdkconslt-sngyouijm.com/og-image.png">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -336,6 +336,19 @@
       flex-shrink: 0;
     }
 
+    .hero-points strong {
+      display: block;
+      color: var(--color-white);
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-points span {
+      display: block;
+      color: rgba(241, 245, 249, 0.82);
+      line-height: 1.7;
+    }
+
     .cta-group {
       display: flex;
       gap: 16px;
@@ -380,6 +393,101 @@
     .cta-button svg {
       width: 20px;
       height: 20px;
+    }
+
+    /* Entry choices */
+    .entry-choice-section {
+      background: var(--color-white);
+      padding: 48px 0 56px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .entry-choice-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+
+    .entry-choice-head h2 {
+      color: var(--color-primary);
+      max-width: 680px;
+    }
+
+    .entry-choice-head p {
+      max-width: 420px;
+      margin: 0;
+    }
+
+    .entry-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .entry-choice-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 26px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: var(--color-bg);
+    }
+
+    .entry-choice-card.recommended {
+      border-color: var(--color-accent);
+      background: #f1f7f3;
+      box-shadow: var(--shadow-card);
+    }
+
+    .entry-choice-kicker {
+      color: var(--color-accent);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    .entry-choice-card h3 {
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .entry-choice-card p {
+      margin-bottom: 18px;
+    }
+
+    .entry-choice-card ul {
+      margin: 0 0 22px 1.1rem;
+      color: var(--color-text-light);
+      font-size: .9rem;
+    }
+
+    .entry-choice-card li {
+      margin-bottom: 6px;
+    }
+
+    .entry-choice-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: auto;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .entry-choice-card:not(.recommended) .entry-choice-link {
+      background: var(--color-white);
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
     }
 
     /* Motivation Section */
@@ -1626,6 +1734,15 @@
       .header-nav { gap: 0; }
       .header-cta { padding: 9px 12px; font-size: .72rem; white-space: nowrap; flex-shrink: 0; }
       .hero { padding: 96px 0 72px; }
+      .hero-content { display: flex; flex-direction: column; }
+      .hero .cta-group { order: 1; margin-bottom: 34px; }
+      .hero .hero-points { order: 2; margin-bottom: 0; }
+      .hero .cta-button { width: 100%; justify-content: center; padding: 15px 20px; }
+
+      .entry-choice-head { display: block; }
+      .entry-choice-head h2 { margin-bottom: 14px; }
+      .entry-choice-grid { grid-template-columns: 1fr; }
+      .entry-choice-card { padding: 24px 22px; }
 
       .problem-grid, .model-grid, .service-grid, .ops-grid { grid-template-columns: 1fr; }
       .resources-grid { grid-template-columns: 1fr; }
@@ -1663,7 +1780,7 @@
       <a href="https://consult.kdkconslt-sngyouijm.com/" class="logo">KIDUKIコンサルティング<span>産業医事務所</span></a>
       <div class="header-nav">
         <a href="https://kdkconslt-sngyouijm.com/office/" class="header-blog">事務所サイト</a>
-        <a href="/return-to-work-pack/" class="header-cta" data-cta="header">初回のご相談</a>
+        <a href="/return-to-work-pack/" class="header-cta" data-cta="header">復職案件を相談</a>
       </div>
     </div>
   </header>
@@ -1672,29 +1789,73 @@
   <section class="hero" id="top">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-label">復職支援Pack｜東京・新橋</div>
+        <div class="hero-label">東京の復職支援・復職面談｜新橋</div>
         <h1>休職・復職支援を、<br>面談で終わらせない。</h1>
-        <p class="hero-lead">月額契約なし、社員1名・1つの休職エピソードから。資料整理、本人・主治医との調整、復職面談、産業医意見、会社決定、復職後の再評価、証跡までを一つの案件として完了させます。</p>
+        <p class="hero-lead">契約後の通常面談は、専用リンクから担当産業医の空き枠を見て日時を選択。候補日のメール往復を減らしながら、資料整理、復職面談、産業医意見、会社決定、再評価、証跡までを一つの案件として進めます。</p>
         <ul class="hero-points">
-          <li>復職支援Pack 150,000円／件、必要な1回だけならオンライン60,000円・訪問75,000円（税別）</li>
-          <li>企業をCasetraに登録し、Pack対象の復職Caseで資料提出・意見書受領・会社決裁・再評価を処理</li>
-          <li>勤務条件、再評価日、解除条件まで具体化し、「誰が・いつ・何を決めたか」を残す</li>
-          <li>完了後は、Casetra自社運用・KIDUKI継続支援・自社管理から選択</li>
+          <li><span><strong>復職支援Pack｜社員1名・1案件の固定支援</strong>復職時・復職後1か月・3か月の面談3回、意見書3通、会社決定と証跡整理まで。</span></li>
+          <li><span><strong>既存産業医が対応できない1回にも</strong>日程が合わない、復職・再評価が契約外、意見書まで対応が難しい場合はオンライン60,000円から。</span></li>
+          <li><span><strong>担当者は進捗と次の処理を一つの画面で確認</strong>資料提出、意見書受領、会社決裁、再評価をPack対象の復職Caseに整理します。</span></li>
         </ul>
         <div class="cta-group">
           <a href="/return-to-work-pack/" class="cta-button primary" data-cta="hero">
-            まず1案件を相談（15分）
+            復職支援Packを相談（15分）
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
           <a href="/return-to-work-spot/" class="cta-button secondary" data-cta="hero-spot">
-            必要な1回だけ相談（6万円〜）
+            既存産業医が対応できない面談を相談
           </a>
           <a href="https://casetra.jp/?utm_source=kdk-consult&amp;utm_medium=referral&amp;utm_campaign=hero" class="cta-button secondary" data-cta="hero-casetra">
             今の産業医とCasetraを使う
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entry Choice Section -->
+  <section class="entry-choice-section" aria-labelledby="entry-choice-title">
+    <div class="container">
+      <div class="entry-choice-head">
+        <h2 id="entry-choice-title">いま必要な範囲から契約できます</h2>
+        <p>産業医を替える前提ではありません。いまの体制で足りない工程だけを、1案件または1回単位で補えます。</p>
+      </div>
+      <div class="entry-choice-grid">
+        <article class="entry-choice-card recommended">
+          <p class="entry-choice-kicker">一連の復職支援を任せたい</p>
+          <h3>復職支援Pack</h3>
+          <p>診断書受領後の整理から、復職時・1か月・3か月の再評価と証跡までを1案件として進めます。</p>
+          <ul>
+            <li>面談3回・産業医意見書3通</li>
+            <li>Pack専用画面・Decision Pack</li>
+            <li>1案件ごとの固定料金・月額契約なし</li>
+          </ul>
+          <a href="/return-to-work-pack/" class="entry-choice-link" data-cta="entry-pack">Packの進め方を15分で確認</a>
+        </article>
+        <article class="entry-choice-card">
+          <p class="entry-choice-kicker">既存産業医が対応できない</p>
+          <h3>復職・再評価のSPOT面談</h3>
+          <p>日程が合わない、契約範囲外、復職後の再評価や意見書まで頼めない。その1回だけKIDUKIが担当します。</p>
+          <ul>
+            <li>オンライン60,000円／訪問75,000円</li>
+            <li>面談1回・産業医意見書1通</li>
+            <li>会社決裁と30日間の証跡整理</li>
+          </ul>
+          <a href="/return-to-work-spot/" class="entry-choice-link" data-cta="entry-spot">不足している1回を相談</a>
+        </article>
+        <article class="entry-choice-card">
+          <p class="entry-choice-kicker">いまの産業医体制で運用したい</p>
+          <h3>Casetraで自社運用</h3>
+          <p>面談は既存の産業医が行い、案件、期限、予約、会社決定、再評価、証跡を一つの流れで管理します。</p>
+          <ul>
+            <li>担当産業医の空き枠から日時を選択</li>
+            <li>必要な医師業務だけKIDUKIへ依頼</li>
+            <li>復職支援Pack後の継続も選択可能</li>
+          </ul>
+          <a href="https://casetra.jp/?utm_source=kdk-consult&amp;utm_medium=referral&amp;utm_campaign=entry-choice" class="entry-choice-link" data-cta="entry-casetra">自社運用の方法を見る</a>
+        </article>
       </div>
     </div>
   </section>
@@ -1822,9 +1983,9 @@
       </div>
 
       <div class="casetra-block">
-        <h3>必要な面談・判断だけなら、KIDUKI単発支援</h3>
-        <p>復職時、復職後の再評価、就業制限の変更・解除などを1回単位で依頼できます。オンライン60,000円、訪問75,000円＋交通費（税別）。事前情報整理、日程・不足情報の調整、産業医面談1回（標準40分）、産業医意見書1通、会社の受領・決裁、証跡整理と30日間の案件専用画面を含みます。緊急・複雑案件は80,000円から個別見積です。</p>
-        <a href="/return-to-work-spot/" class="casetra-link">単発支援をKIDUKIへ相談する</a>
+        <h3>既存産業医が対応できない1回だけでも、KIDUKIへ</h3>
+        <p>顧問産業医と日程が合わない、復職・再評価が契約範囲外、面談後の意見書や勤務条件の整理まで対応が難しい場合に、必要な1回だけ依頼できます。オンライン60,000円、訪問75,000円＋交通費（税別）。事前情報整理、日程・不足情報の調整、産業医面談1回（標準40分）、産業医意見書1通、会社の受領・決裁、証跡整理と30日間の案件専用画面を含みます。緊急・複雑案件は80,000円から個別見積です。</p>
+        <a href="/return-to-work-spot/" class="casetra-link">既存産業医が対応できない面談を相談する</a>
       </div>
 
       <p class="service-spot"><a href="https://kdkconslt-sngyouijm.com/service/return-to-work-support/">復職支援Packの対象・準備資料・対応範囲を見る</a>。<a href="https://kdkconslt-sngyouijm.com/service/sangyoui/">嘱託産業医</a>、<a href="https://kdkconslt-sngyouijm.com/service/komon/">産業医顧問</a>、睡眠・メンタル面談、睡眠研修も下層サービスとして対応します。</p>
@@ -2419,6 +2580,14 @@
           <p class="faq-a">できます。オンライン60,000円、訪問75,000円＋交通費（いずれも税別）です。事前情報整理、日程・不足情報の調整、産業医面談1回、産業医意見書1通、会社の受領・決裁、証跡整理と30日間の案件専用画面を含みます。Casetra月額契約への自動移行や月額請求はありません。</p>
         </div>
         <div class="faq-item">
+          <div class="faq-q">既存の産業医がいても、SPOT面談を依頼できますか？</div>
+          <p class="faq-a">できます。顧問産業医と日程が合わない、復職・再評価が契約範囲外、面談後の意見書や勤務条件の整理まで対応が難しい場合に、必要な1回だけKIDUKIへ依頼できます。既存の産業医を交代する契約ではなく、今回の復職Caseに限った補完です。</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">面談予約のたびに候補日をメールで調整しますか？</div>
+          <p class="faq-a">契約後の通常面談は、企業専用の予約リンクから担当産業医の空き枠を確認して日時を選べます。候補日のメール往復を減らし、予約情報は対象Caseへつなぎます。個別調整が必要な案件はKIDUKIが確認します。</p>
+        </div>
+        <div class="faq-item">
           <div class="faq-q">システム運用に自信がありません</div>
           <p class="faq-a">最初の復職支援PackはKIDUKIがCasetraを使って進行します。企業担当者は、専用画面で対象案件の確認、入力、決裁を進めるだけです。</p>
         </div>
@@ -2439,7 +2608,7 @@
     <div class="container">
       <div class="final-cta-content">
         <h2>復職案件の「次に誰が何をするか」を、<br>今日から明確にしませんか</h2>
-        <p class="final-cta-lead">まず1案件を任せる方法と、Casetraで自社運用する方法を15分で整理します。</p>
+        <p class="final-cta-lead">復職支援Packで一連の工程を任せるか、既存産業医が対応できない1回だけを依頼するか、15分で整理します。</p>
         <div class="cta-benefits">
           <div class="cta-benefit-item">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2451,7 +2620,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>KIDUKIへ1案件を任せるか、Casetraで自社運用するかを整理します</span>
+            <span>Pack・SPOT・Casetra自社運用のうち、必要な範囲だけを整理します</span>
           </div>
           <div class="cta-benefit-item">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2461,12 +2630,12 @@
           </div>
         </div>
         <a href="/return-to-work-pack/" class="cta-button primary" data-cta="final">
-          復職案件の初回相談（15分）
+          復職支援Packの初回相談（15分）
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
-        <p style="margin-top:16px"><a href="/return-to-work-spot/" style="color:#fff;font-weight:700" data-cta="final-spot">必要な面談・再評価だけを1回単位で相談する（60,000円から）</a></p>
+        <p style="margin-top:16px"><a href="/return-to-work-spot/" style="color:#fff;font-weight:700" data-cta="final-spot">既存産業医が対応できない面談・再評価を1回単位で相談する（60,000円から）</a></p>
       </div>
     </div>
   </section>

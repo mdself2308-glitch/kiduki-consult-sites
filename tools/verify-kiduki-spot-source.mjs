@@ -17,6 +17,12 @@ check('form-defines-thirty-day-case-workspace', form.includes('案件専用画�
 check('form-states-no-automatic-monthly-billing', form.includes('Casetra月額契約への自動移行や月額請求はありません'));
 check('form-posts-spot-intake-type', form.includes("intakeType:'KIDUKI_RTW_SPOT'"));
 check('form-posts-delivery-method', form.includes("deliveryMethod:String(v.deliveryMethod"));
+check('home-foregrounds-existing-doctor-gap', home.includes('既存産業医が対応できない面談を相談'));
+check('home-defines-spot-as-complement-not-replacement', home.includes('産業医を替える前提ではありません'));
+check('form-foregrounds-existing-doctor-gap', form.includes('既存産業医が対応できない') && form.includes('産業医を替える契約ではありません'));
+check('form-requires-support-reason', /name="supportReason"[^>]*required/.test(form));
+check('form-posts-support-reason', form.includes('supportReason,deliveryMethod'));
+check('form-includes-support-reason-in-inquiry-message', form.includes('今回KIDUKIが補う理由:'));
 check('form-uses-canonical-front-door', form.includes('https://casetra-api-dev-edge-bacnf4bqc9dxe8hn.z01.azurefd.net/api/leads'));
 check('form-requires-privacy-consent', /name="privacyConsent"[^>]*required/.test(form));
 check('form-prohibits-health-data', form.includes('社員の氏名・病名・診断書内容は入力しないでください'));

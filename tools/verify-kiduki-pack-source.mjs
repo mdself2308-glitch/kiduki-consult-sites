@@ -26,6 +26,9 @@ check('manual-has-ops-runbook-url', manual.includes('https://core.casetra.jp/ops
 check('manual-requires-one-case-boundary', manual.includes('割り当てられた復職Case 1件だけ'));
 check('home-defines-three-standard-interviews', home.includes('復職時、復職後1か月、復職後3か月の面談'));
 check('form-defines-six-month-maximum', form.includes('開始から最長6か月'));
+check('home-foregrounds-self-service-booking', home.includes('専用リンクから担当産業医の空き枠を見て日時を選択'));
+check('home-avoids-absolute-zero-coordination-claim', !/予約のやり取り(が|は)発生しない|日程調整ゼロ/.test(home));
+check('form-explains-booking-link', form.includes('企業専用の予約リンクから担当産業医の空き枠を確認'));
 check('home-removes-m3-m6-standard-copy', !home.includes('M3・M6等'));
 check('manual-defines-three-exit-options', manual.includes('Casetraを別途月額契約') && manual.includes('KIDUKIへ単発フォロー') && manual.includes('自社または既存産業医'));
 // 料金セクションの3枚のカードは、いずれも次の行き先を持つこと。
