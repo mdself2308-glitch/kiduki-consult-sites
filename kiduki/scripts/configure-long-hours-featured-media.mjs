@@ -13,10 +13,12 @@ const args = parseArgs(process.argv.slice(2));
 const apply = Boolean(args.apply);
 const backup = Boolean(args.backup);
 const backupConfirmed = Boolean(args['backup-confirmed']);
-const postId = 1597;
-const featuredMediaId = 133;
-const expectedSlug = 'long-hours-occupational-physician-interview';
+const postId = Number(args['post-id'] || 1597);
+const featuredMediaId = Number(args['media-id'] || 133);
+const expectedSlug =
+  args['expected-slug'] || 'long-hours-occupational-physician-interview';
 const expectedTitle =
+  args['expected-title'] ||
   '長時間労働者の産業医面談｜会社が準備する資料と面談後の措置';
 
 if (apply && (!backup || !backupConfirmed)) {
@@ -40,7 +42,7 @@ if (
   post.status !== 'publish'
 ) {
   throw new Error(
-    `Post ${postId} does not match the approved long-hours article identity.`,
+    `Post ${postId} does not match the approved article identity.`,
   );
 }
 if (
@@ -99,7 +101,7 @@ const backupDirectory = path.resolve('backups');
 fs.mkdirSync(backupDirectory, { recursive: true, mode: 0o700 });
 const backupPath = path.join(
   backupDirectory,
-  `wp-long-hours-featured-media-before-${safeStamp()}.json`,
+  `wp-featured-media-before-${postId}-${safeStamp()}.json`,
 );
 fs.writeFileSync(
   backupPath,
