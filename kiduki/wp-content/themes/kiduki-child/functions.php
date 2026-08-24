@@ -110,6 +110,36 @@ function kiduki_contact_thanks_robots( $robots ) {
 add_filter( 'wp_robots', 'kiduki_contact_thanks_robots' );
 
 /**
+ * Keep redirected and noindex pages out of the XML sitemap.
+ *
+ * Google XML Sitemaps exposes this filter for extending its post-ID exclusion
+ * list. These URLs remain available for their intended purposes, but should
+ * not be submitted to search engines as indexable pages.
+ *
+ * @param int[] $post_ids Existing post IDs excluded from the sitemap.
+ * @return int[]
+ */
+function kiduki_exclude_nonindexable_pages_from_sitemap( $post_ids ) {
+	$post_ids = array_map( 'intval', (array) $post_ids );
+
+	return array_values(
+		array_unique(
+			array_merge(
+				$post_ids,
+				array(
+					37,   // Retired /question/ page; permanently redirects to /contact/.
+					1743, // /contact/thanks/ page; intentionally noindex.
+				)
+			)
+		)
+	);
+}
+add_filter(
+	'sm_exclude_from_sitemap_by_post_ids',
+	'kiduki_exclude_nonindexable_pages_from_sitemap'
+);
+
+/**
  * Permanently redirect the retired inquiry page to the unified contact form.
  */
 function kiduki_redirect_legacy_question() {

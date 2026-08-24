@@ -248,13 +248,24 @@ if (expectSeoRelease) {
       sitemapCorpus += `\n${await (await fetch(childUrl)).text()}`;
     }
   }
-  sitemapChecks = Object.fromEntries(
+  const included = Object.fromEntries(
     [...seoExpectations.keys()].map((url) => {
-      const included = sitemapCorpus.includes(`<loc>${url}</loc>`);
-      assert(included, `Sitemap does not contain ${url}.`);
-      return [url, included];
+      const isIncluded = sitemapCorpus.includes(`<loc>${url}</loc>`);
+      assert(isIncluded, `Sitemap does not contain ${url}.`);
+      return [url, isIncluded];
     }),
   );
+  const excluded = Object.fromEntries(
+    [
+      `${siteConfig.wordpressUrl}/question/`,
+      `${siteConfig.wordpressUrl}/contact/thanks/`,
+    ].map((url) => {
+      const absent = !sitemapCorpus.includes(`<loc>${url}</loc>`);
+      assert(absent, `Sitemap contains non-indexable URL ${url}.`);
+      return [url, absent];
+    }),
+  );
+  sitemapChecks = { included, excluded };
 }
 
 console.log(
