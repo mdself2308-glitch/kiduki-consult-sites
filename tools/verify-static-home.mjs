@@ -32,9 +32,13 @@ const localChecks = {
     localText.includes('料金の考え方'),
   twoPillars:
     localText.includes('睡眠特化 × 産業衛生DX') &&
-    localText.includes('もう一つの柱は、産業衛生業務のDX'),
+    localText.includes('一つ目の柱：睡眠に特化した産業医業務') &&
+    localText.includes('二つ目の柱：産業衛生業務のDX'),
   oneOffReturnToWork:
-    localText.includes('急なご依頼となる復職判定面談を1件から承ります。'),
+    localText.includes('急な復職判定面談を1件から承ります。'),
+  casetraContractBoundary:
+    localText.includes('単発の面談・研修は、Casetraの契約なしでご依頼いただけます。') &&
+    localText.includes('Casetraは別契約で導入は任意ですが、利用しない場合はCasetraによるDX支援は含まれません。'),
   nationalSleepPolicySource:
     localText.includes(
       'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/suimin/index.html',

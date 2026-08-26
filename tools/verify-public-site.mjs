@@ -182,13 +182,14 @@ for (const route of routes) {
   }
   if (name === 'contact') {
     assert(
-      text.includes('復職支援Pack（1案件・面談3回＋再評価）を相談したい') &&
-        text.includes('復職・両立支援の単発面談を相談したい'),
-      'contact form does not expose the current entry products.',
+      text.includes('睡眠に特化した産業医の継続契約を相談したい') &&
+        text.includes('産業衛生業務のDX・Casetra利用を相談したい') &&
+        text.includes('復職支援・判定面談を1件から相談したい'),
+      'contact form does not expose the two pillars and one-off support.',
     );
     assert(
-      !text.includes('SAS(睡眠時無呼吸)対策を相談したい'),
-      'contact form still exposes the unimplemented standalone SAS product.',
+      !text.includes('復職支援Pack（1案件・面談3回＋再評価）を相談したい'),
+      'contact form still puts the retired return-to-work-first option first.',
     );
   }
   if (name === 'robots') {

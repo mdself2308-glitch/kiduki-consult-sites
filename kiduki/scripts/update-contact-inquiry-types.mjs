@@ -23,9 +23,9 @@ if (apply && (!backup || !backupConfirmed)) {
 }
 
 const oldSelect =
-  '[select* inquiry-type "睡眠研修を検討したい" "SAS(睡眠時無呼吸)対策を相談したい" "交代勤務・夜勤の睡眠対策を相談したい" "嘱託産業医を探している" "顧問・労働衛生コンサルティング" "講演・執筆・取材の依頼" "その他"]';
-const newSelect =
   '[select* inquiry-type "復職支援Pack（1案件・面談3回＋再評価）を相談したい" "復職・両立支援の単発面談を相談したい" "嘱託産業医（KIDUKI Retain）を探している" "既存産業医の専門補完（KIDUKI Basic）を相談したい" "睡眠研修を相談したい" "交代勤務・夜勤の睡眠対策を相談したい" "講演・執筆・取材の依頼" "その他"]';
+const newSelect =
+  '[select* inquiry-type "睡眠に特化した産業医の継続契約を相談したい" "産業衛生業務のDX・Casetra利用を相談したい" "既存の産業医体制に睡眠の専門支援を加えたい" "睡眠研修・健康経営施策を相談したい" "復職支援・判定面談を1件から相談したい" "夜勤・運転・SASなど睡眠課題を相談したい" "講演・執筆・取材の依頼" "その他"]';
 
 function digest(value) {
   return crypto
@@ -67,16 +67,14 @@ if (!apply) {
         writes: false,
         formId,
         alreadyUpdated,
-        legacyOptionRemoved: !nextForm.includes(
-          'SAS(睡眠時無呼吸)対策を相談したい',
-        ),
+        returnToWorkNoLongerFirst: !nextForm.includes('復職支援Pack（1案件・面談3回＋再評価）を相談したい'),
         nextOptions: [
-          '復職支援Pack',
-          '復職・両立支援の単発面談',
-          'KIDUKI Retain',
-          'KIDUKI Basic',
-          '睡眠研修',
-          '交代勤務・夜勤の睡眠対策',
+          '睡眠に特化した産業医の継続契約',
+          '産業衛生業務のDX・Casetra利用',
+          '既存の産業医体制に睡眠の専門支援',
+          '睡眠研修・健康経営施策',
+          '復職支援・判定面談を1件から',
+          '夜勤・運転・SASなど睡眠課題',
           '講演・執筆・取材',
           'その他',
         ],
@@ -134,7 +132,7 @@ const afterForm = String(
 
 if (
   !afterForm.includes(newSelect) ||
-  afterForm.includes('SAS(睡眠時無呼吸)対策を相談したい') ||
+  afterForm.includes('復職支援Pack（1案件・面談3回＋再評価）を相談したい') ||
   digest(afterProperties.mail || {}) !== mailDigestBefore ||
   digest(afterProperties.mail_2 || {}) !== mail2DigestBefore
 ) {
@@ -148,8 +146,8 @@ console.log(
       mode: 'apply',
       formId,
       backupPath,
-      legacyOptionRemoved: true,
-      currentProductOptionsPresent: true,
+      returnToWorkNoLongerFirst: true,
+      twoPillarOptionsPresent: true,
       mailTemplatesPreserved: true,
     },
     null,
