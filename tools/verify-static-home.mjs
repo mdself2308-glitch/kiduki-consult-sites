@@ -27,14 +27,13 @@ const localChecks = {
       '<link rel="canonical" href="https://consult.kdkconslt-sngyouijm.com/">',
     ),
   singleH1: (localText.match(/<h1\b/gi) || []).length === 1,
-  structuredAddress:
-    localText.includes('"postalCode":"105-0004"') &&
-    localText.includes('"addressLocality":"港区"'),
-  resourceHub:
-    localText.includes('https://kdkconslt-sngyouijm.com/jimushochoice/') &&
-    localText.includes(
-      'https://kdkconslt-sngyouijm.com/long-hours-occupational-physician-interview/',
-    ),
+  restoredSimpleStructure:
+    localText.includes('眠りから、職場の安全と生産性をつくる。') &&
+    localText.includes('料金の考え方'),
+  currentContactRoute:
+    (localText.match(/https:\/\/kdkconslt-sngyouijm\.com\/contact\//g) || [])
+      .length >= 4,
+  fuzzyPricing: !/(?:\d{1,3}(?:,\d{3})+|\d+)\s*円/.test(localText),
   nonTrivialSize: local.length > 10_000,
 };
 const localValid = Object.values(localChecks).every(Boolean);
