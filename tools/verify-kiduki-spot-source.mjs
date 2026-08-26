@@ -6,19 +6,17 @@ const sitemap = fs.readFileSync('consult/sitemap.xml', 'utf8');
 const checks = [];
 const check = (name, condition) => checks.push({ name, ok: Boolean(condition) });
 
-check('home-links-to-spot-form', (home.match(/href="\/return-to-work-spot\/"/g) || []).length >= 3);
+check('home-routes-spot-inquiries-to-current-contact-form', (home.match(/https:\/\/kdkconslt-sngyouijm\.com\/contact\//g) || []).length >= 5);
+check('home-does-not-link-retired-spot-route', !/href="(?:https:\/\/kdkconslt-sngyouijm\.com\/spot\/|\/return-to-work-spot\/)"/.test(home));
 check('sitemap-includes-spot-form', sitemap.includes('https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/'));
-check('home-publishes-online-fee', home.includes('オンライン60,000円'));
-check('home-publishes-onsite-fee-and-travel', home.includes('訪問75,000円＋交通費'));
-check('home-publishes-complex-from-price', home.includes('緊急・複雑案件は80,000円から'));
-check('home-defines-included-interview-and-opinion', home.includes('面談1回・意見書1通'));
+check('home-keeps-spot-pricing-fuzzy', !/(?:\d{1,3}(?:,\d{3})+|\d+)\s*円/.test(home));
+check('home-offers-return-to-work-assessment-by-the-case', home.includes('復職判定面談を1件から'));
 check('form-identifies-kiduki-contract-window', form.includes('契約・請求・支援の窓口はKIDUKIです'));
 check('form-defines-thirty-day-case-workspace', form.includes('案件専用画面を30日間'));
 check('form-states-no-automatic-monthly-billing', form.includes('Casetra月額契約への自動移行や月額請求はありません'));
 check('form-posts-spot-intake-type', form.includes("intakeType:'KIDUKI_RTW_SPOT'"));
 check('form-posts-delivery-method', form.includes("deliveryMethod:String(v.deliveryMethod"));
-check('home-foregrounds-existing-doctor-gap', home.includes('既存産業医が対応できない面談を相談'));
-check('home-defines-spot-as-complement-not-replacement', home.includes('産業医を替える前提ではありません'));
+check('home-foregrounds-existing-doctor-complement', home.includes('すでに産業医がいる事業場でも'));
 check('form-foregrounds-existing-doctor-gap', form.includes('既存産業医が対応できない') && form.includes('産業医を替える契約ではありません'));
 check('form-requires-support-reason', /name="supportReason"[^>]*required/.test(form));
 check('form-posts-support-reason', form.includes('supportReason,deliveryMethod'));
@@ -26,7 +24,7 @@ check('form-includes-support-reason-in-inquiry-message', form.includes('今回KI
 check('form-uses-canonical-front-door', form.includes('https://casetra-api-dev-edge-bacnf4bqc9dxe8hn.z01.azurefd.net/api/leads'));
 check('form-requires-privacy-consent', /name="privacyConsent"[^>]*required/.test(form));
 check('form-prohibits-health-data', form.includes('社員の氏名・病名・診断書内容は入力しないでください'));
-check('structured-data-includes-spot-offers', home.includes('"name":"復職・両立支援 単発オンライン"') && home.includes('"price":"60000"') && home.includes('"price":"75000"'));
+check('structured-data-includes-return-to-work-service-without-price', home.includes('"name":"復職判定面談"') && !home.includes('"price"'));
 
 const failures = checks.filter((item) => !item.ok);
 console.log(JSON.stringify({ ok: failures.length === 0, checks, failures }, null, 2));

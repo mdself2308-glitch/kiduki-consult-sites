@@ -119,19 +119,17 @@ record(/復職Case 1件と操作期限/.test(oneStopDraft), 'one-stop draft stat
 
 const staticHome = await readFile(resolve(root, 'consult/index.html'), 'utf8');
 record(
-  /会社は起票内容、事前資料、主治医照会の要否・目的、意見書受領、会社決裁、再評価を入力/.test(
-    staticHome,
-  ),
-  'static home states the actual company operator sequence',
+  /産業医意見から会社の最終決定、職場での実施まで/.test(staticHome),
+  'static home preserves the employer decision boundary',
 );
 record(
-  /就業区分、残業・時短・業務等の措置、実施期間、見直し時期/.test(staticHome),
-  'static home describes the actual company-decision fields',
+  /復職日、勤務時間、夜勤・運転・残業の制限、再評価日/.test(staticHome),
+  'static home describes concrete return-to-work conditions',
 );
-record(/担当者にはその1件だけが表示/.test(staticHome), 'static home states implemented one-case authorization');
+record(/復職判定面談を1件から/.test(staticHome), 'static home offers one-case return-to-work consultation');
 record(
-  /Packの契約だけでCasetra月額契約になることはありません/.test(staticHome),
-  'static home separates Pack fulfillment from Casetra monthly SaaS',
+  /自社開発の産業衛生管理システム/.test(staticHome) && !/Casetra月額|月額契約/.test(staticHome),
+  'static home presents Casetra as the dx means without monthly sales copy',
 );
 
 const greetingReview = await readFile(

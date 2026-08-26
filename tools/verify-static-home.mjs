@@ -27,12 +27,26 @@ const localChecks = {
       '<link rel="canonical" href="https://consult.kdkconslt-sngyouijm.com/">',
     ),
   singleH1: (localText.match(/<h1\b/gi) || []).length === 1,
-  restoredSimpleStructure:
+  conciseStructure:
     localText.includes('眠りから、職場の安全と生産性をつくる。') &&
     localText.includes('料金の考え方'),
+  twoPillars:
+    localText.includes('睡眠特化 × 産業衛生DX') &&
+    localText.includes('もう一つの柱は、産業衛生業務のDX'),
+  oneOffReturnToWork:
+    localText.includes('急なご依頼となる復職判定面談を1件から承ります。'),
+  nationalSleepPolicySource:
+    localText.includes(
+      'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/suimin/index.html',
+    ),
   currentContactRoute:
     (localText.match(/https:\/\/kdkconslt-sngyouijm\.com\/contact\//g) || [])
-      .length >= 4,
+      .length >= 5,
+  noRetiredInternalRoutes:
+    !/kdkconslt-sngyouijm\.com\/(?:\?main|spot\/|greeting\/|office-info\/)/.test(
+      localText,
+    ),
+  occupationalHygieneWording: !localText.includes('産業保健'),
   fuzzyPricing: !/(?:\d{1,3}(?:,\d{3})+|\d+)\s*円/.test(localText),
   nonTrivialSize: local.length > 10_000,
 };

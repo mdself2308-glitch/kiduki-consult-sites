@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
-// 公開サイトに出している「18テンプレート・181作業・70法令要求（うち義務55）」を、
-// Casetra の本番設定から数え直して一致を確認する。
-// 数字が動いたら、まず手順表（config）を確認し、そのうえで公開コピーを直す。
+// Casetra が公開している「18テンプレート・181作業・70法令要求（うち義務55）」を、
+// 本番設定から数え直して一致を確認する。KIDUKIのトップは情報量を抑えるため、
+// これらの内部数値を掲載せず、DXの目的と会社・事務所の役割だけを示す。
 
 const casetraRoot = process.env.CASETRA_ROOT
   || path.join(os.homedir(), 'Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active');
@@ -87,12 +87,12 @@ if (catalogsAvailable) {
   check('casetra-catalogs-available', false, `set CASETRA_ROOT (looked in ${casetraRoot})`);
 }
 
-check('kiduki-home-publishes-template-count', kidukiHome.includes('<span class="scope-fact-num">18</span>'));
-check('kiduki-home-publishes-todo-count', kidukiHome.includes('<span class="scope-fact-num">181</span>'));
-check('kiduki-home-publishes-legal-count', kidukiHome.includes('<span class="scope-fact-num">70</span>'));
-check('kiduki-home-states-mandatory-share', kidukiHome.includes('うち55件は法律上の義務です'));
-check('kiduki-home-keeps-obligation-holder-clear', kidukiHome.includes('義務の名宛人は事業者'));
-check('kiduki-home-states-linked-todo-share', kidukiHome.includes('181作業のうち147'));
+check('kiduki-home-omits-template-count', !kidukiHome.includes('<span class="scope-fact-num">18</span>'));
+check('kiduki-home-omits-todo-count', !kidukiHome.includes('<span class="scope-fact-num">181</span>'));
+check('kiduki-home-omits-legal-count', !kidukiHome.includes('<span class="scope-fact-num">70</span>'));
+check('kiduki-home-omits-mandatory-share', !kidukiHome.includes('うち55件は法律上の義務です'));
+check('kiduki-home-keeps-employer-decision-boundary', kidukiHome.includes('会社として最終決定する') && kidukiHome.includes('職場で実施する'));
+check('kiduki-home-explains-dx-purpose', kidukiHome.includes('担当者の時間を、事務作業から健康施策へ'));
 check('kiduki-home-avoids-per-todo-overclaim', !kidukiHome.includes('各作業に、根拠となる条項'));
 
 if (fs.existsSync(sources.casetraHome)) {
