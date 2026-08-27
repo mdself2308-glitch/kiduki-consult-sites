@@ -29,6 +29,8 @@ check('structured-data-matches-two-pillars',
   home.includes('"name":"睡眠に特化した産業医業務"')
   && home.includes('"name":"Casetraを活用した産業衛生DX支援"'));
 check('structured-data-carries-no-price', !home.includes('"price"'));
+check('structured-data-includes-return-to-work-service',
+  home.includes('"name":"復職判定面談（睡眠評価を含む）"'));
 
 const failures = checks.filter((item) => !item.ok);
 console.log(JSON.stringify({ ok: failures.length === 0, checks, failures }, null, 2));

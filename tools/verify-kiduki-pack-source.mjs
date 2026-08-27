@@ -29,6 +29,15 @@ check('manual-requires-one-case-boundary', manual.includes('割り当てられ�
 check('home-leads-with-sleep-specialty', home.includes('一つ目の柱：睡眠に特化した産業医業務'));
 check('form-defines-six-month-maximum', form.includes('開始から最長6か月'));
 check('home-keeps-hygiene-dx-pillar', home.includes('二つ目の柱：産業衛生業務のDX'));
+// 復職は三本目の柱ではなく、睡眠の柱の着地点として残す。入口（気づきの節）と
+// 商品（単発）の両方が消えたら、睡眠に振った代償として復職客を取りこぼす。
+check('home-keeps-return-to-work-entry-point',
+  home.includes('「復職可能」の診断書は届いたが、復職日を決めきれない'));
+check('home-offers-one-case-return-to-work-assessment',
+  home.includes('急な復職判定面談を1件から承ります'));
+// 産業医は意見を述べ、会社が決める。復職の記述でこの述語が崩れないこと。
+check('home-keeps-opinion-not-decision-on-return-to-work',
+  home.includes('再評価時期について意見します') && !home.includes('再発リスクを考慮して判断します'));
 check('home-avoids-absolute-zero-coordination-claim', !/予約のやり取り(が|は)発生しない|日程調整ゼロ/.test(home));
 check('form-explains-booking-link', form.includes('企業専用の予約リンクから担当産業医の空き枠を確認'));
 check('home-removes-m3-m6-standard-copy', !home.includes('M3・M6等'));
