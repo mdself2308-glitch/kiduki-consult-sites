@@ -24,7 +24,11 @@ check('form-includes-support-reason-in-inquiry-message', form.includes('今回KI
 check('form-uses-canonical-front-door', form.includes('https://casetra-api-dev-edge-bacnf4bqc9dxe8hn.z01.azurefd.net/api/leads'));
 check('form-requires-privacy-consent', /name="privacyConsent"[^>]*required/.test(form));
 check('form-prohibits-health-data', form.includes('社員の氏名・病名・診断書内容は入力しないでください'));
-check('structured-data-includes-return-to-work-service-without-price', home.includes('"name":"復職判定面談"') && !home.includes('"price"'));
+// 構造化データは二本柱と一致させる。価格は載せない（トップで金額を出さない方針と揃える）。
+check('structured-data-matches-two-pillars',
+  home.includes('"name":"睡眠に特化した産業医業務"')
+  && home.includes('"name":"Casetraを活用した産業衛生DX支援"'));
+check('structured-data-carries-no-price', !home.includes('"price"'));
 
 const failures = checks.filter((item) => !item.ok);
 console.log(JSON.stringify({ ok: failures.length === 0, checks, failures }, null, 2));

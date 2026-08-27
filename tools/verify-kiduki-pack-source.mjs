@@ -25,15 +25,23 @@ check('success-keeps-kiduki-service-window', form.includes('ご相談の送信�
 check('manual-names-kiduki-contract', manual.includes('企業が問い合わせ、打合せ、契約をする相手は **KIDUKI'));
 check('manual-has-ops-runbook-url', manual.includes('https://core.casetra.jp/ops/pack'));
 check('manual-requires-one-case-boundary', manual.includes('割り当てられた復職Case 1件だけ'));
-check('home-offers-one-case-return-to-work-assessment', home.includes('急なご依頼となる復職判定面談を1件から承ります'));
+// トップは睡眠特化とDXの二本柱で立てている。柱そのものが消えたら気づけるようにする。
+check('home-leads-with-sleep-specialty', home.includes('一つ目の柱：睡眠に特化した産業医業務'));
 check('form-defines-six-month-maximum', form.includes('開始から最長6か月'));
-check('home-defines-sleep-informed-return-to-work-assessment', home.includes('睡眠時間、生活リズム、日中の眠気、服薬の影響と業務内容'));
+check('home-keeps-hygiene-dx-pillar', home.includes('二つ目の柱：産業衛生業務のDX'));
 check('home-avoids-absolute-zero-coordination-claim', !/予約のやり取り(が|は)発生しない|日程調整ゼロ/.test(home));
 check('form-explains-booking-link', form.includes('企業専用の予約リンクから担当産業医の空き枠を確認'));
 check('home-removes-m3-m6-standard-copy', !home.includes('M3・M6等'));
 check('manual-defines-three-exit-options', manual.includes('Casetraを別途月額契約') && manual.includes('KIDUKIへ単発フォロー') && manual.includes('自社または既存産業医'));
 check('home-keeps-pricing-fuzzy', !/(?:\d{1,3}(?:,\d{3})+|\d+)\s*円/.test(home));
-check('home-keeps-casetra-as-dx-means', home.includes('この運用は、自社開発の産業衛生管理システム') && home.includes('Casetra'));
+// Casetraは二本目の柱の手段として出す。KIDUKIのトップで製品として売り込まない。
+// 目的（担当者の時間を健康施策へ）が消えて製品名だけが残る形になったら落とす。
+check('home-keeps-casetra-as-dx-means',
+  home.includes('自社開発のCasetra')
+  && home.includes('担当者の時間を、事務作業から健康施策へ'));
+// 会社が決めて会社が実施する、という境界はどの方針でも動かさない。
+check('home-keeps-employer-decision-boundary',
+  home.includes('会社の最終決定') && home.includes('職場での実施'));
 check('pack-form-and-manual-keep-three-opinion-letters', form.includes('各面談後の産業医意見書3通') && manual.includes('各面談後に産業医意見書を1通ずつ発行'));
 
 const failures = checks.filter((item) => !item.ok);
