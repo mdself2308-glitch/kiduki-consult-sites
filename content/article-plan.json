@@ -1,0 +1,108 @@
+{
+  "note": "記事の台帳。原稿が書けたものから content/articles/ に置き、tools/schedule-wordpress-posts.mjs で予約投稿にする。原稿が無い行は skipped_draft_missing として飛ばされるので、書けた順に何度でも回せる。",
+  "cadence": "毎週 火・金 07:00 JST。出社前に読まれる時間帯で、月曜の滞留と週末の埋没を避ける。",
+  "pillars": {
+    "sleep": "一つ目の柱：睡眠に特化した産業医業務",
+    "dx": "二つ目の柱：産業衛生業務のDX",
+    "bridge": "二本柱の接続点"
+  },
+  "articles": [
+    {
+      "slug": "night-shift-sleep-management",
+      "title": "夜勤・交代勤務の睡眠対策｜シフトと仮眠環境から見直す実務",
+      "pillar": "sleep",
+      "publish_at": "2026-09-01T07:00:00",
+      "content": "articles/night-shift-sleep-management.html",
+      "featured_image": "images/night-shift-sleep-management.png",
+      "excerpt": "交代勤務では、生活リズムの乱れが不眠とメンタル不調の入口になります。面談を重ねる前に見直すべきシフトと仮眠環境の要点を、厚生労働省の睡眠ガイドに沿って整理します。"
+    },
+    {
+      "slug": "drowsy-driving-workplace-safety",
+      "title": "運転業務の眠気リスク｜ヒヤリハットを個人の不注意で終わらせない",
+      "pillar": "sleep",
+      "publish_at": "2026-09-04T07:00:00",
+      "content": "articles/drowsy-driving-workplace-safety.html",
+      "featured_image": "images/drowsy-driving-workplace-safety.png"
+    },
+    {
+      "slug": "sas-screening-at-work",
+      "title": "職場のSAS（睡眠時無呼吸）対策｜スクリーニングから就業措置まで",
+      "pillar": "sleep",
+      "publish_at": "2026-09-08T07:00:00",
+      "content": "articles/sas-screening-at-work.html",
+      "featured_image": "images/sas-screening-at-work.png"
+    },
+    {
+      "slug": "long-hours-interview-sleep",
+      "title": "長時間労働者の面接指導で睡眠を診る｜80時間超の面談を形式で終わらせない",
+      "pillar": "sleep",
+      "publish_at": "2026-09-11T07:00:00",
+      "content": "articles/long-hours-interview-sleep.html",
+      "featured_image": "images/long-hours-interview-sleep.png"
+    },
+    {
+      "slug": "kenko-keiei-sleep-measures",
+      "title": "健康経営の睡眠施策｜調査票に書ける取り組みをどう設計するか",
+      "pillar": "sleep",
+      "publish_at": "2026-09-15T07:00:00",
+      "content": "articles/kenko-keiei-sleep-measures.html",
+      "featured_image": "images/kenko-keiei-sleep-measures.png"
+    },
+    {
+      "slug": "return-to-work-sleep-assessment",
+      "title": "復職時の睡眠評価｜「復職可能」の診断書だけでは決められないこと",
+      "pillar": "sleep",
+      "publish_at": "2026-09-18T07:00:00",
+      "content": "articles/return-to-work-sleep-assessment.html",
+      "featured_image": "images/return-to-work-sleep-assessment.png"
+    },
+    {
+      "slug": "committee-minutes-three-year-retention",
+      "title": "衛生委員会の議事録は3年保存｜誰が、いつまでに、どこに残すか",
+      "pillar": "dx",
+      "publish_at": "2026-09-22T07:00:00",
+      "content": "articles/committee-minutes-three-year-retention.html",
+      "featured_image": "images/committee-minutes-three-year-retention.png"
+    },
+    {
+      "slug": "industrial-physician-scheduling",
+      "title": "産業医面談の日程調整が終わらない理由と、決めておくべき3つのこと",
+      "pillar": "dx",
+      "publish_at": "2026-09-25T07:00:00",
+      "content": "articles/industrial-physician-scheduling.html",
+      "featured_image": "images/industrial-physician-scheduling.png"
+    },
+    {
+      "slug": "after-the-physician-opinion",
+      "title": "産業医の意見書が来たあと、会社は何を決めて何を記録するのか",
+      "pillar": "dx",
+      "publish_at": "2026-09-29T07:00:00",
+      "content": "articles/after-the-physician-opinion.html",
+      "featured_image": "images/after-the-physician-opinion.png"
+    },
+    {
+      "slug": "work-restriction-release-management",
+      "title": "就業制限を「解除し忘れる」構造と、期限管理の実務",
+      "pillar": "dx",
+      "publish_at": "2026-10-02T07:00:00",
+      "content": "articles/work-restriction-release-management.html",
+      "featured_image": "images/work-restriction-release-management.png"
+    },
+    {
+      "slug": "sleep-findings-to-work-accommodation",
+      "title": "睡眠の問題を見つけたあと｜就業上の配慮に落とすまでの手順",
+      "pillar": "bridge",
+      "publish_at": "2026-10-06T07:00:00",
+      "content": "articles/sleep-findings-to-work-accommodation.html",
+      "featured_image": "images/sleep-findings-to-work-accommodation.png"
+    },
+    {
+      "slug": "when-sleep-becomes-a-return-to-work-decision",
+      "title": "睡眠の問題が復職判断に変わるとき｜眠りが戻らないまま復職日を決めない",
+      "pillar": "bridge",
+      "publish_at": "2026-10-09T07:00:00",
+      "content": "articles/when-sleep-becomes-a-return-to-work-decision.html",
+      "featured_image": "images/when-sleep-becomes-a-return-to-work-decision.png"
+    }
+  ]
+}
