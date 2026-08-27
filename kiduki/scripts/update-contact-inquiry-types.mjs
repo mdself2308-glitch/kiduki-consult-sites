@@ -24,8 +24,36 @@ if (apply && (!backup || !backupConfirmed)) {
 
 const oldSelect =
   '[select* inquiry-type "復職支援Pack（1案件・面談3回＋再評価）を相談したい" "復職・両立支援の単発面談を相談したい" "嘱託産業医（KIDUKI Retain）を探している" "既存産業医の専門補完（KIDUKI Basic）を相談したい" "睡眠研修を相談したい" "交代勤務・夜勤の睡眠対策を相談したい" "講演・執筆・取材の依頼" "その他"]';
-const newSelect =
+const inquirySelectWithoutPlaceholder =
   '[select* inquiry-type "睡眠に特化した産業医の継続契約を相談したい" "産業衛生業務のDX・Casetra利用を相談したい" "既存の産業医体制に睡眠の専門支援を加えたい" "睡眠研修・健康経営施策を相談したい" "復職支援・判定面談を1件から相談したい" "夜勤・運転・SASなど睡眠課題を相談したい" "講演・執筆・取材の依頼" "その他"]';
+const newSelect =
+  '[select* inquiry-type first_as_label "ご相談内容を選択してください" "睡眠に特化した産業医の継続契約を相談したい" "産業衛生業務のDX・Casetra利用を相談したい" "既存の産業医体制に睡眠の専門支援を加えたい" "睡眠研修・健康経営施策を相談したい" "復職支援・判定面談を1件から相談したい" "夜勤・運転・SASなど睡眠課題を相談したい" "講演・執筆・取材の依頼" "その他"]';
+
+const selectPlaceholders = [
+  ['industry', '業種を選択してください'],
+  ['company-size', '従業員数を選択してください'],
+];
+
+function addFirstLabel(form, fieldName, label) {
+  const pattern = new RegExp(`\\[select\\* ${fieldName}[^\\]]*\\]`);
+  const match = form.match(pattern);
+  if (!match) {
+    throw new Error(`Required select field not found: ${fieldName}`);
+  }
+  if (match[0].includes(`first_as_label "${label}"`)) {
+    return form;
+  }
+  if (match[0].includes('first_as_label')) {
+    throw new Error(`Unexpected first_as_label setting for ${fieldName}.`);
+  }
+  return form.replace(
+    match[0],
+    match[0].replace(
+      `[select* ${fieldName}`,
+      `[select* ${fieldName} first_as_label "${label}"`,
+    ),
+  );
+}
 
 function digest(value) {
   return crypto
@@ -46,15 +74,25 @@ const currentForm = String(properties.form?.content || properties.form || '');
 const alreadyUpdated = currentForm.includes(newSelect);
 const oldMatches = currentForm.split(oldSelect).length - 1;
 
-if (!alreadyUpdated && oldMatches !== 1) {
+if (
+  !alreadyUpdated &&
+  oldMatches !== 1 &&
+  !currentForm.includes(inquirySelectWithoutPlaceholder)
+) {
   throw new Error(
     `Expected exactly one legacy inquiry select, found ${oldMatches}.`,
   );
 }
 
-const nextForm = alreadyUpdated
-  ? currentForm
-  : currentForm.replace(oldSelect, newSelect);
+let nextForm = currentForm;
+if (!alreadyUpdated) {
+  nextForm = oldMatches === 1
+    ? nextForm.replace(oldSelect, newSelect)
+    : nextForm.replace(inquirySelectWithoutPlaceholder, newSelect);
+}
+for (const [fieldName, label] of selectPlaceholders) {
+  nextForm = addFirstLabel(nextForm, fieldName, label);
+}
 const mailDigestBefore = digest(properties.mail || {});
 const mail2DigestBefore = digest(properties.mail_2 || {});
 
@@ -67,6 +105,10 @@ if (!apply) {
         writes: false,
         formId,
         alreadyUpdated,
+        placeholdersPresent: selectPlaceholders.every(
+          ([fieldName, label]) =>
+            nextForm.includes(`[select* ${fieldName} first_as_label "${label}"`),
+        ) && nextForm.includes(newSelect),
         returnToWorkNoLongerFirst: !nextForm.includes('復職支援Pack（1案件・面談3回＋再評価）を相談したい'),
         nextOptions: [
           '睡眠に特化した産業医の継続契約',
@@ -132,6 +174,9 @@ const afterForm = String(
 
 if (
   !afterForm.includes(newSelect) ||
+  !selectPlaceholders.every(([fieldName, label]) =>
+    afterForm.includes(`[select* ${fieldName} first_as_label "${label}"`),
+  ) ||
   afterForm.includes('復職支援Pack（1案件・面談3回＋再評価）を相談したい') ||
   digest(afterProperties.mail || {}) !== mailDigestBefore ||
   digest(afterProperties.mail_2 || {}) !== mail2DigestBefore

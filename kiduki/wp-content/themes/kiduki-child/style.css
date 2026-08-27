@@ -4,7 +4,7 @@ Theme URI: https://kdkconslt-sngyouijm.com/
 Description: Site customizations for KIDUKI Consulting.
 Author: KIDUKI Consulting
 Template: emanon-premium
-Version: 1.11.1
+Version: 1.12.0
 Text Domain: kiduki-child
 */
 
@@ -898,4 +898,54 @@ body .kiduki-contact textarea:focus {
 	) .article-header-full-width__thumbnail {
 		height: 320px !important;
 	}
+}
+
+/* スマートフォンでも主要導線へ入れるよう、ヘッダーにメニューを常時表示する。 */
+@media (max-width: 959px) {
+	.l-header__inner {
+		display: flex;
+		align-items: center;
+	}
+
+	.l-header__inner > .header-site-branding {
+		order: 1;
+		flex: 1 1 auto;
+		min-width: 0;
+		width: auto;
+	}
+
+	.l-header__inner > .hamburger-menu.u-display-pc {
+		display: flex !important;
+		order: 2;
+		flex: 0 0 60px;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+	}
+
+	.l-header__inner > .header-cta {
+		display: none;
+	}
+
+	.header-site-branding__link,
+	.header-site-branding__link img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.kiduki-contact__intro {
+	margin-bottom: 32px;
+	padding: clamp(20px, 4vw, 30px);
+	border-left: 4px solid var(--kdk-accent);
+	background: var(--kdk-bg);
+}
+
+.kiduki-contact__intro > :first-child {
+	margin-top: 0;
+}
+
+.kiduki-contact__intro > :last-child {
+	margin-bottom: 0;
 }

@@ -59,6 +59,26 @@ function kiduki_child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'kiduki_child_enqueue_styles' );
 
 /**
+ * Give the theme's icon-only header controls useful accessible names.
+ */
+function kiduki_child_header_control_labels() {
+	?>
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		document.querySelectorAll('.js-hamburger-menu').forEach(function (button) {
+			button.setAttribute('aria-label', 'メニューを開く');
+		});
+		var searchOpen = document.querySelector('#js-header-search .switch-off');
+		var searchClose = document.querySelector('#js-header-search .switch-on');
+		if (searchOpen) searchOpen.setAttribute('aria-label', 'サイト内検索を開く');
+		if (searchClose) searchClose.setAttribute('aria-label', 'サイト内検索を閉じる');
+	});
+	</script>
+	<?php
+}
+add_action( 'wp_footer', 'kiduki_child_header_control_labels', 100 );
+
+/**
  * Preconnect to the font CDN so the webfont does not delay first paint.
  */
 function kiduki_child_resource_hints( $urls, $relation_type ) {

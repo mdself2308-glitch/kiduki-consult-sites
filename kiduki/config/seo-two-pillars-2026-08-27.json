@@ -1,0 +1,113 @@
+{
+  "release": "2026-08-27-kiduki-two-pillars",
+  "items": [
+    {
+      "type": "page",
+      "id": 24,
+      "expectedModified": "2026-08-27T11:29:15",
+      "slug": "office",
+      "title": "事務所について",
+      "status": "publish",
+      "source": "source/wordpress/page-24-office.html",
+      "allowedCurrentSlugs": ["office"],
+      "excerpt": "睡眠に特化した産業医業務と産業衛生業務のDXを二つの柱に、企業・事業所を支援します。",
+      "metaDescription": "睡眠に特化した産業医業務と産業衛生業務のDXを二つの柱に、法定業務、睡眠施策、単発相談、Casetraによる業務改善を支援する産業医事務所です。"
+    },
+    {
+      "type": "page",
+      "id": 29,
+      "expectedModified": "2026-08-27T11:29:17",
+      "slug": "service",
+      "title": "サービス｜睡眠に特化した産業医業務と産業衛生DX",
+      "status": "publish",
+      "source": "source/wordpress/page-29-service.html",
+      "allowedCurrentSlugs": ["service"],
+      "excerpt": "睡眠に特化した産業医業務を軸に、継続契約、既存体制への専門支援、単発相談、産業衛生DXに対応します。",
+      "metaDescription": "睡眠に特化した嘱託産業医、既存体制への睡眠支援、単発の睡眠施策・復職判定面談、Casetraを活用する産業衛生DXをご案内します。"
+    },
+    {
+      "type": "page",
+      "id": 31,
+      "expectedModified": "2026-08-27T11:29:18",
+      "slug": "field",
+      "title": "睡眠に特化した産業医業務",
+      "status": "publish",
+      "source": "source/wordpress/page-31-field.html",
+      "allowedCurrentSlugs": ["field"],
+      "excerpt": "睡眠の専門性を、法定業務と日々の産業医活動に組み込みます。",
+      "metaDescription": "法定業務を中核に、睡眠時間、眠気、SAS、夜勤・交代勤務と実際の業務の関係を評価し、就業上の配慮や職場の睡眠施策につなげます。"
+    },
+    {
+      "type": "page",
+      "id": 160,
+      "expectedModified": "2026-08-27T11:29:20",
+      "slug": "sangyoui",
+      "title": "睡眠に特化した嘱託産業医",
+      "status": "publish",
+      "source": "source/wordpress/page-160-sangyoui.html",
+      "allowedCurrentSlugs": ["sangyoui"],
+      "excerpt": "睡眠という専門軸を持つ産業医が、法定業務と個別案件を継続して担当します。",
+      "metaDescription": "職場巡視、衛生委員会、健診事後措置、面接指導などの法定業務に睡眠の専門性を組み込み、夜勤、運転、休復職まで継続して支援します。"
+    },
+    {
+      "type": "page",
+      "id": 162,
+      "expectedModified": "2026-08-27T11:29:21",
+      "slug": "komon",
+      "title": "既存の産業医体制に加える睡眠支援",
+      "status": "publish",
+      "source": "source/wordpress/page-162-komon.html",
+      "allowedCurrentSlugs": ["komon"],
+      "excerpt": "現在の選任産業医を交代せず、睡眠の評価が必要な案件に専門性を加えます。",
+      "metaDescription": "現在の選任産業医を交代せず、睡眠、夜勤、SAS、メンタル不調、休復職など、睡眠評価が必要な案件に専門支援を加えます。"
+    },
+    {
+      "type": "page",
+      "id": 164,
+      "expectedModified": "2026-08-27T11:29:22",
+      "slug": "return-to-work-support",
+      "title": "単発相談｜睡眠課題・復職判定面談",
+      "status": "publish",
+      "source": "source/wordpress/page-164-return-to-work-support.html",
+      "allowedCurrentSlugs": ["return-to-work-support"],
+      "excerpt": "睡眠に関する健康施策や、急に必要となった復職判定面談を1件から承ります。",
+      "metaDescription": "月額契約のない企業からも、睡眠研修、健康経営の睡眠施策、夜勤・運転の眠気リスク、急な復職判定面談を1件から承ります。"
+    },
+    {
+      "type": "page",
+      "id": 166,
+      "expectedModified": "2026-08-27T11:29:23",
+      "slug": "cloud",
+      "title": "産業衛生DX・Casetra",
+      "status": "publish",
+      "source": "source/wordpress/page-166-cloud.html",
+      "allowedCurrentSlugs": ["cloud"],
+      "excerpt": "産業衛生業務を標準化・効率化し、生まれた時間を睡眠施策や健康経営へつなげます。",
+      "metaDescription": "予約、資料回収、医師意見、会社決定、実施、再評価をCasetraでつなぎ、産業衛生業務を標準化・効率化する方法と契約関係をご案内します。"
+    },
+    {
+      "type": "page",
+      "id": 1030,
+      "expectedModified": "2026-08-27T11:29:23",
+      "slug": "special",
+      "title": "記事｜睡眠×産業衛生DX",
+      "status": "publish",
+      "source": "source/wordpress/page-1030-special.html",
+      "allowedCurrentSlugs": ["special"],
+      "excerpt": "睡眠に特化した産業医業務と産業衛生DXの二つの柱から、企業・事業所向けの記事を整理しています。",
+      "metaDescription": "睡眠に特化した産業医業務と産業衛生DXの二つの柱から、睡眠、休復職、産業医面談、業務の標準化・効率化に関する記事を整理しています。"
+    },
+    {
+      "type": "page",
+      "id": 1741,
+      "expectedModified": "2026-08-27T11:29:24",
+      "slug": "contact",
+      "title": "お問い合わせ",
+      "status": "publish",
+      "source": "source/wordpress/page-1741-contact.html",
+      "allowedCurrentSlugs": ["contact"],
+      "excerpt": "睡眠に特化した産業医業務、産業衛生DX・Casetra、単発相談の窓口です。",
+      "metaDescription": "睡眠に特化した産業医業務、産業衛生DX・Casetra、睡眠研修、夜勤・運転の睡眠課題、復職判定面談のご相談はこちらから。"
+    }
+  ]
+}

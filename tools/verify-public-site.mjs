@@ -41,15 +41,22 @@ const routes = [
 if (expectSeoRelease) {
   const manifest = JSON.parse(
     fs.readFileSync(
-      new URL('../kiduki/config/seo-release-2026-08-17.json', import.meta.url),
+      new URL('../kiduki/config/seo-two-pillars-2026-08-27.json', import.meta.url),
       'utf8',
     ),
   );
   for (const item of manifest.items) {
-    const path =
-      item.type === 'post' || ['service', 'field'].includes(item.slug)
-        ? `/${item.slug}/`
-        : `/service/${item.slug}/`;
+    const serviceChildren = new Set([
+      'sangyoui',
+      'komon',
+      'return-to-work-support',
+      'cloud',
+    ]);
+    const path = item.type === 'post'
+      ? `/${item.slug}/`
+      : serviceChildren.has(item.slug)
+        ? `/service/${item.slug}/`
+        : `/${item.slug}/`;
     const url = `${siteConfig.wordpressUrl}${path}`;
     seoExpectations.set(url, item);
     if (!routes.some(([, routeUrl]) => routeUrl === url)) {

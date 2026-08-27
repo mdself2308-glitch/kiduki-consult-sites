@@ -11,7 +11,7 @@ import {
 
 const args = parseArgs(process.argv.slice(2));
 const manifestPath = path.resolve(
-  args.manifest || 'kiduki/config/seo-release-2026-08-17.json',
+  args.manifest || 'kiduki/config/seo-two-pillars-2026-08-27.json',
 );
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 const apply = Boolean(args.apply);

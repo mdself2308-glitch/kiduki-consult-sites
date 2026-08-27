@@ -46,6 +46,7 @@ add_action( 'rest_api_init', function () {
 
 \t\t\t\t$locations = get_nav_menu_locations();
 \t\t\t\t$registered = array();
+\t\t\t\t$menu_items = array();
 \t\t\t\tforeach ( get_registered_nav_menus() as $slug => $label ) {
 \t\t\t\t\t$assigned = $locations[ $slug ] ?? 0;
 \t\t\t\t\t$term     = $assigned ? get_term( $assigned, 'nav_menu' ) : null;
@@ -55,6 +56,38 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t\t'menuName' => ( $term && ! is_wp_error( $term ) ) ? $term->name : null,
 \t\t\t\t\t\t'itemCount'=> ( $term && ! is_wp_error( $term ) ) ? $term->count : 0,
 \t\t\t\t\t);
+\t\t\t\t\tif ( $assigned && ! isset( $menu_items[ $assigned ] ) ) {
+\t\t\t\t\t\t$menu_items[ $assigned ] = array_map(
+\t\t\t\t\t\t\tfunction ( $item ) {
+\t\t\t\t\t\t\t\treturn array(
+\t\t\t\t\t\t\t\t\t'id'        => (int) $item->ID,
+\t\t\t\t\t\t\t\t\t'title'     => $item->title,
+\t\t\t\t\t\t\t\t\t'url'       => $item->url,
+\t\t\t\t\t\t\t\t\t'objectId'  => (int) $item->object_id,
+\t\t\t\t\t\t\t\t\t'parentId'  => (int) $item->menu_item_parent,
+\t\t\t\t\t\t\t\t\t'menuOrder' => (int) $item->menu_order,
+\t\t\t\t\t\t\t\t);
+\t\t\t\t\t\t\t},
+\t\t\t\t\t\t\twp_get_nav_menu_items( $assigned ) ?: array()
+\t\t\t\t\t\t);
+\t\t\t\t\t}
+\t\t\t\t}
+
+\t\t\t\t$sidebar_map = wp_get_sidebars_widgets();
+\t\t\t\t$widget_blocks = get_option( 'widget_block', array() );
+\t\t\t\t$footer_widgets = array();
+\t\t\t\tforeach ( $sidebar_map as $sidebar_id => $widget_ids ) {
+\t\t\t\t\tif ( false === stripos( (string) $sidebar_id, 'footer' ) ) {
+\t\t\t\t\t\tcontinue;
+\t\t\t\t\t}
+\t\t\t\t\t$footer_widgets[ $sidebar_id ] = array();
+\t\t\t\t\tforeach ( (array) $widget_ids as $widget_id ) {
+\t\t\t\t\t\t$entry = array( 'id' => $widget_id );
+\t\t\t\t\t\tif ( preg_match( '/^block-(\\d+)$/', $widget_id, $matches ) ) {
+\t\t\t\t\t\t\t$entry['content'] = $widget_blocks[ (int) $matches[1] ]['content'] ?? '';
+\t\t\t\t\t\t}
+\t\t\t\t\t\t$footer_widgets[ $sidebar_id ][] = $entry;
+\t\t\t\t\t}
 \t\t\t\t}
 
 \t\t\t\treturn array(
@@ -62,6 +95,8 @@ add_action( 'rest_api_init', function () {
 \t\t\t\t\t'modCount'       => count( $mods ),
 \t\t\t\t\t'headerMenuMods' => $interesting,
 \t\t\t\t\t'menuLocations'  => $registered,
+\t\t\t\t\t'menuItems'      => $menu_items,
+\t\t\t\t\t'footerWidgets'  => $footer_widgets,
 \t\t\t\t\t'allModKeys'     => array_keys( $mods ),
 \t\t\t\t);
 \t\t\t},
