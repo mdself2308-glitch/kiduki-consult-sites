@@ -6,6 +6,7 @@
     "verify": "node tools/verify-public-site.mjs",
     "verify:seo-live": "node tools/verify-public-site.mjs --expect-seo-release",
     "verify:seo-review": "node tools/verify-seo-content-review.mjs",
+    "verify:article-plan": "node tools/verify-article-plan.mjs",
     "build:rtw-article-review": "node tools/build-rtw-article-review.mjs",
     "verify:static": "node tools/verify-static-home.mjs",
     "verify:live-match": "node tools/verify-static-home.mjs --expect-live-match",

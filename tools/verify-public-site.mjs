@@ -39,13 +39,18 @@ const routes = [
 ];
 
 if (expectSeoRelease) {
-  const manifest = JSON.parse(
-    fs.readFileSync(
-      new URL('../kiduki/config/seo-two-pillars-2026-08-27.json', import.meta.url),
-      'utf8',
-    ),
-  );
-  for (const item of manifest.items) {
+  const manifestUrls = [
+    new URL('../kiduki/config/seo-two-pillars-2026-08-27.json', import.meta.url),
+    new URL('../kiduki/config/seo-indexing-recovery-2026-08-31.json', import.meta.url),
+  ];
+  const currentItems = new Map();
+  for (const manifestUrl of manifestUrls) {
+    const manifest = JSON.parse(fs.readFileSync(manifestUrl, 'utf8'));
+    for (const item of manifest.items) {
+      currentItems.set(`${item.type}:${item.id}`, item);
+    }
+  }
+  for (const item of currentItems.values()) {
     const serviceChildren = new Set([
       'sangyoui',
       'komon',

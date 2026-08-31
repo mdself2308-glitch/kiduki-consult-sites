@@ -1,5 +1,6 @@
 {
   "note": "記事の台帳。原稿が書けたものから content/articles/ に置き、tools/schedule-wordpress-posts.mjs で予約投稿にする。原稿が無い行は skipped_draft_missing として飛ばされるので、書けた順に何度でも回せる。",
+  "last_reviewed": "2026-08-31",
   "cadence": "毎週 火・金 07:00 JST。出社前に読まれる時間帯で、月曜の滞留と週末の埋没を避ける。",
   "pillars": {
     "sleep": "一つ目の柱：睡眠に特化した産業医業務",
@@ -14,7 +15,9 @@
       "publish_at": "2026-09-01T07:00:00",
       "content": "articles/night-shift-sleep-management.html",
       "featured_image": "images/night-shift-sleep-management.png",
-      "excerpt": "交代勤務では、生活リズムの乱れが不眠とメンタル不調の入口になります。面談を重ねる前に見直すべきシフトと仮眠環境の要点を、厚生労働省の睡眠ガイドに沿って整理します。"
+      "featured_image_alt": "夜勤・交代勤務のシフトと睡眠管理を表す図",
+      "excerpt": "夜勤・交代勤務の睡眠課題を、個人の努力だけにせず、シフト、休息、仮眠環境、相談導線から見直す実務を整理します。",
+      "categories": [45, 47]
     },
     {
       "slug": "drowsy-driving-workplace-safety",
@@ -22,7 +25,10 @@
       "pillar": "sleep",
       "publish_at": "2026-09-04T07:00:00",
       "content": "articles/drowsy-driving-workplace-safety.html",
-      "featured_image": "images/drowsy-driving-workplace-safety.png"
+      "featured_image": "images/drowsy-driving-workplace-safety.png",
+      "featured_image_alt": "運転業務の眠気リスクと職場の安全対策を表す図",
+      "excerpt": "運転中の眠気やヒヤリハットを個人の不注意で終わらせず、勤務記録、健康確認、就業上の措置へつなぐ手順を解説します。",
+      "categories": [45, 47]
     },
     {
       "slug": "sas-screening-at-work",
@@ -30,7 +36,10 @@
       "pillar": "sleep",
       "publish_at": "2026-09-08T07:00:00",
       "content": "articles/sas-screening-at-work.html",
-      "featured_image": "images/sas-screening-at-work.png"
+      "featured_image": "images/sas-screening-at-work.png",
+      "featured_image_alt": "職場でのSASスクリーニングと対応フローを表す図",
+      "excerpt": "職場のSAS対策について、対象業務の設定、スクリーニング、受診勧奨、結果待ちの就業配慮まで実務順に整理します。",
+      "categories": [45, 47]
     },
     {
       "slug": "long-hours-interview-sleep",
@@ -38,7 +47,10 @@
       "pillar": "sleep",
       "publish_at": "2026-09-11T07:00:00",
       "content": "articles/long-hours-interview-sleep.html",
-      "featured_image": "images/long-hours-interview-sleep.png"
+      "featured_image": "images/long-hours-interview-sleep.png",
+      "featured_image_alt": "長時間労働者の面接指導で睡眠を確認する場面の図",
+      "excerpt": "長時間労働者への面接指導で睡眠時間、眠気、勤務間隔、業務リスクを確認し、面談後の措置に落とす方法を解説します。",
+      "categories": [45, 47]
     },
     {
       "slug": "kenko-keiei-sleep-measures",
@@ -46,7 +58,10 @@
       "pillar": "sleep",
       "publish_at": "2026-09-15T07:00:00",
       "content": "articles/kenko-keiei-sleep-measures.html",
-      "featured_image": "images/kenko-keiei-sleep-measures.png"
+      "featured_image": "images/kenko-keiei-sleep-measures.png",
+      "featured_image_alt": "健康経営における睡眠施策の設計と評価を表す図",
+      "excerpt": "健康経営の睡眠施策を、研修実施だけでなく、課題把握、相談導線、勤務改善、効果確認まで一貫して設計する方法を整理します。",
+      "categories": [45, 47]
     },
     {
       "slug": "return-to-work-sleep-assessment",
@@ -54,7 +69,10 @@
       "pillar": "sleep",
       "publish_at": "2026-09-18T07:00:00",
       "content": "articles/return-to-work-sleep-assessment.html",
-      "featured_image": "images/return-to-work-sleep-assessment.png"
+      "featured_image": "images/return-to-work-sleep-assessment.png",
+      "featured_image_alt": "復職判断で睡眠と生活リズムを確認する面談の図",
+      "excerpt": "復職可能の診断書だけでは分からない、起床、日中活動、通勤、眠気、勤務条件を確認し、再評価へつなぐ方法を解説します。",
+      "categories": [45, 47]
     },
     {
       "slug": "committee-minutes-three-year-retention",
@@ -62,7 +80,10 @@
       "pillar": "dx",
       "publish_at": "2026-09-22T07:00:00",
       "content": "articles/committee-minutes-three-year-retention.html",
-      "featured_image": "images/committee-minutes-three-year-retention.png"
+      "featured_image": "images/committee-minutes-three-year-retention.png",
+      "featured_image_alt": "衛生委員会議事録の作成と3年保存を表す図",
+      "excerpt": "衛生委員会議事録の毎月開催、労働者への周知、3年保存について、担当者交代後も追える記録設計を解説します。",
+      "categories": [46, 47]
     },
     {
       "slug": "industrial-physician-scheduling",
@@ -70,7 +91,10 @@
       "pillar": "dx",
       "publish_at": "2026-09-25T07:00:00",
       "content": "articles/industrial-physician-scheduling.html",
-      "featured_image": "images/industrial-physician-scheduling.png"
+      "featured_image": "images/industrial-physician-scheduling.png",
+      "featured_image_alt": "産業医面談の日程調整と役割分担を表す図",
+      "excerpt": "産業医面談の日程調整が滞る原因を分解し、候補日時、必要資料、確定責任者を先に決める運用を解説します。",
+      "categories": [46, 47]
     },
     {
       "slug": "after-the-physician-opinion",
@@ -78,7 +102,10 @@
       "pillar": "dx",
       "publish_at": "2026-09-29T07:00:00",
       "content": "articles/after-the-physician-opinion.html",
-      "featured_image": "images/after-the-physician-opinion.png"
+      "featured_image": "images/after-the-physician-opinion.png",
+      "featured_image_alt": "産業医意見を受けて会社が措置を決める流れの図",
+      "excerpt": "産業医の意見書を受け取った後、会社が措置、共有範囲、再評価時期を決め、経緯を記録する手順を解説します。",
+      "categories": [46, 47]
     },
     {
       "slug": "work-restriction-release-management",
@@ -86,7 +113,10 @@
       "pillar": "dx",
       "publish_at": "2026-10-02T07:00:00",
       "content": "articles/work-restriction-release-management.html",
-      "featured_image": "images/work-restriction-release-management.png"
+      "featured_image": "images/work-restriction-release-management.png",
+      "featured_image_alt": "就業制限の再評価期日と解除管理を表す図",
+      "excerpt": "就業制限の解除忘れを防ぐため、再評価期日、解除・継続・変更の判断、一覧管理、過去案件の棚卸しを解説します。",
+      "categories": [46, 47]
     },
     {
       "slug": "sleep-findings-to-work-accommodation",
@@ -94,7 +124,10 @@
       "pillar": "bridge",
       "publish_at": "2026-10-06T07:00:00",
       "content": "articles/sleep-findings-to-work-accommodation.html",
-      "featured_image": "images/sleep-findings-to-work-accommodation.png"
+      "featured_image": "images/sleep-findings-to-work-accommodation.png",
+      "featured_image_alt": "睡眠所見を就業上の配慮へつなぐ手順の図",
+      "excerpt": "睡眠時間や眠気などの所見を業務リスクと突き合わせ、産業医意見、会社の決定、実施、再評価へつなぐ手順を整理します。",
+      "categories": [45, 47]
     },
     {
       "slug": "when-sleep-becomes-a-return-to-work-decision",
@@ -102,7 +135,10 @@
       "pillar": "bridge",
       "publish_at": "2026-10-09T07:00:00",
       "content": "articles/when-sleep-becomes-a-return-to-work-decision.html",
-      "featured_image": "images/when-sleep-becomes-a-return-to-work-decision.png"
+      "featured_image": "images/when-sleep-becomes-a-return-to-work-decision.png",
+      "featured_image_alt": "睡眠の相談が復職判断へ変わる局面を表す図",
+      "excerpt": "睡眠の相談から休職・復職判断へ局面が変わるとき、勤務条件、生活リズム、主治医情報、再評価を揃える方法を解説します。",
+      "categories": [45, 47]
     }
   ]
 }

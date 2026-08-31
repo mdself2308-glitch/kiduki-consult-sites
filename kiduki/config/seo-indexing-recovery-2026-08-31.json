@@ -1,0 +1,53 @@
+{
+  "release": "2026-08-31-kiduki-indexing-recovery",
+  "items": [
+    {
+      "type": "page",
+      "id": 29,
+      "expectedModified": "2026-08-27T11:29:17",
+      "slug": "service",
+      "title": "サービス｜睡眠に特化した産業医業務と産業衛生DX",
+      "status": "publish",
+      "source": "source/wordpress/page-29-service.html",
+      "allowedCurrentSlugs": ["service"],
+      "excerpt": "睡眠に特化した産業医業務を軸に、嘱託産業医、既存体制への専門支援、スポット産業医・単発相談、産業衛生DXに対応します。",
+      "metaDescription": "睡眠に特化した嘱託産業医、既存体制への睡眠支援、スポット産業医・単発相談、Casetraを活用する産業衛生DXをご案内します。"
+    },
+    {
+      "type": "page",
+      "id": 160,
+      "expectedModified": "2026-08-27T11:29:20",
+      "slug": "sangyoui",
+      "title": "嘱託産業医｜睡眠・夜勤・復職まで継続支援",
+      "status": "publish",
+      "source": "source/wordpress/page-160-sangyoui.html",
+      "allowedCurrentSlugs": ["sangyoui"],
+      "excerpt": "法定・定例業務を中核に、睡眠、夜勤、運転、休職・復職まで継続して担当する嘱託産業医サービスです。",
+      "metaDescription": "職場巡視、衛生委員会、健診事後措置、面接指導を中核に、睡眠、夜勤、運転、休職・復職まで継続して担当する嘱託産業医サービスです。"
+    },
+    {
+      "type": "page",
+      "id": 162,
+      "expectedModified": "2026-08-27T11:29:21",
+      "slug": "komon",
+      "title": "産業医の追加・顧問支援｜既存体制に睡眠の専門性",
+      "status": "publish",
+      "source": "source/wordpress/page-162-komon.html",
+      "allowedCurrentSlugs": ["komon"],
+      "excerpt": "現在の選任産業医を交代せず、睡眠、夜勤、運転、休職・復職などの専門性を追加する継続支援です。",
+      "metaDescription": "現在の選任産業医を交代せず、睡眠、夜勤、SAS、運転、メンタル不調、休職・復職などの専門性を追加する産業医の顧問支援です。"
+    },
+    {
+      "type": "page",
+      "id": 164,
+      "expectedModified": "2026-08-27T11:29:22",
+      "slug": "return-to-work-support",
+      "title": "スポット産業医・単発相談｜復職判定・睡眠研修",
+      "status": "publish",
+      "source": "source/wordpress/page-164-return-to-work-support.html",
+      "allowedCurrentSlugs": ["return-to-work-support"],
+      "excerpt": "月額契約のない企業からも、スポット産業医として復職判定面談、睡眠研修、SAS・夜勤・運転の相談を1件から承ります。",
+      "metaDescription": "スポット産業医として、急な復職判定面談、睡眠研修、健康経営の睡眠施策、SAS・夜勤・運転の眠気リスク相談を1件から承ります。"
+    }
+  ]
+}

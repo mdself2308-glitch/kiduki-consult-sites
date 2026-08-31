@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { getWordPressEnv, parseArgs, wpRequest, safeStamp } from './wordpress-rest-utils.mjs';
@@ -16,22 +17,25 @@ import { getWordPressEnv, parseArgs, wpRequest, safeStamp } from './wordpress-re
  *
  * 使い方:
  *   node tools/schedule-wordpress-posts.mjs --plan content/article-plan.json
- *   node tools/schedule-wordpress-posts.mjs --plan content/article-plan.json --apply --backup-confirmed
+ *   node tools/schedule-wordpress-posts.mjs --plan content/article-plan.json --apply --backup --backup-confirmed
  */
 
 const args = parseArgs(process.argv.slice(2));
 const planPath = args.plan ? path.resolve(args.plan) : null;
 const shouldApply = Boolean(args.apply);
+const backupRequested = Boolean(args.backup);
 const backupConfirmed = Boolean(args['backup-confirmed']);
-const siteKey = args.site ?? 'wordpress';
+const siteKey = args.site ?? 'office';
 
 if (!planPath) {
   throw new Error(
-    'Usage: node tools/schedule-wordpress-posts.mjs --plan content/article-plan.json [--apply --backup-confirmed]',
+    'Usage: node tools/schedule-wordpress-posts.mjs --plan content/article-plan.json [--apply --backup --backup-confirmed]',
   );
 }
-if (shouldApply && !backupConfirmed) {
-  throw new Error('Refusing to write to WordPress without --backup-confirmed.');
+if (shouldApply && (!backupRequested || !backupConfirmed)) {
+  throw new Error(
+    'Refusing to write to WordPress without --backup --backup-confirmed.',
+  );
 }
 if (!fs.existsSync(planPath)) throw new Error(`plan not found: ${planPath}`);
 
@@ -52,9 +56,22 @@ function requireFuture(dateJst, label) {
   return dateJst;
 }
 
+function contentSha256(value) {
+  return crypto
+    .createHash('sha256')
+    .update(String(value || '').replace(/\\u002d/gi, '-'))
+    .digest('hex');
+}
+
 async function findBySlug(env, slug) {
-  const found = await wpRequest(env, 'GET', `/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&status=any&per_page=1`);
-  return Array.isArray(found) && found.length > 0 ? found[0] : null;
+  const response = await wpRequest(
+    env,
+    'GET',
+    `/wp-json/wp/v2/posts?context=edit&slug=${encodeURIComponent(slug)}&status=publish,draft,pending,private,future&per_page=100&_fields=id,slug,status,title,date,modified,link,featured_media,categories,excerpt,content`,
+  );
+  return Array.isArray(response.data) && response.data.length > 0
+    ? response.data[0]
+    : null;
 }
 
 async function uploadFeaturedImage(env, filePath, altText) {
@@ -83,7 +100,9 @@ async function uploadFeaturedImage(env, filePath, altText) {
 }
 
 const results = [];
-const env = shouldApply || args.check ? getWordPressEnv(siteKey) : null;
+const prepared = [];
+const existingSnapshots = [];
+const env = getWordPressEnv(siteKey);
 
 for (const [index, item] of (plan.articles ?? []).entries()) {
   const label = item.slug || `#${index}`;
@@ -113,6 +132,36 @@ for (const [index, item] of (plan.articles ?? []).entries()) {
     continue;
   }
   row.has_featured_image = Boolean(imagePath);
+  const source = fs.readFileSync(contentPath, 'utf8');
+
+  const existing = await findBySlug(env, item.slug);
+  if (existing) {
+    const expectedCategories = [...(item.categories ?? [])].sort((a, b) => a - b);
+    const actualCategories = [...(existing.categories ?? [])].sort((a, b) => a - b);
+    const matchesPlan =
+      existing.slug === item.slug &&
+      existing.status === 'future' &&
+      existing.date === item.publish_at &&
+      (existing.title?.raw ?? '') === item.title &&
+      (existing.excerpt?.raw ?? '') === (item.excerpt ?? '') &&
+      contentSha256(existing.content?.raw) === contentSha256(source) &&
+      (!imagePath || Number(existing.featured_media || 0) > 0) &&
+      JSON.stringify(actualCategories) === JSON.stringify(expectedCategories);
+    if (!matchesPlan) {
+      throw new Error(
+        `${label}: an existing post uses this slug but does not match the reviewed plan (post ${existing.id}).`,
+      );
+    }
+    row.action = 'exists_verified';
+    row.post_id = existing.id;
+    row.status = existing.status;
+    row.featured_media = existing.featured_media;
+    row.categories = existing.categories;
+    row.verified = true;
+    existingSnapshots.push(existing);
+    results.push(row);
+    continue;
+  }
 
   if (!shouldApply) {
     row.action = 'would_schedule';
@@ -120,19 +169,49 @@ for (const [index, item] of (plan.articles ?? []).entries()) {
     continue;
   }
 
-  const existing = await findBySlug(env, item.slug);
-  if (existing) {
-    row.action = 'exists_untouched';
-    row.post_id = existing.id;
-    row.status = existing.status;
-    results.push(row);
-    continue;
-  }
+  row.action = 'ready_to_schedule';
+  results.push(row);
+  prepared.push({ item, contentPath, imagePath, source, row });
+}
+
+let backupDirectory = null;
+if (shouldApply) {
+  backupDirectory = path.resolve(
+    'backups',
+    `wp-scheduled-posts-${safeStamp()}`,
+  );
+  fs.mkdirSync(backupDirectory, { recursive: true, mode: 0o700 });
+  fs.chmodSync(backupDirectory, 0o700);
+  const backupPath = path.join(backupDirectory, 'pre-change-snapshot.json');
+  fs.writeFileSync(
+    backupPath,
+    `${JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        site: env.siteUrl,
+        planPath,
+        plan,
+        existingPosts: existingSnapshots,
+        postsToCreate: prepared.map(({ item }) => ({
+          slug: item.slug,
+          title: item.title,
+          publish_at: item.publish_at,
+        })),
+      },
+      null,
+      2,
+    )}\n`,
+    { mode: 0o600 },
+  );
+  fs.chmodSync(backupPath, 0o600);
+}
+
+for (const { item, imagePath, source, row } of prepared) {
 
   const payload = {
     title: item.title,
     slug: item.slug,
-    content: fs.readFileSync(contentPath, 'utf8'),
+    content: source,
     excerpt: item.excerpt ?? '',
     status: 'future',
     date: item.publish_at,
@@ -142,12 +221,42 @@ for (const [index, item] of (plan.articles ?? []).entries()) {
   if (imagePath) {
     payload.featured_media = await uploadFeaturedImage(env, imagePath, item.featured_image_alt ?? item.title);
   }
-  const created = await wpRequest(env, 'POST', '/wp-json/wp/v2/posts', payload);
+  const createdResponse = await wpRequest(
+    env,
+    'POST',
+    '/wp-json/wp/v2/posts',
+    payload,
+  );
+  const created = createdResponse.data;
+  const verifiedResponse = await wpRequest(
+    env,
+    'GET',
+    `/wp-json/wp/v2/posts/${created.id}?context=edit&_fields=id,slug,status,title,date,link,featured_media,categories,excerpt,content`,
+  );
+  const verified = verifiedResponse.data;
+  const expectedCategories = [...(payload.categories ?? [])].sort((a, b) => a - b);
+  const actualCategories = [...(verified.categories ?? [])].sort((a, b) => a - b);
+  if (
+    verified.slug !== item.slug ||
+    verified.status !== 'future' ||
+    verified.date !== item.publish_at ||
+    (verified.title?.raw ?? '') !== item.title ||
+    (verified.excerpt?.raw ?? '') !== (item.excerpt ?? '') ||
+    contentSha256(verified.content?.raw) !== contentSha256(source) ||
+    Number(verified.featured_media || 0) !== Number(payload.featured_media || 0) ||
+    JSON.stringify(actualCategories) !== JSON.stringify(expectedCategories)
+  ) {
+    throw new Error(
+      `Post verification failed for ${item.slug}. Backups: ${backupDirectory}`,
+    );
+  }
   row.action = 'scheduled';
-  row.post_id = created.id;
-  row.status = created.status;
-  row.link = created.link;
-  results.push(row);
+  row.post_id = verified.id;
+  row.status = verified.status;
+  row.link = verified.link;
+  row.featured_media = verified.featured_media;
+  row.categories = verified.categories;
+  row.verified = true;
 }
 
 const summary = results.reduce((acc, r) => {
@@ -155,7 +264,13 @@ const summary = results.reduce((acc, r) => {
   return acc;
 }, {});
 
-const report = { mode: shouldApply ? 'apply' : 'dry-run', at: safeStamp(), summary, results };
+const report = {
+  mode: shouldApply ? 'apply' : 'dry-run',
+  at: safeStamp(),
+  backupDirectory,
+  summary,
+  results,
+};
 console.log(JSON.stringify(report, null, 2));
 
 if (results.some((r) => r.action === 'scheduled')) {

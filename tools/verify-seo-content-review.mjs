@@ -123,13 +123,14 @@ record(
   'static home preserves the employer decision boundary',
 );
 record(
-  /復職日、勤務時間、夜勤・運転・残業の制限、再評価日/.test(staticHome),
+  /復職の可否、勤務条件、再評価時期/.test(staticHome),
   'static home describes concrete return-to-work conditions',
 );
 record(/復職判定面談を1件から/.test(staticHome), 'static home offers one-case return-to-work consultation');
 record(
-  /自社開発の産業衛生管理システム/.test(staticHome) && !/Casetra月額|月額契約/.test(staticHome),
-  'static home presents Casetra as the dx means without monthly sales copy',
+  /自社開発のCasetra/.test(staticHome) &&
+    /Casetraは別契約で導入は任意/.test(staticHome),
+  'static home presents Casetra as the dx means with the optional separate-contract boundary',
 );
 
 const greetingReview = await readFile(
