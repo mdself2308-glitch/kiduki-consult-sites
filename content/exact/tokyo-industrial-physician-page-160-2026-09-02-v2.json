@@ -1,0 +1,130 @@
+{
+  "exact_version": "2026-09-02-v2",
+  "state": "owner-review",
+  "purpose": "「産業医 東京」「東京 嘱託産業医」で検索する企業向けに、嘱託産業医ページ（page 160）を東京向けの本命ページとして増強する（1,014字→約3198字）",
+  "target": {
+    "channel": "wordpress-page",
+    "wordpress_post_id": 160,
+    "slug": "sangyoui",
+    "publication_status": "publish",
+    "current_modified": "2026-09-02T09:06:02",
+    "expected_remote_source_sha256": "7ebe6172faf2c564312f613391194118098bd9aa6560ad19ad4850faaf73e52e",
+    "published_url": "https://kdkconslt-sngyouijm.com/service/sangyoui/"
+  },
+  "search_intent": {
+    "audience": "東京都内の事業場で産業医の選任・交代・継続契約を検討している人事・総務・経営者",
+    "primary_query_hypothesis": "産業医 東京",
+    "secondary_query_hypotheses": [
+      "東京 嘱託産業医",
+      "産業医 港区",
+      "産業医 選任 東京",
+      "産業医 契約 東京"
+    ],
+    "main_question": "東京で嘱託産業医を頼むとき、義務・訪問頻度・契約の形・費用の決まり方はどうなるか",
+    "primary_landing": "/contact/",
+    "target_offer": "KIDUKI Retain"
+  },
+  "copy": {
+    "title": "東京の嘱託産業医｜選任・定例業務から睡眠・夜勤・復職まで",
+    "h1": "東京の嘱託産業医｜選任・定例業務から睡眠・夜勤・復職まで",
+    "meta_description": "東京・港区新橋の産業医事務所が、常時50人以上の事業場の産業医選任、職場巡視、衛生委員会、健診事後措置、面接指導を継続して担当。睡眠・夜勤・運転・復職の判断まで一つの契約で支援します。",
+    "excerpt": "東京の企業・事業場向けに、産業医の選任と定例業務（職場巡視、衛生委員会、健診事後措置、面接指導）を継続して担当し、睡眠・夜勤・運転・休職・復職の判断まで支援する嘱託産業医サービスです。",
+    "cta_label": "初回のご相談（15分）",
+    "body_path": "content/exact/tokyo-industrial-physician-page-160-2026-09-02-v2-body.html",
+    "body_sha256": "ac55017814da2ce736a8321137358079e42419e451b90a47f3c418a78774a393",
+    "primary_cta": {
+      "label": "初回のご相談（15分）",
+      "href": "https://kdkconslt-sngyouijm.com/contact/",
+      "target_offer": "kiduki-retain"
+    },
+    "secondary_cta": null
+  },
+  "changes_from_current_body": [
+    "導入文に東京・港区新橋の拠点と訪問／オンライン併用を追加",
+    "「こんな状況」5項目を追加",
+    "H2「産業医の選任義務と、契約前に確認する法令の基本」（安衛法13条・13条の2、施行令5条、安衛則13条・15条、e-Govリンク）を追加",
+    "H2「対応エリアと、訪問・オンラインの形」を追加",
+    "H2「嘱託産業医・顧問支援・単発相談の違い」の表を追加",
+    "H2「よくあるご質問」5問＋FAQPage構造化データを追加",
+    "CTAラベルを「初回のご相談（15分）」へ統一",
+    "関連する記事に復職面談の進め方を追加（公開済み）",
+    "既存の業務説明・境界文・Casetraの契約関係は維持"
+  ],
+  "canonical_source_bindings": [
+    {
+      "path": "kiduki/docs/pricing-growth-canonical.md",
+      "sha256": "2dfbe7df63194c9b77e69f00abc266d3f4a0f1257330774bc87a70da759a4974",
+      "supports": "Retain（選任・定例業務・継続責任）、Basic、単発、CASETRAの分岐。金額は掲載しない方針"
+    },
+    {
+      "path": "kiduki/docs/bpo-scope-boundary.md",
+      "sha256": "722f0a6d31402f142403b46fb654aa68132aba2c008fe24cda9b2a7c0b7d78ef",
+      "supports": "決定と実行は会社、評価と意見まで、診断・治療はしない"
+    },
+    {
+      "path": "kiduki/docs/copy/site-copy.md",
+      "sha256": "9094560c51b07d7e4760c76545e36e019b74f95f90f542e2882b0fccf3ed3d60",
+      "supports": "CTA統一表記、医療広告境界、禁止語"
+    },
+    {
+      "path": "source/wordpress/page-160-sangyoui.html",
+      "sha256": "7ebe6172faf2c564312f613391194118098bd9aa6560ad19ad4850faaf73e52e",
+      "supports": "現行公開本文（差し替え前ベースライン、2026-09-02 09:06 反映版）"
+    }
+  ],
+  "external_source_bindings": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/347AC0000000057",
+      "verified_date": "2026-09-02",
+      "supports": "労働安全衛生法13条（産業医の選任）、13条の2（50人未満の努力義務）"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/347CO0000000318",
+      "verified_date": "2026-09-02",
+      "supports": "施行令5条（常時50人以上）"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/347M50002000032",
+      "verified_date": "2026-09-02",
+      "supports": "安衛則13条（14日以内の選任・報告、専属産業医の要件）、15条（職場巡視の頻度）"
+    }
+  ],
+  "review_assertions": {
+    "legal_thresholds_cited_with_primary_source": true,
+    "company_final_decision_present": true,
+    "diagnosis_and_treatment_boundary_present": true,
+    "patient_choice_and_no_specific_referral_present": true,
+    "no_prices_or_free_wording": true,
+    "no_speed_or_outcome_guarantees": true,
+    "pack_absent": true,
+    "faq_jsonld_matches_visible_faq": true,
+    "only_published_articles_linked": true,
+    "no_h1_style_or_document_shell_in_body": true
+  },
+  "required_body_strings": [
+    "常時50人以上の労働者を使用する事業場",
+    "14日以内",
+    "少なくとも毎月1回",
+    "就業上の最終決定は会社が担い",
+    "受診先はご本人が選びます",
+    ">初回のご相談（15分）</a>",
+    "対応エリアと、訪問・オンラインの形"
+  ],
+  "forbidden_body_strings": [
+    ">嘱託産業医について相談する</a>",
+    "無料",
+    "併設",
+    "クリニック",
+    "一気通貫",
+    "睡眠専門医",
+    "Pack",
+    "円"
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}

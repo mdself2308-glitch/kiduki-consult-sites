@@ -203,3 +203,5 @@ Site Kitのユーザー別メールレポート設定はREST readbackで `subscr
 ## 検索順位の回復計画（2026-09-02）
 
 診断・技術修正・承認シートは `seo-ranking-recovery-plan-2026-09-02.md`（チケット `tasks/CT-20260902-seo-ranking-recovery.md`）を正とする。子テーマの検索土台（タイトル区切り、excerptからのmeta description、事務所・サイト構造化データ、noindex受け皿）は `npm run verify:seo-hardening`、内部リンク候補は `npm run verify:internal-link-candidates`、スポットv3の承認bindingは `npm run verify:spot-page-v3-binding` で確認する。いずれもローカル検証であり、本番反映・インデックス・順位の証拠ではない。旧記事の整理候補は `evidence/old-article-triage-2026-09-02.json` に置き、Search Console 確認と宮部大輔の決定前に noindex・301 を実行しない。
+
+2026-09-02以降、宮部大輔の承認は「B OK」のような記号＋OKの一言で受け、`node tools/record-owner-approval.mjs --codes B --message "<先生の発言>"` がその時点のexactファイルのSHA-256・日時を `evidence/owner-approvals-2026-09.json` と各チケットへ記録する。ハッシュは先生に書かせない。承認記録の後に、各applyスクリプトの dry-run→backup→apply→readback を行う。

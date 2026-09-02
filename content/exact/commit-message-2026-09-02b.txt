@@ -1,0 +1,15 @@
+Speed up the static home and link it to the DX service page
+
+Google Fonts now load without blocking first paint (preload plus
+media=print swap, Inter and the unused 900 weight dropped), the page
+gets a <main> landmark, and the footer credential line meets the 4.5:1
+contrast ratio. The 産業衛生DX block links to /service/cloud/ before the
+external Casetra link. Records the 2026-09-02 owner decisions (no ads,
+no 社労士 route, DX in scope), the strategy evidence, owner guides, the
+one-word approval protocol and recorder, and the prepared candidates
+(DX page v2, FAQ H1 fix, casetra.jp link spec, header WebP).
+
+Pack/SPOT GA4 privacy candidates stay out of this commit pending their
+own approval (code P).
+
+Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>

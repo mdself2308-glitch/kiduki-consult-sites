@@ -48,7 +48,9 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"睡眠に特化しているとのことですが、通常の産業医業務も頼めますか？","acceptedAnswer":{"@type":"Answer","text":"はい。衛生委員会、職場巡視、健診事後措置、面接指導、復職支援、ストレスチェックなどの法定業務を中核に担い、睡眠の専門性を日々の産業医活動に組み込みます。睡眠状態が安全、健康、就業に及ぼす影響を評価し、就業上の配慮や職場の健康施策につなげます。"}},{"@type":"Question","name":"睡眠の研修や復職判定面談を単発で頼めますか？","acceptedAnswer":{"@type":"Answer","text":"はい。睡眠研修、睡眠に関する健康経営施策、急な復職判定面談は1件からご相談いただけます。"}},{"@type":"Question","name":"産業医から受診を勧められた場合、医療機関は指定されますか？","acceptedAnswer":{"@type":"Answer","text":"いたしません。受診が必要と考えられる場合にその旨をお伝えすることはありますが、医療機関はご本人がお選びになります。必要な情報連携は、ご本人の同意を得て主治医と行います。"}},{"@type":"Question","name":"会社側にはどのような作業が残りますか？","acceptedAnswer":{"@type":"Answer","text":"会社としての最終決定と職場での実施は、企業側に行っていただきます。継続契約でCasetraを利用する場合は、予約、資料回収、記録、進捗確認、再評価の標準化をKIDUKIとCasetraが支援します。"}},{"@type":"Question","name":"産業衛生の知識がなくても回せますか？","acceptedAnswer":{"@type":"Answer","text":"手順書とチェックリスト、役割分担表をご用意します。何を誰がいつ行うかが決まっていれば、担当者が変わっても進められる形にできます。"}},{"@type":"Question","name":"Casetraの契約は必須ですか？","acceptedAnswer":{"@type":"Answer","text":"単発の面談・研修には必要ありません。継続契約では、睡眠に特化した産業医業務とCasetraを組み合わせる形を基本にご提案します。Casetraは別契約で導入は任意ですが、利用しない場合はCasetraによるDX支援は含まれません。"}},{"@type":"Question","name":"急ぎの対応はできますか？","acceptedAnswer":{"@type":"Answer","text":"お急ぎの場合は、フォーム送信後の自動返信メールに【至急】と添えてご返信ください。枠に空きがあれば、48時間以内にご相談をお受けできます。"}},{"@type":"Question","name":"DXで生まれた時間を何に使えますか？","acceptedAnswer":{"@type":"Answer","text":"睡眠研修、SAS対策、夜勤・運転業務の眠気対策、復職後の再評価など、事業場ごとの健康施策に使える時間を増やします。"}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap"></noscript>
   <style>
     :root {
       --color-primary: #1d3a30;
@@ -1236,7 +1238,7 @@
 
     /* ===== Phase 2 追加スタイル ===== */
     /* 明朝をやめた分、太さと字間で見出しの格を出す */
-    h1 { font-weight: 900; letter-spacing: 0.005em; }
+    h1 { font-weight: 700; letter-spacing: 0.005em; }
     h2 { font-weight: 700; letter-spacing: 0.02em; }
     .service-card h4, .trust-name { font-weight: 700; letter-spacing: 0.01em; }
     /* 見出しのみ明朝。本文・UIラベルはゴシックを維持 */
@@ -1297,6 +1299,8 @@
     .casetra-link { display: inline-flex; align-items: center; gap: 8px; color: var(--color-accent-soft);
       font-weight: 600; font-size: .9rem; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
     .casetra-link:hover { color: var(--color-white); }
+    .casetra-link--external { margin-left: 24px; }
+    @media (max-width: 768px) { .casetra-link--external { display: inline-flex; margin-left: 0; margin-top: 12px; } }
     .service-spot { margin-top: 24px; font-size: .88rem; text-align: center; }
 
     .ops-section { background: var(--color-bg); }
@@ -1347,7 +1351,7 @@
       align-items: flex-start; text-align: left; margin-bottom: 32px; }
     .footer-tagline { font-size: .88rem; margin: 12px 0 16px; }
     .footer-rep { font-size: .88rem; color: var(--color-text-inverse); line-height: 1.9; }
-    .footer-rep span { font-size: .8rem; opacity: .75; }
+    .footer-rep span { font-size: .8rem; color: var(--color-accent-soft); }
     .footer-nav { display: grid; gap: 10px; }
     .footer-nav a { font-size: .88rem; }
     .footer-contact-note { font-size: .84rem; margin-bottom: 20px; text-align: left; }
@@ -1515,6 +1519,7 @@
   </header>
 
   <!-- Hero -->
+  <main>
   <section class="hero" id="top">
     <div class="container">
       <div class="hero-content">
@@ -1736,7 +1741,8 @@
         <h3>Casetraの利用について</h3>
         <p>単発の面談・研修は、Casetraの契約なしでご依頼いただけます。</p>
         <p>継続契約では、睡眠に特化した産業医業務とCasetraを組み合わせる形を基本にご提案します。Casetraは別契約で導入は任意ですが、利用しない場合はCasetraによるDX支援は含まれません。</p>
-        <a class="casetra-link" href="https://casetra.jp/?utm_source=kdk-consult&amp;utm_medium=referral&amp;utm_campaign=top-service" target="_blank" rel="noopener">Casetraについて見る（別サイト）</a>
+        <a class="casetra-link" href="https://kdkconslt-sngyouijm.com/service/cloud/">産業衛生DX・Casetraの詳細（事務所サイト）</a>
+        <a class="casetra-link casetra-link--external" href="https://casetra.jp/?utm_source=kdk-consult&amp;utm_medium=referral&amp;utm_campaign=top-service" target="_blank" rel="noopener">Casetraについて見る（別サイト）</a>
       </div>
     </div>
   </section>
@@ -2148,6 +2154,8 @@
   </section>
 
   <!-- Footer -->
+  </main>
+
   <footer>
     <div class="container">
       <div class="footer-top">

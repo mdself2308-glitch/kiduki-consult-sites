@@ -8,7 +8,7 @@ risk_tier: S
 status: owner-review
 owner_decision: pending
 created: 2026-09-01
-last_verified: 2026-09-01
+last_verified: 2026-09-02
 draft_reference: /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/content/articles/kenko-keiei-sleep-measures.html
 exact_version: 2026-09-01-v6
 exact_version_sha256: ee09bec5156296a22fffaa2d03cc7e47597df829da283a92f1dc8b9f91e39106
@@ -44,7 +44,7 @@ published_verified_at:
 | Source | Verified date | Supports | Does not support |
 |---|---|---|---|
 | /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/content/articles/kenko-keiei-sleep-measures.html | 2026-09-01 | 公開/予約版の本文、CTA、記事内根拠 | 検索成果、owner/physician approval |
-| https://www.meti.go.jp/shingikai/mono_info_service/health_management/003.html | 2026-09-01 | 記事内の主要な公的・一次根拠 | KIDUKIの商品適合、契約成果 |
+| https://www.meti.go.jp/shingikai/mono_info_service/health_management/003.html | 2026-09-02 | 記事内の主要な公的・一次根拠 | KIDUKIの商品適合、契約成果 |
 | /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/kiduki/docs/pricing-growth-canonical.md | 2026-09-01 | 現行商品、料金、単発/Pack/Basic/Retain/CASETRA境界 | 医療事実、検索成果 |
 | /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/kiduki/docs/bpo-scope-boundary.md | 2026-09-01 | KIDUKI、企業、医師、CASETRAの履行境界 | 検索需要、CTR |
 | /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/kiduki/docs/core-thesis.md | 2026-09-01 | 事業原理と契約導線 | 個別CTAの承認、契約実績 |
@@ -85,6 +85,7 @@ published_verified_at:
 | High | 記事末CTA | v1は非復職の単発研修を副商品にしたが、正式SKU・料金・履行条件が正本で未確定 | 独立Tier Sレビュー / pricing-growth-canonical.md / site-copy.md | Basicを主着地、Retainを副着地とするv2へ修正 | accepted / repaired locally |
 | Medium | 計測 | 記事からサービスへの遷移元を判別できない | seo-measurement-spec.md | article slug、offer、CTA roleを非PIIで付与 | accepted / repaired locally |
 | Medium | Source pack | 商品導線を記載しているが商品・BPO・医療広告の正本がSource packになかった | 独立Tier Sレビュー | 4つの現行正本を支持/非支持範囲付きで追加 | accepted / repaired |
+| Low | 公的根拠リンク | Broken Link CheckerがMETIの主要根拠URLを403として報告したが、通常のブラウザでは公式ページと資料が正常表示された | 2026-09-02 Chrome実表示 / WordPress Broken Link Checker | 記事本文は変更せず「リンクエラーでない」として誤検知を解除 | accepted / no content change |
 
 ## Completion evidence
 
@@ -95,6 +96,7 @@ published_verified_at:
 - Human approval: evidence未添付
 - Schedule record: WordPress post 1848、2026-09-15 07:00 JST予約を確認
 - Post-publication review record: 7d 2026-09-22T08:00:00+09:00（sj8d2g12b42dun4i5p7cgq1dl4）、28d 2026-10-13T08:20:00+09:00（kpfi36jec6padaimigds2mf8u8）、90d 2026-12-14T08:50:00+09:00（j62f2p7esjgioao00jtg9cdhgo）。Google Calendar APIで2026-09-01に確認
+- Link hygiene: 2026-09-02、METIの主要根拠URLを通常のChromeで開き、公式ページ「第3回 健康経営推進検討会」と資料の正常表示を確認。Broken Link Checkerの403は自動取得に対する誤検知として解除。別件で残っていた旧Azure URLは、WordPress編集原文・公開HTML・リポジトリのいずれにも存在しないため、本文を変更せず古い通知記録だけを「無視」へ移動。最終リンクエラー件数0。
 - Published verification:
 - Measurement source and period:
 - Remaining gates: exact versionのowner/physician approval evidence、研修範囲の確認、公開後のSearch Consoleと契約測定
@@ -112,3 +114,4 @@ published_verified_at:
 | 2026-09-01 | owner-review | owner-review | full-bodyのscope・理由・変更前WordPressハッシュを承認バンドルSHA-256へ結合し、2026-09-01-v5へ固定 |
 | 2026-09-01 | owner-review | owner-review | CASETRA PackのP-01/P-02未実施を再照合。公開CTAとtarget offerからPackを除外した一括bundle 2026-09-01-v6へ再固定し、20:37 JSTのread-only dry-runで現行WordPress baseline一致を確認。未承認・未反映 |
 | 2026-09-01 | owner-review | owner-review | 独立Tier Sレビューを受け、未確定の非復職単発研修を外し、Basic/Retain導線のv2へ修正 |
+| 2026-09-02 | owner-review | owner-review | METI根拠URLの403通知を実ブラウザで誤検知と確認し解除。公開本文は変更せず、別件の旧Azure URLも現行ページ不在を3箇所で確認して古い通知のみ無視へ移動。Broken Link Checkerのリンクエラー0件を再読込で確認 |

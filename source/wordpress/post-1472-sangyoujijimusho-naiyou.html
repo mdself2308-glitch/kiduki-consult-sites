@@ -1,0 +1,1852 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="産業医事務所の定義と役割、業務内容、外部委託のメリット、選び方について解説。企業の人事・総務担当者や経営層必見の情報です。">
+    <title>産業医事務所とは？企業が知っておくべき基本機能とメリット</title>
+    <style>
+        :root {
+            --primary-color: #1e7361;
+            --secondary-color: #0a5446;
+            --accent-color: #4caf9d;
+            --light-color: #f4f9f8;
+            --dark-color: #1a3a36;
+            --text-color: #2d3a38;
+            --border-color: #d0e8e3;
+            --shadow: 0 8px 20px rgba(10, 84, 70, 0.08);
+            --radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: #f8fcfb;
+            margin: 0;
+            padding: 0;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 50px;
+            margin: 20px auto;
+            border: 1px solid rgba(76, 175, 157, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at top right, rgba(76, 175, 157, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+        
+        .toc {
+            background-color: var(--light-color);
+            border-radius: var(--radius);
+            padding: 35px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(10, 84, 70, 0.06);
+        }
+        
+        .toc::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+        
+        .toc h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .toc h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .toc ul li {
+            margin-bottom: 18px;
+            position: relative;
+        }
+        
+        .toc ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .toc a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            padding: 3px 0;
+            font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        h2 {
+            font-size: 2.1rem;
+            color: var(--primary-color);
+            margin: 60px 0 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin: 40px 0 20px;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            display: inline-block;
+            clear: both; /* 追加：画像の影響を受けないように */
+            width: 100%; /* 追加：幅を確保 */
+        }
+        
+        h3::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            opacity: 0.6;
+        }
+        
+        p {
+            margin-bottom: 22px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+            font-weight: 300;
+        }
+        
+        .feature-image {
+            width: 100%;
+            border-radius: var(--radius);
+            margin: 35px 0;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+            clear: both; /* 追加：フロートを解除 */
+            display: block; /* 追加：ブロック要素として表示 */
+        }
+        
+        .feature-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(30, 115, 97, 0.1), rgba(76, 175, 157, 0.05));
+            border-radius: var(--radius);
+            pointer-events: none;
+        }
+        
+        .feature-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(10, 84, 70, 0.12);
+        }
+        
+        .highlight-box {
+            background-color: rgba(30, 115, 97, 0.04);
+            border-left: 5px solid var(--primary-color);
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(10, 84, 70, 0.05);
+        }
+        
+        .highlight-box::before {
+            content: """;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(30, 115, 97, 0.08);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-left: 3px solid var(--accent-color);
+            background-color: rgba(76, 175, 157, 0.05);
+            position: relative;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            box-shadow: 0 3px 10px rgba(10, 84, 70, 0.03);
+        }
+        
+        ul, ol {
+            margin: 20px 0 25px 20px;
+            font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 5px;
+            line-height: 1.7;
+        }
+        
+        ul li::marker {
+            color: var(--accent-color);
+        }
+        
+        ol li::marker {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 35px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(76, 175, 157, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10, 84, 70, 0.1);
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .card-title::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        .feature-item {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(76, 175, 157, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .feature-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at top right, rgba(76, 175, 157, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10, 84, 70, 0.1);
+        }
+        
+        .feature-item h4 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .feature-item h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(30, 115, 97, 0.1), rgba(76, 175, 157, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(10, 84, 70, 0.08);
+        }
+        
+        .references {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 40px 0 20px;
+        }
+        
+        .references h3 {
+            margin-top: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 800 800"><g fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"><path d="M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"/><path d="M-31 229L237 261 390 382 731 737M520 660L309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"/><path d="M520 660L309 538 295 764 731 737M520 660L309 538 40 599M520 660L309 538M520 660L126.5 879.5M520 660L731 737M520 660L309 538M126.5 879.5L40 599-197 493 102 382-31 229M126.5 879.5L309 538"/></g></svg>'),
+                  linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 50px;
+            border-radius: var(--radius);
+            margin: 50px 0;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(10, 84, 70, 0.15);
+            position: relative;
+            overflow: hidden;
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        .cta-section p {
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-section::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cta-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(30, 115, 97, 0.08);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .references {
+            background-color: var(--light-color);
+            padding: 35px;
+            border-radius: var(--radius);
+            margin: 50px 0 30px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(10, 84, 70, 0.05);
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        .references h3 {
+            margin-top: 0;
+        }
+        
+        .references ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .references ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .references ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .references a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px dashed rgba(30, 115, 97, 0.3);
+            padding-bottom: 2px;
+        }
+        
+        .references a:hover {
+            color: var(--accent-color);
+            border-bottom-style: solid;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 30px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .toc {
+                padding: 25px;
+            }
+        }
+        
+        /* 装飾的な要素 */
+        .decorative-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(76, 175, 157, 0), rgba(76, 175, 157, 0.3), rgba(76, 175, 157, 0));
+            margin: 50px 0;
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-entry {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* 追加：セクション間のクリアフィックス */
+        section {
+            clear: both;
+        }
+        
+        /* 追加：目次が消えているので修正 */
+        .toc {
+            display: block; /* 追加 */
+        }
+    </style>
+</head>
+<body class="animate-entry">
+    <div class="container">
+        <main class="main-content">
+            <div class="intro-section">
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/黄色-華やか-花-X-Twitter-ヘッダー-2-e1742253012317.png" alt="産業医事務所のイメージ" class="feature-image">
+                
+                <p>現代の企業経営において、従業員の健康管理やメンタルヘルス対策は不可欠な要素となっています。労働安全衛生法に基づく産業医の選任やストレスチェックの実施は法令遵守の観点からも必須であり、多くの企業が「産業医事務所」の専門的サポートを活用しています。</p>
+                
+                <p>本記事では、産業医事務所の定義から具体的な業務内容、外部委託のメリット、選定ポイントまで、人事・総務担当者や経営層が知っておくべき情報を網羅的に解説します。特に内科専門医・心療内科専門医・労働衛生コンサルタント資格を持つ専門家による高度なサポートが、いかに企業の健康経営と従業員の健康維持に貢献するかをご紹介します。</p>
+                
+                <div class="decorative-line"></div>
+            </div>
+     
+            
+            <section id="definition">
+                <h2>1. 産業医事務所とは？定義と役割</h2>
+                
+                <h3>1-1. 産業医事務所の定義</h3>
+                
+                <div class="highlight-box">
+                    <p><strong>産業医事務所</strong>とは、企業が労働安全衛生法上で義務づけられる「産業医」の役割を担う専門的な機関です。常時50人以上の従業員を使用する事業場では、産業医の選任と労働基準監督署への届け出が求められます。企業ごとに専属の産業医を雇用できない場合や、より高度な専門性を求める場合に、外部の産業医事務所を利用するケースが一般的になっています。</p>
+                </div>
+                
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/黄色-華やか-花-X-Twitter-ヘッダー-e1742251916979.png" class="feature-image">
+                
+                <h3>1-2. 産業医事務所が果たす役割</h3>
+                
+                <p>企業の人事・総務部門は、健康診断やストレスチェックなど、従業員の健康管理業務を担う必要があります。しかし、医療や労働衛生の専門知識がないなかで、法令に沿った形で業務を行うのは容易ではありません。そこで産業医事務所が以下のようにサポートします。</p>
+                
+                <ul>
+                    <li><strong>健康診断の実施・結果管理</strong></li>
+                    <li><strong>メンタルヘルスケア（ストレスチェック、面接指導など）</strong></li>
+                    <li><strong>労働安全衛生法に基づく職場巡視・環境改善のアドバイス</strong></li>
+                    <li><strong>従業員の休職・復職支援</strong></li>
+                    <li><strong>健康経営の推進サポート</strong></li>
+                </ul>
+                
+                <p>企業としては、外部の専門家の力を借りることで、法令遵守と従業員の健康管理を両立しやすくなります。</p>
+                
+                <div class="quote">
+                    <p>参考：<a href="https://www.mhlw.go.jp/content/000501079.pdf" target="_blank">厚生労働省「労働安全衛生法における産業医の役割」</a><br>
+                    ※厚生労働省公式サイトには、産業医の選任義務や職務内容が詳しく掲載されています。</p>
+                </div>
+            </section>
+            
+            <section id="services">
+                <h2>2. 産業医事務所の主な業務内容</h2>
+                
+               <h3>2-1. 健康診断のサポートと結果管理</h3>
+                
+<p>企業は年1回以上、定期健康診断を実施する義務があります。しかし、実際には診断機関の手配やスケジュール調整、従業員への周知、結果の管理といった事務作業に手間がかかりがちです。</p>
+                
+<p>産業医事務所を活用すれば、次のようなサポートを受けられます：</p>
+                
+<ol>
+    <li>健康診断の就労判定</li>
+    <li>健康診断結果の集計・分析</li>
+    <li>必要に応じた医師面接や保健指導の補助</li>
+</ol>
+                
+<p>企業の人事・総務担当者の負担を減らし、従業員の健康管理をスムーズに行うことが可能となります。</p>
+
+<style>
+.modern-link-container {
+    margin: 25px 0;
+    padding: 0;
+}
+.modern-link {
+    display: inline-flex;
+    align-items: center;
+    color: #2c5282;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 20px;
+    background-color: #f0f7ff;
+    border-left: 4px solid #3182ce;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.modern-link:hover {
+    background-color: #e6f0fd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+.modern-link-icon {
+    margin-right: 12px;
+    font-size: 20px;
+}
+.modern-link-text {
+    font-size: 15px;
+}
+.modern-link-arrow {
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+.modern-link:hover .modern-link-arrow {
+    transform: translateX(3px);
+}
+</style>
+
+<p>当事務所では内科専門医・心療内科専門医・労働衛生コンサルタントとしての知見を活かし、従業員への医学的な助言や組織マネジメント面でのアドバイスを行います。
+また、健康診断事後措置サポートも提供しています。</p>
+
+<div class="service-highlight" style="background: #f5f9f7; border: 1px solid #e0e0e0; border-radius: 4px; padding: 25px; margin: 30px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); animation: fadeInDown 2s ease 3.5s forwards; opacity: 0; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)';">
+    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+        <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/Untitled-design-14.png" alt="健康診断アイコン" style="width: 80px; height: 80px; margin-right: 15px; border-radius: 50%; object-fit: cover;" />
+        <h3 style="color: #03472f; margin: 0; font-size: 20px; font-weight: bold;">健康診断事後措置サポート</h3>
+    </div>
+    
+    <p style="margin-bottom: 15px;">従業員の健康診断事後措置の業務負担を軽減します。産業医による健康診断の判定から事後措置の意見、労働基準監督署への提出書類の作成まで一貫してサポート。</p>
+    
+    <div style="background: white; padding: 10px 15px; border-left: 3px solid #daa520; margin-bottom: 15px;">
+        <strong style="color: #03472f;">Point</strong>: <strong>従業員1人あたり1,500円〜。月額料金不要の単発利用で、コスト削減と業務効率化を実現します。</strong>
+    </div>
+    
+    <a href="https://kdkconslt-sngyouijm.com/jigoservice/" class="pulse-button" style="display: inline-block; background:#116e4e; color: white; padding: 8px 20px; text-decoration: none; border-radius: 3px; font-size: 14px;">Read More →</a>
+</div>
+<style>
+    /* ボタンのパルスエフェクト */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    .pulse-button {
+        animation: pulse 2s infinite;
+    }
+    
+    /* FadeIn Downアニメーション */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+                
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/黄色-華やか-花-X-Twitter-ヘッダー-3-e1742253000672.png" alt="健康診断のフロー" class="feature-image">
+                
+                <h3>2-2. メンタルヘルスケアとストレスチェック</h3>
+                
+                <p>ストレスチェック制度は、年1回の実施が義務づけられています。具体的には以下のプロセスが含まれます。</p>
+                
+                <ul>
+                    <li><strong>ストレスチェックの計画策定と実施</strong></li>
+                    <li><strong>結果の集計・分析</strong></li>
+                    <li><strong>高ストレス者への医師面接指導</strong></li>
+                    <li><strong>事後措置としての職場環境改善提案</strong></li>
+                </ul>
+                
+                <p>当事務所には、心療内科専門医としての経験をもつ産業医が在籍しているため、メンタルヘルス不調者の早期発見や面談対応に強みがあります。</p>
+                
+                <h3>2-3. 職場巡視・作業環境改善の助言</h3>
+                
+                <p>労働安全衛生法では、産業医が定期的に事業場を巡視し、職場環境におけるリスクを評価・指導することが求められています。たとえば、</p>
+                
+                <ul>
+                    <li><strong>作業環境測定</strong>（騒音・粉じん・温度・照明など）の確認</li>
+                    <li><strong>作業姿勢や負荷の評価</strong></li>
+                    <li><strong>有害物質を扱う場合の安全指導</strong></li>
+                </ul>
+                
+                <p>専門的な医療知識に加え、労働衛生コンサルタントとしての観点を融合させることで、法的基準をしっかり遵守しつつ、より実践的かつ企業にフィットした改善策を提示することが可能です。</p>
+                
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/黄色-華やか-花-X-Twitter-ヘッダー-4-e1742252988370.png" alt="職場巡視のイメージ" class="feature-image">
+                
+                <div class="decorative-line"></div>
+                
+                <h3>2-4. 面接指導・復職支援</h3>
+                
+                <p>長時間労働やメンタルヘルス不調で休職した従業員に対しては、産業医が面接指導を行い、必要に応じて勤務時間の短縮や業務内容の調整を助言します。また、休職者の復職プログラムを作成に協力し、上司や人事と連携して職場復帰をサポートすることも重要な役割です。</p>
+                
+                <p>心療内科専門医としての豊富な臨床経験を活かし、一人ひとりの症状や背景に合わせた復帰支援を行えるため、従業員の安心感と企業側のリスク管理の両面でメリットがあります。</p>
+                
+                <h3>2-5. 健康経営推進へのアドバイス</h3>
+                
+                <p>「健康経営優良法人」などの認定制度が注目されるなか、企業が健康経営に取り組む意義はますます大きくなっています。健康経営を成功させるには、単なる健康診断だけでなく、下記のような多角的な施策が欠かせません。        </p>
+                
+                <ul>
+                    <li><strong>従業員の運動習慣・食生活改善の推進</strong></li>
+                    <li><strong>メンタルヘルス対策の強化</strong></li>
+                    <li><strong>職場の働きやすさ・労働環境の整備</strong></li>
+                </ul>
+                
+                <p>産業医事務所は、従業員の健康データを踏まえた改善プランの立案や経営層へのプレゼンテーション支援を行い、組織全体での健康経営推進を後押しします。</p>
+            </section>
+          
+            <section id="benefits">
+             <h2 style="font-size: 28px; margin-bottom: 30px; color: #004d40; text-align: center;">3. 産業医事務所を外部委託するメリット</h2>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 30px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+    <div style="background-color: #fff; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center;">
+        <div style="width: 120px; height: 120px; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; background-color: #ffffff !important; border-radius: 50%; padding: 15px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none !important;"> 
+            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/Untitled-design-12-e1742256308610.png" alt="コスト面・契約形態の柔軟性" style="max-width: 90%; height: auto; object-fit: contain;" />
+        </div>
+        <h4 style="font-size: 20px; margin: 15px 0; color: #004d40;">コスト面・契約形態の柔軟性</h4>
+        <p style="margin: 0; font-size: 16px; color: #555; line-height: 1.6;">企業の規模やニーズに合わせた契約形態を選択でき、必要な分だけのコストで済ませることが可能です。</p>
+    </div>
+    
+    <div style="background-color: #fff; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center;">
+        <div style="width: 120px; height: 120px; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; background-color: #ffffff !important; border-radius: 50%; padding: 15px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none !important;"> 
+            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/Untitled-design-13-1-e1742256296665.png" alt="専門性の高い支援" style="max-width: 90%; height: auto; object-fit: contain;" />
+        </div>
+        <h4 style="font-size: 20px; margin: 15px 0; color: #004d40;">専門性の高い支援</h4>
+        <p style="margin: 0; font-size: 16px; color: #555; line-height: 1.6;">医療や労働衛生の知見をもった専門家による多角的な問題解決と最新情報の提供。</p>
+    </div>
+    
+    <div style="background-color: #fff; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center;">
+        <div style="width: 120px; height: 120px; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; background-color: #ffffff !important; border-radius: 50%; padding: 15px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none !important;"> 
+            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/Untitled-design-14-1-e1742256327573.png" alt="スムーズな法令遵守" style="max-width: 90%; height: auto; object-fit: contain;" />
+        </div>
+        <h4 style="font-size: 20px; margin: 15px 0; color: #004d40;">スムーズな法令遵守</h4>
+        <p style="margin: 0; font-size: 16px; color: #555; line-height: 1.6;">産業医選任やストレスチェック実施などの法令対応を一括サポート。</p>
+    </div>
+    
+    <div style="background-color: #fff; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center;">
+        <div style="width: 120px; height: 120px; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; background-color: #ffffff !important; border-radius: 50%; padding: 15px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none !important;"> 
+            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/Untitled-design-11-e1742256316686.png" alt="メンタルヘルス対策の強化" style="max-width: 90%; height: auto; object-fit: contain;" />
+        </div>
+        <h4 style="font-size: 20px; margin: 15px 0; color: #004d40;">メンタルヘルス対策の強化</h4>
+        <p style="margin: 0; font-size: 16px; color: #555; line-height: 1.6;">心療内科専門医の経験や知識を活かした効果的なメンタルヘルスケア。</p>
+    </div>
+</div>
+                
+                <h3>3-1. コスト面・契約形態の柔軟性</h3>
+                
+                <p>専属産業医を常時雇用すると、給与や社会保険、研修費などの固定費がかかります。一方、外部委託の場合は、企業の規模やニーズに合わせて契約形態を選択でき、必要な分だけのコストで済ませることが可能です。</p>
+                
+                <ul>
+                    <li><strong>事業所規模に合わせた複数のプラン</strong></li>
+                    <li><strong>訪問頻度や業務範囲を柔軟に調整</strong></li>
+                </ul>
+                
+                <p>このように、契約内容を柔軟に選択できる点が外部委託の大きな魅力です。</p>
+                
+                <style>
+/* 洗練されたカードリンクのスタイル */
+.elegant-card-link {
+    display: block;
+    width: 100%;
+    padding: 25px;
+    margin: 30px 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.elegant-card-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #004d40;
+    transition: all 0.3s ease;
+}
+
+.elegant-card-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.elegant-card-link:hover::after {
+    width: 8px;
+}
+
+.elegant-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.elegant-card-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.elegant-card-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: transparent;
+    vertical-align: middle;
+}
+
+.elegant-card-text {
+    margin-top: 15px;
+}
+
+.elegant-card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #004d40;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.elegant-card-description {
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.elegant-card-cta {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #004d40;
+    font-weight: 500;
+}
+
+.elegant-card-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 77, 64, 0.08);
+    border-radius: 50%;
+    margin-left: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.elegant-card-link:hover .elegant-card-arrow {
+    transform: translateX(5px);
+    background-color: rgba(0, 77, 64, 0.15);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .elegant-card-icon, 
+    .elegant-card-title {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .elegant-card-icon {
+        margin-right: 10px;
+    }
+}
+</style>
+
+<!-- 洗練されたカードリンクの実装例 -->
+<a href="https://kdkconslt-sngyouijm.com/service/" class="elegant-card-link">
+    <div class="elegant-card-content">
+        <div class="elegant-card-icon">
+            <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2023/08/cropped-b-3.png" alt="サポートアイコン">
+            <!-- 実際の画像パスに変更してください。画像がない場合は下記のSVGを使用できます -->
+            <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM9 17H7V10H9V17ZM13 17H11V7H13V17ZM17 17H15V13H17V17Z" fill="#004d40"/>
+            </svg> -->
+        </div>
+        <div class="elegant-card-title">当事務所のサポート</div>
+        <div class="elegant-card-text">
+            <div class="elegant-card-description">
+                産業医による健康診断後のフォローアップ、メンタルヘルス対策、労働環境改善など、企業の健康経営をサポートする包括的なサポートをご提供しています。
+            </div>
+            <div class="elegant-card-cta">
+                サポート詳細を見る
+                <span class="elegant-card-arrow">→</span>
+            </div>
+        </div>
+    </div>
+</a>
+               
+                
+                <h3>3-2. 専門性の高い支援と最新情報の提供</h3>
+                
+                <p>産業医事務所には、医療や労働衛生の知見をもった専門家が集まっています。当事務所は内科・心療内科・労働衛生コンサルタントとしての強みを活かして、多角的に問題を捉え、より実践的な解決策を提示します。</p>
+                
+                <p>また、多くのクライアント企業を支援しているため、最新の事例や法改正情報も常にアップデートされており、その情報を企業に迅速に提供できます。</p>
+                
+                <h3>3-3. 中小企業でもスムーズに法令遵守</h3>
+                
+                <div>
+                    <p>事業場では、産業医の選任やストレスチェックの実施などが法令で義務づけられていますが、特に中小企業では、担当者が兼任で手続きや管理を行うことが多く、負担が大きいのが現状です。</p>
+                    
+                    <p>産業医事務所を活用すれば、ストレスチェックの計画から実施までを一括サポートしてもらえるため、法令遵守に関する手間を大幅に削減できます。</p>
+
+　　　　　　　　　　　　<p>特に従業員50人未満の事業所でもストレスチェックが義務付けられました。下記記事ご参考ください。
+　　　　　　　　　　　　</p> 
+                  
+               <style>
+/* 横幅を広くしたカードリンクのスタイル */
+.card-link {
+    display: block;
+    width: 100%; /* コンテナの幅いっぱいに広げる */
+    max-width: 100%; /* 以前の最大幅制限を解除 */
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box; /* パディングを幅に含める */
+}
+
+.card-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-color: #004d40; /* ボトルグリーンを適用 */
+}
+
+.card-link-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #004d40; /* ボトルグリーン */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card-link-title-icon {
+    margin-right: 10px;
+}
+
+/* 画像アイコンのスタイル */
+.card-link-title-icon img {
+    width: 24px; /* 画像の幅 */
+    height: 24px; /* 画像の高さ */
+    object-fit: contain; /* 画像のアスペクト比を保持 */
+    vertical-align: middle; /* テキストとの位置合わせ */
+}
+
+.card-link-description {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.card-link-footer {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #004d40; /* ボトルグリーン */
+    font-weight: 500;
+}
+
+.card-link-arrow {
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+}
+
+.card-link:hover .card-link-arrow {
+    transform: translateX(5px);
+}
+
+/* カードをコンテナで囲む場合のスタイル */
+.card-container {
+    width: 100%;
+    padding: 0 15px; /* 必要に応じて左右のパディングを調整 */
+    margin: 0 auto; /* 中央揃え */
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+    .card-container {
+        max-width: 750px; /* タブレットサイズ */
+    }
+}
+
+@media (min-width: 992px) {
+    .card-container {
+        max-width: 970px; /* 小型デスクトップ */
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-container {
+        max-width: 1170px; /* 大型デスクトップ */
+    }
+}
+</style>
+
+<!-- カードコンテナとカードリンクの実装例（画像アイコン使用） -->
+<div class="card-container">
+    <a href="https://kdkconslt-sngyouijm.com/stresschecknew/" class="card-link">
+        <div class="card-link-title">
+            <span class="card-link-title-icon">
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/Untitled-design-15-1.png" alt="ストレスチェック">
+                <!-- 例：「/images/health-checkup-icon.png」などのパスに置き換えてください -->
+            </span>
+            <span>ストレスチェックが全事業所で義務化！対応方法について</span>
+        </div>
+        <div class="card-link-description">
+            ストレスチェックが50人未満の事業所でも義務化されました。
+        </div>
+        <div class="card-link-footer">
+            詳細を見る <span class="card-link-arrow">→</span>
+        </div>
+    </a>
+
+
+　　　　　　　　　　　
+
+                </div>
+                
+                <h3>3-4. メンタルヘルス対策の強化</h3>
+                
+                <p>心療内科専門医の経験や知識は、メンタルヘルスケア対策を行う上で大きな武器になります。外部の産業医事務所であれば、従業員との距離感が適度に保たれるため、個人のプライバシーや守秘義務も徹底しやすいというメリットがあります。</p>
+                
+                <p>第三者の立場から客観的に不調者の状況を評価し、必要なときに医師面接や休職・復職サポートを行うことで、組織全体のメンタルヘルス環境が格段に良くなる可能性があります。</p>
+                
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/黄色-華やか-花-X-Twitter-ヘッダー-6-e1742252961352.png" alt="メンタルヘルス対策" class="feature-image">
+                
+                <div class="decorative-line"></div>
+            </section>
+            
+            <section id="selection">
+                <h2>4. 産業医事務所を選ぶ際のポイント</h2>
+                
+                <div class="card">
+                    <div class="card-title">選定のポイント</div>
+                    <ul>
+                        <li><strong>産業医の専門分野と実績</strong> - 自社の課題に合った専門性を持つ産業医が在籍しているか</li>
+                        <li><strong>コミュニケーション体制とスピード感</strong> - 迅速な対応や緊急時の連絡体制が整っているか</li>
+                        <li><strong>地域密着型のネットワーク</strong> - 複数拠点がある場合、対応可能な範囲か</li>
+                        <li><strong>健康経営やITツール活用への柔軟性</strong> - データ管理やオンライン面談などに対応しているか</li>
+                    </ul>
+                </div>
+                
+                <h3>4-1. 産業医の専門分野と実績</h3>
+                
+                <p>産業医の経歴や専門領域は事務所によって異なります。たとえば</p>
+                
+                <ul>
+                    <li><strong>内科領域に強い産業医</strong></li>
+                    <li><strong>精神科・心療内科領域を専門とする産業医</strong></li>
+                    <li><strong>特定業種（化学物質取扱い現場など）に精通した産業医</strong></li>
+                </ul>
+                
+                <p>自社の課題（メンタルヘルス不調者が多い、危険物を扱う現場がある、など）に合った専門性をもつ産業医が在籍しているかどうか、事前に確認しましょう。</p>
+                
+                <h3>4-2. コミュニケーション体制とスピード感</h3>
+                
+                <p>企業の人事・総務担当者は、健康診断やストレスチェック、高ストレス者面接などのスケジュール調整に追われることが多いです。そのため、迅速な対応ができる産業医事務所かどうかは重要な検討ポイントです。</p>
+                
+                <ul>
+                    <li><strong>緊急時の連絡手段（メール・電話・オンライン会議など）の確保</strong></li>
+                    <li><strong>レスポンスの早さ</strong></li>
+                    <li><strong>定期的なレポートやミーティングの実施体制</strong></li>
+                </ul>
+                
+                <p>これらを事前にチェックし、必要なときにスムーズに相談できる体制が整っているかを確認してください。</p>
+                <p>当事務所では<u><strong>予約システムを導入しており、日程調整においてメール等でのやりとりは必要ありません。</strong></u>予約システム上で産業医等の空き時間を検索して選択するだけで日程調整可能です。</p>
+                
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/黄色-華やか-花-X-Twitter-ヘッダー-7-e1742252949767.png" alt="コミュニケーション体制" class="feature-image">
+                
+                <div class="decorative-line"></div>
+                
+                <h3>4-3. 健康経営やITツール活用への柔軟性</h3>
+                
+                <p>健康経営の取り組みに積極的な企業は、産業医事務所側でもデータ管理やオンライン面談システムに対応しているかを確認すると良いでしょう。近年はWeb会議システムなどを利用した遠隔面談が一般化してきており、時間とコストを削減しながらきめ細かいサポートを実現できます。</p>
+            </section>
+            
+            <section id="summary">
+                <h2>5. まとめ</h2>
+                
+                <div class="highlight-box">
+                    <p>「産業医事務所」は、企業の労働安全衛生体制を支える上で欠かせない存在です。特に、</p>
+                    <ul>
+                        <li><strong>法令遵守（産業医選任、ストレスチェックの実施、健康診断の実施など）</strong></li>
+                        <li><strong>従業員の健康維持・メンタルヘルス対策</strong></li>
+                        <li><strong>健康経営による企業イメージや生産性の向上</strong></li>
+                    </ul>
+                    <p>といった観点から、産業医事務所の専門的サポートを受ける意義は年々高まっています。</p>
+                </div>
+                
+                <p>自社で専属産業医を雇うのが難しい中小企業や、複数拠点を抱える大企業にとっても、外部の専門家がもつノウハウを活用することで、効率的かつ質の高い産業保健体制が整備できます。</p>
+                
+                <p>当事務所では、内科専門医・心療内科専門医・労働衛生コンサルタントとしての強みを最大限に活かし、以下のようなサポートを提供しています。</p>
+                
+                <ol>
+                    <li><strong>健康診断・ストレスチェックの計画と実施支援</strong></li>
+                    <li><strong>従業員面談や職場巡視によるリスク評価と改善提案</strong></li>
+                    <li><strong>メンタルヘルス不調者の早期発見と適切な対応</strong></li>
+                    <li><strong>健康経営の具体的施策立案と導入サポート</strong></li>
+                </ol>
+                
+                <p>企業が継続的に成長し、従業員が安心して働ける環境を整えるには、専門家との長期的なパートナーシップが非常に大切です。今後さらに複雑化する労働環境の変化に備え、ぜひ一度、産業医事務所の活用をご検討ください。</p>
+                
+                <img src="https://kdkconslt-sngyouijm.com/wp-content/uploads/2025/03/黄色-華やか-花-X-Twitter-ヘッダー-8-e1742252921854.png" alt="産業医事務所のパートナーシップ" class="feature-image">
+                
+                <div class="card">
+                    <div class="card-title">当産業医事務所の特徴</div>
+                    <ul>
+                        <li><strong>内科専門医・心療内科専門医の知見を活かした、質の高いメンタルヘルス支援</strong></li>
+                        <li><strong>労働衛生コンサルタントとしての経験を活かし、法令遵守と職場環境改善を両立</strong></li>
+                        <li><strong>医師の視点から専門的かつ実践的なアドバイスを提供</strong></li>
+                        <li><strong>健康経営優良法人取得サポートなど、経営層が求める施策の提案・実行支援に強み</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>お気軽にご相談ください</h3>
+                    <p>「産業医事務所の選び方や導入の流れをもっと詳しく知りたい」「メンタルヘルス対策や健康経営の具体的な取り組みについて相談したい」といった要望がございましたら、ぜひお気軽にお問い合わせください。</p>
+                    <p>私たちが皆様のパートナーとして、従業員の健康と組織の活力向上を全力でお手伝いさせていただきます。</p>
+                    <a href="https://kdkconslt-sngyouijm.com/contact/" class="btn">お問い合わせはこちら</a>
+                </div>
+                
+                <div class="references">
+                    <h3>参考リンク（厚生労働省関連）</h3>
+                    <ul>
+                        <li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/index.html" target="_blank">労働安全衛生法について</a></li>
+                        <li><a href="https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei12/index.html" target="_blank">ストレスチェック制度</a></li>
+                    </ul>
+                    
+                    <p>今後も産業医事務所や産業医、メンタルヘルス、健康経営などに関する専門情報を継続的に発信していきます。定期的に記事をチェックしていただき、貴社の産業保健体制構築にお役立てください。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="産業医事務所の定義と役割、業務内容、外部委託のメリット、選び方について解説。企業の人事・総務担当者や経営層必見の情報です。">
+    <title>産業医事務所とは？企業が知っておくべき基本機能とメリット</title>
+    <style>
+        :root {
+            --primary-color: #1e7361;
+            --secondary-color: #0a5446;
+            --accent-color: #4caf9d;
+            --light-color: #f4f9f8;
+            --dark-color: #1a3a36;
+            --text-color: #2d3a38;
+            --border-color: #d0e8e3;
+            --shadow: 0 8px 20px rgba(10, 84, 70, 0.08);
+            --radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: #f8fcfb;
+            margin: 0;
+            padding: 0;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 50px;
+            margin: 20px auto;
+            border: 1px solid rgba(76, 175, 157, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at top right, rgba(76, 175, 157, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+        
+        .toc {
+            background-color: var(--light-color);
+            border-radius: var(--radius);
+            padding: 35px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(10, 84, 70, 0.06);
+        }
+        
+        .toc::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+        
+        .toc h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .toc h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .toc ul li {
+            margin-bottom: 18px;
+            position: relative;
+        }
+        
+        .toc ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .toc a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            padding: 3px 0;
+            font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        h2 {
+            font-size: 2.1rem;
+            color: var(--primary-color);
+            margin: 60px 0 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin: 40px 0 20px;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            display: inline-block;
+            clear: both; /* 追加：画像の影響を受けないように */
+            width: 100%; /* 追加：幅を確保 */
+        }
+        
+        h3::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            opacity: 0.6;
+        }
+        
+        p {
+            margin-bottom: 22px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+            font-weight: 300;
+        }
+        
+        .feature-image {
+            width: 100%;
+            border-radius: var(--radius);
+            margin: 35px 0;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+            clear: both; /* 追加：フロートを解除 */
+            display: block; /* 追加：ブロック要素として表示 */
+        }
+        
+        .feature-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(30, 115, 97, 0.1), rgba(76, 175, 157, 0.05));
+            border-radius: var(--radius);
+            pointer-events: none;
+        }
+        
+        .feature-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(10, 84, 70, 0.12);
+        }
+        
+        .highlight-box {
+            background-color: rgba(30, 115, 97, 0.04);
+            border-left: 5px solid var(--primary-color);
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(10, 84, 70, 0.05);
+        }
+        
+        .highlight-box::before {
+            content: """;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(30, 115, 97, 0.08);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-left: 3px solid var(--accent-color);
+            background-color: rgba(76, 175, 157, 0.05);
+            position: relative;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            box-shadow: 0 3px 10px rgba(10, 84, 70, 0.03);
+        }
+        
+        ul, ol {
+            margin: 20px 0 25px 20px;
+            font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 5px;
+            line-height: 1.7;
+        }
+        
+        ul li::marker {
+            color: var(--accent-color);
+        }
+        
+        ol li::marker {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 35px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(76, 175, 157, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10, 84, 70, 0.1);
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .card-title::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        .feature-item {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(76, 175, 157, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .feature-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at top right, rgba(76, 175, 157, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10, 84, 70, 0.1);
+        }
+        
+        .feature-item h4 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .feature-item h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(30, 115, 97, 0.1), rgba(76, 175, 157, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(10, 84, 70, 0.08);
+        }
+        
+        .references {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 40px 0 20px;
+        }
+        
+        .references h3 {
+            margin-top: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 800 800"><g fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"><path d="M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"/><path d="M-31 229L237 261 390 382 731 737M520 660L309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"/><path d="M520 660L309 538 295 764 731 737M520 660L309 538 40 599M520 660L309 538M520 660L126.5 879.5M520 660L731 737M520 660L309 538M126.5 879.5L40 599-197 493 102 382-31 229M126.5 879.5L309 538"/></g></svg>'),
+                  linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 50px;
+            border-radius: var(--radius);
+            margin: 50px 0;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(10, 84, 70, 0.15);
+            position: relative;
+            overflow: hidden;
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        .cta-section p {
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-section::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cta-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(30, 115, 97, 0.08);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .references {
+            background-color: var(--light-color);
+            padding: 35px;
+            border-radius: var(--radius);
+            margin: 50px 0 30px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(10, 84, 70, 0.05);
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        .references h3 {
+            margin-top: 0;
+        }
+        
+        .references ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .references ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .references ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .references a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px dashed rgba(30, 115, 97, 0.3);
+            padding-bottom: 2px;
+        }
+        
+        .references a:hover {
+            color: var(--accent-color);
+            border-bottom-style: solid;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 30px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .toc {
+                padding: 25px;
+            }
+        }
+        
+        /* 装飾的な要素 */
+        .decorative-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(76, 175, 157, 0), rgba(76, 175, 157, 0.3), rgba(76, 175, 157, 0));
+            margin: 50px 0;
+            clear: both; /* 追加：前の要素の影響を受けないように */
+        }
+        
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-entry {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* 追加：セクション間のクリアフィックス */
+        section {
+            clear: both;
+        }
+        
+        /* 追加：目次が消えているので修正 */
+        .toc {
+            display: block; /* 追加 */
+        }
+    </style>
+</head>
+<!-- /wp:html -->

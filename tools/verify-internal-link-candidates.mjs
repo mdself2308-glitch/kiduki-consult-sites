@@ -10,16 +10,22 @@ import fs from 'node:fs';
 const exactPath = 'content/exact/internal-link-pages-2026-09-02-v1.json';
 const exact = JSON.parse(fs.readFileSync(exactPath, 'utf8'));
 const sha256 = (buffer) => crypto.createHash('sha256').update(buffer).digest('hex');
+// WordPress stores `--` inside block attributes as \u002d\u002d; normalise before comparing post-apply pulls.
+const normalised = (text) => text.replace(/\\u002d/g, '-');
 const failures = [];
 const rows = [];
 
 for (const item of exact.items) {
   const baseline = fs.readFileSync(item.baseline_source, 'utf8');
   const candidate = fs.readFileSync(item.candidate_source, 'utf8');
+  const applied = exact.state === 'applied';
   const row = {
     id: item.id,
     slug: item.slug,
-    baselineSha256Matches: sha256(baseline) === item.baseline_sha256,
+    // After apply, source/wordpress/ is re-pulled and equals the candidate; the pre-apply baseline hash no longer applies.
+    baselineSha256Matches: applied
+      ? sha256(normalised(baseline)) === sha256(normalised(candidate)) || sha256(baseline) === item.baseline_sha256
+      : sha256(baseline) === item.baseline_sha256,
     candidateSha256Matches: sha256(candidate) === item.candidate_sha256,
     appendOnly: null,
     addedLinks: (candidate.match(/<a href="https:\/\/kdkconslt-sngyouijm\.com\//g) || []).length
@@ -28,7 +34,7 @@ for (const item of exact.items) {
     containsH1: /<h1\b/i.test(candidate),
     containsScriptOutsideJsonLd: /<script(?![^>]*application\/ld\+json)/i.test(candidate),
   };
-  if (item.append_only) {
+  if (item.append_only && !applied) {
     const closing = '</div>\n<!-- /wp:group -->';
     const baselineBody = baseline.trimEnd().slice(0, baseline.trimEnd().lastIndexOf(closing)).trimEnd();
     row.appendOnly = candidate.startsWith(baselineBody) && candidate.trimEnd().endsWith(closing);
@@ -43,7 +49,7 @@ for (const item of exact.items) {
   row.linksToScheduledArticles = scheduledSlugs.some((slug) => candidate.includes(`/${slug}/`));
   for (const [key, ok] of Object.entries(row)) {
     if (key === 'id' || key === 'slug' || key === 'addedLinks') continue;
-    const expected = key === 'appendOnly' ? (item.append_only ? true : null) : (key.startsWith('contains') || key === 'linksToScheduledArticles' ? false : true);
+    const expected = key === 'appendOnly' ? (item.append_only && !applied ? true : null) : (key.startsWith('contains') || key === 'linksToScheduledArticles' ? false : true);
     if (ok !== expected) failures.push(`${item.id}:${key}`);
   }
   rows.push(row);

@@ -1,0 +1,149 @@
+{
+  "exact_version": "2026-09-02-v2",
+  "state": "owner-review",
+  "purpose": "産業衛生DX・Casetraページ（page 166）を、DXが解く工程の言葉（面談日程・意見書のあと・就業制限の解除・議事録の保管）で全文書き直し、Casetraの記述をパイロット運用中・別契約・受付状況はcasetra.jpの事実の範囲に揃える（約486字→約2,500字）",
+  "target": {
+    "channel": "wordpress-page",
+    "wordpress_post_id": 166,
+    "slug": "cloud",
+    "publication_status": "publish",
+    "current_modified": "2026-09-02T09:06:05",
+    "expected_remote_source_sha256": "311611822fb2bbe98bab12cd750b70907bc284d6ad8281f5bb1dc5da33e838a7",
+    "published_url": "https://kdkconslt-sngyouijm.com/service/cloud/"
+  },
+  "search_intent": {
+    "audience": "産業医面談の日程調整、意見書のあとの会社対応、就業制限の解除期限、衛生委員会の議事録の保管で業務が止まっている企業の人事・労務・産業保健担当者",
+    "primary_query_hypothesis": "産業医 意見書 会社 対応",
+    "secondary_query_hypotheses": [
+      "産業医 面談 日程調整",
+      "産業医 就業制限 解除",
+      "就業上の措置 記録",
+      "衛生委員会 議事録 保管期間"
+    ],
+    "main_question": "手作業で止まる4か所で、会社は何を決め、何を記録するか。KIDUKIの継続支援とCasetraの契約関係はどうなっているか",
+    "primary_landing": "/contact/",
+    "target_offer": "KIDUKI Retain / Basic（CASETRA外販は一般ローンチGO後）"
+  },
+  "copy": {
+    "title": "産業衛生DX・Casetra｜面談日程・意見書・就業制限解除・議事録",
+    "h1": "産業衛生DX・Casetra｜面談日程・意見書・就業制限解除・議事録",
+    "meta_description": "産業医面談の日程調整、意見書のあとの会社の対応、就業制限の解除期限、衛生委員会議事録の保管。手作業で止まりやすい4か所で会社が決めること・記録することを整理し、Casetraとの契約関係を説明します。",
+    "excerpt": "産業医面談の日程調整、意見書のあとの会社の対応、就業制限を解除する期限、衛生委員会の議事録の保管。手作業で止まりやすい4か所について、会社が決めること・記録することを整理し、KIDUKIの継続支援でCasetraをどう使うかと契約関係を説明します。",
+    "cta_label": "初回のご相談（15分）",
+    "body_path": "content/exact/dx-service-page-166-2026-09-02-v2-body.html",
+    "body_sha256": "eb8f70adf4fdabf3ca336a83bede7256816608e5717bad3478b8b4e4abaffc52",
+    "primary_cta": {
+      "label": "初回のご相談（15分）",
+      "href": "https://kdkconslt-sngyouijm.com/contact/",
+      "target_offer": "casetra"
+    },
+    "secondary_cta": null
+  },
+  "changes_from_current_body": [
+    "リード文を「産業衛生管理システム」の自称から工程の言葉へ",
+    "H2「手作業で止まりやすい4つの場所」（4つのH3＋会社が決めること・記録すること）を追加",
+    "H2「KIDUKIの継続支援でどう使うか」（案件×完了の6要素、Casetraはパイロット運用中・別契約・受付状況はcasetra.jp）",
+    "H2「会社に残るもの」（決定・実行・提出は会社、KIDUKIは評価・意見・記録の整理、診断・治療は行わない、受診先の境界文）",
+    "契約関係の表を維持し、「Casetraだけを導入し…運用することもできます」を「別契約（受付状況はcasetra.jp）」へ",
+    "FAQ4問＋FAQPage構造化データ",
+    "関連する記事4本（公開済みのみ）",
+    "CTAボタンを「初回のご相談（15分）」へ",
+    "casetra.jpリンクを末尾1本（UTMなし）へ"
+  ],
+  "review": {
+    "independent_review": "content/evidence/dx-service-page-166-review-2026-09-02.json",
+    "blockers": 0,
+    "repaired": "medium 4件すべて対応（H2に工程語、Casetra言及を3か所へ集約、提供中と読める表現の削除、法令3条文をe-Govで一次確認）",
+    "law_basis": "content/evidence/law-basis-page-166-2026-09-02.json"
+  },
+  "canonical_source_bindings": [
+    {
+      "path": "kiduki/docs/pricing-growth-canonical.md",
+      "sha256": "2dfbe7df63194c9b77e69f00abc266d3f4a0f1257330774bc87a70da759a4974",
+      "supports": "CASETRAの位置づけ（KIDUKI内部利用、企業利用は別契約）、§10 実装済みでないものを提供中と表示しない"
+    },
+    {
+      "path": "kiduki/docs/core-thesis.md",
+      "sha256": "cfd01e53f67d0bbc9bb138dd1766ca4daa282806a63116f01909d609f76025a5",
+      "supports": "案件×完了、棚の規律、決定権は事業者"
+    },
+    {
+      "path": "kiduki/docs/bpo-scope-boundary.md",
+      "sha256": "722f0a6d31402f142403b46fb654aa68132aba2c008fe24cda9b2a7c0b7d78ef",
+      "supports": "会社に残るもの（決定・実行・提出）とKIDUKIの範囲"
+    },
+    {
+      "path": "kiduki/docs/copy/site-copy.md",
+      "sha256": "3a638cd1464e848cb891a904a43179b212c935236a6589b187ef5d917d24bf99",
+      "supports": "CTA統一表記、医療広告境界文、禁止語"
+    },
+    {
+      "path": "source/wordpress/page-166-cloud.html",
+      "sha256": "311611822fb2bbe98bab12cd750b70907bc284d6ad8281f5bb1dc5da33e838a7",
+      "supports": "現行公開本文（差し替え前ベースライン、2026-09-02 09:06 S4反映版）"
+    }
+  ],
+  "external_source_bindings": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/347M50002000032",
+      "verified_date": "2026-09-02",
+      "supports": "労働安全衛生規則 第23条第4項：衛生委員会の議事録は3年間保存"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/347M50002000032",
+      "verified_date": "2026-09-02",
+      "supports": "労働安全衛生規則 第14条の3 第2項：産業医の勧告の内容と講じた措置の記録を3年間保存"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/347AC0000000057",
+      "verified_date": "2026-09-02",
+      "supports": "労働安全衛生法 第66条の5（ほか66条の8・66条の10）：就業上の措置の決定は事業者"
+    }
+  ],
+  "review_assertions": {
+    "shelf_terms_absent": true,
+    "casetra_facts_within_pilot_and_separate_contract": true,
+    "no_unimplemented_features_as_available": true,
+    "company_final_decision_present": true,
+    "diagnosis_and_treatment_boundary_present": true,
+    "patient_choice_and_no_specific_referral_present": true,
+    "no_prices_or_free_wording": true,
+    "pack_absent": true,
+    "faq_jsonld_matches_visible_faq": true,
+    "only_published_articles_linked": true,
+    "law_statements_verified_egov": true,
+    "no_h1_in_body": true
+  },
+  "required_body_strings": [
+    "受診先はご本人が選びます。KIDUKIが特定の医療機関を指定・紹介することはありません。",
+    ">初回のご相談（15分）</a>",
+    "受付状況はcasetra.jp",
+    "パイロット運用中",
+    "就業上の最終決定と実施は会社が行います"
+  ],
+  "forbidden_body_strings": [
+    "導入方法を相談する",
+    "運用することもできます",
+    "無料",
+    "併設",
+    "クリニック",
+    "一気通貫",
+    "睡眠専門医",
+    "一元管理",
+    "見える化",
+    "可視化",
+    "ウェルビーイング",
+    "健康データ",
+    "健康管理システム",
+    "Pack",
+    "円",
+    "utm_"
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}

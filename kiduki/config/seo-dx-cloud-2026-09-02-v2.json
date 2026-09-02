@@ -1,0 +1,59 @@
+{
+  "release": "2026-09-02-dx-cloud-v2",
+  "approval": {
+    "projectRootRelative": "../..",
+    "changeMode": "full_body_replacement",
+    "exactVersion": "2026-09-02-v2",
+    "exactPayload": "content/exact/dx-service-page-166-2026-09-02-v2.json",
+    "exactPayloadSha256": "772fe4a0581a596e5eff5177574f357b17714825650cd0111966a5ce3c4feaad",
+    "baselineRemoteSha256": "311611822fb2bbe98bab12cd750b70907bc284d6ad8281f5bb1dc5da33e838a7",
+    "candidateSource": "content/exact/dx-service-page-166-2026-09-02-v2-body.html",
+    "candidateSourceSha256": "eb8f70adf4fdabf3ca336a83bede7256816608e5717bad3478b8b4e4abaffc52",
+    "masterSource": "kiduki/docs/copy/site-copy.md"
+  },
+  "items": [
+    {
+      "type": "page",
+      "id": 166,
+      "expectedModified": "2026-09-02T09:06:05",
+      "expectedRemoteSourceSha256": "311611822fb2bbe98bab12cd750b70907bc284d6ad8281f5bb1dc5da33e838a7",
+      "slug": "cloud",
+      "title": "産業衛生DX・Casetra｜面談日程・意見書・就業制限解除・議事録",
+      "status": "publish",
+      "source": "content/exact/dx-service-page-166-2026-09-02-v2-body.html",
+      "allowedCurrentSlugs": [
+        "cloud"
+      ],
+      "excerpt": "産業医面談の日程調整、意見書のあとの会社の対応、就業制限を解除する期限、衛生委員会の議事録の保管。手作業で止まりやすい4か所について、会社が決めること・記録することを整理し、KIDUKIの継続支援でCasetraをどう使うかと契約関係を説明します。",
+      "metaDescription": "産業医面談の日程調整、意見書のあとの会社の対応、就業制限の解除期限、衛生委員会議事録の保管。手作業で止まりやすい4か所で会社が決めること・記録することを整理し、Casetraとの契約関係を説明します。",
+      "requiredHtml": [
+        "受診先はご本人が選びます。KIDUKIが特定の医療機関を指定・紹介することはありません。",
+        ">初回のご相談（15分）</a>",
+        "受付状況はcasetra.jp",
+        "パイロット運用中",
+        "就業上の最終決定と実施は会社が行います",
+        "手作業で止まりやすい4つの場所",
+        "よくあるご質問",
+        "関連する記事"
+      ],
+      "forbiddenHtml": [
+        "導入方法を相談する",
+        "運用することもできます",
+        "無料",
+        "併設",
+        "クリニック",
+        "一気通貫",
+        "睡眠専門医",
+        "一元管理",
+        "見える化",
+        "可視化",
+        "ウェルビーイング",
+        "健康データ",
+        "健康管理システム",
+        "Pack",
+        "円",
+        "utm_"
+      ]
+    }
+  ]
+}

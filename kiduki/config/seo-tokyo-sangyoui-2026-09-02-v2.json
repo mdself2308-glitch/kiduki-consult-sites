@@ -1,0 +1,52 @@
+{
+  "release": "2026-09-02-tokyo-sangyoui-v2",
+  "approval": {
+    "projectRootRelative": "../..",
+    "changeMode": "full_body_replacement",
+    "exactVersion": "2026-09-02-v2",
+    "exactPayload": "content/exact/tokyo-industrial-physician-page-160-2026-09-02-v2.json",
+    "exactPayloadSha256": "9c97149edb9459ee4c481d3892e0b8d70d5f45b5cfa5aeb559da200ebc65146c",
+    "baselineRemoteSha256": "7ebe6172faf2c564312f613391194118098bd9aa6560ad19ad4850faaf73e52e",
+    "candidateSource": "content/exact/tokyo-industrial-physician-page-160-2026-09-02-v2-body.html",
+    "candidateSourceSha256": "ac55017814da2ce736a8321137358079e42419e451b90a47f3c418a78774a393",
+    "masterSource": "kiduki/docs/copy/site-copy.md"
+  },
+  "items": [
+    {
+      "type": "page",
+      "id": 160,
+      "expectedModified": "2026-09-02T09:06:02",
+      "expectedRemoteSourceSha256": "7ebe6172faf2c564312f613391194118098bd9aa6560ad19ad4850faaf73e52e",
+      "slug": "sangyoui",
+      "title": "東京の嘱託産業医｜選任・定例業務から睡眠・夜勤・復職まで",
+      "status": "publish",
+      "source": "content/exact/tokyo-industrial-physician-page-160-2026-09-02-v2-body.html",
+      "allowedCurrentSlugs": [
+        "sangyoui"
+      ],
+      "excerpt": "東京の企業・事業場向けに、産業医の選任と定例業務（職場巡視、衛生委員会、健診事後措置、面接指導）を継続して担当し、睡眠・夜勤・運転・休職・復職の判断まで支援する嘱託産業医サービスです。",
+      "metaDescription": "東京・港区新橋の産業医事務所が、常時50人以上の事業場の産業医選任、職場巡視、衛生委員会、健診事後措置、面接指導を継続して担当。睡眠・夜勤・運転・復職の判断まで一つの契約で支援します。",
+      "requiredHtml": [
+        "常時50人以上の労働者を使用する事業場",
+        "14日以内",
+        "少なくとも毎月1回",
+        "就業上の最終決定は会社が担い",
+        "受診先はご本人が選びます",
+        ">初回のご相談（15分）</a>",
+        "対応エリアと、訪問・オンラインの形",
+        "よくあるご質問",
+        "関連する記事"
+      ],
+      "forbiddenHtml": [
+        ">嘱託産業医について相談する</a>",
+        "無料",
+        "併設",
+        "クリニック",
+        "一気通貫",
+        "睡眠専門医",
+        "Pack",
+        "円"
+      ]
+    }
+  ]
+}

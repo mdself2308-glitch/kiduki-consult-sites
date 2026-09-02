@@ -1,6 +1,6 @@
 {
   "exact_version": "2026-09-02-v1",
-  "state": "owner-review",
+  "state": "applied",
   "purpose": "内部リンク（記事⇄サービス）の補強。文言の新規主張は含まず、公開済み記事へのリンク追加と記事ハブの自動一覧化だけ",
   "boundary": "予約中（未公開）の記事へはリンクしない。公開後に7日レビューで追加する。latest-postsブロックの見た目はapply後にPC/スマホで目視確認し、崩れる場合はカテゴリ一覧リンクへ戻す",
   "items": [
@@ -55,8 +55,10 @@
   ],
   "approval": {
     "owner": "宮部 大輔",
-    "owner_decision": "pending",
-    "approval_evidence": null,
-    "publication_authority": "not_granted"
-  }
+    "owner_decision": "approved",
+    "approval_evidence": "content/evidence/seo-recovery-approval-2026-09-02.json (S4)",
+    "publication_authority": "granted 2026-09-02 (先生「全て承認します」「どんどん進めて」)"
+  },
+  "applied_at": "2026-09-02T09:06:05+09:00",
+  "applied_note": "S4として4ページ反映済み（backups/wp-page-{1030,160,162,166}-before-2026-09-02T00-05-59〜06-05Z.json）。反映後に source/wordpress/ を再取得したため baseline ファイルは候補と同一になっている"
 }

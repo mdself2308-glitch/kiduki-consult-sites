@@ -1,0 +1,62 @@
+{
+  "captured_at": "2026-09-02 10:40-10:55 JST (approx.)",
+  "method": "Claude Browser pane, not logged in, Japanese IP (122.212.158.177), Google web search with hl=ja&gl=jp, Google Maps search without location share. Single device, single pass. Results vary by searcher location, time of day, and login state.",
+  "kiduki_profile_observed": {
+    "name": "東京KIDUKIコンサルティング産業医事務所",
+    "category": "産業医",
+    "address": "〒105-0004 東京都港区新橋1丁目18-21 第一日比谷ビル",
+    "hours": "営業中 · 営業終了: 18:00",
+    "website": "kdkconslt-sngyouijm.com (301 to consult. subdomain)",
+    "phone_public": "03-6403-0173",
+    "owner_photos": "none visible",
+    "reviews": 0,
+    "owner_description_visible": false,
+    "appeared_in_any_local_pack_or_maps_result_for_queries_below": false
+  },
+  "web_search_local_pack": {
+    "産業医 港区": [
+      {"name": "株式会社東京産業医事務所", "rating": null, "reviews": 0, "category": "産業医", "address": "浜松町2-11-16 ユーワビル2F", "hours": "営業終了 17:00"},
+      {"name": "産業保健サービス㈱", "rating": null, "reviews": 0, "category": "産業医", "address": "新橋3-9-10 天翔新橋ビル", "hours": "営業終了 18:00"},
+      {"name": "芝メンタルクリニック", "rating": 5.0, "reviews": 2, "category": "産業医", "address": "浜松町2-11-16 ユーワビル2F"}
+    ],
+    "産業医 港区 ai_overview": "present; named 東京産業医事務所, ウェルストン産業医事務所, 港区医師会 産業保健センター, 港三田クリニック, 田町駅前こころの診療所, リモート産業保健",
+    "産業医 東京": [
+      {"name": "株式会社東京産業医事務所", "rating": null, "reviews": 0, "category": "産業医", "hours": "営業終了 17:00"},
+      {"name": "㈱産業医システムズ", "rating": null, "reviews": 0, "category": "産業医", "address": "千代田区", "hours": "営業終了 17:00"},
+      {"name": "健株式会社", "rating": 4.8, "reviews": 6, "category": "産業医", "address": "中央区", "hours": "営業終了 18:30", "justification_snippet": "顧問弁護士の紹介で産業医を依頼しましたが、評判通り良い先生でした。"}
+    ],
+    "産業医 東京 ai_overview": "present; cites 東京都医師会, リモート産業保健",
+    "産業医 新橋": [
+      {"name": "一般社団法人 労働医学研究会 新橋クリニック", "rating": 2.7, "reviews": 18, "category": "クリニック・医院・診療所"},
+      {"name": "患者目線のクリニック 銀座新橋", "rating": 4.4, "reviews": 673, "category": "医療施設"},
+      {"name": "渡航医学センター 西新橋クリニック", "rating": 4.8, "reviews": 10, "category": "クリニック・医院・診療所"}
+    ],
+    "産業医 新橋 ai_overview": "present; named 新橋クリニック(労働医学研究会), セラヴィ新橋クリニック, 日比谷川畑診療室, 伊原医院"
+  },
+  "maps_search_results": {
+    "産業医 港区": ["株式会社東京産業医事務所 (0 reviews)"],
+    "産業医 東京": [
+      "株式会社東京産業医事務所 (0)", "㈱産業医システムズ (0)", "産業保健サービス㈱ (0)", "ウェルストン産業医事務所 (0)",
+      "公益社団法人 東京都医師会 3.8 (94) 協会/組織", "東京産業保健総合支援センター 3.3 (21) 協会/組織",
+      "健株式会社 4.8 (6) 産業医", "港区の産業医 ㈱ウェルリッジ 5.0 (1) 産業医"
+    ],
+    "産業医 新橋": ["一般社団法人 労働医学研究会 新橋クリニック 2.7 (18)"]
+  },
+  "top_reviewed_competitor_detail": {
+    "name": "健株式会社",
+    "category": "産業医",
+    "rating": 4.8,
+    "reviews": 6,
+    "review_dates_visible": ["8か月前", "3年前", "5年前"],
+    "review_authors": "client-side people (facility staff, HR who came via 顧問弁護士 referral, company after 労基署 inspection); local guides",
+    "owner_post_latest": "2026/06/01 「2026年4月より、新たに2社の産業医業務を担当…」",
+    "owner_photos_videos": true,
+    "services_section": true,
+    "attributes": ["LGBTQ フレンドリー"]
+  },
+  "notes": [
+    "KIDUKI did not appear even for 産業医 新橋 despite a 新橋 address and 産業医 category; suggests weak/incomplete or possibly unverified profile rather than distance.",
+    "Among 産業医-category listings observed, the maximum review count was 6; most had 0.",
+    "A stale tab showed a reCAPTCHA page for an earlier スポット産業医 search; it was not interacted with."
+  ]
+}

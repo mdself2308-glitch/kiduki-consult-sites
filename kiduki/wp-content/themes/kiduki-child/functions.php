@@ -669,3 +669,134 @@ function kiduki_seo_exclude_noindex_from_sitemap( $post_ids ) {
 	);
 }
 add_filter( 'sm_exclude_from_sitemap_by_post_ids', 'kiduki_seo_exclude_noindex_from_sitemap', 20 );
+
+/**
+ * ---------------------------------------------------------------------------
+ * 検索対策の土台 その2（2026-09-02）: OGP、著者アーカイブのcanonical、表示速度
+ * ---------------------------------------------------------------------------
+ */
+
+/**
+ * OGP / Twitter カード。WordPress側の全ページで og: が出ていなかった（2026-09-02 実測）。
+ * Emanon側のOGPを有効にした場合は二重出力になるので、その時はこの関数を外す。
+ */
+function kiduki_seo_open_graph() {
+	if ( is_admin() || is_feed() || is_404() || is_search() ) {
+		return;
+	}
+
+	$default_image = 'https://consult.kdkconslt-sngyouijm.com/og-image.png';
+	$site_name     = 'KIDUKIコンサルティング産業医事務所';
+	$title         = wp_get_document_title();
+	$url           = '';
+	$type          = 'website';
+	$image         = $default_image;
+	$description   = '';
+
+	if ( is_singular() ) {
+		$post = get_queried_object();
+		if ( $post instanceof WP_Post ) {
+			$url  = get_permalink( $post );
+			$type = ( 'post' === $post->post_type ) ? 'article' : 'website';
+			$description = trim( (string) get_post_meta( $post->ID, 'emanon_meta_description', true ) );
+			if ( '' === $description && '' !== trim( (string) $post->post_excerpt ) ) {
+				$description = kiduki_seo_trim_description( wp_strip_all_tags( $post->post_excerpt ) );
+			}
+			if ( has_post_thumbnail( $post ) ) {
+				$thumb = wp_get_attachment_image_url( get_post_thumbnail_id( $post ), 'large' );
+				if ( $thumb ) {
+					$image = $thumb;
+				}
+			}
+		}
+	} elseif ( is_author() ) {
+		$url = get_author_posts_url( get_queried_object_id() );
+	} else {
+		$url = home_url( add_query_arg( array(), $GLOBALS['wp']->request ) );
+		$url = trailingslashit( $url );
+	}
+
+	$tags = array(
+		array( 'property', 'og:site_name', $site_name ),
+		array( 'property', 'og:locale', 'ja_JP' ),
+		array( 'property', 'og:type', $type ),
+		array( 'property', 'og:title', $title ),
+		array( 'property', 'og:url', $url ),
+		array( 'property', 'og:image', $image ),
+		array( 'name', 'twitter:card', 'summary_large_image' ),
+		array( 'name', 'twitter:title', $title ),
+	);
+	if ( '' !== $description ) {
+		$tags[] = array( 'property', 'og:description', $description );
+		$tags[] = array( 'name', 'twitter:description', $description );
+	}
+	foreach ( $tags as $tag ) {
+		if ( '' === (string) $tag[2] ) {
+			continue;
+		}
+		printf( "<meta %s=\"%s\" content=\"%s\">\n", esc_attr( $tag[0] ), esc_attr( $tag[1] ), esc_attr( $tag[2] ) );
+	}
+}
+add_action( 'wp_head', 'kiduki_seo_open_graph', 6 );
+
+/**
+ * 著者アーカイブに canonical と rel=prev/next（2026-09-02 実測で無かった）。
+ */
+function kiduki_seo_author_archive_links() {
+	if ( ! is_author() ) {
+		return;
+	}
+	$author_id = get_queried_object_id();
+	$base      = get_author_posts_url( $author_id );
+	$paged     = max( 1, (int) get_query_var( 'paged' ) );
+	$canonical = $paged > 1 ? trailingslashit( $base ) . 'page/' . $paged . '/' : $base;
+	printf( "<link rel=\"canonical\" href=\"%s\">\n", esc_url( $canonical ) );
+
+	global $wp_query;
+	$max = (int) $wp_query->max_num_pages;
+	if ( $paged > 1 ) {
+		$prev = $paged - 1 === 1 ? $base : trailingslashit( $base ) . 'page/' . ( $paged - 1 ) . '/';
+		printf( "<link rel=\"prev\" href=\"%s\">\n", esc_url( $prev ) );
+	}
+	if ( $max > $paged ) {
+		printf( "<link rel=\"next\" href=\"%s\">\n", esc_url( trailingslashit( $base ) . 'page/' . ( $paged + 1 ) . '/' ) );
+	}
+}
+add_action( 'wp_head', 'kiduki_seo_author_archive_links', 4 );
+
+/**
+ * Google Fonts（子テーマが読む Noto Sans JP）を描画ブロックにしない。
+ * Lighthouse（2026-09-02）で Google Fonts CSS が FCP を約2秒遅らせていた。
+ *
+ * @param string $html   The link tag.
+ * @param string $handle Style handle.
+ * @return string
+ */
+function kiduki_seo_async_google_fonts( $html, $handle ) {
+	if ( 'kiduki-noto-sans-jp' !== $handle ) {
+		return $html;
+	}
+	$blocking = $html;
+	$async    = str_replace( "media='all'", "media='print' onload=\"this.media='all'\"", $html );
+	if ( $async === $html ) {
+		$async = str_replace( 'media="all"', 'media="print" onload="this.media=\'all\'"', $html );
+	}
+	if ( $async === $html ) {
+		return $html;
+	}
+	return $async . '<noscript>' . $blocking . '</noscript>' . "\n";
+}
+add_filter( 'style_loader_tag', 'kiduki_seo_async_google_fonts', 10, 2 );
+
+/**
+ * reCAPTCHA（約350KB）はお問い合わせページ以外では読まない。
+ * Contact Form 7 のフォームは /contact/ だけにある。
+ */
+function kiduki_seo_dequeue_recaptcha_off_contact() {
+	if ( is_page( 'contact' ) || kiduki_is_contact_thanks_page() ) {
+		return;
+	}
+	wp_dequeue_script( 'google-recaptcha' );
+	wp_dequeue_script( 'wpcf7-recaptcha' );
+}
+add_action( 'wp_enqueue_scripts', 'kiduki_seo_dequeue_recaptcha_off_contact', 100 );

@@ -26,7 +26,7 @@ KIDUKI project guide: `README.md`
 | Site Kit週次メール | `frequency: weekly` | `subscribed: false` | REST readback、dry-run `would_update` | 登録メールへの継続送信の明示権限 |
 | SEO目標完了監査 | 19要件 | overall `not_complete` | `seo-goal-completion-audit-2026-09-01.json`、未完了11要件、verifier合格 | 承認・本番反映・公開後実測・第一者営業/契約証拠 |
 | 子テーマ 検索土台 S1 | approved 2026-09-02 | **deployed 2026-09-02 09:05 JST** | `functions.php` にタイトル区切り・excerpt由来description・Organization/WebSite JSON-LD・noindex受け皿（空）。`verify:seo-hardening` 合格、`php -l` OK | S1承認、4ファイル差分確認、child deploy権限 |
-| 静的トップ 構造化データ S2（＋S5 title/H1/実務記事） | approved 2026-09-02 | local verified / **commit・push 待ち**（先生の手で実行） | 住所・設立・メール・ロゴ付き ProfessionalService と WebSite。差分patch `exact/static-home-jsonld-2026-09-02-v1.patch` | S2承認、static `main` push権限（9/1帰属ブリッジと同ファイル） |
+| 静的トップ 構造化データ S2（＋S5 title/H1/実務記事） | approved 2026-09-02 | **deployed 2026-09-02 09:48 JST**（commit 18c76b3、live-match 合格） | 住所・設立・メール・ロゴ付き ProfessionalService と WebSite。差分patch `exact/static-home-jsonld-2026-09-02-v1.patch` | S2承認、static `main` push権限（9/1帰属ブリッジと同ファイル） |
 | `スポット産業医` ページ v3（本文全文） | approved 2026-09-02 | **applied 2026-09-02 09:05 JST**（本文・title・excerpt・meta） | exact `82c8b531…`、本文 `41f35165…`、v2を包含、FAQ5問＋FAQPage、関連記事4本、`verify:spot-page-v3-binding` 合格 | owner/physician approval、apply権限。承認時はv2を個別反映しない |
 | 内部リンク補強 4ページ（1030/160/162/166） | approved 2026-09-02 | **applied 2026-09-02 09:06 JST** | exact `e6097acd…`、3ページは追記のみ（検証済み）、記事ハブは latest-posts 自動一覧 | owner approval、push権限、apply後PC/スマホ目視 |
 | 旧記事 noindex/統合 | approved 2026-09-02 | **deployed with S1**（noindex 19本、301 3本→/kenkoutoushi/） | `evidence/old-article-triage-2026-09-02.json`（改稿7・統合4・維持7・noindex候補19） | Search Console query×page確認、owner決定、S1と同手順で反映 |

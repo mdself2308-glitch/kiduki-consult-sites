@@ -1,0 +1,25 @@
+{
+ "schema_version": 1,
+ "page": 166,
+ "exact_version": "2026-09-02-v2",
+ "basis": [
+  {
+   "law": "労働安全衛生規則 第23条第4項",
+   "claim": "衛生委員会の議事録は3年間保存",
+   "url": "https://laws.e-gov.go.jp/law/347M50002000032",
+   "verified": "2026-09-02（e-Gov法令API）"
+  },
+  {
+   "law": "労働安全衛生規則 第14条の3 第2項",
+   "claim": "産業医の勧告の内容と講じた措置の記録を3年間保存",
+   "url": "https://laws.e-gov.go.jp/law/347M50002000032",
+   "verified": "2026-09-02（e-Gov法令API）"
+  },
+  {
+   "law": "労働安全衛生法 第66条の5（ほか66条の8・66条の10）",
+   "claim": "就業上の措置の決定は事業者",
+   "url": "https://laws.e-gov.go.jp/law/347AC0000000057",
+   "verified": "2026-09-02（e-Gov法令API）"
+  }
+ ]
+}

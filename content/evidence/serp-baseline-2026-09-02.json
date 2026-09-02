@@ -1,0 +1,605 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-09-02",
+  "method": {
+    "primary": "WebFetch https://www.google.com/search?q=<URLエンコード>&hl=ja&gl=jp&pws=0",
+    "primary_result": "12クエリすべてでGoogleがCAPTCHA/エラーページを返し、検索結果を取得できなかった（未取得）",
+    "fallback": "WebSearch ツール（Claude Code 内蔵の検索API。米国拠点・日本語クエリ）。順位・広告・AI概要はGoogle日本の実SERPと一致しない。あくまで『どのサイトが上位に見えるか』の目安",
+    "kiduki_domains": [
+      "kdkconslt-sngyouijm.com",
+      "consult.kdkconslt-sngyouijm.com"
+    ],
+    "caveats": [
+      "top_results の rank は WebSearch が返した順番であり、Google 実順位ではない（推定）",
+      "取得件数が10未満のクエリは WebSearch が返した件数まで",
+      "ads_count / ai_overview は null＝未取得",
+      "consult.kdkconslt-sngyouijm.com は全12クエリの取得範囲で出現なし",
+      "再取得は Google に手で検索（シークレットモード、地域＝日本）するか、Search Console のクエリ別平均掲載順位で確認するのが確実"
+    ]
+  },
+  "queries": [
+    {
+      "query": "スポット産業医",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://sangyoui.m3career.com/service/spot/",
+          "title": "スポット産業医サービス「産業医エクスプレス」 | エムスリーキャリアの産業医サービス"
+        },
+        {
+          "rank": 2,
+          "url": "https://career-lab.m3.com/categories/guide/series/company/articles/699",
+          "title": "「スポット産業医」とは？働き方とはじめ方 | キャリアデザインラボ | m3.com"
+        },
+        {
+          "rank": 3,
+          "url": "https://www.journal.co.jp/sangyoui/enterprise/spot",
+          "title": "企業向け スポット産業医サービス- 求人ジャーナル 産業医サポート"
+        },
+        {
+          "rank": 4,
+          "url": "https://medicalservant.co.jp/service",
+          "title": "【スポット産業医】株式会社メディカル・サーバント| 健康診断の意見聴取"
+        },
+        {
+          "rank": 5,
+          "url": "https://sanchie.net/price/spot/",
+          "title": "スポット産業医＆産業看護職紹介サービス | リモート産業保健"
+        }
+      ],
+      "result_count": 5,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "産業医 スポット",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://meetsmore.com/product-services/industrial-physician-introduction/media/249397",
+          "title": "産業医スポット契約は高い？費用相場とおすすめサービス3選【比較表付】"
+        },
+        {
+          "rank": 2,
+          "url": "https://sangyoui.m3career.com/service/spot/",
+          "title": "スポット産業医サービス「産業医エクスプレス」 | エムスリーキャリアの産業医サービス"
+        },
+        {
+          "rank": 3,
+          "url": "https://doctor-trust.co.jp/sangyoui/service/spot.html",
+          "title": "産業医のスポット契約、費用、契約の流れ｜ドクタートラスト"
+        },
+        {
+          "rank": 4,
+          "url": "https://www.avenir-executive.co.jp/sangyoui/column-list/column-8-07/",
+          "title": "産業医のスポット契約とは？報酬相場や契約メリットを解説"
+        },
+        {
+          "rank": 5,
+          "url": "https://sanpo-navi.jp/column/industrial-physician-spot/",
+          "title": "産業医のスポット契約｜活用方法や費用相場、メリットを解説"
+        },
+        {
+          "rank": 6,
+          "url": "https://medicalservant.co.jp/service",
+          "title": "【スポット産業医】株式会社メディカル・サーバント| 健康診断の意見聴取"
+        },
+        {
+          "rank": 7,
+          "url": "https://www.sangyoui.co.jp/useful/useful-6709/",
+          "title": "産業医のスポット契約とは？メリットや費用相場、選び方を解説 | さんぎょうい株式会社"
+        },
+        {
+          "rank": 8,
+          "url": "https://sanchie.net/media/sangyoui-supot/",
+          "title": "産業医のスポット(単発)契約とは？費用相場や依頼できる業務、探し方を解説！リモート産業保健"
+        },
+        {
+          "rank": 9,
+          "url": "https://sampo-chart.com/sangyoui-spot/618/",
+          "title": "産業医のスポット契約って実際どうなの？現役産業医の見方とは？ | さんぽちゃーと"
+        }
+      ],
+      "result_count": 9,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "復職 診断書 会社 対応",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://service.firstcall.md/blog/235",
+          "title": "復職診断書は必要？会社が行うべき手続きとトラブル回避のコツ"
+        },
+        {
+          "rank": 2,
+          "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/101004-1.pdf",
+          "title": "厚生労働省 中央労働災害防止協会 〜メンタルヘルス対策における職場復帰支援〜 改訂"
+        },
+        {
+          "rank": 3,
+          "url": "https://mediment.jp/blog/certificate-of-return-to-work",
+          "title": "復職時に診断書は必要？ 様式例や例文・意見書との違い・判断時の注意点などを解説"
+        },
+        {
+          "rank": 4,
+          "url": "https://meden.co.jp/column/mentalhealth-eap/%E5%BE%A9%E8%81%B7%E6%99%82%E3%81%AE%E8%A8%BA%E6%96%AD%E6%9B%B8%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89%EF%BD%9C%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95%E3%81%8B%E3%82%89%E6%B3%A8%E6%84%8F%E7%82%B9/",
+          "title": "復職時の診断書完全ガイド｜取得方法から注意点まで人事担当者が知っておくべきこと | ミーデン株式会社"
+        },
+        {
+          "rank": 5,
+          "url": "https://mencli.ashitano.clinic/33215",
+          "title": "復職診断書はどこでもらえる？すぐもらえる？期間・費用・注意点を解説"
+        }
+      ],
+      "result_count": 5,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "産業医 意見書 会社 対応",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://www.journal.co.jp/sangyoui/articles/post-1136/",
+          "title": "産業医意見書の法的効力と企業の義務｜無視した場合のリスクと実務のポイントを完全解説 | 求人ジャーナル産業医サポートコラム"
+        },
+        {
+          "rank": 2,
+          "url": "https://mediment.jp/blog/industrial-physician-written-opinion",
+          "title": "産業医の意見書は面談によって違う？意見書の効力やフォーマットについて解説！"
+        },
+        {
+          "rank": 3,
+          "url": "https://www.avenir-executive.co.jp/sangyoui/column-list/news250801/",
+          "title": "【産業医の意見書とは】記載内容と注意点を人事向けに解説｜診断書との違いも紹介"
+        },
+        {
+          "rank": 4,
+          "url": "https://www.workersdoctors.co.jp/column/knowledge/6652/",
+          "title": "産業医意見書とは？法的効力や診断書との違い、企業の活用法を解説 | ワーカーズドクターズ"
+        },
+        {
+          "rank": 5,
+          "url": "https://www.medical-tt.co.jp/1970",
+          "title": "産業医の意見書とは？ 効力についても紹介"
+        },
+        {
+          "rank": 6,
+          "url": "https://www.sangyoui.co.jp/useful/useful-5917/",
+          "title": "産業医の意見書とは？作成される場面や記載内容、法的効力の有無について解説 | さんぎょうい株式会社"
+        },
+        {
+          "rank": 7,
+          "url": "https://adaptation.h-ohp.com/leave-return/1648/",
+          "title": "産業医の意見書や診断書はどこまで従うべき？会社の判断との関係を実務目線で解説 | 原産業医事務所"
+        }
+      ],
+      "result_count": 7,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "産業医 就業制限 解除",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://go100.jp/column/employment-judgment-industrialphysician/",
+          "title": "就業判定における産業医の役割とは？主治医との優先順位と実務対応 | GO100"
+        },
+        {
+          "rank": 2,
+          "url": "https://note.com/sangyoitorisetsu/n/nc8cf3b816959",
+          "title": "「就業制限が必要」と産業医に言われたら？｜産業医のトリセツ"
+        },
+        {
+          "rank": 3,
+          "url": "https://sanpomichi-dt.jp/sanngyoui-musi/",
+          "title": "【精神保健福祉士執筆】産業医の就業制限を無視したらどうなる？ | さんぽみち"
+        },
+        {
+          "rank": 4,
+          "url": "https://sanpomichi-dt.jp/written-opinion/",
+          "title": "【保健師監修】産業医の意見書に効力はある？権限の範囲や強制力を解説 | さんぽみち"
+        },
+        {
+          "rank": 5,
+          "url": "https://sampo-chart.com/sangyoui-syuugyouseigen-kyouseiryoku/806/",
+          "title": "就業制限の基準と強制力とは？判断手順と対象疾患を産業医が解説｜サンポチャート"
+        },
+        {
+          "rank": 6,
+          "url": "https://sampo-chart.com/sangyoui-drstop/1421/",
+          "title": "ドクターストップとは？就業制限の判断基準・手続き・法的効力を産業医が解説｜サンポチャート"
+        },
+        {
+          "rank": 7,
+          "url": "https://kenshin.dohcuoeh.com/shugyohantei/ruikei.html",
+          "title": "医師のための就業判定支援NAVI ～労働者が安心して働けるために～"
+        }
+      ],
+      "result_count": 7,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "就業上の措置 記録",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000117190.pdf",
+          "title": "一般健康診断結果を用いた就業措置区分の判定について（厚労省検討会資料）"
+        },
+        {
+          "rank": 2,
+          "url": "https://www.city.yanagawa.fukuoka.jp/reiki_int/reiki_honbun/r203RG00000811.html",
+          "title": "職務に関する働きかけの記録等に関する取扱要綱（柳川市）"
+        },
+        {
+          "rank": 3,
+          "url": "https://www.armg.jp/journal/399-2/",
+          "title": "就業判定とは？就業判定までの流れや事業者に義務付けられる健康診断後の措置、注意点を解説 | アドバンテッジJOURNAL"
+        },
+        {
+          "rank": 4,
+          "url": "https://www.mhlw.go.jp/hourei/doc/kouji/K170417K0020.pdf",
+          "title": "健康診断結果に基づき事業者が講ずべき措置に関する指針（厚労省）"
+        },
+        {
+          "rank": 5,
+          "url": "https://www1.g-reiki.net/city.fukui/reiki_honbun/s500RG00000190.html",
+          "title": "職務に関する働きかけの記録等取扱規程（福井市）"
+        },
+        {
+          "rank": 6,
+          "url": "https://hss.wellcoms.jp/blog/n0106",
+          "title": "就業判定を実施する流れや健康診断後に事業者へ義務付けられている措置とは？"
+        },
+        {
+          "rank": 7,
+          "url": "https://note.com/machikadosr/n/n1fe46aa69f7d",
+          "title": "解雇に向けた記録整備の基本とは？｜若林 忠旨"
+        },
+        {
+          "rank": 8,
+          "url": "https://www.stresscheckmark.jp/health-checkup-types-legal-requirements-guide/",
+          "title": "健康診断とは？労働安全衛生法に基づく種類・内容・事後措置を人事労務担当者向けに解説"
+        }
+      ],
+      "result_count": 8,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "産業医 面談 日程調整",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://t-pec.jp/work-work/article/335",
+          "title": "ストレスチェック後に実施する産業医の面談（面接指導）の流れとは？注意点についても解説"
+        },
+        {
+          "rank": 2,
+          "url": "https://mediment.jp/blog/Industrial-physician-interview",
+          "title": "産業医面談とは？対象となる基準・内容・人事労務担当者の対応ポイントなどを解説！"
+        },
+        {
+          "rank": 3,
+          "url": "https://www.phchd.com/jp/medicom/park/idea/healthmanage-interview",
+          "title": "産業医面談とは？内容やメリット・注意点を解説 | メディコム"
+        },
+        {
+          "rank": 4,
+          "url": "https://yoyaku-package.com/useful/detail/industrial-dr-consultation/",
+          "title": "産業医面談とは？日程調整時の注意点や予約システム活用について解説 | ChoiceRESERVE"
+        },
+        {
+          "rank": 5,
+          "url": "https://m3hd.co.jp/blog/Nj_GdXIl",
+          "title": "産業医面談の義務とは？対象者や実施内容・罰則を医師が解説 | エムスリーヘルスデザイン"
+        },
+        {
+          "rank": 6,
+          "url": "https://sanchie.net/media/flows-of-the-sangyoui-interviews/",
+          "title": "産業医の面接指導とは？対象者と流れ、内容やオンライン面接を解説 | リモート産業保健"
+        }
+      ],
+      "result_count": 6,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "衛生委員会 議事録 保管期間",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://service.firstcall.md/blog/273",
+          "title": "安全衛生委員会の議事録に記載する項目とは？作成のポイントや保存期間のルールを解説"
+        },
+        {
+          "rank": 2,
+          "url": "https://ohp.carely.jp/column/health-committee-minutes/",
+          "title": "【テンプレあり】衛生委員会の議事録はどう書く？実際のサンプルで初心者向けに解説 ｜Carely産業医紹介"
+        },
+        {
+          "rank": 3,
+          "url": "https://hss.wellcoms.jp/blog/n0059",
+          "title": "安全衛生委員会の議事録とは？無料テンプレートサイトもご紹介"
+        },
+        {
+          "rank": 4,
+          "url": "https://sangyoui.m3career.com/service/blog/09005/",
+          "title": "衛生委員会の議事録に記載する内容は？保存期限や周知方法も解説 | エムスリーキャリア"
+        },
+        {
+          "rank": 5,
+          "url": "https://www.medical-tt.co.jp/2470",
+          "title": "衛生委員会「議事録」の作成法・保管等のルールを紹介"
+        },
+        {
+          "rank": 6,
+          "url": "https://sanpo-navi.jp/column/health-committee-minutes/",
+          "title": "【フォーマットあり】衛生委員会「議事録」の書き方・保管や周知の義務について解説"
+        },
+        {
+          "rank": 7,
+          "url": "https://aneiho.com/iinkai/iinkai5",
+          "title": "衛生委員会開催後の周知・記録について | 衛生委員会ハンドブック｜ドクタートラスト運営"
+        }
+      ],
+      "result_count": 7,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "東京 嘱託産業医",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://www.sakurajyuji-healthcare.jp/business/occupational-health/",
+          "title": "産業医・産業保健師 | 東京桜十字"
+        },
+        {
+          "rank": 2,
+          "url": "https://career.m3.com/feature/sangyoui/prefecture/tokyo/parttime",
+          "title": "東京都・嘱託産業医医師求人情報一覧｜m3.com CAREER"
+        },
+        {
+          "rank": 3,
+          "url": "https://www.tokyo.med.or.jp/sangyoi",
+          "title": "産業医情報 | 公益社団法人 東京都医師会"
+        },
+        {
+          "rank": 4,
+          "url": "https://www.tokyo.med.or.jp/sangyoi/whats",
+          "title": "産業医とは | 公益社団法人 東京都医師会"
+        },
+        {
+          "rank": 5,
+          "url": "https://www.tokyo-sangyoui.com/",
+          "title": "東京産業医事務所 | 港区、千代田区、中央区で産業医のご紹介"
+        },
+        {
+          "rank": 6,
+          "url": "https://www.sangyoui-souken.com/industrial_physician/tokyo.html",
+          "title": "東京の産業医紹介サービス・産業医事情まとめ｜産業医総研ONLINE"
+        }
+      ],
+      "result_count": 6,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "産業医 港区",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://minatokuishikai.or.jp/industry/",
+          "title": "産業保健センター | 港区医師会"
+        },
+        {
+          "rank": 2,
+          "url": "https://sanchie.net/media/sangyoui-minato-city-how-to-find/",
+          "title": "港区の産業医事情をご紹介！報酬相場や探し方も解説 | リモート産業保健"
+        },
+        {
+          "rank": 3,
+          "url": "https://www.tokyo-sangyoui.com/",
+          "title": "東京産業医事務所 | 港区、千代田区、中央区で産業医のご紹介"
+        },
+        {
+          "rank": 4,
+          "url": "https://www.shiba-mental.com/sangyoui.html",
+          "title": "産業医のご紹介(東京港区、千代田区、中央区など)｜芝メンタルクリニック"
+        },
+        {
+          "rank": 5,
+          "url": "https://www.sangyouhoken.com/",
+          "title": "産業医なら東京港区・渋谷区の産業保健サービス株式会社"
+        },
+        {
+          "rank": 6,
+          "url": "https://sangyouhoken.com/kensa/index.html",
+          "title": "産業医とは｜産業保健サービス株式会社"
+        },
+        {
+          "rank": 7,
+          "url": "https://www.minatomitaclinic.net/industrial_physician/",
+          "title": "港区の産業医なら港三田クリニックへ｜三田・田町"
+        }
+      ],
+      "result_count": 7,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "産業衛生 DX",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://www.hyogos.johas.go.jp/sanpo/wp-content/uploads/2025/06/118.pdf",
+          "title": "産業保健における ICTの活用 特集（兵庫産業保健総合支援センター No.118）"
+        },
+        {
+          "rank": 2,
+          "url": "https://nara-sangyoui.sakura.ne.jp/dx.html",
+          "title": "産業保健DX支援 | 健康経営・労働衛生のデジタル化 | 奈良・山内産業医事務所"
+        },
+        {
+          "rank": 3,
+          "url": "https://sampolab-ad.com/announcements/qsmtnbawd4wqf75c",
+          "title": "産業医・保健師の業務が劇的に変わる！産業保健における DX ..."
+        },
+        {
+          "rank": 4,
+          "url": "https://prtimes.jp/main/html/rd/p/000000037.000154534.html",
+          "title": "mediment、「産業保健業務のDX推進ポイント」調査レポートを公開 | メディフォン株式会社"
+        },
+        {
+          "rank": 5,
+          "url": "https://stories.jmdc.co.jp/20250226",
+          "title": "オンデマンド_JMDCが考える産業保健業務DXの進め方 ～健康診断と面談管理編～"
+        },
+        {
+          "rank": 6,
+          "url": "https://medi-face.co.jp/events/8yaDOftkXYET",
+          "title": "産業保健の現場とAI導入のリアル：メンタルケアのDX | Medi Face"
+        },
+        {
+          "rank": 7,
+          "url": "https://medicloud.jp/healthcare-dx-lab/category/occupational-health/page/2/",
+          "title": "産業保健 | 健康経営・健康管理コラム（健診DXラボ）| メディクラ"
+        },
+        {
+          "rank": 8,
+          "url": "https://shigoto.mhlw.go.jp/User/Occupation/Detail/324",
+          "title": "shigoto.mhlw.go.jp（職業情報提供サイト）"
+        }
+      ],
+      "result_count": 8,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": null,
+      "kiduki_position_note": "上位結果に出現なし（WebSearch代替の範囲）"
+    },
+    {
+      "query": "KIDUKI 産業医",
+      "source": "代替（WebSearch）",
+      "google_direct_fetch": "未取得（CAPTCHA/エラーページで内容取得不可）",
+      "top_results": [
+        {
+          "rank": 1,
+          "url": "https://en.wikipedia.org/wiki/Sueichi_Kido",
+          "title": "Sueichi Kido"
+        },
+        {
+          "rank": 2,
+          "url": "https://jsish.jp/eduwp/?page_id=1714",
+          "title": "患者急変対応KIDUKIプロバイダー/ファシリテーターコース | JSISHサイト 日本医療教授システム学会"
+        },
+        {
+          "rank": 3,
+          "url": "https://jsish.jp/seminar-info/regular-course/kidukiprovider-facilitator/",
+          "title": "患者急変対応KIDUKIプロバイダー/ファシリテーターコース | 日本医療教授システム学会"
+        },
+        {
+          "rank": 4,
+          "url": "https://en.wikipedia.org/wiki/Washizu_Kid%C5%8D",
+          "title": "Washizu Kidō"
+        },
+        {
+          "rank": 5,
+          "url": "https://en.wikipedia.org/wiki/Koki_Kido",
+          "title": "Koki Kido"
+        },
+        {
+          "rank": 6,
+          "url": "https://kdkconslt-sngyouijm.com/",
+          "title": "KIDUKIコンサルティング産業医事務所 | プロフェッショナルな産業衛生コンサルティングサービス"
+        },
+        {
+          "rank": 7,
+          "url": "https://www.tokyo.med.or.jp/sangyoi/search",
+          "title": "産業医をお探しの方へ | 公益社団法人 東京都医師会"
+        },
+        {
+          "rank": 8,
+          "url": "https://kiduki.co.jp/",
+          "title": "気づきの経営計画"
+        }
+      ],
+      "result_count": 8,
+      "ads_count": null,
+      "ads_count_note": "未取得（WebSearch代替のため広告は判別不可）",
+      "ai_overview": null,
+      "ai_overview_note": "未取得（WebSearch代替のためAI概要は判別不可）",
+      "kiduki_position": 6,
+      "kiduki_position_note": "WebSearch結果内の順位。Google実順位ではない"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "exact_version": "2026-09-02-v1",
+  "state": "owner-review",
+  "purpose": "casetra.jp ブログ5本からKIDUKI事務所サイトへ本文中リンク（文脈リンク）を1本ずつ入れる指示書",
+  "boundary": "内部承認資料。casetra.jp / kdkconslt-sngyouijm.com への書込みを許可しない。実施はCasetra側の別チケット。",
+  "approval_owner": "宮部 大輔",
+  "publication_authority_required": true,
+  "source": "https://casetra.jp/wp-json/wp/v2/posts?per_page=20&_fields=id,slug,link,title,content（2026-09-02取得、読み取りのみ）",
+  "rules": {
+    "utm": false,
+    "anchor_policy": "リンク先の記事タイトル（h1と一致）をアンカーにする",
+    "placement_policy": "insert_after_paragraph_starting_with は、対象記事の<p>本文（タグ除去後）の先頭20字。この段落の直後に link_html を1つ挿入する",
+    "forbidden_terms_checked": [
+      "無料",
+      "併設",
+      "クリニック",
+      "一気通貫",
+      "睡眠専門医",
+      "必ず",
+      "絶対",
+      "治る",
+      "一元管理",
+      "見える化",
+      "可視化",
+      "ウェルビーイング",
+      "健康データ"
+    ],
+    "target_urls_verified": "3 URLとも 2026-09-02 に HTTP 200（title/h1 取得済み）"
+  },
+  "item_count": 5,
+  "items": [
+    {
+      "casetra_post_id": 98,
+      "casetra_slug": "evidence",
+      "casetra_url": "https://casetra.jp/evidence/",
+      "casetra_title": "証跡って何を残す？｜監査で問われる「記録」の基本",
+      "section": "「やった」と「証明できる」は違う",
+      "insert_after_paragraph_starting_with": "監査や訴訟で問われるのは、**「やったか",
+      "insert_after_paragraph_full_text": "監査や訴訟で問われるのは、**「やったかどうか」ではなく「証明できるかどうか」**です。",
+      "link_html": "<p class=\"wp-block-paragraph\">面談・意見書・会社の決定を誰がどの順で残すかは、産業医側の整理として<a href=\"https://kdkconslt-sngyouijm.com/return-to-work-interview-process-roles/\">復職面談の進め方｜会社・本人・主治医・産業医の手続きと役割</a>（KIDUKIコンサルティング産業医事務所）が参考になります。</p>",
+      "anchor_text": "復職面談の進め方｜会社・本人・主治医・産業医の手続きと役割",
+      "target_url": "https://kdkconslt-sngyouijm.com/return-to-work-interview-process-roles/",
+      "rationale": "「証明できるか」の直後に、証跡の中身（面談→意見書→会社決定）を手続き順に説明する記事へつなぐ。9/29公開予定の「産業医の意見書が来たあと、会社は何を決めて何を記録するのか」（post_id 1856、URL候補 https://kdkconslt-sngyouijm.com/after-the-physician-opinion/ ）は本日時点でトップへ301するため未使用。公開後に差し替え候補（v2）。"
+    },
+    {
+      "casetra_post_id": 41,
+      "casetra_slug": "sample-post1",
+      "casetra_url": "https://casetra.jp/sample-post1/",
+      "casetra_title": "Excel管理 vs Case管理システム：監査対応の差",
+      "section": "観点4：「何かあったとき」の備え",
+      "insert_after_paragraph_starting_with": "安全配慮義務違反が問われた場合、企業は「",
+      "insert_after_paragraph_full_text": "安全配慮義務違反が問われた場合、企業は「ちゃんと対応していた」ことを証明する必要があります。",
+      "link_html": "<p class=\"wp-block-paragraph\">記録が担当者ごと・ファイルごとに散らばる問題そのものは、産業医側の視点で<a href=\"https://kdkconslt-sngyouijm.com/sangyouijouhou/\">産業衛生管理体制の「情報の不足」への具体的対策</a>（KIDUKIコンサルティング産業医事務所）が扱っています。</p>",
+      "anchor_text": "産業衛生管理体制の「情報の不足」への具体的対策",
+      "target_url": "https://kdkconslt-sngyouijm.com/sangyouijouhou/",
+      "rationale": "Excel管理の弱点＝情報が散在する話と、KIDUKI記事「情報の不足」の主題が一致する。比較表や導入判断の段落ではなく、証明責任を述べた段落の直後に置くことで宣伝色を避ける。"
+    },
+    {
+      "casetra_post_id": 36,
+      "casetra_slug": "sample-post2",
+      "casetra_url": "https://casetra.jp/sample-post2/",
+      "casetra_title": "【無料DL】復職支援 期限管理チェックリスト",
+      "section": "使い方のポイント／ポイント2：期限日を具体的に入力",
+      "insert_after_paragraph_starting_with": "「復職日＋1ヶ月」などの目安を、具体的な",
+      "insert_after_paragraph_full_text": "「復職日＋1ヶ月」などの目安を、具体的な日付に変換して入力してください。",
+      "link_html": "<p class=\"wp-block-paragraph\">再評価日や解除条件を誰がいつ決めるかは、<a href=\"https://kdkconslt-sngyouijm.com/service/return-to-work-support/\">スポット産業医｜法人1件からの復職面談・再評価</a>（KIDUKIコンサルティング産業医事務所）で産業医側の進め方を説明しています。</p>",
+      "anchor_text": "スポット産業医｜法人1件からの復職面談・再評価",
+      "target_url": "https://kdkconslt-sngyouijm.com/service/return-to-work-support/",
+      "rationale": "期限日を「具体的な日付に変換」する段落は、再評価日・解除条件という管理単位に最も近い。ダウンロード段落（リンク先が#で未整備）や末尾CTAの直前には置かない。"
+    },
+    {
+      "casetra_post_id": 31,
+      "casetra_slug": "sample-post3",
+      "casetra_url": "https://casetra.jp/sample-post3/",
+      "casetra_title": "産業医面談は医療行為ではない",
+      "section": "まとめ",
+      "insert_after_paragraph_starting_with": "診断・治療は主治医、就業上の配慮は産業医",
+      "insert_after_paragraph_full_text": "診断・治療は主治医、就業上の配慮は産業医、という役割分担を理解しておきましょう。",
+      "link_html": "<p class=\"wp-block-paragraph\">復職の場面で主治医の診断書と産業医の意見をどう分けて扱うかは、<a href=\"https://kdkconslt-sngyouijm.com/service/return-to-work-support/\">スポット産業医｜法人1件からの復職面談・再評価</a>（KIDUKIコンサルティング産業医事務所）に産業医側の流れがあります。</p>",
+      "anchor_text": "スポット産業医｜法人1件からの復職面談・再評価",
+      "target_url": "https://kdkconslt-sngyouijm.com/service/return-to-work-support/",
+      "rationale": "役割分担の結論文の直後に、復職判断で役割分担が実際に使われる場面へつなぐ。医療機関の紹介や受診誘引にならない表現にとどめる。"
+    },
+    {
+      "casetra_post_id": 26,
+      "casetra_slug": "blog-4",
+      "casetra_url": "https://casetra.jp/blog-4/",
+      "casetra_title": "復職支援の抜け漏れが起きる3パターン",
+      "section": "まとめ：抜け漏れを防ぐには「仕組み」が必要",
+      "insert_after_paragraph_starting_with": "復職支援の抜け漏れは、担当者の怠慢ではな",
+      "insert_after_paragraph_full_text": "復職支援の抜け漏れは、担当者の怠慢ではなく、仕組みの問題であることがほとんどです。",
+      "link_html": "<p class=\"wp-block-paragraph\">そもそも復職面談で会社・本人・主治医・産業医がそれぞれ何を担うかは、<a href=\"https://kdkconslt-sngyouijm.com/return-to-work-interview-process-roles/\">復職面談の進め方｜会社・本人・主治医・産業医の手続きと役割</a>（KIDUKIコンサルティング産業医事務所）に手続き順の整理があります。</p>",
+      "anchor_text": "復職面談の進め方｜会社・本人・主治医・産業医の手続きと役割",
+      "target_url": "https://kdkconslt-sngyouijm.com/return-to-work-interview-process-roles/",
+      "rationale": "「仕組みの問題」と述べた直後、Casetraの自社紹介文の前に置く。役割の抜け＝抜け漏れの原因という文脈でKIDUKI記事の主題（役割分担）と一致する。"
+    }
+  ]
+}

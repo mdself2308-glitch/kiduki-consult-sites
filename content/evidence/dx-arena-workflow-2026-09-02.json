@@ -1,0 +1,1262 @@
+{
+ "schema_version": 1,
+ "recorded_at": "2026-09-02T12:38:10+09:00",
+ "operation": "read_only",
+ "writes": false,
+ "workflow_run": "wf_0f8c72f0-05e",
+ "agents": 13,
+ "note": "調査3・作戦3・批判6・統合1。数値は推定と出典URLつき。",
+ "result": {
+  "research": [
+   {
+    "topic": "DX・健康管理・産業保健SaaS系11語の検索結果調査（2026-09-02、Google日本語・非ログイン・hl=ja&gl=jp・PC・各1回観測）と、KIDUKIが「DXの言葉」で検索を攻めるべきかの評価",
+    "findings": [
+     {
+      "claim": "「健康管理システム」「産業保健 クラウド」「休復職 管理 システム」「休職者 管理 ツール」の4語は、健康管理SaaSベンダーと比較サイトと広告で1ページ目が埋まる「SaaSの棚」で、KIDUKIが入る余地はない（棚の規律でも禁止されている場所）。",
+      "evidence": "Google JP実測（各1回）: 「健康管理システム」= アスピック比較16選／mediment 16選／HealthCore／広告2本（エムスリーヘルスデザイン・BOXIL）／エムステージ／PHC／自治体向け2件／Be Health／保健同人。「産業保健 クラウド」= Growbase／産業医クラウド（Avenir＝紹介会社の商品名）／CTC／広告2本（m3hd・両備）／iCARE／さんぽCLOUD／エムステージSanpo360。「休復職 管理 システム」= Carely休復職機能／ADVANTAGE HARMONY／armo／WellcoHR（エムステージ）／広告2本（armg・Carely）／SmartHR Plus／トリニティケア（2026-08新サービス）。「休職者 管理 ツール」= HARMONY／armo／Carely／SmartHR Plus／広告2本／Workday／Be Health休職者管理（2026-04追加）。4語ともAI概要は抽出テキストに無し。URL例: https://www.google.com/search?q=健康管理システム&hl=ja&gl=jp&pws=0",
+      "confidence": "high",
+      "note": "検索数の実数は未取得。比較記事・広告の多さから月数千規模と推定（キーワードプランナーで要確認）。"
+     },
+     {
+      "claim": "「健康経営 DX」「産業保健 DX」「産業医 DX」の3語は、検索する人が「DXの意味を知りたい人事・情シス」か「ツールを探す産業医本人」で、会社の案件（復職・意見書・解除）を抱えた人ではない。KIDUKIの初回相談にはつながりにくい語（推定）。",
+      "evidence": "Google JP実測: 「健康経営 DX」= 健康経営DXポータル／北九州学術研究都市／WellGo／TOPPAN HELPO／広告2本（マイシェルパ＝メンタル、Wantedly Perk＝福利厚生。意図がぼやけている証拠）／BREXA／mediment（2022記事）。「産業保健 DX」= ワーカーズドクターズ（紹介会社、2023）／PR TIMES mediment調査（2025-09）／日立MIRAMED／WellCon（2日前更新）／広告2本（first call・産業医サポート.com）／サンポチャート「産業医DXとは」（11,000字、CTAはさんぎょういカルテ＋産業医紹介）／リモート産業保健／JMDC／WithDrAI。「産業医 DX」= サンポチャート／WithDrAI／yatch.pro（「現役産業医が作る電子カルテ」）／広告2本／Avenir／さんぎょういカルテ。3語ともAI概要は抽出テキストに無し。",
+      "confidence": "high",
+      "note": "検索数は月数十〜数百と推定（実数未取得）。"
+     },
+     {
+      "claim": "「産業医が自分で作ったツール」という棚は既に形成中で、Casetraは後発になる。OHMEクラウド（セイルズ産業医事務所→さんぽテラス、2022年リリース、初期10万円・月1万円〜）、yatch（株式会社torchi、現役産業医が開発）、さんぎょういカルテ（サンポチャート、AIで面談記録・意見書）が「産業医 DX」「産業保健 クラウド」の1ページ目に出ている。",
+      "evidence": "https://company.sanpoterasu.jp（沿革に「2022年 OHMEクラウド リリース」）、https://fitgap.com/jp/products/ohme-cloud（「産業医事務所が提供する健康管理システム」）、https://saas.imitsu.jp/cate-health-care/service/3098（初期費用10万円・月額1万円〜）、https://yatch.pro/、https://karte.sampo-chart.com、mediment 16選記事（「OHMEクラウドは、現役の産業医事務所が開発した…」）",
+      "confidence": "high",
+      "note": "OHMEは「健康管理システム」（従業員×データ）側に寄っており、Casetraの「案件×完了」とは管理単位が違う。ただし検索結果上ではこの違いは伝わらない。"
+     },
+     {
+      "claim": "「就業制限 管理 表」は法令用語の衝突があり、産業医の就業上の措置の意図では1ページ目に1件も出ない。中災防・労働局の「就業制限業務一覧表（免許・技能講習）」、コロナ・感染症法の就業制限、女性則の就業制限業務が占める。この語は狙わない。",
+      "evidence": "Google JP実測: 1位 中央労働災害防止協会「就業制限業務一覧表（免許・技能講習）」、2位 奈良労働局、3位 日本の人事部テンプレ（「制限」は含まれない表示）、神戸大病院コロナ早見表、連合、マネーフォワード残業管理表、OPTiM、林災防（女性の就業制限業務）。広告0、AI概要なし。https://www.google.com/search?q=就業制限+管理+表&hl=ja&gl=jp&pws=0",
+      "confidence": "high"
+     },
+     {
+      "claim": "代わりに「就業制限 解除 管理」「産業医 意見書 会社 対応 就業制限 解除」は、産業医事務所が書いた記事が薄く、小規模の原産業医事務所が3〜4位に入っている。広告0・AI概要なし。KIDUKIが「会社が決めること・記録すること」の型で入れる余地がある（推定・中）。",
+      "evidence": "Google JP実測: 「就業制限 解除 管理」= 1位 intermind.jp（産業医紹介会社、2026-04）／Avenir／岡山県（コロナ）／サンポチャート／コロナ関連4件／Yahoo!知恵袋（2026-03）。半分はコロナ系ノイズ。「産業医 意見書 会社 対応 就業制限 解除」= intermind／サンポチャート／3位 原産業医事務所（2026-04）／Avenir（2026-08）／産業医システムズ／ワーカーズドクターズ／note産業医のトリセツ／さんぽみち／日本の人事部Q&A。広告0、AI概要なし。https://www.google.com/search?q=産業医+意見書+会社+対応+就業制限+解除&hl=ja&gl=jp&pws=0",
+      "confidence": "medium",
+      "note": "inquiry-strategy-2026-09-02.md の観測（小規模事務所が引用される）と一致。検索数は月数十〜百程度と推定。"
+     },
+     {
+      "claim": "「産業医 面談 日程調整」は、上位が予約システム会社（ChoiceRESERVE、8,500字）と紹介会社ブログ（ailesplus 2019・サンポチャート 2024・m3career）、日程調整ツール（waaq）、個人ブログ、Qiitaで、産業医事務所の記事は0件。広告は下部に1本（first call）、AI概要なし。KIDUKIの9/25記事が入る余地はある（推定・中）が、「関連する質問」は従業員側（いつ・強制か・何を話すか）が多く、検索者の半分程度は会社側でない可能性がある。",
+      "evidence": "Google JP実測: https://www.google.com/search?q=産業医+面談+日程調整&hl=ja&gl=jp&pws=0。1位 yoyaku-package.com（株式会社リザーブリンク、2024-09公開・2026-08更新、執筆は予約システム会社編集部＝WebFetchで確認）、他 ailesplus.com、sampo-chart.com、sangyoui.m3career.com、houjin.megalos.co.jp、waaq.blog、hiroyoshi-nohara.com、t-pec.jp、qiita.com。「他の人はこちらも検索」は「産業医面談 体験談／クビ／意味ない／泣く」。",
+      "confidence": "medium",
+      "note": "first call（メドピア）のオンライン産業医面談LPは「日程調整不要」を売りにしており、CASETRA主導線の記事はここと同じ土俵に見えないよう「人事が決める順番」の型で書く必要がある。"
+     },
+     {
+      "claim": "「衛生委員会 議事録 テンプレート」はAI概要が出ており（Carely・mediment・first call・Sanpo Navi・リモート産業保健・bizocean・さんぽみちを引用）、テンプレ配布ページは大手が埋めている。「テンプレート」語では余地はない。派生語「衛生委員会 議事録 保存期間 3年」も紹介会社が2026年4〜7月に更新済み。9/22記事はここで順位を争わず、「議事録に残す産業医の意見と会社の決定」という証跡の角度に寄せるのが妥当（推定）。",
+      "evidence": "Google JP実測: https://www.google.com/search?q=衛生委員会+議事録+テンプレート&hl=ja&gl=jp&pws=0（AI概要の本文とフォローアップ質問を確認）。テンプレ配布の形（WebFetch確認）: 直リンク無料DL＝mediment（2023-01公開・2025-07更新、約3,300字）、マネーフォワード（Word/Excel、2026-06更新）、bizocean。フォーム登録型＝Carely（ohp.carely.jp、2025-12、約7,000字、資料DL＋産業医紹介CTA）、Sanpo Navi（エムステージ、sangyohokensupport.jp のフォームへ）、WellCon（「登録1分」、2026-04公開・2026-08更新）。「保存期間 3年」= m3career／メディカルトラスト（2026-07）／Sanpo Navi／Dr.健康経営／intermind（2026-04）／wellcoms／Carely／アズコム。広告は両語とも0（1回観測）。",
+      "confidence": "high"
+     },
+     {
+      "claim": "「産業医 意見書 保管」は、紹介会社（intermind 2026-04、サンポチャート 2026-05、first call、リモート産業保健 2026-06、m3hd 2026-05、saizendo 2026-08）が2026年に更新を重ねているが、4位に原産業医事務所（2026-04）が入り、AI概要なし・広告は下部1本。テンプレはサンポチャートの意見書テンプレ（フォーム登録型、人事用／職場共有用の2枚）だけ。KIDUKIの9/29記事は「保管」ではなく「意見書が来たあと会社が決める4点と記録」の型なら入れる余地がある（推定・中）。",
+      "evidence": "Google JP実測: https://www.google.com/search?q=産業医+意見書+保管&hl=ja&gl=jp&pws=0。「他の人はこちらも検索」=「産業医意見書 フォーマット」「健康診断 医師の意見 50人未満」。サンポチャートDLページ: https://sampo-chart.com/sangyoiu-ikensho-donwload/4672/（2026-02公開・2026-06更新、メール・氏名入力必須＝WebFetch確認）。",
+      "confidence": "medium",
+      "note": "競合は法改正・実務語を1〜3か月で記事化する速さ。KIDUKIの承認速度では「先行」できないので、型で差を作る（inquiry-strategyの結論と同じ）。"
+     },
+     {
+      "claim": "広告の密度: 産業医が絡む商用語ではほぼ常に first call（メドピア）と 産業医サポート.com（比較・紹介の集客サイト）が出る。SaaS語ではエムスリーヘルスデザイン（ハピネスパートナーズ）、BOXIL、Carely、アドバンテッジ（armg）が出る。1ページあたり0〜3本。ブランド語「Casetra 産業医」でも競合3社（armg・リモート産業保健・first call）の広告が自然検索より上に出た。",
+      "evidence": "Google JP実測11語＋追加7語（各1回、非ログイン）。広告0本: 就業制限 管理 表／衛生委員会 議事録 テンプレート／就業制限 解除 管理／産業医 意見書 会社 対応 就業制限 解除。広告1本: 産業医 面談 日程調整／産業医 意見書 保管。広告2本: 健康管理システム／産業保健 クラウド／休復職 管理 システム／休職者 管理 ツール／健康経営 DX／産業保健 DX／産業医 DX／産業衛生 DX。広告3本: Casetra 産業医。",
+      "confidence": "high",
+      "note": "広告本数は時刻・地域・端末で変わる。Google広告はやらない前提なので、ここは「工程語は広告が薄い」という確認に使う。"
+     },
+     {
+      "claim": "AI概要の有無: 11語のうち、抽出テキストで確認できたのは「衛生委員会 議事録 テンプレート」だけ。ブランド語「Casetra 産業医」でもAI概要（Casetraの定義）が出た。その他9語は同条件の抽出で表示なし。",
+      "evidence": "Google JP実測（2026-09-02、hl=ja&gl=jp、pws=0、PC表示のページテキスト抽出）。「衛生委員会 議事録 テンプレート」のAI概要は末尾に「対面開催かオンライン開催か…お知らせください」というフォローアップ質問つき。「Casetra 産業医」のAI概要: 「Casetraは、産業医業務の案件管理や面談記録、是正・フォローアップの追跡・証跡保存を効率化するための…Case管理システムです。」",
+      "confidence": "medium",
+      "note": "AI概要は動的に読み込まれるため、テキスト抽出で取り逃す可能性がある。inquiry-strategyの月次スクショ（9/3基準値）で再確認するのが妥当。"
+     },
+     {
+      "claim": "casetra.jp の検索での見え方: 指名語「casetra」では casetra.jp が1位、consult.kdkconslt-sngyouijm.com が4位に出る。ただし同名の海外企業（CASETRA Limited＝資源商社、Caseta by Lutron＝照明、Casetra＝床材）が同じページに混在し、画像枠は床材で占められる。ブランド衝突がある。",
+      "evidence": "https://www.google.com/search?q=casetra&hl=ja&gl=jp&pws=0（1回観測）。結果: casetra.jp／casetra.jp/service／画像（Villagio Wood Floors「Casetra」床材）／運営主体／consult.kdk／casetra.com（CASETRA Limited）／Crunchbase／Caserta／Caseta by Lutron。",
+      "confidence": "high"
+     },
+     {
+      "claim": "casetra.jp の索引状況: Googleに約10ページ（トップ・security・privacy・service・news・works・会社案内2・blog-2・提供メニュー）。ブログ5本はすべて2026-01で、URLスラッグが sample-post1／sample-post2／sample-post3／blog-4 のまま。実績紹介 /works のGoogleスニペットに「数字で見る導入効果 導入企業の平均的な改善数値です」が表示されている。ローンチ監査（2026-08-25）が指摘した「顧客ゼロなのに導入効果の数値を公開」（B6・景表法リスク）が、検索結果の見え方として露出している。",
+      "evidence": "https://www.google.com/search?q=site:casetra.jp&hl=ja&gl=jp&pws=0（1回観測）。WebFetch casetra.jp/blog/: 5本（証跡って何を残す？ /evidence/ 2026-01-06、産業医面談は医療行為ではない /sample-post3/、Excel管理 vs Case管理システム /sample-post1/、【無料DL】復職支援 期限管理チェックリスト /sample-post2/、復職支援の抜け漏れが起きる3パターン /blog-4/）。WebFetch casetra.jp/works/: sample-works1／sample-works4 のスラッグが残存。監査文書: /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/docs/operations/CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md（B6）、CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md（結論NO-GO）。",
+      "confidence": "high",
+      "note": "casetra.jp の記事「【無料DL】…」は「復職支援 期限管理 チェックリスト」で2位に出る（ただしその語自体の検索数はごく小さいと推定）。事務所側の禁止語「無料」がcasetra.jp側で使われている点は、規律の整合を確認する必要がある（casetra.jpは非医療サイトなので医療広告規律の直接対象ではないが、同一代表者）。"
+     },
+     {
+      "claim": "事務所サイトの現行「産業衛生DX・Casetra」ページ（/service/cloud/）は、site:検索で /service/ 配下に出てこず（出たのはスポット旧URLと return-to-work-support のみ）、「産業衛生 DX」「産業衛生管理システム」でも10位以内に無い。「産業衛生」は検索で使われない言い方で（関連検索はすべて「産業保健」系）、「産業衛生管理システム」はHACCP・食品衛生の棚と衝突する。",
+      "evidence": "https://www.google.com/search?q=site:kdkconslt-sngyouijm.com/service/&hl=ja&gl=jp&pws=0（2件のみ）。「産業衛生 DX」= ワーカーズドクターズ／サンポチャート／日立／帝京大論文／広告2（Carely・first call）／WithDrAI／経団連／さんぽLAB／note Fairy Devices／Avenir。「産業衛生管理システム」= イプロス衛生管理システム／HACCPアプリ比較／職場のあんぜんサイトOSHMS／広告2／カミナシHACCP／メイテツコム／mediment／日本無線HACCP。WebFetch https://kdkconslt-sngyouijm.com/service/cloud/: title「産業衛生DX・Casetra｜KIDUKIコンサルティング産業医事務所」、meta descriptionなし、本文約1,200〜1,500字（ナビ含む概算。依頼文の486字とは計り方が違う可能性）、禁止語（一元管理・見える化・ウェルビーイング・無料・一気通貫）は無し。",
+      "confidence": "medium",
+      "note": "未インデックスか低評価かはSearch ConsoleのURL検査で確認が要る（本体ログインが停止中のため未確認）。"
+     },
+     {
+      "claim": "「産業医 業務 管理 システム」（Casetraの実態「産業医業務のCase管理システム」に一番近い語）でも、上位はHealthCore（エムステージ）・mediment・Growbase・M Connect（エムステージ、2019年から）・広告2本・産業医システムズ・Dr.CHECKで、Casetraは出ない。この語も「健康管理システムの棚」に吸収されている。",
+      "evidence": "https://www.google.com/search?q=産業医+業務+管理+システム&hl=ja&gl=jp&pws=0（1回観測）。HRプロ 2019-01「これまでになかった産業医の業務管理システム（M Connect）」。",
+      "confidence": "high"
+     },
+     {
+      "claim": "紹介会社の記事更新速度が速く、2026年に新規参入した intermind.jp（産業医紹介33,000円/月〜＋EAP）が2026-04の記事群で「就業制限 解除 管理」「産業医 意見書 保管」「衛生委員会 議事録 保存期間」の1〜5位に入っている。KIDUKIが「早さ」で勝つ土俵ではない。",
+      "evidence": "WebFetch https://intermind.jp/（株式会社INTERMIND、産業医紹介33,000円〜、© 2026）。各SERPで intermind の記事日付が2026/04/13・2026/05/02。サンポチャートも2026-02〜06に意見書・DX記事を公開・更新。",
+      "confidence": "high"
+     },
+     {
+      "claim": "産業保健DXの需要側の事実（第三者調査）: 従業員300名以上の企業でも健康管理のデジタル化は約3割、対応が「属人的」36.5%、フロー・ルールが明確な企業は25%。DXの遅れ自体は実在するが、この調査の対象は300名以上の大企業で、KIDUKIの主対象（50〜300名・選任義務のない企業）とは母集団が違う。",
+      "evidence": "PR TIMES メディフォン株式会社 2025-09-16 https://prtimes.jp/main/html/rd/p/000000037.000154534.html（調査日2025-08-07、人事労務担当者115名、Webアンケート）。",
+      "confidence": "high",
+      "note": "この数字を事務所サイトで「DXが遅れている」根拠に使う場合は、母集団（300名以上）を明記する。"
+     }
+    ],
+    "implications_for_kiduki": [
+     "先生の問いへの答え（結論）: 「DX」「システム」「ツール」「クラウド」が付く言葉で検索を攻めるのは、今はやらないほうがよい。理由は3つ。①その言葉の1ページ目は、健康管理SaaS（Carely・mediment・HealthCore・Growbase等）と比較サイトと広告で埋まっており、core-thesisの「健康管理システムの棚に並ばない」に反する。②その言葉で検索する人は「システムを選ぶ人」か「産業医本人」で、「復職の診断書が届いて困っている会社」ではない。目的（有効な初回相談）とずれる。③Casetraは2026-08-25時点で一般ローンチNO-GO（テスト企業受入0/18、実メール到達未証明、/worksに実体のない導入効果を公開中）なので、pricing-growth-canonical §10「実装済みでないものを提供中と表示しない」により、検索で人を集めても受け止められない。望み薄というより「今は入る場所と受け皿がない」。",
+     "「DXの言葉」ではなく「DXが解く工程の言葉」は既に正しく押さえている。12記事のDX柱4本（議事録9/22・日程調整9/25・意見書のあと9/29・解除管理10/2）のうち、日程調整・意見書のあと・解除管理の3語は「産業医事務所が書いた記事が薄い／小規模事務所（原産業医事務所）が3〜4位に入る／広告0〜1本／AI概要なし」で余地がある（推定・中）。ここは inquiry-strategy-2026-09-02.md の結論（会社側の工程クエリで型で入る）をそのまま続ければよく、新しい作戦は要らない。",
+     "9/22「衛生委員会議事録」だけは土俵が違う。「テンプレート」「保存期間3年」ともAI概要と大手のテンプレ配布ページが埋めており、順位は期待しない。CTAをCASETRAに無理につなげず、「議事録に残す産業医の意見と会社の決定（証跡）」の角度で書けているかを公開前に確認する。テンプレ配布をKIDUKIがやるなら、フォーム登録型（Carely・エムステージ・WellCon型）ではなく直ダウンロード（mediment・マネーフォワード型）にし、「無料」の語は使わず「ダウンロード」とだけ書く（禁止語対応）。",
+     "「就業制限 管理 表」は狙わない（免許・技能講習の一覧表とコロナの就業制限に意図を取られる）。10/2記事の対象語は「就業制限 解除 管理」「就業制限 解除 産業医」「産業医 意見書 会社 対応 就業制限 解除」に固定し、seo-contract-funnel.md の語群を1行修正する（新規承認は不要、私の作業）。",
+     "/service/cloud/（産業衛生DX・Casetra）の改善は「DX語の順位」を目標にしない。やることは3つに限定: ①title/H1の「産業衛生」を「産業保健」系の言い方に寄せるか、ページの役割を「Casetraを使う継続契約の説明（1ブロック＋リンク）」に戻す（rebrand-strategy §3の決定どおり）。②meta descriptionを付ける。③Search ConsoleのURL検査でインデックス状態を確認する（site:検索で出なかったため）。本文を増やして「産業保健DX解説」にするのは、サンポチャート11,000字・WellCon・ワーカーズドクターズと同じ棚に並ぶだけなので行わない。",
+     "casetra.jp の検索での見え方は、DX語で戦う前に直す前提条件がある（Casetra側の作業、監査B6と一致）: ①/works の「導入企業の平均的な改善数値」がGoogleスニペットに出ている → 非公開化。②ブログのスラッグ sample-post1〜3／blog-4、works の sample-works1／4 → 本番スラッグへ（301つき）。③「Casetra 産業医」で競合3社の広告が上に出る＝ブランド語でも紹介会社に横取りされるので、指名検索は「KIDUKI」「宮部大輔」側で受け、Casetraの名は事務所サイトでは1ブロックに留める（既決定と一致）。④casetra.jp の記事タイトル「【無料DL】」は同一代表者の禁止語運用と整合を確認する。",
+     "Casetraの将来の外販先（他の産業医・産業医事務所）に向けては「産業医 DX」「産業医 業務 管理 システム」に意味が出る可能性があるが、そこは既に yatch・さんぎょういカルテ・OHMEクラウド・M Connect がいる。Phase 2（限定的外販）に入るまでは事務所サイトの検索目標に混ぜない。混ぜると「事務所の問い合わせ」と「ツールの問い合わせ」が同じフォームに来て、台帳の「きっかけ」が読めなくなる。",
+     "先生に今週お願いすることは増やさない。この調査の結果で先生の判断が要るのは1点だけ: 「DX語は今は攻めない。工程語の12記事の型を続ける」に同意するか（一行）。同意なら、私は①seo-contract-funnel.md の対象語1行修正、②/service/cloud/ のtitle・meta案（承認は次週以降のTier S 1件として）、③Casetra側へ /works 非公開・スラッグ修正の依頼メモ、を用意する。",
+     "計測: 「産業保健 DX」「産業医 DX」「健康管理システム」はSearch Consoleで表示が出ても成果に数えない（意図が違うため）。月次レビューで見る5クエリ（スポット産業医／産業医 スポット／復職 診断書 会社 対応／産業医 意見書 会社 対応 就業制限 解除／就業制限 解除 産業医）に「産業医 面談 日程調整」を加える程度に留め、DX語は「観測のみ」の行にする。"
+    ],
+    "open_questions": [
+     "対象語の月間検索数の実数が取れていない（aramakijake.jp は「データなし」、WebSearchでも取得不可）。キーワードプランナーは広告アカウントが要るため、先生の操作なしでは取れない。SERPの広告本数・比較記事の多さからの推定（SaaS語＝月数千、DX複合語・工程語＝月数十〜数百）で判断している。",
+     "AI概要の有無は、PC・非ログイン・hl=ja&gl=jp のページテキスト抽出（1回）による。動的読み込みで取り逃した可能性があるため、9/3の基準値スクショ（inquiry-strategyの計画）で「産業医 面談 日程調整」「産業医 意見書 保管」「就業制限 解除 管理」を追加確認したい。",
+     "/service/cloud/ が site: 検索に出なかった理由（未インデックスか低評価か、canonical・noindexの有無）は、Search Console本体のURL検査でしか確定できない。本体ログインが停止中（open-items.md）。",
+     "casetra.jp の /works「導入効果の数値」と sample スラッグを直す担当と時期（Casetraリポの同時編集ルール「未コミット＝未完成」に従う）。事務所側の記事からcasetra.jpへリンクを増やす前に直すべきか。",
+     "casetra.jp 記事の「【無料DL】」表記を、同一代表者の禁止語運用（事務所側）と揃えるか、非医療サイトとして別扱いにするか（保健所照会の要否を含む先生の判断）。",
+     "「産業医 面談 日程調整」の検索者のうち会社側の比率。SERPの「関連する質問」は従業員側が多く、9/25記事のCTA（/service/cloud/ 主導線）に会社側の人がどれだけ進むかは公開後28日のquery×pageで見るしかない。",
+     "9/22議事録記事の現在の原稿が「テンプレート配布」寄りか「産業医の意見と会社決定の記録」寄りか。前者なら公開前に角度を直すか、そのまま公開して観測に回すかの判断（承認キューを増やさない方針との両立）。"
+    ]
+   },
+   {
+    "topic": "Casetraの製品真実と、事務所サイト（KIDUKI）が「DX」について公開で言える範囲（2026-09-02時点）",
+    "findings": [
+     {
+      "claim": "Casetraの一般ローンチ判定は、いま手元にある最新の正式記録（2026-08-25）で「NO-GO（まだ売り始めない）」。理由は技術の失敗ではなく、人が確認していない項目が残っているため。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md（結論: NO-GO。停止条件3つ＝①実案件1件に会社決裁がない ②G-01の運営・安全項目9件が未完了 ③テスト企業での実地受入18シナリオが未実施）。同フォルダの CASETRA_TEST_COMPANY_AUDIT_SHEET_JA.md は判定欄・承認欄がすべて空欄（2026-08-25更新）。",
+      "confidence": "high",
+      "note": "自動テストは合格（API 690件PASS、DAST High/Medium/Low 0、監査ログ連鎖 不一致0）。止めているのは「人の受入」と「運営の記録」。"
+     },
+     {
+      "claim": "GOまでの見込み時期は、公式の見立てで「条件付きGO（1社限定パイロット）が最短9月第2週、その4〜6週後に一般ローンチ」だったが、その前提（8/31までのM-01投入、8/26〜9/2の実地ウォークスルー）が実施された証拠がリポジトリに見当たらない。実際は10月以降にずれる可能性が高い（推定）。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/docs/operations/CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md（§4 最短経路。M-01は月境界が必要で「8/31を逃すと次は10/1で丸1か月遅延」と明記）。CASETRA_TEST_COMPANY_WALKTHROUGH_JA_2026-08-26.md は「8/26〜9/2の8日間モデル」の手順書だが、記入済みシートは無い。portal-ops は2026-08-25以降コミット0、APIは08-26と09-01にセキュリティ修正のマージのみ（git log）。",
+      "confidence": "medium",
+      "note": "「9月第2週」は前提が全部その週に片づいた場合の最短値。先生の週2時間枠では、テスト企業18シナリオ（見積55〜70人時）だけで数週間かかる。一般ローンチは早くて11〜12月と見るのが正直な幅（推定）。"
+     },
+     {
+      "claim": "条件付きGOになっても売れる範囲は狭い。STARTER/STANDARD/PLUSの月額のみ。復職Pack（P-01/P-02）、復職Case（C-02）、定期Series（C-03）、WorkTreat連携（W-01）はその時点でも売れない。顧客への5つの開示（単一環境、委託先と海外リージョン、サポート窓口とSLA保証なし、メール単一プロバイダ、ISMS未取得）が付く。",
+      "evidence": "CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md §4「条件付きGO」の販売範囲・顧客への開示。W-01は監査シートに `BLOCKED: BALANCE_SUPPORT_SCOPE_NOT_ENABLED` として最初から提供外。",
+      "confidence": "high",
+      "note": "復職案件をCasetra上で企業に見せる商品（Pack・単発の30日画面）は、一般ローンチより後の受入になる。"
+     },
+     {
+      "claim": "いま「実装済み・本番稼働中」と文書で裏づけられる中身: ①Case（案件）単位の工程管理（起票→面談→意見書→受領確認→会社決裁→フォロー→完了）で、会社決裁が記録されないとCaseを閉じられない（fail-closed）②18業務テンプレート／181作業／70法令要求（うち義務55）③OPS・産業医・企業の3ポータルが本番稼働（Standard SKU、産業医・企業はMicrosoft OIDCログイン）④Cal.com予約、CloudSign契約、Box保管、SendGrid送信、監査ログのハッシュ連鎖と外部アンカー⑤料金STARTER 40,000／STANDARD 60,000／PLUS 99,000円（税別）が公開サイト・契約フォーム・API・請求で一致。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/README.md（Portal release status）、docs/sales/website-pricing-audit-2026-08-06.md、docs/operations/CASETRA_SERVICE_LIFECYCLE_AUDIT_MANUAL_JA.md §2（18業務の一覧）、CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md（本番受入合格表）、メモリ public-site-standard-numbers.md（数字の出所と定義）。",
+      "confidence": "high",
+      "note": "「会社決裁なしでは閉じられない」は、Full Coverage Auditが赤になっている理由そのものが証拠（実案件1件が会社決裁待ちで138日超過）。"
+     },
+     {
+      "claim": "KIDUKIはCasetraを事務所の実案件で本当に使っている。本番データは12社・56Case（ACTIVE 1／CLOSED 49／DRAFT 6）、監査ログ連鎖は22事象・8社で不一致0。したがって「事務所側の業務管理にCasetraを使用」は今日そのまま公開で言える事実。",
+      "evidence": "CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md「Full Coverage Audit: 対象12社、56Case」「監査ログ連鎖 22事象・8社・不一致0」。",
+      "confidence": "high",
+      "note": "ただし pricing-growth-canonical §0 の規律どおり、この内部利用を「導入企業数」「契約社数」「ARR」として数えたり書いたりしてはいけない。"
+     },
+     {
+      "claim": "「実装はあるが受入が済んでいない」もの: 復職PackのCase 1件限定アクセス・期限後READ_ONLY（P-01）、Pack→別月額契約→将来日からFULL自動切替（P-02）、単発（60,000円等）に付く「企業へ対象1 CaseだけのCasetra画面を30日提供」。これらはソース実装・ローカル試験まで済み、本番での人の受入が未実施。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/kiduki/docs/strategy/return-to-work-pack-casetra-workflow-2026-08-17.md（状態: 実装済み／§7 実機受入チェック全項目が未チェック）、pack-midstream-casetra-conversion-policy-2026-08-18.md（「production反映と実企業受入は未実施」）、監査シートP-01/P-02の判定欄が空欄。",
+      "confidence": "high",
+      "note": "正本§5は単発に「Casetra画面30日提供」を含めるが、受入未了と矛盾。inquiry-strategy-2026-09-02.md も「先生の一行決定（当面PDF・メールで受渡し）が要る」と指摘済み。"
+     },
+     {
+      "claim": "「設計もしていない・実装もない」もの: ストレスチェックのCasetra組込み（本人同意ゲート・実施者体制・集団分析）、労基署報告書の自動生成とワンクリック電子申請、従業員マスタ同期・名簿からの自動抽出・督促（ロースターエンジン）、健診センター連携、SAS対策プログラム。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/kiduki/docs/checklists/open-items.md「事業設計」節（すべて未チェック）、integrated-story.md 第3幕「ロースターエンジン後」、rebrand-strategy.md §3「SAS対策プログラムは未設計。独立商品として掲げない」。",
+      "confidence": "high",
+      "note": "casetra.jpの「月額の最初の1か月: 勤怠CSV→80h超を自動抽出→申出勧奨が自動送信」（integrated-story第2幕）は物語であり、実装の裏づけ文書がない。事務所サイトでは書けない。"
+     },
+     {
+      "claim": "casetra.jp（自社の製品サイト）自身が、core-thesisの「棚の規律」で禁じた語を使っている: 「Case単位で進捗を一元管理」「見える状態にします」「傾向を可視化」「休職率・離職予備軍・法的リスクを数値化」。さらに受入未了・正本にない記載がある: FAQ「CSV等での移行をサポート」「小規模（50名未満）特則」、15分「無料相談」。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/casetra-site-xserver/index.html の本文抽出（2026-09-01コミット 1cd8fa8 の版）。08-25監査B6は「CSV移行・削除SLAを約束しない」を条件付きGOの範囲に明記。docs/pricing-growth-canonical.md（Casetra側）に小規模特則の記載なし（旧料金にはあった＝2026-08-06に301で廃止）。",
+      "confidence": "high",
+      "note": "事務所サイトがcasetra.jpへリンクする以上、リンク先の語と主張はKIDUKIの信頼に跳ね返る。事務所サイト側でこれらの語を写さないことが第一、casetra.jp側の是正は別チケット。「無料相談」は事務所サイトの禁止語（casetra.jpは医療機関でない製品サイトだが、代表医師が同一人物）。"
+     },
+     {
+      "claim": "casetra.jpのブログ5本の実タイトルは「証跡って何を残す？」「Excel管理 vs Case管理システム」「【無料DL】復職支援 期限管理チェックリスト」「産業医面談は医療行為ではない」「復職支援の抜け漏れが起きる3パターン」。うち4本が2026-01-01付でスラッグが sample-post1〜3／blog-4。inquiry-strategyが想定した題材（日程調整／意見書／解除／議事録／既存産業医の補完）とは一致しない。",
+      "evidence": "https://casetra.jp/blog/ を2026-09-02に取得（WebFetch）。08-25監査の30日リスト12は「sample-* スラッグ 301」を残件として挙げている。",
+      "confidence": "medium",
+      "note": "本文の中身（実質があるか、ひな形のままか）は未確認。KIDUKI記事への文脈リンク案は実タイトルで組み直す必要がある（証跡→9/22議事録・9/29意見書、Excel vs Case管理→9/25日程調整・案件管理記事、期限チェックリスト→10/2解除管理、抜け漏れ3パターン→9/29、医療行為ではない→スポットページ、が自然な対応）。"
+     },
+     {
+      "claim": "core-thesisの「棚の規律」とDX語の関係: 「産業保健DX」「健康管理システム」「一元管理」「見える化」で検索する人が着く棚は、Carely等の健康管理システムの棚（管理単位＝従業員×データ）。KIDUKI/Casetraの単位は案件×完了。この棚に並ぶことは規律違反であり、かつ被リンクほぼゼロ・3年目ドメインでは順位でも勝てない土俵。一方「産業衛生DX」という語自体は、2026-09-02に先生がタイトルタグ（S5）で承認済みで、事務所サイトの柱名として使える。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/kiduki/docs/core-thesis.md「棚の規律」、kiduki/docs/copy/site-copy.md（承認済みtitle「…嘱託産業医・単発相談・産業衛生DX…」、メニュー「産業衛生DX・Casetra」）、content/seo-ranking-recovery-plan-2026-09-02.md §結論1「上がらない主因は方向ではなく土台と量」。",
+      "confidence": "high",
+      "note": "結論の要点: 「DXという旗」は掲げてよいが、「DXの一般語で検索順位を取る」のは棚が違う。取るべきは工程の痛み語（日程調整・意見書のあと・就業制限の解除管理・議事録の保存）で、これはすでに4本の記事として実装済み。"
+     },
+     {
+      "claim": "DX柱の4記事（9/22議事録、9/25日程調整、9/29意見書のあと、10/2解除管理）と公開候補の案件管理記事は、いずれも工程語で書かれ、本文にCasetra名を出さず、CTAだけが「産業衛生DX・CASETRA」→/service/cloud/。棚の規律・医療広告規律・正本§10と整合している。着地先の/service/cloud/（page 166）が本文約486字と薄いのが弱点。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/content/articles/{committee-minutes-three-year-retention,industrial-physician-scheduling,after-the-physician-opinion,work-restriction-release-management,occupational-health-case-management}.html（見出しとCTAの抽出。本文中にCasetra語は0件）、source/wordpress/page-166-cloud.html、content/seo-contract-funnel.md 優先レーン6と記事別主導線表。",
+      "confidence": "high",
+      "note": "recovery plan S4（承認済み・反映済みか要確認）で166末尾に「関連する記事」3本が付く。それでも「工程が詰まる場所と、会社が決めること・記録すること」の説明が本文に無い。"
+     },
+     {
+      "claim": "rebrand-strategyの決定「事務所サイトでCasetraを商品として売らない。1ブロック＋リンク」は現在も有効で、むしろ根拠が増えた: ①Casetra企業提供がNO-GO（§10「実装済みでないものを提供中と表示しない」）②営業資料の規律「KIDUKI資料でCASETRAを売らない」③integrated-story「Casetraは売らない。案件が運び込む」④GBPのサービス欄にCasetraを載せない決定（09-02）。dual-revenue案（08-17）の「KIDUKIホームにCasetra第二入口・150,000円表示」は、その後の料金非掲載・Pack不掲載の規律で上書きされている。",
+      "evidence": "kiduki/docs/rebrand-strategy.md §3「Casetraとの関係」、kiduki/docs/pricing-growth-canonical.md §10、メモリ sales-material-rules.md、kiduki/docs/integrated-story.md「5つの法則」2、content/inquiry-strategy-2026-09-02.md（料金非掲載・Pack不掲載、GBPサービス欄からCasetraを外す）、kiduki/docs/strategy/casetra-kiduki-dual-revenue-proposal-2026-08-17.md §2・§5。",
+      "confidence": "high",
+      "note": "現行の静的トップはCasetra語が27回出るが、内容は機能説明ではなく「契約関係の明示（単発は不要／継続はKIDUKI側の業務管理／企業側導入は別契約・任意）」で、rebrandが求めた「曖昧さを避けるため運用はCasetraで回すと明示」の趣旨に合う。"
+     },
+     {
+      "claim": "現行の公開文の中で、正本§10に照らして少し強すぎる一文がある: page 166「Casetraだけを導入し、自社の担当者・産業医で運用することもできます」。企業向け一般提供がNO-GOの間は「できます」ではなく「ご相談いただけます（受付状況はcasetra.jp）」程度が実態に合う。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/source/wordpress/page-166-cloud.html の契約関係の段落、CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md（NO-GO）、2026-08-23 REPORT.md（新規受付の技術基盤はGO、一般ローンチはNO-GO）。",
+      "confidence": "medium",
+      "note": "08-23監査は「新規受付を安全に処理する基盤はGO」なので、相談を受けること自体は虚偽ではない。断定的な「導入できます」だけを避ける。"
+     },
+     {
+      "claim": "DX語の検索需要が事務所サイトに届いている証拠は今のところ無い（無需要の証明ではなく、データが無い）。28日で241表示・11クリック、上位クエリは「宮部大輔」「スポット産業医」「ストレスチェック助成金 廃止」。consult側のクエリ「casetra」は1表示・0クリック。",
+      "evidence": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/content/seo-contract-funnel.md「2026-09-01の実測ベースライン」、content/evidence/search-console-dual-property-snapshot-2026-09-01.json。",
+      "confidence": "high",
+      "note": "DX柱の記事4本は9/22〜10/2公開予定で、まだ1本も出ていない。判定は公開後28日・90日のquery×pageで行う。キーワードプランナーの実数は未取得（DX検索結果の別調査の担当範囲）。"
+     },
+     {
+      "claim": "事務所サイトのDX訴求で「使える言葉」（文書で裏づけあり）: 産業衛生DX／産業衛生業務の標準化・効率化／事務所側の業務管理にCasetraを使用／案件（Case）単位で完了まで／期限・再評価日・解除条件／会社の決定（会社決裁）・意見書の受領確認・記録・証跡／予約・資料回収・記録・進捗確認（確定稿）／役割（会社・本人・主治医・産業医）／判定・措置・解除条件／18業務テンプレート・181作業・70法令要求（うち義務55、名宛人は事業者と併記）／「やった」を「証明できる」に／企業側の導入は別契約・任意／境界文「医学的評価は医師、最終決定と実施は会社」／初回のご相談（15分）。",
+      "evidence": "kiduki/docs/copy/site-copy.md（確定稿・禁止語）、kiduki/docs/core-thesis.md（使う語: 判定・措置・解除条件・証跡）、メモリ public-site-standard-numbers.md、source/wordpress/page-166-cloud.html の境界文。",
+      "confidence": "high",
+      "note": "数字3つは kdk-wordpress の `npm run verify:standard-numbers` で本番設定と突き合わせ可能。"
+     },
+     {
+      "claim": "事務所サイトのDX訴求で「使えない言葉」: A 棚の語＝一元管理・見える化・可視化・ウェルビーイング・健康管理システム・健康データ・ダッシュボードで経営リスクを数値化／ケア・カウンセリング・寄り添う。B 禁止語＝無料（無料相談・無料DL）・睡眠専門医・一気通貫・併設・クリニックと連携・必ず・絶対・保証・治す。C 未実装／未受入＝導入企業・導入事例・改善数値・「企業へ提供中」・復職Pack・Casetra画面30日提供・WorkTreat／両立支援データ連携・CSV移行・SLA・ISO27001・国内保管・改変不能保管・ストレスチェック組込み・労基署報告の自動生成／電子申請・名簿の自動抽出／督促・健診センター連携・自動エスカレーション。D 営業上の禁句＝仲介手数料と同額・会社は何もしなくてよい・Casetra導入不要・KIDUKIがすべて決める・Pack契約＝Casetra契約・アップロード1回と数クリックだけ。E 内部用語＝PACK_INCLUDED・CLIENT_BILLABLE・二重請求しない設計・含有時間・併売。F 事務所サイトに置かない＝Casetraの料金金額・機能カタログ・「Case管理OS／就業判断OS」等の製品タグライン（casetra.jpに委ねる）。",
+      "evidence": "core-thesis.md 棚の規律、site-copy.md 禁止語と医療広告規律、pricing-growth-canonical.md §10、casetra-kiduki-dual-revenue-proposal §6「使用しない」、return-to-work-pack-casetra-workflow §4、sales-material-rules.md、CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md §4条件付きGOの範囲、open-items.md 事業設計節、rebrand-strategy.md §3。",
+      "confidence": "high",
+      "note": "Cは「今は」使えない語。受入PASS・GO判定の後に個別に解禁する（解禁の証拠は監査シートのPASS行）。"
+     }
+    ],
+    "implications_for_kiduki": [
+     "先生の問いへの答え（先に結論）: 「DXで攻めるのは望み薄」ではなく、「いま公開で売れるDXの中身が少なく、DXの一般語は別の棚（健康管理システム）に着地する」ので、DXの一般語で順位を追わない。DXの旗（産業衛生DX）はタイトルとメニューに残し、中身は工程の痛み語（面談の日程調整・意見書のあと・就業制限の解除管理・議事録の保存）で書く。これは9/22〜10/2の4記事で既に実装済みで、追加の新規記事は今は作らない。",
+     "/service/cloud/（page 166、本文約486字）を「機能説明」ではなく「会社の工程が詰まる4つの場所と、会社が決めること・記録すること」の型で増強する1件を、S4反映とDX記事の公開7日レビューの後に、承認1行で出す。Casetraの機能・料金・導入の流れはcasetra.jpへリンクで委ね、事務所側は境界文と契約関係の表だけ残す（rebrandの1ブロック＋リンクを維持）。",
+     "page 166の「Casetraだけを導入し…運用することもできます」は、一般ローンチNO-GOの間は「ご相談いただけます」に弱める候補として上の増強に含める（正本§10の予防）。反映前に先生の一行承認。",
+     "先生の一行決定を1つ用意する（inquiry-strategyで既出）: 「単発・Basic・Retainの履行では、当面Casetraは事務所内部だけで使い、意見書・記録はPDF／メールで受渡しする。企業へのCasetra画面提供は受入PASS後」。これで正本§5と受入未了の矛盾が消え、サイト・営業の文言が固定できる。",
+     "Casetra企業提供の解禁は、監査シートのPASS行を証拠にして段階的に行う: ①条件付きGO（STARTER/STANDARD/PLUSのみ・5つの開示付き）→事務所サイトは「企業側でCasetraを利用する場合は別契約」の一文＋casetra.jpリンクのまま ②P-01/P-02 PASS→単発の30日画面とPackを案内可 ③C-02/C-03 PASS→復職Caseと定期業務の企業利用を案内可。順序を逆にしない。",
+     "GO時期の見込みは「条件付きGOは10月以降、一般ローンチは早くて11〜12月（推定）」で計画する。M-01は月境界が要るため、8/31を逃していれば次は10/1。事務所側のSEO計画（12記事CTA v6、スポットv3、A4一枚）はCasetraのGOに依存させない。",
+     "casetra.jpの5記事からKIDUKI記事への文脈リンクは、実タイトルで対応表を組み直す（証跡→9/22議事録・9/29意見書、Excel vs Case管理→9/25日程調整、期限チェックリスト→10/2解除管理、抜け漏れ3パターン→9/29、医療行為ではない→スポットページ）。sample-postスラッグと「無料DL」の題名は、Casetra側の30日残件（スラッグ301）と一緒に別チケットで扱う。",
+     "casetra.jp本文の棚語（一元管理・可視化・経営リスク数値化）と受入未了の記載（CSV移行サポート・小規模特則・自動エスカレーション）は、Casetra側の是正チケットに回す。事務所サイトはこれらを一語も写さない。",
+     "GBPのサービス欄にCasetraを載せない・肖像を使わないは決定どおり維持。DX訴求は検索結果とサイト内に限る。",
+     "計測: 毎月のSearch Console記録に、レーン6の語（産業衛生 DX／産業医 面談 日程調整／産業医 意見書 管理／就業制限 解除 管理／衛生委員会 議事録 保存）を「記録のみ・順位目標なし」で追加し、DX記事4本の公開28日・90日でquery×pageと/service/cloud/への遷移を見る。0でも90日までは改稿しない。"
+    ],
+    "open_questions": [
+     "8/31までのM-01（翌月プラン変更予約）投入と、8/26〜9/2に計画された実地ウォークスルーは実施されたか。監査シートに記入済みの版はあるか（リポジトリ内のシートは空欄のまま）。これがGO時期を1か月単位で動かす。",
+     "Full Coverage Auditを赤にしている実案件1件（長時間労働Case、会社決裁待ち138日超）は、会社の本当の決裁を取れたか、それとも誤起票としてVOIDにしたか。",
+     "SendGridの実メール到達（受信箱＋SPF/DKIM/DMARC）、BoxのDPA・リージョン確認、OPSログインのOIDC切替（共有パスコード廃止）は済んだか。いずれも条件付きGOの前提。",
+     "casetra.jp の /works/（架空の導入事例・改善数値）と /service/ の実体のない記載は非公開・修正済みか（08-25オーナーチェックリストB-1。トップのリンク削除は09-01マージ済み）。事務所サイトからリンクする先の信頼に直結する。",
+     "先生の一行決定: 単発・Basic・Retainで当面「Casetraは事務所内部のみ、証跡はPDF／メール受渡し」とするか（正本§5の「30日画面」を一時停止するか）。",
+     "core-thesisの棚の規律（一元管理・見える化を使わない）は casetra.jp の文言にも適用する方針か。適用するなら casetra.jp のヒーロー〜Product節の語を差し替えるチケットが要る。",
+     "casetra.jp の5記事は中身が実質のある記事か、ひな形のままか（4本が2026-01-01付・sample-postスラッグ）。中身次第で「文脈リンクの供給源」として使えるかが変わる。",
+     "DX系の語（産業保健DX／産業医 DX／健康管理システム 等）の月間検索数の実数と検索結果の顔ぶれ（健康管理SaaS・比較サイトが占めるか）は、本調査の範囲外で未取得。DX検索結果の別調査の結果と合わせて最終判断する。",
+     "月次コンサルパック（Monthly Consulting Pack）は08-26の修正マージ後に1部でも正常生成・通読されたか。「月次の成果物」を将来売るなら契約前に合格品が1部要る。"
+    ]
+   },
+   {
+    "topic": "人事・労務担当者は「産業保健業務の痛み」をどんな言葉で検索するか／テンプレ配布の競合と転換率／「DX」という語は誰が検索するか（KIDUKI 証跡テンプレート配布の勝ち筋と表現）— 2026-09-02 調査",
+    "findings": [
+     {
+      "claim": "「産業医面談 日程調整」という言葉は検索候補（Googleサジェスト）に実在する。ただし「大変」「面倒」「つらい」などの気持ちの言葉を足すと候補は0件になる。痛みは名詞（工程の名前）で検索され、感情語では検索されていない。",
+      "evidence": "Googleサジェスト（suggestqueries.google.com、hl=ja&gl=jp、2026-09-02取得）: 「産業医面談 日程調整」→候補2件（産業医面談 日程調整／復職 産業医面談 日程調整）。「産業医 面談 日程調整 大変」「産業医 日程調整 面倒」「休職者 対応 大変」「人事 産業医 対応 大変」「健康管理 エクセル 限界」→いずれも0件。生データ: /private/tmp/claude-501/-Users-dmmac-Library-Mobile-Documents-iCloud-md-obsidian-Documents-MyBrain-00-Projects-kdk-wordpress/e89c4ead-0e41-4ee6-becb-3c6eb690b0b9/scratchpad/google-suggest-2026-09-02.json および同 batch2",
+      "confidence": "high",
+      "note": "サジェストは1回の観測。件数の多さ＝検索回数の多さではないが、「候補に出る＝ある程度の検索がある」の目安になる。"
+     },
+     {
+      "claim": "12記事のDX柱4本のうち、検索需要がいちばん厚いのは「衛生委員会 議事録」。候補語は保管期間・周知・フォーマット・テンプレート・例・義務・公開・押印と幅広く、テンプレ需要が名詞として存在する。",
+      "evidence": "Googleサジェスト「衛生委員会 議事録」→10件（保管期間／周知／フォーマット／テンプレート／例／義務／公開／周知義務／押印）。Bingサジェスト（api.bing.com/osjson.aspx、mkt=ja-JP）「衛生委員会 議事録 テンプレート」→8件（厚生労働省／ワード／エクセル／ダウンロード／無料 など）。検索回数の目安（aramakijake.jp、推定・ツール値）: 「衛生委員会 議事録」Google 384回/月、「衛生委員会 議事録 テンプレート」Google 24回/月。https://aramakijake.jp/keyword/index.html?keyword=衛生委員会 議事録",
+      "confidence": "medium",
+      "note": "aramakijakeの数字はツールの推定で実数ではない（下の「ツールの限界」参照）。相対比較にだけ使う。"
+     },
+     {
+      "claim": "「産業医 意見書」は「テンプレート」ではなく「フォーマット」「様式」「ひな形」という語で探されている。また「効力」「本人開示」「誰が見る」など、意見書を受け取った後の扱いに関する候補が多い。",
+      "evidence": "Googleサジェスト「産業医 意見書」→10件（効力／フォーマット／休職／義務／フォーマット 厚生労働省／本人 開示／開示請求／誰が 見る／様式）。「産業医 意見書 テンプレート」→0件、「産業医 意見書 フォーマット」→3件。Bing「産業医 意見書 テンプレート」→12件（健康診断結果意見書 書式／職場復帰 意見書 ひな形 など）。目安（aramakijake、推定）: 「産業医 意見書」Google 208回/月、「産業医 意見書 フォーマット」Google 88回/月。",
+      "confidence": "medium",
+      "note": "厚労省こころの耳の様式例（https://kokoro.mhlw.go.jp/etc/pdf/return-ikensyo.pdf）が上位に出るため、産業医が書く欄のテンプレは公的様式で埋まっている。空いているのは「受け取った会社が何を決めて記録するか」の側。"
+     },
+     {
+      "claim": "「休職者 管理」の第一候補は「休職者 管理 システム」で、次が「エクセル」「管理表」。この語で来る人は健康管理システムの棚（Carely等）へ流れる導線の上にいる。",
+      "evidence": "Googleサジェスト「休職者 管理」→システム／エクセル／（単独）／管理表／管理職 の5件。目安（aramakijake、推定）: 「休職者 管理 エクセル」Google 32回/月、「休職者 管理 システム」Google 16回/月。Bing「休職者 管理 エクセル」の候補12件のうち産業保健に関係するのは1件で、残りは有休・代休・育休管理のエクセル。",
+      "confidence": "medium",
+      "note": "「休職者 管理 エクセル」は労務全般（有給・代休）の管理表と混ざる語で、KIDUKIの案件×完了の型とはずれる。"
+     },
+     {
+      "claim": "「就業制限 解除」という語は、感染症（結核・腸管出血性大腸菌・感染症法）の意味に強く汚染されている。産業保健の意味で使うには「産業医」「就業上の措置」を添えないと別の検索者に当たる。",
+      "evidence": "Googleサジェスト「就業制限 解除」→10件中、結核・感染症法・腸管出血性大腸菌が5件。「産業医 就業制限 解除」「健康診断 就業制限 解除」は候補に存在。「就業制限 管理表」「就業制限 再評価」「就業上の措置 解除／期間／記録」「就業配慮 管理表」「再評価日（産業保健の文脈）」→すべて0件。「就業上の措置」→8件（意見書／例／ストレスチェック／健康診断／産業医／労働安全衛生法）。",
+      "confidence": "high",
+      "note": "inquiry-strategy-2026-09-02.md が対象クエリにしている「就業制限 解除 産業医」「産業医 意見書 会社 対応 就業制限 解除」の語順はこの汚染を避けており、方針と整合する。"
+     },
+     {
+      "claim": "「復職 管理 シート」「復職支援 管理表」「健康診断 事後措置 管理表」「産業保健 業務 チェックリスト」「産業保健 年間スケジュール テンプレート」は検索候補に存在しない。管理表・シートという名前では探されていない。",
+      "evidence": "Googleサジェスト（2026-09-02）: 上記5語すべて0件。「健康診断 事後措置」単独は10件（義務／流れ／保健指導／指針／リーフレット／厚生労働省／書式）。Bing「復職 管理 シート」→2件（復職時調整 図解・事例集／厚生労働省 復職 マニュアル）。",
+      "confidence": "high",
+      "note": "事後措置は「流れ」「書式」で探される。テンプレの命名は「管理表」ではなく「様式」「書式」「一覧」に寄せる根拠。"
+     },
+     {
+      "claim": "inquiry-strategyで選んだ「会社側の工程クエリ」（復職 診断書 会社 対応／産業医 意見書 会社 対応／産業医 意見書 もらった後）はサジェストに出ない。需要は薄いが競合も薄く、AI概要の空白と整合する。「復職 診断書」の候補は従業員本人の意図（費用・何日前・例文）が中心。",
+      "evidence": "Googleサジェスト「復職 診断書」→10件（内容／異動／日付／配慮／例文／必要か／費用／条件／何日前）。「復職 診断書 会社」→2件（会社負担／会社 復職 診断書）。「復職 診断書 会社 対応」「産業医 意見書 会社 対応」「産業医 意見書 もらった後」「復職 会社 決定」→0件。Bing「復職 診断書 会社」→10件、うち「復職に関する意見・情報提供依頼書」1件のみが会社側。",
+      "confidence": "medium",
+      "note": "会社側の検索者は少数で、代わりに日本の人事部Q&Aで「法的効力」「賃金」「開示」の枝で質問している（下の項目）。"
+     },
+     {
+      "claim": "「DX」の語は担当者の検索候補にほとんど出ない。「産業保健 DX」は自分自身1件のみ、「産業衛生 DX」は0件、「健康経営 DX」は2件（1件は無関係の「dmm 健康経営」）、「産業医 DX」は1件。検索回数ツールでも「産業保健DX」「健康経営DX」はデータなし。",
+      "evidence": "Googleサジェスト（2026-09-02）上記。aramakijake.jp: 「産業保健DX」「健康経営DX」→「データが見つかりませんでした」。「産業衛生DX」を完全一致で検索すると、日本産業衛生学会 産業衛生技術部会（https://jsoh-ohe.umin.jp/）、兵庫産業保健総合支援センター誌「産業保健におけるICTの活用」特集（https://www.hyogos.johas.go.jp/sanpo/wp-content/uploads/2025/06/118.pdf）、mediment調査プレスリリースなどが出るが、「産業衛生DX」という語そのものを使う他社ページは確認できなかった。",
+      "confidence": "medium",
+      "note": "「産業衛生DX」は当事務所の造語に近い（推定）。指名検索の補助にはなるが、非指名の入口としては需要が測れないほど小さい。"
+     },
+     {
+      "claim": "「産業保健DX」で検索して読む人が着地するのは、健康管理システムのベンダーと産業医紹介会社の記事で、中身は「健康管理システムの導入」「一元管理・見える化・蓄積データの分析」、出口は資料ダウンロード。つまりDX語で来る人は健康管理システムの棚の比較者。",
+      "evidence": "「産業保健DX とは」の検索結果上位: mediment（メディフォン）https://mediment.jp/blog/health-information-DX 、ウェルコムス https://hss.wellcoms.jp/blog/n0123 、日立システムズ MIRAMED、ワーカーズドクターズ https://www.workersdoctors.co.jp/column/knowledge/7151/ （想定読者＝人事労務・産業保健スタッフ、解決策＝健康管理システムの活用、使用語＝一元管理／見える化／自動化／蓄積データの分析、CTA＝資料請求・産業医紹介・ストレスチェックシステム）、メディクラ 健診DXラボ、さんぽLAB（アドバンテッジリスクマネジメント）。",
+      "confidence": "high",
+      "note": "core-thesis.md「棚の規律」の禁止語（一元管理・見える化）でこの棚は書かれている。KIDUKIがこの語で上位に並ぶこと自体が棚の規律違反になる。"
+     },
+     {
+      "claim": "「産業保健DX」を語る調査の回答者は従業員300名以上の企業の人事で、KIDUKIの主対象（選任義務のない企業〜300名）とは規模がずれる。しかもその人たちが「負担が大きい」と名指しする業務は「ストレスチェック実施・集計」「健診スケジュール調整」「健診結果管理」「高リスク者フォロー」で、痛みの名前は工程であって「DX」ではない。",
+      "evidence": "mediment（メディフォン）調査、2025-08-07、従業員300名以上の企業で健康管理・健康経営に携わる人事労務担当者115名: 負担が大きい業務＝ストレスチェック実施・集計44.3%、健診スケジュール調整37.4%、健診結果管理33.0%、高リスク者フォロー28.7%。属人的対応（仕組み未整備）63.5%。https://prtimes.jp/main/html/rd/p/000000037.000154534.html",
+      "confidence": "high",
+      "note": "n=115・ベンダー調査なので数字は参考値。ただし「痛みは工程名で語られる」という傾向はサジェストの結果と一致する。"
+     },
+     {
+      "claim": "テンプレを配っているのはSaaSベンダーと産業医紹介会社で、産業医事務所（医師の事務所）が配っている例は今回の観測範囲で確認できなかった。配布形式は「直接DL・無料表記」と「フォーム入力必須」に分かれ、どちらもCTAは自社サービスの資料DLまたは産業医紹介。",
+      "evidence": "衛生委員会議事録テンプレ: mediment（直接DL、「無料」表記、CTA＝サービス資料DL、2023-01-26公開/2025-07-11更新）https://mediment.jp/blog/health-and-safety-committee-minutes ／ Carely産業医紹介（CTA＝産業医紹介、2025-12-08）https://ohp.carely.jp/column/health-committee-minutes/ ／ ワーカーズドクターズ（Word DL、電話CTA、無料表記なし）https://www.workersdoctors.co.jp/download/first/minutes/ ／ リモート産業保健＝エス・エム・エス（フォーム入力必須、2026-06-17更新）https://sanchie.net/media/eiseiiinkai-gijiroku/ ／ 健康経営トータルサポート https://sangyohokensupport.jp/library/committee/ 。産業医意見書テンプレ: サンポチャート（【無料DL】、資料DL経由、産業医紹介＋さんぎょういカルテ）https://sampo-chart.com/sangyoui-ikensho/ ／ Dr.健康経営 https://dr-hpm.co.jp/column/3703/ 。面談管理表Excel: さんぽLAB https://sampolab-ad.com/announcements/3vcn680zkhxn3usa 。産業医事務所は原産業医事務所（大阪）が解説記事のみ https://adaptation.h-ohp.com/sangyoui-system/1627/ 。",
+      "confidence": "medium",
+      "note": "フォームゲートのテンプレは中身を取得していない。「配っていない」は検索結果上位と各ページの記述からの判断で、全事務所を網羅した調査ではない。"
+     },
+     {
+      "claim": "競合テンプレの中で KIDUKI の「期限を追う」に最も近いのは、さんぽLABの面談管理表（次回対応日の管理・実施状況の見える化）。ただし対象は産業医・保健師で、「会社が決めたこと（措置内容・開始日・再評価日・解除条件・意見と異なる決定の理由・保存場所）」の欄を持つ様式は今回の観測範囲で見当たらなかった。",
+      "evidence": "さんぽLAB 面談管理表: 活用場面＝各種面談対象者の日時の管理／継続フォローが必要な対象者の次回対応日の管理／各種面談の実施状況の見える化、想定読者＝産業医・保健師・看護師（https://sampolab-ad.com/announcements/3vcn680zkhxn3usa）。サンポチャートの意見書解説は「就業区分・措置内容・期間・再評価日」を産業医が書く欄として説明（https://sampo-chart.com/sangyoui-ikensho/）。厚労省の職場復帰に関する意見書様式例は産業医→人事労務責任者宛の書式（https://kokoro.mhlw.go.jp/etc/pdf/return-ikensyo.pdf）。",
+      "confidence": "medium",
+      "note": "「無い」の証明は難しい。フォームゲート内のExcelは未確認。KIDUKIの差別化点が「会社の決定欄」にあることは、core-thesisの3問（空白・証跡・決定権）とも一致する。"
+     },
+     {
+      "claim": "日本のB2Bで、資料（ホワイトペーパー・テンプレ）をダウンロードした人が商談になる割合は、多くの会社で1〜5%。100件ダウンロードされて1〜5件が商談、という目安。調査により「11〜20%が最多」とする結果もあり、幅は広い。",
+      "evidence": "PRIZMA調査（2026-04-16〜17、n=501、月5本以上のホワイトペーパーを公開するBtoBマーケター）: 商談化率「1%〜3%未満」29.1%、「3%〜5%未満」42.5%、5%未満が約7割。月間DL数は「11〜30本」46.5%が最多。https://manamina.valuesccg.com/articles/5019 、https://prtimes.jp/main/html/rd/p/000000166.000149156.html 。ベーシック（ferret One）調査（2025-04-08〜09、n=330、BtoBマーケ担当）: 商談化率は「11〜20%が最多」（分布の詳細は本文になし）https://ferret-one.com/blog/btob-whitepaper-survey-report-2025 。ferretソリューションの「市場平均3〜5%」は出典なし https://sol.ferret-one.com/blog/btob-whitepaper-examples",
+      "confidence": "medium",
+      "note": "いずれもマーケ担当者の自己申告。産業保健分野の数字ではない。KIDUKIの対象語群は表示が月数十〜数百なので、DLは月0〜数件、そこからの問い合わせは月0〜0.1件程度の幅（推定）。"
+     },
+     {
+      "claim": "公開Q&Aで「日程調整がつらい」と書いているのは従業員本人で、人事ではない。人事は日本の人事部Q&Aで「この場合どう扱うか」（賃金・法的効力・開示・従わない社員）という法律・賃金の枝で質問する。",
+      "evidence": "Yahoo!知恵袋の「産業医 面談 日程調整 休職」系の質問は確認した10件すべて従業員本人。例: 2026-05-22「病気で復職するにあたり産業医面談の日取りなかなか決まらず…休業手当などは出ますか」https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10328300905 。日本の人事部Q&A: 「産業医の指示に従わない社員への対応」https://jinjibu.jp/qa/detl/128887/1/ 、「健診結果 就業禁止に伴う診断書」https://jinjibu.jp/qa/detl/153704/1/ 、「復職までの待期期間の扱い」https://jinjibu.jp/qa/detl/126023/1/ 、「健診結果に基づく就業制限と賃金」https://jinjibu.jp/qa/detl/76148/1/ 、「産業医面談の意見書開示」https://jinjibu.jp/qa/detl/167584/1/ 、2009年「主治医の復職可能日以降でないと産業医の診察を受けることができないケースがどうしても発生します」https://jinjibu.jp/qa/detl/16325/1/",
+      "confidence": "high",
+      "note": "「エクセル管理がつらい」という人事の声は知恵袋・日本の人事部・noteの検索結果には現れなかった。人事は公開の場で道具の不満を書かない。"
+     },
+     {
+      "claim": "現場（保健師）の言葉では、面談の予定が崩れる原因は「5分だけ」「今日どうしても」への即応、面談時間の楽観見積り、家族同席の連絡を本人任せにすること。使う語は「段取り8割」「期待値調整」「行き違い」「調整のズレ」で、「DX」「効率化」ではない。",
+      "evidence": "note「産業医面談予定が崩れる理由｜現場でよくある失敗と防ぎ方」（保健師経験約15年の筆者、2026-01-03）https://note.com/fujiibun/n/n7d0ff6bc48f1 。同じ検索でnote「復職の産業医面談に向けて人事担当者はどんな準備をすればよいのか？」https://note.com/sangyoitorisetsu/n/n822cefa362c3 も人事向けの「事前準備」語で書かれている。",
+      "confidence": "medium",
+      "note": "KIDUKIの9/25記事（日程調整）が「往復」「種類ごとに所要時間と方法を固定」「表を作るのは30分」と書いているのは、この現場語と同じ層にある。"
+     },
+     {
+      "claim": "casetra.jp には既にテンプレ配布型の記事「【無料DL】復職支援 期限管理チェックリスト」があるが、ダウンロードリンクは「#」で実体がなく、「無料・会員登録不要」「15分無料相談」と表記されている。ローンチ監査が指摘した「実体のない公開表示」と同じ種類のリスクを持つ。",
+      "evidence": "https://casetra.jp/sample-post2/ （2026-01-01、slug が sample-post2）: リンク先「#」、3フェーズ17項目のチェックリスト説明、「※ 無料・会員登録不要」。casetra.jp ブログは5本（証跡って何を残す？／Excel管理 vs Case管理システム／同チェックリスト／産業医面談は医療行為ではない／復職支援の抜け漏れが起きる3パターン）https://casetra.jp/blog/ 。CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md B6 は /works/ の架空事例と「実体のない契約条件・セルフ導入マニュアル」を景表法リスクとして指摘。CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md は一般ローンチ NO-GO。",
+      "confidence": "high",
+      "note": "Casetraサイトは医療機関の広告ではないが、同一代表者。KIDUKI側で証跡テンプレを配る前に、casetra.jp 側の「無料DL」表示との整合（実体化か非公開か）を決めておく必要がある。"
+     },
+     {
+      "claim": "「無料」を書かずにテンプレを配ることは可能。医療広告ガイドラインのQ&Aは「無料で健康相談を実施している旨」の広告自体は可としつつ、「費用を強調した広告は品位を損ね、厳に慎むべき」としている。事務所の規律（site-copy.md）はさらに厳しく「無料」を禁止語にしている。",
+      "evidence": "厚生労働省「医療広告ガイドラインに関するQ&A（事例集）」平成30年8月 https://www.mhlw.go.jp/content/000371812.pdf （費用強調に関する項目）。kiduki/docs/copy/site-copy.md 145行「『無料相談』等、費用を強調する表現（CTAは「初回のご相談（15分）」で統一）」、159行「料金の金額、無料、即日などの表現は入れない」。",
+      "confidence": "high",
+      "note": "表現案（規律と矛盾しない）: 「様式（Word／Excel）をダウンロードできます」「会社の手続き用の記録ひな形です。従業員向けの受診案内ではありません」「入力欄と保存の目安だけを載せています」。価格語（無料・0円・タダ）を置かなければ費用の強調にならない。"
+     },
+     {
+      "claim": "事務所側の現行資産は、テンプレを配る手前まで来ている。DX柱4記事は「次にやること」で「様式を整えます」「一覧を持つ」「種類ごとの所要時間・方法・必要資料を1枚の表に（30分）」と表を勧めているが、その表自体は配っていない。/service/cloud/ は本文約486字で、出口は casetra.jp と /contact/ の2つ。Search Console 28日にDX語の表示は0行。",
+      "evidence": "content/articles/committee-minutes-three-year-retention.html（「次回の委員会から様式を整えます」）、work-restriction-release-management.html（「一覧を持つ」「再評価期日の欄」）、after-the-physician-opinion.html（6項目の記録、「再評価の予定時期」「意見と異なる決定をした場合の理由」）、industrial-physician-scheduling.html（「1枚の表にまとめると…表を作るのは30分」）。source/wordpress/page-166-cloud.html。content/evidence/search-console-dual-property-snapshot-2026-09-01.json のクエリ行は 宮部大輔／スポット産業医／産業医 スポット／産業医スポット の4行のみ。",
+      "confidence": "high",
+      "note": "つまり「記事が勧めている表を、そのまま様式として置く」だけで配布物ができる。新しい主張を作らないので、先生の承認は項目名の確認に絞れる。"
+     },
+     {
+      "claim": "検索回数の目安ツール（aramakijake）は実数を大きく下回る。「スポット産業医」をデータなしと返すが、Search Consoleでは28日で147表示（順位26〜27位）ある。ツールの「データなし」はゼロではなく「小さいか測れない」の意味で、数字は相対比較にだけ使える。",
+      "evidence": "aramakijake.jp「スポット産業医」→「データが見つかりませんでした」。content/evidence/search-console-dual-property-snapshot-2026-09-01.json: スポット産業医 56表示＋産業医 スポット 91表示（2026-08-02〜08-29、平均順位26〜27）。同ツールで「産業医 東京」Google 312回/月、「衛生委員会 議事録」384回/月、「産業医 意見書」208回/月。Googleトレンドは HTTP 429 で取得不可。Yahoo!サジェストAPIは 403 で取得不可。",
+      "confidence": "high",
+      "note": "実数はキーワードプランナー（Google広告アカウントが必要）でしか取れない。広告はやらない決定なので、実数は Search Console の表示回数を積み上げて代替する。"
+     }
+    ],
+    "implications_for_kiduki": [
+     "先生の問い「なぜDXの言葉で検索を攻めないのか」への答え: 「望み薄」というより「土俵が違う」。DXの語（産業保健DX・産業衛生DX・健康経営DX）は担当者の検索候補にほとんど出ず（サジェスト0〜1件、回数ツールはデータなし）、出てくる検索結果は健康管理システムのベンダーが「一元管理・見える化」で書いた棚。そこで上位になること自体が core-thesis の棚の規律に反する。DXの語はタイトルタグと /service/cloud/ の見出し（指名の補助）に留め、記事とテンプレの検索語には使わない。",
+     "攻める言葉は工程の名詞に固定する: 「衛生委員会 議事録 フォーマット／保管期間／周知」「産業医 意見書 フォーマット／様式／効力／本人開示」「就業上の措置 意見書／例」「産業医 就業制限 解除」「産業医面談 日程調整」。「就業制限 解除」は単独だと結核・感染症法に当たるので「産業医」または「就業上の措置」を添える。「管理表」「シート」「チェックリスト」という命名は候補に出ないので使わず、「様式」「書式」「一覧」に寄せる。",
+     "証跡テンプレートは新しく作らず、DX柱4記事が「次にやること」で勧めている表をそのまま様式にする（1記事1様式・計4本）: ①衛生委員会 議事録 様式（産業医の勧告の記録欄・3年保存の場所欄つき）②産業医意見書の受領後に会社が決めることの記録様式（措置内容／伝える範囲／再評価の予定時期／意見と異なる決定をした理由／保存場所）③就業制限の再評価一覧（開始日・再評価期日・解除条件・決定者）④産業医面談の種類別 所要時間・方法・必要資料表。中身が記事と同じなので、先生の承認は「項目名と注記」だけに絞れる。",
+     "差別化点は「会社の決定欄」。競合（mediment・Carely・ワーカーズドクターズ・サンポチャート・さんぽLAB）の様式は「産業医が書く欄」と「日時の管理」まで。「会社が何を決め、いつ見直し、どこに保存したか」を書く欄を持つ様式は今回の観測で見当たらなかった。これは3問チェック（判断と実行の空白／証跡／決定権は会社）にそのまま通る。",
+     "配布は事務所サイト（kdkconslt-sngyouijm.com）の記事本文と /service/cloud/ に置き、フォームなしの直接ダウンロードにする。理由: 日本のB2B平均でも資料DL→商談は1〜5%（推定）で、月数十〜数百表示の語ではフォームで名簿を取っても問い合わせは月0〜0.1件（推定）。直接DLなら他サイトからのリンク・AI概要での「様式」引用の材料になり、被リンク1本の弱点（seo-ranking-recovery-plan）を補う可能性がある（推定）。出口は「初回のご相談（15分）」1つ。",
+     "「無料」は書かない。表現案: 「様式（Word／Excel）をダウンロードできます」「会社の手続き用の記録ひな形です。従業員向けの受診案内ではありません」「入力欄と保存の目安だけを載せています。医学的評価は産業医、就業上の決定と実施は会社が行います」。版・発行日・事務所名（統一表記）・境界文（site-copy.md の確定稿を一字一句）を末尾に置く。料金・Pack・Casetra名・クリニック名は書かない。",
+     "casetra.jp の「【無料DL】復職支援 期限管理チェックリスト」（sample-post2、リンク先「#」）は、事務所側でテンプレを配る前に「実体を置く」か「非公開にする」かを一行で決めてもらう。Casetra一般ローンチが NO-GO の間、テンプレのCTAを「Casetraを試す」にはしない（rebrand-strategy: Casetraは1ブロック＋リンク／pricing-growth-canonical §10: 実装済みでないものを提供中と表示しない）。",
+     "想定読者は「産業保健スタッフのいない会社の、人事総務の兼務担当者」と明記する。産業保健DXを語る調査（mediment）は従業員300名以上の企業の人事で、KIDUKIの主対象（選任義務のない企業〜300名、既存産業医の専門補完）とは規模が違う。現場語は「段取り」「行き違い」「往復」なので、様式の説明文もその語で書く。",
+     "測り方は問い合わせ件数ではなく、①様式のDL数（GA4のファイルダウンロード）②様式を置いた記事のquery×page表示（Search Console、月1）③指名検索（事務所名）の表示 ④AI概要での引用（月1回の同条件スクショ）⑤台帳「きっかけ＝検索」の初回相談、を別行で記録。DL→問い合わせは月0〜0.1件の幅（推定）なので、90日で問い合わせ0でも設計の誤りとは言わず、①〜④で続けるか決める。",
+     "先生の時間と承認キュー: 様式1本＝Tier S承認1件。9月は承認待ち（B・C・F・G・T・P・R1）が詰まっているので、10月以降に月1本、順番は需要の厚い①議事録様式→②意見書受領後の会社決定記録→③就業制限の再評価一覧→④面談種類別の表。先生にお願いするのは各回「項目名の一覧を見て一行承認」だけ。所轄保健所への照会は、A4一枚（R1）と同じゲートを使うか先生の判断項目にする。",
+     "実数（月間検索回数）は広告アカウントなしでは取れない。代わりに、様式を置いた記事のSearch Console表示回数を毎月積み上げて「対象語群の実需」とする。数字の断定はせず、順位・クリック・DL・問い合わせ・契約を別の行で報告する。"
+    ],
+    "open_questions": [
+     "対象語群の月間検索回数の実数（Googleキーワードプランナー）は未取得。広告をやらない決定のもとで、先生が実数を見ずに進めてよいか。代替はSearch Consoleの表示回数の月次積み上げ。",
+     "S5で反映済みのタイトルタグ「…産業衛生DX…」を残すか。指名の補助としては無害だが、DX語で来た人が /service/cloud/ で健康管理システムの棚と比較を始める懸念がある。/service/cloud/ の本文（486字）を「案件・期限・会社の決定・証跡」の語で厚くするかどうかは別の判断。",
+     "casetra.jp の「【無料DL】復職支援 期限管理チェックリスト」（sample-post2、リンク先「#」）を実体化するか非公開にするか。Casetraサイトは医療機関の広告ではないが同一代表者で、事務所側の「無料」禁止と表示がずれている。",
+     "証跡テンプレ（様式）の配布に、A4一枚と同じ「所轄保健所への照会」ゲートを適用するか。第三者が再配布し得る紙である点は同じ。",
+     "競合テンプレの中身（フォームゲート内のExcel項目）は実物を取得していない。「会社の決定欄がない」は各ページの説明文からの推定で、実物確認は未実施。",
+     "日本の人事部Q&Aで「就業制限 解除」「意見書のあと」に関する相談件数の実数は未集計（検索結果上位の題名確認のみ）。",
+     "Yahoo!サジェスト（403）とGoogleトレンド（429）は取得できず、Bingサジェストで代替した。Yahoo!利用者の多い中小企業担当者の語が抜けている可能性。",
+     "様式のダウンロード計測（GA4のfile_downloadまたはリンククリック）は、generate_lead受入未了の現状で新たに足してよいか。計測の切り分けが崩れないよう、受入後に別exactで出すのが安全。",
+     "ferret One（n=330）の「商談化率11〜20%が最多」とPRIZMA（n=501）の「5%未満が約7割」は大きく食い違う。どちらも自己申告で、産業保健分野の実測ではない。KIDUKIでは自社の台帳で置き換える。"
+    ]
+   }
+  ],
+  "bundle": [
+   {
+    "lens": {
+     "key": "dx-head-terms",
+     "lens": "DXの大語・中語（健康管理システム、産業保健クラウド、休復職管理システム、産業保健DX）で正面から攻める案。棚の規律との衝突も含め、それでも攻めるならどうするかを最も強く作る（steelman）。"
+    },
+    "strategy": {
+     "title": "「棚の前に立つ客」作戦 — 健康管理システムを「選んでいる人」に、売り手ではなく産業医として話す（DX中語の正面攻略・最強版）",
+     "target_queries": [
+      "健康管理システム 選び方 産業医",
+      "健康管理システム 産業医 連携（使い方・使ってくれない）",
+      "健康管理システム 復職 管理（就業制限・再評価）",
+      "健康管理システム 導入 失敗（うまくいかない・定着しない）",
+      "休復職 管理 システム 選び方",
+      "休職者 管理 システム 産業医",
+      "産業保健 クラウド 産業医 役割（誰が入力し誰が決めるか）",
+      "産業保健 DX 中小企業 進め方",
+      "産業保健 DX 産業医 意見書 会社決定",
+      "産業衛生 DX（自社の柱名。指名の補助として観測のみ）"
+     ],
+     "thesis": "先生の「売りはDX」を検索で使う一番強い形は、「健康管理システム」「産業保健クラウド」「休復職管理システム」の大語で順位を取ることではなく、その棚の前で迷っている人（システム導入を任された人事担当者）に、「どのシステムを入れても、産業医の判断と会社の決定と証跡が回る形になっているか」を産業医の立場から教える記事を、大語＋修飾語（選び方・産業医・復職 管理・導入 失敗）の組み合わせで取ることです。理由は3つ。①この棚の1ページ目にいるのは全員がベンダー・比較サイト・紹介会社で、医師が書いた「選ぶ前の確認点」はゼロ（2026-09-02実測、調査班）。売り手が書けない中立の角度が空いています。②大語の検索数は月数千（推定）で、いま追っている工程語（月数十〜数百・推定）の10〜100倍の母集団があり、その1〜2%の修飾語を取れれば、いまの全サイト表示（28日で241）を上回ります。③検索している人は「予算と決定権を持たされた人」で、1件の問い合わせの契約価値が単発より大きい（Basic→Retain、Casetra一般ローンチ後はSTARTER 40,000円/月）。棚の規律との関係は「棚に並ぶ（自分を健康管理システムと呼び、一元管理・見える化で語る）」のではなく「棚の前に立ち、案件×完了の言葉で翻訳する」と切り分けます。正直な見立てとして、この作戦は6か月以内の問い合わせ件数では工程語の12記事に勝てません（下の数値参照）。それでも作る価値があるのは、Casetra一般ローンチ後の外販（Phase 2「自社運用できる企業からSTARTERを提案」）の入口を、記事という資産の形で前倒しで作れる唯一の作戦だからです。「今すぐ問い合わせを取る作戦」ではなく「12か月後の入口を今から育てる作戦」として位置づけます。",
+     "buyer_moment": "中小〜中堅企業（従業員50〜300名、産業保健スタッフなし）の人事・総務の兼務担当者が、上司から「健康管理システムを検討して」と言われ、Carely・mediment・HealthCoreなど2〜3社の資料をダウンロードし、デモの日程を入れた直後。手元にはExcelで散らばった復職案件1件・就業制限1件・健診の事後措置があり、月1回来る嘱託産業医との連絡はメール。頭にある疑問は「これを入れたら、うちの産業医は使ってくれるのか」「復職の判断や就業制限の解除期限は、このシステムで回るのか」「入れても結局、人事の仕事は減らないのでは」。ベンダーにはこの疑問を聞けない（答えが「使えます」に決まっている）ので、中立の産業医の意見を探して検索する。この瞬間に「会社が決めること・記録すること」の型で答え、「システムの前に運用の型を決めましょう。初回のご相談（15分）」へ誘導する。注意: mediment調査（従業員300名以上・n=115、https://prtimes.jp/main/html/rd/p/000000037.000154534.html）の回答者は大企業で、KIDUKIの主対象より大きい。50〜300名の担当者がこの瞬間を持つ頻度は未測定（推定）。",
+     "competition_reality": "大語そのものは入れません。2026-09-02の実測（調査班、各1回、非ログイン、hl=ja&gl=jp）: 「健康管理システム」＝アスピック・mediment16選・HealthCore・広告2本（エムスリーヘルスデザイン・BOXIL）・エムステージ・PHC・Be Health・保健同人。「産業保健 クラウド」＝Growbase・産業医クラウド（Avenir）・CTC・広告2本・iCARE・さんぽCLOUD・Sanpo360。「休復職 管理 システム」＝Carely・ADVANTAGE HARMONY・armo・WellcoHR・広告2本・SmartHR Plus・トリニティケア。「産業保健 DX」＝ワーカーズドクターズ・mediment調査・日立MIRAMED・WellCon・広告2本・サンポチャート（11,000字）・リモート産業保健・JMDC。4語とも1ページ目に医師個人・産業医事務所は0件、AI概要なし（9/11語）。KIDUKIが入れる余地は3つ。(a) 「選び方」「産業医」「復職 管理」「導入 失敗」の修飾語つきクエリは比較サイトが「機能表」で書いており、「産業医の判断と会社の決定がどこで止まるか」の角度が無い（推定・修飾語のSERPは未観測で、最初の14日に基準値を取る）。(b) 「産業医が自分で作ったツール」の棚（OHMEクラウド・yatch・さんぎょういカルテ）は既に形成中で、Casetraは後発。ここで機能を競わず、「ツールを選ぶ側の基準を書く医師」として立つ。(c) 広告は各語2本、AI概要は無し。順位が取れれば表示は素直にクリックに変わる余地がある。一方、被リンクほぼゼロ・3年目ドメインで大語の10位以内は現実的でなく、修飾語で6〜12か月かけて5〜20位が現実の幅（推定）。",
+     "casetra_gate_dependency": "【一般ローンチ前（現在NO-GO、2026-08-25判定）にできること】①「事務所側の業務管理にCasetraを使用」の事実（本番12社56Case、監査ログ連鎖不一致0、CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md）。②産業医の立場での「システム選定の確認点」記事（システム名に依存しない一般論）。③/service/cloud/を「産業衛生DX支援」＝会社の工程が詰まる場所と、会社が決めること・記録することの運用設計の相談窓口として厚くする。相談の受け皿はKIDUKI Basic（継続相談先・月30分枠）とRetain。DX支援を独立SKUにしない（pricing-growth-canonical §10の変更規律に触れないため）。④「企業側の導入は別契約・任意。受付状況はcasetra.jp」の1文とリンク（1ブロック、rebrand-strategy §3）。【できないこと】STARTERの申込CTA・「提供中」表示・料金の掲載（事務所サイト）・導入企業数・導入事例・改善数値・復職Pack・単発の「Casetra画面30日提供」・CSV移行・SLA・ISO27001・国内保管・ストレスチェック組込み・労基署報告の自動生成・名簿からの自動抽出／督促（すべて未受入または未設計、open-items.md／監査B6）。page 166の「Casetraだけを導入し…運用することもできます」は「ご相談いただけます（受付状況はcasetra.jp）」に弱める。【段階的な解禁（証拠＝監査シートのPASS行）】条件付きGO（STARTER/STANDARD/PLUSのみ、開示5点つき）→記事末に「自社運用の選択肢としてCasetra STARTER（別契約・別サイト）」1文を追加可。P-01/P-02 PASS→単発の30日画面を案内可。一般ローンチ（18/18 PASS）→casetra.jpの試用導線へ記事から送客可。見込み時期は「条件付きGOが10月以降、一般ローンチは早くて11〜12月」（推定。M-01が月境界を要し8/31投入の証拠がリポジトリに無い）。【casetra.jp側の前提条件】事務所記事からリンクを増やす前に、/works「導入企業の平均的な改善数値」の非公開化、sample-post／sample-worksスラッグの301、「【無料DL】」表記（リンク先#）の実体化か非公開を済ませる（監査B6、30日残件12）。",
+     "first_90_days": [
+      "Day 0の定義: 12記事の予約公開が終わり（最終10/2）、CTA v6（承認B）が反映された日（10月上旬の見込み）。それ以前は既存の承認待ち（B・C・F・G・T・P・R1）と帯域を奪い合わないため着手しない。",
+      "Day 0〜14（先生0分・Claude）: 修飾語10クエリの基準値SERPを非ログイン・hl=ja&gl=jp・港区で1回ずつ記録（順位・広告本数・AI概要・上位10のドメイン種別）。content/evidence に保存。ここで「医師が書いたページが0件」を確認できなければ作戦を見直す。",
+      "Day 0〜14（先生1行）: /service/cloud/（page 166）改稿v1の承認。中身は「工程が詰まる4つの場所（日程調整・意見書のあと・就業制限の解除・議事録の保存）と、会社が決めること・記録すること」＋契約関係の表（現行維持）＋「導入できます」→「ご相談いただけます」＋meta description追加＋Casetra1ブロック＋casetra.jpリンク。棚語0・料金0・Casetra機能説明0。反映後にURL検査の依頼文を用意（site:検索で出ない原因の確認）。",
+      "Day 15〜30（先生1行）: 記事1『健康管理システムを入れる前に、産業医が確認する5つのこと』（対象: 健康管理システム 選び方 産業医／導入 失敗）。5点＝①案件が「閉じる」単位があるか ②産業医の意見と会社の決定が別欄か ③再評価日・解除条件を追えるか ④誰が入力するか（人事・産業医・本人） ⑤3年保存の記録がどこに残るか。ベンダー名は出さない、機能表を作らない。主導線 /service/cloud/、副 /service/sangyoui/。",
+      "Day 31〜45（先生1行）: 記事2『休職者・復職の管理をシステムに移すとき、「会社が決めた欄」が要る理由』（対象: 休復職 管理 システム 選び方／休職者 管理 システム 産業医）。既存の occupational-health-case-management（メール・表計算を続ける基準）とは「システムを選ぶ人」向けと明記して意図を分ける。主導線 /service/cloud/、副 /service/return-to-work-support/。",
+      "Day 46〜60（先生1行）: 記事3『産業保健クラウドで、産業医は何をして、会社は何を決めるのか』（対象: 産業保健 クラウド 産業医 役割）。役割表（会社・本人・主治医・産業医）と境界文を中心に。主導線 /service/cloud/。",
+      "Day 61〜75（先生1行）: 記事4『従業員300人未満の会社の産業保健DX、最初の1か月にやる3つ』（対象: 産業保健 DX 中小企業 進め方）。「システムを買う前に、案件の一覧・再評価日・会社の決定記録を紙1枚で始める」の型。mediment調査を引く場合は母集団（300名以上）を明記。主導線 /service/cloud/、副 /service/komon/。",
+      "Day 61〜90（先生0分・Claude）: 4記事と/service/cloud/の相互リンク、12記事のDX柱4本（9/22・9/25・9/29・10/2）からの文脈リンク、casetra.jp5記事からの文脈リンク案（Casetraリポの同時編集ルールに従いコミット前確認）。GA4 article_service_click の受入が済んでいれば記事→/service/cloud/遷移を計測開始。",
+      "Day 90（先生0分・Claude）: 第1回レビュー。10クエリの表示・順位・クリック（Search Console、同一プロパティ・28日）、/service/cloud/の表示・遷移、台帳「きっかけ＝検索（DX語）」の件数を別行で報告。順位目標は置かず、90日では「表示が出たか」だけ見る。",
+      "先生にお願いする承認は90日で5件（ページ1＋記事4）、各回「exactバンドル1行コピー」。1回1作業・週1件以下を守るため、他レーンの承認がある週はこのレーンを飛ばす。"
+     ],
+     "owner_hours_per_month": 2,
+     "cash_cost_per_month_jpy": 0,
+     "time_to_first_inquiry": "検索（DX修飾語）経由の有効な初回相談は、記事1本目の公開から6〜12か月が現実の幅（推定）。最短で90〜120日（修飾語クエリの1つでAI概要または上位5位に入った場合。実測なし）。工程語の12記事より遅い理由は、大語の棚は競合のドメイン評価が高く、修飾語でも被リンクほぼゼロ・3年目ドメインでは順位が上がるまでに時間がかかるため。",
+     "expected_inquiries_per_month_at_6_months": "月0〜0.2件（ほとんどの月は0。推定）。計算: 修飾語10クエリの表示 300〜1,000/月（推定・基準値未取得）× CTR 1〜2%（2026-08実測のサイト平均4.6%は指名込みのため下方修正）＝クリック3〜20/月 × 記事→/service/cloud/遷移 10〜20%（実測なし・回復計画が「裏づけなし」と指摘）× 相談化 1〜3%（B2B資料DL→商談化率1〜5%の類推、PRIZMA 2026-04 n=501 https://prtimes.jp/main/html/rd/p/000000166.000149156.html）＝0.003〜0.12件/月。12か月時点で2記事以上が5位以内に入れば月0.2〜1件（上限側・推定）。上振れ条件: 選定系クエリでAI概要に1本引用される、比較サイトまたはcasetra.jpからの被リンクで表示が月1,000超、Casetra条件付きGOで記事末にSTARTERの1文を足せる。1件の契約価値は単発（60,000円）よりBasic（40,000円/月）・Retain・将来のSTARTER（40,000円/月）に寄るため、件数が同じでも売上寄与は工程語レーンより大きい可能性がある（推定）。",
+     "evidence": [
+      "DX大語4語の1ページ目に医師・産業医事務所0件、AI概要なし、広告各2本: 調査班のGoogle JP実測 2026-09-02（例 https://www.google.com/search?q=健康管理システム&hl=ja&gl=jp&pws=0）",
+      "「産業医が自分で作ったツール」の棚が形成中（OHMEクラウド 2022年、初期10万円・月1万円〜 https://saas.imitsu.jp/cate-health-care/service/3098、yatch https://yatch.pro/、さんぎょういカルテ https://karte.sampo-chart.com）",
+      "DX語はサジェストにほぼ出ない（産業保健 DX 1件、産業衛生 DX 0件、健康経営 DX 2件）、aramakijake「データなし」: 調査班のGoogleサジェスト取得 2026-09-02",
+      "産業保健DXの読者は健康管理システムの比較者で、出口は資料DL・産業医紹介: https://www.workersdoctors.co.jp/column/knowledge/7151/ 、https://mediment.jp/blog/health-information-DX",
+      "300名以上企業でも健康管理のデジタル化約3割・属人的36.5%（n=115、母集団は大企業）: https://prtimes.jp/main/html/rd/p/000000037.000154534.html",
+      "B2Bホワイトペーパー商談化率は5%未満が約7割（n=501）: https://manamina.valuesccg.com/articles/5019",
+      "事務所サイトの現状: 28日で241表示・11クリック・平均21.1位、DX語の表示0行: content/evidence/search-console-dual-property-snapshot-2026-09-01.json、content/seo-contract-funnel.md",
+      "/service/cloud/はsite:検索で出ず、本文約486字、meta descriptionなし: source/wordpress/page-166-cloud.html、調査班のWebFetch",
+      "Casetra一般ローンチNO-GO・条件付きGOの販売範囲と開示5点: /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md、CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md §4",
+      "casetra.jp /works の「導入企業の平均的な改善数値」がGoogleスニペットに露出（監査B6）: https://www.google.com/search?q=site:casetra.jp&hl=ja&gl=jp&pws=0",
+      "棚の規律・3問チェック: kiduki/docs/core-thesis.md。Casetraは1ブロック＋リンク: kiduki/docs/rebrand-strategy.md §3。Phase 2「自社運用できる企業からSTARTER」: kiduki/docs/pricing-growth-canonical.md §7",
+      "禁止語と境界文の確定稿: kiduki/docs/copy/site-copy.md 142〜159行",
+      "医療広告ガイドラインQ&A（費用強調は慎む）: https://www.mhlw.go.jp/content/000371812.pdf"
+     ],
+     "risks": [
+      "棚の規律の解釈: core-thesisは事業の根幹で、「棚語を検索対象にする」ことを先生が『並ぶ』と読めば、この作戦は最初の1行で止まる。着手前に「棚の前に立つ＝自分を健康管理システムと呼ばず、棚語を自分の声で使わない」という切り分けを先生が一行で認めることが前提。",
+      "ドメインの土台: 被リンクほぼゼロ・3年目で、大語の棚は競合（エムステージ・iCARE・メディフォン）のドメイン評価が高い。修飾語でも6〜12か月かかり、90日では表示が出ない可能性が高い。",
+      "検索者のずれ: 「健康管理システム」を選ぶ人は300名以上の企業の人事や産業保健スタッフのいる会社が多い可能性があり（mediment調査の母集団）、問い合わせが来ても「全社の健康データを入れるシステム＋産業医紹介」を求める不適合案件になり得る。",
+      "Casetraの受け皿が無い期間の信頼コスト: 記事を読んでCasetraを求める人が来ても、NO-GOの間は「ご相談は受けられるが提供は別契約・受付状況はcasetra.jp」としか言えず、断る場面が生じる。逆にGOが2027年以降にずれると、DXレーンの出口はBasic（相談枠）だけになる。",
+      "casetra.jpの見え方: /worksの実体のない改善数値、sample-postスラッグ、「【無料DL】」（リンク先#）が残ったまま事務所記事からリンクすると、中立の医師として書いた記事の信頼が損なわれる。Casetra側の是正が先。",
+      "比較・選定記事の公正さ: ベンダー名を出して劣位に書けば景表法・営業妨害の指摘を招く。基準だけを書き、名指しの評価はしない。「産業医が書いた中立の記事」に見せながら自社製品へ誘導する構造そのものがステルスマーケティングと読まれないよう、Casetraとの関係（同一代表者）を記事内で開示する。",
+      "承認帯域: 90日で5件のTier S承認は、既存の承認待ち（B・C・F・G・T・P・R1）と重なる。週1件・1回1作業を守ると、実際の完了は120〜150日にずれる。",
+      "自サイト内の票割れ: 記事2は既存のoccupational-health-case-management（メール・表計算を続ける基準）と、記事1〜3は12記事のDX柱（日程調整・意見書のあと・解除管理）と検索意図が近い。1記事1意図を守らないと互いに順位を食う。",
+      "計測の未受入: generate_lead修正版のGA4受信・Flamingo・通知メールは未テスト、Search Console本体はログイン停止中。表示は見えても「記事→サービス遷移→相談」の途中が測れない期間がある。",
+      "DX語のトラフィックが「産業医本人・情シス・ベンダー社員」で膨らみ、表示は増えても相談が0のまま「成果に見える」誤読。クエリ×ページで検索者の立場を毎月分類する。",
+      "商品境界: 「産業衛生DX支援」を独立商品のように見せると正本§10（商品境界の変更は正本・料金表・契約書の同時更新）に触れる。Basic／Retainの相談枠の中で扱うと明記し、料金・SKU名を新設しない。"
+     ],
+     "compliance": {
+      "shelf_rule": "並ばない＝自分を「健康管理システム」「産業保健クラウド」と呼ばない、棚の語（一元管理・見える化・可視化・ウェルビーイング・健康データ・ダッシュボード）を自分の声で使わない、管理単位は案件×完了で書く。棚の語が現れるのは検索対象（title・H1の「〜を選ぶ前に」「〜と産業医」の形）と、ベンダーの主張を引用として「」で示す箇所だけ。本文の翻訳先は判定・措置・解除条件・再評価日・会社の決定・証跡。「健康管理システムの棚に並ばない」というcore-thesisの一文をこう解釈することについて、着手前に先生の一行確認を取る（根幹文書のため私の判断で広げない）。EAP・格安の棚語（ケア・寄り添う・価格比較）も同じく使わない。",
+      "casetra_not_launched": "事務所サイトに書けるのは「事務所側の業務管理にCasetraを使用」「企業側の導入は別契約・任意。受付状況はcasetra.jp」の2点まで。「提供中」「導入できます」「導入企業」「導入事例」「改善数値」「STARTER申込」「料金」「復職Pack」「Casetra画面30日提供」「CSV移行」「SLA」「ISO27001」「国内保管」「ストレスチェック組込み」「自動抽出・督促」「労基署報告の自動生成」は書かない（pricing-growth-canonical §10、監査B6、open-items事業設計節）。解禁は監査シートのPASS行を証拠に段階的に行い、順序を逆にしない。内部利用12社を導入社数・ARRと呼ばない（§0）。",
+      "medical_advertising": "記事・ページは「会社の手続き」の説明に限り、クリニック名・併設・受診経路・治療表現・効果の断定を置かない。肩書はsite-copy.mdの統一表記のみ。境界文「Casetraは進行と記録を支える仕組みです。医学的評価は医師が行い、就業上の最終決定と実施は会社が行います」を確定稿のまま各記事末に置く。CTAは「初回のご相談（15分）」で統一。同一代表者がCasetraの開発者でもある事実を記事内で開示し、中立を装った誘導と読まれないようにする。迷う表現は所轄保健所への照会ゲート（A4一枚と同じ）を通す。",
+      "forbidden_words": "無料（無料相談・無料DL・0円）、睡眠専門医、一気通貫、併設、クリニックと連携、必ず、絶対、保証、治す、即日。棚語: 一元管理、見える化、可視化、ウェルビーイング、健康管理システム（自称として）、健康データ、ダッシュボードで経営リスクを数値化。営業禁句: 仲介手数料と同額、会社は何もしなくてよい、Casetra導入不要、KIDUKIがすべて決める、Pack契約＝Casetra契約。内部用語: PACK_INCLUDED、CLIENT_BILLABLE、含有時間、併売。製品タグライン（Case管理OS等）と料金金額は事務所サイトに置かない。公開前に機械チェック（禁止語・棚語・Casetra機能語・料金・クリニック名）を通す。",
+      "decision_stays_with_company": "選定記事の5つの確認点の中心を「産業医の意見と会社の決定が別欄か」「会社が決めた日・内容・再評価日・保存場所が記録に残るか」に置き、システムが決めるのではなく会社が決める設計を選ぶよう書く。事務所のDX支援は運用の型（誰が入力し、誰が決め、どこに残すか）を整えることで、就業上の措置の決定・実施は会社に残る（安衛法66条の4・66条の5の建付け、core-thesis「なぜこの形が成立するか」1）。「KIDUKIが判断を代行する」「システムが自動で判定する」と読める文は使わない。"
+     },
+     "kill_criteria": "次のどれか1つで止め、工程語レーンに戻す。①記事1本目の公開から180日の時点で、修飾語10クエリの合計表示が28日で300未満、または/service/cloud/への記事経由クリックが28日で0。②公開後2回続けて月次のクエリ分類で、DX語の検索者が「産業医本人・情シス・ベンダー」に偏り（表示上位クエリに「ツール」「電子カルテ」「開発」「比較」が並ぶ）、会社側の工程クエリが混ざらない。③問い合わせが来ても3件続けて不適合（全社健康データ管理や産業医紹介を求める内容）。④Casetraが2027-03末までに条件付きGOに至らず、かつこのレーン由来の有効な初回相談が0（記事はBasic導線として残し、新規制作は止める）。⑤棚語なしでは記事が成立しない、またはベンダーから公正さの指摘・保健所から表現の指摘を受けた場合は即日、順位に関係なく止める。⑥先生の実作業が2か月続けて月2時間を超えたら翌月の承認依頼を0にし、レーン継続を先生が一行で決める。判断は暦ではなく各記事の公開日から7日・28日・90日・180日で切り、感情で延長も打ち切りもしない。"
+    },
+    "critiques": [
+     {
+      "strategy_title": "「棚の前に立つ客」作戦 — 健康管理システムを「選んでいる人」に、売り手ではなく産業医として話す（DX中語の正面攻略・最強版）",
+      "lens": "需要の実在・受け皿（Casetra未ローンチ）・棚の規律・先生の承認帯域を軸にした厳しめの総合批判（実現性／競合／費用／時間／問い合わせ見込み）",
+      "fatal_flaws": [
+       {
+        "issue": "狙う言葉（「健康管理システム 選び方 産業医」など修飾語10クエリ）に、人が実際に打っている証拠が1つもない。作戦案の自前の証拠でも「DX語はサジェストにほぼ出ない、aramakijakeはデータなし」で、修飾語のSERP（検索結果）は「未観測」と自ら書いている。",
+        "why": "「大語は月数千」も出典なしの推定で、そこから「1〜2%を取る」と掛け算した表示300〜1,000/月は、土台が推定の推定です。ふつう「健康管理システム 選び方」レベルの言葉は月数十〜数百（推定）、「休復職 管理 システム 選び方」「産業保健 DX 産業医 意見書 会社決定」は検索する人がほぼいない言葉（推定）です。5位に入っても表示が月数十で止まる可能性が高く、作戦の算数の入口が成り立ちません。「ゼロ件の空き」は大語4語の1ページ目を見た結果であり、修飾語の1ページ目が空いている証拠にはなっていません。"
+       },
+       {
+        "issue": "作戦の核（記事のtitle・H1に「健康管理システム」「産業保健クラウド」「休復職管理システム」を置く）が、core-thesis.mdの「健康管理システムの棚に並ばない・健康データ系の語を使わない」と正面でぶつかり、作戦案自身が「先生の一行での再解釈がないと最初の1行で止まる」と認めている。",
+        "why": "core-thesisは「本書がこの事業の根幹」と明記された文書で、書き手（私を含む助言側）が広げてはいけないものです。しかも検索の仕組み上、「健康管理システム 選び方」で順位を取るとは、Googleにそのページを「健康管理システムの比較・選定ページ群」の仲間として認識させることです。自分をそう呼ぶかどうかに関係なく、検索結果の画面ではアスピック・BOXIL・mediment16選の隣に並びます。「棚の前に立つ」と「棚に並ぶ」は、検索結果を見る人事担当者には区別がつきません。"
+       },
+       {
+        "issue": "「中立の産業医が書いた確認点」という価値の源泉と、「その確認点がCasetraの機能そのもの（案件が閉じる単位・意見と決定が別欄・再評価日・証跡）で、書き手がCasetraの開発者」という事実が、構造として両立しない。",
+        "why": "ステルスマーケティング規制（2023年10月施行の景表法告示）に沿って同一代表者を開示すれば、記事は「ベンダーの選び方記事」として読まれ、中立という唯一の差別化が消えます。開示しなければ規制上の問題になります。どちらに転んでも「売り手が書けない中立の角度」は残りません。加えて、この角度は真似が簡単です。エムステージや産業医クラウド（Avenir）は産業医の署名記事を数週間で出せる体制があり、OHMEクラウド・さんぎょういカルテのように「産業医が作った」ツール側はすでに「選ぶ側の基準」を語っています。堀（真似されにくさ）はほぼゼロです。"
+       },
+       {
+        "issue": "記事を読んで来る人（システムを検討し予算を持つ担当者）に渡せる商品が、Casetra一般ローンチNO-GOの間は「Basic（月30分の相談枠）」しかなく、pricing-growth-canonical §1は「システムは不要だが継続相談先が必要→Basic」「BasicとCASETRAは併売しない」と定めている。",
+        "why": "「システムを入れたい人」を「システム不要の人向けの相談枠」に流す設計で、買い手の望みと商品が逆向きです。Casetraの条件付きGOは監査文書で「最短9月第2週」でしたが、作戦案自身が「10月以降、一般ローンチは早くて11〜12月」と後ろにずらしており、M-01（月境界を要する受入）の8/31投入証拠もリポジトリに無いとしています。受け皿の日付が動く前提の上に、6〜12か月の記事投資を積むのは順番が逆です。またPhase 2（§7）の外販先は「Retain企業」「自社産業医・人事体制がある企業」で、想定読者（従業員50〜300名・産業保健スタッフなし・兼務担当者）は「自社運用できる企業」の定義から外れています。"
+       },
+       {
+        "issue": "作戦案自身の見込みが「6か月時点で月0〜0.2件（ほとんどの月は0）」で、それに対して先生のTier S承認を90日で5件使う。直前の結論（inquiry-strategy-2026-09-02.md）は「この90日は新規の記事・固定ページを作らず、承認キューを増やさないことが順位より効く」と決めている。",
+        "why": "先生の承認は週1件・1回1作業が上限で、すでにB・C・F・G・T・P・R1が待っています。承認1件は、復職クラスター（唯一商用表示がある「スポット産業医」147表示や、AI概要に産業医事務所0件の空白）に使えたはずの1件です。同じ承認を「見込みが実質0の作戦」に回すのは、機会費用の面で負けが確定している配分です。「12か月後の入口を育てる」という位置づけも、その入口（Casetra外販）の開始日が確定していない以上、根拠のない前倒しです。"
+       }
+      ],
+      "fixable_issues": [
+       {
+        "issue": "/service/cloud/（page 166）は本文約486字・meta descriptionなし・site:検索で出ず、9/22・9/25・9/29・10/2の4記事の主導線なのに受け皿として弱い。冒頭で自分を「産業衛生管理システム」と呼び、「Casetraだけを導入し…運用することもできます」と受入未了の提供を書いている。",
+        "fix": "この改稿1件だけは、本作戦と切り離して既存の復職・工程レーン（seo-contract-funnel.mdの主導線表）の一部として進める。中身は作戦案のDay 0〜14案どおり「工程が詰まる4つの場所と、会社が決めること・記録すること」＋契約関係表＋「ご相談いただけます（受付状況はcasetra.jp）」＋meta description。棚語0・料金0・Casetra機能説明0。先生の承認は1行1件。これは新レーンではなく、すでに予約済みの4記事を無駄にしないための修理です。"
+       },
+       {
+        "issue": "修飾語10クエリの基準値SERP観測（先生0分）は、やる価値があるが順番が逆。今の案では観測の前にページ改稿と記事1の承認依頼が並んでいる。",
+        "fix": "観測を「作戦を続けるかの門」にする。10クエリのうち、実際に検索結果が出て（Googleが別の言葉に言い換えない）、1ページ目に医師個人・産業医事務所が0件で、かつAI概要が無い言葉が3つ以上残った場合だけ、次の判断に進む。3つ未満なら記事は1本も作らず、観測結果をcontent/evidenceに残して終える。"
+       },
+       {
+        "issue": "記事4本の検索意図が、予約済みの12記事のDX柱4本（議事録・日程調整・意見書のあと・解除管理）と既存のoccupational-health-case-management（メール・表計算を続ける条件／案件管理へ切り替える目安）と重なる。",
+        "fix": "新記事を作らず、上記5本の公開後28日のquery×pageを見て、「システム」「選び方」「クラウド」を含むクエリが自然に混ざるかを確認する。混ざれば、新記事ではなく既存記事への見出し追加（1見出し・1承認）で受ける。混ざらなければDX修飾語の需要は無いと判断する。"
+       },
+       {
+        "issue": "casetra.jp側の是正（/worksの実体のない改善数値の非公開化、sample-*スラッグの301、「【無料DL】」リンク先#の実体化か非公開）が、事務所記事からリンクを増やす前提条件として書かれているが、担当・期日がない。",
+        "fix": "Casetra監査の30日残件12のうち、この3点を先に切り出して期日を置く（Casetraリポの同時編集ルールに従いコミット前確認）。これが終わるまで、事務所サイトからcasetra.jpへの新規リンクは既存の1ブロックの1本に限る。"
+       },
+       {
+        "issue": "計測が止まっている（Search Console本体はログイン停止、generate_lead修正版は未受入、article_service_click未受入）のに、kill criteriaはそれらの数字に依存し、判定①は「記事1本目の公開から180日」＝2027年4月ごろまで止まらない。",
+        "fix": "作戦を残すなら、判定を「基準値SERPで空きが3つ未満なら着手前に止める」「公開28日で対象クエリの表示が合計30未満なら次の記事を作らない」の2つに短くし、Search Console本体のログイン復旧とgenerate_lead受入を着手条件に入れる。"
+       },
+       {
+        "issue": "「産業衛生DX支援」を相談窓口として厚くすると、Basic（システム不要の企業向け）の定義とずれ、独立SKUに見える危険がある（§10の商品境界）。",
+        "fix": "/service/cloud/の相談先は「産業医業務の受託（Retain／単発）の中で、会社の記録の型を一緒に整える」と書き、DX支援という名詞を商品名のように使わない。Basicへ誘導する文は置かない（Basicは「継続相談先」であり、システム選定の相談枠ではない）。"
+       },
+       {
+        "issue": "想定読者の規模（50〜300名）と根拠調査（mediment n=115・300名以上）がずれていることを作戦案が自認しつつ、そのまま進めている。",
+        "fix": "読者の実在は、既存受託先（年商約1,500万円の顧客基盤）に「健康管理システムの検討を上司から言われたことがあるか」を1問聞くことで確かめる（先生1問・数分）。1社も無ければ、この読者は当事務所の顧客層には居ないと判断する。"
+       }
+      ],
+      "compliance_violations": [
+       "core-thesis.md「棚の規律」: title・H1に「健康管理システム」「産業保健クラウド」「休復職 管理 システム」を置く設計は、「健康データ系の語を使わない」に触れる。作戦案は「検索対象としてのみ使う」と切り分けるが、根幹文書の再解釈を助言側が先に前提に置いている。先生の一行確認が無い時点では違反として扱う。",
+       "inquiry-strategy-2026-09-02.md（直前の結論）: 「この90日は新規の記事・固定ページ・トリガーページを作らない。承認キューを増やさない」と決めた直後に、記事4本＋ページ1本＝Tier S承認5件を追加する計画になっている。Day 0を10月に置いても、T・C・R1・寄稿などの承認と同じ帯域を使う。",
+       "pricing-growth-canonical.md §1・§10: システム導入を検討する読者の受け皿をBasic（「システムは不要だが継続相談先が必要」な企業向け）に置き、「産業衛生DX支援」を相談窓口として厚くする設計は、BasicとCASETRAを併売しない原則と、商品境界を正本・料金表・契約書の同時更新なしに変えない規律に触れる余地がある。",
+       "監査B6・pricing-growth-canonical §10: casetra.jpの/works「導入企業の平均的な改善数値」（実体なし）、sample-*スラッグ、「【無料DL】」（リンク先#・禁止語「無料」を含む）が未是正の状態で、事務所記事からcasetra.jpへのリンクを増やす計画が入っている（作戦案は「先に是正」と書くが、担当・期日が無く順序が担保されていない）。",
+       "景表法ステルスマーケティング告示（2023-10施行）: 「中立の産業医の確認点」記事で自社製品の機能と一致する基準へ誘導する構造は、同一代表者の開示を毎記事に置かないと規制上の問題になる。作戦案は開示を含めているが、開示した時点で作戦の前提（中立）が崩れる点は上記の致命的欠陥に記載。",
+       "seo-contract-funnel.md「Current gates」: 「検索需要や順位改善を断定しない」と定めているのに、作戦案の需要の根拠（大語月数千・修飾語1〜2%）は出典なしの推定を積み重ねた断定に近い。"
+      ],
+      "realism_score_1_5": 2,
+      "verdict": "drop",
+      "confidence_0_1": 0.75
+     },
+     {
+      "strategy_title": "「棚の前に立つ客」作戦 — 健康管理システムを「選んでいる人」に、売り手ではなく産業医として話す（DX中語の正面攻略・最強版）",
+      "lens": "事務所のルールと事業原理への適合（棚の規律・pricing正本§10・Casetra NO-GO・rebrand「事務所サイトでCasetraを売らない」・医療広告規律・禁止語・決定権は会社・先生の承認帯域）。判断に迷った箇所は厳しい側に倒した。",
+      "fatal_flaws": [
+       {
+        "issue": "この作戦の出口になる商品が、いまの正本に存在しない。「DX支援の相談」を受けても、着地先がBasicしかなく、Basicは「システムを入れない会社の相談枠」である。",
+        "why": "作戦案は「相談の受け皿はKIDUKI Basic（月30分）とRetain。DX支援を独立SKUにしない」と書く。しかし pricing-growth-canonical §1 は Basic を「CASETRAを導入しない企業」向け、§2.1 は「休復職・睡眠・メンタル・両立支援等の専門補完に限定」と定めており、「誰が入力し誰が決めどこに残すかの運用設計」は Basic の範囲に無い。さらに site-copy.md の確定稿（Casetraとの契約関係）と page-166 本文は「企業側でCasetraを利用しない場合、企業側のDX支援は含まれません」と明記している。つまり事務所の公開ルール上、Casetra契約なしのDX支援は「含まれない」ものであり、Casetraは一般ローンチNO-GO（CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md）。健康管理システムを選んでいる人を集めて/service/cloud/へ送っても、正本どおりに答えるなら「提供できるものはありません（受付状況はcasetra.jp）」になる。集客の設計が、売れないものへの導線になっている。"
+       },
+       {
+        "issue": "「売り手が書けない中立の角度」という作戦の柱が、作戦自身の開示ルールで消える。",
+        "why": "作戦案の thesis は「1ページ目は全員ベンダー・比較サイト、医師が書いた中立の確認点は空いている」を最大の根拠にする。一方 compliance.medical_advertising は「同一代表者がCasetraの開発者でもある事実を記事内で開示し、中立を装った誘導と読まれないようにする」と書く。開示すれば記事は「自社システムを持つ人が書いた選び方」＝すでに10件並んでいるベンダー記事と同じ棚になり、開示しなければ景表法（ステマ規制・優良誤認）と core-thesis の趣旨（自分を棚に置かない）に反する。どちらを選んでも作戦の根拠が成立しない。5つの確認点（案件が閉じる単位／産業医意見と会社決定の別欄／再評価日／入力者／3年保存）はそのままCasetraの設計思想なので、「中立の基準」に見せて自社仕様を採点表にする構造になっている。"
+       },
+       {
+        "issue": "根幹文書（core-thesis）の「健康管理システムの棚に並ばない」を、作戦の都合で読み替えることが前提になっている。",
+        "why": "compliance.shelf_rule は「棚の語が現れるのは title・H1（『〜を選ぶ前に』）だけ」とし、この解釈を「着手前に先生の一行確認を取る」と書く。title と H1 はページの一番大きな声であり、検索エンジンも読者もそこでページの棚を決める。「自分の声で使わない」と「H1に使う」は両立しない。さらに狙う語のうち「産業保健 クラウド」の1ページ目は Avenir の産業医クラウド（産業医紹介）や iCARE で、「健康管理システム 産業医 連携（使ってくれない）」の検索者は「Carely等を使ってくれる産業医」を探す人である。ここで拾われる事務所は、健康管理SaaSに接続される医師の供給元＝紹介・格安の棚に置かれる。core-thesis は「仲介にも健康管理SaaSにも真似できない」ことを事業の理由にしており、その棚の中に自分から入る作戦は、根幹文書の書き換えを先生に求めるものになる。risks① で作戦自身が「最初の1行で止まる」と認めている。"
+       },
+       {
+        "issue": "作戦案自身の見積りで、12か月の期待問い合わせ数が1件に届かず、ルール上の承認待ち行列に入る順番も最後になる。「望み薄か」への答えとしては、作戦案自身が「薄い」と証明している。",
+        "why": "expected_inquiries は月0.003〜0.12件（6か月時点）、time_to_first_inquiry は記事1本目の公開から6〜12か月。Day 0 は「12記事の予約公開完了（10/2）＋CTA v6反映後」で、その時点でも承認待ちは B・C・F・G・T・P・R1・S3・S6 と9件前後が残る（seo-ranking-recovery-plan、inquiry-strategy、content/README）。週1件・1回1作業を守ると、この作戦の記事1本目の承認は早くても2026年12月〜2027年1月、公開から6〜12か月で問い合わせ0〜1件＝2027年後半以降になる。inquiry-strategy は「新規の記事・固定ページを作らない。承認キューを増やさないことが順位より効く」を先生と合意済みの方針として記録しており、5件のTier S承認を足すこの作戦はその方針と正面から食い違う。"
+       }
+      ],
+      "fixable_issues": [
+       {
+        "issue": "page-166 の「Casetraだけを導入し、自社の担当者・産業医で運用することもできます」が、NO-GOの今も公開されている（pricing正本§10「実装済みでない料金・商品を提供中と表示しない」に触れる状態）。作戦案はこの修正を Day 0（10月上旬）以降に置いている。",
+        "fix": "この1文の弱め（「ご相談いただけます。受付状況はcasetra.jp」）と meta description 追加だけを、この作戦から切り離して既存の承認レーン（Sシートの1行）に載せる。順番は「site-copy.md の確定稿を先に更新→page 166 に写す」（site-copy 冒頭の原則）。作戦の採否と関係なく、法令と正本の整合として先に済ませる。"
+       },
+       {
+        "issue": "「条件付きGO」を記事末にSTARTERの1文を足す解禁条件にしている。監査 §4 の条件付きGOは「1社限定パイロット・販売範囲明示・開示5点つき」であり、不特定の検索読者に案内する段階ではない。",
+        "fix": "公開記事からのCasetra案内（STARTERの1文・試用導線）は「一般ローンチ（18/18 PASS）＋casetra.jp の B6 是正（/works 非公開、sample-* 301、【無料DL】の実体化か非公開）」を証拠にしてからに限定する。条件付きGO段階では、事務所サイトの文言は現行の「KIDUKI側の業務管理に使用。企業側の導入は別契約」の2点から動かさない。"
+       },
+       {
+        "issue": "buyer_moment の中で「上司に言われた兼務担当者」と「予算と決定権を持たされた人」が同じ人物として書かれている。前者は決定権を持たない。契約価値の見込み（Basic→Retain→STARTER）はこの矛盾の上に立っている。",
+        "fix": "検索者の像を「検討を任された兼務担当者（決定権なし）」に統一し、契約価値の見立てを単発〜Basic相当に下げて再計算する。300名以上の企業が多い可能性（mediment調査の母集団）は risks③ のとおり不適合案件の増加要因として明記する。"
+       },
+       {
+        "issue": "検索需要の根拠が食い違っている。thesis②は「大語は月数千（推定）」と書くが、evidence には「DX語はサジェストにほぼ出ない、aramakijake データなし」と自分で書いている。修飾語クエリのSERPも「未観測」。",
+        "fix": "Day 0〜14 の基準値取得（修飾語10クエリのSERP・順位・広告・AI概要・上位ドメイン種別）を、作戦の採否判断の前に持ってくる。「医師が書いたページが0件」かつ「会社側の検索者が混ざる」ことが観測できた場合だけ、記事1本を工程語の型（棚語をtitle・H1に置かない）で試す。観測できなければ着手しない。"
+       },
+       {
+        "issue": "記事1〜3 と /service/cloud/ 改稿は、予約済み12記事のDX柱4本（議事録9/22・日程調整9/25・意見書のあと9/29・解除管理10/2）および owner-review 中の occupational-health-case-management（メール・表計算を続ける基準）と検索意図が重なる。「1記事1意図」（content/README）に反し、自サイト同士で順位を食う。",
+        "fix": "新記事を作らず、既存の DX柱4本と occupational-health-case-management に「誰が入力し、誰が決め、どこに残すか」の段落を足す改稿（1記事につき1承認）に置き換える。/service/cloud/ の増強は「工程が詰まる4つの場所」を書き直すのではなく、4本の記事への内部リンク（S4で反映済み）と契約関係の表の維持に留める。"
+       },
+       {
+        "issue": "「健康管理システム 導入 失敗」「健康管理システム 産業医 連携（使ってくれない）」を狙うと、競合カテゴリの欠点を自社システム保有者が書く形になり、比較広告・営業妨害の指摘を招く。また「使ってくれない産業医」の話題は既存産業医を下げる方向になり、seo-contract-funnel の「既存産業医を下げず、単発・補完・選任の役割を分ける」に反する。",
+        "fix": "この2クエリは対象から外す。既存産業医との関係は existing-industrial-physician-specialist-support（owner-review）の1本に任せる。"
+       },
+       {
+        "issue": "先生の時間見積り（月2時間）が、既存レーンの初月見込み（月3〜4時間、inquiry-strategy）に上乗せされることが書かれていない。週2時間以内・週1件の帯域は全レーン合計の上限である。",
+        "fix": "この作戦の承認は「既存の承認待ちが0件になった週」にだけ1件出す、と条件を明記する。実質の着手は2027年以降になる見込みを先生に先に伝える。"
+       }
+      ],
+      "compliance_violations": [
+       "棚の規律（core-thesis「健康管理システムの棚に並ばない／健康データ系の語を使わない」）: 棚の名前「健康管理システム」「産業保健クラウド」「休復職管理システム」を記事のtitle・H1に置く設計。ページの最も大きな声で棚の語を使うことは「自分の声で使わない」と両立しない。作戦自身が根幹文書の再解釈を先生に求めている。",
+       "棚の規律（格安・紹介の棚）: 「産業保健 クラウド」の1ページ目は産業医紹介（Avenir 産業医クラウド）・iCARE等。「健康管理システム 産業医 連携（使ってくれない）」の検索者は「SaaSを使ってくれる産業医」を探す人で、ここで拾われる事務所は健康管理SaaSに接続される医師の供給元＝紹介の棚に置かれる。",
+       "site-copy.md 確定稿・page-166「企業側でCasetraを利用しない場合、企業側のDX支援は含まれません」との矛盾: Casetra契約なしの「DX支援の相談→Basic」を出口にする設計は、公開中の確定文言と反対のことを売る。文言マスター（site-copy）を先に変えずに運用を変えることは、site-copy冒頭の原則にも反する。",
+       "pricing-growth-canonical §1・§2.1: Basicは「CASETRAを導入しない企業」の「休復職・睡眠・メンタル・両立支援の専門補完」に限定。運用設計（誰が入力し、誰が決め、どこに残すか）の相談をBasicで受けるのは商品境界の変更にあたり、§10（正本・料金表・契約書・公開表示の同時更新）の手続きなしに行えない。作戦案 risks⑪ が自認している。",
+       "pricing-growth-canonical §10「実装済みでないものを提供中と表示しない」: page-166 の「Casetraだけを導入し…運用することもできます」が公開中のまま（作戦案はDay 0＝10月以降の修正に回している。是正は待たせるべきでない）。",
+       "Casetra一般ローンチNO-GO・監査§4「条件付きGO＝1社限定パイロット」: 条件付きGOを「記事末にSTARTERの1文を足す」解禁条件にしている。不特定の検索読者への案内は一般ローンチ（18/18 PASS）の後でなければ、受け入れられない申込を招く。",
+       "rebrand-strategy §3「事務所サイトでCasetraを商品として売らない。1ブロック＋リンク」: 4記事＋/service/cloud/ 改稿の主導線をすべて /service/cloud/ に集め、契約価値をSTARTER 40,000円/月で計算する設計は、事務所サイトをCasetraの入口（記事資産）として育てる宣言であり、「別事業。1枚で両方売るとどちらの会社か分からなくなる」という決定の趣旨に反する。1ブロックの形式は守っても、ページ群の目的がCasetra送客になっている。",
+       "景表法（ステルスマーケティング・優良誤認）と中立表示: 「産業医が書いた中立の確認点」と見せつつ、5つの確認点がCasetraの設計そのものである構造。開示すれば中立の根拠が消え、開示しなければ規制の対象になり得る。「健康管理システム 導入 失敗」を自社システム保有者が書くことは比較広告・営業妨害の指摘も招く。",
+       "決定した方針との矛盾（inquiry-strategy 2026-09-02、先生の合意事項）: 「新規の記事・固定ページ・トリガーページは作らない。承認キューを増やさないことが順位より効く」に対し、Tier S承認5件（ページ1＋記事4）を新設する。",
+       "先生の承認帯域（週1件・1回1作業・週2時間以内）: 承認待ち9件前後（B・C・F・G・T・P・R1・S3・S6）の後ろに5件を並べる設計で、作戦案自身が完了120〜150日への遅延を認めている。既存レーンの初月見込み（月3〜4時間）との合算が書かれていない。",
+       "seo-contract-funnel「既存産業医を下げず、単発・補完・選任の役割を分ける」／content/README「1記事1検索意図」: 「産業医 連携（使ってくれない）」の題材は既存産業医を下げる方向になり、記事1〜3・/service/cloud/改稿は予約済みDX柱4本および occupational-health-case-management と意図が重なる。",
+       "医療広告規律・禁止語: 直接の違反は見当たらない（クリニック名・受診誘引・治療表現なし、CTAは「初回のご相談（15分）」、境界文は確定稿を使う設計）。ただし casetra.jp の「【無料DL】」（リンク先#）と /works の実体のない改善数値が残る限り、事務所記事からのリンク増は禁止語「無料」と優良誤認の露出を増やす。作戦案がB6是正を前提条件にしている点は適切。"
+      ],
+      "realism_score_1_5": 2,
+      "verdict": "drop",
+      "confidence_0_1": 0.75
+     }
+    ]
+   },
+   {
+    "lens": {
+     "key": "workflow-pain-templates",
+     "lens": "工程の痛み語（面談の日程調整、意見書の後、就業制限の期限、議事録の保存、休職者の管理）と、その痛みを解く「証跡テンプレート」（案件・期限・会社決定・記録の型。Casetraの考え方を紙とExcelにしたもの）を事務所サイトとcasetra.jpに置き、Casetra受入PASS後にSaaSへ、それまではKIDUKIの継続支援へつなぐ案。"
+    },
+    "strategy": {
+     "title": "「会社の決定欄」つき証跡様式4枚で、DXの言葉ではなく工程の言葉から問い合わせを受ける作戦（Casetra受入PASS前はKIDUKI継続支援へ、PASS後にCasetraへ）",
+     "target_queries": [
+      "産業医 意見書 フォーマット／様式（意見書を受け取った会社側の記録様式として）",
+      "産業医 意見書 会社 対応 就業制限 解除",
+      "産業医 就業制限 解除／就業制限 解除 産業医（「就業制限 解除」単独は感染症法に取られるため使わない）",
+      "就業上の措置 記録／就業上の措置 意見書 例",
+      "産業医 意見書 本人 開示／誰が 見る（意見書の扱いを調べる会社側の枝）",
+      "衛生委員会 議事録 保管期間／産業医 勧告 記録（「議事録 テンプレート」は大手とAI概要で埋まっているので順位を狙わない）",
+      "産業医面談 日程調整／復職 産業医面談 日程調整（検索者の半分は従業員側と見て、順位目標は置かない）",
+      "記録のみ・順位目標なし: 産業衛生 DX／産業保健 DX／産業医 DX／健康管理システム／休職者 管理 エクセル"
+     ],
+     "thesis": "先生の問いへの答えを先に言います。「DX」「システム」「クラウド」という言葉で検索を攻めるのは、今はやりません。理由は、その言葉で出てくる1ページ目が健康管理ソフト会社と比較サイトと広告の「棚」で、そこに並ぶこと自体が事業原理（棚の規律）に反するうえ、その言葉で調べる人は「ソフトを選ぶ人」か「産業医本人」で、目の前の案件で困っている会社ではないからです。さらにCasetraは2026-08-25の判定でまだ一般に売れない（NO-GO）ので、集めても受け止められません。\n\n代わりにやるのは、「DXが解いている工程」を紙にして配ることです。Casetraの考え方（案件ごとに、期限・会社の決定・記録を残して完了させる）を、WordとExcelの様式（＝書き込む欄が決まった紙）にします。9/22〜10/2に公開される4本の記事は、それぞれ末尾で「表を作ってください」「様式を整えてください」と読者に勧めています。その表を私たちが作って、記事と /service/cloud/ に直接ダウンロードで置く。これが作戦の中身です。新しい主張は一つも増えないので、先生の確認は「欄の名前と注記」だけで済みます。\n\n差別化点は「会社の決定欄」です。競合の様式（mediment・Carely・ワーカーズドクターズ・サンポチャート・さんぽLAB）は「産業医が書く欄」と「日時の管理」まで。「会社が何を決め（措置内容・開始日）、いつ見直し（再評価期日・解除条件）、意見と違う決定をした理由、どこに保存したか」を書く欄を持つ様式は、今回の観測範囲では見当たりませんでした（フォーム登録の中身は未確認なので推定）。この欄は事業原理の3問（判断と実行の空白／証跡／決定権は会社）にそのまま通ります。\n\n様式を埋めようとした担当者は、「再評価の時期が意見書に書いていない」「医学的な評価を誰に聞けばよいか分からない」という欄で止まります。そこが初回のご相談（15分）への自然な入口です。Casetraが受入PASSするまでは、出口は「KIDUKIの継続支援（Basic／Retain）または単発」だけにし、PASS後に「同じ型を自社で回すならCasetra（別契約）」の一行を足します。DXの旗（タイトルタグの「産業衛生DX」）は指名の補助として残し、検索語には使いません。",
+     "buyer_moment": "買い手は「産業保健スタッフのいない50〜300名の会社の、人事総務の兼務担当者」です（産業保健DXを語る第三者調査の対象は300名以上で、KIDUKIの主対象とは母集団が違います。PR TIMES メディフォン 2025-09-16 https://prtimes.jp/main/html/rd/p/000000037.000154534.html ）。\n\nその人が検索するのは、次の「工程が止まった朝」です（推定）。\n1. 産業医の意見書が届いた翌日。「残業は控えめに」と書いてあるが、会社として何を決めて誰に伝え、いつ見直すのか分からない。検索語は「産業医 意見書 フォーマット」「産業医 意見書 本人 開示」。\n2. 上司から「いま有効な就業制限を全部出して」と言われた日。一覧がなく、3年前の深夜業制限が残っている。検索語は「産業医 就業制限 解除」「就業上の措置 記録」。\n3. 労基署の調査や内部監査で「衛生委員会の議事録3年分」を求められた日。検索語は「衛生委員会 議事録 保管期間」。\n4. 復職面談の日程が本人・上司・産業医の間で往復し、確定責任者がいない週。検索語は「産業医面談 日程調整」。\n\n大事な観測は2つです。①痛みは名詞（工程の名前）で検索され、「大変」「面倒」などの感情語では検索されない（Googleサジェスト2026-09-02: 「産業医 面談 日程調整 大変」0件、「健康管理 エクセル 限界」0件）。②「DX」の語は担当者の候補にほとんど出ない（「産業保健 DX」自分自身1件、「産業衛生 DX」0件、aramakijake.jp「産業保健DX」「健康経営DX」データなし）。だから、紙の名前も「様式」「書式」「一覧」にし、「管理表」「シート」「チェックリスト」「テンプレート」は使いません（候補に出ない、または大手の棚）。",
+     "competition_reality": "2026-09-02のGoogle日本語・非ログイン・各1回観測（調査班の実測）から。\n\n■ 入れない場所（狙わない）\n・「健康管理システム」「産業保健 クラウド」「休復職 管理 システム」「休職者 管理 ツール」: 健康管理SaaS（Carely・mediment・HealthCore・Growbase）＋比較サイト（アスピック・BOXIL）＋広告2本。棚の規律で禁止の場所。\n・「健康経営 DX」「産業保健 DX」「産業医 DX」: 紹介会社（ワーカーズドクターズ・サンポチャート11,000字）とSaaS。検索者はDXの意味を知りたい人か産業医本人。「産業医が自分で作ったツール」の棚も既にOHMEクラウド（2022年）・yatch・さんぎょういカルテが埋めており、Casetraは後発。\n・「衛生委員会 議事録 テンプレート」: AI概要あり（Carely・mediment・first call・Sanpo Navi等を引用）。テンプレ配布は直DL型（mediment・マネーフォワード）とフォーム型（Carely・エムステージ・WellCon）で大手が埋めている。\n・「就業制限 管理 表」: 免許・技能講習の「就業制限業務一覧表」と感染症の就業制限に意図を取られ、産業保健の意味では1件も出ない。\n\n■ 余地がある場所（ここに紙を置く）\n・「産業医 意見書 会社 対応 就業制限 解除」「就業制限 解除 管理」: 広告0・AI概要なし。上位は紹介会社（intermind 2026-04、サンポチャート、Avenir）だが、小規模の原産業医事務所（大阪）が3〜4位に入っている。被リンクの量ではなく型で入れる余地（推定・中）。\n・「産業医 意見書 保管／フォーマット」: 紹介会社が2026年に更新を重ねるが、AI概要なし・広告は下部1本。テンプレはサンポチャートの意見書様式（フォーム登録型、産業医が書く欄）だけ。「受け取った会社が決めて記録する側」の様式は空いている。厚労省こころの耳の様式例（https://kokoro.mhlw.go.jp/etc/pdf/return-ikensyo.pdf ）は産業医→人事宛の書式で、会社の決定欄はない。\n・「産業医 面談 日程調整」: 1位は予約システム会社（yoyaku-package.com 8,500字）、他は紹介会社ブログ・日程調整ツール。産業医事務所の記事は0件。広告1本・AI概要なし。ただし関連質問は従業員側が多い。\n・「衛生委員会 議事録」の派生では、「産業医の勧告の記録（安衛則14条の3）を議事録と別に3年保存」という角度の様式は見当たらない（推定）。テンプレの順位ではなく、この角度で入る。\n\n■ 競合の速さ\nintermind・サンポチャート・リモート産業保健は法改正や実務語を1〜3か月で記事化する。KIDUKIの承認速度（週1件）では「先行」できないので、「早さ」ではなく「会社の決定欄という型」で差を作る。これは inquiry-strategy-2026-09-02.md の結論と同じ。\n\n■ KIDUKIの現在地\n事務所サイトは28日で241表示・11クリック・平均21位。DX語の表示は0行。/service/cloud/ はsite:検索に出ず、本文は薄い。被リンクはcasetra.jpの1本。casetra.jp自身は「casetra」で1位だが、同名の海外企業（資源商社・照明・床材）と画像枠を分け合い、「Casetra 産業医」では競合3社の広告が上に出る。ブランド語でも紹介会社に横取りされるので、指名は「KIDUKI」「宮部大輔」で受ける。",
+     "casetra_gate_dependency": "■ Casetraの今の状態（casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md）\n一般ローンチは「NO-GO」。技術は合格（API 690件PASS、DAST High/Medium/Low 0、監査ログ連鎖22事象・8社で不一致0）。止めているのは人の確認3つ（実案件1件の会社決裁がない／運営・安全項目G-01が9件未完了／テスト企業での実地受入18シナリオ未実施）。条件付きGO（1社パイロット）は最短9月第2週の見立てだったが、その前提（8/31までのM-01投入、8/26〜9/2の実地ウォークスルー）の記入済み証拠がリポジトリに無く、portal-opsは8/25以降コミット0。M-01は月境界が要るので、8/31を逃していれば次は10/1。現実的な幅は「条件付きGOは10月以降、一般ローンチは早くて11〜12月」（推定）。この作戦はCasetraのGOに依存させません。\n\n■ ローンチ前にできること（この作戦の本体。全部いま可能）\n・4本の記事に、記事が勧めている表をWord／Excelの様式として直接ダウンロードで置く。\n・様式の中身は「案件・期限・会社の決定・記録」の型（Casetraの考え方の紙版）。Casetraの名は様式に書かない。\n・/service/cloud/ を「工程が詰まる4つの場所と、会社が決めること・記録すること」の型に増強し、様式へのリンクを置く。Casetraは「事務所側の業務管理に使用」＋casetra.jpリンクの1ブロックに留める（rebrand-strategy §3の決定どおり）。\n・公開で言える事実: 「事務所側の業務管理にCasetraを使用」（本番12社・56Case、監査ログ連鎖不一致0。ただし導入社数・契約数・ARRとは書かない）、18業務テンプレート／181作業／70法令要求（うち義務55）、料金STARTER 40,000円〜はcasetra.jp側にだけ置く。\n・出口: 「初回のご相談（15分）」1つ。相談の結果は、単発（60,000円〜）・Basic（40,000円/月）・Retainのどれかで受ける。Casetraを企業に提供する約束はしない。\n\n■ ローンチ前にできないこと（書かない・約束しない）\n・「Casetraを試す」「導入できます」「企業へ提供中」のCTA・文言。page 166の「Casetraだけを導入し…運用することもできます」は「ご相談いただけます（受付状況はcasetra.jp）」へ弱める（正本§10「実装済みでないものを提供中と表示しない」）。\n・単発に付く「企業へ対象1CaseのCasetra画面を30日提供」（正本§5）と復職Pack（P-01/P-02）: 実装はあるが本番受入未了。先生の一行決定「当面Casetraは事務所内部だけ、証跡はPDF／メールで受渡し」が要る（inquiry-strategyで既出）。\n・導入事例・改善数値・CSV移行サポート・SLA・ISO27001・国内保管・ストレスチェック組込み・労基署報告の自動生成・名簿の自動抽出。\n・様式のダウンロードにフォーム登録を付けてCasetraの見込み客名簿にすること（受け皿がない）。\n\n■ 解禁の順番（証拠は監査シートのPASS行）\n①条件付きGO（STARTER/STANDARD/PLUSのみ、顧客への開示5点付き）→ 様式の末尾と/service/cloud/に「同じ型を自社で継続管理する場合はCasetra（別契約・受付状況はcasetra.jp）」の一行を足す（別exact・承認1行）。\n②P-01/P-02 PASS → 単発の30日画面と復職Packを案内可。\n③C-02/C-03 PASS → 復職Caseと定期業務の企業利用を案内可。順序を逆にしない。\n\n■ 先に直す前提（Casetra側チケット。私が依頼メモを用意、実施は同時編集ルール「未コミット＝未完成」に従う）\n・casetra.jp「【無料DL】復職支援 期限管理チェックリスト」（/sample-post2/）のリンク先が「#」で実体がない。KIDUKI側で様式を配る前に「実体を置く（同じ様式を使う）」か「非公開」かを一行で決める。同一代表者で、事務所側は「無料」が禁止語。\n・/works の「導入企業の平均的な改善数値」がGoogleスニペットに出ている → 非公開（オーナーチェックリストB-1）。\n・casetra.jp本文の棚語（一元管理・可視化・経営リスク数値化）は事務所側に一語も写さない。是正は別チケット。",
+     "first_90_days": [
+      "【0〜14日 9/2〜9/16・先生の時間0】私（Claude）が4枚の様式v0をローカルで作る。中身は記事本文の「次にやること」に書かれた項目だけを欄にする（新しい主張を足さない）。①『産業医意見書の受領後に会社が決めることの記録様式』（Word）: 受領日／意見の要旨／措置内容／開始日／伝える相手と範囲／再評価の予定時期／意見と異なる決定をした理由と代替措置／決定者／保存場所。②『就業制限の再評価一覧』（Excel）: 対象者ID／制限内容／根拠（意見書日付）／開始日／再評価期日／解除条件／前回判断（解除・継続・変更）と理由／決定者／保存場所。③『衛生委員会 議事録・産業医勧告記録 様式』（Word）: 開催日・出席・審議事項・産業医の意見・決定事項・実施確認、別紙で勧告内容と講じた措置（講じない理由）、保存の責任者・起算日・破棄可能日。④『産業医面談 種類別の所要時間・方法・必要資料・確定責任者の表』（Excel）。全枚に共通の末尾: 版・発行日・事務所名（統一表記）・境界文「医学的評価は医師が行い、就業上の最終決定と実施は会社が行います」・「会社の手続き用の記録ひな形です。従業員向けの受診案内ではありません」。料金・Pack・Casetra名・クリニック名・禁止語（無料・一元管理・見える化等）は書かない。禁止語の機械チェックを通す。",
+      "【0〜14日】seo-contract-funnel.md のレーン6の語群を1行直す: 「就業制限 管理 表」「産業衛生 DX」を対象語から外して「記録のみ」へ、「産業医 就業制限 解除」「産業医 意見書 フォーマット」「就業上の措置 記録」を足す。承認不要（私の作業）。",
+      "【0〜14日】9/3の基準値スクショ（inquiry-strategyの計画）に、工程語4つ（産業医 意見書 会社 対応 就業制限 解除／産業医 意見書 フォーマット／産業医 就業制限 解除／産業医面談 日程調整）と観測用DX語3つ（産業保健 DX／産業医 DX／健康管理システム）を追加して、非ログイン・hl=ja&gl=jp・港区で保存する。以後毎月1日に同条件。",
+      "【0〜14日】GA4の拡張計測（Site Kitで有効と確認済み）がWord／Excelのリンククリックを file_download として自動で送るかを、ローカルのテストページで1回確かめる。新しい計測コードは足さない（generate_lead受入未了のため計測を増やして切り分けを崩さない）。",
+      "【0〜14日】Casetra側への依頼メモを1枚用意する: (a) /sample-post2/ の「【無料DL】」記事は実体化か非公開かの一行決定、(b) /works 非公開（B-1）、(c) sample-post1〜3／blog-4／sample-works の本番スラッグ化と301。実施はCasetraリポの同時編集ルールに従い、先生の「Run」が要る場合は1回だけ依頼する。これが済むまで、様式のダウンロード面からcasetra.jpへリンクしない。",
+      "【0〜14日】所轄保健所への照会用の10行質問文（A4一枚R1用に用意するものと同じ）に「会社の手続き用の記録様式をサイトで配布する。受診誘引や医療機関の紹介は含まない」の1行を足し、R1の照会と同じ電話1回で済ませる（先生の追加時間0）。",
+      "【15〜45日 9/17〜10/16】9/22議事録・9/25日程調整・9/29意見書のあと・10/2解除管理の公開を当日確認し、各記事のCTA（v6、承認Bが済んでいれば反映済み）が /service/cloud/ または適切なサービスページへ向いていることを目視。",
+      "【15〜45日】先生へのお願い①（10月上旬、承認B・R1が片づいた翌週。1件・約10分）: 様式①『意見書受領後の会社決定記録』の欄名と注記の一覧（A4一枚分）を見て、承認一行をコピーして貼る。承認後、9/29記事の「次にやること」の直下と /service/cloud/ に直接ダウンロード（Word）で置く。文言は「様式（Word）をダウンロードできます」。「無料」は書かない。",
+      "【15〜45日】先生へのお願い②（10月中〜下旬。1件・約10分）: /service/cloud/ v2 の承認一行。中身は (a) meta description追加、(b) 本文を「工程が詰まる4つの場所（日程調整／意見書のあと／解除の期限／議事録の保存）と、それぞれで会社が決めること・記録すること」の型に増強（約1,500〜2,000字、Casetraの機能説明はしない）、(c) 様式へのリンク、(d) 契約関係表の「導入し…運用することもできます」を「ご相談いただけます（受付状況はcasetra.jp）」に弱める、(e) Casetraは「事務所側の業務管理に使用」＋casetra.jpリンクの1ブロック。反映後にSearch ConsoleのURL検査依頼（先生3分・任意）。",
+      "【46〜90日 10/17〜12/1】先生へのお願い③（11月。1件・約10分）: 様式②『就業制限の再評価一覧』（Excel）の承認一行。10/2記事と /service/cloud/ に置く。",
+      "【46〜90日】11/1の月次レビューで、9/22〜10/2の4記事の28日query×page、様式①のDL数（GA4 file_download、受入未了のため補助）、AI概要の引用、/service/cloud/への遷移（article_service_click）を1枚で報告。順位・クリック・DL・問い合わせ・契約は別の行。",
+      "【46〜90日】先生へのお願い④（12月上旬。1件・約10分）: 様式③『議事録・産業医勧告記録』の承認一行。様式④『面談種類別の表』は1月に回す（日程調整語は従業員側の検索者が多く、優先度が低い）。",
+      "【46〜90日・条件付き】Casetraが条件付きGOになった月に、様式の末尾と /service/cloud/ へ「同じ型を自社で継続管理する場合はCasetra（別契約）」の一行を足す別exactを用意し、承認1行を翌月に回す。GOが来なければ何もしない（作戦はGOに依存しない）。",
+      "【全期間】問い合わせ台帳の「きっかけ」列に「検索：様式DL経由」を1つ足す（ローカルの表、フォーム変更なし）。初回相談で「様式を見ました」と言われた件だけをこの作戦の成果に数える。"
+     ],
+     "owner_hours_per_month": 1.5,
+     "cash_cost_per_month_jpy": 0,
+     "time_to_first_inquiry": "様式①の公開（10月上旬の見込み）から60〜120日、つまり2026年12月〜2027年2月が「検索きっかけ」の最初の有効な初回相談の現実的な幅です（推定）。根拠: 現状はサイト全体で28日241表示・11クリック・有効問い合わせ0（Search Console 2026-08-02〜08-29）。AI概要に引用された記事19件の観察では過半が公開・更新から1〜5か月（inquiry-strategy-2026-09-02.md、1回観測）。対象語群は月数十〜数百表示の小さい語で、日本の情報系クエリは1位でもCTR 1.8%前後（Ahrefs二次報道 https://www.commercepick.com/archives/86565 ）。したがって最初の1件が来る前に、既存受託先から「様式を送ってほしい」と言われる形で先に反応が出る可能性のほうが高く、それは「検索の成果」には数えません（台帳の「きっかけ」で分ける）。90日で0件でも設計の誤りとは言い切れないので、やめる基準で判断します。",
+     "expected_inquiries_per_month_at_6_months": "2027年3月時点で、この作戦（工程語4記事＋様式4枚＋/service/cloud/ v2）が生む「きっかけ＝検索」の有効な初回相談は月0〜0.5件、多くの月は0件が正直な幅です（推定）。\n\n算数（すべて推定・幅）:\n・表示: 対象語群の実需は月数十〜数百表示（サジェスト件数とaramakijake.jp「衛生委員会 議事録」384回/月・「産業医 意見書」208回/月の相対値、実数は未取得）。4記事＋1ページで28日合計100〜400表示が6か月時点の目安。\n・クリック: CTR 2〜5%（現サイト平均4.6%、情報系1位1.8%）→ 月2〜20クリック。\n・様式DL: クリックの10〜30%（直接DL・フォームなし。推定）→ 月0〜6件。\n・DL→初回相談: 日本B2Bの資料DL→商談は1〜5%（PRIZMA 2026-04 n=501 https://prtimes.jp/main/html/rd/p/000000166.000149156.html 、ferret One 2025 n=330は11〜20%が最多で食い違いあり）→ DL経路だけなら月0〜0.1件。\n・記事→サービスページ→フォーム直行（様式を経ない）を足して、月0〜0.5件。\n\n契約への換算: 有効相談の1/3が契約（inquiry-strategyの前提）なら、6か月で契約0〜1件（単発60,000円〜またはBasic 40,000円/月）。この作戦単独で事務所の売上を動かす規模ではなく、狙いは「工程語での実在の裏づけ」「AI概要に引用される様式の供給」「Casetra GO後に同じ紙をSaaSへつなぐ土台」の3つです。数字は月次レビューでSearch Consoleの表示回数の積み上げに置き換えます。",
+     "evidence": [
+      "Casetra一般ローンチNO-GOと理由3つ、本番12社・56Case、監査ログ連鎖22事象・不一致0: /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md",
+      "条件付きGOの販売範囲・顧客開示5点・M-01は月境界（8/31を逃すと10/1）: 同フォルダ CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md、オーナーチェックリスト B-1（/works非公開）・D-1（M-01）: CASETRA_OWNER_CHECKLIST_2026-08-25.md",
+      "4記事の「次にやること」が表・様式・一覧を読者に勧めている（様式の中身の出所）: /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/content/articles/{after-the-physician-opinion,work-restriction-release-management,committee-minutes-three-year-retention,industrial-physician-scheduling}.html（本文中にCasetra名は継続契約の説明1文のみ、CTAは産業衛生DX・CASETRA→/service/cloud/）",
+      "レーン6（産業医 面談 日程調整／産業医 意見書 管理／就業制限 解除 管理／産業衛生 DX→/service/cloud/→CASETRA STARTER）と2026-09-01実測ベースライン（241表示・11クリック・平均21.1位）: kdk-wordpress/content/seo-contract-funnel.md、content/evidence/search-console-dual-property-snapshot-2026-09-01.json",
+      "現行 /service/cloud/ の本文（タグ除去で約1,538字、ナビ・関連記事含む。本文だけなら約486字）、meta descriptionなし、「Casetraだけを導入し…運用することもできます」の一文: kdk-wordpress/source/wordpress/page-166-cloud.html",
+      "棚の規律（健康管理システムの棚に並ばない、一元管理・見える化・ウェルビーイングを使わない、使う語は判定・措置・解除条件・証跡）と3問チェック: kdk-wordpress/kiduki/docs/core-thesis.md",
+      "正本§5（単発に「Casetra画面30日提供」を含む＝受入未了と矛盾）・§10（実装済みでないものを提供中と表示しない）・Basic 40,000円／単発60,000円〜／STARTER 40,000円: kdk-wordpress/kiduki/docs/pricing-growth-canonical.md",
+      "「事務所サイトでCasetraを商品として売らない。1ブロック＋リンク」の決定: kdk-wordpress/kiduki/docs/rebrand-strategy.md §3",
+      "禁止語（無料相談等の費用強調・睡眠専門医・一気通貫・併設・クリニックと連携）、CTAは「初回のご相談（15分）」で統一、境界文、事務所名の統一表記、保健所から利益誘導の指摘を受けた前歴: kdk-wordpress/kiduki/docs/copy/site-copy.md 行12・94〜146",
+      "GA4拡張計測は有効（file_downloadは追加コードなしで取れる見込み）、generate_lead修正版は受入未了、article_service_clickは本番反映済みだが実受信未確認: kdk-wordpress/content/seo-measurement-spec.md 行46・148〜167",
+      "承認待ちの滞留（B・C・F・G・T・P・R1）と週1件・1回1作業の規律、社労士経路を外す先生の決定、A4一枚は「会社の決定記録シート」としてサイト用にだけ使う: kdk-wordpress/content/inquiry-strategy-2026-09-02.md",
+      "S4（166末尾に関連記事3本）・S5（タイトルタグに「産業衛生DX」）は2026-09-02本番反映済み: kdk-wordpress/content/seo-ranking-recovery-plan-2026-09-02.md 行3・17〜18",
+      "SERP実測（2026-09-02、hl=ja&gl=jp&pws=0、各1回）: 就業制限 解除 管理／産業医 意見書 会社 対応 就業制限 解除は広告0・AI概要なし・原産業医事務所3〜4位 https://www.google.com/search?q=産業医+意見書+会社+対応+就業制限+解除&hl=ja&gl=jp&pws=0 ；衛生委員会 議事録 テンプレートはAI概要あり https://www.google.com/search?q=衛生委員会+議事録+テンプレート&hl=ja&gl=jp&pws=0 ；就業制限 管理 表は法令用語衝突 https://www.google.com/search?q=就業制限+管理+表&hl=ja&gl=jp&pws=0 ；健康管理システムはSaaSの棚 https://www.google.com/search?q=健康管理システム&hl=ja&gl=jp&pws=0",
+      "Googleサジェスト（2026-09-02、hl=ja&gl=jp）: 「産業医 意見書」→効力・フォーマット・本人開示・様式など10件、「産業医 意見書 テンプレート」0件、「就業制限 解除」10件中5件が結核・感染症法、「産業保健 DX」1件・「産業衛生 DX」0件、感情語（大変・面倒・限界）はすべて0件。生データ: scratchpad/google-suggest-2026-09-02.json（調査班）",
+      "競合テンプレの配布形式（直DL＝mediment https://mediment.jp/blog/health-and-safety-committee-minutes 、フォーム型＝Carely https://ohp.carely.jp/column/health-committee-minutes/ 、サンポチャート意見書様式 https://sampo-chart.com/sangyoiu-ikensho-donwload/4672/ 、さんぽLAB面談管理表 https://sampolab-ad.com/announcements/3vcn680zkhxn3usa ）と、いずれも「会社の決定欄」を持たないこと（各ページの説明文からの推定、フォーム内Excel未確認）",
+      "「産業医が作ったツール」の棚が既に形成中: OHMEクラウド2022年リリース https://company.sanpoterasu.jp 、yatch https://yatch.pro/ 、さんぎょういカルテ https://karte.sampo-chart.com",
+      "casetra.jp「【無料DL】復職支援 期限管理チェックリスト」のリンク先が「#」（2026-01-01、slug sample-post2）、ブログ5本・works の sample スラッグ残存: https://casetra.jp/sample-post2/ 、https://casetra.jp/blog/ 、https://www.google.com/search?q=site:casetra.jp&hl=ja&gl=jp&pws=0",
+      "産業保健DX需要の第三者調査は300名以上企業（n=115、ベンダー調査）: PR TIMES メディフォン 2025-09-16 https://prtimes.jp/main/html/rd/p/000000037.000154534.html",
+      "B2B資料DL→商談化率1〜5%（PRIZMA 2026-04 n=501） https://prtimes.jp/main/html/rd/p/000000166.000149156.html 、11〜20%が最多（ferret One 2025 n=330） https://ferret-one.com/blog/btob-whitepaper-survey-report-2025",
+      "医療広告ガイドラインQ&A（費用強調は品位を損ねる）: https://www.mhlw.go.jp/content/000371812.pdf ；厚労省こころの耳 職場復帰に関する意見書 様式例（産業医→人事宛、会社の決定欄なし）: https://kokoro.mhlw.go.jp/etc/pdf/return-ikensyo.pdf",
+      "衛生委員会の議事録3年保存・産業医の勧告記録（安衛則14条の3）は記事本文の記述に依拠。公開前に条文を一次資料（e-Gov法令検索）で再確認して法令根拠表をexactバンドルに添える（未実施）"
+     ],
+     "risks": [
+      "casetra.jp側の「【無料DL】」記事（リンク先「#」で実体なし）と、/works の架空の導入効果数値がGoogleに露出している。事務所側が様式を配り始めると、同じ代表者のサイト同士で「無料と書く／書かない」「実体がある／ない」がずれて見える。Casetra側の一行決定（実体化か非公開か）が済む前に様式を出さないゲートにする。",
+      "様式は第三者が再配布し得る紙で、回収・改版ができない。保健所から利益誘導の指摘を受けた前歴があるため、A4一枚（R1）と同じ所轄保健所への照会をゲートにする。照会で懸念が出れば配布しない。",
+      "「衛生委員会 議事録」は需要が厚いが、テンプレートも保存期間もAI概要と大手が埋めている。様式③は順位が取れない可能性が高く、「産業医の勧告記録と保存設計（誰が・どこ・起算日・破棄可能日）」の角度で書けていないと、大手のテンプレの下に並ぶだけになる。",
+      "「就業制限 解除」は感染症法の意味に汚染されている。「産業医」「就業上の措置」を添えない見出し・ファイル名にすると別の検索者に当たる。",
+      "「産業医面談 日程調整」の検索者の半分程度は従業員本人（関連質問は「いつ・強制か・泣く」）。様式④は会社側にしか役に立たないので、DLも問い合わせも小さい可能性が高い。優先度を最後に置く。",
+      "計測が受入未了（generate_lead修正版、article_service_clickの実受信、Search Console本体のログイン停止）。様式DLの file_download は拡張計測の自動イベントで新コードは足さないが、受入までは判断に使わず、Search Consoleのquery×pageと台帳の手入力を主にする。",
+      "先生の承認がいちばんの制約。承認待ちが既に7件（B・C・F・G・T・P・R1）あり、様式4枚＋/service/cloud/ v2で5件増える。週1件の規律を守ると様式④は2027年1月になる。9月は新規承認を0にし、10月から月1〜2件に留める。",
+      "様式を直接ダウンロードにするので、名簿（メールアドレス）は取れない。これは受け皿（Casetra企業提供）がない今は正しい設計だが、Casetra GO後に「ダウンロードした人に案内を送る」経路は最初から無いことを了解しておく。",
+      "タイトルタグの「産業衛生DX」（S5で承認・反映済み）で来た人が /service/cloud/ で健康管理システムと比較を始め、「機能一覧・料金はどこか」という問い合わせ（ツールの問い合わせ）が事務所のフォームに来る可能性。台帳の「きっかけ」と初回相談の内容で分け、ツールの問い合わせはcasetra.jpの窓口へ案内する。混ぜると事務所の成果が読めなくなる。",
+      "Casetraの条件付きGOが10月以降、一般ローンチが11〜12月以降にずれる（推定）。ずれてもこの作戦は動くが、「様式→Casetra」の接続の一行は書けないまま6か月を過ごす可能性がある。その間の出口はKIDUKIの継続支援だけで、SaaS収益にはつながらない。",
+      "競合（intermind・サンポチャート等）が「会社の決定欄」つき様式を1〜3か月で真似する可能性。差が消えた場合の残る価値は「産業医事務所の名義で監修された様式」と「記事との一体性」だけになる。",
+      "法令の記述（議事録3年保存、安衛則14条の3の勧告記録、面接指導5年など）を様式の注記に書く場合、記事本文の記述を写すだけでなく条文を一次資料で再確認する必要がある。誤りがあると紙のまま流通する。",
+      "数字はすべて推定と幅。対象語の月間検索数の実数はキーワードプランナー（広告アカウントが要る）でしか取れず、広告はやらない決定なので今後も実数は取れない。Search Consoleの表示回数の積み上げで代替する。",
+      "6か月で有効な初回相談が月0〜0.5件という規模は、事務所の売上を動かさない。この作戦を「売上の柱」と期待すると失望する。位置づけは「工程語での実在の裏づけ」と「Casetra GO後の土台」。"
+     ],
+     "compliance": {
+      "shelf_rule": "健康管理システムの棚（Carely等）に並ばない。狙う語から「健康管理システム」「産業保健 クラウド」「休職者 管理 システム／ツール」「産業保健 DX」「産業医 DX」を外し、Search Consoleに表示が出ても成果に数えない（記録のみ）。様式・記事・/service/cloud/ の本文で「一元管理」「見える化」「可視化」「ウェルビーイング」「健康データ」「ダッシュボード」「ケア」「カウンセリング」「寄り添う」を使わない。使う語は判定・措置・解除条件・再評価期日・会社の決定・記録・証跡。管理単位は従業員×データではなく案件×完了なので、様式の行は「従業員名簿」ではなく「案件（意見書1通・制限1件・委員会1回）」にする。casetra.jp本文の棚語（一元管理・可視化・経営リスク数値化）は事務所側に一語も写さない。EAPの棚・格安産業医の棚にも並ばない（料金の金額を様式・記事に書かない）。",
+      "casetra_not_launched": "Casetraは2026-08-25判定でNO-GO。事務所サイトと様式では「Casetraを試す」「導入できます」「企業へ提供中」「導入事例」「改善数値」「CSV移行」「SLA」「30日画面」「復職Pack」を書かない。page 166の「Casetraだけを導入し…運用することもできます」は「ご相談いただけます（受付状況はcasetra.jp）」へ弱める。書けるのは「事務所側の業務管理にCasetraを使用」「企業側でCasetraを利用する場合は別契約（詳細はcasetra.jp）」まで。内部利用の12社・56Caseを導入社数・契約数・ARRと書かない（正本§0・§10）。Casetraへの接続文は、条件付きGO→P-01/P-02 PASS→C-02/C-03 PASSの順に、監査シートのPASS行を証拠にして一行ずつ解禁する。単発の履行では当面「Casetraは事務所内部だけ、証跡はPDF／メールで受渡し」とする先生の一行決定を、最初の単発が入る前にもらう。",
+      "medical_advertising": "様式・記事・/service/cloud/ は事務所（医療機関ではない）の手続き資料として作る。クリニック名・所在地・リンク・「併設」「クリニックと連携」「治す」「治療まで一気通貫」を書かない。受診に触れる場合は「受診先はご本人が選びます。KIDUKIが特定の医療機関を指定・紹介することはありません」を併記する（site-copy.md確定文）。様式の末尾に「会社の手続き用の記録ひな形です。従業員向けの受診案内ではありません」を入れる。効果の断定（「抜け漏れがなくなる」「リスクがゼロに」）を書かず、「減らす」「後から確認できる」に留める。肩書きは統一表記「内科専門医・心療内科専門医・労働衛生コンサルタント」のみ。第三者が再配布する紙なので、所轄保健所への照会をA4一枚（R1）と同じ電話で済ませ、結果を記録してから配布する。",
+      "forbidden_words": "「無料」（無料DL・無料相談・0円）は書かない。ダウンロード面の文言は「様式（Word／Excel）をダウンロードできます」だけ。CTAは「初回のご相談（15分）」で統一。「睡眠専門医」「一気通貫」「併設」「必ず」「絶対」「保証」「即日」を使わない。内部用語（PACK_INCLUDED・CLIENT_BILLABLE・含有時間・併売・二重請求しない設計）と製品タグライン（Case管理OS・就業判断OS）を事務所側に置かない。公開前に禁止語の機械チェック（既存のexactバンドルの検査）を様式のテキストにも通す。casetra.jp側の「【無料DL】」「15分無料相談」は同一代表者の運用として整合を確認する（非医療サイトなので直接の対象ではないが、事務所側と表示がずれない形へ）。",
+      "decision_stays_with_company": "様式の中心は「会社の決定欄」。措置内容・開始日・再評価期日・解除条件・決定者・意見と異なる決定をした理由・伝える範囲・保存場所を会社が書く。産業医が書く欄は「意見の要旨」と「勧告の内容」だけに分け、同じ欄に混ぜない。各様式と/service/cloud/に境界文「Casetraは進行と記録を支える仕組みです。医学的評価は医師が行い、就業上の最終決定と実施は会社が行います」（page 166の現行文）を一字一句そのまま置く。「KIDUKIがすべて決める」「会社は何もしなくてよい」「アップロード1回と数クリックだけ」は書かない。意見書について「意見書は、会社の決定を代わりに行うものではありません」（site-copy.md v3の境界文）を意見書様式の注記に使う。就業制限の「継続」も会社の判断の結果として記録させ、「何もしない」を選択肢に入れない（安衛法66条の5の建付けどおり、決定権は事業者）。"
+     },
+     "kill_criteria": "判定は暦ではなく「様式①の公開日」から数え、10/1・11/1・12/1・1/1・2/1の月次レビューで見る。順位・クリック・DL・問い合わせ・契約は別の行。\n\n■ 作戦全体をやめる基準（様式①公開から120日＝2027年2月上旬の見込み）\n次の4つがすべて同時に成り立ったら、様式の新規制作（残りの様式）を止め、/service/cloud/ を「1ブロック＋casetra.jpリンク」に戻し、時間を復職クラスター（スポット産業医・単発）と実在の裏づけ（GBP・寄稿）へ移す。\n1. 様式を置いた記事＋/service/cloud/ の対象語群（産業医 意見書 会社 対応 就業制限 解除／産業医 意見書 フォーマット／産業医 就業制限 解除／就業上の措置 記録／衛生委員会 議事録 保管期間／産業医面談 日程調整）の合計表示が、直近28日で100未満（Search Console、同一プロパティ・同一期間）。\n2. 様式のDL合計が公開以来10件未満（GA4 file_download。受入未了なら台帳の「様式を見た」件数で代替）。\n3. AI概要の引用が3回連続の月次観測（同条件スクショ）で0。\n4. 台帳「きっかけ＝検索：様式DL経由」の有効な初回相談が0。\nすでに作った様式は消さず、記事の「会社の決定記録シート」として残す。\n\n■ 個別の様式をやめる基準\n公開90日で、その様式を置いた記事の対象語表示が0行、かつDL 0なら、その様式は改稿せず観測のみに回し、次の様式の題材を変える（例: 様式④の面談種類別表は作らない）。\n\n■ 途中で止める（ゲート。やめるではなく「出さない」）\n・所轄保健所への照会で、様式の配布に懸念が示された → 配布しない。\n・casetra.jp の「【無料DL】」記事と /works の非公開または実体化が、依頼メモから60日たっても未対応 → 様式は作っても公開しない（同一代表者の表示のずれを避ける）。\n・先生の実質時間が月2時間を超えた月 → 翌月の承認依頼を0にする。\n・先生が初回相談を5営業日以内に入れられない月が2回続く → 新しい様式の公開を止める（来た相談を受け止められない状態で入口を増やさない）。\n\n■ 方向を直す基準（やめるではなく修正）\n・DXレーン経由の問い合わせのうち「機能・料金・導入」を尋ねるツールの問い合わせが2か月続けて半数を超えたら、/service/cloud/ の文言と記事CTAが「システムを選ぶ人」を集めていると判断し、タイトルタグの「産業衛生DX」を残すかどうかを先生に1問だけ聞く。\n・逆に、Casetraが条件付きGOになり、様式DL経由の相談で「自社で回したい」が出たら、その時点で「同じ型を自社で継続管理する場合はCasetra（別契約）」の一行を足す（別exact）。それまでは足さない。"
+    },
+    "critiques": [
+     {
+      "strategy_title": "「会社の決定欄」つき証跡様式4枚で、DXの言葉ではなく工程の言葉から問い合わせを受ける作戦（Casetra受入PASS前はKIDUKI継続支援へ、PASS後にCasetraへ）",
+      "lens": "実現性・需要の実在・競合・費用・先生の時間・問い合わせ数見込みの妥当性（Casetra未ローンチの影響を含む）。読んだ根拠: inquiry-strategy-2026-09-02.md／core-thesis.md／pricing-growth-canonical.md（§1・§5・§10）／rebrand-strategy.md §3／casetra-kiduki-dual-revenue-proposal §2／seo-contract-funnel.md レーン6／page-166-cloud.html／open-items.md／site-copy.md／seo-measurement-spec.md／casetra_active の PRETEST_LAUNCH_STATUS・OWNER_CHECKLIST・READINESS_AUDIT・TEST_COMPANY_AUDIT_SHEET・各リポの git log／4記事のHTML／article-plan.json／scratchpad の Googleサジェスト生データ3ファイル",
+      "fatal_flaws": [
+       {
+        "issue": "この作戦の入口（DXレーン＝「自社の人事と産業医で回したい会社」）と、Casetra受入PASSまでの出口（KIDUKI Basic／Retain／単発＝「KIDUKIに任せる」商品）が、買い手の望みと逆向きになっている。",
+        "why": "先生への説明: 「自分たちで回す道具がほしい」と探しに来た人に「うちに任せてください」と答える形なので、来た人は帰ります。正本（pricing-growth-canonical §1）は「Basicはシステムを導入せず継続相談先を持ちたい企業」「Casetraは自社運用できる企業」と明確に分けており、BasicとCasetraは併売しないと決めています。seo-contract-funnel レーン6の出口は「CASETRA STARTER以上」で、それが2026-08-25判定でNO-GO（一般ローンチ不可・監査シート0/18）。つまりこのレーンは、Casetraが売れるようになるまで構造的に問い合わせに変わりません。作戦自身が「月0〜0.5件、多くの月は0件」と書いているのは、この構造の正直な結果です。様式を4枚置いても、行き止まりへの道を広げるだけになります（受入PASSまでの出口を復職・両立支援単発＝1件完了へ寄せるなら別ですが、その場合はDXレーンではなく復職レーンの作戦になります）。"
+       },
+       {
+        "issue": "差別化の核「会社の決定欄」を探す検索需要が、作戦が自分で集めた証拠の中で確認できていない。",
+        "why": "scratchpad/google-suggest-2026-09-02.json（batch2・batch3含む）を実際に開くと、「産業医 意見書 会社 対応」「就業上の措置 記録」「産業医 勧告 記録」「会社 決定 記録 産業医」「産業医 意見 会社 決定」「就業制限 再評価」「就業制限 一覧 管理」はすべてサジェスト0件でした。サジェストに出るのは「産業医 意見書 フォーマット 厚生労働省」（＝産業医が書く公式様式を探す人）、「産業医 意見書 本人 開示／開示請求／誰が 見る／効力」（＝従業員側か法律の疑問）、「就業制限 解除 結核／感染症法」（別分野）です。作戦は日程調整語だけ「半分は従業員側」と割り引いていますが、意見書語にも同じ割引が要ります。つまり「順位が取れたとしても、来る人が会社の決定様式を欲しがっている」という前提が、今ある証拠では裏づけられていません。SERP観測は各1回・非ログインで、需要の実数はキーワードプランナーを使わない決定のため今後も取れません。"
+       },
+       {
+        "issue": "いちばん希少な資源（先生の承認枠）を、作戦自身が「問い合わせ0件が多くの月」と見込むレーンへ5件（様式4枚＋/service/cloud/ v2）投入する配分になっている。",
+        "why": "inquiry-strategy-2026-09-02.md は承認待ちがすでにB・C・F・G・T・P・R1の7件、規律は週1件・1回1作業と記録しています。実測で唯一商用表示があるのは復職レーン（「スポット産業医」「産業医 スポット」計147表示、search-console-dual-property-snapshot-2026-09-01.json）で、そこは単発60,000円という実在する出口があります。DXレーンに5承認を回すと、復職レーンのT（嘱託v2）やスポットページ改稿が後ろへずれます。「現金0円」は本当ですが、承認枠の機会費用は0ではありません。6か月で契約0〜1件（作戦の自己推定）のために、実在する出口のあるレーンの承認を遅らせる設計は、目的（有効な初回相談）から見て割に合いません。"
+       }
+      ],
+      "fixable_issues": [
+       {
+        "issue": "様式の中身についての自己矛盾: first_90_days と casetra_gate_dependency は「様式にCasetra名を書かない」、一方 compliance.decision_stays_with_company は「各様式に境界文『Casetraは進行と記録を支える仕組みです。…』を一字一句そのまま置く」。",
+        "fix": "様式の境界文は site-copy.md 由来の「医学的評価は医師が行い、就業上の最終決定と実施は会社が行います」だけにし、Casetra名を含む page 166 の文は /service/cloud/ 側にだけ残す。禁止語の機械チェックに「Casetra」を様式側の禁止語として追加する。"
+       },
+       {
+        "issue": "様式①の公開を「10月上旬」と置いているが、承認キュー（B→C→R1→T…週1件）を守ると様式①は11月、/service/cloud/ v2は12月、様式②は2027年1月にずれる。すると「最初の問い合わせ 2026-12〜2027-02」「6か月時点＝2027-03」の判定日も前倒し過ぎになる。",
+        "fix": "判定は暦ではなく「様式①の公開日」起点と書いてあるので、first_90_days の月名を消して「承認B・R1反映の翌週から数えて第n週」に書き換え、6か月判定を2027年5〜6月へ後ろ倒しにする。9月は新規承認0とする現行の規律をそのまま守る。"
+       },
+       {
+        "issue": "casetra.jp の「【無料DL】」記事（リンク先#）と /works の是正を「済むまで様式を公開しない」ゲートにしている。casetra.jp は医療機関でも事務所サイトでもないので「無料」は医療広告規律の直接対象ではなく、問題は「リンク切れ」という信用の話。別プロジェクトの人手（先生のRun）に本作戦の主成果物を人質に取らせている。",
+        "fix": "ゲートを「様式のダウンロード面からcasetra.jpへリンクしない」に格下げし、casetra.jp側は依頼メモ1枚を出して並走にする。なお casetra-site-xserver は2026-09-01に fix/remove-unsubstantiated-public-claims がマージ済み（git log）なので、/works（WordPress側・B-1）だけが残件かを先に確認する。"
+       },
+       {
+        "issue": "「AI概要に引用される様式の供給」を狙いの一つにしているが、AI概要が引用するのはHTMLページで、直接ダウンロードのWord/Excelは引用されにくい。",
+        "fix": "各様式の欄名と注記を、記事本文にHTMLの表としても載せる（同じ欄・同じ文言）。ダウンロードは補助にする。これで様式の承認一行と記事改稿の承認一行を1件にまとめられる。"
+       },
+       {
+        "issue": "「意見書」語群のうち「本人 開示」「誰が 見る」「開示請求」は従業員側または法律解釈の意図で、会社の記録様式とは合わない。順位が取れても様式DLにつながらない。",
+        "fix": "target_queries から従業員側の枝を外して「記録のみ」へ移し、会社側に絞る（「産業医 意見書 フォーマット」は『産業医が書く様式ではなく、受け取った会社側の記録様式』とページ冒頭で意図を切り分ける文を置く）。"
+       },
+       {
+        "issue": "様式②『就業制限の再評価一覧』（Excel）は、会社に健康情報の一覧表を作らせる紙になる。記事本文自身が「健康情報は取扱いを分けて保管」と書いているのに、様式にはその注記がない。",
+        "fix": "様式②の冒頭注記に「この一覧は労働者の心身の状態に関する情報にあたるため、会社の取扱規程に従い、保管場所・閲覧者を限定する」旨を入れ、対象者は氏名ではなく社内ID列にする（作戦の欄設計どおり）。厚労省『労働者の心身の状態に関する情報の適正な取扱いのために事業者が講ずべき措置に関する指針』のURLを法令根拠表に足す。"
+       },
+       {
+        "issue": "「会社の決定欄を持つ様式は見当たらない」は、競合のフォーム内Excel未確認のうえ、厚労省『心の健康問題により休業した労働者の職場復帰支援の手引き』の「職場復帰支援プラン」（就業上の配慮の内容・期間・フォローアップ時期＝会社側の措置と見直し）と比較していない。",
+        "fix": "様式①を作る前に、手引きの職場復帰支援プランと、健診事後措置・ストレスチェックの「就業上の措置に関する意見書」公式様式と欄を突き合わせ、「こちらが足す欄は『意見と異なる決定をした理由』『保存場所』『決定者』の3つ」のように差分を1行で言えるようにする。差分が言えなければ様式①は作らず、手引きの様式を案内する記事改稿に切り替える。"
+       },
+       {
+        "issue": "Casetraの進捗説明に一部事実の取り違え: 「portal-ops は8/25以降コミット0」は正しい（最終 fda0b0c 2026-08-24）が、kiduki-consult-api は2026-09-01にセキュリティPR #1498〜#1500がマージされている。止まっているのは技術ではなく人の受入（監査シート18行すべて空欄、M-01の8/31期限の記入証拠なし）。",
+        "fix": "casetra_gate_dependency の文言を「コードは動いている。止まっているのは人の実地受入0/18・G-01 9件・実案件1件の決裁」に直す。条件付きGOの見立て「10月以降」は据え置きでよいが、根拠を監査シートの空欄に置く。"
+       },
+       {
+        "issue": "4記事のCTA文「産業衛生DX・CASETRAをご確認ください」が、そのまま「ツール（機能・料金）を探す人」を /service/cloud/ に送る。作戦はこのリスクを挙げているが、CTA文の直し方を書いていない。",
+        "fix": "承認B（CTA v6）の文言を確認し、DX柱4本のCTAが「案件・期限・会社の決定・記録の型を見る」など工程の言葉になっているかを目視する。CASETRAの製品名でのCTAは条件付きGO後の別exactへ送る。"
+       },
+       {
+        "issue": "「様式は4枚」が最初から固定されている。様式③（議事録）は作戦自身が「順位が取れない可能性が高い」、様式④は「DLも問い合わせも小さい可能性が高い」と評価している。",
+        "fix": "1枚だけの実験に縮める。候補は様式①（意見書受領後の会社決定記録）。置き場所はDXレーンではなく、復職・両立支援単発の出口がある9/29記事と /service/return-to-work-support/ にも並置する。公開90日でDL10件未満なら②〜④は作らない。"
+       },
+       {
+        "issue": "dual-revenue-proposal §2 は「Casetra単体の導線は消さず、体制のある企業向けの第二入口として明示する」としており、/service/cloud/ を「工程の型＋ご相談いただけます」へ弱めることと方向がぶつかる。",
+        "fix": "正本§10（実装済みでないものを提供中と表示しない）が優先することを、/service/cloud/ v2 の承認シートに1行で明記し、第二入口の復活条件を「条件付きGOの監査シートPASS行」に紐づける（作戦の解禁順①と同じ）。"
+       }
+      ],
+      "compliance_violations": [
+       "様式の文面規律の内部矛盾: 「様式にCasetra名を書かない」（first_90_days／casetra_gate_dependency）と「各様式に『Casetraは進行と記録を支える仕組みです…』を一字一句置く」（compliance.decision_stays_with_company）が両立しない。どちらかに統一しないと、禁止語の機械チェックが通らないか、Casetra名が第三者再配布の紙に載る。",
+       "様式②（就業制限の再評価一覧）は健康情報の一覧表を会社に作らせる紙であり、取扱規程・保管分離・閲覧制限の注記がない設計は、記事本文の記述（健康情報は分けて保管）と整合しない。",
+       "出口に含める「単発（60,000円〜）」は正本§5で「対象1CaseのCasetra画面を30日提供」を含む商品定義であり、P-01/P-02未受入のまま案内すると§10（実装済みでないものを提供中と表示しない）に触れる。作戦は先生の一行決定（当面は事務所内部だけ・証跡はPDF／メール）を条件に挙げているが、最初の単発が入る前に取るとしており順序が逆になり得る。承認依頼の前に一行決定を先に置く。",
+       "承認負荷: 9月新規承認0・10月から月1〜2件としつつ、first_90_days は10月に承認①②の2件、11月に③、12月に④を置いている。既存キュー7件（B・C・F・G・T・P・R1）と合わせると週1件・1回1作業の規律を超える月が出る。"
+      ],
+      "realism_score_1_5": 2,
+      "verdict": "modify",
+      "confidence_0_1": 0.75
+     },
+     {
+      "strategy_title": "「会社の決定欄」つき証跡様式4枚で、DXの言葉ではなく工程の言葉から問い合わせを受ける作戦（Casetra受入PASS前はKIDUKI継続支援へ、PASS後にCasetraへ）",
+      "lens": "事務所のルールと事業原理への適合（core-thesis 棚の規律・案件×完了／pricing正本§0・§5・§10／Casetra一般ローンチNO-GO（2026-08-25）／rebrand-strategy §3「事務所サイトでCasetraを売らない・1ブロック＋リンク」／医療広告規律と禁止語（site-copy.md）／決定権は会社／先生の承認帯域（週1件・1回1作業・一行コピー））。読んだ根拠: kdk-wordpress/content/inquiry-strategy-2026-09-02.md、kiduki/docs/core-thesis.md、pricing-growth-canonical.md、rebrand-strategy.md、integrated-story.md、strategy/casetra-kiduki-dual-revenue-proposal-2026-08-17.md、content/seo-contract-funnel.md、source/wordpress/page-166-cloud.html、kiduki/docs/checklists/open-items.md、kiduki/docs/copy/site-copy.md、content/README.md、content/articles の4記事、casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md・CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md・CASETRA_OWNER_CHECKLIST_2026-08-25.md・CASETRA_TEST_COMPANY_AUDIT_SHEET_JA.md、casetra-site-xserver の git log。",
+      "fatal_flaws": [
+       {
+        "issue": "様式4枚の配布ハブを /service/cloud/（メニュー名「産業衛生DX・Casetra」＝Casetraの紹介ページ）に置き、そこを1,500〜2,000字に増強して出口を「初回のご相談→単発・Basic・Retain」にする設計は、rebrand-strategy §3が消そうとした混乱（「1枚のページで両方売ると、どちらの会社か分からなくなる」）を逆向きに再現する。Casetraの看板の下でKIDUKIの人手サービスを売り、しかもCasetraはNO-GOで受け皿がない。",
+        "why": "rebrand §3は事務所サイトのCasetra面を「1ブロック＋リンクに留める」と決めた（理由: 事務所とCasetraは別事業、Casetra面が膨らむと睡眠の旗が入らない）。この作戦はCasetra面を最大のコンテンツ量にし、様式をダウンロードした人は「Casetraが出す紙」と受け取る。同じ中身の記事（`content/exact/occupational-health-case-management-2026-09-01-v1.json`、CASETRA主導線・owner-review中）が既に承認待ちにあり、自サイト内で票を割る。配布面を記事と /service/sangyoui/・/service/return-to-work-support/（または独立の「様式」ページ）へ移し、166は1ブロックのまま§10の是正だけ行えば作戦は生きる。ただし作戦の形が変わるので「修正」であって「そのまま採用」ではない。"
+       }
+      ],
+      "fixable_issues": [
+       {
+        "issue": "入口の論理が自己矛盾している。「再評価の時期が意見書に書いていない」「医学的評価を誰に聞けばよいか分からない」で止まった担当者が相談先にKIDUKIを選ぶと想定しているが、意見書様式①と議事録様式③の買い手は定義上「産業医がいる会社」で、正本§2.1は既存産業医の選任関係・法定業務を奪わないと定めている。様式の注記として正しいのは「再評価の時期は意見を出した産業医に確認する」であり、それは読者を自社の産業医へ戻す。",
+        "fix": "出口を2本に限定して書く。(a)「産業医が復職・再評価に対応できない案件」→ 復職・両立支援単発（レーン2「既存産業医 復職 対応できない」と同じ）、(b)「選任義務がなく産業医がいない50人未満」→ KIDUKI Basic（正本§2.1の主対象）。様式①の注記に「意見を出した産業医に確認」を明記し、KIDUKIへの誘導文は「自社の産業医で対応できない場合」に限る。期待値は月0〜0.5件からさらに下がることを明記する。"
+       },
+       {
+        "issue": "承認の重さを過小に見ている。「先生の確認は欄の名前と注記だけ」とあるが、注記には安衛則23条4項（議事録3年）、14条の3（勧告記録）、安衛法66条の5、面接指導5年、意見書の本人開示（個人情報保護法）など法令主張が入る。content/README.md 行43〜46でこれはTier S（事実確認＋安全・法務・医療広告確認＋宮部大輔のexact承認）。しかもevidence欄で一次資料未確認と自認している。",
+        "fix": "様式1枚ごとに、法令根拠表（e-Gov条文URL・条番号・確認日）を先に作り、exactバンドルにdocx/xlsxのテキスト抽出結果とSHA-256を入れる。承認依頼は「欄名一覧」ではなく「欄名＋注記全文＋根拠表」のA4 1〜2枚。承認1件あたりの先生の時間を10分→20分に見直す。"
+       },
+       {
+        "issue": "承認の順番が§10と逆。9/22・9/25の記事CTA「産業衛生DX・CASETRAをご確認ください」は現行page 166（「Casetraだけを導入し…運用することもできます」「導入方法を相談する」ボタン）へ送る。作戦では166の是正を10月中〜下旬の承認②に置いており、NO-GO製品の「導入できます」表示が4〜8週間、公開記事から誘導される。",
+        "fix": "10月の最初の承認を「166の一文を『ご相談いただけます（受付状況はcasetra.jp）』に弱め、『導入方法を相談する』ボタンを『初回のご相談（15分）』に統一する」最小差分にする（本文増強とは切り離す）。様式①は2件目。"
+       },
+       {
+        "issue": "公開してよい事実に「本番12社・56Case、監査ログ連鎖22事象・不一致0」を含めている。STATUS 08-25の12社にはDRAFT 6件・会社決裁のないACTIVE 1件が含まれ、テスト企業由来も混ざる。読者は「導入12社」と読む。正本§0「内部利用をCASETRA契約社数に数えない」、dual-revenue §8.5に反する。セキュリティ強度の数字だけを事務所サイトに出すと、readiness監査が条件付きGOにも求める開示5点（単一環境・ISMS未取得等）との釣り合いも崩れる。",
+        "fix": "事務所サイトと様式では社数・Case数・監査ログの数値を一切書かない。使えるのは「事務所側の業務管理にCasetraを使用」と18業務テンプレート／181作業／70法令要求（義務55）だけにする。"
+       },
+       {
+        "issue": "「条件付きGOになった月に、様式末尾と /service/cloud/ へ『同じ型を自社で継続管理する場合はCasetra（別契約）』を足す」は、条件付きGO＝1社限定パイロット（readiness監査 119〜122行）の範囲を超えて一般募集に見える。§10「実装済みでないものを提供中と表示しない」に当たる。",
+        "fix": "解禁は一般ローンチGO（監査シート最終判定GO）を条件にする。条件付きGO段階はcasetra.jp側の受付表示のみ、事務所側は一切変えない。"
+       },
+       {
+        "issue": "「9月は新規承認0」「0〜14日は先生の時間0」と書きながら、同じ期間にCasetra側の一行決定（sample-post2の実体化か非公開）、/works非公開（B-1）のRun、「Casetraは事務所内部だけ・証跡はPDF／メール」の一行決定、保健所質問文への1行追加が先生に発生する。決定も承認帯域の消費であり、承認待ち7件（B・C・F・G・T・P・R1）に上乗せになる。",
+        "fix": "9月の先生依頼をゼロにするなら、Casetra側メモは「sample-post2の非公開」1件だけに絞って10月に回し、works B-1は既にfooterリンク削除済み（casetra-site-xserver 25062a6・1cd8fa8）なので優先度を下げる。「Casetraは内部だけ」の一行決定はinquiry-strategyで既出なので二重に数えず、そちらの1件で済ませる。"
+       },
+       {
+        "issue": "やめる基準の「先生の実質時間が月2時間を超えた月」は、先生の制約（週2時間）とinquiry-strategyの見立て（初月3〜4時間）に対して厳しすぎ、10月に自動で発動する。",
+        "fix": "「この作戦の取り分」を月1.5時間と定義し、超過判定はその取り分だけで行う。全体の上限は週2時間で別管理。"
+       },
+       {
+        "issue": "記事本文への様式リンク挿入は、CTA v6の反映規律「非CTA本文にドリフトがあれば停止」に当たる。v6反映前に触ればv6が止まり、反映後なら記事ごとに新exact（v7）が要る。作戦は「承認は欄名だけ」とし、この承認を数えていない。",
+        "fix": "様式の承認と親記事の本文差分（リンク1行）を1つのexactバンドルに同梱し、承認1件で両方を固定する。必ずBの反映後にだけ着手する（作戦の順序は正しいが、承認資料の形を変える）。"
+       },
+       {
+        "issue": "対象語「産業医 意見書 フォーマット／様式」「産業医 意見書 本人 開示」は、検索者の意図が産業医側（書く人）と法務側（開示請求）に割れる。会社の決定記録様式は前者の意図と合わず、後者は個人情報保護法の主張になる高リスク領域。",
+        "fix": "この2語は「記録のみ・順位目標なし」へ移す。狙う語は「産業医 意見書 会社 対応 就業制限 解除」「就業上の措置 記録」「衛生委員会 議事録 保管期間」の3つに絞る。"
+       },
+       {
+        "issue": "保健所照会を「R1と同じ電話1回で済ませる」としているが、先生が社労士経路を外した結果、R1の配布経路は消え、その電話が残るかは不明（inquiry-strategyの決定追記）。ゲートの前提が浮いている。",
+        "fix": "照会を独立の1件（10分）として10月に置くか、「事務所名義の会社手続き用様式で、医療機関名・受診経路を含まない」と整理して照会を任意に落とす根拠を書く。どちらかに決めて、宙に浮かせない。"
+       },
+       {
+        "issue": "Casetra側依頼メモに sample-post1〜3／blog-4／sample-works のスラッグ化と301まで同梱している。1回1作業に反し、同時編集ルールでRunが複数回になる。",
+        "fix": "メモは「sample-post2（【無料DL】・リンク先#）の非公開」1件だけにする。スラッグ整理はCasetra側の30日リスト（readiness監査142行）に既にあるので、そちらに任せる。"
+       },
+       {
+        "issue": "意見書様式①は「意見の要旨」「伝える相手と範囲」を会社が書く欄を持つ。これは健康情報（安衛法104条・健康情報取扱指針）に当たり、事業場の取扱規程との関係を注記しないと、様式が健康情報を人事ファイルに広げる紙になる。",
+        "fix": "様式①に「意見の要旨は事業場の健康情報取扱規程に従い、閲覧できる人を限定する」の1行と、根拠表に安衛法104条・指針のURLを入れる。"
+       },
+       {
+        "issue": "禁止語の機械チェックは既存のexact検査（HTML／JSON前提）で、docx/xlsxのテキストは通らない。",
+        "fix": "docx/xlsxからテキストを抽出する1ステップを検査に足し、抽出結果のSHA-256もバンドルに入れる。"
+       },
+       {
+        "issue": "単発を「60,000円〜」と表記している。正本§5はオンライン60,000円／回・訪問75,000円＋交通費で固定、「〜」は緊急・複雑案件の80,000円からだけ。",
+        "fix": "内部文書でも正本どおり「単発オンライン60,000円／回」と書く。様式・記事には金額を出さない方針は維持。"
+       }
+      ],
+      "compliance_violations": [
+       "pricing正本§0・§10: 「本番12社・56Case、監査ログ連鎖不一致0」を事務所サイトの公開可能事実に含めている。内部利用・DRAFT・決裁なしACTIVEを含む数を公開すれば導入社数と読まれる。",
+       "pricing正本§10: 条件付きGO（1社限定パイロット）の時点で様式と/service/cloud/にCasetra提供の一行を足す計画は、パイロット範囲外の募集表示になる。",
+       "pricing正本§10（順序）: 現行page 166の「Casetraだけを導入し…運用することもできます」「導入方法を相談する」が、9/22・9/25公開記事のCTAから誘導される状態を10月下旬まで放置する承認順になっている。",
+       "rebrand-strategy §3: /service/cloud/ を2,000字＋様式4枚のハブに増強するのは「1ブロック＋リンクに留める」の趣旨（Casetra面を膨らませない・事業の混同を避ける）に逆行。かつowner-review中の案件管理記事（CASETRA主導線）と中身が重複。",
+       "承認帯域（週1件・1回1作業・9月0件）: 0〜14日にCasetra側の一行決定・B-1のRun・「Casetraは内部だけ」の決定・保健所質問文の追加が先生に発生し、自ら置いた「9月は新規承認0」と矛盾。",
+       "content/README.md Tier S規律: 法令注記を含む様式を「欄名と注記だけの一行承認」で通す設計。一次資料確認・physician approval・exactハッシュが抜けている（evidence欄で未確認と自認）。",
+       "CTA v6反映規律: 記事本文への様式リンク挿入が「非CTA本文ドリフトで停止」に当たることを承認計画に含めていない。",
+       "禁止語（既存記事）: 様式②の親記事 work-restriction-release-management.html 行63に「誰かが必ず見る」＝禁止語「必ず」が予約中のまま残っている。作戦は検出していない。この記事に様式を足す際の同じexactで直す必要がある。",
+       "1回1作業: Casetra側依頼メモにsample-post2・works・スラッグ301の3件を同梱。",
+       "料金表記: 内部文書で単発を「60,000円〜」と表記（正本§5は60,000円／回固定）。",
+       "棚の規律（軽微）: 対象語「産業医 意見書 フォーマット／様式」は産業医向けテンプレ（サンポチャート等）の棚と意図が重なる。狙わず記録のみが妥当。"
+      ],
+      "realism_score_1_5": 3,
+      "verdict": "modify",
+      "confidence_0_1": 0.72
+     }
+    ]
+   },
+   {
+    "lens": {
+     "key": "category-creation",
+     "lens": "「案件完了型の産業医」（面談だけでなく会社決定・再評価・証跡まで記録が残る産業医。DXはその手段）という新しいカテゴリーを作り、産業医の選び方・変更・比較の検索で「DXつきの産業医」として選ばれる案。DXは検索語ではなく選ばれる理由として使う。"
+    },
+    "strategy": {
+     "title": "「面談で終わらない産業医」作戦 — 産業医の選び方・変更の検索で、DXを「選ばれる理由」として使う",
+     "target_queries": [
+      "産業医 選び方（既存記事 post 1598 を2026年版へ改稿して主に受ける語）",
+      "産業医 変更 理由／産業医 ミスマッチ／産業医 合わない（「届出手続き」ではなく「変える前に契約で直せるか」の角度）",
+      "産業医 何もしない／産業医 形だけ／産業医 役立たず（会社側の検索者だけを受ける。従業員側の「産業医 うざい」系は狙わない）",
+      "産業医 契約書 業務範囲／産業医 契約形態／産業医 契約 相場（金額は書かず「契約に書いておく項目」で受ける）",
+      "産業医事務所とは／産業医事務所 東京（説明語。AI概要と地図枠に事務所名が並ぶ土俵。GBP登録が前提）",
+      "観測のみ・順位目標なし: 産業医 交代 手続き／産業医 変更 届出（厚労省様式と紹介会社が埋める手続き語。記事内で厚労省へリンクして済ませる）"
+     ],
+     "thesis": "先生の売り「DX」は、検索の言葉ではなく「産業医を選ぶ・替えるときの確認項目」として使います。検索する人は「DX」とは打ちません。「産業医 選び方」「産業医 変更」「産業医 何もしない」と打ちます。その人に「産業医は面談をした回数ではなく、面談のあとに会社へ返る書面・会社が決めたこと・見直す日・記録が残るかで選ぶ」という確認項目を先に教え、その項目で自然にKIDUKIが選ばれる形を作ります。これを事務所の言葉では「面談で終わらない産業医（案件を完了まで追う産業医）」と呼びます。「案件完了型」「DXつき産業医」のような造語は検索されないので（「産業衛生DX」と同じ）、見出しの検索語には使わず、本文の中の「選ぶ物差し」としてだけ使います。なぜこの角度が今のKIDUKIに合うか。①事務所サイトには既に「産業医の選び方｜紹介会社・産業医事務所を比較する7つの確認点」（post 1598、2025-03-25、3,076字）があり、7項目の中に「面談後に会社へ返る書面」「会社措置と再評価の追跡」「データ返却の条件」が入っています。つまり物差しは書いてある。足りないのは、それが2025年のまま更新されず1ページ目に出ていないこと、物差しが嘱託産業医ページ（160）と一言一句つながっていないこと、確認項目を1枚の紙として持ち帰れないことの3つです。②嘱託産業医ページ（160）には既に「面談の実施件数ではなく、必要資料、医師意見、会社の判断、本人への説明、措置の実施、再評価時期がつながっているかを確認します」と書いてあり、これがそのまま「面談で終わらない産業医」の定義文になります。③Casetraについて今日そのまま言える事実は「事務所側の業務管理にCasetraを使い、会社の決定が記録されないと案件を完了扱いにしない」の1点で、これが「DXが選ばれる理由」の中身です。機能・料金・導入企業数を書かなくても、選ぶ物差しの「記録が残る」に事務所が構造的に合う理由として説明できます。DXの一般語（産業保健DX・健康管理システム）で健康管理SaaSの棚に並ぶのではなく、「産業医の選び方」という産業医の棚で、記録と完了を物差しにして選ばれる、という位置取りです。",
+     "buyer_moment": "検索する瞬間は4つ（推定）。(1) 従業員が常時50人に達して初めて産業医を選ぶとき（安衛法の選任義務。「産業医 選び方」「産業医事務所とは」）。(2) 今の産業医との契約を替えたいとき。エムスリーキャリアの調査記事では交代理由の最多は「ミスマッチ」（https://sangyoui.m3career.com のコラム「最多は『ミスマッチ』。変更手続きと失敗を防ぐ要点解説」、2026-09-02観測）。担当者が替わって「今の産業医が何をしているか分からない」と気づいたとき、復職案件で「面談はしたが会社に書面が来ない・誰が決めるのか分からない」を経験した直後、労基署の是正指導のあと、が引き金になる（「産業医 変更 理由」「産業医 何もしない」）。(3) 契約更新の時期。嘱託契約は年度単位が多く、見直しは12〜3月に寄る（推定。実測なし）。(4) 契約書を作る・見直すとき（「産業医 契約書 業務範囲」「産業医 契約形態」。サジェストに「産業医 契約書 ひな形／医師会／厚生労働省／契約形態」があり、書式を探す人が多い＝契約に何を書くかを迷っている）。この4つの瞬間の人が求めているのは「良い産業医の見分け方」であって「システム」ではない。だから物差し（面談後に返る書面・会社の決定・再評価日・記録の返却）を先に渡し、その物差しに合う契約先としてKIDUKIを置く。従業員側の検索者（「産業医 うざい」「産業医面談 意味ない 知恵袋」）が同じ語に混ざるので、記事の冒頭で「会社の担当者向け」と明記して選別する。",
+     "competition_reality": "2026-09-02、Google日本語・非ログイン・hl=ja&gl=jp・港区・PC・各1回観測。「産業医 選び方」: 1ページ目＝リモート産業保健（2026-05）／産業医グループこころみ／メディカルトラスト（2025-06）／広告2本（first call・産業医サポート.com）／Avenir／エムスリーキャリア（2026-04）／FiNC／PCA／Folka／原産業医事務所（2026-05-15）。AI概要なし。KIDUKIの既存記事（/jimushochoice/）は1ページ目に無し。「関連する質問」は「産業医はどうやって探せばいいですか」「良い医師の見分け方は」で、まさに物差しを求めている。「産業医 交代 手続き」「産業医 変えたい」: 1位は厚労省の選任報告様式、以下ワーカーズドクターズ・Sanpo Navi・エムスリーキャリア・first call・リモート産業保健・Avenir・Carely・メディカルトラスト・エリクシア・SOMPOヘルスサポート。広告2本（エムステージ・first call）。産業医事務所は0件。検索意図は「届出・14日以内・記入例」の手続きが主で、ここで手続き記事を書いても勝てないし意味がない。「産業医 紹介会社 比較」: Avenir 15選・Sanpo Navi 15社・エムスリーキャリア比較表・sangyoui-hikaku 23社・アスピック・sangyoui-souken 27社・Carely・ドクタートラスト、広告2本。比較サイトの棚で、core-thesisの「格安産業医の棚」そのもの。狙わない。「産業医 何もしない」: Avenir・さんぎょうい・リモート産業保健「役立たずと言われる理由」（2026-06）・原産業医事務所「形だけ置いておけば大丈夫？」（2026-05-15）・パソナ・HELPO・メディカルトラスト・Sanpo Navi・chr。広告1本。関連検索に「産業医 役立たず」「産業医 うざい」と従業員側の語が混ざる。「産業医事務所 東京」: AI概要あり（フェミナス／東京こころの産業医事務所／健株式会社／中央総合産業医事務所／アステラを名指し）、地図枠3件（東京産業医事務所・ウェルストン・中央総合5.0(1)）、自然検索は東京産業医事務所・東京こころ・にしのうえ・フェミナス・銀座・中央総合・日比谷・平井康仁の各事務所。広告4本。KIDUKIは出ない（GBP未登録）。中央総合産業医事務所の「代表産業医が直接対応」「復職支援まで」が最も近い位置取りで、精神科系の事務所が多い。KIDUKIが入れる余地はどこか。(a)「産業医 選び方」で産業医事務所自身が書いた記事は原産業医事務所1本だけ。あとは紹介会社の「紹介会社に相談するのが確実」という自社誘導の記事で、「面談後に会社へ返る書面・会社の決定・再評価・記録の返却」を選定基準にした記事は観測範囲で無い（推定・中）。(b) 原産業医事務所（小規模）が「選び方」「何もしない」の両方で1ページ目に入っている事実は、被リンクの量より角度で入れる証拠。(c)「産業医事務所 東京」のAI概要は事務所名を5つ並べる型で、GBPに登録して「睡眠・復職・記録」の特徴が公開情報にあれば、6〜12か月で名指し候補に入る可能性がある（推定・低〜中）。入れない場所: 紹介会社比較・手続き語・「産業医 東京」の大語（既決定どおり）。",
+     "casetra_gate_dependency": "結論: この作戦はCasetraの一般ローンチ（2026-08-25時点でNO-GO。条件付きGOは10月以降、一般ローンチは早くて11〜12月と推定）に依存しません。売るのは嘱託産業医（Retain）と単発であり、DXは「選ぶ理由」として1文で使うだけだからです。【今できること（文書で裏づけあり）】①「事務所側の業務管理にCasetraを使用します」（page 160・166に既に記載）。②「会社の決定（会社決裁）が記録されないと、事務所側で案件を完了扱いにしない運用です」（CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md: Full Coverage Auditが赤である理由そのものが会社決裁待ちCaseで、fail-closedの実在証拠）。③「面談後に会社へお渡しするもの: 意見書、会社が決める4点（措置内容・開始日・再評価日・解除条件）、記録の一覧」（core-thesis・スポットv3の確定稿と同じ語）。④「企業側でもCasetraを利用する場合は別契約。受付状況はcasetra.jpをご確認ください」（page 166の「導入し…運用することもできます」は「ご相談いただけます」に弱める候補。正本§10の予防）。⑤選び方の物差しとして「契約終了時に記録が会社に返るか」を書くこと（データ返却は選定基準であって、Casetraの機能約束ではない）。【今できないこと】①「導入企業○社」「○件の案件を完了」の数字。12社56Caseは事務所の内部利用データで、正本§0により契約社数・実績として数えない。公開するなら先生の一行決定と数え方の定義が要るので、この作戦では数字を書かない。②企業へのCasetra画面提供（単発の30日画面・Pack）。P-01/P-02受入未了。「企業はCasetraで会社決裁をクリックできます」とは書かない。③CSV移行・SLA・ISMS・国内保管・自動督促など受入未了の機能語。④「Casetraを試す」CTA。事務所サイトのCTAは「初回のご相談（15分）」1つ。【GO後に解禁するもの（順序）】条件付きGO→page 166の「別契約」文をそのまま維持し、casetra.jpリンクの先が整っていることを確認するだけ。P-01/P-02 PASS→選び方記事の「面談後に会社へ返るもの」に「対象案件の進行画面（30日）」を追記可。C-02/C-03 PASS→Retain企業向けの「企業側でも同じ画面を見る」案内を可。逆順にしない。【Casetra側の前提条件（別チケット、事務所サイトからリンクを増やす前に）】/works の架空の改善数値の非公開化（監査B6）、sample-* スラッグの301、casetra.jp本文の「一元管理・可視化」と「無料相談」表記の是正。この作戦の記事はcasetra.jpへ本文中リンクしない（page 166経由だけ）ので、Casetra側の是正を待たずに始められる。",
+     "first_90_days": [
+      "9/2〜9/9（Claude・先生の時間ゼロ）: 基準値を取る。「産業医 選び方」「産業医 変更 理由」「産業医 何もしない」「産業医事務所 東京」「産業医 契約書 業務範囲」の1ページ目・AI概要・広告本数を非ログイン・hl=ja&gl=jp・港区でスクリーンショット保存（inquiry-strategyの9/3基準値と同じ手順に5語を足す）。Search Console本体ログインが復旧したら /jimushochoice/ の過去16か月のquery×page・平均順位を取得（未登録か低評価かの確定）。",
+      "9/9〜9/30（Claude）: post 1598「産業医の選び方」の2026年版 exact v1 を作る。変えること: (a)7項目の順番を「面談後に会社へ返る書面」「会社の決定と再評価日の追跡」「契約終了時の記録の返却」を先頭3つに並べ替え、(b)冒頭に「会社の担当者向け。従業員の方の相談窓口ではありません」の1文、(c)「面談で終わらない産業医」の定義文をpage 160の既存文と一字一句そろえる、(d)手続き（届出・14日以内）は厚労省の様式ページへリンクして本文で扱わない、(e)紹介会社・事務所・個人の表は残し、優劣をつけない（比較優良にならない書き方）、(f)CTAは /service/sangyoui/ →「初回のご相談（15分）」、(g)「無料・必ず・保証・一気通貫・睡眠専門医・クリニック名」ゼロを機械チェック、(h)Casetraは「事務所側の業務管理にCasetraを使用。会社の決定が記録されるまで完了扱いにしない運用」の2文だけ、数字・機能・料金なし。同時に配布用の様式1枚『産業医と契約する前に確認する7項目（記入欄つき）』をWord/PDFで用意（直接ダウンロード、フォームなし、「無料」と書かない、版・発行日・統一肩書・境界文を末尾に）。9月は先生の承認キュー（B・C・F・G・T・P・R1）が詰まっているので承認依頼は出さない。",
+      "10月第1週（先生10分・承認1件目）: Tのpage 160 v2（東京の嘱託産業医、承認待ち）と同じ週にせず、Tの28日結果が出る前でも「1598改稿＋様式1枚」を1件として一行承認を依頼。承認当日にdry-run→backup→apply→verify。反映日から7日・28日・90日のレビュー日を登録。先生に任意でURL検査→インデックス登録リクエスト（3分）。",
+      "10月中（Claude）: page 160（嘱託産業医）と1598を相互リンク（S4の「関連する記事」枠に1598を入れる。既存本文は変えない）。「産業医事務所とは」の説明ブロック（紹介会社・個人契約との契約主体の違い、記録の保管主体）を1598の中に見出しとして持たせ、別記事は作らない。GBP登録はopen-itemsのとおり先生の操作待ち。登録済みになったら、説明文に「睡眠・復職・就業制限の再評価・記録」の語を入れる案を1行で出す（Casetraはサービス欄に載せない＝既決定）。",
+      "11月第1週（先生10分・承認2件目）: 新記事1本『産業医を替える前に、契約で直せる3つのこと』exact v1 の承認。対象語は「産業医 変更 理由」「産業医 ミスマッチ」「産業医 何もしない（会社側）」。構成: 交代理由の最多はミスマッチ（エムスリーキャリアの調査記事を出典として引用、数字は転記しない）→ミスマッチの正体は「面談後に何が返るか・誰が決めるか・いつ見直すか」が契約に無いこと→今の産業医と契約書を直す3点→それでも替えるなら選任報告の届出（厚労省リンク）→替える先を選ぶ7項目（1598へ内部リンク）。他の産業医を「何もしない」と断じる文を置かない。CTAは /service/sangyoui/。",
+      "11月〜12月初（Claude）: 12/1月次レビューで、1598改稿の28日結果（query×page: 「産業医 選び方」「産業医事務所」「産業医 契約」系の表示・順位、様式DL数はGA4受入後のみ）を報告。同時に「産業医事務所 東京」のAI概要と地図枠にKIDUKIが出たかを目視。9月基準値と同条件で比較。",
+      "12月中（先生・任意・承認3件目、出すかは12/1レビューで決める）: page 166（産業衛生DX・Casetra）の「Casetraだけを導入し…運用することもできます」→「ご相談いただけます（受付状況はcasetra.jp）」への1文修正と、166冒頭に「面談で終わらない産業医」の定義文へのリンクを足すexact。Casetraの条件付きGOが出ていれば文言はそのまま、出ていなければ弱める。",
+      "90日を通して作らないもの: 「案件完了型産業医とは」の造語解説ページ、紹介会社比較記事、手続き（届出）記事、産業医 東京の大語ページ、Casetra機能ページ、テンプレのフォーム登録ゲート、Google広告、社労士向け配布物。"
+     ],
+     "owner_hours_per_month": 1,
+     "cash_cost_per_month_jpy": 0,
+     "time_to_first_inquiry": "検索きっかけで「選び方・変更」を経た有効な初回相談は、1598改稿の反映（10月上旬）から120〜180日＝2027年2〜4月が現実的な幅（推定）。理由: (1)3年目のドメインで被リンクほぼゼロ、1598は2025年3月から1ページ目に入っていないので、改稿後の再評価に28〜90日、(2)選び方・変更の語は「比較検討」の段階で、契約の見直しは年度替わり（12〜3月）に寄ると推定されるため、問い合わせは表示より2〜3か月遅れる、(3)情報系クエリは1位でもCTR 2%前後まで下がっている（Ahrefs、二次報道 https://www.commercepick.com/archives/86565）。それより早く来る可能性があるのは「指名確認」の経路（別の入口でKIDUKIを知った人が「産業医 選び方」で物差しを読んでから問い合わせる）で、これは台帳の「きっかけ」では検索に数えない。",
+     "expected_inquiries_per_month_at_6_months": "2027年3〜4月時点で、この作戦の記事群（1598改稿・変更記事・様式）を経由した有効な初回相談は月0〜1件（推定・中央値は月0.3件程度）。根拠の算数: 「産業医 選び方」の月間検索数は未取得だが、比較の目安で「産業医 東京」がツール推定312回/月（aramakijake、実数ではない）なので同程度〜半分と仮定して月150〜300回。派生語（産業医 変更 理由・何もしない・契約書 業務範囲・産業医事務所とは）を合わせて月300〜600回。10位以内に入れた場合の表示は月100〜300、CTR 2〜4%でクリック月2〜12、記事→サービスページ遷移20〜30%、サービスページ→フォーム2〜5%とすると月0.01〜0.2件。これに「産業医事務所 東京」の地図枠・AI概要（GBP登録が前提）からの指名確認が乗って月0〜1件。表示ベースの見込みは、28日で1598の対象語表示が100〜300、平均順位10〜20位、様式DLが月0〜5件。上振れ条件は原産業医事務所と同じく「事務所の医師が書いた」ことがAI概要の引用に効いた場合、下振れ条件は紹介会社が同じ「面談後に返る書面」の角度を1〜3か月で記事化した場合（intermind・サンポチャートの更新速度）。いずれも保証ではなく、判定は台帳の「きっかけ＝検索（選び方記事経由）」の実数で行う。",
+     "evidence": [
+      "Google検索「産業医 選び方」https://www.google.com/search?q=産業医+選び方&hl=ja&gl=jp&pws=0（2026-09-02・港区・1回観測）: 1ページ目にリモート産業保健／こころみ／メディカルトラスト／Avenir／エムスリーキャリア／FiNC／PCA／Folka／原産業医事務所（2026-05-15）、広告2本（first call・産業医サポート.com）、AI概要なし、KIDUKI /jimushochoice/ は表示なし",
+      "Google検索「産業医 交代 手続き」「産業医 変えたい」（同条件）: 1位 厚労省の選任報告様式、以下 ワーカーズドクターズ／Sanpo Navi（2026-04）／エムスリーキャリア「最多は『ミスマッチ』」／first call（2026-07-31）／リモート産業保健（2026-05）／Avenir／Carely（2025-12）／メディカルトラスト／エリクシア／SOMPOヘルスサポート、広告2本、産業医事務所0件、サジェストは「変更 届出／変更届／電子申請／記入例」",
+      "Google検索「産業医 何もしない」（同条件）: Avenir／さんぎょうい／リモート産業保健「役立たずと言われる理由」（2026-06-17）／原産業医事務所「形だけ置いておけば大丈夫？」（2026-05-15）／パソナ／HELPO／メディカルトラスト／Sanpo Navi／chr、広告1本、関連検索に「産業医 役立たず」「産業医 うざい」",
+      "Google検索「産業医 紹介会社 比較」（同条件）: Avenir 15選／Sanpo Navi 15社／エムスリーキャリア比較表／sangyoui-hikaku 23社／アスピック／sangyoui-souken 27社／Carely／ドクタートラスト、広告2本。比較サイトの棚で入る余地なし",
+      "Google検索「産業医事務所 東京」（同条件）: AI概要あり（フェミナス／東京こころ／健株式会社／中央総合／アステラ）、地図枠3件、自然検索は各産業医事務所の公式サイト、広告4本。KIDUKIは非表示（GBP未登録）",
+      "Googleサジェスト（suggestqueries.google.com、hl=ja&gl=jp、2026-09-02）: 「産業医 変更」7件（届出・変更届・手続き・電子申請・記入例・必要書類）、「産業医 交代」3件（手続き・届出）、「産業医 契約」10件（契約書・ひな形・相場・医師会・厚労省・印紙・契約形態）、「産業医 紹介会社」2件（比較）、「産業医 比較」4件、「産業医事務所」10件（とは・東京・大阪・法人・開業・求人）、「産業医 選び方」1件、「産業医 形骸化」「産業医 仕事しない」「産業医 何もしない」各1件、「産業医 名義だけ」「産業医 契約 見直し」「産業医 紹介会社 直接契約」「産業医 事務所 選び方」0件。保存先: scratchpad/google-suggest-selection-2026-09-02.txt",
+      "既存資産: /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress/source/wordpress/post-1598-jimushochoice.html（「産業医の選び方｜紹介会社・産業医事務所を比較する7つの確認点」2025-03-25、3,076字、7項目に「面談後に会社へ返る書面」「会社措置と再評価の追跡」「追加料金、交代、解約、データ返却の条件」を含む。content/seo-ranking-recovery-plan-2026-09-02.md 201行「そのまま残す」）。公開URL https://kdkconslt-sngyouijm.com/jimushochoice/ はHTTP 200",
+      "既存資産: source/wordpress/page-160-sangyoui.html の「面談の実施件数ではなく、必要資料、医師意見、会社の判断、本人への説明、措置の実施、再評価時期がつながっているかを確認します」「KIDUKI側の業務管理にはCasetraを使用します。企業側でも…共有してDXを進める場合は、別途Casetraをご契約いただきます」",
+      "Casetraの製品真実: /Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md（NO-GO、12社56Case、会社決裁がないCaseはCLOSEDにしない）、CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md §4（条件付きGO最短9月第2週、一般ローンチはその4〜6週後。前提のM-01投入・実地ウォークスルーの実施証拠は未確認）、B6（/works の架空の改善数値）",
+      "規律の出典: kiduki/docs/core-thesis.md（棚の規律・3問）、kiduki/docs/pricing-growth-canonical.md §0（内部利用を契約社数に数えない）§10（実装済みでないものを提供中と表示しない）、kiduki/docs/rebrand-strategy.md §3（Casetraは1ブロック＋リンク）§5 記事8「産業医を『睡眠に強い』で選ぶという選択肢（産業医 選び方／産業医 交代）」、kiduki/docs/copy/site-copy.md（禁止語・医療広告規律・統一肩書）、content/inquiry-strategy-2026-09-02.md（先生の決定: 広告なし・社労士経路なし・大語を追わない、測り方）",
+      "検索の現状: content/evidence/search-console-dual-property-snapshot-2026-09-01.json（WordPress側28日 241表示・11クリック・平均21.1位、クエリ行は宮部大輔／スポット産業医／産業医 スポット／産業医スポットのみ。選び方系のクエリ行なし）、kiduki/docs/checklists/open-items.md（GBP未登録・Search Console本体ログイン停止）",
+      "交代理由の一次に近い資料: エムスリーキャリア「最多は『ミスマッチ』。変更手続きと失敗を防ぐ要点解説」https://sangyoui.m3career.com（コラム、SERP上で確認。本文の数字は未取得なので記事に転記しない）",
+      "CTRの目安: Ahrefs（二次報道）https://www.commercepick.com/archives/86565（日本の情報系クエリは1位でもCTR 1.8%程度。inquiry-strategyで既出）"
+     ],
+     "risks": [
+      "造語は検索されない: 「案件完了型」「面談で終わらない産業医」「DXつき産業医」は「産業衛生DX」と同じくサジェスト0件の造語になる。見出しの検索語に使うと需要ゼロの記事になる。対策は上記どおり、検索語は既存の「選び方・変更・契約書」に固定し、造語は本文の物差しの名前に留める。",
+      "1598は3,076字あっても2025年3月から1ページ目に無い。改稿しても土台（被リンク・ドメイン評価）の弱さで10位以内に入らない可能性がある（回復計画の結論「上がらない主因は方向ではなく土台と量」）。90日で表示が動かなければ、この角度の追加投資はやめる（やめる基準参照）。",
+      "紹介会社の更新速度: リモート産業保健・Sanpo Navi・first call・Avenir・Carelyは2026年4〜8月に選び方・変更記事を更新済み。「面談後に会社へ返る書面」の角度を彼らが1〜3か月で写す可能性がある。KIDUKIの承認速度（月1件）では先行できないので、差は「事務所の医師が書いた」「会社の決定と再評価日の記録という3問の型」で作る。",
+      "検索者のずれ: 「産業医 選び方」で来る企業の多くは多拠点・複数候補を求めて紹介会社が合う。1医師の事務所に合うのは東京近郊で50〜300名・1〜2拠点の企業に限られ、クリックの大半は契約対象外（推定）。記事内の「紹介会社・事務所・個人」の表で正直に分けることで、合わない問い合わせを減らす代わりに件数は小さくなる。",
+      "従業員側のノイズ: 「産業医 何もしない」「役立たず」は従業員の不満語と混ざる。冒頭の「会社の担当者向け」明記で選別するが、Search Consoleの表示は膨らみ、CTRは下がる。表示だけを成果に数えない。",
+      "比較優良・品位の懸念: 「面談だけの産業医」を暗に下げる書き方は、医療機関ではない事務所でも品位を損ね、既存産業医を補完するBasicの客層（既存産業医を替えたくない企業）と矛盾する。「他の産業医が悪い」ではなく「契約に書く項目が無かった」の型に固定し、公開前に禁止語・比較表現の機械チェックと、先生の目視を通す。",
+      "Casetraの表示リスク: 事務所サイトの記事から「記録が残る」と言った先で、casetra.jp の /works に架空の改善数値やsample-スラッグ、「無料相談」が残っていると、確認した人事の信頼を落とす。この作戦の記事は本文中でcasetra.jpへリンクしないが、page 166経由で辿れる。Casetra側の是正（監査B6・30日リスト12）は別チケットで先に進める。",
+      "GBP未登録のまま「産業医事務所 東京」を観測しても、地図枠とAI概要に入る前提が無い。GBP登録は先生の操作で、この作戦ではなくopen-itemsの項目。登録が遅れれば説明語（産業医事務所とは）は記事だけで受ける。",
+      "承認キューの渋滞: 9月は既にB・C・F・G・T・P・R1が並んでいる。この作戦の承認は10月・11月・12月に1件ずつで、既存キューの後ろに置く。先生の週2時間を超えそうなら、12月の3件目（page 166の1文修正）を落とす。",
+      "計測の受入未了: GA4 generate_lead修正版とファイルDL計測が受入前なので、様式DL数は12月まで数えられない可能性がある。判定はSearch Consoleのquery×pageと台帳の手入力を主にする（inquiry-strategyと同じ）。",
+      "季節性の推定は未検証: 「契約見直しは12〜3月に寄る」は実測がない。6か月見込みの時期がずれる可能性がある。"
+     ],
+     "compliance": {
+      "shelf_rule": "並ぶ棚は「産業医の選び方」＝産業医の棚であり、健康管理システムの棚（Carely等・従業員×データ）には並ばない。記事・様式では「一元管理・見える化・可視化・ウェルビーイング・健康管理システム・ダッシュボード」を使わず、使う語は「面談後に会社へ返る書面・会社の決定・再評価日・解除条件・記録・証跡・完了」。格安産業医の棚にも並ばない: 料金・相場・「月○万円」を書かず、比較の分母は「面談の回数」ではなく「面談のあとに会社に残るもの」。紹介会社比較（15選・27社）の棚には入らない。EAP・ケアの語も使わない。3問チェック: ①復職判定・措置解除の空白（面談後に決める人・見直す日が無い）②証跡（会社の決定と再評価日が記録に残る）③決定権は会社（産業医は意見、会社が決める）に通る。",
+      "casetra_not_launched": "Casetraは2026-08-25判定でNO-GO。事務所サイトで書けるのは「事務所側の業務管理にCasetraを使用」「会社の決定が記録されるまで完了扱いにしない運用」「企業側で利用する場合は別契約。受付状況はcasetra.jp」の範囲だけ。導入企業数・完了件数（12社56Caseは内部利用で正本§0により実績に数えない）・機能一覧・料金・企業への画面提供（単発30日画面・Pack、P-01/P-02未受入）・CSV移行・SLA・ISMS・自動督促は書かない。CTAは「初回のご相談（15分）」1つで「Casetraを試す」は置かない。page 166の「導入し…運用することもできます」は「ご相談いただけます」に弱める候補（正本§10「実装済みでないものを提供中と表示しない」）。解禁はGO判定と監査シートのPASS行を証拠に段階的に行う。",
+      "medical_advertising": "クリニック名・所在地・リンク・「併設」「クリニックと連携」を書かない。受診に触れる場合は「受診先はご本人が選びます。KIDUKIが特定の医療機関を指定・紹介することはありません」を必ず併記。肩書は統一表記「内科専門医・心療内科専門医・労働衛生コンサルタント」のみ。「治す」「治療」を事務所の役割として書かない。他の産業医・紹介会社を名指しで下げない（比較優良・品位）。効果保証の断定なし。配布する様式は「会社の手続き用の記録ひな形で、従業員向けの受診案内ではない」の1文を入れ、第三者が再配布し得る紙なので、A4一枚（R1）と同じ保健所照会ゲートを適用するかは先生の判断項目。",
+      "forbidden_words": "「無料」（様式は「ダウンロードできます」とだけ書く）「睡眠専門医」「一気通貫」「併設」「クリニックと連携」「必ず」「絶対」「保証」「治ります」を使わない。棚の禁止語「一元管理・見える化・可視化・ウェルビーイング」も使わない。内部用語（PACK_INCLUDED・CLIENT_BILLABLE・含有時間・併売）と営業禁句（会社は何もしなくてよい・KIDUKIがすべて決める・Casetra導入不要・仲介手数料と同額）を使わない。公開前に exact バンドルへ機械チェック（禁止語・Casetra名の回数・料金・Pack・クリニック名）をかける。",
+      "decision_stays_with_company": "すべての記事・様式の末尾に境界文を置く: 「医学的評価は医師が行い、就業上の最終決定と実施は会社が行います」（site-copy.mdの確定稿を一字一句）。選び方の物差し自体を「会社が決める項目（措置内容・開始日・再評価日・解除条件）が記録に残るか」で作ることで、産業医が決めるのではなく会社が決める建付けを記事の構造で示す。「面談で終わらない」の意味は「会社の決定と見直しまで記録が残る」であり、「産業医が会社の代わりに決める」ではないことを定義文で明記する。"
+     },
+     "kill_criteria": "1598改稿の反映日から90日（2027年1月上旬の月次レビュー）で、次の2つがそろったらこの角度への追加投資（新記事・様式の増補・page 166の改稿）をやめ、既存の工程クエリ12記事の型に戻す。①Search Console同一プロパティ・28日で、/jimushochoice/ と変更記事のquery×page表示が合計50未満、または「産業医 選び方」「産業医 変更」「産業医 契約」「産業医事務所」を含むクエリ行が1つも出ない。②台帳「きっかけ＝検索」の有効な初回相談のうち、この2記事を経由したものが0件。表示はあるが問い合わせ0の場合は、次の90日（2027年4月上旬まで。年度替わりの見直し期を含む）だけ延長し、そこでも0なら止める。途中で止める条件: 所轄保健所または先生の目視で「他の産業医を下げる比較表現」「受診誘引」の懸念が出た場合は当該記事を即日下書きへ戻す。casetra.jp の /works架空数値・sample-スラッグ・「無料相談」が2026年内に是正されない場合は、page 166からの導線を「業務管理に使用」の1文だけに畳み、記事側の「記録が残る運用」の2文をCasetra名なしの表現に差し替える。先生の月間作業時間が2時間を超えた月が2か月続いたら、この作戦の承認依頼は月1件から2か月に1件へ落とす。"
+    },
+    "critiques": [
+     {
+      "strategy_title": "「面談で終わらない産業医」作戦 — 産業医の選び方・変更の検索で、DXを「選ばれる理由」として使う",
+      "lens": "実現性・需要の実在・競合・費用・先生の時間・問い合わせ数見込みの妥当性（迷ったら厳しく）。事務所側の正本（core-thesis／pricing-growth-canonical／rebrand／seo-contract-funnel／inquiry-strategy／open-items）とCasetra側のNO-GO判定文書を読み、需要の数字は外部ツールで当日再取得して照らし合わせた。",
+      "fatal_flaws": [
+       {
+        "issue": "需要の数字が5〜10倍ふくらんでいる。作戦は「産業医 選び方」を月150〜300回、派生語を合わせて月300〜600回と仮定しているが、同じツール（aramakijake、実数ではなく推定）で2026-09-02に引き直すと「産業医 選び方」は月32回（Yahoo 8回）、「産業医 変更」は月56回、「産業医 何もしない」「産業医事務所 東京」「産業医事務所とは」は「データなし（小さすぎて出ない）」だった。比較に使った「産業医 東京」は同ツールで312回なので、選び方は東京の「同程度〜半分」ではなく約1/10。",
+        "why": "作戦自身の算数（10位以内・CTR2〜4%・記事→サービス20〜30%・サービス→フォーム2〜5%）に正しい母数を入れると、検索経由の有効相談は月0.002〜0.05件（推定）になる。中央値0.3件の大半はGBP（地図枠）由来で、それはこの作戦の作業ではなくopen-itemsの別項目。つまり「この作戦がなくても同じ」で、作戦固有の成果はほぼゼロと見込むのが妥当。"
+       },
+       {
+        "issue": "先生の問い（DXの言葉で攻めないのか、望み薄か）に答えていない。作戦の中身は「選び方記事の改稿」であり、DXは本文2文にしか出てこない。題名は「DXを選ばれる理由として使う」だが、買い手が「記録が残るか」で産業医を選んでいる証拠は一つも示されていない。逆の材料はある: post 1598は2025-03から「面談後に返る書面・再評価の追跡・データ返却」を7項目に載せているが、17か月でSearch Consoleにクエリ行が1行も出ていない（content/evidence/search-console-dual-property-snapshot-2026-09-01.json）。",
+        "why": "先生が本当に知りたいのは「DX検索は望み薄か」の一言。作戦はそれを直接言わず、別の土俵（選び方）に話をすり替えている。先生への正直な答えは「DXの一般語（産業保健DX・健康管理システム）は健康管理SaaSの棚で、資金力のある競合が埋めており、KIDUKIは並ばないと決めている。DX固有の検索で問い合わせを取るのは望み薄。DXは検索語ではなく、既に走っている工程クエリ12記事の中の『記録が残る運用』として使う」であり、その結論は既に seo-contract-funnel のDX柱4本（/service/cloud/主導線）で実行中。新しい作戦を足す必要がない。"
+       },
+       {
+        "issue": "「空いている角度」が空いていない。作戦は「面談後に会社へ返る書面・会社の決定・再評価を選定基準にした記事は観測範囲で無い（推定・中）」とするが、2026-09-02の検索で、原産業医事務所「産業医の意見書や診断書はどこまで従うべき？会社の判断との関係」（https://adaptation.h-ohp.com/leave-return/1648/）、サンポチャート「【2026年最新版】産業医意見書作成・運用完全ガイド（テンプレあり）」（https://sampo-chart.com/.../4568/）、エムスリーキャリア「産業医の交代理由、最多はミスマッチ」（https://sangyoui.m3career.com/service/blog/00024/）と「産業医は役立たず？」（同 blog/00073）が既に出ている。特に「何もしない・役立たず」は6,400件・月額3万円〜を掲げる大手が記事化済み。",
+        "why": "作戦の勝ち筋は「角度の空白」だけに置かれている（被リンクほぼゼロ・3年目ドメインは自認）。その空白が実在しないなら、残るのは土台勝負で、回復計画の結論「上がらない主因は土台と量」に戻る。1598が17か月1ページ目に無い事実がそれを裏づける。"
+       }
+      ],
+      "fixable_issues": [
+       {
+        "issue": "「産業医事務所とは」の説明ブロックを1598の中に持たせ「別記事は作らない」としているが、既に post 1472「産業医事務所とは？企業が知っておくべき基本機能とメリット」（2025-03-18、約3,500字、HTTP 200で公開中、回復計画では「改稿して残す」）がある。同じ語を2ページで狙うと共食いになる。",
+        "fix": "「産業医事務所とは」は1472の改稿1本で受ける（回復計画の既定どおり）。1598には1行の内部リンクだけ置く。承認を増やさず、1598改稿の分量も減る。"
+       },
+       {
+        "issue": "page 166の「Casetraだけを導入し、自社の担当者・産業医で運用することもできます」が、Casetra NO-GO（2026-08-25）のまま公開中。正本§10「実装済みでない料金を提供中と表示しない」に触れる可能性が今日ある。作戦はこの1文修正を12月の「任意・3件目」に置いている。",
+        "fix": "順序を逆にする。166の1文を「ご相談いただけます（受付状況はcasetra.jp）」へ弱める修正を最初の承認（10月）に繰り上げ、1598改稿と同じ1件にまとめる。seo-contract-funnelのDX柱4本（9/22・9/25・9/29・10/2）が /service/cloud/ を主導線にしているので、この修正は本作戦より先に要る。"
+       },
+       {
+        "issue": "「産業医 何もしない／形だけ／役立たず」を対象語に入れている。この語の検索意図は「不満の確認」で、満足させる記事は他の産業医を下げる方向に引かれる。作戦自身が比較優良・品位のリスクとして挙げ、従業員側ノイズも認めている。",
+        "fix": "対象語から外す。「産業医 変更 理由／ミスマッチ」だけ残し、「何もしない」系は記事内で触れない。表示の水増しも消える。"
+       },
+       {
+        "issue": "新しい配布様式『産業医と契約する前に確認する7項目（記入欄つき）』は、承認待ちのR1（A4一枚『会社が決めること・記録すること』）に続く2枚目の紙。inquiry-strategyで先生は「A4はサイトとAI概要向けの決定記録シートとしてだけ使う」と決めており、紙を増やすとTier S承認・保健所照会ゲート・版管理が2倍になる。",
+        "fix": "様式は作らない。1598の「契約前の最終チェックリスト」（既に本文にある）をそのまま残し、必要ならR1の末尾に「契約前の確認7項目」を1段追記する案を、R1の承認後に別途1行で出す。"
+       },
+       {
+        "issue": "「面談で終わらない産業医」という旗が、rebrand-strategyの旗「働く人の睡眠に特化した産業医事務所」（記事8「産業医を『睡眠に強い』で選ぶ」）と二枚看板になる。小さいサイトで旗が2本立つと、どちらの事務所か分かりにくくなる（rebrand §3が「1枚のページで両方売ると、どちらの会社か分からなくなる」と警告した構図と同じ）。",
+        "fix": "造語の旗は立てない。1598改稿では、7項目の順番だけ変え、KIDUKIの適合文を「睡眠・復職・就業制限の案件を、意見書→会社の決定→再評価日→記録まで追う」という1文にして睡眠の旗の中に畳む。"
+       },
+       {
+        "issue": "Casetraの「fail-closed（会社決裁がないと完了にしない）の実在証拠」として、Full Coverage Auditが赤である事実を挙げている。同じ事実は「1件が90日以上・hard close期限超過で放置されていた」証拠でもあり、外に出せば逆効果。内部監査文書は公開の裏づけにならない。",
+        "fix": "公開文は「事務所側の業務管理にCasetraを使用します」の1文（page 160・166の既存文）だけにする。「記録されるまで完了扱いにしない運用」は、Casetraの条件付きGO後、監査PASS行を証拠にしてから足す。"
+       },
+       {
+        "issue": "やめる基準が甘い。「28日で表示合計50未満」は、従業員側の「何もしない」ノイズだけで超えてしまう数字で、そのうえ「表示があって問い合わせ0なら90日延長」で最長180日（2027年4月）まで続く設計。",
+        "fix": "判定を「商用意図のクエリ行（選び方／契約／事務所／変更）が出たか」「記事→/service/sangyoui/ のクリックが28日で3件以上あるか」の2つに変え、90日で満たさなければ延長せず止める。表示数は使わない。"
+       },
+       {
+        "issue": "Claudeの作業時間が費用に入っていない（現金0円・先生月1時間だけ）。改稿・新記事・様式・機械チェック・月次観測で数十時間規模になり、その時間は工程クエリ12記事の28日レビュー・CTA差し替え・GBP準備と奪い合う。",
+        "fix": "この作戦を「1598改稿1回＋1472改稿1回＋160との相互リンク」の保守項目に縮め、新記事『替える前に契約で直せる3つのこと』は、12記事の28日結果（10/1・11/1レビュー）で工程クエリに表示が出た後に、まだ余力があれば検討する。"
+       }
+      ],
+      "compliance_violations": [
+       "page 166の「Casetraだけを導入し…運用することもできます」がCasetra NO-GO（casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md）のまま公開中で、pricing-growth-canonical §10「実装済みでないものを提供中と表示しない」に触れる可能性がある。作戦はこの修正を12月・任意に後回しにしており、順序が規律に合わない。",
+       "対象語「産業医 何もしない／形だけ／役立たず」は、site-copy.md・作戦自身のcompliance欄が禁じる「他の産業医・紹介会社を下げない（比較優良・品位）」と、検索意図のレベルで衝突する。語を残したまま「下げない書き方」で解くのは無理がある。",
+       "「産業医事務所とは」を1598内の見出しで受ける計画は、公開中の post 1472（同じ検索意図）と重なり、content/seo-ranking-recovery-plan-2026-09-02.md の旧記事整理レーン（1472＝改稿して残す）と食い違う。規律違反ではないが、既決の整理計画との不整合。",
+       "新しい配布様式（2枚目のA4）は、inquiry-strategy-2026-09-02.md「先生の決定」で「A4一枚はサイトとAI概要向けの決定記録シートとしてだけ使う（配布経路は作らない）」とした範囲を広げる。作るなら先生の一行決定が先。",
+       "造語「面談で終わらない産業医」は、暗に他の産業医を「面談で終わる」と位置づける表現で、本文中の物差し名に留めても比較優良の疑いが残る。加えてrebrand-strategyの旗「睡眠に特化」と二枚看板になる。"
+      ],
+      "realism_score_1_5": 2,
+      "verdict": "modify",
+      "confidence_0_1": 0.7
+     },
+     {
+      "strategy_title": "「面談で終わらない産業医」作戦 — 産業医の選び方・変更の検索で、DXを「選ばれる理由」として使う",
+      "lens": "事務所のルールと事業原理への適合（core-thesisの棚の規律／pricing正本§0・§10／Casetra一般ローンチNO-GO／rebrand-strategy§3「事務所サイトでCasetraを売らない」／医療広告規律と禁止語／決定権は会社／先生の承認帯域）。判断材料は kdk-wordpress の core-thesis.md・pricing-growth-canonical.md・rebrand-strategy.md・site-copy.md・seo-contract-funnel.md・inquiry-strategy-2026-09-02.md・seo-ranking-recovery-plan-2026-09-02.md・page-160/166・post-1598 と、casetra_active の CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md・CASETRA_LAUNCH_READINESS_AUDIT_2026-08-25.md・CASETRA_TEST_COMPANY_AUDIT_SHEET_JA.md を実際に読んで照合した。",
+      "fatal_flaws": [
+       {
+        "issue": "「DXが選ばれる理由」の中身として公開する唯一の文「会社の決定が記録されないと事務所側で案件を完了扱いにしない運用です」の根拠が、実は逆の事実（追えていなかった証拠）になっている。",
+        "why": "作戦はこの1文の根拠を CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md の Full Coverage Audit 赤（会社決裁のないACTIVE Case 1件）に置いている。しかし同文書はその1件を「90日より前の記録・成果物あり・現在の会社決裁なし・hard closeとplanned closeの両方が期限超過」と分類している。つまり「会社の決定が無い案件を完了にしなかった」のではなく「会社の決定が無いまま期限を過ぎて放置されていた」案件で、「完了まで追う運用」の反証に近い。監査の停止条件を「運用の強み」として一般公開の選び方記事（Tier S）に書けば、実態と表示のずれを自分で作ることになる（casetra.jp /works の架空数値＝監査B6と同じ型の問題）。この1文が立たないと、作戦の看板「DXを選ばれる理由に使う」は消え、残るのは普通の「選び方」記事の改稿になる。先生の一行確認（「49件のCLOSEDはすべて会社決裁の記録あり」など）と定義の文書化が無い限り、この主張は公開できない。"
+       },
+       {
+        "issue": "先生の承認帯域と「直前の結論」に正面から衝突している。",
+        "why": "inquiry-strategy-2026-09-02.md は（41行）「新規の記事・固定ページ・トリガーページは作らない。承認待ちのTは10月に1件だけ依頼」「Cはその次の週」、（138行）「承認待ちが既に6件（B・C・F・G・T・P）あるため、新たに増やす承認はR1と寄稿メールの2件に抑え、週に1件・1回1作業を守る。それでも先生の実質時間は初月に月3〜4時間になり得る」と結論している。本作戦はそこへ、10月に1598改稿＋新規PDF様式（1件目）、11月に新規記事（2件目）、12月にpage 166修正（3件目）を積み、さらに「先生の目視で比較表現を確認」「URL検査」を足す。10月はTと同月に2件になる。しかも owner_hours_per_month を1時間と見積もるが、3,000字超のTier S記事と配布用PDFを医師が読んで承認する作業を10分と置くのは、直前の結論の見積（月3〜4時間で既に超過気味）と矛盾する。週2時間の制約は絶対条件なので、既存キューを押し出さずにこの3件を入れる余地は無い（推定）。"
+       },
+       {
+        "issue": "作戦の自己申告の成果見込みが、目的（検索から有効な初回相談が来る）を満たしていない。",
+        "why": "作戦自身が「6か月時点で月0〜1件、中央値は月0.3件」「最初の有効相談は2027年2〜4月」「クリックの大半は契約対象外（多拠点企業）」と書いている。中央値0.3件は「多くの月は0件」と同義で、Tier S承認3件と新規成果物2つ（改稿記事・PDF様式・新記事）の投資に対して、直前の結論が採った復職クラスター（月1件前後の見込み）より薄い。先生の承認帯域という最も希少な資源を、当たっても月0件台の土俵に3件分使う設計は、目的の順序（有効相談＞順位）から見て成立しない（推定）。"
+       }
+      ],
+      "fixable_issues": [
+       {
+        "issue": "「産業医 何もしない／形だけ／役立たず」を対象語にしている。順位を取るには見出しにその語を入れる必要があり、それ自体が「他の産業医を下げる」比較の型になる。作戦の compliance 欄で「他の産業医を下げない」と書いているのと内部で矛盾し、seo-contract-funnel.md（110行）「既存産業医を下げず、単発・補完・選任の役割を分ける」、KIDUKI Basic（既存産業医の専門補完）の客層とも衝突する。",
+        "fix": "この語群を対象から外し「観測のみ」に落とす。11月の新記事は「産業医を替える前に、契約で直せる3つのこと」の角度だけを残し、見出し・meta に「何もしない・役立たず・形だけ」を入れない。"
+       },
+       {
+        "issue": "「産業医 契約 相場」を対象語にしながら金額を書かない。検索意図（いくらか知りたい）に答えない記事は上がらず、答えれば core-thesis の「格安産業医の棚（価格で並ばない）」に入る。両方とも負け筋。",
+        "fix": "「相場」を対象語から外す。「産業医 契約書 業務範囲」「契約形態」だけを残し、金額は一切書かない（現行1598の「7. 総額と出口条件」も金額なしのまま維持）。"
+       },
+       {
+        "issue": "「産業医事務所 東京」を対象語にしている。広告4本・精神科系事務所が並ぶ地域の大語で、先生の決定「大語の順位は追わない」と、inquiry-strategy が地図枠を「主戦場ではなく実在の裏づけ（補助）」に格下げした結論に反する。GBP登録は先生の操作待ちで、この作戦の外にある前提。",
+        "fix": "「産業医事務所 東京」は「観測のみ・順位目標なし」の欄へ移す。「産業医事務所とは」の説明ブロックを1598内の見出しとして持つ案は残してよい（説明語で棚に並ばないため）。"
+       },
+       {
+        "issue": "「Casetraの条件付きGOが出ていれば page 166 の『Casetraだけを導入し…運用することもできます』は文言そのまま」としている。CASETRA_LAUNCH_READINESS_AUDIT §4 の条件付きGOは「1社限定パイロット・STARTER〜PLUSのみ・CSV移行や削除SLAは約束しない」で、一般に「導入できます」と言える状態ではない。pricing正本§10「実装済みでない料金・機能を提供中と表示しない」に引き続き当たる。",
+        "fix": "解禁条件を「条件付きGO」ではなく「一般ローンチGO（18/18 PASS等）」に置き換える。それまでは「企業側でCasetraを利用する場合は別契約。受付状況は casetra.jp」の弱い文で固定し、12月の3件目の承認は「GOが出ていれば」の分岐を持たず、弱める方向だけにする。"
+       },
+       {
+        "issue": "解禁の順序表が製品正本と食い違う。「P-01/P-02 PASS→選び方記事に『対象案件の進行画面（30日）』を追記可」とあるが、30日画面は単発（pricing正本§5）の履行画面で、P-01/P-02はPack（1Case限定と期限後READ_ONLY／Pack→別月額）の受入項目。また「C-02/C-03 PASS→Retain企業向けに『企業側でも同じ画面を見る』案内を可」は、事務所サイトでCasetraを案内する＝rebrand-strategy §3「事務所サイトで商品として売らない。1ブロック＋リンク」に反する。inquiry-strategy（178行）は単発の画面提供と受入未了の矛盾を「当面PDF・メールで証跡受渡し」の一行決定待ちとしている。",
+        "fix": "解禁表から画面提供の追記を全部外す。選び方記事に書く「面談後に会社へ返るもの」は、意見書・会社が決める4点・記録の一覧を「書面（PDF等）でお渡しする」と書き、画面の話は casetra.jp 側だけに置く。単発の画面提供については先生の一行決定（当面PDF・メール）を先に取る。"
+       },
+       {
+        "issue": "7項目の先頭3つに「契約終了時の記録の返却」を置く。KIDUKIが物差しに合う契約先として置かれる以上、読者は「KIDUKI（Casetra）は記録を返す」と読む。監査シート O-01（退会）と「返却前に削除される、または退会者が再ログインできる」欄は未実施、条件付きGOでも「CSV移行・削除SLAを約束しない」。§10の「実装済みでないものを提供中と表示しない」に触れる。",
+        "fix": "「返却」を「システムからのデータ返却」ではなく「案件ごとに会社が受け取る書面（意見書・会社の決定4点・再評価日）が手元に残るか」と定義し直す。返却条件の話は「契約書に書く項目」として一般論に留め、KIDUKIの約束として書かない。"
+       },
+       {
+        "issue": "旗（睡眠）から離れている。rebrand-strategy §5 記事8 は「産業医を『睡眠に強い』で選ぶという選択肢（産業医 選び方／産業医 交代）」と定めており、トップのH1も「東京の、睡眠に特化した産業医事務所」。本作戦の改稿は先頭3項目を記録・完了に並べ替え、睡眠の物差しを主役から外す。作戦自身が「紹介会社が1〜3か月で同じ角度を写せる」と認めており、写されない差（睡眠）を捨てる形になる。",
+        "fix": "7項目の並べ替えで「自社課題に合う専門性（夜勤・運転・眠気と安全）」を先頭3つのどれかに残し、「面談後に会社へ返る書面」「会社の決定と再評価日」と並べる。定義文は page 160 の既存文と一字一句そろえる方針はそのまま。"
+       },
+       {
+        "issue": "11月の新記事の骨格が、エムスリーキャリア（産業医紹介会社）のコラムを「交代理由の最多はミスマッチ」の出典にしている。作戦自身が「本文の数字は未取得」と認めており、Tier S 記事で未確認の二次情報を柱にするのは content-production の一次資料の規律に反する。さらに事務所サイトから紹介会社（紹介の棚）へ外部リンクすることになる。",
+        "fix": "出典を厚労省・東京都医師会などの一次資料に差し替えるか、「交代理由の統計」を記事の柱から外して「契約書に無かった3項目」の説明だけで構成する。紹介会社へのリンクは貼らない。"
+       },
+       {
+        "issue": "事実の古さ。「10月中に page 160 と 1598 を相互リンク（S4の関連する記事枠に1598を入れる）」とあるが、page 160 の「関連する記事」には既に 1598 が入っている（S4は 2026-09-02 09:06 に本番反映済み、seo-ranking-recovery-plan 17行）。前提の「物差しが160とつながっていない」も一部は成立しない。",
+        "fix": "この工程を削る。残る作業は 1598 側から /service/sangyoui/ への文脈リンクと、定義文の一字一句一致の確認だけにする。"
+       },
+       {
+        "issue": "配布用PDF様式『産業医と契約する前に確認する7項目』について、保健所照会の適用を「先生の判断項目」にしている。site-copy.md は「判断に迷う記述は公開前に所轄保健所へ照会」と定め、inquiry-strategy（123行）は同じ「照会を任意にした設計」を規律違反と判定している。第三者が再配布し得る紙なので、記事本文より基準は厳しい。",
+        "fix": "PDF様式は照会を必須にするか、この90日は作らず、記事末尾のチェックリスト（既存1598に同等の「契約前の最終チェックリスト」がある）で代替する。作らなければ承認1件と計測未受入（ファイルDL計測）の問題も同時に消える。"
+       },
+       {
+        "issue": "「会社の決定が記録されないと完了扱いにしない」という表現は、読み方によって「会社が決めるまで産業医が案件を握る」＝会社への圧力、または産業医が完了を決める建付けに見える。決定権は会社の原則（core-thesis 3問③）を文の構造で示すには弱い。",
+        "fix": "先生の確認が取れた場合でも、「会社の決定（措置内容・開始日・再評価日・解除条件）を記録する欄を設け、記録が残った時点を案件の区切りとしています」のように、会社が決めた事実を記録する側であることが分かる文に直す。"
+       },
+       {
+        "issue": "承認3件の配置。10月はT（嘱託ページ東京向けv2）と同月に2件目を入れ、11月・12月にも1件ずつ積む。直前の結論は「新たに増やす承認はR1と寄稿の2件」と結んでいる。",
+        "fix": "この作戦で新たに要る承認を「1598改稿の1件」だけに絞る。新記事とpage 166修正は、1598改稿の28日結果（表示・順位の動き）を見てから起案するか否かを決める。既存キュー（B・C・F・G・T・P・R1）が空くまで起案しない。"
+       },
+       {
+        "issue": "先生の時間見積（月1時間）が過小。Tier S 記事（3,000字超）とPDFの目視確認、比較表現のチェック、URL検査を含めれば、1件あたり30〜60分は要る（推定）。",
+        "fix": "承認1件あたり45分程度で見積もり直し、月の合計が週2時間枠のうち既存キューの残りに収まるかを先に確認する。収まらなければ着手を翌月へずらす。"
+       }
+      ],
+      "compliance_violations": [
+       "seo-contract-funnel.md「既存産業医を下げず、単発・補完・選任の役割を分ける」／品位: 「産業医 何もしない／形だけ／役立たず」を対象語にすると見出しで他の産業医を下げる型になる。作戦内の compliance 欄と自己矛盾。",
+       "inquiry-strategy-2026-09-02.md（直前の結論）41行・138行: 「新規の記事・固定ページは作らない」「新たに増やす承認はR1と寄稿の2件、週1件」に対し、新規記事1本・新規PDF様式1点・承認3件を追加。10月はTと同月に2件。",
+       "pricing-growth-canonical.md §10「実装済みでないものを提供中と表示しない」: 条件付きGO（1社限定パイロット）で page 166 の「Casetraだけを導入し…運用することもできます」を維持する設計。",
+       "pricing-growth-canonical.md §10／CASETRA_TEST_COMPANY_AUDIT_SHEET_JA.md（O-01 退会・返却欄 未実施）: 「契約終了時の記録の返却」を先頭の物差しにし、KIDUKIが合う契約先として置くことで、未受入のデータ返却を暗に約束する。",
+       "rebrand-strategy.md §3「事務所サイトでCasetraを商品として売らない。1ブロック＋リンク」: 解禁表の「Retain企業向けに『企業側でも同じ画面を見る』案内」「選び方記事に『対象案件の進行画面（30日）』を追記」は事務所サイトでのCasetra案内。P-01/P-02（Pack）と単発30日画面の対応も誤り。",
+       "rebrand-strategy.md §5 記事8「産業医を『睡眠に強い』で選ぶ（産業医 選び方／産業医 交代）」: 選び方記事の角度を睡眠から記録・完了へ差し替え、旗と乖離。",
+       "先生の決定「大語の順位は追わない」／inquiry-strategy「地図枠は補助」: 「産業医事務所 東京」を対象語に含める。",
+       "core-thesis「格安産業医の棚に並ばない」: 「産業医 契約 相場」を対象語にする（答えれば価格の棚、答えなければ検索意図に不一致）。",
+       "site-copy.md「判断に迷う記述は公開前に所轄保健所へ照会」: 再配布され得るPDF様式の照会を先生の任意判断にしている（inquiry-strategy 123行が同型を規律違反と判定済み）。",
+       "content-production の一次資料規律（Tier S）: 「交代理由の最多はミスマッチ」を、数字未確認の紹介会社コラム（二次情報・競合）を出典に記事の柱へ据える。",
+       "実態と表示の一致（監査B6と同型）: 「会社の決定が記録されないと完了扱いにしない運用」を、期限超過で放置されていたACTIVE Case 1件を根拠に「運用の強み」として公開する。先生の確認と定義が無い。",
+       "確認済みで違反なし: 医療広告規律（現行1598にクリニック名・無料・睡眠専門医・一気通貫・必ず・保証の出現0）、禁止語、境界文、GBPサービス欄にCasetraを載せない（inquiry-strategy 84・171行で既決定を確認）、12社56Caseを実績に数えない（§0）、CTAを「初回のご相談（15分）」1つにする点。"
+      ],
+      "realism_score_1_5": 2,
+      "verdict": "modify",
+      "confidence_0_1": 0.72
+     }
+    ]
+   }
+  ],
+  "synthesis": {
+   "direct_answer": "今は攻めません。望み薄というより「場所と受け皿が違う」からです。DXの言葉の1ページ目は健康管理ソフト会社の棚（並ばないと決めた場所）で、調べる人はソフトを選ぶ人。Casetraもまだ一般に売れません（NO-GO）。DXは看板に残し、検索は「DXが解く工程の名前」で攻めます。これは9/22〜10/2の4記事で既に実行中です。Casetraが売れる状態になったら一部を見直します。",
+   "why_in_plain_words": "先生の「売りはDX」は正しいです。ただ、検索で人を呼ぶときの「言葉」と、選ばれる「理由」は別のものです。理由は3つです。\n\n1. 場所が違う。「健康管理システム」「産業保健 クラウド」「休復職 管理 システム」「産業保健 DX」で検索すると、1ページ目（SERP＝検索結果の最初の画面）は Carely・mediment・HealthCore・Growbase などの健康管理ソフト会社、比較サイト（アスピック・BOXIL）、広告2本で埋まっています（2026-09-02 Google日本語・非ログイン・各1回観測）。事業原理（core-thesis「棚の規律」）は「健康管理システムの棚に並ばない」と決めています。彼らの管理単位は「従業員×データ」、うちは「案件×完了」。この棚で順位を取ること自体が、うちが何屋か分からなくする行為です。しかも、うちのサイトは28日で241表示・11クリック・平均21位、他サイトからのリンクはcasetra.jpの1本だけ。この棚で戦う体力もまだありません。\n\n2. 人が違う。DXの言葉で調べる人は「ソフトを選ぶ担当者」か「DXの意味を知りたい人」か「ツールを探す産業医本人」です。目的は「復職の診断書が届いて困っている会社の、有効な初回相談」。ずれています。Googleの検索候補（サジェスト）でも「産業保健 DX」は1件、「産業衛生 DX」は0件で、担当者はDXという言葉で困りごとを打っていません。担当者が打つのは「産業医 意見書」「就業制限 解除」「産業医面談 日程調整」「衛生委員会 議事録 保管期間」という工程の名前です。\n\n3. 受け皿がない。Casetraは2026-08-25の判定で一般ローンチNO-GO（＝まだ売り始めない）。技術は合格（API 690件PASS、脆弱性検査 High/Medium/Low 0、監査ログ不一致0）ですが、人の受入18項目が0/18、実案件1件の会社決裁待ち、運営項目9件が未完了です。料金正本§10は「実装済みでないものを提供中と表示しない」と定めています。DX語で人を集めても、今日渡せるのは「事務所側の業務管理にCasetraを使っています」の一文までで、企業への提供は約束できません。集めても断る場面が増えるだけです。\n\nだから、DXは「看板（タイトルタグ・メニューの『産業衛生DX・Casetra』）」と「選ばれる理由（記録が残る運用）」に残し、検索の入口は「DXが解いている工程の名前」に固定します。実はこれはもう作ってあります。12記事のうちDX柱の4本（9/22 議事録、9/25 日程調整、9/29 意見書のあと、10/2 就業制限の解除管理）は、本文にCasetraの機能説明を置かず、工程の言葉で書かれ、CTA（記事末の誘導）だけが /service/cloud/ を指しています。新しい作戦は要りません。足りないのは着地先 /service/cloud/ の本文が薄く（約486字）、NO-GOの今も「導入…できます」と書いてあることです。ここを直すのが先です。\n\n3つの作戦案とその批判6本を読んだ結論も同じです。①DX大語で正面から攻める案は「棚の規律を先生に読み替えてもらう」ことが前提で、自分の見込みでも6か月で月0〜0.2件。両方の批判が「落とす」と判定し、私も同意します。②工程の痛み語＋証跡様式の案は方向が正しいが、承認5件を今の詰まった列に足す点と、Casetra看板ページを配布ハブにする点が弱い。「修正して、12記事の28日結果を見てから」にします。③「面談で終わらない産業医」という新カテゴリを作る案は、DXの問いへの直答になっておらず、需要の数字が5〜10倍ふくらんでいた（同じツールで再計測すると「産業医 選び方」は月32回の推定）。既存記事1598の改稿1件だけを保守項目として後に回します。",
+   "what_dx_words_to_attack": [
+    {
+     "query_group": "「産業医 意見書 会社 対応 就業制限 解除」「就業制限 解除 産業医」「産業医 就業制限 解除」「就業上の措置 記録」「就業上の措置 意見書 例」（就業制限の解除・再評価を、会社が決めて記録する側の言葉）",
+     "why": "DXが解く工程そのもの（措置解除の空白＝core-thesisの3つの空白の1つ）。1ページ目は紹介会社（intermind 2026-04、サンポチャート、Avenir）だが、広告0本・AI概要（＝Googleが検索結果の上に出す要約）なし・小規模の原産業医事務所が3〜4位に入っている。被リンクの量ではなく「会社が決めること・記録すること」の型で入れる余地がある（推定・中）。「就業制限 解除」を単独で使うと結核・感染症法の意味に取られるので、「産業医」または「就業上の措置」を添える。",
+     "landing": "10/2記事『就業制限を「解除し忘れる」構造と、期限管理の実務』→ 主導線 /service/return-to-work-support/（目前の1案件は単発）、副導線 /service/cloud/（複数案件を自社で継続管理）。seo-contract-funnel.md の記事別主導線表どおり。",
+     "evidence": "Google JP実測 2026-09-02（hl=ja&gl=jp&pws=0、1回）: https://www.google.com/search?q=産業医+意見書+会社+対応+就業制限+解除&hl=ja&gl=jp&pws=0 ／ Googleサジェスト「就業上の措置」8件（意見書・例・産業医・健康診断等）、「就業制限 解除」10件中5件が結核・感染症法（調査班 scratchpad/google-suggest-2026-09-02.json）／ inquiry-strategy-2026-09-02.md の対象5クエリのうち2つと同一。検索数の実数は未取得（月数十〜百程度と推定）。"
+    },
+    {
+     "query_group": "「産業医 意見書 会社 対応」「産業医 意見書 もらった後」「産業医 意見書 保管」（意見書を受け取った会社が、何を決めて何を記録するか）",
+     "why": "復職判定の空白（診断書と職場の間に翻訳者がいない）に直結する工程語。「産業医 意見書 保管」は紹介会社が2026年に更新を重ねるが、AI概要なし・広告は下部1本・原産業医事務所が4位。テンプレはサンポチャートの「産業医が書く欄」の様式だけで、「受け取った会社が決める4点（措置内容・開始日・再評価日・解除条件）と記録」の角度は空いている（推定・中）。「産業医 意見書 フォーマット／様式」は産業医側の公式様式（厚労省こころの耳）を探す人が中心なので順位目標にせず、記録のみ。",
+     "landing": "9/29記事『産業医の意見書が来たあと、会社は何を決めて何を記録するのか』→ 主導線 /service/cloud/、副導線 /service/return-to-work-support/。承認待ちR1のA4一枚『会社が決めること・記録すること』は、この記事の「会社の決定記録シート」としてサイト内にだけ置く（先生の決定どおり配布経路は作らない）。",
+     "evidence": "Google JP実測 2026-09-02: https://www.google.com/search?q=産業医+意見書+保管&hl=ja&gl=jp&pws=0（原産業医事務所4位、AI概要なし、広告下部1本）／ Googleサジェスト「産業医 意見書」10件（効力・フォーマット・本人開示・様式等）、「産業医 意見書 会社 対応」0件（需要は薄いが競合も薄い）／ 厚労省こころの耳 職場復帰に関する意見書様式例 https://kokoro.mhlw.go.jp/etc/pdf/return-ikensyo.pdf は産業医→人事宛で会社の決定欄なし。"
+    },
+    {
+     "query_group": "「産業医 面談 日程調整」「復職 産業医面談 日程調整」（面談の日程が本人・上司・産業医の間で往復して確定責任者がいない工程）",
+     "why": "Googleサジェストに実在する工程語（2件）。1ページ目は予約システム会社（yoyaku-package.com 8,500字）、紹介会社ブログ、日程調整ツールで、産業医事務所の記事は0件。広告1本（first call）、AI概要なし。「人事が決める順番（種類ごとの所要時間・方法・必要資料・確定責任者）」の型で入れる余地はある（推定・中）。ただし関連質問は従業員側（いつ・強制か・泣く）が多く、検索者の半分程度は会社側でない可能性がある。順位目標は置かず、表示と会社側クエリの混ざり方を見る。",
+     "landing": "9/25記事『産業医面談の日程調整が終わらない理由と、決めておくべき3つのこと』→ 主導線 /service/cloud/、副導線 /service/sangyoui/。CTAが「日程調整不要」を売る first call のオンライン面談LPと同じ土俵に見えないよう、「人事が決める順番」の言葉のまま維持する。",
+     "evidence": "Google JP実測 2026-09-02: https://www.google.com/search?q=産業医+面談+日程調整&hl=ja&gl=jp&pws=0（1位 株式会社リザーブリンク編集部、産業医事務所0件、広告1本、AI概要なし）／ Googleサジェスト「産業医面談 日程調整」2件、感情語（大変・面倒）は0件／ 月次レビューの対象クエリにこの1語だけ追加する（inquiry-strategy の5クエリ＋1）。"
+    },
+    {
+     "query_group": "「衛生委員会 議事録 保管期間」「衛生委員会 議事録 保存期間 3年」「産業医 勧告 記録」（議事録に残す産業医の意見と会社の決定、3年保存の場所と責任者）",
+     "why": "需要は4語の中でいちばん厚い（「衛生委員会 議事録」はツール推定384回/月、サジェスト10件）。ただし「テンプレート」語はAI概要（Carely・mediment・first call等を引用）と大手のテンプレ配布で埋まり、「保存期間3年」も紹介会社が2026年4〜7月に更新済み。順位は期待しない。ここで取るのは順位ではなく「議事録に残す産業医の意見と会社の決定（証跡）」「産業医の勧告の記録（安衛則14条の3）」という角度で、AI概要に引用される可能性を試す位置（推定・低〜中）。",
+     "landing": "9/22記事『衛生委員会の議事録は3年保存｜誰が、いつまでに、どこに残すか』→ 主導線 /service/sangyoui/、副導線 /service/cloud/。テンプレ配布はしない（するなら直ダウンロード・「無料」を書かない・別チケット）。",
+     "evidence": "Google JP実測 2026-09-02: https://www.google.com/search?q=衛生委員会+議事録+テンプレート&hl=ja&gl=jp&pws=0（AI概要あり）／ aramakijake.jp「衛生委員会 議事録」Google 384回/月（ツール推定・実数ではない）／ Bingサジェスト「衛生委員会 議事録 テンプレート」8件／ 記事本文の法令記述（議事録3年・勧告記録）は公開前に e-Gov で一次確認が要る（未実施）。"
+    },
+    {
+     "query_group": "指名語と旗語：「KIDUKI」「宮部大輔」「KIDUKIコンサルティング産業医事務所」、および看板としての「産業衛生DX」（検索語としてではなく、来た人の受け皿として）",
+     "why": "DXの旗はタイトルタグ（S5で承認・反映済み「…嘱託産業医・単発相談・産業衛生DX…」）とメニュー「産業衛生DX・Casetra」に残す。「産業衛生DX」は当事務所の造語に近く（サジェスト0件・他社使用ページ確認できず）、非指名の入口としては需要が測れないほど小さいが、紹介やAI概要で名前を知った人が確かめるときの目印になる。指名は「KIDUKI」「宮部大輔」側で受ける（「casetra」は海外の同名企業と混在し、「Casetra 産業医」では競合3社の広告が自然検索より上に出る）。",
+     "landing": "静的トップ（consult.）と /service/cloud/（page 166）。166は「工程が詰まる4つの場所と、会社が決めること・記録すること」＋契約関係の表＋Casetra1ブロック＋casetra.jpリンクの形に直す（順位目標ではなく、DX語で来た人が健康管理システムの比較を始めない受け皿）。",
+     "evidence": "content/seo-ranking-recovery-plan-2026-09-02.md（S5本番反映 2026-09-02 09:48 JST）／ Search Console 2026-08-02〜08-29 上位クエリ「宮部大輔」CTR 23%（content/evidence/search-console-dual-property-snapshot-2026-09-01.json）／ Google JP実測「casetra」「Casetra 産業医」（2026-09-02、1回）で海外企業混在・競合広告3本。"
+    }
+   ],
+   "what_dx_words_to_avoid": [
+    {
+     "query_group": "「健康管理システム」「産業保健 クラウド」「休復職 管理 システム」「休職者 管理 ツール／システム」「産業医 業務 管理 システム」「産業衛生管理システム」",
+     "why": "健康管理SaaSの棚（Carely・mediment・HealthCore・Growbase・M Connect）と比較サイトと広告2本で1ページ目が埋まる。core-thesis「健康管理システムの棚に並ばない」に正面から反し、検索する人は「ソフトを選ぶ人」で目的（案件で困った会社の初回相談）とずれる。「産業衛生管理システム」はHACCP・食品衛生の棚とも衝突する。/service/cloud/ のリード文が自分を「産業衛生管理システム」と呼んでいる点は、166改稿で確定稿の語に合わせて見直す。被リンクほぼゼロ・3年目のドメインで10位以内は現実的でない（推定）。Search Consoleに表示が出ても成果に数えず「記録のみ」の行にする。"
+    },
+    {
+     "query_group": "「健康経営 DX」「産業保健 DX」「産業医 DX」「産業衛生 DX」（非指名の入口として）",
+     "why": "検索する人は「DXの意味を知りたい人事・情シス」か「ツールを探す産業医本人」。サジェストは0〜2件、検索回数ツールは「データなし」。1ページ目は紹介会社（ワーカーズドクターズ、サンポチャート11,000字）と健康管理SaaSで、中身は「一元管理・見える化・蓄積データ分析」＝禁止語で書かれた棚。「産業医が自分で作ったツール」の棚（OHMEクラウド2022年、yatch、さんぎょういカルテ）も既に形成中でCasetraは後発。この語に意味が出るのはCasetraの将来の外販先（他の産業医・事務所）向けで、それはcasetra.jp側・GO後の話。事務所サイトの検索目標に混ぜると「事務所の問い合わせ」と「ツールの問い合わせ」が同じフォームに来て台帳の「きっかけ」が読めなくなる。"
+    },
+    {
+     "query_group": "「健康管理システム 選び方 産業医」「健康管理システム 導入 失敗」「健康管理システム 産業医 連携（使ってくれない）」「産業保健 クラウド 産業医 役割」（作戦案①の修飾語10クエリ）",
+     "why": "人が実際に打っている証拠が1つもない（修飾語のSERPは未観測、大語「月数千」も出典なしの推定）。記事のtitle・H1に棚の名前を置く設計は、根幹文書の再解釈を先生に求めるもので、検索結果を見る担当者には「棚の前に立つ」と「棚に並ぶ」の区別がつかない。「中立の産業医の確認点」がCasetraの設計そのものなので、同一代表者を開示すればベンダー記事になり、開示しなければステマ規制（景表法2023-10告示）に触れる。「導入 失敗」「使ってくれない産業医」は比較・営業妨害と既存産業医を下げる方向になる。2本の批判とも「落とす」で、私も同意。"
+    },
+    {
+     "query_group": "「就業制限 管理 表」「就業制限 解除」（単独）「就業制限 再評価」",
+     "why": "「就業制限 管理 表」は中災防・労働局の「就業制限業務一覧表（免許・技能講習）」とコロナ・感染症法の就業制限に意図を取られ、産業保健の意味では1ページ目に1件も出ない（2026-09-02実測）。「就業制限 解除」単独はサジェスト10件中5件が結核・感染症法。「就業制限 再評価」「就業配慮 管理表」「復職 管理 シート」は候補0件で、「管理表・シート」という名前では探されていない。seo-contract-funnel.md レーン6の語群から「就業制限 管理 表」を外し、上の攻める語に置き換える（私の作業、承認不要）。"
+    },
+    {
+     "query_group": "「衛生委員会 議事録 テンプレート」「衛生委員会 議事録 フォーマット（配布目的）」",
+     "why": "AI概要が出ており（Carely・mediment・first call・Sanpo Navi・リモート産業保健・bizocean・さんぽみちを引用）、テンプレ配布ページは大手が直DL型（mediment・マネーフォワード）とフォーム型（Carely・エムステージ・WellCon）で埋めている。9/22記事はここで順位を争わず、上の「保管期間・勧告記録」の角度に寄せる。"
+    },
+    {
+     "query_group": "「産業医 何もしない」「産業医 形だけ」「産業医 役立たず」「産業医 契約 相場」「産業医事務所 東京」「産業医 紹介会社 比較」（作戦案③の一部）",
+     "why": "「何もしない・役立たず」は見出しに入れた時点で他の産業医を下げる型になり、site-copy.md・seo-contract-funnel「既存産業医を下げない」とBasic（既存産業医の専門補完）の客層に反する。従業員側の不満語（うざい）も混ざる。「契約 相場」は金額を書けば格安産業医の棚、書かなければ検索意図に合わない。「産業医事務所 東京」は広告4本・精神科系事務所の地域大語で、先生の決定「大語の順位は追わない」に当たる（GBP登録は別項目の補助）。「紹介会社 比較」は比較サイトの棚そのもの。"
+    },
+    {
+     "query_group": "「Casetra」「Casetra 産業医」「産業衛生DX」を事務所サイトの非指名の検索目標にすること",
+     "why": "「casetra」は海外の同名企業（資源商社・照明・床材）と1ページ目を分け合い、画像枠は床材で占められる。「Casetra 産業医」では競合3社（armg・リモート産業保健・first call）の広告が自然検索より上に出る＝ブランド語でも紹介会社に横取りされる。rebrand-strategy §3「事務所サイトでCasetraを商品として売らない。1ブロック＋リンク」、GBPのサービス欄にCasetraを載せない決定（2026-09-02）とも整合させ、指名は「KIDUKI」「宮部大輔」で受ける。"
+    },
+    {
+     "query_group": "事務所サイトで使わないDXの言葉（検索語ではなく本文の語）：一元管理・見える化・可視化・ウェルビーイング・健康データ・ダッシュボードで経営リスクを数値化／導入企業・導入事例・改善数値・提供中・導入できます／CSV移行・SLA・ISO27001・国内保管・ストレスチェック組込み・労基署報告の自動生成・名簿の自動抽出／Case管理OS等の製品タグライン・料金金額",
+     "why": "前半は棚の語（core-thesis）。中盤は未実装・未受入のもの（正本§10、監査B6、open-items事業設計節）で、受入PASS行を証拠に個別に解禁するまで書かない。後半はcasetra.jpに委ねる（rebrand §3）。casetra.jp本文が現在「Case単位で進捗を一元管理」「可視化」「無料相談」を使っている点は、事務所側に一語も写さないことが第一で、casetra.jp側の是正は別チケット。"
+    }
+   ],
+   "preconditions": [
+    "【Casetraの受け皿】事務所サイトから企業へCasetra提供を案内するのは、一般ローンチGO（監査シート18/18 PASS、G-01運営9件の完了または正式承認、実案件1件の会社決裁記録、SendGrid実到達＋SPF/DKIM/DMARC、Full Coverage Critical 0）の後。条件付きGO（1社限定パイロット・STARTER/STANDARD/PLUSのみ・開示5点つき）の段階では事務所サイトの文言を変えない。それまで書けるのは「事務所側の業務管理にCasetraを使用」「企業側で利用する場合は別契約。受付状況はcasetra.jp」の2点だけ。見込みは条件付きGOが10月以降、一般ローンチは早くて11〜12月（推定。8/31期限のM-01投入と8/26〜9/2ウォークスルーの記入済み証拠がリポジトリに無く、portal-opsは8/25以降コミット0。APIは9/1にセキュリティ修正3本がマージ＝コードは動いている、止まっているのは人の受入）。",
+    "【正本の一行決定（先生）】「単発・Basic・Retainの履行では、当面Casetraは事務所内部だけで使い、意見書・記録はPDF／メールで受渡しする。企業へのCasetra画面提供（単発の30日画面・復職Pack）はP-01/P-02の受入PASS後」。正本§5が単発に「30日画面」を含めているのに受入未了、という矛盾を消す一行。最初の単発・紹介・検索きっかけの相談が入る前に要る（inquiry-strategy で既出。二重に数えない）。",
+    "【着地ページ page 166（/service/cloud/）の是正を、9/22記事の公開前に】現行の「Casetraだけを導入し、自社の担当者・産業医で運用することもできます」と「導入方法を相談する」ボタンは、NO-GOの間は正本§10「実装済みでないものを提供中と表示しない」に触れかねない。9/22・9/25の記事CTAがこのページへ人を送る前に、「ご相談いただけます（受付状況はcasetra.jp）」「初回のご相談（15分）」へ弱め、meta description（＝検索結果に出る説明文）を付け、リード文の「産業衛生管理システム」を確定稿の語へ寄せる。順番は site-copy.md（文言のマスター）を先に更新→166へ写す。承認は1件（Tier S・exact＝一字一句を固定した原稿）。",
+    "【rebrand決定は見直さない】「事務所サイトでCasetraを商品として売らない。1ブロック＋リンク」（rebrand-strategy §3）は維持。むしろ根拠が増えた（NO-GO、営業資料の規律「KIDUKI資料でCASETRAを売らない」、integrated-story「Casetraは売らない。案件が運び込む」、GBPサービス欄にCasetraを載せない決定）。dual-revenue案（2026-08-17）の「KIDUKIホームに第二入口・150,000円表示」は、その後の料金非掲載・Pack不掲載の規律で上書き済みと確認。/service/cloud/ を2,000字＋様式配布のハブに膨らませる案は採らない。",
+    "【棚の規律の解釈を広げない】「健康管理システムの棚に並ばない」を「title・H1なら棚語を使ってよい」と読み替える確認を先生に求めない。根幹文書は助言側が広げてはいけない。",
+    "【casetra.jp側の是正（別チケット・Casetra側の作業）】①/works の「導入企業の平均的な改善数値」がGoogleスニペットに露出（監査B6・オーナーチェックリストB-1）→非公開。②「【無料DL】復職支援 期限管理チェックリスト」（/sample-post2/、リンク先「#」で実体なし）→実体化か非公開かの一行決定。③sample-post1〜3／blog-4／sample-works のスラッグ→本番スラッグ＋301（30日残件12にあり）。これが済むまで、事務所サイトからcasetra.jpへの新規リンクは既存の1ブロックの1本に限る。トップの実体のない主張の削除は2026-09-01にマージ済み（casetra-site-xserver 1cd8fa8）なので、残件は/works（WordPress側）とsample記事。",
+    "【計測の受入】Search Console本体のログイン復旧、GA4 generate_lead修正版の受入テスト（先生の「テスト送信OK」一行→テスト問い合わせ→Flamingo→GA4→通知メール→削除）、article_service_click の実受信確認。受入まで、DX柱4記事の判定は Search Console の query×page と台帳の手入力を主にし、GA4は補助。",
+    "【承認帯域】承認待ち7件（B・C・F・G・T・P・R1）が片づくまで、DX関連で新しいTier S承認を増やさない。週1件・1回1作業・週2時間以内は全レーン合計の上限。この評価で先生に新たに頼む承認は、166の是正1件だけ（10月第1週の目安、Bと同じ週にしない）。",
+    "【禁止語の整合】10/2記事（就業制限の解除管理）の本文見出しに、site-copy.md 147行で禁止されている断定語が3か所（行31・37・63）残っている。CTA v6の反映規律は「非CTA本文に差分があれば停止」なので、v6反映の後に別exact（1承認）で直す。公開前に機械チェックを4記事すべてに通す。"
+   ],
+   "recommended_plan": [
+    {
+     "step": 1,
+     "what": "12記事CTA v6（承認B）の反映。届いた当日に dry-run→backup→apply→verify、公開ページをPC・スマホで目視。DX柱4本のCTAが工程の言葉のまま /service/cloud/ ・/service/sangyoui/ ・/service/return-to-work-support/ を指していることを確認。同じメッセージで先生の「DX語は今は攻めない案に同意／異論あり」の一言を受ける。",
+     "who": "先生（B承認1行＋一言）／Claude（反映・確認）",
+     "when": "今週（9/2〜9/8）",
+     "kpi": "承認記録（cta_approved_at・SHA-256）、反映時刻、7日・28日・90日レビュー日の登録。DX方針の同意を open-items「判断待ち」に記録し、dx-arena-assessment-2026-09-02.md に固定。"
+    },
+    {
+     "step": 2,
+     "what": "基準値の取得を広げる。inquiry-strategy の対象5クエリに、工程語4つ（産業医 意見書 会社 対応 就業制限 解除／産業医 面談 日程調整／産業医 就業制限 解除／就業上の措置 記録）と観測用DX語3つ（産業保健 DX／産業医 DX／健康管理システム）を足し、非ログイン・hl=ja&gl=jp・港区でAI概要・1ページ目・広告本数をスクリーンショット保存。以後毎月1日に同条件。あわせて seo-contract-funnel.md レーン6の語群を1行修正（「就業制限 管理 表」を外す、「産業衛生 DX」を記録のみへ、「産業医 就業制限 解除」「就業上の措置 記録」を足す）。",
+     "who": "Claude（先生0分）",
+     "when": "9/3（9/4記事公開前）〜9/9",
+     "kpi": "content/evidence に基準値ファイル保存、funnel差分1行。DX語3つは「記録のみ・順位目標なし」の行として月次レビュー雛形に固定。"
+    },
+    {
+     "step": 3,
+     "what": "page 166（/service/cloud/）v2 の exact を用意。最小差分＝(a)「導入し…運用することもできます」→「ご相談いただけます（受付状況はcasetra.jp）」、(b)「導入方法を相談する」→「初回のご相談（15分）」、(c) meta description追加、(d) リード文「産業衛生管理システム」を確定稿の語（産業衛生業務の標準化・効率化／案件・期限・会社の決定・記録）へ、(e) 本文に「工程が詰まる4つの場所（日程調整／意見書のあと／解除の期限／議事録の保存）と、会社が決めること・記録すること」を約800〜1,200字で追加。Casetraは「事務所側の業務管理に使用」＋casetra.jpリンクの1ブロック、機能説明・料金・導入事例・社数は書かない。site-copy.md を先に更新する案を同梱。禁止語・棚語・Casetra機能語・料金の機械チェックを通す。",
+     "who": "Claude（起案）／先生（承認1行・約10分）",
+     "when": "起案9/3〜9/16、承認依頼はBの反映とR1の後の週（10月第1週の目安。Tと同じ週にしない）。反映は承認当日。",
+     "kpi": "反映日、Search Console URL検査（先生3分・任意）、28日で site:検索と「産業衛生DX」指名系クエリに166が出るか、9/25・9/29記事→166の遷移（article_service_click 受入後）。"
+    },
+    {
+     "step": 4,
+     "what": "DX柱4記事の公開日確認と本文の禁止語是正。9/22・9/25・9/29・10/2の公開を当日確認し、CTA先を目視。10/2記事の断定語3か所（行31・37・63）を直す別exact（1承認）を v6反映後に出す。記事本文の法令記述（議事録3年保存、安衛則14条の3、面接指導記録5年）を e-Gov で一次確認し、法令根拠表を exact に添える。",
+     "who": "Claude（起案・確認）／先生（承認1行・約5分）",
+     "when": "起案9月中、承認は10月中（166の次の週）。公開確認は各公開日。",
+     "kpi": "4記事の禁止語0（機械チェック）、法令根拠表の有無、公開7日でインデックス、28日で query×page に対象語の行が出るか。"
+    },
+    {
+     "step": 5,
+     "what": "正本の一行決定をもらう：「単発・Basic・Retainの履行では、当面Casetraは事務所内部だけで使い、意見書・記録はPDF／メールで受渡し。企業へのCasetra画面提供はP-01/P-02の受入PASS後」。open-items「判断待ち」に置き、正本§5への注記案を用意。",
+     "who": "先生（一行）／Claude（注記案）",
+     "when": "10月上旬、最初の単発・紹介・検索きっかけの相談が入る前",
+     "kpi": "決定の記録日、正本§5注記の反映、営業・サイト文言の固定。"
+    },
+    {
+     "step": 6,
+     "what": "Casetra側への依頼メモ1枚（1回1作業）。中身は「/sample-post2/【無料DL】記事の非公開（または実体化）の一行決定」と「/works 非公開（B-1）」の2点だけ。スラッグ301は Casetra側の30日残件12に任せる。実施はCasetraリポの同時編集ルール（未コミット＝未完成、コミット前に確認）に従い、先生の「Run」は1回だけ依頼。",
+     "who": "Claude（メモ）／先生またはCasetra運用（WordPress管理画面の操作・Run 1回）",
+     "when": "メモは9月中に用意、実施は10月（承認キューが空いた週）",
+     "kpi": "site:casetra.jp のスニペットから「導入企業の平均的な改善数値」が消える、sample-post2 が非公開または実体あり。これが済むまで事務所側からcasetra.jpへの新規リンクは足さない。"
+    },
+    {
+     "step": 7,
+     "what": "月次レビュー（10/1・11/1・12/1）。同一プロパティ・同一28日・前28日比で、対象クエリ（5＋日程調整1）の表示・CTR・順位、DX柱4記事の query×page、AI概要の引用（同条件スクショ）、166への遷移、台帳「きっかけ＝検索」の有効な初回相談。DX語3つは記録のみの行。順位・クリック・問い合わせ・契約は別の行で報告。",
+     "who": "Claude（先生は1枚を読むだけ・5分）",
+     "when": "10/1・11/1・12/1、以後毎月1日",
+     "kpi": "対象語の合計表示（記録）、AI概要引用の有無、166遷移数、有効な初回相談数（検索きっかけ）、先生の月間作業時間。"
+    },
+    {
+     "step": 8,
+     "what": "様式（証跡テンプレート）と選び方記事の判断を後回しにする。作戦案②の様式は、12記事の28日結果（11/1・12/1レビュー）で工程語に表示が出てからのみ検討し、作るなら1枚だけ（意見書受領後の会社決定記録）、R1のA4一枚と統合して二重に作らない、直ダウンロード・「無料」を書かない・欄名と注記をHTMLの表でも記事に載せる・所轄保健所への照会をゲート。作戦案③は既存記事1598（産業医の選び方）の改稿1件だけを保守項目とし、Tの28日結果後に起案するか決める（新しい旗・造語・新記事は作らない）。",
+     "who": "Claude（判断材料）／先生（該当時のみ承認1行）",
+     "when": "12/1レビュー以降。承認待ちが0件の週にだけ1件。",
+     "kpi": "着手条件＝対象語の28日表示合計が100以上、または会社側クエリの行が出ている。満たさなければ作らない。"
+    },
+    {
+     "step": 9,
+     "what": "Casetra一般ローンチGO後の解禁（順序を逆にしない）。①一般ローンチGO（監査シート最終判定）→ 166と様式末尾に「同じ型を自社で継続管理する場合はCasetra（別契約・受付状況はcasetra.jp）」の一文を別exactで追加。②P-01/P-02 PASS→単発の30日画面・Packを案内可。③C-02/C-03 PASS→復職Case・定期業務の企業利用を案内可。DX語（産業医 DX・産業医 業務 管理 システム）の外販向け検索は casetra.jp 側で、Phase 2（自社運用できる企業からSTARTER）に入ってから別に設計する。",
+     "who": "Claude（exact）／先生（承認1行）／Casetra側（受入・監査シートPASS行）",
+     "when": "GO判定の翌月以降（早くて2026年12月〜2027年1月、推定）",
+     "kpi": "監査シートのPASS行を証拠として exact に添付。やめる基準：12記事完了（10/9）から90日で対象語表示100未満・AI概要引用0・検索きっかけ0なら新規制作を止め、166は「1ブロック＋リンク」に畳む。"
+    }
+   ],
+   "how_it_combines_with_process_query_line": "新しいレーンは作りません。「会社側の工程クエリで、AI概要と1ページ目に『会社が決めること・記録すること』の番号手順として引用される」という直前の結論（inquiry-strategy-2026-09-02.md）の中に、DXの話はもう入っています。組み合わせ方は5つです。\n\n1. 記事は同じ12本。復職クラスター（9/4〜9/18、10/6・10/9）とDX柱4本（9/22・9/25・9/29・10/2）は1つの予約表で、承認Bも1回。DX柱4本は「DXの言葉」ではなく「DXが解く工程の言葉」で既に書かれ、Casetraは継続契約の説明1文だけ、CTAだけが /service/cloud/ を指す。これが「DXで攻める」の実体です。\n\n2. 着地先の直しは工程レーンの一部。/service/cloud/（166）の是正は「DXレーンの新設」ではなく、9/25・9/29の主導線を受け止めるための修理で、承認1件で済ませます。/service/return-to-work-support/（S3反映済み）と対になる受け皿です。\n\n3. 測り方は同じ物差し。inquiry-strategy の対象5クエリに「産業医 面談 日程調整」を1つ足すだけにし、DX語3つ（産業保健 DX／産業医 DX／健康管理システム）は「記録のみ・順位目標なし」の行に置きます。表示が出ても成果に数えません。台帳の「きっかけ」で「ツールの問い合わせ（機能・料金・導入）」と「事務所の問い合わせ」を分け、ツールの問い合わせはcasetra.jpの窓口へ案内します。\n\n4. A4一枚（R1）は両レーン共通の1枚。先生の決定どおり配布経路は作らず、サイトとAI概要向けの「会社の決定記録シート」として、9/29記事とスポットページに置きます。作戦案②の「証跡様式」は、この1枚と中身が重なるので二重に作らず、12記事の28日結果を見てから「足すなら1枚」に留めます。\n\n5. 承認の列も1本。承認待ち（B・C・F・G・T・P・R1）の後ろに、DX関連で足すのは166の是正1件と10/2記事の禁止語是正1件だけ。週1件・1回1作業を守り、他レーンの承認がある週はDX側を飛ばします。DXの旗（タイトル・メニュー）は指名の補助として残し、Casetraが一般ローンチGOになったら、166に「自社で継続管理する場合はCasetra（別契約）」の一文を別exactで足す、という順序で工程レーンにDXの出口をつなぎます。",
+   "owner_first_action": "今週やることは1つだけで、増やしません。記事12本の「最後のお誘い文（CTA）」を記事ごとに合うサービスページへ向ける改善（記号B）の承認です。DXについての返事は、その同じメッセージに一言添えるだけにします（別の日・別の作業にはしません）。\n\n手順（合計2分）:\n1. Obsidian で `docs/for-owner/05-approval-replies.md`（手順書05）を開きます。\n2. 表の「B」の行の右端にある1行を、先頭の「B」から最後の英数字まで、まるごと選んでコピーします。\n   `B 承認: 2026-09-01-v6 / 8a37688634893094c2fc0a6ba7827230dd2eba6797e9dd1183c56482bef1a34a`\n3. このチャットに貼ります。\n4. 貼った行の次の行に、次のどちらかを一言だけ書き足して送信します。\n   - 「DXは今は攻めない案に同意」\n   - 「DXについて異論あり」（理由は書かなくてよいです。次回、私が1問ずつ聞きます）\n\nBをすでに送っている場合は、手順4の一言だけをチャットに送ってください（1分）。\n中身を先に読みたいときは「Bの本文を見せて」と書いてください。該当する文章だけを貼ります。\n\nこれで9/4（金）以降の記事が、公開と同時に「その記事の悩みに合うサービスページ」へ人を送れるようになり、DX柱の4本（9/22〜10/2）も「DXが解く工程の言葉」のまま予定どおり出ます。/service/cloud/ の直し（1件・約10分）、Casetraを当面事務所内部だけで使う一行決定、Casetra側の依頼（Run 1回）は、来週以降に1つずつお願いします。今週は増やしません。",
+   "claude_next_7_days": [
+    "9/3（9/4記事公開前）: 対象5クエリ＋工程語4つ（産業医 意見書 会社 対応 就業制限 解除／産業医 面談 日程調整／産業医 就業制限 解除／就業上の措置 記録）＋観測用DX語3つ（産業保健 DX／産業医 DX／健康管理システム）＋地図3語のAI概要・1ページ目・広告本数・地図枠を、非ログイン・hl=ja&gl=jp・港区で記録し content/evidence に基準値として保存する。",
+    "B承認が届いた当日: 12記事CTA v6を dry-run→backup→apply→verify で反映し、DX柱4本のCTAが工程の言葉のまま主導線（/service/cloud/ ・/service/sangyoui/ ・/service/return-to-work-support/）を指すことをPC・スマホで目視。反映時刻から7日・28日・90日のレビュー日を content/seo-review-schedule.md に登録する。",
+    "先生の一言（同意／異論）を受けたら、この評価の結論を content/dx-arena-assessment-2026-09-02.md（inquiry-strategy が指定した置き場）に固定し、kiduki/docs/checklists/open-items.md「判断待ち」に「DX語は今は攻めない（工程語の4記事の型を続ける）」「単発・Basic・Retainで当面Casetraは事務所内部のみ・証跡はPDF／メール」の2行を追記する案を作る。",
+    "content/seo-contract-funnel.md レーン6の語群を1行修正する（「就業制限 管理 表」を外す、「産業衛生 DX」を記録のみへ、「産業医 就業制限 解除」「就業上の措置 記録」を足す）。承認不要の私の作業。",
+    "page 166（/service/cloud/）v2 の exact バンドルを起案する。最小差分（一文の弱め・ボタン文言・meta description・リード文の語・工程が詰まる4つの場所の追加約800〜1,200字）と、site-copy.md を先に更新する差分を同梱。禁止語・棚語・Casetra機能語・料金・クリニック名・社数の機械チェックを通し、SHA-256を固定。承認依頼はBの反映とR1の後の週まで出さない。",
+    "10/2記事『就業制限を「解除し忘れる」構造と、期限管理の実務』の本文見出し3か所（行31・37・63）の断定語を直す exact を起案する（CTA v6反映後に出す別承認）。あわせて4記事の法令記述（議事録3年保存、安衛則14条の3、面接指導記録5年）を e-Gov で一次確認し、法令根拠表（条・URL・確認日）を用意する。",
+    "Casetra側への依頼メモ1枚を用意する（「/sample-post2/【無料DL】記事の非公開または実体化の一行決定」「/works 非公開（B-1）」の2点だけ）。casetra_active の同時編集ルール（未コミット＝未完成、コミット前に確認）に従い、Runが要る回数を1回に絞った手順を書く。実施は10月。",
+    "月次レビュー雛形（10/1）に「DX語＝記録のみ・順位目標なし」の行、「きっかけ＝検索（ツールの問い合わせ／事務所の問い合わせ）」の分け方、DX柱4記事の公開日起点7日/28日/90日の判定欄を足す。",
+    "GA4 generate_lead 修正版の受入テスト手順（テスト問い合わせ→Flamingo→GA4受信→通知メール→テストデータ削除）を用意し、先生の「テスト送信OK」の一行を待つ。受入までGA4の数字は判断に使わない。",
+    "9/4記事『運転業務の眠気リスク』と9/8記事の公開を当日確認し、URL検査の依頼文（1行・任意）を用意する。casetra.jp 5記事→KIDUKI記事への文脈リンク案（実タイトル対応: 証跡→9/22・9/29、Excel vs Case管理→9/25、期限チェックリスト→10/2、抜け漏れ3パターン→9/29、医療行為ではない→スポットページ）は用意するが、Casetra側の是正（/works・sample-post2）が済むまで反映しない。"
+   ],
+   "honesty": [
+    "数字はすべて推定と幅です。対象語の月間検索数の実数（キーワードプランナー）は広告アカウントが要り、広告はやらない決定なので今後も取れません。aramakijake.jp などの目安ツールは実数を大きく下回ります（「スポット産業医」をデータなしと返すが、Search Consoleでは28日で147表示）。判断はSearch Consoleの表示回数の積み上げで置き換えます。",
+    "検索結果（SERP）とAI概要の観察は2026-09-02の1回・非ログイン・PC・港区です。AI概要は動的に出るため取り逃した可能性があり、9/3以降の月次スクショで再確認します。「原産業医事務所が3〜4位」「産業医事務所の記事0件」も1回の観測です。",
+    "「DXで攻めない」と決めても、工程語のレーン自体の見込みは小さいです。DX柱4記事が生む「きっかけ＝検索」の有効な初回相談は6か月時点で月0〜0.5件、多くの月は0件（推定）。ポートフォリオ全体でも月0〜2件、多くの月は0〜1件（inquiry-strategyと同じ幅）。DXが2026年の売上の柱になる見込みはありません。最初の問い合わせは検索より既存受託先から来る可能性のほうが高く、それは検索の成果には数えません。",
+    "Casetraの時期は後ろにずれる見込みです。公式の見立て「条件付きGOは最短9月第2週」の前提（8/31までのM-01投入、8/26〜9/2の実地ウォークスルー）が実施された証拠がリポジトリにありません（監査シートは全行空欄、portal-opsは8/25以降コミット0）。コードは動いています（APIは9/1にセキュリティ修正3本をマージ）。止まっているのは人の受入と運営記録です。先生の週2時間枠では受入18シナリオ（見積55〜70人時）だけで数週間かかるため、条件付きGOは10月以降、一般ローンチは早くて11〜12月と見るのが正直な幅です（推定）。事務所側の計画はCasetraのGOに依存させていません。",
+    "事務所サイトの /service/cloud/ には、NO-GOの今も「Casetraだけを導入し…運用することもできます」「導入方法を相談する」が公開中で、正本§10「実装済みでないものを提供中と表示しない」に触れかねません。9/22・9/25の記事CTAがここへ人を送る前に直す必要があり、順序が規律に関わります。承認1件が要ります。",
+    "casetra.jp（自社の製品サイト）自身が、事務所側で禁じている語と主張を使っています。「Case単位で進捗を一元管理」「可視化」「15分無料相談」、/works の「導入企業の平均的な改善数値」（顧客ゼロなのに公開、Googleスニペットに露出）、「【無料DL】」記事のリンク先が「#」。casetra.jpは医療機関の広告ではありませんが代表者が同一で、事務所サイトからリンクする以上、信頼に跳ね返ります。事務所側に一語も写さないことが第一で、是正はCasetra側の別チケットです。",
+    "内部利用の本番データ（12社・56Case、監査ログ22事象・不一致0）は「導入企業数」「実績」として公開してはいけません（正本§0）。12社にはDRAFT 6件・会社決裁のないACTIVE 1件が含まれます。また「会社の決定が記録されないと完了扱いにしない運用」の根拠に使われたACTIVE 1件は、実際は「会社決裁のないまま期限を過ぎて放置されていた」案件で、強みの証拠として公開できません。事務所サイトで言えるのは「事務所側の業務管理にCasetraを使用」までです。",
+    "10/2記事の本文見出しに、site-copy.md 147行で禁止されている断定語が3か所残っています（行31・37・63）。CTA v6の反映規律（非CTA本文に差分があれば停止）のため、v6の後に別exactで直す必要があり、承認が1件増えます。他の3記事は禁止語0でした。",
+    "3つの作戦案への私の判定は、作戦案①（DX大語の正面攻略）＝落とす（両批判と一致）、②（工程語＋証跡様式）＝修正して後回し（方向は正しいが承認5件と166ハブ化が弱い。様式はR1のA4と重なる）、③（面談で終わらない産業医）＝修正して最小化（DXの問いへの直答になっておらず需要が過大。1598改稿1件だけ保守項目に）。①を落とすのは、私が棚の規律の再解釈を先生に求める立場に立ちたくないからでもあります。",
+    "議事録3年保存・安衛則14条の3の勧告記録・面接指導記録5年などの法令記述は、記事本文の記述に依拠しており、e-Gov での一次確認は未実施です。公開前に確認し、法令根拠表を添えます。",
+    "計測が受入未了です（generate_lead修正版のGA4実受信・Flamingo・通知メール未テスト、article_service_click の実受信未確認、Search Console本体ログイン停止中）。受入まで、判定はSearch Consoleの query×page と台帳の手入力を主にします。",
+    "承認帯域がいちばんの制約です。承認待ちが7件（B・C・F・G・T・P・R1）あり、この評価で新たに足すのは166の是正と10/2記事の禁止語是正の2件だけです。それでも先生の実質時間は初月に月3〜4時間になり得ます（推定）。超えた週は翌週の依頼をゼロにします。",
+    "私（Claude）にできないことがあります。Googleアカウントの操作、casetra.jp WordPress管理画面の操作、メール送信、Casetraリポのデプロイの一部は先生か人の運用者の操作です。文案・チェック・観測・報告は用意しますが、「代行するので先生の時間は使わない」とは言えません。",
+    "ブランドの衝突があります。「casetra」は海外の同名企業（資源商社・照明・床材）と1ページ目を分け合い、「Casetra 産業医」では競合3社の広告が自然検索より上に出ます。指名は「KIDUKI」「宮部大輔」で受ける設計にしていますが、Casetraの名が事務所の指名検索を強くする根拠は今のところありません。"
+   ]
+  }
+ }
+}

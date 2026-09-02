@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "recorded_at": "2026-09-02T05:04:39.621Z",
+ "operation": "read_only_review",
+ "writes": false,
+ "reviewer": "Claude（独立レビュー・サブエージェント）",
+ "target": {
+  "body": "content/exact/dx-service-page-166-2026-09-02-v2-body.html",
+  "body_sha256": "ae3bb2e46d946aa68b19a954cb11f626de7cf0ab43ae2a5365e8e75340f23eba",
+  "copy": "content/exact/dx-service-page-166-2026-09-02-v2-copy.json",
+  "copy_sha256": "4099ee45a71589a25bc7c788799920c5605e46496ce8fe9c05eb5d112031ff7c",
+  "page_id": 166,
+  "live_url": "https://kdkconslt-sngyouijm.com/service/cloud/"
+ },
+ "rules_checked": [
+  "kiduki/docs/copy/site-copy.md 禁止語(全ページ共通)",
+  "kiduki/docs/core-thesis.md 棚の規律",
+  "kiduki/docs/pricing-growth-canonical.md §0/§10",
+  "kiduki/docs/rebrand-strategy.md §3（1ブロック＋リンク）",
+  "content/dx-arena-assessment-2026-09-02.md 行56・76・96・126・170",
+  "オーケストレータ指示（Casetraの事実の範囲・文字数2,200〜3,000）"
+ ],
+ "checks": {
+  "forbidden_words": {
+   "result": "pass",
+   "detail": "無料・併設・クリニック・一気通貫・睡眠専門医・必ず・絶対・治る＝0件。棚語（一元管理・見える化・可視化・ウェルビーイング・健康データ）＝0件。金額（円・¥）＝0件。導入企業・導入事例・改善・削減＝0件。Pack／パック／復職支援＝0件。「診断・治療・処方」は『行わないこと』の否定文で各1回、「受診」は境界文で2回（下記 low 参照）。"
+  },
+  "medical_ad_boundary": {
+   "result": "pass",
+   "detail": "『受診先はご本人が選びます。KIDUKIが特定の医療機関を指定・紹介することはありません。』が1回、本文（会社に残るもの 節）に存在。クリニック名・受診誘引・治療表現なし。"
+  },
+  "company_decision_rights": {
+   "result": "pass",
+   "detail": "『会社が決めるのは…』が4工程すべてに明記。『意見書は決定の材料であり、決定と実行は会社が行います』『就業上の最終決定と実施は会社が行います』『会社の決定の代行』は行わないこと、と3重に固定。管理単位（面談・意見・会社の決定・再評価日・解除条件・記録）とも一致。"
+  },
+  "casetra_fact_scope": {
+   "result": "pass_with_notes",
+   "detail": "『KIDUKI側の業務管理に使用』『受託先の案件をパイロット運用中』『企業側の利用は別契約』『受付状況はcasetra.jp』の範囲内。機能・料金・時期・社数・事例は書かれていない。ただし言及が6か所（リード／継続支援節／契約関係の表＋段落／境界ボックス／FAQ5／脚注リンク）に散り、rebrand§3『1ブロック＋リンク』および評価書行96の『Casetraは1ブロック』より厚い。『企業側でもCasetraを利用するDX支援』という商品名めいた表現がある（medium）。"
+  },
+  "process_words": {
+   "result": "partial",
+   "detail": "title/H1: 面談日程・意見書・就業制限解除・議事録 あり。本文: 4工程の語あり。H2: 6本とも汎用語（手作業で止まりやすい4つの場所／KIDUKIの継続支援でどう使うか／会社に残るもの／契約関係／よくあるご質問／関連する記事）で、工程語はH3にのみ入っている。"
+  },
+  "h1_script": {
+   "result": "pass",
+   "detail": "<h1> 0件。<script> は application/ld+json（FAQPage）1本のみ。"
+  },
+  "block_syntax": {
+   "result": "pass",
+   "detail": "wp: ブロック開閉 group2/2 paragraph19/19 heading15/15 list2/2 list-item7/7 table1/1 html1/1 buttons1/1 button1/1。スタック走査で入れ子の不整合なし。HTMLタグ div/p/h2/h3/ul/li/table/figure/thead/tbody/tr/th/td/strong/a も開閉一致。"
+  },
+  "faq_jsonld": {
+   "result": "pass",
+   "detail": "JSON.parse 成功。@type=FAQPage、Question 5件。可視FAQ（h3＋直後のp）5件と name/text が一字一句一致。"
+  },
+  "related_links": {
+   "result": "pass",
+   "detail": "4本すべて HTTP 200（2026-09-02 curl 実測）。robots は max-image-preview:large のみで noindex なし。old-article-triage: sngyouitaisei(1062)=refresh later, sangyouijouhou(1064)=refresh later, return-to-work-interview-process-roles(1809)=keep。noindex承認リスト（19件）に含まれない。/service/return-to-work-support/ も200。"
+  },
+  "char_count": {
+   "result": "pass",
+   "detail": "script・コメント・タグ・空白を除いた本文文字数 2,703字（関連記事リストとCTAを除くと2,479字）。指示の2,200〜3,000の範囲内。title 37字、meta description 111字、excerpt 124字。"
+  }
+ },
+ "findings": [
+  {
+   "severity": "medium",
+   "location": "body.html 行5・20・24・33（H2 6本）",
+   "finding": "工程の言葉（面談の日程調整／意見書のあと／就業制限の解除／議事録の保存）が title・H1・H3・本文には入っているが、H2 には1本も入っていない。評価書（dx-arena-assessment 行23・56）は『検索の入口は工程の名前』と定めており、H2 が汎用語のままだと見出し階層で工程語が拾われない。",
+   "required_repair": "H2『手作業で止まりやすい4つの場所』を『手作業で止まりやすい4つの場所：面談日程・意見書・就業制限の解除・議事録』のように工程語を含む形にする、または4つのH3をH2へ昇格させる（FAQのH3はそのまま）。"
+  },
+  {
+   "severity": "medium",
+   "location": "body.html 行3・22・34〜35・37・49〜50・64",
+   "finding": "Casetraへの言及が6か所に散っている（リード、継続支援節、契約関係の表＋段落、役割の境界ボックス、FAQ5＋JSON-LD、脚注リンク）。事実の範囲（パイロット運用中・別契約・受付状況はcasetra.jp）は超えていないが、rebrand-strategy §3『事務所サイトで商品として売らない。1ブロック＋リンクに留める』と評価書行56・96『契約関係の表＋Casetra1ブロック＋casetra.jpリンク』より厚い。特に行22とFAQ5の回答はほぼ同文の重複。",
+   "required_repair": "Casetraの説明は『継続支援でどう使うか』の1段落＋契約関係の表＋脚注リンクに集約する。FAQ5を削るか、表への参照1文に短縮し、JSON-LDも同期して更新する。境界ボックスは残してよいが『Casetraは』を『KIDUKIの運用は』等に置き換えることを検討。"
+  },
+  {
+   "severity": "medium",
+   "location": "body.html 行34（表3行目）・行35",
+   "finding": "『企業側でもCasetraを利用するDX支援』『企業側のDX支援は含まれません』という表現が、企業向けDX支援という商品ラインが現に提供中であるように読める。Casetraは一般ローンチNO-GO（2026-08-25判定）で、正本§10『実装済みでないものを提供中と表示しない』に近づく。許される事実は『別契約』『受付状況はcasetra.jp』まで。",
+   "required_repair": "表3行目を『企業側が自社の担当者・産業医でCasetraを利用する場合』→『別契約（受付状況はcasetra.jp）』に改め、行35の『企業側のDX支援は含まれません』を削除または『企業側でのCasetra利用は含まれません』に置き換える。"
+  },
+  {
+   "severity": "medium",
+   "location": "body.html 行18・27・47",
+   "finding": "法令記述（安衛則による議事録3年保存、産業医勧告の記録3年保存、安衛法第66条の5）は評価書行171で『e-Govでの一次確認は未実施』とされたまま。内容は筆者の知識では正しい（議事録＝安衛則第23条第4項、勧告記録＝安衛則第14条の3第2項）が、法令根拠表（条・URL・確認日）が exact バンドルに添付されていない。また第66条の5は健康診断後の措置の条文で、面接指導（第66条の8第5項）・ストレスチェック（第66条の10第6項）後の措置を含む本ページの文脈では狭い。",
+   "required_repair": "公開前に e-Gov（https://elaws.e-gov.go.jp/）で3条文を確認し、法令根拠表を content/evidence に添付する。行27は『労働安全衛生法第66条の5ほか』とするか条番号を外す。"
+  },
+  {
+   "severity": "low",
+   "location": "body.html 行29・31",
+   "finding": "『行わないこと：診断・治療・処方』は否定文としての境界表現で医療広告規律上は許容範囲。『受診が必要と考えられる場合はその旨をお伝えします』は直後に境界文があるため受診誘引には当たらないと判断。",
+   "required_repair": "修正不要。念のため既存のスポット産業医ページ（v3）と同じ言い回しに揃えると一貫する。"
+  },
+  {
+   "severity": "low",
+   "location": "copy.json title / meta_description",
+   "finding": "title 37字＋サイト名で約60字。Google検索結果では前半約30字（『産業衛生DX・Casetra｜面談日程・意見書・就業制限解…』）で切れる見込み（推定）。meta description 111字はスマホで末尾が切れる可能性（推定）。",
+   "required_repair": "必須ではない。切れても意味が通るので現状可。短縮するなら『産業衛生DX・Casetra｜面談日程・意見書・就業制限解除・議事録』（『の記録』を外す）。"
+  },
+  {
+   "severity": "low",
+   "location": "bundle 全体",
+   "finding": "評価書行96・170が求める『site-copy.md を先に更新する差分の同梱』と『SHA-256の固定』が、今回渡された2ファイルからは確認できなかった（レビュー対象外のため未確認）。また評価書行96は追加分を約800〜1,200字（合計約1,300〜1,700字）としており、今回の2,703字は指示の2,200〜3,000には収まるが評価書の『膨らませない』方針との差がある。",
+   "required_repair": "承認依頼前に site-copy.md 差分とハッシュを同梱する。文字数は今回の指示（2,200〜3,000）を優先し、評価書側の数字を更新するか注記する。"
+  }
+ ],
+ "blockers_count": 0,
+ "verdict": "approve_after_repairs",
+ "summary": "禁止語・棚語・金額・導入事例・Pack・クリニック・無料はゼロ。医療広告境界文あり。会社の決定権は明確。h1混入なし、scriptはFAQPageのみ、ブロック記法は閉じている。FAQ JSON-LDは有効で可視FAQと一致。関連記事4本は公開中・noindexなし。文字数2,703字で範囲内。直すべきはH2への工程語、Casetra言及の集約と『DX支援』表現、法令根拠の一次確認の4点（いずれもblockerではない）。"
+}

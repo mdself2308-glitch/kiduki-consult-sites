@@ -1,0 +1,47 @@
+{
+  "exact_version": "2026-09-02-v1",
+  "state": "owner-review",
+  "purpose": "技術・規律の内部修正3件。文言の新規主張は含まない",
+  "items": [
+    {
+      "code": "FAQ",
+      "label": "よくあるご質問ページ（page 39）の本文H1 2つをH2へ（見た目は同じ、H1を1つに）",
+      "type": "page",
+      "id": 39,
+      "baseline_source": "source/wordpress/page-39-inquiry.html",
+      "baseline_sha256": "cfcfb4d61c0cc469a33a2117d498be4e5c8a6b038ff82d2cefc615c9c6415d9c",
+      "candidate_source": "content/exact/faq-page-39-h1-fix-2026-09-02-v1-body.html",
+      "candidate_sha256": "47ec2610dc819112f3f11c61ebdf942bc8bdf1909dce189ef93f48334fca3aa7",
+      "apply": "node tools/push-wordpress-content.mjs --type page --id 39 --content content/exact/faq-page-39-h1-fix-2026-09-02-v1-body.html --apply --backup --backup-confirmed",
+      "note": "変更は<h1>→<h2>の2か所だけ（class・文言不変）"
+    },
+    {
+      "code": "1472",
+      "label": "旧記事「産業医事務所とは」（post 1472）の最小修正：金額1,500円〜の枠とリンク切れボタンの削除、根拠のない主張・棚語の言い換え",
+      "type": "post",
+      "id": 1472,
+      "baseline_source": "source/wordpress/post-1472-sangyoujijimusho-naiyou.html",
+      "baseline_sha256": "79d3f101ef3b3fce2e8426eb140f87d089eb3092a99e55af25c3cad8b9479494",
+      "candidate_source": "content/exact/post-1472-minimal-fix-2026-09-02-v1-body.html",
+      "candidate_sha256": "7994cea51a678eccf88ae62bbbaf2deab8c9a771c6769a6f5a813ac1aceda9ef",
+      "apply": "node tools/push-wordpress-content.mjs --type post --id 1472 --content content/exact/post-1472-minimal-fix-2026-09-02-v1-body.html --apply --backup --backup-confirmed",
+      "note": "健診事後措置カード削除、「多くのクライアント企業」→「複数の企業で産業医を務めている」、「健康データ」→「健診結果や面談で得た情報」、予約システムの断定を弱める、健康経営優良法人取得サポート→睡眠設問対応、メンタルヘルスケア→メンタルヘルス対策"
+    },
+    {
+      "code": "IMG",
+      "label": "重いヘッダー画像（1.68MB PNG, media 152）を113KBのWebPへ置き換え（page 164 と post 1809 のアイキャッチ）",
+      "type": "media",
+      "id": 152,
+      "candidate_source": "content/exact/service-header-2026-09-02.webp",
+      "candidate_sha256": "78a7d52848eb437034f1107fbad441064843711acc56cbd0b38dfbef1e5fc9fc",
+      "apply": "node tools/replace-featured-image.mjs --apply --backup --backup-confirmed",
+      "note": "旧メディアは削除しない。alt は「東京・港区の産業医事務所KIDUKIの復職支援・スポット産業医サービス」"
+    }
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}
