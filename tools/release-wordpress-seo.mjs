@@ -8,6 +8,7 @@ import {
   safeStamp,
   wpRequest,
 } from './wordpress-rest-utils.mjs';
+import { verifySeoApprovalBinding } from './seo-approval-binding.mjs';
 
 const args = parseArgs(process.argv.slice(2));
 const manifestPath = path.resolve(
@@ -32,6 +33,14 @@ const items = (manifest.items || []).filter(
   (item) => !requestedIds || requestedIds.has(Number(item.id)),
 );
 if (!items.length) throw new Error('No manifest items were selected.');
+
+const approvalBinding = verifySeoApprovalBinding({
+  manifest,
+  manifestPath,
+  selectedItems: items,
+  args,
+  apply,
+});
 
 function sha256(value) {
   return crypto.createHash('sha256').update(value).digest('hex');
@@ -114,6 +123,10 @@ for (const item of items) {
     currentTitle === payload.title &&
     (current.excerpt?.raw || '') === payload.excerpt &&
     contentSha256(currentContent) === contentSha256(source);
+  const currentContentSha256 = contentSha256(currentContent);
+  const remoteSourceLockMatches =
+    !item.expectedRemoteSourceSha256 ||
+    currentContentSha256 === item.expectedRemoteSourceSha256;
   if (
     apply &&
     item.expectedModified !== current.modified &&
@@ -121,6 +134,11 @@ for (const item of items) {
   ) {
     throw new Error(
       `${item.type}:${item.id} changed after review: expected ${item.expectedModified}, found ${current.modified}. Pull and review again.`,
+    );
+  }
+  if (apply && !remoteSourceLockMatches && !alreadyApplied) {
+    throw new Error(
+      `${item.type}:${item.id} content changed after review: expected ${item.expectedRemoteSourceSha256}, found ${currentContentSha256}. Pull and review again.`,
     );
   }
 
@@ -141,7 +159,10 @@ for (const item of items) {
         status: current.status,
         title: currentTitle,
         contentBytes: Buffer.byteLength(currentContent),
-        contentSha256: contentSha256(currentContent),
+        contentSha256: currentContentSha256,
+        expectedRemoteSourceSha256:
+          item.expectedRemoteSourceSha256 || null,
+        remoteSourceLockMatches,
       },
       next: {
         slug: payload.slug,
@@ -170,6 +191,7 @@ if (!apply) {
         persistentWrites: false,
         release: manifest.release,
         manifestPath,
+        approvalBinding,
         publishDrafts,
         items: prepared.map(({ comparison }) => comparison),
       },
@@ -223,10 +245,12 @@ for (const preparedItem of prepared) {
   const updated = response.data;
   const updatedContent = updated.content?.raw || source;
   const updatedTitle = updated.title?.raw || cleanRendered(updated.title?.rendered);
+  const updatedExcerpt = updated.excerpt?.raw || '';
   const verified =
     updated.slug === payload.slug &&
     updated.status === payload.status &&
     updatedTitle === payload.title &&
+    updatedExcerpt === payload.excerpt &&
     contentSha256(updatedContent) === contentSha256(source);
   if (!verified) {
     throw new Error(
@@ -252,6 +276,7 @@ console.log(
       mode: 'apply',
       release: manifest.release,
       manifestPath,
+      approvalBinding,
       backupDirectory,
       updatedItems,
     },

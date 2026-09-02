@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-02T00:42:48+09:00",
+  "timezone": "Asia/Tokyo",
+  "scheduler": "Codex local automation control plane",
+  "project_id": "d7371f7d-5255-4150-8b26-e717b8c66d57",
+  "project_path": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/00-Projects/kdk-wordpress",
+  "global_content_manual": "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/.agents/skills/content-production/SKILL.md",
+  "automations": [
+    {
+      "id": "kiduki-seo-milestone-review",
+      "definition": "/Users/dmmac/.codex/automations/kiduki-seo-milestone-review/automation.toml",
+      "status": "ACTIVE",
+      "rrule": "DTSTART;TZID=Asia/Tokyo:20260903T073000\nRRULE:FREQ=DAILY;BYHOUR=7;BYMINUTE=30;BYSECOND=0",
+      "first_scheduled_run": "2026-09-03T07:30:00+09:00",
+      "purpose": "Process due or retryable 7d, 28d, and 90d article reviews using the local milestone ledger; no-op when none are due."
+    },
+    {
+      "id": "kiduki-seo-growth-loop",
+      "definition": "/Users/dmmac/.codex/automations/kiduki-seo-growth-loop/automation.toml",
+      "status": "ACTIVE",
+      "rrule": "DTSTART;TZID=Asia/Tokyo:20260907T080000\nRRULE:FREQ=WEEKLY;BYDAY=MO;BYHOUR=8;BYMINUTE=0;BYSECOND=0",
+      "first_scheduled_run": "2026-09-07T08:00:00+09:00",
+      "purpose": "Run the weekly dual-property SEO measurement and one bounded local improvement batch."
+    },
+    {
+      "id": "kiduki-seo-monthly-funnel-review",
+      "definition": "/Users/dmmac/.codex/automations/kiduki-seo-monthly-funnel-review/automation.toml",
+      "status": "ACTIVE",
+      "rrule": "DTSTART;TZID=Asia/Tokyo:20261001T083000\nRRULE:FREQ=MONTHLY;BYMONTHDAY=1;BYHOUR=8;BYMINUTE=30;BYSECOND=0",
+      "first_scheduled_run": "2026-10-01T08:30:00+09:00",
+      "purpose": "Compare consecutive 28-day periods and review the query-to-contract funnel."
+    }
+  ],
+  "google_calendar": {
+    "operational_dependency": false,
+    "mutation_in_this_change": "none",
+    "existing_events": "legacy_not_canonical",
+    "reason_not_deleted": "Deletion was not requested."
+  },
+  "authorization_boundary": {
+    "allowed": [
+      "Read-only measurement and public-site verification",
+      "Local reports and content-ticket updates",
+      "Bounded local candidate diffs with validation"
+    ],
+    "not_authorized": [
+      "WordPress production writes or publication",
+      "Static main push or Azure production deployment",
+      "Google Calendar or email mutation",
+      "Authentication, access requests, or permission changes",
+      "Treating analytics events as valid inquiries or contracts"
+    ]
+  },
+  "state_boundary": "ACTIVE definitions prove the schedule configuration only. Each run, measurement, approval, publication, indexing result, inquiry, quote, and contract requires its own evidence."
+}

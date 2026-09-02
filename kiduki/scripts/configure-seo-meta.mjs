@@ -8,6 +8,7 @@ import {
   safeStamp,
   wpRequest,
 } from '../../tools/wordpress-rest-utils.mjs';
+import { verifySeoApprovalBinding } from '../../tools/seo-approval-binding.mjs';
 
 const args = parseArgs(process.argv.slice(2));
 const apply = Boolean(args.apply);
@@ -30,6 +31,14 @@ if (apply && (!backup || !backupConfirmed)) {
     'Refusing SEO metadata update without --backup --backup-confirmed.',
   );
 }
+
+const approvalBinding = verifySeoApprovalBinding({
+  manifest,
+  manifestPath,
+  selectedItems: items,
+  args,
+  apply,
+});
 
 const temporarySnippetName = `Codex KIDUKI SEO meta bridge ${manifest.release}`;
 const temporaryRoute = '/wp-json/kiduki-seo/v1/meta';
@@ -212,6 +221,7 @@ try {
           mode: 'dry-run',
           persistentWrites: false,
           release: manifest.release,
+          approvalBinding,
           contentReleaseReady: comparison.every(
             (item) => item.contentReleaseReady,
           ),
@@ -262,6 +272,7 @@ try {
         ok: true,
         mode: 'apply',
         release: manifest.release,
+        approvalBinding,
         backupPath,
         state: updated.data,
         temporarySnippetPurged: true,

@@ -1,0 +1,484 @@
+{
+  "schema_version": 1,
+  "exact_version": "2026-09-01-v6",
+  "state": "owner-review",
+  "supersedes": {
+    "exact_version": "2026-09-01-v5",
+    "reason": "Pack P-01/P-02 are not tested; remove Pack from public CTA decisions until both pass"
+  },
+  "purpose": "宮部大輔による12記事CTAのexact version一括確認",
+  "boundary": "内部承認資料。承認記録でも公開権限でもなく、WordPressへの書込みを許可しない。",
+  "approval_owner": "宮部 大輔",
+  "publication_authority_required": true,
+  "approval": {
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  },
+  "product_gate": {
+    "pack_p01": "not_tested",
+    "pack_p02": "not_tested",
+    "pack_mentions_allowed": false,
+    "evidence": [
+      "/Users/dmmac/casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md",
+      "/Users/dmmac/casetra_active/docs/operations/CASETRA_TEST_COMPANY_AUDIT_SHEET_JA.md"
+    ]
+  },
+  "approval_binding": {
+    "algorithm": "sha256",
+    "record_in_plan": "cta_approval_bundle_sha256",
+    "required_apply_arguments": [
+      "--approval-bundle",
+      "--approved-bundle-sha256"
+    ],
+    "bound_item_fields": [
+      "cta_version",
+      "source_sha256",
+      "cta_html_sha256",
+      "change_scope",
+      "full_body_update_reason",
+      "expected_remote_source_sha256",
+      "wordpress_post_id"
+    ]
+  },
+  "source_plan": "content/article-plan.json",
+  "source_plan_sha256": "8f3c158f1c099dc938b1628292384327ee9fc6eb4dcd6afa00a9b7afc8c2c5d8",
+  "item_count": 12,
+  "items": [
+    {
+      "slug": "night-shift-sleep-management",
+      "title": "夜勤・交代勤務の睡眠対策｜シフトと仮眠環境から見直す実務",
+      "risk_tier": "S",
+      "domain": "safety",
+      "search_intent": "夜勤・交代勤務の睡眠対策を会社の勤務設計と就業配慮へ落とす",
+      "article_publication_status": "published",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1840,
+      "publish_at": "2026-09-01T07:00:00",
+      "target_offer": "KIDUKI Basic（復職・就業制限の個別案件は単発）",
+      "primary_landing": "/service/komon/",
+      "secondary_landing": "/service/return-to-work-support/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/night-shift-sleep-management.html",
+      "source_sha256": "e7368a4d94aefbbf23db21741b0b6d6c4499496d143866d684799c53d7e64a49",
+      "cta_html_sha256": "5193c73d3486c4e4a6487aec685c51d03254f3ee71ee4ccd4dfeb1cb89685828",
+      "lead": "夜勤・交代勤務を、勤務表と就業上の配慮まで含めて見直したい企業へ。",
+      "cta_text": "夜勤・交代勤務を、勤務表と就業上の配慮まで含めて見直したい企業へ。既存の産業医体制に睡眠・勤務リスクの専門支援を追加する場合は、睡眠に特化した産業医支援をご確認ください。復職や就業制限など1件の判断支援は、復職・両立支援で対応範囲をご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        },
+        {
+          "role": "secondary",
+          "label": "復職・両立支援",
+          "href": "/service/return-to-work-support/",
+          "target_offer": "return-to-work"
+        }
+      ]
+    },
+    {
+      "slug": "drowsy-driving-workplace-safety",
+      "title": "運転業務の眠気リスク｜ヒヤリハットを個人の不注意で終わらせない",
+      "risk_tier": "S",
+      "domain": "safety",
+      "search_intent": "運転業務の眠気リスクを会社の評価と就業措置へ落とす",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1842,
+      "publish_at": "2026-09-04T07:00:00",
+      "target_offer": "KIDUKI Basic（復職・就業制限の個別案件は単発）",
+      "primary_landing": "/service/komon/",
+      "secondary_landing": "/service/return-to-work-support/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/drowsy-driving-workplace-safety.html",
+      "source_sha256": "44268cc4717bdb7906929d594ffeafd60f7f0c6f19b337ef1649fedadfe07e0d",
+      "cta_html_sha256": "4e671e1ce727d853c1ee314d8145345440c33c4fc33c1cd506f75289e51c90b1",
+      "lead": "運転業務の眠気リスクを、勤務記録と就業措置まで含めて見直したい企業へ。",
+      "cta_text": "運転業務の眠気リスクを、勤務記録と就業措置まで含めて見直したい企業へ。既存体制へ継続的な専門支援を追加する場合は、睡眠に特化した産業医支援をご確認ください。復職や就業制限の変更・解除など、対象を固定した1案件は、復職・両立支援で対応範囲をご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        },
+        {
+          "role": "secondary",
+          "label": "復職・両立支援",
+          "href": "/service/return-to-work-support/",
+          "target_offer": "return-to-work"
+        }
+      ]
+    },
+    {
+      "slug": "sas-screening-at-work",
+      "title": "職場のSAS（睡眠時無呼吸）対策｜スクリーニングから就業措置まで",
+      "risk_tier": "S",
+      "domain": "medical",
+      "search_intent": "企業のSAS対策を対象業務、受診勧奨、就業配慮まで設計する",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1844,
+      "publish_at": "2026-09-08T07:00:00",
+      "target_offer": "KIDUKI Basic（復職・就業制限の個別案件は単発）",
+      "primary_landing": "/service/komon/",
+      "secondary_landing": "/service/return-to-work-support/",
+      "change_scope": "reviewed_full_body",
+      "full_body_update_reason": "受診勧奨の公開規律に合わせ、受診先は本人が選び、KIDUKIが特定医療機関を指定・紹介しないことを本文へ明記する",
+      "expected_remote_source_sha256": "0fbb3f00d4e55cb99d65b179dc15100eaf341e4c9fcbcfe2adb0c096d1703f32",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/sas-screening-at-work.html",
+      "source_sha256": "08539b33133c01276f9617bf54413fe06a342c9e79de35e6693496910e670662",
+      "cta_html_sha256": "c0f50067cf581b91b2ec7f3e7fc562e96cefe190881ee752b45b538c3f5f9b14",
+      "lead": "SAS対策を、対象業務・スクリーニング後の対応・結果待ちの就業配慮まで設計したい企業へ。",
+      "cta_text": "SAS対策を、対象業務・スクリーニング後の対応・結果待ちの就業配慮まで設計したい企業へ。既存体制へ継続的な専門支援を追加する場合は、睡眠に特化した産業医支援をご確認ください。復職や就業制限など個別案件の支援は、復職・両立支援で対応範囲をご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        },
+        {
+          "role": "secondary",
+          "label": "復職・両立支援",
+          "href": "/service/return-to-work-support/",
+          "target_offer": "return-to-work"
+        }
+      ]
+    },
+    {
+      "slug": "long-hours-interview-sleep",
+      "title": "長時間労働者の面接指導で睡眠を診る｜80時間超の面談を形式で終わらせない",
+      "risk_tier": "S",
+      "domain": "safety",
+      "search_intent": "長時間労働者の面接指導を面談後の措置と再評価までつなぐ",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1846,
+      "publish_at": "2026-09-11T07:00:00",
+      "target_offer": "KIDUKI Retain または既存体制への専門補完",
+      "primary_landing": "/service/sangyoui/",
+      "secondary_landing": "/service/komon/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/long-hours-interview-sleep.html",
+      "source_sha256": "310a8afc967a196219d7667f8ddd11313287076dcd046594fcf08b5aa7ae4c9a",
+      "cta_html_sha256": "0d260f22d333cb2c8d7067fe17b70f6f9dfad7a75ed925c715193b9b9e21e9ee",
+      "lead": "長時間労働者の面接指導を、意見提出後の措置と再評価まで継続して回したい企業へ。",
+      "cta_text": "長時間労働者の面接指導を、意見提出後の措置と再評価まで継続して回したい企業へ。選任・定例業務を含む体制は、嘱託産業医サービスをご確認ください。既存の産業医体制へ睡眠領域の支援を追加する場合は、睡眠に特化した産業医支援をご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "嘱託産業医サービス",
+          "href": "/service/sangyoui/",
+          "target_offer": "kiduki-retain"
+        },
+        {
+          "role": "secondary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        }
+      ]
+    },
+    {
+      "slug": "kenko-keiei-sleep-measures",
+      "title": "健康経営の睡眠施策｜調査票に書ける取り組みをどう設計するか",
+      "risk_tier": "S",
+      "domain": "medical",
+      "search_intent": "健康経営の睡眠施策を研修、相談導線、勤務改善、評価まで設計する",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1848,
+      "publish_at": "2026-09-15T07:00:00",
+      "target_offer": "KIDUKI Basic または KIDUKI Retain",
+      "primary_landing": "/service/komon/",
+      "secondary_landing": "/service/sangyoui/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/kenko-keiei-sleep-measures.html",
+      "source_sha256": "ee09bec5156296a22fffaa2d03cc7e47597df829da283a92f1dc8b9f91e39106",
+      "cta_html_sha256": "1ae84aa6c4dc8b8aadff0492e8d81f07f65f3971d10ba0b7e187bb37c20aa020",
+      "lead": "睡眠施策を、実施記録と次年度の改善まで含めて設計したい企業へ。",
+      "cta_text": "睡眠施策を、実施記録と次年度の改善まで含めて設計したい企業へ。既存の産業医体制に睡眠施策の継続支援を追加する場合は、睡眠に特化した産業医支援をご確認ください。選任・定例業務として施策を継続する場合は、嘱託産業医サービスをご確認ください。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        },
+        {
+          "role": "secondary",
+          "label": "嘱託産業医サービス",
+          "href": "/service/sangyoui/",
+          "target_offer": "kiduki-retain"
+        }
+      ]
+    },
+    {
+      "slug": "return-to-work-sleep-assessment",
+      "title": "復職時の睡眠評価｜「復職可能」の診断書だけでは決められないこと",
+      "risk_tier": "S",
+      "domain": "medical",
+      "search_intent": "復職可能の診断書だけでは不足する睡眠・生活リズムの確認項目を知る",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1850,
+      "publish_at": "2026-09-18T07:00:00",
+      "target_offer": "復職・両立支援単発",
+      "primary_landing": "/service/return-to-work-support/",
+      "secondary_landing": "/service/komon/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/return-to-work-sleep-assessment.html",
+      "source_sha256": "4986d72a9575b5297ded138370e21465e90d4f0dfcdd3e927680912e76bcefbf",
+      "cta_html_sha256": "fb39f6451c0309431ac6ffe6ec5f71f0c1e8c05c9fbda580df169724ef8f4b09",
+      "lead": "「復職可能」の診断書は届いたものの、会社として判断材料が足りない企業へ。",
+      "cta_text": "「復職可能」の診断書は届いたものの、会社として判断材料が足りない企業へ。目前の1案件について面談・意見書・会社決定・再評価を進める場合は、復職・両立支援の単発をご確認ください。反復する案件を既存体制へ継続的に補完する場合は、睡眠に特化した産業医支援をご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "復職・両立支援の単発",
+          "href": "/service/return-to-work-support/",
+          "target_offer": "return-to-work"
+        },
+        {
+          "role": "secondary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        }
+      ]
+    },
+    {
+      "slug": "committee-minutes-three-year-retention",
+      "title": "衛生委員会の議事録は3年保存｜誰が、いつまでに、どこに残すか",
+      "risk_tier": "S",
+      "domain": "legal",
+      "search_intent": "衛生委員会議事録の作成、周知、保存を継続運用する",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1852,
+      "publish_at": "2026-09-22T07:00:00",
+      "target_offer": "KIDUKI Retain またはCASETRA",
+      "primary_landing": "/service/sangyoui/",
+      "secondary_landing": "/service/cloud/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/committee-minutes-three-year-retention.html",
+      "source_sha256": "04f740385260be24f06a86222c8dac50a85841ee718fb4bc93fc3c898653521f",
+      "cta_html_sha256": "ebc64140b418f9650f82fb4dd3e6eaf72a5b5fe5bdb35733df7d2eb02e0dc380",
+      "lead": "衛生委員会の開催・議事録・実施確認を継続して回したい企業へ。",
+      "cta_text": "衛生委員会の開催・議事録・実施確認を継続して回したい企業へ。選任産業医と定例運用を含む体制は、嘱託産業医サービスをご確認ください。自社の担当者と産業医で記録・期限・証跡を管理する場合は、産業衛生DX・CASETRAをご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "嘱託産業医サービス",
+          "href": "/service/sangyoui/",
+          "target_offer": "kiduki-retain"
+        },
+        {
+          "role": "secondary",
+          "label": "産業衛生DX・CASETRA",
+          "href": "/service/cloud/",
+          "target_offer": "casetra"
+        }
+      ]
+    },
+    {
+      "slug": "industrial-physician-scheduling",
+      "title": "産業医面談の日程調整が終わらない理由と、決めておくべき3つのこと",
+      "risk_tier": "S",
+      "domain": "employment",
+      "search_intent": "産業医面談の日程調整、必要資料、確定責任者を仕組み化する",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1854,
+      "publish_at": "2026-09-25T07:00:00",
+      "target_offer": "CASETRA またはKIDUKI Retain",
+      "primary_landing": "/service/cloud/",
+      "secondary_landing": "/service/sangyoui/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/industrial-physician-scheduling.html",
+      "source_sha256": "f0c203a57966b9b955774bb9a00652c51a04f0fbfb29c2ae99880105a0fbf5f7",
+      "cta_html_sha256": "65ab91eda748d1b74291794265bfdb728e39de76c464eb4e1a2c994e5c09c8bc",
+      "lead": "面談日程・必要資料・確定責任者を、案件ごとにメールで追う運用から変えたい企業へ。",
+      "cta_text": "面談日程・必要資料・確定責任者を、案件ごとにメールで追う運用から変えたい企業へ。自社の人事と産業医で案件を管理する場合は、産業衛生DX・CASETRAをご確認ください。選任・定例業務を含めて委託する場合は、嘱託産業医サービスをご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "産業衛生DX・CASETRA",
+          "href": "/service/cloud/",
+          "target_offer": "casetra"
+        },
+        {
+          "role": "secondary",
+          "label": "嘱託産業医サービス",
+          "href": "/service/sangyoui/",
+          "target_offer": "kiduki-retain"
+        }
+      ]
+    },
+    {
+      "slug": "after-the-physician-opinion",
+      "title": "産業医の意見書が来たあと、会社は何を決めて何を記録するのか",
+      "risk_tier": "S",
+      "domain": "employment",
+      "search_intent": "産業医意見書の受領後に会社が決定、実施、記録する内容を知る",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1856,
+      "publish_at": "2026-09-29T07:00:00",
+      "target_offer": "CASETRA または復職・両立支援単発",
+      "primary_landing": "/service/cloud/",
+      "secondary_landing": "/service/return-to-work-support/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/after-the-physician-opinion.html",
+      "source_sha256": "27376d884b5bde8ec5e20780434a1ef0d50464c6e5ee0b3a48dfbefcef8b65fe",
+      "cta_html_sha256": "78195f6da105c4888c8bff4077b56754ec7a00ff34bf23fe8ec6929cea06964a",
+      "lead": "産業医意見の受領後に、会社決定・実施・再評価が止まる企業へ。",
+      "cta_text": "産業医意見の受領後に、会社決定・実施・再評価が止まる企業へ。自社の人事と産業医で期限と証跡を継続管理する場合は、産業衛生DX・CASETRAをご確認ください。目前の復職案件を1件単位で完了させる場合は、復職・両立支援をご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "産業衛生DX・CASETRA",
+          "href": "/service/cloud/",
+          "target_offer": "casetra"
+        },
+        {
+          "role": "secondary",
+          "label": "復職・両立支援",
+          "href": "/service/return-to-work-support/",
+          "target_offer": "return-to-work"
+        }
+      ]
+    },
+    {
+      "slug": "work-restriction-release-management",
+      "title": "就業制限を「解除し忘れる」構造と、期限管理の実務",
+      "risk_tier": "S",
+      "domain": "employment",
+      "search_intent": "就業制限の再評価、変更、解除を期限付きで管理する",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1858,
+      "publish_at": "2026-10-02T07:00:00",
+      "target_offer": "復職・両立支援単発またはCASETRA",
+      "primary_landing": "/service/return-to-work-support/",
+      "secondary_landing": "/service/cloud/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/work-restriction-release-management.html",
+      "source_sha256": "184df82b4d900142035685be2595de6d964524e10a4e2b53c0fd2b61a088c8c3",
+      "cta_html_sha256": "5773000752931e38675d1c5cd0d504ada259ca780c029acf6113ff3814be289e",
+      "lead": "就業制限の再評価日が迫っている、または古い制限が残っている企業へ。",
+      "cta_text": "就業制限の再評価日が迫っている、または古い制限が残っている企業へ。目前の1案件について面談・意見・会社決定・解除条件を整理する場合は、復職・両立支援をご確認ください。複数案件の期限と証跡を自社で継続管理する場合は、産業衛生DX・CASETRAをご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "復職・両立支援",
+          "href": "/service/return-to-work-support/",
+          "target_offer": "return-to-work"
+        },
+        {
+          "role": "secondary",
+          "label": "産業衛生DX・CASETRA",
+          "href": "/service/cloud/",
+          "target_offer": "casetra"
+        }
+      ]
+    },
+    {
+      "slug": "sleep-findings-to-work-accommodation",
+      "title": "睡眠の問題を見つけたあと｜就業上の配慮に落とすまでの手順",
+      "risk_tier": "S",
+      "domain": "medical",
+      "search_intent": "睡眠所見を業務リスク、産業医意見、会社決定、再評価へつなぐ",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1860,
+      "publish_at": "2026-10-06T07:00:00",
+      "target_offer": "KIDUKI Basic またはKIDUKI Retain",
+      "primary_landing": "/service/komon/",
+      "secondary_landing": "/service/sangyoui/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/sleep-findings-to-work-accommodation.html",
+      "source_sha256": "3618c4808ee41275a39dcdd44c29f52f8d2c177eb322625d271d77150245cc4b",
+      "cta_html_sha256": "c3da84a5633f58c0b5b192b52b737d6709d5d9103bfdfc7deb4a076f9c2b91b5",
+      "lead": "睡眠の所見を、業務リスク・産業医意見・会社決定・再評価へつなげたい企業へ。",
+      "cta_text": "睡眠の所見を、業務リスク・産業医意見・会社決定・再評価へつなげたい企業へ。既存の産業医体制へ睡眠領域の支援を追加する場合は、睡眠に特化した産業医支援をご確認ください。選任・定例業務を含む体制は、嘱託産業医サービスをご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        },
+        {
+          "role": "secondary",
+          "label": "嘱託産業医サービス",
+          "href": "/service/sangyoui/",
+          "target_offer": "kiduki-retain"
+        }
+      ]
+    },
+    {
+      "slug": "when-sleep-becomes-a-return-to-work-decision",
+      "title": "睡眠の問題が復職判断に変わるとき｜眠りが戻らないまま復職日を決めない",
+      "risk_tier": "S",
+      "domain": "medical",
+      "search_intent": "睡眠・生活リズムの問題を含む復職案件の判断材料と再評価を知る",
+      "article_publication_status": "scheduled",
+      "cta_deployment_status": "not_applied",
+      "wordpress_post_id": 1862,
+      "publish_at": "2026-10-09T07:00:00",
+      "target_offer": "復職・両立支援単発",
+      "primary_landing": "/service/return-to-work-support/",
+      "secondary_landing": "/service/komon/",
+      "change_scope": "cta_only",
+      "cta_version": "2026-09-01-v6",
+      "cta_status": "owner-review",
+      "source_path": "content/articles/when-sleep-becomes-a-return-to-work-decision.html",
+      "source_sha256": "293754a2c8e2b66c1d5d1412d3fc41bf45dbd6468b1e0120d981a526dd0dd424",
+      "cta_html_sha256": "3861f29003ae4a09f55555916949032d198afc0a030ecb6ebde0be939bfa1507",
+      "lead": "睡眠の相談から休職・復職判断へ局面が変わり、会社側の材料が足りない企業へ。",
+      "cta_text": "睡眠の相談から休職・復職判断へ局面が変わり、会社側の材料が足りない企業へ。目前の1案件について面談・意見書・会社決定・再評価を進める場合は、復職・両立支援の単発をご確認ください。反復する案件を既存体制へ継続的に補完する場合は、睡眠に特化した産業医支援をご案内します。",
+      "links": [
+        {
+          "role": "primary",
+          "label": "復職・両立支援の単発",
+          "href": "/service/return-to-work-support/",
+          "target_offer": "return-to-work"
+        },
+        {
+          "role": "secondary",
+          "label": "睡眠に特化した産業医支援",
+          "href": "/service/komon/",
+          "target_offer": "kiduki-basic"
+        }
+      ]
+    }
+  ]
+}

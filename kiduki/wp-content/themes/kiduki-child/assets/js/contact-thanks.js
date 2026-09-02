@@ -1,26 +1,9 @@
 (function () {
-  var eventKey = 'kiduki_generate_lead_sent';
-
+  // generate_lead is emitted only by the verified wpcf7mailsent handler.
+  // The thank-you page must not create a second conversion event.
   try {
-    if (window.sessionStorage.getItem(eventKey)) {
-      return;
-    }
+    window.sessionStorage.removeItem('kiduki_content_origin');
   } catch (error) {
-    // Analytics must never block the thank-you page.
-  }
-
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function () {
-    window.dataLayer.push(arguments);
-  };
-  window.gtag('event', 'generate_lead', {
-    event_category: 'engagement',
-    event_label: 'contact_form',
-  });
-
-  try {
-    window.sessionStorage.setItem(eventKey, '1');
-  } catch (error) {
-    // The event has already been dispatched; storage is optional.
+    // Storage cleanup must never block the thank-you page.
   }
 }());

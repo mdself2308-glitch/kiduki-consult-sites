@@ -1,0 +1,130 @@
+{
+  "exact_version": "2026-09-02-v3",
+  "state": "owner-review",
+  "supersedes": "2026-09-01-v2 (title/meta/excerpt/CTA/境界文はv2と同一。本文を全文差し替える)",
+  "target": {
+    "channel": "wordpress-page",
+    "wordpress_post_id": 164,
+    "slug": "return-to-work-support",
+    "publication_status": "publish",
+    "current_modified": "2026-08-31T17:19:23",
+    "expected_remote_source_sha256": "2030a084b3a72470f00f27a6d88f6f974bc1d7d96c33b5a5b44376d54e8e02ed",
+    "published_url": "https://kdkconslt-sngyouijm.com/service/return-to-work-support/"
+  },
+  "search_intent": {
+    "audience": "月額契約を増やさず、目前の復職案件、復職後の再評価、就業制限の変更・解除を1件単位で依頼したい企業の人事・労務担当者",
+    "primary_query_hypothesis": "スポット産業医",
+    "secondary_query_hypotheses": [
+      "産業医 スポット",
+      "産業医 復職面談 スポット",
+      "復職面談 単発"
+    ],
+    "main_question": "月額契約なしで、復職面談・意見書・再評価を1件だけ産業医に頼めるか。既存の産業医がいても頼めるか",
+    "primary_landing": "/contact/",
+    "target_offer": "復職・両立支援単発",
+    "measured_baseline": "Search Console 2026-08-05〜08-31: スポット産業医 53表示・1クリック・平均26.2位 / 産業医 スポット 94表示・0クリック・平均26.9位（表示ページは旧URL /service/spot/）"
+  },
+  "copy": {
+    "title": "スポット産業医｜法人1件からの復職面談・再評価",
+    "h1": "スポット産業医｜法人1件からの復職面談・再評価",
+    "meta_description": "月額契約のない企業向け。復職判定面談、復職後の再評価、就業制限の変更・解除に必要な評価・意見を、目的と対象を定めて1件から支援します。診断・治療や会社の最終決定は行いません。",
+    "excerpt": "月額契約のない企業向けに、復職判定面談、復職後の再評価、就業制限の変更・解除に必要な評価・意見を、目的と対象を定めて1件から支援します。",
+    "cta_label": "初回のご相談（15分）",
+    "body_path": "content/exact/spot-industrial-physician-page-2026-09-02-v3-body.html",
+    "body_sha256": "41f35165da42a9bba34aaa7283d4498906076cb8ba2f4e59d6a760d8edd7ab3e",
+    "primary_cta": {
+      "label": "初回のご相談（15分）",
+      "href": "https://kdkconslt-sngyouijm.com/contact/",
+      "target_offer": "return-to-work"
+    },
+    "secondary_cta": null
+  },
+  "changes_from_current_body": [
+    "導入文に「復職後の再評価、就業制限の変更・解除に必要な評価・意見」を追加",
+    "H2「次のような状況に対応します」（5場面）と既存産業医との役割分担の1段落を追加",
+    "H2「面談後に会社へお渡しするもの」（意見書・人事向け説明・記録）と会社決定の境界文を追加",
+    "流れの後に、オンライン／訪問の実施形態の1文を追加",
+    "H2「単発相談と継続支援の違い」の表（単発／顧問支援／嘱託／CASETRA）を追加",
+    "H2「よくあるご質問」5問とFAQPage構造化データを追加",
+    "H2「関連する記事」に公開済み4記事への内部リンクを追加（予約中記事は公開後に追加）",
+    "CTAラベルを「初回のご相談（15分）」へ変更（v2と同じ）",
+    "受診先本人選択・特定医療機関非指定の境界文を追加（v2と同じ）"
+  ],
+  "canonical_source_bindings": [
+    {
+      "path": "kiduki/docs/pricing-growth-canonical.md",
+      "sha256": "2dfbe7df63194c9b77e69f00abc266d3f4a0f1257330774bc87a70da759a4974",
+      "supports": "復職・両立支援単発の対象（面談・判断・意見書・会社処理を1回単位）、オンライン／訪問の実施形態、Basic/Retain/CASETRAとの分岐"
+    },
+    {
+      "path": "kiduki/docs/bpo-scope-boundary.md",
+      "sha256": "722f0a6d31402f142403b46fb654aa68132aba2c008fe24cda9b2a7c0b7d78ef",
+      "supports": "会社に残る決定・実行、医療との境界（評価と意見まで）"
+    },
+    {
+      "path": "kiduki/docs/copy/site-copy.md",
+      "sha256": "0aecd4a59738d5e78377b96124c8be12219f7bc429511c59e3fbaabaa72f4cc8",
+      "supports": "title/meta/excerpt/CTAの確定候補文言、医療広告境界、禁止語"
+    },
+    {
+      "path": "source/wordpress/page-164-return-to-work-support.html",
+      "sha256": "2030a084b3a72470f00f27a6d88f6f974bc1d7d96c33b5a5b44376d54e8e02ed",
+      "supports": "現行公開本文（差し替え前のベースライン）"
+    }
+  ],
+  "external_source_bindings": [
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html",
+      "verified_date": "2026-09-02",
+      "supports": "職場復帰支援の手引き（面談、意見、会社決定、復職後フォローの流れ）"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/347AC0000000057",
+      "verified_date": "2026-09-02",
+      "supports": "労働安全衛生法13条（産業医の選任義務は政令で定める規模の事業場）、66条の5（事業者による就業上の措置の決定）"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/347CO0000000318",
+      "verified_date": "2026-09-02",
+      "supports": "労働安全衛生法施行令5条（常時50人以上の労働者を使用する事業場）"
+    }
+  ],
+  "review_assertions": {
+    "existing_physician_not_disparaged": true,
+    "appointment_and_statutory_duties_not_replaced": true,
+    "company_final_decision_present": true,
+    "reevaluation_present": true,
+    "diagnosis_and_treatment_boundary_present": true,
+    "patient_choice_and_no_specific_referral_present": true,
+    "pack_absent": true,
+    "no_prices_or_free_wording": true,
+    "no_speed_or_outcome_guarantees": true,
+    "faq_jsonld_matches_visible_faq": true,
+    "only_published_articles_linked": true,
+    "no_h1_style_or_document_shell_in_body": true
+  },
+  "required_body_strings": [
+    "受診先はご本人が選びます。KIDUKIが特定の医療機関を指定・紹介することはありません。",
+    ">初回のご相談（15分）</a>",
+    "復職や配置の最終決定は会社が行います",
+    "単発相談に企業側のCasetra契約は必要ありません"
+  ],
+  "forbidden_body_strings": [
+    ">スポット産業医に相談する</a>",
+    "無料",
+    "併設",
+    "クリニック",
+    "一気通貫",
+    "睡眠専門医",
+    "Pack",
+    "復職支援パック",
+    "円"
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}

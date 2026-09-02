@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { parseArgs } from './wordpress-rest-utils.mjs';
 
 const args = parseArgs(process.argv.slice(2));
@@ -24,6 +25,10 @@ function textContent(html) {
     .trim();
 }
 
+function sha256(value) {
+  return createHash('sha256').update(value).digest('hex');
+}
+
 function pngDimensions(filePath) {
   const bytes = fs.readFileSync(filePath);
   if (bytes.length < 24 || bytes.toString('ascii', 1, 4) !== 'PNG') {
@@ -44,7 +49,7 @@ const requiredCategories = {
 const slugs = articles.map(({ slug }) => slug);
 const titles = articles.map(({ title }) => title);
 
-check(plan.last_reviewed === '2026-08-31', 'plan review date is current');
+check(plan.last_reviewed === '2026-09-01', 'plan review date is current');
 check(articles.length === 12, 'exactly twelve articles are planned');
 check(new Set(slugs).size === slugs.length, 'article slugs are unique');
 check(new Set(titles).size === titles.length, 'article titles are unique');
@@ -68,7 +73,38 @@ for (const item of articles) {
   check(Boolean(item.slug), `${label}: slug is present`);
   check(Boolean(item.title), `${label}: title is present`);
   check(Number.isFinite(publishDate), `${label}: publication date parses`);
-  check(publishDate > Date.now(), `${label}: publication date is in the future`);
+  check(
+    ['scheduled', 'published'].includes(item.production_status),
+    `${label}: production status is scheduled or published`,
+  );
+  if (item.production_status === 'scheduled') {
+    check(publishDate > Date.now(), `${label}: scheduled publication date is in the future`);
+  }
+  if (item.production_status === 'published') {
+    check(publishDate <= Date.now(), `${label}: published date is not in the future`);
+    check(
+      typeof item.published_url === 'string' && item.published_url.startsWith('https://'),
+      `${label}: published URL is recorded`,
+    );
+  }
+  check(Number.isInteger(item.wordpress_post_id), `${label}: WordPress post id is recorded`);
+  check(item.risk_tier === 'S', `${label}: public medical/safety article is Tier S`);
+  check(Boolean(item.search_intent), `${label}: search intent is recorded`);
+  check(Boolean(item.target_offer), `${label}: target offer is recorded`);
+  check(/^\/service\//.test(item.primary_landing || ''), `${label}: primary landing is recorded`);
+  check(/^\/service\//.test(item.secondary_landing || ''), `${label}: secondary landing is recorded`);
+  check(/^2026-09-01-v\d+$/.test(item.cta_version || ''), `${label}: exact CTA version is recorded`);
+  check(item.cta_status === 'owner-review', `${label}: exact CTA waits for owner review`);
+  if (item.full_body_update_reason) {
+    check(
+      /^[a-f0-9]{64}$/.test(item.expected_remote_source_sha256 || ''),
+      `${label}: reviewed full-body repair records the expected WordPress source hash`,
+    );
+  }
+  check(
+    item.exact_source_sha256 === sha256(html),
+    `${label}: reviewed source hash matches the exact article version`,
+  );
   check(publishDate > previousDate, `${label}: publication dates are strictly increasing`);
   previousDate = publishDate;
   check(fs.existsSync(contentPath), `${label}: article source exists`);
@@ -94,8 +130,22 @@ for (const item of articles) {
     `${label}: named author and representative link are present`,
   );
   check(/最終確認：2026年8月31日/.test(html), `${label}: review date is visible`);
-  check(/href="\/service\//.test(html), `${label}: service CTA is present`);
-  check(/href="\/contact\/"/.test(html), `${label}: contact CTA is present`);
+  const ctaContainers = html.match(/<aside class="kdk-article-cta"[\s\S]*?<\/aside>/gi) || [];
+  const cta = ctaContainers[0] || '';
+  check(ctaContainers.length === 1, `${label}: exactly one article CTA is present`);
+  check(
+    cta.includes(`data-kdk-article-slug="${item.slug}"`),
+    `${label}: CTA records its article slug`,
+  );
+  check(
+    new RegExp(`href="${item.primary_landing.replaceAll('/', '\\/')}"[^>]*data-kdk-article-cta="primary"`).test(cta),
+    `${label}: primary CTA matches the planned landing`,
+  );
+  check(
+    new RegExp(`href="${item.secondary_landing.replaceAll('/', '\\/')}"[^>]*data-kdk-article-cta="secondary"`).test(cta),
+    `${label}: secondary CTA matches the planned landing`,
+  );
+  check(!/href="\/contact\/"/.test(cta), `${label}: article CTA does not skip the service landing`);
   check(
     /href="https:\/\/(?:www\.)?(?:mhlw\.go\.jp|laws\.e-gov\.go\.jp|meti\.go\.jp|mlit\.go\.jp|pmc\.ncbi\.nlm\.nih\.gov)/.test(html),
     `${label}: primary or official linked source is present`,

@@ -1,0 +1,18 @@
+Ship the search-recovery foundation approved on 2026-09-02
+
+Static home (consult/): title and meta now name Tokyo and the three
+service lines without 新橋, the H1 becomes the office description
+beneath the kept tagline, a 実務記事 block links the four published
+articles, and the Organization/WebSite JSON-LD carries the verified
+address. Child theme: title separator, excerpt-based meta descriptions,
+Organization/WebSite/Person structured data, noindex for 19 personal
+columns, and 301s that fold four overlapping 健康経営 posts into one.
+SPOT service page v3 body, article hub auto-lists, and related-article
+blocks on three service pages were applied to WordPress with backups.
+Also records the 2026-09-01 measurement, exact-review, and release
+preparation work that had been left uncommitted.
+
+Pack/SPOT GA4 privacy candidates stay out of this commit pending their
+own production approval.
+
+Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>

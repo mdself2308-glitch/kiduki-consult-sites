@@ -4,6 +4,7 @@ import {
   getWordPressEnv,
   wpRequest,
 } from '../../tools/wordpress-rest-utils.mjs';
+import { summarizeQueryPage } from './site-kit-report-utils.mjs';
 
 const env = getWordPressEnv();
 
@@ -22,12 +23,16 @@ const latestStart = shiftUtcDate(latestEnd, -27);
 const comparisonEnd = shiftUtcDate(latestStart, -1);
 const comparisonStart = shiftUtcDate(comparisonEnd, -27);
 
-function searchAnalyticsEndpoint(startDate, endDate) {
+function searchAnalyticsEndpoint(startDate, endDate, dimensions = ['date']) {
+  const params = new URLSearchParams({
+    startDate: formatDate(startDate),
+    endDate: formatDate(endDate),
+    dimensions: dimensions.join(','),
+    limit: '1000',
+  });
   return (
     '/wp-json/google-site-kit/v1/modules/search-console/data/searchanalytics' +
-    `?startDate=${formatDate(startDate)}` +
-    `&endDate=${formatDate(endDate)}` +
-    '&dimensions=date&limit=1000'
+    `?${params.toString()}`
   );
 }
 
@@ -41,22 +46,37 @@ async function read(endpoint) {
 }
 
 const [
+  siteConnection,
+  userAuthentication,
   modules,
   analyticsSettings,
   searchConsoleSettings,
   currentSearchConsolePerformance,
   comparisonSearchConsolePerformance,
+  currentSearchConsoleQueryPage,
+  comparisonSearchConsoleQueryPage,
   conversionTracking,
   keyEvents,
+  emailReportingSettings,
 ] =
   await Promise.all([
+    read('/wp-json/google-site-kit/v1/core/site/data/connection'),
+    read('/wp-json/google-site-kit/v1/core/user/data/authentication'),
     read('/wp-json/google-site-kit/v1/core/modules/data/list'),
     read('/wp-json/google-site-kit/v1/modules/analytics-4/data/settings'),
     read('/wp-json/google-site-kit/v1/modules/search-console/data/settings'),
     read(searchAnalyticsEndpoint(latestStart, latestEnd)),
     read(searchAnalyticsEndpoint(comparisonStart, comparisonEnd)),
+    read(searchAnalyticsEndpoint(latestStart, latestEnd, ['query', 'page'])),
+    read(
+      searchAnalyticsEndpoint(comparisonStart, comparisonEnd, [
+        'query',
+        'page',
+      ]),
+    ),
     read('/wp-json/google-site-kit/v1/core/site/data/conversion-tracking'),
     read('/wp-json/google-site-kit/v1/modules/analytics-4/data/key-events'),
+    read('/wp-json/google-site-kit/v1/core/user/data/email-reporting-settings'),
   ]);
 
 const analyticsModule = Array.isArray(modules.data)
@@ -118,12 +138,48 @@ const currentPerformance = summarizePerformance(
 const comparisonPerformance = summarizePerformance(
   comparisonSearchConsolePerformance,
 );
+const currentQueryPage = summarizeQueryPage(currentSearchConsoleQueryPage);
+const comparisonQueryPage = summarizeQueryPage(
+  comparisonSearchConsoleQueryPage,
+);
+const auditOk =
+  siteConnection.ok &&
+  userAuthentication.ok &&
+  modules.ok &&
+  analyticsSettings.ok &&
+  searchConsoleSettings.ok &&
+  currentPerformance.available &&
+  comparisonPerformance.available &&
+  currentQueryPage.available &&
+  comparisonQueryPage.available &&
+  keyEvents.ok &&
+  emailReportingSettings.ok;
 
 console.log(
   JSON.stringify(
     {
-      ok: modules.ok && analyticsSettings.ok,
+      ok: auditOk,
       writes: false,
+      measurementDataAvailable: {
+        searchConsoleTotals:
+          currentPerformance.available && comparisonPerformance.available,
+        searchConsoleQueryPage:
+          currentQueryPage.available && comparisonQueryPage.available,
+        analyticsKeyEvents: keyEvents.ok,
+      },
+      siteKitConnection: siteConnection.ok
+        ? siteConnection.data
+        : { available: false, error: siteConnection.error },
+      currentWordPressUserAuthentication: userAuthentication.ok
+        ? {
+            authenticated: Boolean(userAuthentication.data?.authenticated),
+            needsReauthentication: Boolean(
+              userAuthentication.data?.needsReauthentication,
+            ),
+            grantedScopes: userAuthentication.data?.grantedScopes || [],
+            unsatisfiedScopes: userAuthentication.data?.unsatisfiedScopes || [],
+          }
+        : { available: false, error: userAuthentication.error },
       analytics: {
         module: analyticsModule
           ? {
@@ -161,11 +217,13 @@ console.log(
             startDate: formatDate(latestStart),
             endDate: formatDate(latestEnd),
             ...currentPerformance,
+            queryPage: currentQueryPage,
           },
           comparison: {
             startDate: formatDate(comparisonStart),
             endDate: formatDate(comparisonEnd),
             ...comparisonPerformance,
+            queryPage: comparisonQueryPage,
           },
         },
       },
@@ -186,7 +244,18 @@ console.log(
               .filter(Boolean),
           }
         : { available: false, error: keyEvents.error },
+      emailReporting: emailReportingSettings.ok
+        ? {
+            available: true,
+            subscribed: Boolean(emailReportingSettings.data?.subscribed),
+            frequency: emailReportingSettings.data?.frequency || null,
+          }
+        : { available: false, error: emailReportingSettings.error },
       errors: {
+        siteConnection: siteConnection.ok ? null : siteConnection.error,
+        userAuthentication: userAuthentication.ok
+          ? null
+          : userAuthentication.error,
         modules: modules.ok ? null : modules.error,
         analyticsSettings: analyticsSettings.ok
           ? null
@@ -200,10 +269,21 @@ console.log(
         comparisonSearchConsolePerformance: comparisonSearchConsolePerformance.ok
           ? null
           : comparisonSearchConsolePerformance.error,
+        currentSearchConsoleQueryPage: currentSearchConsoleQueryPage.ok
+          ? null
+          : currentSearchConsoleQueryPage.error,
+        comparisonSearchConsoleQueryPage: comparisonSearchConsoleQueryPage.ok
+          ? null
+          : comparisonSearchConsoleQueryPage.error,
         keyEvents: keyEvents.ok ? null : keyEvents.error,
+        emailReportingSettings: emailReportingSettings.ok
+          ? null
+          : emailReportingSettings.error,
       },
     },
     null,
     2,
   ),
 );
+
+if (!auditOk) process.exitCode = 2;

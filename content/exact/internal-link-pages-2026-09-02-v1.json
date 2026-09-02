@@ -1,0 +1,62 @@
+{
+  "exact_version": "2026-09-02-v1",
+  "state": "owner-review",
+  "purpose": "内部リンク（記事⇄サービス）の補強。文言の新規主張は含まず、公開済み記事へのリンク追加と記事ハブの自動一覧化だけ",
+  "boundary": "予約中（未公開）の記事へはリンクしない。公開後に7日レビューで追加する。latest-postsブロックの見た目はapply後にPC/スマホで目視確認し、崩れる場合はカテゴリ一覧リンクへ戻す",
+  "items": [
+    {
+      "type": "page",
+      "id": 1030,
+      "slug": "special",
+      "change": "記事ハブを「はじめに読む3本」＋カテゴリ45/46/47の自動一覧（latest-posts）＋記事後のサービス分岐へ差し替え",
+      "baseline_source": "source/wordpress/page-1030-special.html",
+      "baseline_sha256": "b5b89aaee6feb2deae2ca390b16ab4fea452c947feb9ec9e7b7ce23e38c95cc2",
+      "candidate_source": "content/exact/article-hub-page-1030-2026-09-02-v1-body.html",
+      "candidate_sha256": "1b34d355ada45803255c0bb95ea917a32c315b9f0e12896997f7aeed6ba80d31",
+      "append_only": false,
+      "dry_run": "node tools/push-wordpress-content.mjs --type page --id 1030 --content content/exact/article-hub-page-1030-2026-09-02-v1-body.html --dry-run"
+    },
+    {
+      "type": "page",
+      "id": 160,
+      "slug": "sangyoui",
+      "change": "末尾に「関連する記事」3件（公開済みのみ）を追加。既存本文は不変",
+      "baseline_source": "source/wordpress/page-160-sangyoui.html",
+      "baseline_sha256": "036c3f52005b88f174b8342f2c557cbdc342a0073a7668e025716daf3b8678c2",
+      "candidate_source": "content/exact/service-page-160-related-articles-2026-09-02-v1-body.html",
+      "candidate_sha256": "7ebe6172faf2c564312f613391194118098bd9aa6560ad19ad4850faaf73e52e",
+      "append_only": true,
+      "dry_run": "node tools/push-wordpress-content.mjs --type page --id 160 --content content/exact/service-page-160-related-articles-2026-09-02-v1-body.html --dry-run"
+    },
+    {
+      "type": "page",
+      "id": 162,
+      "slug": "komon",
+      "change": "末尾に「関連する記事」3件（公開済みのみ）を追加。既存本文は不変",
+      "baseline_source": "source/wordpress/page-162-komon.html",
+      "baseline_sha256": "5c80cfd61accb063f959b8a775b045d22f3cfc712a0ec9a160cfe30bce12bbae",
+      "candidate_source": "content/exact/service-page-162-related-articles-2026-09-02-v1-body.html",
+      "candidate_sha256": "c092b24e543416528e7127c2d5d85dcde7848f46de3a41dcc809b96f3895ce2f",
+      "append_only": true,
+      "dry_run": "node tools/push-wordpress-content.mjs --type page --id 162 --content content/exact/service-page-162-related-articles-2026-09-02-v1-body.html --dry-run"
+    },
+    {
+      "type": "page",
+      "id": 166,
+      "slug": "cloud",
+      "change": "末尾に「関連する記事」3件（公開済みのみ）を追加。既存本文は不変",
+      "baseline_source": "source/wordpress/page-166-cloud.html",
+      "baseline_sha256": "0e038380338ab46395927e6243e632b0d6ba5f2ae78b5d534d0da4e4d9141112",
+      "candidate_source": "content/exact/service-page-166-related-articles-2026-09-02-v1-body.html",
+      "candidate_sha256": "311611822fb2bbe98bab12cd750b70907bc284d6ad8281f5bb1dc5da33e838a7",
+      "append_only": true,
+      "dry_run": "node tools/push-wordpress-content.mjs --type page --id 166 --content content/exact/service-page-166-related-articles-2026-09-02-v1-body.html --dry-run"
+    }
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}

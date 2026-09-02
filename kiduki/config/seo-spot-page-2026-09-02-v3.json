@@ -1,0 +1,53 @@
+{
+  "release": "2026-09-02-spot-page-v3",
+  "approval": {
+    "projectRootRelative": "../..",
+    "changeMode": "full_body_replacement",
+    "exactVersion": "2026-09-02-v3",
+    "exactPayload": "content/exact/spot-industrial-physician-page-2026-09-02-v3.json",
+    "exactPayloadSha256": "82c8b53101a967b951a658e0960718c09d270d7a275a1af94e1551c47631adf4",
+    "baselineRemoteSha256": "2030a084b3a72470f00f27a6d88f6f974bc1d7d96c33b5a5b44376d54e8e02ed",
+    "candidateSource": "content/exact/spot-industrial-physician-page-2026-09-02-v3-body.html",
+    "candidateSourceSha256": "41f35165da42a9bba34aaa7283d4498906076cb8ba2f4e59d6a760d8edd7ab3e",
+    "masterSource": "kiduki/docs/copy/site-copy.md"
+  },
+  "items": [
+    {
+      "type": "page",
+      "id": 164,
+      "expectedModified": "2026-08-31T17:19:23",
+      "expectedRemoteSourceSha256": "2030a084b3a72470f00f27a6d88f6f974bc1d7d96c33b5a5b44376d54e8e02ed",
+      "slug": "return-to-work-support",
+      "title": "スポット産業医｜法人1件からの復職面談・再評価",
+      "status": "publish",
+      "source": "content/exact/spot-industrial-physician-page-2026-09-02-v3-body.html",
+      "allowedCurrentSlugs": [
+        "return-to-work-support"
+      ],
+      "excerpt": "月額契約のない企業向けに、復職判定面談、復職後の再評価、就業制限の変更・解除に必要な評価・意見を、目的と対象を定めて1件から支援します。",
+      "metaDescription": "月額契約のない企業向け。復職判定面談、復職後の再評価、就業制限の変更・解除に必要な評価・意見を、目的と対象を定めて1件から支援します。診断・治療や会社の最終決定は行いません。",
+      "requiredHtml": [
+        "受診先はご本人が選びます。KIDUKIが特定の医療機関を指定・紹介することはありません。",
+        ">初回のご相談（15分）</a>",
+        "復職や配置の最終決定は会社が行います",
+        "単発相談に企業側のCasetra契約は必要ありません",
+        "次のような状況に対応します",
+        "面談後に会社へお渡しするもの",
+        "単発相談と継続支援の違い",
+        "よくあるご質問",
+        "関連する記事"
+      ],
+      "forbiddenHtml": [
+        ">スポット産業医に相談する</a>",
+        "無料",
+        "併設",
+        "クリニック",
+        "一気通貫",
+        "睡眠専門医",
+        "Pack",
+        "復職支援パック",
+        "円"
+      ]
+    }
+  ]
+}

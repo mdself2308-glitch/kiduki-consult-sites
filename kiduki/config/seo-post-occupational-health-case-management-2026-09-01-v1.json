@@ -1,0 +1,18 @@
+{
+  "release": "2026-09-01-occupational-health-case-management-v1",
+  "type": "post",
+  "slug": "occupational-health-case-management",
+  "title": "産業医面談・意見書・再評価を管理する方法｜メール・表計算から見直す基準",
+  "status": "draft",
+  "source": "content/articles/occupational-health-case-management.html",
+  "excerpt": "産業医面談から意見書、会社決定、実施、再評価までを一つの案件として管理する項目と、メール・表計算から見直す基準を整理します。",
+  "metaDescription": "産業医面談、資料、意見書、会社決定、実施、再評価を一つの案件として管理する方法を解説。メール・表計算を続けられる条件と、案件管理へ切り替える目安、健康情報の取扱いを整理します。",
+  "categories": [46, 47],
+  "exactApproval": {
+    "exactVersion": "2026-09-01-v1",
+    "exactPayload": "content/exact/occupational-health-case-management-2026-09-01-v1.json",
+    "exactPayloadSha256": "ef7b280d49fa75e34013a0f540d6b4ceb00b680c4ca0ac0200abf5f6d57c1b7a",
+    "candidateSourceSha256": "33539eeb60d77bce0d4229082254b883846735bfbe22f7364de6f3415ce22f54",
+    "approvalTicket": "content/tasks/CT-20260901-occupational-health-case-management.md"
+  }
+}

@@ -10,6 +10,12 @@ function sha256(value) {
 const localPath = path.resolve(siteConfig.staticHomePath);
 const local = fs.readFileSync(localPath);
 const localText = local.toString('utf8');
+const staticContactEventStart = localText.indexOf(
+  "gtag('event', 'service_contact_click'",
+);
+const staticContactEventPayload = staticContactEventStart >= 0
+  ? localText.slice(staticContactEventStart, staticContactEventStart + 800)
+  : '';
 const response = await fetch(siteConfig.staticHomeUrl, {
   headers: { 'User-Agent': 'kdk-static-verifier/1.0' },
 });
@@ -46,6 +52,24 @@ const localChecks = {
   currentContactRoute:
     (localText.match(/https:\/\/kdkconslt-sngyouijm\.com\/contact\//g) || [])
       .length >= 5,
+  sharedGa4Property:
+    localText.includes(
+      'https://www.googletagmanager.com/gtag/js?id=G-JQFWB6XG2E',
+    ) && localText.includes("gtag('config', 'G-JQFWB6XG2E'"),
+  measurementLinkerDomains:
+    localText.includes("'consult.kdkconslt-sngyouijm.com'") &&
+    localText.includes("'kdkconslt-sngyouijm.com'") &&
+    localText.includes("'casetra.jp'") &&
+    localText.includes('accept_incoming: true'),
+  contactAttributionBridge:
+    localText.includes('decorate only an actual user navigation') &&
+    localText.includes("contactUrl.searchParams.set('kdk_source_page', 'consult-home')") &&
+    localText.includes("contactUrl.searchParams.set('kdk_target_offer', 'general-inquiry')") &&
+    localText.includes("contactUrl.searchParams.set('kdk_cta_role', ctaRole)"),
+  standardContactEvent:
+    staticContactEventPayload.includes("source_page: 'consult-home'") &&
+    staticContactEventPayload.includes("target_offer: 'general-inquiry'") &&
+    !staticContactEventPayload.includes('lead_tracking_id'),
   noRetiredInternalRoutes:
     !/kdkconslt-sngyouijm\.com\/(?:\?main|spot\/|greeting\/|office-info\/)/.test(
       localText,

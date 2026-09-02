@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "report_type": "casetra_leads_count_only_reconciliation",
+  "state": "template_only",
+  "source_system": "casetra_leads",
+  "period": {
+    "start": "2026-08-05",
+    "end": "2026-09-01",
+    "timezone": "Asia/Tokyo"
+  },
+  "aggregation_rules": {
+    "product_code_field": "requested_product_code",
+    "created_period_field": "created_at",
+    "latest_touch_period_field": "lead_notification_updated_at",
+    "unique_records_only": true,
+    "personal_data_exported": false,
+    "successful_api_responses_equal_unique_records": false
+  },
+  "sources": {
+    "cosmos": {
+      "status": "not_run",
+      "evidence_reference": null
+    },
+    "application_insights": {
+      "status": "not_run",
+      "evidence_reference": null
+    }
+  },
+  "counts": {
+    "unique_records_created": {
+      "KIDUKI_RTW_PACK": null,
+      "KIDUKI_RTW_SPOT_ONLINE": null,
+      "KIDUKI_RTW_SPOT_ONSITE": null,
+      "total": null
+    },
+    "unique_records_latest_touched": {
+      "KIDUKI_RTW_PACK": null,
+      "KIDUKI_RTW_SPOT_ONLINE": null,
+      "KIDUKI_RTW_SPOT_ONSITE": null,
+      "total": null
+    },
+    "successful_api_responses": {
+      "total": null
+    }
+  },
+  "extracted_at": null,
+  "boundary": "Count-only template. Do not add lead identifiers, names, company names, contact details, messages, health information, or record arrays. Unique Lead records and successful API responses are separate measures because a successful resubmission can update an existing record."
+}

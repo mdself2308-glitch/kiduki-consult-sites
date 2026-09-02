@@ -1,0 +1,36 @@
+{
+ "schema_version": 1,
+ "recorded_at": "2026-09-02T09:03:13+09:00",
+ "approver": "宮部 大輔",
+ "owner_decision": "approved",
+ "source": "content/evidence/seo-recovery-approval-2026-09-02.json",
+ "rule_exception": "Search Console query×page の事前確認は、承認者の判断で省略。反映後28日レビューで表示のあった記事は noindex 解除を検討する",
+ "noindex_post_ids": [
+  937,
+  944,
+  952,
+  975,
+  976,
+  1001,
+  1007,
+  1071,
+  1081,
+  1092,
+  1122,
+  1141,
+  1161,
+  1164,
+  1170,
+  1173,
+  1176,
+  1181,
+  1348
+ ],
+ "merged_post_ids": [
+  1352,
+  1361,
+  1368
+ ],
+ "merge_target": "/kenkoutoushi/ (post 1365)",
+ "reversal": "functions.php の kiduki_seo_noindex_ids() / kiduki_seo_merged_post_ids() から ID を外して子テーマを再反映すれば元に戻る"
+}

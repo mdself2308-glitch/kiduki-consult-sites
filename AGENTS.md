@@ -36,6 +36,7 @@ Do not assume that a WordPress homepage edit changes the static homepage.
 
 Read these files before making site changes:
 
+- `CLAUDE.md` (how to write instructions for the owner: step-by-step, one task per message, Run-button commands)
 - `README.md`
 - `docs/codex-quickstart.md`
 - `docs/site-overview.md`

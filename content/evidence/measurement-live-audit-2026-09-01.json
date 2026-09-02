@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-01T19:50:12+09:00",
+  "evidence_type": "authenticated_live_ui_and_read_only_rest_audit",
+  "site_kit": {
+    "period": {
+      "start": "2026-08-05",
+      "end": "2026-09-01"
+    },
+    "impressions": 246,
+    "clicks": 10,
+    "search_visitors": 9,
+    "key_events_widget": 0,
+    "rest_audit": {
+      "command": "npm run audit:analytics-access",
+      "writes": false,
+      "result": "required_measurement_data_unavailable",
+      "reason": "current WordPress Application Password user is not authenticated to Site Kit OAuth; Search Console and GA4 data endpoints return 403"
+    }
+  },
+  "ga4": {
+    "property_id": "411006656",
+    "measurement_id": "G-JQFWB6XG2E",
+    "report_period": {
+      "start": "2026-08-05",
+      "end": "2026-09-01",
+      "comparison_start": "2026-07-08",
+      "comparison_end": "2026-08-04"
+    },
+    "event_report": {
+      "all_events": 1160,
+      "total_users": 167,
+      "generate_lead_events": 5,
+      "generate_lead_users": 2,
+      "article_service_click_present": false,
+      "service_contact_click_present": false
+    },
+    "key_event_configuration": {
+      "generate_lead": "enabled_and_active_stream_detected",
+      "purchase": "default_key_event_without_stream_data"
+    },
+    "traffic_acquisition_key_events": {
+      "total": 1,
+      "direct": 1,
+      "organic_search": 0
+    },
+    "custom_dimensions_created_and_read_back": [
+      {
+        "display_name": "Source Article",
+        "scope": "event",
+        "parameter": "source_article"
+      },
+      {
+        "display_name": "Source Page",
+        "scope": "event",
+        "parameter": "source_page"
+      },
+      {
+        "display_name": "Target Offer",
+        "scope": "event",
+        "parameter": "target_offer"
+      },
+      {
+        "display_name": "Article CTA Role",
+        "scope": "event",
+        "parameter": "article_cta_role"
+      },
+      {
+        "display_name": "Article Slug",
+        "scope": "event",
+        "parameter": "article_slug"
+      },
+      {
+        "display_name": "CTA Role",
+        "scope": "event",
+        "parameter": "cta_role"
+      }
+    ],
+    "explicitly_excluded_dimension": "lead_tracking_id",
+    "evidence_boundary": "GA4 proves event receipt and configuration, not five distinct inquiries, Flamingo receipt, consultations, quotes, or contracts. The five generate_lead events predate this audit and require first-party reconciliation."
+  },
+  "flamingo": {
+    "observed_at": "2026-09-01T19:55:59+09:00",
+    "total_inbound_items": 5,
+    "channels": [
+      "Contact Form 7 / お問い合わせフォーム"
+    ],
+    "received_at": [
+      "2026-07-31T11:41:00+09:00",
+      "2026-07-31T11:39:00+09:00",
+      "2026-07-31T11:29:00+09:00",
+      "2026-07-28T16:47:00+09:00",
+      "2026-07-28T16:01:00+09:00"
+    ],
+    "items_within_ga4_report_period": 0,
+    "evidence_boundary": "Only count and timestamps were retained. Sender names, contact details, subjects, and message bodies were not extracted. The five GA4 generate_lead events from 2026-08-05 through 2026-09-01 do not correspond to a Flamingo inbound message in that period."
+  },
+  "anonymous_public_tag_audit": {
+    "observed_at": "2026-09-01T19:59:50+09:00",
+    "wordpress_contact_page": {
+      "url": "https://kdkconslt-sngyouijm.com/contact/",
+      "google_tag_loader_ids": [
+        "GT-5D9KJF2",
+        "288922294"
+      ],
+      "google_tag_config_ids": [
+        "GT-5D9KJF2",
+        "288922294"
+      ],
+      "ga_disable_present": false,
+      "inline_generate_lead_present": false,
+      "cf7_redirect_script_present": true,
+      "cf7_redirect_script_version": "1.12.0",
+      "cf7_redirect_listens_for": "wpcf7mailsent",
+      "cf7_redirect_sends_event": "generate_lead"
+    },
+    "consult_homepage": {
+      "url": "https://consult.kdkconslt-sngyouijm.com/",
+      "google_tag_loader_ids": [
+        "G-JQFWB6XG2E"
+      ],
+      "google_tag_config_ids": [
+        "G-JQFWB6XG2E"
+      ],
+      "ga_disable_present": false,
+      "inline_event_names": [
+        "cta_click"
+      ],
+      "inline_generate_lead_present": false
+    },
+    "evidence_boundary": "Anonymous source proves which public scripts and config identifiers were emitted at observation time, not whether GA4 accepted or deduplicated an event. The numeric-only 288922294 config is unexpected legacy markup and remains a diagnostic lead, not a proven cause of the unmatched generate_lead events."
+  },
+  "static_consult_lead_forms": {
+    "observed_at": "2026-09-01T20:11:29+09:00",
+    "live_source_matched_local_before_repair": true,
+    "forms": [
+      {
+        "source_page": "return-to-work-pack",
+        "url": "https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/",
+        "form_name": "kiduki_rtw_pack",
+        "intake_type": "KIDUKI_RTW_PACK",
+        "first_party_record_system": "casetra_leads_cosmos",
+        "uses_flamingo": false,
+        "generate_lead_after_successful_api_response": true,
+        "live_ga4_payload_included_first_party_lead_id": true,
+        "live_sha256": "32059887b3590432ef9797add94ae58bdf86d827e99b5cc0787c082639933c58",
+        "local_repaired_sha256": "b7879124b9905615a5b510743bb3f5d095a433c9b939da4f63661b37a1cb15ae",
+        "live_matches_local_repair": false
+      },
+      {
+        "source_page": "return-to-work-spot",
+        "url": "https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/",
+        "form_name": "kiduki_rtw_spot",
+        "intake_type": "KIDUKI_RTW_SPOT",
+        "first_party_record_system": "casetra_leads_cosmos",
+        "uses_flamingo": false,
+        "generate_lead_after_successful_api_response": true,
+        "live_ga4_payload_included_first_party_lead_id": true,
+        "live_sha256": "ee6e14da3bd5b03d66a3df3d27d83722a65da7d5b330f4d08a674e12491814ea",
+        "local_repaired_sha256": "a49626fb67c20814c12d7c8d808482b9150ad6d64d306934ec015c91c6a37de2",
+        "live_matches_local_repair": false
+      }
+    ],
+    "local_privacy_repair": {
+      "status": "verified_not_deployed",
+      "first_party_lead_id_removed_from_ga4": true,
+      "aggregate_parameters_added": [
+        "source_page",
+        "target_offer",
+        "cta_role"
+      ]
+    },
+    "first_party_count_access": {
+      "result": "unavailable",
+      "read_surfaces": {
+        "application_insights": {
+          "result": "authorization_failed",
+          "required_action": "Microsoft.Insights/components/read"
+        },
+        "cosmos": {
+          "result": "authorization_failed",
+          "required_action": "Microsoft.DocumentDB/databaseAccounts/read"
+        }
+      },
+      "lead_records_read": false,
+      "rbac_changed": false,
+      "count_only_contract": "content/templates/casetra-leads-aggregate.example.json",
+      "reason": "The current Azure principal cannot read Application Insights or Cosmos. No RBAC change was attempted, and no lead record or personal data was read."
+    },
+    "evidence_boundary": "The two consult forms are a proven non-Flamingo source capable of sending generate_lead after a successful first-party lead write. This makes Casetra Leads the first reconciliation target, but does not prove that any or all five historical GA4 events came from these forms. No lead records or personal data were read."
+  },
+  "search_console": {
+    "properties_visible": [
+      "https://kdkconslt-sngyouijm.com/",
+      "https://consult.kdkconslt-sngyouijm.com/"
+    ],
+    "domain_property_visible": false,
+    "wordpress_property": {
+      "report_range": {
+        "start": "2026-05-30",
+        "end": "2026-08-29"
+      },
+      "clicks": 27,
+      "impressions": 716,
+      "ctr": 0.038,
+      "average_position": 20.8
+    },
+    "consult_property": {
+      "selected_range": "3_months",
+      "chart_data_range": {
+        "start": "2026-08-13",
+        "end": "2026-08-29"
+      },
+      "clicks": 1,
+      "impressions": 16,
+      "ctr": 0.063,
+      "average_position": 8.4,
+      "query_rows": [
+        {
+          "query": "casetra",
+          "clicks": 0,
+          "impressions": 1
+        }
+      ],
+      "page_rows": [
+        {
+          "page": "https://consult.kdkconslt-sngyouijm.com/",
+          "clicks": 1,
+          "impressions": 16
+        },
+        {
+          "page": "https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/",
+          "clicks": 0,
+          "impressions": 1
+        }
+      ]
+    },
+    "evidence_boundary": "The two URL-prefix properties must be reported separately for the same selected period. Their rows may not be combined as if they were one Search Console property."
+  },
+  "remaining_gates": [
+    "Receive article_service_click and service_contact_click after the relevant production code is live and a real click occurs",
+    "Reconcile generate_lead with both Flamingo and authorized Casetra Leads aggregates before calling it an inquiry",
+    "Determine whether the five unmatched generate_lead events came from the two consult forms, legacy tracking, the unexpected numeric-only Google tag config, duplicate tags, or another source",
+    "Establish an automated authenticated export for both Search Console properties",
+    "Locate the authorized sales and contract ledger"
+  ]
+}

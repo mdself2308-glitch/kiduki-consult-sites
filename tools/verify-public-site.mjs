@@ -22,6 +22,12 @@ assert(
 
 const checks = [];
 const expectSeoRelease = process.argv.includes('--expect-seo-release');
+const seoManifestArgIndex = process.argv.indexOf('--seo-manifest');
+const additionalSeoManifest =
+  seoManifestArgIndex >= 0 ? process.argv[seoManifestArgIndex + 1] : null;
+if (seoManifestArgIndex >= 0 && !additionalSeoManifest) {
+  throw new Error('--seo-manifest requires a manifest path.');
+}
 const seoExpectations = new Map();
 const routes = [
   ['static-home', siteConfig.staticHomeUrl],
@@ -43,6 +49,9 @@ if (expectSeoRelease) {
     new URL('../kiduki/config/seo-two-pillars-2026-08-27.json', import.meta.url),
     new URL('../kiduki/config/seo-indexing-recovery-2026-08-31.json', import.meta.url),
   ];
+  if (additionalSeoManifest) {
+    manifestUrls.push(new URL(`../${additionalSeoManifest}`, import.meta.url));
+  }
   const currentItems = new Map();
   for (const manifestUrl of manifestUrls) {
     const manifest = JSON.parse(fs.readFileSync(manifestUrl, 'utf8'));
@@ -109,6 +118,18 @@ for (const route of routes) {
       ),
       `${name} contains a lead-generation-breaking ad placement.`,
     );
+    for (const requiredHtml of seoExpectation.requiredHtml || []) {
+      assert(
+        text.includes(requiredHtml),
+        `${name} is missing required approved HTML/text: ${requiredHtml}`,
+      );
+    }
+    for (const forbiddenHtml of seoExpectation.forbiddenHtml || []) {
+      assert(
+        !text.includes(forbiddenHtml),
+        `${name} still contains forbidden superseded HTML/text: ${forbiddenHtml}`,
+      );
+    }
   }
   if (name === 'static-home') {
     assert(
@@ -142,9 +163,7 @@ for (const route of routes) {
   }
   if (name === 'office') {
     assert(
-      text.includes(
-        '<title>事務所について  |  KIDUKIコンサルティング産業医事務所',
-      ),
+      /<title>事務所について(?:  \|  |｜)KIDUKIコンサルティング産業医事務所/.test(text),
       'office page title does not identify the office.',
     );
     assert(
@@ -166,7 +185,7 @@ for (const route of routes) {
   }
   if (name === 'office-info') {
     assert(
-      text.includes('<title>事務所概要  |  KIDUKIコンサルティング産業医事務所'),
+      /<title>事務所概要(?:  \|  |｜)KIDUKIコンサルティング産業医事務所/.test(text),
       'office-info title does not match the confirmed office identity.',
     );
     assert(

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Tokyo",
+  "automation_id": "kiduki-seo-milestone-review",
+  "date_source": "content/seo-article-review-calendar.json",
+  "publication_anchor_for_future_articles": "wordpress_published_at_readback",
+  "terminal_statuses": [
+    "measured",
+    "observed_no_data"
+  ],
+  "retryable_statuses": [
+    "partial",
+    "blocked"
+  ],
+  "records": [],
+  "last_run_at": null,
+  "boundary": "A missing record means not yet processed. Zero metrics after successful retrieval are observed_no_data. Missing authentication or a missing source is partial or blocked and requires next_retry_at; it is not measured success."
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-01T21:47:05+09:00",
+  "command": "npm run wp:update-article-ctas",
+  "mode": "dry-run",
+  "writes": false,
+  "wordpress_apply_authority_confirmed": false,
+  "backup_path": null,
+  "exact_version": "2026-09-01-v6",
+  "approval_bundle_sha256": "8a37688634893094c2fc0a6ba7827230dd2eba6797e9dd1183c56482bef1a34a",
+  "summary": {
+    "would_update": 11,
+    "would_update_reviewed_full_body": 1
+  },
+  "results": [
+    {
+      "slug": "night-shift-sleep-management",
+      "post_id": 1840,
+      "status": "publish",
+      "date": "2026-09-01T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "drowsy-driving-workplace-safety",
+      "post_id": 1842,
+      "status": "future",
+      "date": "2026-09-04T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "sas-screening-at-work",
+      "post_id": 1844,
+      "status": "future",
+      "date": "2026-09-08T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "reviewed_full_body",
+      "action": "would_update_reviewed_full_body"
+    },
+    {
+      "slug": "long-hours-interview-sleep",
+      "post_id": 1846,
+      "status": "future",
+      "date": "2026-09-11T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "kenko-keiei-sleep-measures",
+      "post_id": 1848,
+      "status": "future",
+      "date": "2026-09-15T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "return-to-work-sleep-assessment",
+      "post_id": 1850,
+      "status": "future",
+      "date": "2026-09-18T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "committee-minutes-three-year-retention",
+      "post_id": 1852,
+      "status": "future",
+      "date": "2026-09-22T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "industrial-physician-scheduling",
+      "post_id": 1854,
+      "status": "future",
+      "date": "2026-09-25T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "after-the-physician-opinion",
+      "post_id": 1856,
+      "status": "future",
+      "date": "2026-09-29T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "work-restriction-release-management",
+      "post_id": 1858,
+      "status": "future",
+      "date": "2026-10-02T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "sleep-findings-to-work-accommodation",
+      "post_id": 1860,
+      "status": "future",
+      "date": "2026-10-06T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    },
+    {
+      "slug": "when-sleep-becomes-a-return-to-work-decision",
+      "post_id": 1862,
+      "status": "future",
+      "date": "2026-10-09T07:00:00",
+      "cta_status": "owner-review",
+      "change_scope": "cta_only",
+      "action": "would_update"
+    }
+  ],
+  "evidence_boundary": "This proves that all twelve live WordPress baselines matched the local plan at observation time and that the command made no write. It does not prove exact owner or physician approval, WordPress apply authority, publication of the candidate CTAs, search improvement, inquiry, consultation, quote, or contract."
+}

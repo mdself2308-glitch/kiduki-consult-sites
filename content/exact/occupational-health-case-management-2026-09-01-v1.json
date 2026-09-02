@@ -1,0 +1,140 @@
+{
+  "exact_version": "2026-09-01-v1",
+  "state": "owner-review",
+  "target": {
+    "channel": "wordpress-post",
+    "wordpress_post_id": null,
+    "slug": "occupational-health-case-management",
+    "publication_status": "not_created",
+    "scheduled_at": null,
+    "published_at": null
+  },
+  "search_intent": {
+    "audience": "産業医面談や意見書をメール・表計算で管理し、担当分散、期限、再評価、健康情報の権限に課題がある企業の人事・労務・産業保健担当者",
+    "primary_query_hypothesis": "産業医 意見書 管理",
+    "secondary_query_hypotheses": [
+      "産業医 面談 管理 システム",
+      "産業医 再評価 管理"
+    ],
+    "main_question": "メール・表計算を続けられる条件と、案件管理へ切り替える基準は何か",
+    "primary_landing": "/service/cloud/",
+    "target_offer": "CASETRA",
+    "secondary_landing": "/service/sangyoui/",
+    "secondary_offer": "KIDUKI Retain"
+  },
+  "copy": {
+    "title": "産業医面談・意見書・再評価を管理する方法｜メール・表計算から見直す基準",
+    "h1": "産業医面談・意見書・再評価を管理する方法｜メール・表計算から見直す基準",
+    "meta_description": "産業医面談、資料、意見書、会社決定、実施、再評価を一つの案件として管理する方法を解説。メール・表計算を続けられる条件と、案件管理へ切り替える目安、健康情報の取扱いを整理します。",
+    "excerpt": "産業医面談から意見書、会社決定、実施、再評価までを一つの案件として管理する項目と、メール・表計算から見直す基準を整理します。",
+    "body_path": "content/articles/occupational-health-case-management.html",
+    "body_sha256": "33539eeb60d77bce0d4229082254b883846735bfbe22f7364de6f3415ce22f54",
+    "primary_cta": {
+      "label": "産業衛生DX・CASETRA",
+      "href": "/service/cloud/",
+      "target_offer": "casetra"
+    },
+    "secondary_cta": {
+      "label": "嘱託産業医サービス",
+      "href": "/service/sangyoui/",
+      "target_offer": "kiduki-retain"
+    }
+  },
+  "canonical_source_bindings": [
+    {
+      "path": "kiduki/docs/pricing-growth-canonical.md",
+      "sha256": "2dfbe7df63194c9b77e69f00abc266d3f4a0f1257330774bc87a70da759a4974",
+      "supports": "CASETRAとKIDUKI専門業務の契約・請求・利用権境界"
+    },
+    {
+      "path": "kiduki/docs/bpo-scope-boundary.md",
+      "sha256": "722f0a6d31402f142403b46fb654aa68132aba2c008fe24cda9b2a7c0b7d78ef",
+      "supports": "医師意見、会社決定・実施、医療との責任分担"
+    },
+    {
+      "path": "kiduki/docs/copy/site-copy.md",
+      "sha256": "0aecd4a59738d5e78377b96124c8be12219f7bc429511c59e3fbaabaa72f4cc8",
+      "supports": "CASETRA契約関係、医療広告、禁止語"
+    },
+    {
+      "path": "source/wordpress/page-166-cloud.html",
+      "sha256": "0e038380338ab46395927e6243e632b0d6ba5f2ae78b5d534d0da4e4d9141112",
+      "supports": "現行公開の予約・資料・意見・会社決定・再評価とCASETRA/KIDUKI契約境界"
+    }
+  ],
+  "external_source_bindings": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/347AC0000000057",
+      "verified_date": "2026-09-01",
+      "supports": "医師意見、事業者の措置、心身の状態に関する情報の取扱い"
+    },
+    {
+      "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/newpage_00155.html",
+      "verified_date": "2026-09-01",
+      "supports": "健康情報の利用目的、取扱者、権限、範囲、安全管理体制の規程化"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html",
+      "verified_date": "2026-09-01",
+      "supports": "復職前後の複数工程とフォローアップ"
+    }
+  ],
+  "review_assertions": {
+    "spreadsheet_not_demonized": true,
+    "case_completion_chain_present": true,
+    "company_final_decision_present": true,
+    "reevaluation_present": true,
+    "health_information_minimization_present": true,
+    "access_boundary_present": true,
+    "unverified_casetra_features_absent": true,
+    "system_does_not_guarantee_operations": true,
+    "existing_article_intents_separated": true,
+    "casetra_and_retain_contracts_separated": true,
+    "no_h1_style_script_or_document_shell_in_body": true,
+    "prohibited_marketing_claims_absent": true
+  },
+  "required_body_strings": [
+    "メールや表計算でも管理できます",
+    "一つの案件として担当者、期限、決定、再評価まで追えること",
+    "会社が措置を決定する",
+    "会社が行う就業上の措置に必要な情報と、医療・健康情報の詳細を分けて管理します",
+    "表計算が問題なのではなく",
+    "役割分担や社内規程が曖昧なら、導入後も運用は止まる",
+    "KIDUKIへ選任・定例業務も含めて委託する場合は、システムの導入とは別に契約範囲を確認します",
+    "data-kdk-article-slug=\"occupational-health-case-management\"",
+    "/industrial-physician-scheduling/",
+    "/after-the-physician-opinion/",
+    "/work-restriction-release-management/",
+    "https://laws.e-gov.go.jp/law/347AC0000000057",
+    "https://jsite.mhlw.go.jp/okayama-roudoukyoku/newpage_00155.html"
+  ],
+  "forbidden_body_strings": [
+    "Excelは危険",
+    "メールは違法",
+    "健康情報を一元管理",
+    "完全自動",
+    "漏れゼロ",
+    "必ず効率化",
+    "法令遵守を保証",
+    "監査ログ",
+    "睡眠専門医",
+    "無料相談",
+    "絶対",
+    "クリニックと連携",
+    "一気通貫",
+    "当院では",
+    "<!DOCTYPE",
+    "<html",
+    "<head",
+    "<body",
+    "<style",
+    "<script"
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}

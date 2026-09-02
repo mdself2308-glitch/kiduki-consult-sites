@@ -1,0 +1,139 @@
+{
+  "exact_version": "2026-09-01-v1",
+  "state": "owner-review",
+  "target": {
+    "channel": "wordpress-post",
+    "wordpress_post_id": null,
+    "slug": "existing-industrial-physician-specialist-support",
+    "publication_status": "not_created",
+    "scheduled_at": null,
+    "published_at": null
+  },
+  "search_intent": {
+    "audience": "既存の選任産業医または産業保健体制を維持しながら、睡眠・勤務リスク・休復職の専門支援を追加したい企業の人事・労務・産業保健担当者",
+    "primary_query_hypothesis": "既存産業医 睡眠",
+    "secondary_query_hypotheses": [
+      "既存産業医 復職 対応できない",
+      "産業医 外部 相談 企業"
+    ],
+    "main_question": "既存産業医を替えず、特定領域の外部支援だけをどう追加すれば役割が重ならないか",
+    "primary_landing": "/service/komon/",
+    "target_offer": "KIDUKI Basic",
+    "secondary_landing": "/service/return-to-work-support/",
+    "secondary_offer": "復職・両立支援単発"
+  },
+  "copy": {
+    "title": "既存産業医を替えずに睡眠・復職支援を追加する方法｜役割分担の決め方",
+    "h1": "既存産業医を替えずに睡眠・復職支援を追加する方法｜役割分担の決め方",
+    "meta_description": "既存の選任産業医を交代せず、睡眠・夜勤・運転・SAS・休復職の専門支援を追加する方法を、担当範囲、健康情報の共有、会社決定、再評価、単発と継続支援の分け方で整理します。",
+    "excerpt": "既存の選任産業医を交代せず、睡眠・夜勤・運転・SAS・休復職の専門支援を追加するときの役割分担、情報共有、会社決定、再評価を整理します。",
+    "body_path": "content/articles/existing-industrial-physician-specialist-support.html",
+    "body_sha256": "46f87f401fc660a14c7da8e51c195a351495c74eb838db4ae8c7884d79eaacd5",
+    "primary_cta": {
+      "label": "睡眠に特化した産業医支援",
+      "href": "/service/komon/",
+      "target_offer": "kiduki-basic"
+    },
+    "secondary_cta": {
+      "label": "復職・両立支援",
+      "href": "/service/return-to-work-support/",
+      "target_offer": "return-to-work"
+    }
+  },
+  "canonical_source_bindings": [
+    {
+      "path": "kiduki/docs/pricing-growth-canonical.md",
+      "sha256": "2dfbe7df63194c9b77e69f00abc266d3f4a0f1257330774bc87a70da759a4974",
+      "supports": "Basic、Retain、復職・両立支援単発の対象と契約境界"
+    },
+    {
+      "path": "kiduki/docs/bpo-scope-boundary.md",
+      "sha256": "722f0a6d31402f142403b46fb654aa68132aba2c008fe24cda9b2a7c0b7d78ef",
+      "supports": "KIDUKI、既存産業医、会社、医療機関の責任分担"
+    },
+    {
+      "path": "kiduki/docs/copy/site-copy.md",
+      "sha256": "0aecd4a59738d5e78377b96124c8be12219f7bc429511c59e3fbaabaa72f4cc8",
+      "supports": "医療広告、受診先本人選択、禁止語"
+    },
+    {
+      "path": "source/wordpress/page-162-komon.html",
+      "sha256": "5c80cfd61accb063f959b8a775b045d22f3cfc712a0ec9a160cfe30bce12bbae",
+      "supports": "既存体制を維持するKIDUKI Basicの現行公開文面とサービス分岐"
+    }
+  ],
+  "external_source_bindings": [
+    {
+      "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo04_1.html",
+      "verified_date": "2026-09-01",
+      "supports": "事業場内産業保健スタッフと事業場外資源を含む支援、および個人情報への配慮"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html",
+      "verified_date": "2026-09-01",
+      "supports": "休業開始から復職後フォローまでの段階と事業場の体制整備"
+    },
+    {
+      "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/newpage_00155.html",
+      "verified_date": "2026-09-01",
+      "supports": "健康情報の利用目的、取扱者、権限、範囲の規程化"
+    }
+  ],
+  "review_assertions": {
+    "existing_physician_not_disparaged": true,
+    "appointment_and_contract_not_replaced": true,
+    "role_split_before_start_present": true,
+    "information_minimization_present": true,
+    "company_final_decision_present": true,
+    "reevaluation_present": true,
+    "single_basic_retain_split_present": true,
+    "pack_absent": true,
+    "diagnosis_and_treatment_boundary_present": true,
+    "patient_choice_and_no_specific_referral_present": true,
+    "no_h1_style_script_or_document_shell_in_body": true,
+    "prohibited_marketing_claims_absent": true
+  },
+  "required_body_strings": [
+    "誰が何を判断し、誰が会社へ最終意見を返すか",
+    "KIDUKIの追加支援は、既存産業医の法定・定例業務や契約上の責任を自動的に引き受けるものではありません",
+    "メンタルヘルス対策について、厚生労働省は",
+    "利用目的、取扱者、権限、取扱範囲",
+    "本人への説明と必要な同意を確認した上で",
+    "就業上の最終決定と実施は会社に残ります",
+    "復職・両立支援の単発",
+    "KIDUKI Basic",
+    "受診先はご本人が選びます",
+    "KIDUKIが特定の医療機関を指定・紹介することはありません",
+    "data-kdk-article-slug=\"existing-industrial-physician-specialist-support\"",
+    "https://anzeninfo.mhlw.go.jp/yougo/yougo04_1.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html",
+    "https://jsite.mhlw.go.jp/okayama-roudoukyoku/newpage_00155.html"
+  ],
+  "forbidden_body_strings": [
+    "睡眠専門医",
+    "睡眠の専門医",
+    "普通の産業医",
+    "無料相談",
+    "必ず",
+    "絶対",
+    "治ります",
+    "クリニックと連携",
+    "一気通貫",
+    "当院では",
+    "復職支援Pack",
+    "150,000円",
+    "<!DOCTYPE",
+    "<html",
+    "<head",
+    "<body",
+    "<style",
+    "<script"
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}

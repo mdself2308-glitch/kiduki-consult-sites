@@ -1,0 +1,56 @@
+{
+  "exact_version": "2026-09-01-v1",
+  "state": "tier-s-review",
+  "target": {
+    "path": "consult/index.html",
+    "section": "単発でお引き受けするもの",
+    "insert_after_link_text": "スポット産業医・単発相談の詳細"
+  },
+  "copy": {
+    "supporting_text": "資料整理から産業医意見、会社が決定する工程、再評価まで案件全体を進めたい場合はPack、既存の産業医体制を維持したまま不足する面談・産業医意見・再評価だけを補いたい場合はSPOTをご確認ください。",
+    "links": [
+      {
+        "label": "復職案件全体を相談する（復職支援Pack）",
+        "href": "/return-to-work-pack/",
+        "event_name": "service_contact_click",
+        "source_page": "consult-home",
+        "target_offer": "return-to-work-pack",
+        "cta_role": "service-path"
+      },
+      {
+        "label": "不足する面談・産業医意見・再評価を1回単位で相談する（SPOT）",
+        "href": "/return-to-work-spot/",
+        "event_name": "service_contact_click",
+        "source_page": "consult-home",
+        "target_offer": "return-to-work-spot",
+        "cta_role": "service-path"
+      }
+    ]
+  },
+  "required_boundaries": [
+    "診断・治療は行わない",
+    "就業上の最終決定と実施は会社が行う",
+    "受診先は本人が選び特定医療機関を指定・紹介しない",
+    "既存産業医を否定せず不足する範囲だけを補完する",
+    "URLとGA4へ第一者ID、会社名、相談理由、自由記述を送らない",
+    "同一サイト内リンクにUTMを付けない"
+  ],
+  "publication_gates": {
+    "pack_acceptance_p01": "not_tested",
+    "pack_acceptance_p02": "not_tested",
+    "source_evidence": [
+      "/Users/dmmac/casetra_active/docs/operations/CASETRA_PRETEST_LAUNCH_STATUS_2026-08-25.md",
+      "/Users/dmmac/casetra_active/docs/operations/CASETRA_TEST_COMPANY_AUDIT_SHEET_JA.md"
+    ],
+    "owner_physician_approval": null,
+    "static_production_permission": null,
+    "deployment_status": "not_applied"
+  },
+  "excluded_changes": [
+    "Pack・SPOTの商品、料金、回数、期間",
+    "申込フォームの項目、送信先、同意文",
+    "Casetra API、Cosmos Leads、予約処理",
+    "WordPress本文",
+    "GA4 key-event設定"
+  ]
+}

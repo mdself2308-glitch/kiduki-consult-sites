@@ -1,0 +1,149 @@
+{
+  "exact_version": "2026-09-01-v3",
+  "state": "owner-review",
+  "target": {
+    "channel": "wordpress-post",
+    "wordpress_post_id": 1555,
+    "slug": "stresschecknew",
+    "publication_status": "publish",
+    "current_modified": "2026-07-28T16:27:23",
+    "expected_remote_source_sha256": "665dff9ab33275a8f564f0f25eb47f72a92de3faa52a08f2dc5111c9b5e6f4c1",
+    "published_url": "https://kdkconslt-sngyouijm.com/stresschecknew/"
+  },
+  "search_intent": {
+    "audience": "50人未満の事業場を持ち、義務化の時期と準備内容を確認したい経営者・人事労務担当者",
+    "primary_query_hypothesis": "ストレスチェック 50人未満 義務化 いつから",
+    "secondary_query_hypotheses": [
+      "ストレスチェック 義務化 2028",
+      "ストレスチェック 50人未満 準備"
+    ],
+    "main_question": "50人未満の事業場はいつから義務になり、施行前に何を決める必要があるか",
+    "primary_landing": "/service/sangyoui/",
+    "target_offer": "KIDUKI Retain"
+  },
+  "copy": {
+    "title": "ストレスチェックは50人未満も義務化｜2028年4月1日までの準備",
+    "h1": "ストレスチェックは50人未満も義務化｜2028年4月1日までの準備",
+    "meta_description": "50人未満の事業場でもストレスチェックは2028年4月1日から義務化されます。法案段階ではない現行情報と、実施体制、個人結果の取扱い、高ストレス者の面接指導までに企業が準備する項目を整理します。",
+    "excerpt": "労働者数50人未満の事業場でも、ストレスチェックは2028年4月1日から義務化されます。施行前に企業が決める実施体制、個人結果の取扱い、面接指導後の会社対応を整理します。",
+    "body_path": "content/articles/stresscheck-small-workplace-2028.html",
+    "body_sha256": "a5a8666dcb2d0512b23b6e0796988ee9fec2652bfba86640adf400b60aeec97f",
+    "primary_cta": {
+      "label": "嘱託産業医サービスの対応範囲を確認する",
+      "href": "/service/sangyoui/",
+      "target_offer": "kiduki-retain"
+    },
+    "secondary_cta": null
+  },
+  "canonical_source_bindings": [
+    {
+      "path": "kiduki/docs/pricing-growth-canonical.md",
+      "sha256": "2dfbe7df63194c9b77e69f00abc266d3f4a0f1257330774bc87a70da759a4974",
+      "supports": "Retainの継続責任・定例対応と独立商品境界"
+    },
+    {
+      "path": "kiduki/docs/bpo-scope-boundary.md",
+      "sha256": "722f0a6d31402f142403b46fb654aa68132aba2c008fe24cda9b2a7c0b7d78ef",
+      "supports": "ストレスチェック支援、会社、産業医、医療機関の責任分担"
+    },
+    {
+      "path": "kiduki/docs/copy/site-copy.md",
+      "sha256": "0aecd4a59738d5e78377b96124c8be12219f7bc429511c59e3fbaabaa72f4cc8",
+      "supports": "肩書き、医療広告、受診先選択、禁止語"
+    }
+  ],
+  "external_source_bindings": [
+    {
+      "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei12/index.html",
+      "verified_date": "2026-09-01",
+      "supports": "50人未満の事業場への2028年4月1日義務化、2025年5月公布、集団分析の2026年6月30日改正"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/newpage_69680.html",
+      "verified_date": "2026-09-01",
+      "supports": "小規模事業場のプライバシーを守る実施体制・実施方法と法律番号"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/an-eihou/index_00001.html",
+      "verified_date": "2026-09-01",
+      "supports": "改正法・通達・現行資料の一次情報入口"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/content/11300000/001716818.pdf",
+      "verified_date": "2026-09-01",
+      "supports": "集団分析に係る2026年6月30日公布、2027年4月1日施行、特定個人を識別できない方法の明文化、従来運用を変更しない趣旨"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/newpage_50446.html",
+      "verified_date": "2026-09-01",
+      "supports": "産業医選任の現行要件は常時50人以上の労働者を使用する事業場"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1015&dataType=1&pageNo=1",
+      "verified_date": "2026-09-01",
+      "supports": "個人結果の本人通知、事業者提供への同意取得時期、少人数の集団分析における特定防止"
+    }
+  ],
+  "review_assertions": {
+    "current_effective_date_present": true,
+    "enacted_not_bill_stage_present": true,
+    "pre_enforcement_boundary_present": true,
+    "workplace_unit_present": true,
+    "industrial_physician_selection_separated": true,
+    "group_analysis_2027_effective_date_present": true,
+    "group_analysis_no_operational_change_boundary_present": true,
+    "privacy_and_consent_present": true,
+    "company_final_decision_present": true,
+    "diagnosis_and_treatment_boundary_present": true,
+    "patient_choice_and_no_specific_referral_present": true,
+    "one_primary_cta_only": true,
+    "no_h1_style_script_or_document_shell_in_body": true,
+    "prohibited_marketing_claims_absent": true
+  },
+  "required_body_strings": [
+    "2028年4月1日から義務化されます",
+    "2025年5月に改正労働安全衛生法が公布され",
+    "新しい義務はまだ施行前です",
+    "確認の単位は「会社全体」だけではなく「事業場」です",
+    "産業医選任の現行要件は、常時50人以上の労働者を使用する事業場です",
+    "本人へ結果を通知した後に同意を確認する手順",
+    "本人の同意を得ずに個人の検査結果が事業者へ提供されない仕組み",
+    "2027年4月1日に施行されます",
+    "従来の運用を変えるものではない",
+    "就業上の最終決定と実施は会社が担い",
+    "診断と治療は医療機関が行います",
+    "受診先はご本人が選び、KIDUKIが特定の医療機関を指定・紹介することはありません",
+    "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei12/index.html",
+    "https://www.mhlw.go.jp/stf/newpage_69680.html",
+    "https://www.mhlw.go.jp/content/11300000/001716818.pdf",
+    "内科専門医・心療内科専門医・労働衛生コンサルタント"
+  ],
+  "forbidden_body_strings": [
+    "2025年最新",
+    "すべての企業",
+    "実績多数",
+    "弁護士との連携",
+    "コストを抑えた",
+    "無料相談",
+    "睡眠専門医",
+    "必ず",
+    "絶対",
+    "治ります",
+    "クリニックと連携",
+    "一気通貫",
+    "当院では",
+    "<!DOCTYPE",
+    "<html",
+    "<head",
+    "<body",
+    "<style",
+    "<script"
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}

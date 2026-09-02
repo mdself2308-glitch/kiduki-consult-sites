@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-01T21:35:02+09:00",
+  "source": "Google Search Console authenticated UI in Chrome",
+  "operation": "read_only",
+  "writes": false,
+  "selected_range": "28_days",
+  "device_breakdown": {
+    "status": "captured_for_prior_period_only",
+    "prior_period": {
+      "start": "2026-08-05",
+      "end": "2026-08-31",
+      "captured_at": "2026-09-01T19:09:00+09:00",
+      "query_rows": [
+        {
+          "query": "スポット産業医",
+          "devices": [
+            {
+              "device": "mobile",
+              "clicks": 1,
+              "impressions": 27
+            },
+            {
+              "device": "desktop",
+              "clicks": 0,
+              "impressions": 26
+            }
+          ]
+        },
+        {
+          "query": "産業医 スポット",
+          "devices": [
+            {
+              "device": "desktop",
+              "clicks": 0,
+              "impressions": 50
+            },
+            {
+              "device": "mobile",
+              "clicks": 0,
+              "impressions": 44
+            }
+          ]
+        }
+      ]
+    },
+    "same_period_status": "not_captured",
+    "follow_up_attempted_at": "2026-09-01T21:42:02+09:00",
+    "reason": "The Chrome session that had property access expired before device rows could be captured for the newer 2026-08-02 through 2026-08-29 snapshot. Another signed-in Chrome profile did not have access to the property.",
+    "credentials_entered": false,
+    "access_requested": false,
+    "property_permissions_changed": false,
+    "required_next_capture": [
+      "スポット産業医 by device for the same selected range",
+      "産業医 スポット by device for the same selected range"
+    ],
+    "evidence_boundary": "Keep the prior-period device rows separate. Do not describe device-level CTR as acquired for the newer 2026-08-02 through 2026-08-29 snapshot or infer it from aggregate query rows."
+  },
+  "properties": [
+    {
+      "property": "https://kdkconslt-sngyouijm.com/",
+      "surface": "wordpress",
+      "chart_data_range": {
+        "start": "2026-08-02",
+        "end": "2026-08-29"
+      },
+      "last_updated_display": "5.5_hours_ago",
+      "metrics": {
+        "clicks": 11,
+        "impressions": 241,
+        "ctr": 0.046,
+        "average_position": 21.1
+      },
+      "query_rows": [
+        {
+          "query": "宮部大輔",
+          "clicks": 6,
+          "impressions": 30
+        },
+        {
+          "query": "スポット産業医",
+          "clicks": 1,
+          "impressions": 56
+        },
+        {
+          "query": "産業医 スポット",
+          "clicks": 0,
+          "impressions": 91
+        },
+        {
+          "query": "産業医スポット",
+          "clicks": 0,
+          "impressions": 9
+        }
+      ],
+      "query_page_rows": [
+        {
+          "query": "スポット産業医",
+          "page": "https://kdkconslt-sngyouijm.com/service/spot/",
+          "clicks": 1,
+          "impressions": 56,
+          "ctr": 0.018,
+          "average_position": 26.0
+        },
+        {
+          "query": "産業医 スポット",
+          "page": "https://kdkconslt-sngyouijm.com/service/spot/",
+          "clicks": 0,
+          "impressions": 91,
+          "ctr": 0,
+          "average_position": 27.2
+        }
+      ]
+    },
+    {
+      "property": "https://consult.kdkconslt-sngyouijm.com/",
+      "surface": "static_consult",
+      "chart_data_range": {
+        "start": "2026-08-13",
+        "end": "2026-08-29"
+      },
+      "last_updated_display": "5.5_hours_ago",
+      "metrics": {
+        "clicks": 1,
+        "impressions": 16,
+        "ctr": 0.062,
+        "average_position": 8.4
+      },
+      "query_rows": [
+        {
+          "query": "casetra",
+          "clicks": 0,
+          "impressions": 1
+        }
+      ],
+      "page_rows": [
+        {
+          "page": "https://consult.kdkconslt-sngyouijm.com/",
+          "clicks": 1,
+          "impressions": 16
+        },
+        {
+          "page": "https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/",
+          "clicks": 0,
+          "impressions": 1
+        }
+      ]
+    }
+  ],
+  "evidence_boundaries": [
+    "The two URL-prefix properties are separate measurement surfaces and must not be summed as one Search Console property.",
+    "The 28-day UI selection yielded different available chart start dates, so comparisons must retain the property-specific chart ranges.",
+    "The single visible consult query row does not explain the consult homepage click; low-volume query rows may be withheld.",
+    "Search Console proves search exposure and clicks, not service-page transitions, inquiries, consultations, quotes, or contracts.",
+    "This snapshot supplements rather than replaces the earlier 2026-08-05 through 2026-08-31 query baseline."
+  ],
+  "next_measurement": [
+    "After an approved spot CTR release, compare the same two queries and query-by-page rows after 7 and 28 days.",
+    "Keep the WordPress and consult URL-prefix properties in separate tables for every monthly review.",
+    "Join search metrics to GA4 service transitions, first-party inquiry records, the sales ledger, and contract evidence only at their respective verified boundaries."
+  ]
+}

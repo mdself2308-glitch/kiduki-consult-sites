@@ -1,0 +1,18 @@
+{
+  "release": "2026-09-01-existing-industrial-physician-specialist-support-v1",
+  "type": "post",
+  "slug": "existing-industrial-physician-specialist-support",
+  "title": "既存産業医を替えずに睡眠・復職支援を追加する方法｜役割分担の決め方",
+  "status": "draft",
+  "source": "content/articles/existing-industrial-physician-specialist-support.html",
+  "excerpt": "既存の選任産業医を交代せず、睡眠・夜勤・運転・SAS・休復職の専門支援を追加するときの役割分担、情報共有、会社決定、再評価を整理します。",
+  "metaDescription": "既存の選任産業医を交代せず、睡眠・夜勤・運転・SAS・休復職の専門支援を追加する方法を、担当範囲、健康情報の共有、会社決定、再評価、単発と継続支援の分け方で整理します。",
+  "categories": [45, 47],
+  "exactApproval": {
+    "exactVersion": "2026-09-01-v1",
+    "exactPayload": "content/exact/existing-industrial-physician-specialist-support-2026-09-01-v1.json",
+    "exactPayloadSha256": "c524ae175125c8be963b2ed3fc1cdc2b8ffb6e8e1213db0f1bcae4e023234fc4",
+    "candidateSourceSha256": "46f87f401fc660a14c7da8e51c195a351495c74eb838db4ae8c7884d79eaacd5",
+    "approvalTicket": "content/tasks/CT-20260901-existing-industrial-physician-specialist-support.md"
+  }
+}

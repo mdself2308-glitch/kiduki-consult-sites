@@ -1,0 +1,57 @@
+{
+  "exact_version": "2026-09-01-v1",
+  "release_name": "static-lead-form-ga4-privacy",
+  "state": "production-approval-pending",
+  "approval_owner": "宮部 大輔",
+  "approval_evidence": null,
+  "production_permission": null,
+  "purpose": "Pack・SPOTの第一者リード保存と画面表示は維持し、GA4 generate_leadから第一者lead_idと相談詳細を除外して集計用ディメンションだけを送る",
+  "files": [
+    {
+      "name": "pack",
+      "path": "consult/return-to-work-pack/index.html",
+      "live_url": "https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/",
+      "live_before_sha256": "32059887b3590432ef9797add94ae58bdf86d827e99b5cc0787c082639933c58",
+      "candidate_sha256": "b7879124b9905615a5b510743bb3f5d095a433c9b939da4f63661b37a1cb15ae",
+      "required_event": {
+        "event_name": "generate_lead",
+        "form_name": "kiduki_rtw_pack",
+        "source_page": "return-to-work-pack",
+        "target_offer": "return-to-work",
+        "cta_role": "form-submit"
+      }
+    },
+    {
+      "name": "spot",
+      "path": "consult/return-to-work-spot/index.html",
+      "live_url": "https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/",
+      "live_before_sha256": "ee6e14da3bd5b03d66a3df3d27d83722a65da7d5b330f4d08a674e12491814ea",
+      "candidate_sha256": "a49626fb67c20814c12d7c8d808482b9150ad6d64d306934ec015c91c6a37de2",
+      "required_event": {
+        "event_name": "generate_lead",
+        "form_name": "kiduki_rtw_spot",
+        "source_page": "return-to-work-spot",
+        "target_offer": "return-to-work",
+        "cta_role": "form-submit"
+      }
+    }
+  ],
+  "required_invariants": [
+    "Casetra /api/leadsへの保存成功後にだけgenerate_leadを送る",
+    "第一者lead_idは完了画面と予約導線でのみ使いGA4へ送らない",
+    "support_reason、delivery_method、自由記述などの相談詳細をGA4へ送らない",
+    "フォーム送信先、同意文、商品文言、料金、予約URLの処理を変更しない"
+  ],
+  "excluded_paths": [
+    "consult/index.html",
+    "consult/sitemap.xml",
+    "WordPressの本文・テーマ・プラグイン",
+    "Casetra APIおよびCosmos Leads"
+  ],
+  "publication": {
+    "target_branch": "main",
+    "production_effect": "GitHub mainへのpushでAzure Static Web Appsへ反映",
+    "performed": false,
+    "published_verified_at": null
+  }
+}

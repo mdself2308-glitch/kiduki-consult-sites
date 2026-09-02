@@ -1,0 +1,44 @@
+{
+  "release": "2026-09-01-stresscheck-small-workplace-2028-v3",
+  "approval": {
+    "projectRootRelative": "../..",
+    "changeMode": "full_body_replacement",
+    "exactVersion": "2026-09-01-v3",
+    "exactPayload": "content/exact/stresscheck-small-workplace-2028-2026-09-01-v3.json",
+    "exactPayloadSha256": "6bcbd35e962d235b7344fe0571d9e1ea3907597c78e8df725bdd19fd337610bc",
+    "baselineRemoteSha256": "665dff9ab33275a8f564f0f25eb47f72a92de3faa52a08f2dc5111c9b5e6f4c1",
+    "candidateSource": "content/articles/stresscheck-small-workplace-2028.html",
+    "candidateSourceSha256": "a5a8666dcb2d0512b23b6e0796988ee9fec2652bfba86640adf400b60aeec97f"
+  },
+  "items": [
+    {
+      "type": "post",
+      "id": 1555,
+      "expectedModified": "2026-07-28T16:27:23",
+      "expectedRemoteSourceSha256": "665dff9ab33275a8f564f0f25eb47f72a92de3faa52a08f2dc5111c9b5e6f4c1",
+      "slug": "stresschecknew",
+      "title": "ストレスチェックは50人未満も義務化｜2028年4月1日までの準備",
+      "status": "publish",
+      "source": "content/articles/stresscheck-small-workplace-2028.html",
+      "allowedCurrentSlugs": ["stresschecknew"],
+      "excerpt": "労働者数50人未満の事業場でも、ストレスチェックは2028年4月1日から義務化されます。施行前に企業が決める実施体制、個人結果の取扱い、面接指導後の会社対応を整理します。",
+      "metaDescription": "50人未満の事業場でもストレスチェックは2028年4月1日から義務化されます。法案段階ではない現行情報と、実施体制、個人結果の取扱い、高ストレス者の面接指導までに企業が準備する項目を整理します。",
+      "requiredHtml": [
+        "2028年4月1日から義務化されます",
+        "新しい義務はまだ施行前です",
+        "産業医選任の現行要件は、常時50人以上の労働者を使用する事業場です",
+        "2027年4月1日に施行されます",
+        ">嘱託産業医サービスの対応範囲を確認する</a>",
+        "'stresschecknew': true",
+        "article_service_click"
+      ],
+      "forbiddenHtml": [
+        "2025年最新情報",
+        "法改正は国会審議を経て成立した後",
+        "休職・復職対応の実績多数",
+        "労働法専門の弁護士との連携",
+        "未来的なお問い合わせフォーム"
+      ]
+    }
+  ]
+}

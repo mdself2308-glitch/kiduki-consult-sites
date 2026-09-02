@@ -122,8 +122,6 @@ for (const [index, item] of (plan.articles ?? []).entries()) {
     results.push(row);
     continue;
   }
-  requireFuture(item.publish_at, label);
-
   const imagePath = item.featured_image ? path.resolve(planDir, item.featured_image) : null;
   if (imagePath && !fs.existsSync(imagePath)) {
     row.action = 'skipped_image_missing';
@@ -136,11 +134,12 @@ for (const [index, item] of (plan.articles ?? []).entries()) {
 
   const existing = await findBySlug(env, item.slug);
   if (existing) {
+    const expectedStatus = item.production_status === 'published' ? 'publish' : 'future';
     const expectedCategories = [...(item.categories ?? [])].sort((a, b) => a - b);
     const actualCategories = [...(existing.categories ?? [])].sort((a, b) => a - b);
     const matchesPlan =
       existing.slug === item.slug &&
-      existing.status === 'future' &&
+      existing.status === expectedStatus &&
       existing.date === item.publish_at &&
       (existing.title?.raw ?? '') === item.title &&
       (existing.excerpt?.raw ?? '') === (item.excerpt ?? '') &&
@@ -152,7 +151,7 @@ for (const [index, item] of (plan.articles ?? []).entries()) {
         `${label}: an existing post uses this slug but does not match the reviewed plan (post ${existing.id}).`,
       );
     }
-    row.action = 'exists_verified';
+    row.action = existing.status === 'publish' ? 'exists_published_verified' : 'exists_verified';
     row.post_id = existing.id;
     row.status = existing.status;
     row.featured_media = existing.featured_media;
@@ -162,6 +161,10 @@ for (const [index, item] of (plan.articles ?? []).entries()) {
     results.push(row);
     continue;
   }
+
+  // A past date is safe only when the matching published post already exists.
+  // Creating a missing post with a past date would publish it immediately.
+  requireFuture(item.publish_at, label);
 
   if (!shouldApply) {
     row.action = 'would_schedule';

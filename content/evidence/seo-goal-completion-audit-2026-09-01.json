@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-09-02T00:34:23+09:00",
+  "objective": "KIDUKI SEO continuous improvement with global content-production rules, separated search-to-contract measurement, spot CTR repair, dual-property coverage, conversion reconciliation, article-specific CTAs, Tier S review, exact owner approval, and production authority.",
+  "overall_status": "not_complete",
+  "completion_allowed": false,
+  "requirements": [
+    {
+      "id": "global_content_manual",
+      "status": "verified",
+      "evidence": [
+        "/Users/dmmac/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyBrain/.agents/skills/content-production/SKILL.md",
+        "content/README.md"
+      ],
+      "boundary": "The global manual is the mandatory upper rule; the KIDUKI guide is a project adapter, not a replacement."
+    },
+    {
+      "id": "kiduki_product_medical_publication_boundaries",
+      "status": "verified_local_rules",
+      "evidence": [
+        "content/README.md",
+        "content/seo-contract-funnel.md",
+        "content/seo-release-handoff.md"
+      ],
+      "boundary": "Pack remains excluded until P-01 and P-02 both pass; medical, employment, advertising, approval, and publication states remain separate."
+    },
+    {
+      "id": "one_deliverable_one_ticket",
+      "status": "verified",
+      "evidence": [
+        "content/tasks/"
+      ],
+      "boundary": "Each current public-facing deliverable has its own CT ticket; combined evidence does not replace individual approval."
+    },
+    {
+      "id": "tier_s_fact_safety_medical_ad_review",
+      "status": "verified_local_review",
+      "evidence": [
+        "content/exact/spot-industrial-physician-ctr-2026-09-01-v2.json",
+        "content/exact/article-cta-owner-review-2026-09-01-v6.json",
+        "content/exact/stresscheck-small-workplace-2028-2026-09-01-v3.json",
+        "content/exact/existing-industrial-physician-specialist-support-2026-09-01-v1.json",
+        "content/exact/occupational-health-case-management-2026-09-01-v1.json"
+      ],
+      "boundary": "Local review and exact hashes do not constitute Miyabe owner or physician approval."
+    },
+    {
+      "id": "spot_low_ctr_diagnosis",
+      "status": "verified_baseline",
+      "evidence": [
+        "content/evidence/search-console-dual-property-snapshot-2026-09-01.json",
+        "content/spot-industrial-physician-ctr.md"
+      ],
+      "boundary": "The two commercial queries rank around positions 26 to 27 and still surface the old URL. Prior-period device rows and newer-period aggregate rows remain separate."
+    },
+    {
+      "id": "spot_exact_repair",
+      "status": "ready_for_owner_review",
+      "evidence": [
+        "content/exact/spot-industrial-physician-ctr-2026-09-01-v2.json",
+        "content/evidence/spot-wordpress-dry-run-2026-09-01.json"
+      ],
+      "boundary": "The live baseline matches the lock and the candidate is deterministic, but owner or physician approval and WordPress apply authority are absent."
+    },
+    {
+      "id": "consult_search_console_coverage",
+      "status": "verified_separate_property",
+      "evidence": [
+        "content/evidence/search-console-dual-property-snapshot-2026-09-01.json"
+      ],
+      "boundary": "WordPress and consult are separate URL-prefix properties and must not be combined; the current interactive Search Console session later expired."
+    },
+    {
+      "id": "search_console_query_page_click_impression_ctr_baseline",
+      "status": "verified_baseline",
+      "evidence": [
+        "content/evidence/search-console-dual-property-snapshot-2026-09-01.json"
+      ],
+      "boundary": "Baseline metrics are captured with property-specific date ranges; automated authenticated export and same-period device rows remain incomplete."
+    },
+    {
+      "id": "site_kit_zero_key_event_reconciliation",
+      "status": "partially_reconciled",
+      "evidence": [
+        "content/evidence/measurement-live-audit-2026-09-01.json",
+        "content/seo-measurement-spec.md"
+      ],
+      "boundary": "Site Kit shows zero while GA4 shows five generate_lead events from two users; Flamingo has zero records in that GA4 period. Casetra Leads counts and the exact event source remain unresolved."
+    },
+    {
+      "id": "article_specific_cta_repair",
+      "status": "ready_for_owner_review",
+      "evidence": [
+        "content/exact/article-cta-owner-review-2026-09-01-v6.json",
+        "content/evidence/article-cta-wordpress-dry-run-2026-09-01.json"
+      ],
+      "boundary": "All twelve live baselines match and the candidate separates CTA intent, but twelve individual approvals and separate WordPress apply authority are absent."
+    },
+    {
+      "id": "miyabe_exact_owner_physician_approval",
+      "status": "missing",
+      "evidence": [
+        "content/tasks/CT-20260901-seo-exact-owner-review.md"
+      ],
+      "boundary": "Current tickets remain owner-review with pending decisions and empty approval evidence."
+    },
+    {
+      "id": "production_publication_authority",
+      "status": "missing",
+      "evidence": [
+        "content/seo-exact-owner-review-2026-09-01.md",
+        "content/seo-release-handoff.md"
+      ],
+      "boundary": "Exact copy approval and production write authority are separate; neither current generic instruction nor dry-run evidence grants a target-specific write."
+    },
+    {
+      "id": "weekly_monthly_review_schedule",
+      "status": "scheduled_verified",
+      "evidence": [
+        "content/seo-review-schedule.md",
+        "content/evidence/codex-seo-automation-schedule-2026-09-02.json",
+        "/Users/dmmac/.codex/automations/kiduki-seo-growth-loop/automation.toml",
+        "/Users/dmmac/.codex/automations/kiduki-seo-monthly-funnel-review/automation.toml"
+      ],
+      "boundary": "Weekly and monthly Codex automations are ACTIVE in the local control plane; a configured schedule is not an executed review or a measured SEO outcome."
+    },
+    {
+      "id": "published_article_7_28_90_reviews",
+      "status": "scheduled_not_due",
+      "evidence": [
+        "content/seo-article-review-calendar.json",
+        "content/evidence/seo-milestone-review-ledger.json",
+        "content/evidence/codex-seo-automation-schedule-2026-09-02.json",
+        "/Users/dmmac/.codex/automations/kiduki-seo-milestone-review/automation.toml"
+      ],
+      "boundary": "Twelve articles have thirty-six local milestone records and the daily Codex automation is ACTIVE; the first seven-day review is due 2026-09-08 and future milestones cannot yet have results."
+    },
+    {
+      "id": "future_article_7_28_90_reviews",
+      "status": "awaiting_actual_publication",
+      "evidence": [
+        "content/future-article-review-plan.json"
+      ],
+      "boundary": "F and G have no WordPress post or actual published_at; their milestone dates must be derived only after publication readback and do not depend on Google Calendar."
+    },
+    {
+      "id": "article_to_service_transition_measurement",
+      "status": "implementation_present_reception_unverified",
+      "evidence": [
+        "content/seo-measurement-spec.md"
+      ],
+      "boundary": "article_service_click code is present, but a real production event with the new article parameters has not been observed."
+    },
+    {
+      "id": "service_to_contact_transition_measurement",
+      "status": "local_candidate_not_published",
+      "evidence": [
+        "content/seo-measurement-spec.md"
+      ],
+      "boundary": "The cross-origin consult bridge is locally verified but not deployed; service_contact_click reception is unverified."
+    },
+    {
+      "id": "valid_inquiry_measurement",
+      "status": "incomplete_first_party_reconciliation",
+      "evidence": [
+        "content/evidence/measurement-live-audit-2026-09-01.json"
+      ],
+      "boundary": "GA4 event receipt is not a valid inquiry count; WordPress or Flamingo and Casetra Leads must be reconciled first."
+    },
+    {
+      "id": "sales_consultation_quote_contract_measurement",
+      "status": "missing_authorized_ledger",
+      "evidence": [
+        "content/templates/seo-funnel-ledger.csv",
+        "content/seo-measurement-spec.md"
+      ],
+      "boundary": "Only an empty schema exists. No authorized sales ledger, consultation records, quotes, or contract records have been verified."
+    }
+  ],
+  "blocking_gates": [
+    "Miyabe exact owner and physician approval for the target version",
+    "Separate target-specific WordPress or static production authority",
+    "Search Console re-login for new same-period device rows and future URL inspection",
+    "Authorized Casetra Leads aggregate access and event-source reconciliation",
+    "Real production reception of article_service_click and service_contact_click",
+    "Authorized first-party inquiry, sales consultation, quote, and contract ledger"
+  ],
+  "next_allowed_actions_without_new_authority": [
+    "Preserve and verify the exact bundles and dry-run locks",
+    "Execute scheduled read-only reviews when their dates arrive",
+    "Record Search Console, GA4, and public-site observations without changing settings",
+    "Maintain the completion audit without converting missing evidence into success"
+  ]
+}

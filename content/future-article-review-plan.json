@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "state": "awaiting_actual_publication",
+  "generated_on": "2026-09-01",
+  "timezone": "Asia/Tokyo",
+  "schedule_anchor": "wordpress_published_at_readback",
+  "review_offsets_days": [7, 28, 90],
+  "review_scheduler": "codex_automation",
+  "milestone_automation_id": "kiduki-seo-milestone-review",
+  "google_calendar_dependency": false,
+  "calendar_events_created": false,
+  "funnel_stages": [
+    "search_impression",
+    "search_click",
+    "article_view",
+    "primary_service_transition",
+    "inquiry",
+    "first_consultation",
+    "estimate",
+    "contract"
+  ],
+  "articles": [
+    {
+      "slug": "existing-industrial-physician-specialist-support",
+      "exact_version": "2026-09-01-v1",
+      "exact_payload": "content/exact/existing-industrial-physician-specialist-support-2026-09-01-v1.json",
+      "exact_payload_sha256": "c524ae175125c8be963b2ed3fc1cdc2b8ffb6e8e1213db0f1bcae4e023234fc4",
+      "create_config": "kiduki/config/seo-post-existing-industrial-physician-specialist-support-2026-09-01-v1.json",
+      "ticket": "content/tasks/CT-20260901-existing-industrial-physician-specialist-support.md",
+      "state": "owner_review_post_not_created",
+      "post_id": null,
+      "publication_url": null,
+      "published_at": null,
+      "calendar_event_ids": [],
+      "weekly_queue": true,
+      "monthly_funnel_review_after_publication": true,
+      "query_hypotheses": [
+        "既存産業医 睡眠",
+        "既存産業医 復職 対応できない"
+      ],
+      "primary_landing_path": "/service/komon/",
+      "secondary_landing_path": "/service/return-to-work-support/",
+      "measurement": {
+        "7d": ["url_inspection", "query_page_impressions", "wrong_intent"],
+        "28d": ["impressions", "clicks", "ctr", "average_position", "primary_service_transition", "inquiry"],
+        "90d": ["inquiry", "first_consultation", "estimate", "contract", "keep_rewrite_merge_decision"]
+      }
+    },
+    {
+      "slug": "occupational-health-case-management",
+      "exact_version": "2026-09-01-v1",
+      "exact_payload": "content/exact/occupational-health-case-management-2026-09-01-v1.json",
+      "exact_payload_sha256": "ef7b280d49fa75e34013a0f540d6b4ceb00b680c4ca0ac0200abf5f6d57c1b7a",
+      "create_config": "kiduki/config/seo-post-occupational-health-case-management-2026-09-01-v1.json",
+      "ticket": "content/tasks/CT-20260901-occupational-health-case-management.md",
+      "state": "owner_review_post_not_created",
+      "post_id": null,
+      "publication_url": null,
+      "published_at": null,
+      "calendar_event_ids": [],
+      "weekly_queue": true,
+      "monthly_funnel_review_after_publication": true,
+      "query_hypotheses": [
+        "産業医 意見書 管理",
+        "産業医 面談 管理 システム"
+      ],
+      "primary_landing_path": "/service/cloud/",
+      "secondary_landing_path": "/service/sangyoui/",
+      "measurement": {
+        "7d": ["url_inspection", "query_page_impressions", "wrong_intent", "cannibalization"],
+        "28d": ["impressions", "clicks", "ctr", "average_position", "primary_service_transition", "inquiry"],
+        "90d": ["inquiry", "first_consultation", "estimate", "contract", "keep_rewrite_merge_decision"]
+      }
+    }
+  ]
+}

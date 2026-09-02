@@ -1,0 +1,24 @@
+{
+ "schema_version": 1,
+ "recorded_at": "2026-09-02T09:03:13+09:00",
+ "approver": "宮部 大輔",
+ "approver_account": "kdkconsult.sngyijm@gmail.com",
+ "channel": "Claude Code chat (this repository session)",
+ "quoted_decision": "全て承認しますが、新橋というWordは必要ですかね？それ以外はどんどん完璧に進めていってほしいです",
+ "scope": "content/seo-ranking-recovery-plan-2026-09-02.md の承認シート S1〜S6",
+ "adjustment": "S5: タイトル・H1・meta descriptionから「新橋」を外し「東京」だけにする。住所（構造化データ・事務所概要）の新橋は事実情報として維持",
+ "decisions": {
+  "S1_child_theme_seo_foundation": "approved",
+  "S2_static_home_structured_data_and_main_push": "approved",
+  "S3_spot_page_v3_full_body": "approved",
+  "S4_internal_link_pages": "approved",
+  "S5_home_title_h1_articles_block": "approved (title + H1 B案 + 実務記事、新橋なし)",
+  "S6_old_articles": "approved (noindex 19本、健康経営4本を1本へ統合)"
+ },
+ "not_covered": "2026-09-01 の既存キュー（12記事CTA v6、ストレスチェック2028 v3、新記事F/G、Pack・SPOT GA4プライバシーv1）は本承認に含まない。別の承認文字列が必要",
+ "approved_hashes": {
+  "spot_v3_exact_sha256": "82c8b53101a967b951a658e0960718c09d270d7a275a1af94e1551c47631adf4",
+  "internal_link_exact_sha256": "e6097acd916667a88005bb13b05e79b979d9e36332320a48b5ae4f3b17b95996"
+ },
+ "production_authority": "granted for S1–S6 by the same message（どんどん進めて）"
+}

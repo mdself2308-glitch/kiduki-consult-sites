@@ -1,0 +1,114 @@
+{
+  "exact_version": "2026-09-01-v3",
+  "state": "tier-s-review",
+  "target": {
+    "channel": "wordpress-post",
+    "wordpress_post_id": null,
+    "slug": "return-to-work-one-off-vs-pack",
+    "publication_status": "not_created",
+    "scheduled_at": null,
+    "published_at": null
+  },
+  "search_intent": {
+    "audience": "目前の復職案件について外部産業医への単発依頼を検討している企業の人事・労務担当者",
+    "primary_query_hypothesis": "復職面談 単発",
+    "secondary_query_hypotheses": [
+      "産業医 復職面談 スポット",
+      "復職面談 産業医 費用"
+    ],
+    "main_question": "1回の単発で足りる案件と、復職後まで含むPackが必要な案件をどう分けるか",
+    "primary_landing": "/service/return-to-work-support/",
+    "target_offer": "復職・両立支援単発または復職支援Pack"
+  },
+  "copy": {
+    "title": "復職面談は単発とPackのどちら？産業医へ依頼する範囲の決め方",
+    "h1": "復職面談は単発とPackのどちら？産業医へ依頼する範囲の決め方",
+    "meta_description": "企業向け。月額契約のない会社が、復職面談1回の単発と、復職後の再評価・措置解除まで含む復職支援Packを選ぶ基準を、範囲・期間・料金・会社の決定責任で整理します。",
+    "body_path": "content/articles/return-to-work-one-off-vs-pack.html",
+    "body_sha256": "904aa2361507797b74787b144c595c2694bb0f9619571456b9b4b08acf06bfd6",
+    "primary_cta": {
+      "label": "復職・両立支援の範囲と進め方",
+      "href": "/service/return-to-work-support/",
+      "target_offer": "return-to-work"
+    },
+    "secondary_cta": null
+  },
+  "canonical_source_bindings": [
+    {
+      "path": "kiduki/docs/pricing-growth-canonical.md",
+      "sha256": "2dfbe7df63194c9b77e69f00abc266d3f4a0f1257330774bc87a70da759a4974",
+      "supports": "単発・Packの価格、範囲、期間、Casetra契約境界"
+    },
+    {
+      "path": "kiduki/docs/bpo-scope-boundary.md",
+      "sha256": "722f0a6d31402f142403b46fb654aa68132aba2c008fe24cda9b2a7c0b7d78ef",
+      "supports": "KIDUKI、会社、医療機関の責任分担"
+    },
+    {
+      "path": "kiduki/docs/copy/site-copy.md",
+      "sha256": "0aecd4a59738d5e78377b96124c8be12219f7bc429511c59e3fbaabaa72f4cc8",
+      "supports": "肩書き、医療広告、受診先選択、禁止語"
+    }
+  ],
+  "external_source_bindings": [
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055195_00005.html",
+      "verified_date": "2026-09-01",
+      "supports": "職場復帰支援の段階、事業者の最終決定、復職後のフォローアップ"
+    },
+    {
+      "url": "https://consult.kdkconslt-sngyouijm.com/return-to-work-pack/",
+      "verified_date": "2026-09-01",
+      "supports": "公開中のPack相談面、150,000円、面談3回、産業医意見書3通、契約開始から最長6か月の現行表示"
+    },
+    {
+      "url": "https://kdkconslt-sngyouijm.com/return-to-work-interview-process-roles/",
+      "wordpress_post_id": 1809,
+      "modified": "2026-08-27T11:23:47",
+      "verified_date": "2026-09-01",
+      "supports": "既存記事の8工程と、新規比較記事との検索意図境界"
+    }
+  ],
+  "review_assertions": {
+    "canonical_prices_present": true,
+    "single_scope_present": true,
+    "pack_scope_present": true,
+    "company_final_decision_present": true,
+    "diagnosis_and_treatment_boundary_present": true,
+    "patient_choice_and_no_specific_referral_present": true,
+    "casetra_monthly_contract_boundary_present": true,
+    "price_not_used_in_title_or_meta": true,
+    "one_primary_cta_only": true,
+    "no_h1_in_body": true,
+    "published_process_article_boundary_present": true,
+    "prohibited_claims_absent": true
+  },
+  "required_body_strings": [
+    "オンライン60,000円／回",
+    "訪問75,000円／回＋交通費",
+    "80,000円から個別見積",
+    "150,000円／件",
+    "最終的に決めて実施するのは会社です",
+    "診断と治療は医療機関が行います",
+    "KIDUKIが特定の医療機関を指定・紹介することはありません",
+    "Casetra月額契約や恒久的な利用権が始まるわけではありません",
+    "/return-to-work-interview-process-roles/"
+  ],
+  "forbidden_body_strings": [
+    "睡眠専門医",
+    "睡眠の専門医",
+    "無料相談",
+    "必ず治る",
+    "絶対",
+    "クリニックと連携",
+    "一気通貫",
+    "当院では"
+  ],
+  "approval": {
+    "owner": "宮部 大輔",
+    "owner_decision": "pending",
+    "physician_approval": "pending",
+    "approval_evidence": null,
+    "publication_authority": "not_granted"
+  }
+}
