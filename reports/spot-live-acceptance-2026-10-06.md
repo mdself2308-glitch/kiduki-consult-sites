@@ -3,7 +3,7 @@
 2026-10-06。10月8日は公開目標日。以下は実施予定と判定条件であり、合格記録ではない。
 現時点でStripe単体のテストカード与信・売上確定・全額返金は確認済みだが、Casetra・Cal・メールを通した受入は未実施。
 
-Cal承認待ち・与信済み注文だけの確定・失敗時補償を含むAPI追加修正は、ローカル1,251/1,251テスト、対象102テスト、build、本番依存監査0件を確認。独立レビューはP1/P2なし、70テスト・6障害時検証を確認した。新SHA `5ecb6f5` を既存branchへpushし、draft PR #1619の説明も更新済み。新SHAのGitHub CIは6件成功し、build・evidence-packの完了待ち。これらを下表のCloud実環境受入の合格へ置き換えない。
+Cal承認待ち・与信済み注文だけの確定・失敗時補償を含むAPI追加修正は、ローカル1,251/1,251テスト、対象102テスト、build、本番依存監査0件を確認。独立レビューはP1/P2なし、70テスト・6障害時検証を確認した。新SHA `5ecb6f5` を既存branchへpushし、draft PR #1619の説明も更新済み。同じ新SHAのGitHub CIはbuild・evidence-packを含む全8件成功。これらを下表のCloud実環境受入の合格へ置き換えない。
 
 正本: [作業状況と本人確認待ち](../docs/for-owner/spot-booking-2026-10-06.md)、[Cal監査](casetra-calcom-audit-evidence-2026-10-06/cal-spot-event-audit.md)、[計測確認](spot-launch-seo-2026-10-06.md)。
 

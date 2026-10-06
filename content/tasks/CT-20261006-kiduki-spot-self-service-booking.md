@@ -173,4 +173,6 @@ published_verified_at:
 ## API追加修正のローカル検証更新（2026-10-06）
 
 - 親タスクから、Calを常時承認待ちにし与信注文だけ確定する処理・失敗時補償を含む追加修正について、全1,251/1,251テスト、対象102テスト、別出力先build、本番依存audit 0を確認したとの報告を受領。独立レビューはP1/P2なし、70テスト・6障害時検証を確認。
-- 追加修正 `5ecb6f5` を既存 `codex/spot-checkout` へpushし、draft PR #1619の本文を更新済み。新SHAのGitHub CIは6件成功し、build・evidence-packの完了待ち。この結果だけでCal.com Cloud・通知・Teams・決済から意見書までの実環境受入を合格にしない。
+- 追加修正 `5ecb6f5` を既存 `codex/spot-checkout` へpushし、draft PR #1619の本文を更新済み。同じ新SHAのGitHub CIはbuild・evidence-packを含む全8件成功。この結果だけでCal.com Cloud・通知・Teams・決済から意見書までの実環境受入を合格にしない。
+
+- サイト側の商取引開示・Stripe法人設定の引継ぎ等11ファイルを `aba1b49` として既存の専用branchへpushし、remote SHA一致を確認。秘密情報6カテゴリの検査は検出0件。mainへのmerge、PRによるpreview公開、実受付開始は行っていない。
