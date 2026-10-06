@@ -1,0 +1,173 @@
+{
+  "ok": false,
+  "releaseReady": false,
+  "prerequisites": [
+    "Dedicated SPOT GA4 stream ID and reviewed Enhanced Measurement OFF / extra destinations OFF are not configured."
+  ],
+  "mode": "local-and-public-readback",
+  "writes": false,
+  "checks": [
+    {
+      "name": "home-canonical",
+      "ok": true
+    },
+    {
+      "name": "search-landing-canonical",
+      "ok": true
+    },
+    {
+      "name": "search-landing-indexable",
+      "ok": true
+    },
+    {
+      "name": "search-landing-has-title-description-and-single-h1",
+      "ok": true
+    },
+    {
+      "name": "search-landing-listed-in-sitemap",
+      "ok": true
+    },
+    {
+      "name": "search-landing-robots-allow",
+      "ok": true
+    },
+    {
+      "name": "booking-canonical",
+      "ok": true
+    },
+    {
+      "name": "booking-keeps-noindex-and-is-excluded-from-sitemap",
+      "ok": true,
+      "detail": "Booking application is separate from the indexable service landing page."
+    },
+    {
+      "name": "booking-keeps-no-referrer",
+      "ok": true
+    },
+    {
+      "name": "terms-canonical-and-noindex",
+      "ok": true
+    },
+    {
+      "name": "home-and-service-have-crawlable-booking-cta",
+      "ok": true
+    },
+    {
+      "name": "booking-links-current-privacy",
+      "ok": true
+    },
+    {
+      "name": "booking-has-no-third-party-tag-in-head",
+      "ok": true
+    },
+    {
+      "name": "prices-come-from-server-catalog",
+      "ok": true
+    },
+    {
+      "name": "completion-readback-not-url",
+      "ok": true
+    },
+    {
+      "name": "booking-javascript-syntax",
+      "ok": true
+    },
+    {
+      "name": "optional-choice-has-equivalent-allow-and-deny-buttons",
+      "ok": true
+    },
+    {
+      "name": "old-landing-no-longer-submits-retired-lead-form",
+      "ok": true
+    },
+    {
+      "name": "home-has-generic-spot-cta-count",
+      "ok": true
+    },
+    {
+      "name": "runtime-unset-and-denied-load-no-google-tag",
+      "ok": true
+    },
+    {
+      "name": "runtime-opt-in-config-disables-automatic-pageview-and-ad-features",
+      "ok": true
+    },
+    {
+      "name": "runtime-event-allowlist-and-no-personal-health-price-or-order-data",
+      "ok": true
+    },
+    {
+      "name": "runtime-confirmation-deduplicates-polls-and-same-tab-reload",
+      "ok": true
+    },
+    {
+      "name": "runtime-revocation-stops-subsequent-events",
+      "ok": true
+    },
+    {
+      "name": "runtime-only-matching-server-confirmed-order-counts-as-complete",
+      "ok": true
+    },
+    {
+      "name": "runtime-unreviewed-stream-fails-closed-with-booking-still-readable",
+      "ok": true
+    },
+    {
+      "name": "live-home-200-and-canonical",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "live-home-robots-intent",
+      "ok": true
+    },
+    {
+      "name": "live-landing-200-and-canonical",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "live-landing-robots-intent",
+      "ok": true
+    },
+    {
+      "name": "live-spot-200-and-canonical",
+      "ok": false,
+      "detail": "HTTP 404"
+    },
+    {
+      "name": "live-spot-robots-intent",
+      "ok": false
+    },
+    {
+      "name": "live-terms-200-and-canonical",
+      "ok": false,
+      "detail": "HTTP 404"
+    },
+    {
+      "name": "live-terms-robots-intent",
+      "ok": false
+    }
+  ],
+  "failures": [
+    {
+      "name": "live-spot-200-and-canonical",
+      "ok": false,
+      "detail": "HTTP 404"
+    },
+    {
+      "name": "live-spot-robots-intent",
+      "ok": false
+    },
+    {
+      "name": "live-terms-200-and-canonical",
+      "ok": false,
+      "detail": "HTTP 404"
+    },
+    {
+      "name": "live-terms-robots-intent",
+      "ok": false
+    }
+  ],
+  "boundary": "Local/readback checks do not prove indexing, GA4 receipt, payment, booking, email, or service acceptance."
+}

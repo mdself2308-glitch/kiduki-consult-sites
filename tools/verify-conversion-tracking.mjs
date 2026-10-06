@@ -21,6 +21,8 @@ const spotForm = fs.readFileSync(
   'consult/return-to-work-spot/index.html',
   'utf8',
 );
+const spotBooking = fs.readFileSync('consult/assets/spot-booking.js', 'utf8');
+const spotBookingHtml = fs.readFileSync('consult/spot/index.html', 'utf8');
 const articleSources = fs
   .readdirSync('content/articles')
   .filter((name) => name.endsWith('.html'))
@@ -53,18 +55,16 @@ check('cf7-callback-uses-dispatch-marker', cf7Redirect.includes('event_callback:
 check('cf7-keeps-thank-you-fallback-timeout', cf7Redirect.includes('setTimeout(function () { clearAttributionAndGo(false); }, 1000)'));
 check('thank-you-page-does-not-send-generate-lead', !contactThanks.includes("window.gtag('event', 'generate_lead'"));
 check('pack-form-tracks-only-after-success-response', eventAfterSuccessfulResponse(packForm));
-check('spot-form-tracks-only-after-success-response', eventAfterSuccessfulResponse(spotForm));
+check('retired-spot-form-replaced-by-booking-cta', !/<form\b/.test(spotForm) && spotForm.includes('href="/spot/"'));
+check('spot-booking-confirmation-requires-server-status-and-order-match', spotBooking.includes("if(order.status==='CONFIRMED'&&order.orderId===state.orderId)trackSpot('spot_booking_confirmed',state.orderId)"));
 check('pack-form-ga4-excludes-first-party-lead-id', !eventPayload(packForm, 'generate_lead').includes('lead_id'));
-check('spot-form-ga4-excludes-first-party-lead-id', !eventPayload(spotForm, 'generate_lead').includes('lead_id'));
+check('spot-booking-measurement-is-optional', spotBookingHtml.includes('data-analytics-choice="granted"') && spotBookingHtml.includes('data-analytics-choice="denied"') && spotBooking.includes("choice!=='granted'"));
 check('pack-form-ga4-uses-aggregate-funnel-dimensions',
   eventPayload(packForm, 'generate_lead').includes("source_page: 'return-to-work-pack'") &&
   eventPayload(packForm, 'generate_lead').includes("target_offer: 'return-to-work'") &&
   eventPayload(packForm, 'generate_lead').includes("cta_role: 'form-submit'"));
-check('spot-form-ga4-uses-aggregate-funnel-dimensions',
-  eventPayload(spotForm, 'generate_lead').includes("source_page:'return-to-work-spot'") &&
-  eventPayload(spotForm, 'generate_lead').includes("target_offer:'return-to-work'") &&
-  eventPayload(spotForm, 'generate_lead').includes("cta_role:'form-submit'") &&
-  !eventPayload(spotForm, 'generate_lead').includes('support_reason'));
+check('spot-booking-ga4-has-fixed-page-context', spotBooking.includes("source_page:'spot-booking'") && spotBooking.includes("page_location:'https://consult.kdkconslt-sngyouijm.com/spot/'") && spotBooking.includes("page_referrer:''"));
+check('spot-booking-ga4-blocks-unreviewed-home-stream', spotBooking.includes("analyticsId!=='G-JQFWB6XG2E'") && spotBooking.includes("dataset.spotAnalyticsReviewed==='true'"));
 check('article-service-click-is-recorded', functionsPhp.includes("window.gtag('event', 'article_service_click'"));
 check('spot-service-contact-click-is-recorded', functionsPhp.includes("window.gtag('event', 'service_contact_click'"));
 check('spot-service-page-gets-first-party-origin', functionsPhp.includes("source_page: 'return-to-work-support'"));

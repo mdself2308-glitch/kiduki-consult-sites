@@ -1,14 +1,16 @@
 # KIDUKI SEOから契約までの計測仕様
 
-Status: Review  
-Last verified: 2026-09-01  
-Owner: 宮部 大輔  
-Content guide: `README.md`  
+Status: Review
+Last verified: 2026-10-06（SPOT差分。既存の数値・外部設定は各記載日の履歴）
+Owner: 宮部 大輔
+Content guide: `README.md`
 Conversion strategy: `seo-contract-funnel.md`
 
 ## Purpose
 
 検索表示、記事閲覧、サービスページ遷移、問い合わせ、初回相談、見積、契約、継続契約を別々の事実として記録する。GA4のクリックを契約とみなさない。Search Consoleはクエリ×ページの集計寄与、個別の第一者照合は記事CTA以降として分離する。
+
+2026-10-06の新SPOTでは、本書の旧リードフォーム経路に代えて「企業担当者による都度予約・決済」の節を適用する。旧数値や設定を現時点の取得結果として扱わない。
 
 ## Measurement chain
 
@@ -64,7 +66,9 @@ WordPress子テーマは、記事CTA内の `/service/` リンクが押された�
 
 このブリッジは2026-09-01にローカル実装・動的検証済みだが、静的トップの公開には `main` push、WordPress側にはバックアップ付き子テーマ反映が必要であり、どちらも今回の修正版は未公開である。片側だけを公開済みとみなさない。
 
-### Static Pack / SPOT forms to Casetra Leads
+### Static Pack / legacy SPOT forms to Casetra Leads — 2026-09-01の記録
+
+以下は旧フォーム経路の確認履歴。2026-10-06のローカル実装で `/return-to-work-spot/` のフォームは `/spot/` へのCTAへ置き換わった。Packの既存処理と検証は維持している。新SPOTの予約を以下のLead数・`generate_lead` として数えない。
 
 `/return-to-work-pack/` と `/return-to-work-spot/` はWordPress/Flamingoではなく、成功時にCasetraの `/api/leads` へ第一者リードを保存する。バックエンド実装ではPack/単発を `requested_product_code` で区別し、CosmosのLeadsコンテナへ記録してから `lead_id` と予約URLを返す。両フォームはAPI成功後にだけ同じGA4プロパティへ `generate_lead` を送るため、Flamingo対象期間0件でもGA4イベントが存在し得る。
 
@@ -79,6 +83,17 @@ Casetraの現行APIは、同じ連絡先・同じ商品コードで未完了のL
 - `successful_api_responses`: Application Insights等で確認した期間内の成功応答数。新規Lead数とは呼ばない
 
 `npm run verify:casetra-leads-aggregate-template` は空テンプレートの個人情報不在、商品コード、期間、集計境界を検証する。実集計ファイルを作る場合は権限のある環境から件数だけを出力し、`node tools/verify-casetra-leads-aggregate.mjs --input <count-only-json>` へ渡す。現在のAzure principalはApplication Insightsの `Microsoft.Insights/components/read` とCosmosのreadを持たず、どちらも件数未取得である。RBACは変更せず、Leadレコードも読んでいない。
+
+### 企業担当者によるSPOT都度予約・決済 — 2026-10-06の実装
+
+- 静的ホームの汎用 `spot_cta_click` は既存のホーム計測へ送る。クリック元の面談種類やURLパラメータは付けず、遷移数と予約確定数を分ける。
+- `/spot/` は検索着地ページとは別の予約画面として `noindex, nofollow` と自己canonicalを維持。検索入口は既存サービスページとホームを使う。
+- 予約画面は任意opt-in。未選択・拒否ではタグを読み込まず、拒否しても全手続きが使える。専用ストリームの設定確認が完了するまでは、許可されても送信しない。
+- 専用ストリームでEnhanced Measurement全項目、Allow user-provided data capabilities、追加送信先をOFFと確認した後だけ、HTMLの計測IDとreviewedフラグを設定する。ホームの既存IDを再利用しない。
+- 手順イベントは固定allowlistと固定のページ情報のみ。個人情報、健康情報、面談種類、金額、日時、企業/予約/Case/認証ID、クエリ・fragmentを送らない。完了イベントはサーバーの同一注文IDの `CONFIRMED` 読み戻しに限る。
+- 計測許可者だけの参考値であり、売上・予約数の正本は権限管理されたサーバー記録。GA4との個別ID照合、検索クエリから契約への個別帰属、完全な一回送信は主張しない。
+
+イベント定義、同意・重複抑止、設定と公開の残条件、一次資料、検証結果は[SPOT公開前SEO・計測確認](../reports/spot-launch-seo-2026-10-06.md)にまとめる。2026-10-06時点では専用GA4管理設定と実受信は未確認であり、本番計測完了とはしない。
 
 ### Contact and lead
 
@@ -141,6 +156,8 @@ Casetraの現行APIは、同じ連絡先・同じ商品コードで未完了のL
 
 ## Current evidence and remaining gates
 
+以下は2026-09-01の既存計測監査の履歴。現在のSPOT公開前確認は上記の2026-10-06節と報告書を優先する。
+
 - `generate_lead` 二重送信防止と成功後発火は自動検証済み。
 - consultのPack/単発フォームがCasetra Leads保存成功後に `generate_lead` を送る非Flamingo経路であることを、公開HTMLとバックエンド正本で確認した。これが過去5イベントの発火元だったかは、権限管理されたCasetra Leadsの期間別集計で未照合である。
 - Casetra Leadsの件数専用テンプレートと検証を追加した。既存Lead更新でも `generate_lead` が発火する実装のため、新規Lead数、期間内最終更新Lead数、API成功応答数を別指標にした。現在のAzure principalはApplication Insights/Cosmosともread権限がなく、RBAC変更・Leadレコード読取・実件数取得は行っていない。
@@ -184,3 +201,5 @@ Casetraの現行APIは、同じ連絡先・同じ商品コードで未完了のL
 13. Search Consoleのクエリ×ページ集計、GA4の記事→サービス→問い合わせ遷移、第一者台帳のsource_article/source_page→契約を別々に報告できる。検索クエリ単位の個別契約帰属は主張しない。
 14. `npm run audit:analytics-access` が当期・比較期の `queryPage.available: true` を返し、`trackedQueries.spotIndustrialPhysician` に表示ページと平均順位が入る。403やブラウザ表示だけでは自動取得済みと判定しない。
 15. post 1555の公開HTMLに `stresschecknew` の許可リストが配信され、同記事CTA 1クリックで `article_service_click.article_slug=stresschecknew` と `target_offer=kiduki-retain` が1回だけ届く。
+
+16. 新SPOTは `node tools/verify-spot-launch.mjs` のローカル検証、`--live` の公開読戻し、専用GA4管理設定と同意者の実受信を別々に記録する。`--release` は専用計測設定未確認を失敗扱いにするが、予約・決済・メールの受入完了を証明しない。

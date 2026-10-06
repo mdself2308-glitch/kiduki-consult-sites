@@ -1,0 +1,125 @@
+{
+  "ok": true,
+  "viewports": [
+    390,
+    860,
+    1440
+  ],
+  "states": [
+    "menu",
+    "contact",
+    "otp",
+    "slots",
+    "review",
+    "conflict",
+    "stripe-navigation-intercepted",
+    "confirmed",
+    "pending",
+    "paid-pending",
+    "review-required",
+    "unavailable",
+    "expired",
+    "cancelled",
+    "disabled",
+    "catalog-error"
+  ],
+  "requests": [
+    {
+      "path": "/catalog",
+      "method": "GET"
+    },
+    {
+      "path": "/otp/request",
+      "method": "POST"
+    },
+    {
+      "path": "/otp/verify",
+      "method": "POST"
+    },
+    {
+      "path": "/otp/verify",
+      "method": "POST"
+    },
+    {
+      "path": "/slots",
+      "method": "GET"
+    },
+    {
+      "path": "/checkout",
+      "method": "POST"
+    },
+    {
+      "path": "/checkout",
+      "method": "POST"
+    },
+    {
+      "path": "/slots",
+      "method": "GET"
+    },
+    {
+      "path": "/checkout",
+      "method": "POST"
+    },
+    {
+      "path": "/orders/order-test/confirm",
+      "method": "POST"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/otp/request",
+      "method": "POST"
+    },
+    {
+      "path": "/otp/verify",
+      "method": "POST"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/orders/order-test",
+      "method": "GET"
+    },
+    {
+      "path": "/catalog",
+      "method": "GET"
+    },
+    {
+      "path": "/catalog",
+      "method": "GET"
+    }
+  ],
+  "externalRequestsSent": 0
+}

@@ -1,29 +1,25 @@
 import fs from 'node:fs';
 
 const home = fs.readFileSync('consult/index.html', 'utf8');
-const form = fs.readFileSync('consult/return-to-work-spot/index.html', 'utf8');
+const legacySpot = fs.readFileSync('consult/return-to-work-spot/index.html', 'utf8');
 const sitemap = fs.readFileSync('consult/sitemap.xml', 'utf8');
 const checks = [];
 const check = (name, condition) => checks.push({ name, ok: Boolean(condition) });
 
-check('home-routes-spot-inquiries-to-current-contact-form', (home.match(/https:\/\/kdkconslt-sngyouijm\.com\/contact\//g) || []).length >= 5);
+check('home-keeps-contact-for-tailored-support', (home.match(/https:\/\/kdkconslt-sngyouijm\.com\/contact\//g) || []).length >= 5);
 check('home-does-not-link-retired-spot-route', !/href="(?:https:\/\/kdkconslt-sngyouijm\.com\/spot\/|\/return-to-work-spot\/)"/.test(home));
-check('sitemap-includes-spot-form', sitemap.includes('https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/'));
-check('home-keeps-spot-pricing-fuzzy', !/(?:\d{1,3}(?:,\d{3})+|\d+)\s*円/.test(home));
+check('sitemap-preserves-legacy-spot-url', sitemap.includes('https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/'));
+check('home-does-not-duplicate-catalog-prices', !/(?:\d{1,3}(?:,\d{3})+|\d+)\s*円/.test(home));
 check('home-offers-return-to-work-assessment-by-the-case', home.includes('復職判定面談を1件から'));
-check('form-identifies-kiduki-contract-window', form.includes('契約・請求・支援の窓口はKIDUKIです'));
-check('form-defines-thirty-day-case-workspace', form.includes('案件専用画面を30日間'));
-check('form-states-no-automatic-monthly-billing', form.includes('Casetra月額契約への自動移行や月額請求はありません'));
-check('form-posts-spot-intake-type', form.includes("intakeType:'KIDUKI_RTW_SPOT'"));
-check('form-posts-delivery-method', form.includes("deliveryMethod:String(v.deliveryMethod"));
+check('home-links-self-service-menu', home.includes('href="/spot/"'));
 check('home-foregrounds-existing-doctor-complement', home.includes('すでに産業医がいる事業場でも'));
-check('form-foregrounds-existing-doctor-gap', form.includes('既存産業医が対応できない') && form.includes('産業医を替える契約ではありません'));
-check('form-requires-support-reason', /name="supportReason"[^>]*required/.test(form));
-check('form-posts-support-reason', form.includes('supportReason,deliveryMethod'));
-check('form-includes-support-reason-in-inquiry-message', form.includes('今回KIDUKIが補う理由:'));
-check('form-uses-canonical-front-door', form.includes('https://casetra-api-dev-edge-bacnf4bqc9dxe8hn.z01.azurefd.net/api/leads'));
-check('form-requires-privacy-consent', /name="privacyConsent"[^>]*required/.test(form));
-check('form-prohibits-health-data', form.includes('社員の氏名・病名・診断書内容は入力しないでください'));
+check('legacy-spot-identifies-kiduki-contract-window', legacySpot.includes('契約・請求・支援の窓口はKIDUKIです'));
+check('legacy-spot-foregrounds-existing-doctor-gap', legacySpot.includes('既存産業医が対応できない') && legacySpot.includes('産業医を替える契約ではありません'));
+check('legacy-spot-routes-online-booking-to-current-menu', legacySpot.includes('href="/spot/"'));
+check('legacy-spot-routes-tailored-support-to-contact', legacySpot.includes('href="https://kdkconslt-sngyouijm.com/contact/"'));
+check('legacy-spot-states-no-monthly-contract-needed', legacySpot.includes('月額契約やCasetraの別途契約は必要ありません'));
+check('legacy-spot-preserves-canonical-url', legacySpot.includes('<link rel="canonical" href="https://consult.kdkconslt-sngyouijm.com/return-to-work-spot/">'));
+check('legacy-spot-has-no-retired-intake-or-workspace-promises', !/<form\b|KIDUKI_RTW_SPOT|\/api\/leads|事前打合せ|30日間|契約後/.test(legacySpot));
 // 構造化データは二本柱と一致させる。価格は載せない（トップで金額を出さない方針と揃える）。
 check('structured-data-matches-two-pillars',
   home.includes('"name":"睡眠に特化した産業医業務"')

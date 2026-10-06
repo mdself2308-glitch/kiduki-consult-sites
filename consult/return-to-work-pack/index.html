@@ -282,7 +282,12 @@
         document.getElementById('formArea').style.display = 'none';
         document.getElementById('completeArea').classList.add('show');
         if (typeof gtag === 'function') {
-          gtag('event', 'generate_lead', { form_name: 'kiduki_rtw_pack', lead_id: result.lead_id });
+          gtag('event', 'generate_lead', {
+            form_name: 'kiduki_rtw_pack',
+            source_page: 'return-to-work-pack',
+            target_offer: 'return-to-work',
+            cta_role: 'form-submit'
+          });
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } catch (error) {

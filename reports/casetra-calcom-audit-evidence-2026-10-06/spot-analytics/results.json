@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "viewports": [
+    390,
+    860,
+    1440
+  ],
+  "cases": [
+    "equal-choice-controls",
+    "no-tag-before-opt-in",
+    "refusal-does-not-block-booking",
+    "query-fragment-stripped-before-tag",
+    "fixed-event-payload",
+    "cross-tab-withdrawal",
+    "cross-tab-choice-removal",
+    "failed-refusal-write-broadcasts-stop"
+  ],
+  "googleProviderStubbed": true,
+  "apiStubbed": true,
+  "externalRequestsSent": 0,
+  "errors": []
+}

@@ -41,7 +41,9 @@ const localChecks = {
     localText.includes('一つ目の柱：睡眠に特化した産業医業務') &&
     localText.includes('二つ目の柱：産業衛生業務のDX'),
   oneOffReturnToWork:
-    localText.includes('急な復職判定面談を1件から承ります。'),
+    localText.includes('復職判定面談を1件から') &&
+    localText.includes('href="/spot/"') &&
+    localText.includes('48時間以上先の空き枠'),
   casetraContractBoundary:
     localText.includes('単発の面談・研修は、Casetraの契約なしでご依頼いただけます。') &&
     localText.includes('Casetraは別契約で導入は任意ですが、利用しない場合はCasetraによるDX支援は含まれません。'),
@@ -71,7 +73,7 @@ const localChecks = {
     staticContactEventPayload.includes("target_offer: 'general-inquiry'") &&
     !staticContactEventPayload.includes('lead_tracking_id'),
   noRetiredInternalRoutes:
-    !/kdkconslt-sngyouijm\.com\/(?:\?main|spot\/|greeting\/|office-info\/)/.test(
+    !/https?:\/\/kdkconslt-sngyouijm\.com\/(?:\?main|spot\/|greeting\/|office-info\/)/.test(
       localText,
     ),
   occupationalHygieneWording: !localText.includes('産業保健'),
