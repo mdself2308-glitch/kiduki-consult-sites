@@ -46,6 +46,8 @@ Stripeから戻ったURL、画面表示だけ、支払い待ち、履行途中�
 
 `consult/spot/index.html` の `data-spot-analytics-id` は空、`data-spot-analytics-reviewed` はfalseのまま。許可されても現状は送信しない。既存ホームID `G-JQFWB6XG2E` はコードでも拒否する。
 
+この2属性による明示停止は、公開前検証でも正常な設定として扱う。GA4の認証・設定待ちだけでSPOT受付開始を止めず、停止中は第一者の予約・売上記録で業務成果を確認する。計測有効化時は専用IDとreviewed=trueの両方を必要とし、属性欠落や中途半端な設定は拒否する。JSONは `analyticsStatus` と `analyticsFollowUp` を公開の必須条件 `prerequisites` から分ける。現在は `disabled_explicitly` で、専用GA4設定・実受信は未確認の後続作業である。
+
 専用stream管理画面で以下を読み戻してから設定する。
 
 1. Enhanced Measurementを全項目OFF。履歴変更pageview・form・outbound・downloadなどの自動送信を含む。
@@ -63,9 +65,9 @@ user-provided dataの自動検出はページ上のメール・電話・氏名�
 
 | 検証 | 結果・範囲 |
 |---|---|
-| `node tools/verify-spot-launch.mjs` | 30項目PASS。既定はローカル読取と隔離VM。設定未完了のためreleaseReady=false |
+| `node tools/verify-spot-launch.mjs` | 33項目PASS。既定はローカル読取と隔離VM。任意計測は明示停止で正常。商取引開示の電話・承認未了のためreleaseReady=false |
 | 同 `--live` | 公開URLへのGETのみ。ホーム/着地200、予約/規約404を記録。公開・送信・予約操作なし |
-| 同 `--release` | 専用計測IDと設定確認フラグがない場合は失敗として報告。決済や面談の受入判定を代替しない |
+| 同 `--release` | 計測の明示停止、または専用IDと設定確認フラグが揃った有効化を許容。半端な設定は拒否。現状は商取引開示の電話・承認のみが期待する失敗。決済や面談の受入判定を代替しない |
 | `node tools/verify-conversion-tracking.mjs` | 39項目PASS。旧SPOTフォーム期待を置換。Pack/CF7/既存帰属の検証を維持 |
 | `node tools/verify-kiduki-spot-source.mjs` | 17項目PASS |
 | `node tools/test-static-home-contact-runtime.mjs` | 既存問い合わせ導線5項目PASS |
@@ -73,6 +75,8 @@ user-provided dataの自動検出はページ上のメール・電話・氏名�
 | 実Chromium・API/Google完全mock | 390/860/1440px、同等の許可/拒否操作、未選択送信なし、拒否中も企業入力へ進める、URL除去、固定payload、別タブ拒否・保存消去、保存強制失敗時の停止共有をPASS。consoleerror 0・外部要求送信0 |
 
 独立レビューで検出した別タブ・期限切れ・書込失敗時の古い許可復活を修正し、対応する回帰fixtureを追加した。その他の変更で予約API・決済・メール処理を改変していない。
+
+状態遷移の追加確認では、`BOOKING_CONFIRMING` と `COMPENSATING` も確定イベントを送信しないことを検証した。GA4の公開条件変更は検証ツールだけで、予約UI・計測の送信処理・商取引表示・決済/予約受入の条件は変更していない。
 
 証跡: [スマートフォン](casetra-calcom-audit-evidence-2026-10-06/spot-analytics/choice-390.png)、[デスクトップ](casetra-calcom-audit-evidence-2026-10-06/spot-analytics/choice-1440.png)、[browser結果](casetra-calcom-audit-evidence-2026-10-06/spot-analytics/results.json)、[local結果](casetra-calcom-audit-evidence-2026-10-06/spot-analytics/local-checks.json)、[公開GET結果](casetra-calcom-audit-evidence-2026-10-06/spot-analytics/public-readback.json)。画像のメニューは模擬カタログであり、本番価格・受付開始の証拠ではない。
 

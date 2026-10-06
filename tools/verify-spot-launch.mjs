@@ -27,6 +27,9 @@ check('booking-canonical',canonical(spot)===urls.spot);
 check('booking-keeps-noindex-and-is-excluded-from-sitemap',noindex(spot)&&!sitemap.includes(`<loc>${urls.spot}</loc>`),'Booking application is separate from the indexable service landing page.');
 check('booking-keeps-no-referrer',/<meta name="referrer" content="no-referrer"/.test(spot));
 check('terms-canonical-and-noindex',canonical(terms)===urls.terms&&noindex(terms));
+check('commerce-disclosure-title-and-operator',/<title>商取引に関する開示/.test(terms)&&/<h1>商取引に関する開示<\/h1>/.test(terms)&&['株式会社MedSelf','9010401176495','運営責任者：代表取締役 宮部 大輔','〒105-0004','東京都港区新橋1-18-21 第一日比谷ビル','mailto:info@kdkconslt-sngyouijm.com'].every(value=>terms.includes(value)));
+check('commerce-disclosure-price-payment-delivery-refund', ['販売価格・追加費用','支払方法・支払時期','クレジットカード','サービスの提供時期','キャンセル・返金','サービスの提供に不備があった場合'].every(value=>terms.includes(value)));
+check('commerce-disclosure-home-booking-and-review-links', [home,spot].every(html=>html.includes('href="/spot/terms/">商取引に関する開示・利用条件</a>'))&&script.includes('rel="noopener noreferrer">商取引に関する開示・利用条件</a>'));
 check('home-and-service-have-crawlable-booking-cta',home.includes('href="/spot/"')&&landing.includes('href="/spot/"'));
 check('booking-links-current-privacy',spot.includes('https://kdkconslt-sngyouijm.com/privacy-policy/'));
 check('booking-has-no-third-party-tag-in-head',!/<script[^>]+(?:googletagmanager|google-analytics|connect\.facebook)/i.test(spot));
@@ -37,10 +40,29 @@ check('booking-javascript-syntax',syntax.status===0);
 check('optional-choice-has-equivalent-allow-and-deny-buttons',/data-analytics-choice="granted"/.test(spot)&&/data-analytics-choice="denied"/.test(spot)&&spot.includes('許可しなくても、すべての予約手続き'));
 check('old-landing-no-longer-submits-retired-lead-form',!/<form\b/.test(landing)&&landing.includes('href="/spot/"'));
 check('home-has-generic-spot-cta-count',home.includes("gtag('event', 'spot_cta_click'"));
-const measurementId=spot.match(/data-spot-analytics-id="([^"]*)"/)?.[1]||'';
-const analyticsReady=/^G-[A-Z0-9]{6,20}$/.test(measurementId)&&measurementId!=='G-JQFWB6XG2E'&&spot.includes('data-spot-analytics-reviewed="true"');
-const prerequisites=analyticsReady?[]:['Dedicated SPOT GA4 stream ID and reviewed Enhanced Measurement OFF / user-provided data OFF / extra destinations OFF are not configured.'];
-if(process.argv.includes('--release'))check('dedicated-analytics-stream-review-recorded',analyticsReady);
+function analyticsConfiguration(html) {
+  const body=html.match(/<body\b[^>]*>/i)?.[0]||'';
+  const measurementId=body.match(/\bdata-spot-analytics-id="([^"]*)"/)?.[1];
+  const reviewed=body.match(/\bdata-spot-analytics-reviewed="([^"]*)"/)?.[1];
+  if(measurementId===''&&reviewed==='false')return 'disabled_explicitly';
+  if(/^G-[A-Z0-9]{6,20}$/.test(measurementId||'')&&measurementId!=='G-JQFWB6XG2E'&&reviewed==='true')return 'enabled_reviewed';
+  return 'invalid_configuration';
+}
+const analyticsStatus=analyticsConfiguration(spot);
+const analyticsAllowed=analyticsStatus!=='invalid_configuration';
+const analyticsFollowUp=analyticsStatus==='disabled_explicitly'
+  ? ['Optional: verify the dedicated GA4 stream settings and live receipt before enabling analytics. Current explicit opt-out configuration sends no Google requests.']
+  : analyticsStatus==='enabled_reviewed'
+    ? ['Verify consent, refusal and withdrawal on the deployed page and keep GA4 receipt separate from booking acceptance.']
+    : ['Either explicitly disable analytics with a blank ID and reviewed=false, or configure the reviewed dedicated stream.'];
+const supportPhone=terms.match(/<a\s+href=["']tel:([^"']+)["'][^>]*>([^<]+)<\/a>/i);
+const publishedSupportPhone=Boolean(supportPhone&&/^(?:0\d{9,10}|\+81\d{9,10})$/.test(supportPhone[1].replace(/[\s()-]/g,''))&&/^(?:0\d{9,10}|\+81\d{9,10})$/.test(supportPhone[2].replace(/[\s()-]/g,'')));
+const commerceReady=publishedSupportPhone&&terms.includes('data-commerce-disclosure-approved="true"');
+const prerequisites=[];
+if(!analyticsAllowed)prerequisites.push('Analytics configuration is incomplete: explicitly disable it, or provide the reviewed dedicated stream ID.');
+if(!commerceReady)prerequisites.push('Commerce disclosure is not approved with a verified, published customer-support telephone number. Do not publish this draft or enable paid bookings.');
+if(process.argv.includes('--release'))check('analytics-reviewed-or-explicitly-disabled',analyticsAllowed);
+if(process.argv.includes('--release'))check('commerce-disclosure-review-and-support-phone-recorded',commerceReady);
 
 // Execute the actual browser code with storage, DOM, provider transport and API mocked.
 // No Google, Stripe, Cal, email or production API request is made by these fixtures.
@@ -107,7 +129,7 @@ try {
 
 
 
-  for(const status of ['AWAITING_PAYMENT','CAPTURING','FULFILLING','REVIEW_REQUIRED','CANCELLED','EXPIRED']) {
+  for(const status of ['AWAITING_PAYMENT','CAPTURING','BOOKING_CONFIRMING','FULFILLING','COMPENSATING','REVIEW_REQUIRED','CANCELLED','EXPIRED']) {
     const c=browser({orderStatus:status});c.setup();c.click('granted');await c.loadStatus();assert.equal(c.events().length,0);
   }
   const mismatch=browser({returnedId:'another-order'});mismatch.setup();mismatch.click('granted');await mismatch.loadStatus();assert.equal(mismatch.events().length,0);
@@ -127,5 +149,5 @@ if(process.argv.includes('--live')) {
   }
 }
 const failures=checks.filter(c=>!c.ok);
-console.log(JSON.stringify({checkedAt:new Date().toISOString(),ok:failures.length===0,releaseReady:failures.length===0&&prerequisites.length===0,prerequisites,mode:process.argv.includes('--live')?'local-and-public-readback':'local-only',writes:false,checks,failures,boundary:'Local/readback checks do not prove indexing, GA4 receipt, payment, booking, email, or service acceptance.'},null,2));
+console.log(JSON.stringify({checkedAt:new Date().toISOString(),ok:failures.length===0,releaseReady:failures.length===0&&prerequisites.length===0,prerequisites,analyticsStatus,analyticsFollowUp,mode:process.argv.includes('--live')?'local-and-public-readback':'local-only',writes:false,checks,failures,boundary:'Local/readback checks do not prove indexing, GA4 receipt, payment, booking, email, or service acceptance.'},null,2));
 if(failures.length)process.exitCode=1;
